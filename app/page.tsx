@@ -1,0 +1,119 @@
+import Hero from "@/components/sections/Hero";
+import MarqueeBanner from "@/components/sections/MarqueeBanner";
+import Problem from "@/components/sections/Problem";
+import Services from "@/components/sections/Services";
+import CardGrid from "@/components/sections/CardGrid";
+import Process from "@/components/sections/Process";
+import Results from "@/components/sections/Results";
+import Testimonial from "@/components/sections/Testimonial";
+import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
+import CTABanner from "@/components/sections/CTABanner";
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <MarqueeBanner />
+      <Problem />
+      <Services />
+
+      <CardGrid
+        variant="warm"
+        cols={4}
+        label="Explore our services"
+        headline={<>Four programs. One outcome: <em>more move-ins</em>.</>}
+        cards={[
+          {
+            eyebrow: "Local Search",
+            title: "Local SEO & GBP",
+            body: "Own the map pack and Google Maps results in your trade area.",
+            href: "/services/local-seo-gbp-optimization",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Site Performance",
+            title: "Technical SEO",
+            body: "Fast, crawlable sites that load on mobile and convert reservations.",
+            href: "/services/technical-seo",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Search Content",
+            title: "Content & Keywords",
+            body: "Pages that answer what renters are searching before they book.",
+            href: "/services/content-keyword-strategy",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Portfolio Growth",
+            title: "Multi-Location SEO",
+            body: "Scale local visibility across every facility without internal cannibalization.",
+            href: "/services/multi-location-seo",
+            ctaLabel: "Learn more",
+          },
+        ]}
+      />
+
+      <Process />
+      <Results />
+      <Testimonial />
+
+      <CardGrid
+        variant="light"
+        cols={3}
+        label="Who we work with"
+        headline={<>Built for operators who <em>run the business themselves</em>.</>}
+        intro="From single-facility independents to regional portfolios, every program is tailored to how you actually operate."
+        cards={[
+          {
+            eyebrow: "Single Facilities",
+            title: "Independent Owners",
+            body: "Fill units without hiring a marketing team or learning SEO yourself.",
+            href: "/who-we-serve/independent-facility-owners",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Portfolio Growth",
+            title: "Multi-Location Operators",
+            body: "Consistent local visibility across every facility, with portfolio-level reporting.",
+            href: "/who-we-serve/multi-location-operators",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Premium Units",
+            title: "Climate-Controlled Facilities",
+            body: "Rank for the renters who search specifically for temperature-controlled storage.",
+            href: "/who-we-serve/climate-controlled-facilities",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "Specialty Storage",
+            title: "Vehicle, RV & Boat Storage",
+            body: "Capture the larger trade area that RV and boat storage renters search from.",
+            href: "/who-we-serve/vehicle-rv-boat-storage",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "New Development",
+            title: "New Facility Openings",
+            body: "Start your lease-up from a position of visibility, not catch-up.",
+            href: "/who-we-serve/new-facility-openings",
+            ctaLabel: "Learn more",
+          },
+          {
+            eyebrow: "See Results",
+            title: "Case Studies",
+            body: "Real facilities, real occupancy gains. See what we delivered for operators like you.",
+            href: "/case-studies",
+            ctaLabel: "Browse case studies",
+          },
+        ]}
+      />
+
+      <Pricing />
+      <FAQ />
+      <CTABanner />
+    </>
+  );
+}
