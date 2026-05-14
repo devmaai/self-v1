@@ -662,6 +662,20 @@ section { position: relative; z-index: 2; }
 }
 
 /* ============================================================
+   VISIBILITY IMAGE SECTION
+   ============================================================ */
+.visibility-image-section {
+  padding: 60px 0;
+  background: var(--paper);
+}
+
+.visibility-image-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
    TESTIMONIAL
    ============================================================ */
 .testimonial {

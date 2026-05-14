@@ -9,6 +9,7 @@ import Testimonial from "@/components/sections/Testimonial";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -38,13 +39,13 @@ export default function HomePage() {
             href: "/services/technical-seo",
             ctaLabel: "Learn more",
           },
-          {
-            eyebrow: "Search Content",
-            title: "Content & Keywords",
-            body: "Pages that answer what renters are searching before they book.",
-            href: "/services/content-keyword-strategy",
-            ctaLabel: "Learn more",
-          },
+          // {
+          //   eyebrow: "Search Content",
+          //   title: "Content & Keywords",
+          //   body: "Pages that answer what renters are searching before they book.",
+          //   href: "/services/content-keyword-strategy",
+          //   ctaLabel: "Learn more",
+          // },
           {
             eyebrow: "Portfolio Growth",
             title: "Multi-Location SEO",
@@ -55,6 +56,19 @@ export default function HomePage() {
         ]}
       />
 
+      <div className="visibility-image-section">
+        <div className="container">
+          <Image
+            src="/images/visibility-metrics.png"
+            alt="Visibility - Search Impressions, Maps Impressions, Clicks metrics"
+            width={1344}
+            height={240}
+            quality={90}
+            priority
+          />
+        </div>
+      </div>
+      
       <Process />
       <Results />
       <Testimonial />
