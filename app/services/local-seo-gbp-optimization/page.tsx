@@ -98,10 +98,10 @@ export default function LocalSeoGbpPage() {
 
       <FAQ
         label="Common questions"
-        headline={<>Things owners <em>usually ask</em>.</>}
+        headline={<>Before you hire an SEO expert, <em>Ask this</em>.</>}
         items={[
           {
-            q: "How long does it take to rank in the top three positions of the Google Maps?",
+            q: "How long will it take to rank in the top three positions of the Google Maps?",
             a: "Most of our self-storage clients see meaningful map ranking improvement within 45 to 90 days. The exact timeline depends on your starting position, review count, and the competitive density of your trade area.",
           },
           {

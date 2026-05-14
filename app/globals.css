@@ -641,6 +641,26 @@ section { position: relative; z-index: 2; }
   letter-spacing: 0.08em;
 }
 
+.reviews-image-container {
+  margin: 12px auto 48px;
+  max-width: 550px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(26, 22, 20, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.reviews-image-container:hover {
+  box-shadow: 0 12px 32px rgba(26, 22, 20, 0.12);
+}
+
+.reviews-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ============================================================
    TESTIMONIAL
    ============================================================ */

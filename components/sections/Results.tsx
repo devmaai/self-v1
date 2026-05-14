@@ -1,4 +1,5 @@
 import RevealSection from "@/components/ui/RevealSection";
+import Image from "next/image";
 
 export interface ResultCard {
   metric: string;
@@ -53,6 +54,17 @@ export default function Results({
         <div className="section-label">{label}</div>
         <h2 className="section-title">{headline}</h2>
         <p className="section-intro">{intro}</p>
+
+        <div className="reviews-image-container">
+          <Image
+            src="/images/google-reviews.png"
+            alt="Google Reviews - Average Rating 4.7/5 with 205 reviews"
+            width={1044}
+            height={748}
+            quality={90}
+            priority
+          />
+        </div>
 
         <div className="results-grid">
           {cards.map((card) => (

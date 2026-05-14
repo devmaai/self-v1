@@ -14,10 +14,10 @@ export interface CTABannerProps {
 export default function CTABanner({
   headline = (
     <>
-      Find out where you stand on Google. <em>Free audit, no obligation.</em>
+      Ready to See Where You're Losing <em>Renters on Google?</em>
     </>
   ),
-  subtext = "Drop your facility website below and we will send a detailed audit of your current search visibility, competitor gaps, and the three fastest wins inside two business days.",
+  subtext = "Get a free, no-obligation audit of your current Google Maps visibility and Google Business Profile. We'll show you exactly why you're not ranking and what will it take to fix it.",
   placeholder = "yourfacility.com",
   ctaLabel = "Send my audit",
   note = "We respond within two business days. Your details stay with us.",
