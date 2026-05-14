@@ -17,37 +17,41 @@ export default function TechnicalSeoPage() {
     <>
       <PageHero
         eyebrow="Technical SEO"
-        headline="Fast sites book more reservations."
-        subheadline="We fix the technical foundations of your self-storage website so Google can crawl it, renters can load it instantly, and your booking software actually converts the traffic you earn."
-        primaryCta={{ label: "Get my free technical audit", href: "/contact" }}
+        headline="Rank on AEO & GEO: Get Found in AI Answers, Not Just Google Search"
+        subheadline={"SEO is not dead. It has changed. When potential renters ask AI tools like Google Gemini, ChatGPT, or Perplexity “best climate-controlled storage near me” or “cheapest 10x10 storage units near me,” your facility needs to be the one they recommend and not your competitors.\nWe help self-storage operators dominate both traditional local search and the new Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) landscape."}
+        primaryCta={{ label: "Get Your Free AEO + GEO Visibility Audit", href: "/contact" }}
+        note="100% focused on self-storage occupancy growth."
       />
 
       <FeatureList
         variant="warm"
         style="bullet"
         label="The problem"
-        headline="Your website is quietly losing reservations."
-        intro="A self-storage website has three technical jobs: load fast, stay crawlable, and pass booking data cleanly. When any of these break, move-ins drop before you notice. The most common issues we find:"
+        headline="AI is changing how renters find self storage units. Is your unit showing up?"
+        bulletTitleSuffix=""
+        intro="Renters are no longer just typing into Google. They’re asking AI assistants complex, conversational questions. If your facility isn’t 
+        optimized for these new “answer engines,” you’re losing move-ins to competitors,  
+        even if you rank decently on traditional Google Maps.\nHere’s what’s happening to most independent operators:"
         items={[
           {
-            title: "",
-            desc: "Pages that take five seconds or longer to load on a phone, which kills mobile reservations.",
+            title: "Missing from AI Answers — ",
+            desc: "When someone asks “Is climate-controlled storage worth it near my home?”, your facility is never mentioned.",
           },
           {
-            title: "",
-            desc: "Booking software that renders through JavaScript in ways Google cannot crawl, hiding your unit inventory from search results.",
+            title: "Outranked by National Chains — ",
+            desc: "Big brands with strong entity authority and structured content dominate AI-generated recommendations.",
           },
           {
-            title: "",
-            desc: "Duplicate pages generated automatically by your platform that dilute the ranking signals of your best pages.",
+            title: "Generic Content Fails AI — ",
+            desc: "Stock photos, thin descriptions, and unoptimized pages are ignored by AI models that need clear, authoritative, structured information.",
           },
           {
-            title: "",
-            desc: "A robots.txt file or meta robots tag accidentally blocking your most important pages from being indexed.",
+            title: "No Control Over the Narrative — ",
+            desc: "AI tools synthesize answers from multiple sources. If your data is inconsistent or outdated, you lose influence over what renters hear.",
           },
           {
-            title: "",
-            desc: "Missing or broken structured data, so Google cannot understand that you are a self-storage facility with specific services and hours.",
+            title: "Lost Zero-Click Opportunities — ",
+            desc: "Many renters get full answers (including facility recommendations) without ever clicking through to a website or map.",
           },
         ]}
       />

@@ -1043,7 +1043,7 @@ footer {
 }
 .page-hero h1 em { font-style: italic; color: var(--rust); font-weight: 500; }
 
-.page-hero .hero-sub { max-width: 640px; margin-bottom: 36px; }
+.page-hero .hero-sub { max-width: 640px; margin-bottom: 36px; white-space: pre-line; }
 
 .page-hero-note { margin-top: 16px; font-size: 13px; color: var(--muted); }
 

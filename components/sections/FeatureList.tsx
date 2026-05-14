@@ -13,6 +13,7 @@ export interface FeatureListProps {
   headline?: React.ReactNode;
   centeredHeadline?: boolean;
   showDividers?: boolean;
+  bulletTitleSuffix?: string;
   intro?: string;
   items: FeatureItem[];
   id?: string;
@@ -25,16 +26,19 @@ export default function FeatureList({
   headline,
   centeredHeadline = false,
   showDividers = true,
+  bulletTitleSuffix = ".",
   intro,
   items,
   id,
 }: FeatureListProps) {
+  const introWithLineBreaks = intro?.replace(/\\n/g, "\n");
+
   return (
     <RevealSection className={`feature-list ${variant} ${showDividers ? "" : "no-dividers"}`} id={id}>
       <div className="container">
         {label && <div className="section-label">{label}</div>}
         {headline && <h2 className={centeredHeadline ? "section-title centered" : "section-title"}>{headline}</h2>}
-        {intro && <p className="section-intro">{intro}</p>}
+        {introWithLineBreaks && <p className="section-intro" style={{ whiteSpace: "pre-line" }}>{introWithLineBreaks}</p>}
 
         {style === "numbered" ? (
           <div className="feature-rows">
@@ -54,7 +58,7 @@ export default function FeatureList({
               <li key={i} className="feature-bullet">
                 {item.title ? (
                   <>
-                    <strong>{item.title}.</strong>{" "}
+                    <strong>{item.title}{bulletTitleSuffix}</strong>{" "}
                     <span>{item.desc}</span>
                   </>
                 ) : (
