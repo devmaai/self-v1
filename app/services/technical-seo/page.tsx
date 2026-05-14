@@ -60,32 +60,33 @@ export default function TechnicalSeoPage() {
         variant="light"
         style="numbered"
         label="Our approach"
-        headline="Our technical SEO framework."
+        headline="How We Rank Self-Storage Facilities on AEO & GEO"
+        intro="We don’t do generic AI optimization. Every tactic is built specifically for storage operators and focused on one outcome: more qualified move-ins from both Google and AI-powered search."
         items={[
           {
             num: "1",
-            title: "Core Web Vitals and mobile speed",
-            desc: "We tune images, clean up render-blocking scripts, and work with your platform to get Largest Contentful Paint under 2.5 seconds on 4G mobile. Most renters search on a phone. A fast page is a booked page.",
+            title: "Entity Authority & Citation Consistency",
+            desc: "We strengthen your business as a recognizable “entity” across the web with consistent NAP (Name, Address, Phone), high-quality citations, and storage-specific schema markup so AI tools confidently recommend your facility.",
           },
           {
             num: "2",
-            title: "Booking software integration",
-            desc: "We work with the major self-storage platforms (SiteLink, storEDGE, Easy Storage Solutions, Storable, and others) to make sure your unit inventory and pricing data is crawlable and properly structured for search engines.",
+            title: "Answer-First Content Creation",
+            desc: "We build hyper-targeted content that directly answers the questions real renters ask AI- “What size storage unit do I need?”, “Is drive-up access worth it?”, “Climate-controlled vs non-climate controlled”, optimized for both featured snippets and generative AI.",
           },
           {
             num: "3",
-            title: "Structured data for self-storage",
-            desc: "We implement the full schema markup stack: LocalBusiness, Service, FAQPage, BreadcrumbList, and SelfStorage where supported. Proper schema lifts click-through rates from search results and feeds Google's knowledge of your facility.",
+            title: "Structured Data & Schema Mastery",
+            desc: "Advanced schema implementation (including unit-type, pricing, availability signals, and review markup) helps AI engines understand and trust your data more than competitors.",
           },
           {
             num: "4",
-            title: "Crawling and indexing hygiene",
-            desc: "We audit robots.txt, sitemap.xml, canonical tags, pagination, and internal linking. We find and fix orphaned pages, thin duplicate pages, and soft 404 errors that waste Google's crawl budget.",
+            title: "Google Business Profile + Local Signals",
+            desc: "We optimize your GBP for both traditional Map Pack and AI Overviews by maintaining fresh photos, posts, reviews, and accurate attributes (gate hours, climate control, vehicle/RV storage, etc.).",
           },
           {
             num: "5",
-            title: "Site architecture",
-            desc: "We map your pages so that each unit size, each service, and each location has a single canonical URL that earns authority. No more five near-duplicate pages splitting the ranking signals between them.",
+            title: "Multi-Location & Portfolio Optimization",
+            desc: "For operators with 2+ facilities, we prevent cannibalization while building unified authority that lifts every location in AI responses.",
           },
         ]}
       />
