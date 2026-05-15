@@ -12,18 +12,17 @@ export default function Footer() {
               small operators win local search against national chains.
             </p>
           </div>
-
           <div className="footer-col">
             <h5>Services</h5>
             <ul>
-              <li><Link href="/services/local-seo-gbp-optimization">Local SEO &amp; GBP</Link></li>
+              <li><Link href="/services/local-seo-gbp-optimization">Local SEO &amp; Map Pack</Link></li>
+              <li><Link href="/services/Aeo&Geo">AEO &amp; GEO</Link></li>
               <li><Link href="/services/technical-seo">Technical SEO</Link></li>
-              <li><Link href="/services/content-keyword-strategy">Content &amp; Keywords</Link></li>
-              <li><Link href="/services/multi-location-seo">Multi-Location SEO</Link></li>
               <li><Link href="/services/backlinks">Backlinks</Link></li>
+              <li><Link href="/services/content-keyword-strategy">Content Writing</Link></li>
+              <li><Link href="/services/SEO-reporting">SEO Reporting</Link></li>
             </ul>
           </div>
-
           <div className="footer-col">
             <h5>Who We Serve</h5>
             <ul>
@@ -34,7 +33,6 @@ export default function Footer() {
               <li><Link href="/who-we-serve/new-facility-openings">New Facility Openings</Link></li>
             </ul>
           </div>
-
           <div className="footer-col">
             <h5>Company</h5>
             <ul>
@@ -46,7 +44,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
         <div className="footer-bottom">
           <div>© 2026 SelfStorage.help. Operated by MAAI LLC, Wyoming, USA.</div>
           <div>
