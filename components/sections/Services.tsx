@@ -29,7 +29,7 @@ const defaultItems: ServiceItem[] = [
     title: "AEO & GEO",
     desc: "Get cited by ChatGPT, Perplexity, and Google AI Overviews when renters ask about storage. AEO and GEO services built for self storage operators.",
     tags: ["Schema", "CRO", "Geo pages"],
-    href: "/services/content-keyword-strategy",
+    href: "/services/Aeo&Geo",
   },
   {
     num: "03",
@@ -43,7 +43,7 @@ const defaultItems: ServiceItem[] = [
     title: "Backlinks",
     desc: "Earn the links that actually move rankings. Local outreach, digital PR, and resource link building built for self storage operators.",
     tags: ["Reviews", "Reputation"],
-    href: "/services/local-seo-gbp-optimization",
+    href: "/services/backlinks",
   },
   {
     num: "05",
@@ -57,7 +57,7 @@ const defaultItems: ServiceItem[] = [
     title: "SEO Reporting",
     desc: "See exactly what your SEO investment produces. Live dashboards, monthly reports, and metrics that tie directly to bookings.",
     tags: ["GA4", "Monthly"],
-    href: "/contact",
+    href: "/services/SEO-reporting",
   },
 ];
 
