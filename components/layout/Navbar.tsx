@@ -3,12 +3,12 @@ import { useState } from "react";
 import Link from "next/link";
 
 const serviceLinks = [
-  { href: "/services/local-seo-gbp-optimization", label: "Local SEO & GBP" },
+  { href: "/services/local-seo-gbp-optimization", label: "Local SEO & Map Pack" },
   { href: "/services/aeo-geo", label: "AEO & GEO" },
   { href: "/services/technical-seo", label: "Technical SEO" },
   { href: "/services/backlinks", label: "Backlinks" },
-  { href: "/services/content-keyword-strategy", label: "Content & Keywords" },
-  { href: "/services/multi-location-seo", label: "Multi-Location SEO" },
+  { href: "/services/content-keyword-strategy", label: "Content Writing" },
+  { href: "/services/multi-location-seo", label: "SEO Reporting" },
 ];
 
 // const whoWeServeLinks = [

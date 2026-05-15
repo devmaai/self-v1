@@ -43,16 +43,17 @@ const resourceSections = [
 export default function ResourcesPage() {
   return (
     <>
-      <PageHero
+      {/* <PageHero
         eyebrow="Resources"
         headline={<>Everything we know about self-storage SEO, <em>in one place</em>.</>}
         subheadline="Blog posts, deep guides, free tools, and a working glossary, built for operators who want to understand the work, not just outsource it."
-      />
+      /> */}
 
       <CardGrid
         variant="light"
         cols={2}
-        headline="Resources to grow your self storage buisiness."
+        // label="What you will find"
+        headline="Resources to grow your self storage business."
         cards={resourceSections}
       />
 
