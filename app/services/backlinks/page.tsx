@@ -8,18 +8,18 @@ import FAQ from "@/components/sections/FAQ";
 import SimpleCTA from "@/components/sections/SimpleCTA";
 
 export const metadata: Metadata = {
-  title: "Technical SEO for Self-Storage | SelfStorage.help",
+  title: "Generate Backlinks For Your Business",
   description:
-    "We fix the technical foundations of your self-storage website so Google can crawl it, renters can load it instantly, and your booking software converts the traffic you earn.",
+    "",
 };
 
 export default function BacklinksPage() {
   return (
     <>
       <PageHero
-        eyebrow="BackLink"
+        eyebrow="Authority Building · Backlink Service"
         headline="Backlinks That Actually Help Independent Storage Facilities Rank Higher"
-        subheadline={"Most self-storage owners have heard of “backlinks,” but few understand how they work or why they matter. Quality backlinks act like trusted votes of confidence that tell Google and AI engines your facility is a legitimate, authoritative business in your local area.\nWe build hyper-local, relevant backlinks that boost your Google Maps rankings, strengthen your AEO & GEO visibility, and help you compete against national chains and without black-hat tactics or low-quality spam links."}
+        subheadline={"Most self-storage owners have heard of backlinks, but few understand how they work or why they matter. Quality backlinks act like trusted votes of confidence that tell Google and AI engines your facility is a legitimate, authoritative business in your local area.\nWe build hyper-local, relevant backlinks that boost your Google Maps rankings, strengthen your AEO and GEO visibility, and help you compete against national chains without black-hat tactics or low-quality spam links."}
         primaryCta={{ label: "Get Your Free Backlink & Authority Audit", href: "/contact" }}
         note="Specialized for self-storage • Transparent process • Results in 90 days"
       />
