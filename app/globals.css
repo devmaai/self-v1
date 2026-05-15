@@ -721,6 +721,7 @@ section { position: relative; z-index: 2; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
+
   font-weight: 600;
   font-size: 20px;
   color: var(--ink);
@@ -731,8 +732,83 @@ section { position: relative; z-index: 2; }
 .cite-info span { color: rgba(245, 240, 232, 0.7); font-size: 14px; }
 
 /* ============================================================
-   PRICING
+   COMPARISON TABLE (AEO / GEO)
    ============================================================ */
+.comparison-section {
+  padding: 0 0 40px;
+  background: var(--paper);
+}
+
+.comparison-card {
+  border-top: none;
+  padding-top: 0;
+}
+
+.comparison-title {
+  max-width: 840px;
+}
+
+.comparison-intro {
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--line);
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid var(--line);
+  padding: 18px 16px;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.comparison-table thead th {
+  background: var(--paper-warm);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.comparison-table tbody th {
+  width: 16%;
+  text-align: left;
+  background: rgba(236, 228, 211, 0.5);
+  font-weight: 600;
+}
+
+.comparison-table td:nth-child(2) { width: 23%; }
+.comparison-table td:nth-child(3) { width: 31%; }
+.comparison-table td:nth-child(4) { width: 30%; }
+
+@media (max-width: 900px) {
+  .comparison-section {
+    padding: 0 0 28px;
+  }
+
+  .comparison-card {
+    padding-top: 0;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+}
 .pricing { padding: 120px 0; background: var(--paper); }
 
 .pricing-grid {
@@ -1098,7 +1174,8 @@ footer {
 .feature-bullets { list-style: none; }
 .feature-bullet {
   padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+  /* border-bottom: 1px solid var(--line); */
+  border-top: none;
   font-size: 15px;
   display: flex;
   gap: 14px;
@@ -1119,6 +1196,7 @@ footer {
 .feature-list.dark .feature-bullet strong { color: var(--paper); }
 .feature-bullet span { color: var(--muted); }
 .feature-list.dark .feature-bullet span { color: rgba(245, 240, 232, 0.7); }
+
 
 /* ============================================================
    CONTENT BLOCK (prose section: headline + body + optional bullets)

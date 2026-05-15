@@ -13,24 +13,24 @@ export const metadata: Metadata = {
     "We fix the technical foundations of your self-storage website so Google can crawl it, renters can load it instantly, and your booking software converts the traffic you earn.",
 };
 
-export default function TechnicalSeoPage() {
+export default function BacklinksPage() {
   return (
     <>
       <PageHero
-        eyebrow="Technical SEO"
-        headline="Rank on AEO & GEO: Get Found in AI Answers, Not Just Google Search"
-        subheadline={"SEO is not dead. It has changed. When potential renters ask AI tools like Google Gemini, ChatGPT, or Perplexity “best climate-controlled storage near me” or “cheapest 10x10 storage units near me,” your facility needs to be the one they recommend and not your competitors.\nWe help self-storage operators dominate both traditional local search and the new Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) landscape."}
-        primaryCta={{ label: "Get Your Free AEO + GEO Visibility Audit", href: "/contact" }}
-        note="100% focused on self-storage occupancy growth."
+        eyebrow="BackLink"
+        headline="Backlinks That Actually Help Independent Storage Facilities Rank Higher"
+        subheadline={"Most self-storage owners have heard of “backlinks,” but few understand how they work or why they matter. Quality backlinks act like trusted votes of confidence that tell Google and AI engines your facility is a legitimate, authoritative business in your local area.\nWe build hyper-local, relevant backlinks that boost your Google Maps rankings, strengthen your AEO & GEO visibility, and help you compete against national chains and without black-hat tactics or low-quality spam links."}
+        primaryCta={{ label: "Get Your Free Backlink & Authority Audit", href: "/contact" }}
+        note="Specialized for self-storage • Transparent process • Results in 90 days"
       />
 
       <FeatureList
         variant="warm"
         style="bullet"
         label="The problem"
-        headline="AI is changing how renters find self storage units. Is your unit showing up?"
+        headline="Without Strong Backlinks, You’re Fighting an Uphill Battle"
         bulletTitleSuffix=""
-        intro={"Renters are no longer just typing into Google. They’re asking AI assistants complex, conversational questions. If your facility isn’t optimized for these new “answer engines,” you’re losing move-ins to competitors, even if you rank decently on traditional Google Maps.\nHere’s what’s happening to most independent operators:"}
+        intro={"Even with a great Google Business Profile and optimized website, many independent operators stay stuck on page 2 because they lack authority signals."}
         items={[
           {
             title: "Missing from AI Answers — ",
