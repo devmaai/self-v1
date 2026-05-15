@@ -6,6 +6,7 @@ export interface SimpleCTAProps {
   body?: string;
   ctaLabel: string;
   ctaHref?: string;
+  note?: string;
 }
 
 export default function SimpleCTA({
@@ -13,6 +14,7 @@ export default function SimpleCTA({
   body,
   ctaLabel,
   ctaHref = "/contact",
+  note,
 }: SimpleCTAProps) {
   return (
     <RevealSection className="simple-cta">
@@ -25,6 +27,7 @@ export default function SimpleCTA({
             <path d="M1 7H17M17 7L11 1M17 7L11 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </Link>
+        {note && <p className="simple-cta-note">{note}</p>}
       </div>
     </RevealSection>
   );

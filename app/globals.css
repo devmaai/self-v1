@@ -1295,6 +1295,7 @@ footer {
 }
 .simple-cta h2 em { font-style: italic; color: var(--ochre); }
 .simple-cta p { font-size: 18px; margin-bottom: 36px; opacity: 0.9; max-width: 560px; }
+.simple-cta-note { font-size: 14px; margin-top: 16px; opacity: 0.75; max-width: 560px; }
 
 .btn-light {
   display: inline-flex;

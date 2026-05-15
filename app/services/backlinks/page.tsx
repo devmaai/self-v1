@@ -142,121 +142,149 @@ export default function BacklinksPage() {
           },
         ]}
       />
-
+      <FeatureList
+        variant="warm"
+        style="bullet"
+        label="Proof"
+        headline="A backlink program working in the data"
+        intro="The Google Search Console screenshot opposite shows a real client's authority growth after 90 days of our hyper-local backlink campaign. Impressions, clicks, and average position all moved together, which is the signature of a backlink program working correctly rather than ranking tricks that fade."
+        items={[
+          {
+            title: "",
+            desc: "+184% Impressions in 90 days",
+          },
+          {
+            title: "",
+            desc: "23 New referring domains",
+          },
+          {
+            title: "",
+            desc: "+6.4 Average position improvement",
+          },
+        ]}
+      />     
       <FeatureList
         variant="light"
         style="numbered"
         showDividers={false}
-        label="Our approach"
-        headline="How We Rank Self-Storage Facilities on AEO & GEO"
-        intro="We don’t do generic AI optimization. Every tactic is built specifically for storage operators and focused on one outcome: more qualified move-ins from both Google and AI-powered search."
+        label="Our Backlink Strategy"
+        headline="How we build high-quality, hyper-local backlinks."
+        intro="We do not do generic link building. Every backlink we pursue is relevant to the self-storage industry and tied to your specific local market. Here are the five plays we run in parallel for every client."
         items={[
           {
             num: "1",
-            title: "Entity Authority & Citation Consistency",
-            desc: "We strengthen your business as a recognizable “entity” across the web with consistent NAP (Name, Address, Phone), high-quality citations, and storage-specific schema markup so AI tools confidently recommend your facility.",
+            title: "Local partnership links",
+            desc: "We help you earn links from moving companies, real estate agents, apartment complexes, and local businesses that naturally refer storage customers. Most of these partners are happy to link to a trusted local operator.",
           },
           {
             num: "2",
-            title: "Answer-First Content Creation",
-            desc: "We build hyper-targeted content that directly answers the questions real renters ask AI- “What size storage unit do I need?”, “Is drive-up access worth it?”, “Climate-controlled vs non-climate controlled”, optimized for both featured snippets and generative AI.",
+            title: "Industry and niche publications",
+            desc: "Guest posts and contributions to self-storage trade publications, moving industry sites, and local news outlets that actually get read by your target audience and carry real ranking weight.",
           },
           {
             num: "3",
-            title: "Structured Data & Schema Mastery",
-            desc: "Advanced schema implementation (including unit-type, pricing, availability signals, and review markup) helps AI engines understand and trust your data more than competitors.",
+            title: "Digital PR and brand mentions",
+            desc: "We create link-worthy content like guides, comparisons, and moving checklists that naturally attract editorial links and brand mentions. The kind of content other sites genuinely want to reference.",
           },
           {
             num: "4",
-            title: "Google Business Profile + Local Signals",
-            desc: "We optimize your GBP for both traditional Map Pack and AI Overviews by maintaining fresh photos, posts, reviews, and accurate attributes (gate hours, climate control, vehicle/RV storage, etc.).",
+            title: "Strategic directory and citation cleanup",
+            desc: "We go beyond basic directories and secure high-value, relevant listings while removing or disavowing harmful ones that may be dragging your authority down without your knowledge.",
           },
           {
             num: "5",
-            title: "Multi-Location & Portfolio Optimization",
-            desc: "For operators with 2+ facilities, we prevent cannibalization while building unified authority that lifts every location in AI responses.",
+            title: "AEO and GEO synergy",
+            desc: "Backlinks that support both traditional Google rankings and AI search visibility by building entity authority and topical relevance around storage-specific topics across the web.",
           },
         ]}
       />
-
-      <AeoGeoComparisonTable />
-
-      <ContentBlock
-        variant="dark"
-        label="The storage edge"
-        headline="Most generalist SEO teams have never seen a storEDGE backend."
-        body="We work with the software the self-storage industry actually uses. That means we know where to look when a booking page fails to render for Googlebot, and we know which platform settings change what search engines see. We also understand the difference between a unit availability page and a landing page, and we structure both for the searches they are meant to capture."
+      <FeatureList
+        variant="warm"
+        style="numbered"
+        label="How we deliver"
+        headline="Ninety days from audit to authority."
+        intro="A real backlink program does not move overnight. It builds momentum across weeks. Here is the schedule we run for every storage client."
+        items={[
+          {
+            num: "Week 01",
+            title: "Backlink and authority audit",
+            desc: "We map every existing link pointing at your site, score them for quality and relevance, and flag toxic ones for cleanup. You receive a written baseline assessment.",
+          },
+          {
+            num: "Week 02",
+            title: "Local community and partner mapping",
+            desc: "We identify the specific Facebook groups, subreddits, real estate forums, and local partners that match your service area and tenant demographics.",
+          },
+          {
+            num: "Week 03",
+            title: "Outreach and content begins",
+            desc: "Partnership outreach starts, link-worthy content goes into production, and the first community placements begin to land. Toxic link cleanup runs in parallel.",
+          },
+          {
+            num: "Month 02",
+            title: "First wave of placements",
+            desc: "Eight to twelve new backlinks land in month two, mostly from local partners, community sources, and initial guest contributions. Authority signals begin to register in Google Search Console.",
+          },
+          {
+            num: "Month 03",
+            title: "Compounding authority",
+            desc: "The full first-quarter backlink stack lands. Map pack rankings, organic traffic, and AI mentions all begin moving together. Geo-grid ranking reports show measurable lift.",
+          },
+        ]}
       />
-
       <Testimonial
-        quote={
-          <>
-            Our booking pages were loading in 6 to 8 seconds on mobile. After the technical fixes,
-            page speed dropped to under 2 seconds and our reservation completion rate jumped by 31%.
-          </>
-        }
-        avatarInitials="TX"
-        name="Multi-location operator, Texas"
-      />
+              quote={
+                <>
+                  Other agencies sent me lists of links from sites I had never heard of. 
+                  SelfStorage.help built relationships with actual local movers and apartment 
+                  communities in my city. Within three months I started seeing my facility 
+                  recommended in local Facebook groups without me asking.
+                </>
+              }
+              avatarInitials="DM"
+              name="— Diana Morales · Owner, Single-Facility Operator, Arizona"
+              detail="+23 New referring domains in 90 days"
+            />
+
+      
 
       <FAQ
         label="Common questions"
         headline={<>Things owners <em>usually ask</em>.</>}
         items={[
           {
-            q: "What exactly are AEO and GEO, and why should a self-storage owner care?",
-            a: "AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) are the next evolution of search. While traditional SEO focuses on ranking in Google’s blue links and Map Pack, AEO and GEO focus on getting your facility recommended directly in AI-powered answers from tools like Google Gemini, ChatGPT, Perplexity, and others.For self-storage owners, this matters because more renters are now asking conversational questions like “best climate-controlled storage near me” or “should I get drive-up access in [city]?” If your facility isn’t optimized, AI tools will recommend your competitors instead, even if you have good traditional rankings",
+            q: "Are these backlinks safe? I have heard horror stories.",
+            a: "Every link we build is editorially earned from a relevant, real source. We do not use private blog networks, link farms, or paid placements that violate Google's guidelines. The horror stories you have heard come from agencies that take shortcuts. Our process is the opposite of that, which is also why it takes 90 days instead of one.",
           },
           {
-            q: " How is AEO & GEO different from regular Local SEO or Google Business Profile optimization?",
-            a: "Regular Local SEO helps you rank in the Google Map Pack and organic search. AEO & GEO go further by optimizing your content, schema, entity strength, and citations so AI engines understand, trust, and actively recommend your storage facility in their generated responses.We combine both: strong traditional Local SEO + advanced AEO/GEO tactics. This ensures you win in both the current Google Maps results and the emerging AI answer engines.",
+            q: "How many backlinks will I get?",
+            a: "In a typical 90-day engagement we build between 18 and 30 high-quality backlinks from sources directly relevant to your service area. Volume varies based on your market, your facility's brand history, and what is available in your specific local community. Quality is the priority, never raw count.",
           },
           {
-            q: " How long does it take to see results with AEO and GEO for a self-storage facility?",
-            a: "You can expect to see initial improvements in traditional rankings and content performance within the first 30–60 days. Meaningful visibility in AI-generated answers usually appears between 60–120 days, as AI models need consistent, authoritative signals over time.Many of our clients see compounding results after 90 days, with increased move-ins coming from both Google Maps and AI-driven traffic.",
+            q: "Will this help with AI search like ChatGPT and Perplexity?",
+            a: "Yes. AI engines weigh entity authority heavily, which is built through brand mentions and links across trusted sources. Our community-sourced approach builds exactly the kind of citation pattern AI engines look for. This is what AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) actually require.",
           },
           {
-            q: "Do I need to rebuild my entire website to benefit from AEO & GEO?",
-            a: "No. While a well-structured, fast-loading website helps, you don’t necessarily need a full rebuild. We work with your existing site (WordPress, custom CMS, or storage-specific platforms) and focus on strategic improvements such as adding proper schema markup, creating targeted answer-focused content, optimizing location pages, and strengthening your overall entity authority.We tailor the approach based on your current website’s condition during the free audit.",
+            q: "What if I already have backlinks from a previous agency?",
+            a: "The first thing we do is audit your existing backlink profile. If you have toxic or low-quality links, we either pursue removal or disavow them through Google Search Console. Cleanup is part of the engagement and often delivers ranking lift before any new links are built.",
           },
           {
-            q: "Will optimizing for AEO & GEO affect my Google Maps ranking?",
-            a: "Yes,  positively. The strategies we use for AEO and GEO (structured data, high-quality content, review signals, citation consistency, and entity building) are the same foundational elements that also improve your traditional Google Business Profile and Map Pack rankings.Most clients experience a lift in both AI visibility and Map Pack position because the signals reinforce each other.",
+            q: "Can I see the actual links you build?",
+            a: "Every link we earn is reported in your monthly summary with the source, the page it sits on, the anchor text, and a quality score. Total transparency. You can verify each one yourself in Google Search Console as it gets indexed.",
           },
           {
-            q: " Is AEO & GEO just a temporary trend, or is it here to stay?",
-            a: "It’s here to stay. AI-powered search is rapidly growing and changing how people discover local businesses. Google is increasingly showing AI Overviews, and tools like ChatGPT and Perplexity are becoming primary search interfaces for many users. Facilities that optimize early for both traditional search and generative AI will have a significant advantage over those who don’t.We treat AEO & GEO as a long-term strategy that builds lasting authority for your storage business.",
+            q: "Will my rankings drop if I stop the service?",
+            a: "No. The backlinks we build are permanent placements on real sites and continue to provide authority signals long after the engagement ends. Some operators stay on for ongoing momentum, others step down to a maintenance plan after the first six months once the foundation is set.",
           },
         ]}
       />
-      <FeatureList
-        variant="light"
-        style="bullet"
-        showDividers={false}
-        headline="Why Choose Us for AEO & GEO"
-        items={[
-          {
-            title: "",
-            desc: "100% focused on self-storage (we don’t work with restaurants, lawyers, or e-commerce)",
-          },
-          {
-            title: "",
-            desc: "Deep understanding of storage-specific renter questions and unit-level intent",
-          },
-          {
-            title: "",
-            desc: "Combined expertise in Local SEO, GBP mastery, and next-generation AI optimization",
-          },
-          {
-            title: "",
-            desc: "Transparent month-to-month pricing after the initial foundation phase",
-          },
-        ]}
-      />
+      
       <SimpleCTA
-        headline="Ready to Rank in Both Google Maps and AI Answers?"
-        body="Get a free audit that shows your current visibility on traditional search and emerging AI engines. We’ll identify exactly why you’re missing opportunities and how to fix it."
-        ctaLabel="Claim Your Free AEO + GEO Audit"
+        headline="Find out what your current backlink profile looks like today. Free authority audit."
+        body="Drop your facility website below and we will send a full backlink audit showing your current authority score, your toxic links, and the local communities where you should be earning links instead."
+        ctaLabel=" Send my authority audit"
+        note="We respond within two business days. Your details stay with us."
+        ctaHref="/contact"
       />
     </>
   );
