@@ -52,8 +52,7 @@ export default function ResourcesPage() {
       <CardGrid
         variant="light"
         cols={2}
-        label="What you will find"
-        headline="Free guidance for self-storage operators."
+        headline="Resources to grow your self storage buisiness."
         cards={resourceSections}
       />
 

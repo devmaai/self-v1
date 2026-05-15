@@ -11,13 +11,13 @@ const serviceLinks = [
   { href: "/services/multi-location-seo", label: "Multi-Location SEO" },
 ];
 
-const whoWeServeLinks = [
-  { href: "/who-we-serve/independent-facility-owners", label: "Independent Owners" },
-  { href: "/who-we-serve/multi-location-operators", label: "Multi-Location Operators" },
-  { href: "/who-we-serve/climate-controlled-facilities", label: "Climate-Controlled" },
-  { href: "/who-we-serve/vehicle-rv-boat-storage", label: "Vehicle, RV & Boat" },
-  { href: "/who-we-serve/new-facility-openings", label: "New Facility Openings" },
-];
+// const whoWeServeLinks = [
+//   { href: "/who-we-serve/independent-facility-owners", label: "Independent Owners" },
+//   { href: "/who-we-serve/multi-location-operators", label: "Multi-Location Operators" },
+//   { href: "/who-we-serve/climate-controlled-facilities", label: "Climate-Controlled" },
+//   { href: "/who-we-serve/vehicle-rv-boat-storage", label: "Vehicle, RV & Boat" },
+//   { href: "/who-we-serve/new-facility-openings", label: "New Facility Openings" },
+// ];
 
 const ChevronSvg = () => (
   <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true">
@@ -49,7 +49,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="nav-group">
+          {/* <div className="nav-group">
             <Link href="/who-we-serve/independent-facility-owners" className="nav-group-trigger" onClick={close}>
               Who We Serve <ChevronSvg />
             </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <Link key={href} href={href} onClick={close}>{label}</Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
           <Link href="/case-studies" onClick={close}>Case Studies</Link>
           <Link href="/resources" onClick={close}>Resources</Link>
