@@ -20,6 +20,7 @@ export default function Footer() {
               <li><Link href="/services/technical-seo">Technical SEO</Link></li>
               <li><Link href="/services/content-keyword-strategy">Content &amp; Keywords</Link></li>
               <li><Link href="/services/multi-location-seo">Multi-Location SEO</Link></li>
+              <li><Link href="/services/backlinks">Backlinks</Link></li>
             </ul>
           </div>
 
