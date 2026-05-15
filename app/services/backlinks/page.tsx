@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
+import MarqueeBanner from "@/components/sections/MarqueeBanner";
 import FeatureList from "@/components/sections/FeatureList";
 import AeoGeoComparisonTable from "@/components/sections/AeoGeoComparisonTable";
 import ContentBlock from "@/components/sections/ContentBlock";
+import CardGrid from "@/components/sections/CardGrid";
 import Testimonial from "@/components/sections/Testimonial";
 import FAQ from "@/components/sections/FAQ";
 import SimpleCTA from "@/components/sections/SimpleCTA";
@@ -24,33 +26,119 @@ export default function BacklinksPage() {
         note="Specialized for self-storage • Transparent process • Results in 90 days"
       />
 
+      <MarqueeBanner
+        items={[
+          "Hyper-local backlinks",
+          "No black-hat tactics",
+          "Storage-specific publications",
+          "Community-sourced placements",
+          "Built for AEO and GEO",
+          "Transparent reporting",
+        ]}
+      />
+
       <FeatureList
-        variant="warm"
-        style="bullet"
+        variant="light"
+        style="numbered"
         label="The problem"
         headline="Without Strong Backlinks, You’re Fighting an Uphill Battle"
         bulletTitleSuffix=""
         intro={"Even with a great Google Business Profile and optimized website, many independent operators stay stuck on page 2 because they lack authority signals."}
         items={[
           {
-            title: "Missing from AI Answers — ",
-            desc: "When someone asks “Is climate-controlled storage worth it near my home?”, your facility is never mentioned.",
+            num: "1",
+            title: "Invisible to Google ",
+            desc: "Your site has very few external websites linking to it, so Google does not see you as an authoritative local business worth ranking above your competition.",
           },
           {
-            title: "Outranked by National Chains — ",
-            desc: "Big brands with strong entity authority and structured content dominate AI-generated recommendations.",
+            num: "2",
+            title: "Outranked by national chains ",
+            desc: "Larger storage brands have hundreds of strong backlinks pointing at them. Without your own, breaking into the top three of the map pack is extremely difficult.",
           },
           {
-            title: "Generic Content Fails AI — ",
-            desc: "Stock photos, thin descriptions, and unoptimized pages are ignored by AI models that need clear, authoritative, structured information.",
+            num: "3",
+            title: "Weak AI visibility ",
+            desc: "AI engines rely heavily on brand authority and mentions across the web. Without meaningful backlinks, your facility is rarely recommended in AI-generated answers.",
           },
           {
-            title: "No Control Over the Narrative — ",
-            desc: "AI tools synthesize answers from multiple sources. If your data is inconsistent or outdated, you lose influence over what renters hear.",
+            num: "4",
+            title: "Wasted effort on other SEO ",
+            desc: "You optimize your GBP and create content, but without backlinks Google still gives more weight to competitors who carry stronger votes of confidence.",
           },
           {
-            title: "Lost Zero-Click Opportunities — ",
-            desc: "Many renters get full answers (including facility recommendations) without ever clicking through to a website or map.",
+            num: "5",
+            title: "Risky or ineffective links ",
+            desc: "Many owners end up with spammy, irrelevant backlinks from past agencies or shortcuts. The wrong links can actually hurt your rankings instead of helping them.",
+          },
+          {
+            num: "6",
+            title: "The fix ",
+            desc: "The next section shows how we earn backlinks for storage operators using channels most agencies do not even know exist.",
+          },
+        ]}
+      />
+
+      <ContentBlock
+        variant="warm"
+        label="What makes us different"
+        headline="We source links from the communities your tenants already live in."
+        body={
+          <>
+            <p>
+              Generic link-building chases the same exhausted directories and guest post sites
+              every other agency uses. We do the opposite. Our placements come from real local
+              communities where your future tenants are already asking where to store their things.
+            </p>
+            <p>
+              When someone is about to move, they do not start on Google. They start in a local
+              Facebook moms group, in a city subreddit, in a real estate forum, or in a
+              neighborhood community board. They ask where to find a clean storage unit, who is
+              reliable, who has climate control near a specific neighborhood.
+            </p>
+            <p>
+              Those mentions and recommendations turn into the most powerful kind of backlink
+              there is: a link earned in context, from a place where the person already trusts the
+              recommendation. Google reads these signals strongly. AI engines weight them even
+              more heavily, because they reflect real human authority rather than manufactured
+              links.
+            </p>
+            <p>
+              Most SEO agencies do not work this channel because it is slow, manual, and requires
+              understanding the community you are operating in. We do because the links you earn
+              here are the ones that actually move rankings for storage operators.
+            </p>
+            <div className="callout-box">
+              The average self-storage backlink profile we audit has zero links from local
+              community sources. We typically build between 18 and 30 in the first 90 days alone.
+            </div>
+          </>
+        }
+      />
+
+      <CardGrid
+        variant="light"
+        cols={4}
+        label="The four community channels we work"
+        cards={[
+          {
+            eyebrow: "City moms groups · Neighborhood watch · Buy nothing groups",
+            title: "Local Facebook Groups",
+            body: "City-specific moms groups, neighborhood groups, and “what’s happening in” groups where moves and storage come up daily.",
+          },
+          {
+            eyebrow: "r/dallas · r/moving · r/declutter",
+            title: "City and Lifestyle Subreddits",
+            body: "r/yourcity, r/AskYourCity, r/moving, and storage-adjacent subs where recommendations get upvoted and indexed.",
+          },
+          {
+            eyebrow: "BiggerPockets · Local Realtor blogs · Landlord forums",
+            title: "American Real Estate Forums",
+            body: "BiggerPockets, real estate investor forums, and local Realtor association blogs where moves trigger storage referrals.",
+          },
+          {
+            eyebrow: "Moving companies · Apartment complexes · Chamber of commerce",
+            title: "Local Partner and Business Networks",
+            body: "Movers, real estate agents, apartment complexes, and local business directories that already refer storage customers offline.",
           },
         ]}
       />
