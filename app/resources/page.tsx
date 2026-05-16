@@ -63,6 +63,7 @@ export default function ResourcesPage() {
         placeholder="your@email.com"
         ctaLabel="Subscribe"
         note="No spam. One email per month."
+        inputType="email"
       />
     </>
   );

@@ -9,6 +9,7 @@ export interface CTABannerProps {
   placeholder?: string;
   ctaLabel?: string;
   note?: string;
+  inputType?: "email" | "url";
 }
 
 export default function CTABanner({
@@ -21,14 +22,53 @@ export default function CTABanner({
   placeholder = "yourfacility.com",
   ctaLabel = "Send my audit",
   note = "We respond within two business days. Your details stay with us.",
+  inputType = "url",
 }: CTABannerProps) {
   const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setSent(false), 2800);
+    const form = e.target as HTMLFormElement;
+    const value = (form.elements.namedItem("site") as HTMLInputElement).value;
+
+    setError(null);
+
+    // Email keeps the simple native-validated flow.
+    if (inputType === "email") {
+      setSent(true);
+      form.reset();
+      setTimeout(() => setSent(false), 2800);
+      return;
+    }
+
+    setBusy(true);
+    try {
+      const res = await fetch("/api/verify-site", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ site: value }),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        setError(
+          data.error === "unreachable"
+            ? "We couldn't reach that site. Double-check the address and try again."
+            : "That doesn't look like a valid website address."
+        );
+        return;
+      }
+
+      setSent(true);
+      form.reset();
+      setTimeout(() => setSent(false), 2800);
+    } catch {
+      setError("Something went wrong. Please try again in a moment.");
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -38,16 +78,28 @@ export default function CTABanner({
         <p>{subtext}</p>
 
         <form className="audit-form" onSubmit={handleSubmit}>
-          <input type="url" placeholder={placeholder} required aria-label="Website URL" />
+          <input
+            name="site"
+            type={inputType === "email" ? "email" : "text"}
+            inputMode={inputType}
+            autoComplete={inputType}
+            placeholder={placeholder}
+            required
+            aria-label={inputType === "email" ? "Email address" : "Website URL"}
+            onChange={() => error && setError(null)}
+          />
           <button
             type="submit"
+            disabled={busy}
             style={sent ? { background: "#2d5a3d" } : undefined}
           >
-            {sent ? "Sent ✓" : ctaLabel}
+            {sent ? "Sent ✓" : busy ? "Checking…" : ctaLabel}
           </button>
         </form>
 
-        <p className="form-note">{note}</p>
+        <p className="form-note" style={error ? { color: "#ffd9cc" } : undefined}>
+          {error ?? note}
+        </p>
       </div>
     </RevealSection>
   );
