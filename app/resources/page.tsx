@@ -58,8 +58,8 @@ export default function ResourcesPage() {
       />
 
       <CTABanner
-        headline={<>One practical email per month. <em>No fluff.</em></>}
-        subtext="Self-storage marketing tactics, algorithm updates, and case study summaries. Built for operators. Unsubscribe anytime."
+        headline={<>Get your <em>free</em> SEO audit</>}
+        subtext=""
         placeholder="your@email.com"
         ctaLabel="Subscribe"
         note="No spam. One email per month."

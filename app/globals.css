@@ -391,6 +391,11 @@ nav {
   color: var(--rust);
   font-style: normal;
 }
+@media (max-width: 768px) {
+  .marquee-inner {
+    animation-duration: 20s;
+  }
+}
 
 /* ============================================================
    SECTION SHARED
