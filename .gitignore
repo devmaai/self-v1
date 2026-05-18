@@ -28,6 +28,12 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
+
+# tinacms (generated)
+/public/admin
+tina/__generated__/db
+tina/tina-lock.json
 
 # vercel
 .vercel

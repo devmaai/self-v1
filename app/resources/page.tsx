@@ -14,8 +14,8 @@ const resourceSections = [
     eyebrow: "Blog",
     title: "Weekly posts on self-storage SEO",
     body: "Google algorithm updates, local SEO tactics, self-storage marketing trends, and operator case studies. Published weekly.",
-    href: "/contact",
-    ctaLabel: "Coming soon",
+    href: "/blog",
+    ctaLabel: "Read the blog",
   },
   {
     eyebrow: "Guides",

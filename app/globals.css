@@ -1554,3 +1554,81 @@ footer {
     transition: none;
   }
 }
+
+/* ============================================================
+   BLOG ARTICLE (single long-form post page)
+   ============================================================ */
+.blog-article {
+  background: var(--paper);
+  padding: 140px 0 120px;
+}
+.blog-article .container { max-width: 760px; }
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.blog-back:hover { color: var(--rust); }
+
+.blog-article-meta {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.blog-article h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.blog-article-excerpt {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-article-body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+.blog-article-body p { margin: 0 0 1.2em; }
+.blog-article-body h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--ink);
+  margin: 1.8em 0 0.5em;
+}
+.blog-article-body h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--ink);
+  margin: 1.6em 0 0.5em;
+}
+.blog-article-body a { color: var(--rust); text-decoration: underline; }
+.blog-article-body ul,
+.blog-article-body ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+.blog-article-body li { margin-bottom: 0.5em; }
+.blog-article-body blockquote {
+  margin: 1.5em 0;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--ochre);
+  color: var(--muted);
+  font-style: italic;
+}
+.blog-article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5em 0; }
+.blog-article-body code {
+  font-size: 0.9em;
+  background: var(--paper-warm);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

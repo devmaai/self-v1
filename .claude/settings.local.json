@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.storeazy.com)",
+      "WebFetch(domain:www.storagepug.com)"
+    ]
+  }
+}
