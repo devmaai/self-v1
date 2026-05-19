@@ -33,7 +33,8 @@ yarn-error.log*
 # tinacms (generated)
 /public/admin
 tina/__generated__/db
-tina/tina-lock.json
+# NOTE: tina/tina-lock.json MUST be committed — TinaCloud needs it to
+# index the schema and branches. Do not add it to .gitignore.
 
 # vercel
 .vercel
