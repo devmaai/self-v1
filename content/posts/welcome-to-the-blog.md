@@ -7,7 +7,7 @@ published: true
 
 This is the first post on the SelfStorage.help blog. Every week we publish something practical for self-storage operators: a Google algorithm change worth knowing about, a local SEO tactic you can run yourself, or an operator case study with the numbers attached.
 
-## What you can expect
+## What you can expect in this
 
 Posts here are written for owners and managers, not marketers. If a topic involves the map pack, drive-up visibility, or lease-up timing, we explain why it matters to occupancy before we explain the tactic.
 
