@@ -56,7 +56,7 @@ export default function FAQ({
   return (
     <RevealSection className="faq" id="faq">
       <div className="container">
-        <div className="section-label">{label}</div>
+        {label && <div className="section-label">{label}</div>}
         <h2 className="section-title">{headline}</h2>
 
         <div className="faq-list">

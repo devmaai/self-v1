@@ -895,7 +895,7 @@ section { position: relative; z-index: 2; }
     font-size: 14px;
   }
 }
-.pricing { padding: 80px 0; background: var(--paper); }
+.pricing { padding: 80px 0; background: var(--paper-warm); }
 
 .pricing-grid {
   display: grid;
@@ -995,7 +995,7 @@ section { position: relative; z-index: 2; }
 /* ============================================================
    FAQ
    ============================================================ */
-.faq { padding: 80px 0; background: var(--paper-warm); }
+.faq { padding: 80px 0; background: var(--paper); }
 
 .faq-list { max-width: 840px; margin-top: 48px; }
 

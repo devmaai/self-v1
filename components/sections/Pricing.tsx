@@ -71,7 +71,7 @@ const defaultPlans: PricePlan[] = [
 ];
 
 export default function Pricing({
-  label = "Engagement tiers",
+  // label = "Engagement tiers",
   headline = (
     <>
       Pricing that scales with your <em>facility count</em>.
@@ -83,7 +83,7 @@ export default function Pricing({
   return (
     <RevealSection className="pricing" id="pricing">
       <div className="container">
-        <div className="section-label">{label}</div>
+        {/* <div className="section-label">{label}</div> */}
         <h2 className="section-title">{headline}</h2>
         <p className="section-intro">{intro}</p>
 
