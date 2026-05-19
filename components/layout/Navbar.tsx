@@ -14,7 +14,7 @@ const serviceLinks = [
 // const whoWeServeLinks = [
 //   { href: "/who-we-serve/independent-facility-owners", label: "Independent Owners" },
 //   { href: "/who-we-serve/multi-location-operators", label: "Multi-Location Operators" },
-//   { href: "/who-we-serve/climate-controlled-facilities", label: "Climate-Controlled" },
+//   { href: "/who-we-serve/storage-warehouse", label: "Storage Warehouse" },
 //   { href: "/who-we-serve/vehicle-rv-boat-storage", label: "Vehicle, RV & Boat" },
 //   { href: "/who-we-serve/new-facility-openings", label: "New Facility Openings" },
 // ];

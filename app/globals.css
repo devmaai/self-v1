@@ -290,6 +290,24 @@ nav {
   background: var(--ink);
 }
 
+/* Storage Warehouse page: black buttons, yellow on hover */
+.page-storage-warehouse .btn-primary {
+  background: var(--ochre);
+  color: var(--ink);
+}
+.page-storage-warehouse .btn-primary:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.page-storage-warehouse .page-hero .btn-primary {
+  background: var(--rust);
+  color: var(--paper);
+}
+.page-storage-warehouse .page-hero .btn-primary:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .btn-secondary {
   color: var(--ink);
   padding: 17px 4px;
@@ -677,7 +695,6 @@ section { position: relative; z-index: 2; }
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
-  border-top: 1px solid var(--line);
   font-size: 12px;
   color: var(--muted);
   text-transform: uppercase;

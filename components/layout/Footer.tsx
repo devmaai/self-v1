@@ -28,7 +28,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/who-we-serve/independent-facility-owners">Independent Owners</Link></li>
               <li><Link href="/who-we-serve/multi-location-operators">Multi-Location Operators</Link></li>
-              <li><Link href="/who-we-serve/climate-controlled-facilities">Climate-Controlled</Link></li>
+              <li><Link href="/who-we-serve/storage-warehouse">Storage Warehouse</Link></li>
               <li><Link href="/who-we-serve/vehicle-rv-boat-storage">Vehicle, RV &amp; Boat</Link></li>
               <li><Link href="/who-we-serve/new-facility-openings">New Facility Openings</Link></li>
             </ul>

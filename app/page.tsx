@@ -21,9 +21,9 @@ export default function HomePage() {
 
       <CardGrid
         variant="warm"
-        cols={4}
+        cols={3}
         label="Explore our services"
-        headline={<>Four programs. One outcome: <em>more move-ins</em>.</>}
+        headline={<>Three programs. One outcome: <em>More Move-ins</em>.</>}
         cards={[
           {
             eyebrow: "Local Search",
@@ -76,52 +76,52 @@ export default function HomePage() {
       <CardGrid
         variant="light"
         cols={3}
-        label="Who we work with"
-        headline={<>Built for operators who <em>run the business themselves</em>.</>}
+        // label="Who we work with"
+        headline={<>Built for operators who <em>run the Business themselves</em>.</>}
         intro="From single-facility independents to regional portfolios, every program is tailored to how you actually operate."
         cards={[
           {
-            eyebrow: "Single Facilities",
+            // eyebrow: "Single Facilities",
             title: "Independent Owners",
             body: "Fill units without hiring a marketing team or learning SEO yourself.",
             href: "/who-we-serve/independent-facility-owners",
             ctaLabel: "Learn more",
           },
           {
-            eyebrow: "Portfolio Growth",
+            // eyebrow: "Portfolio Growth",
             title: "Multi-Location Operators",
             body: "Consistent local visibility across every facility, with portfolio-level reporting.",
             href: "/who-we-serve/multi-location-operators",
             ctaLabel: "Learn more",
           },
           {
-            eyebrow: "Premium Units",
-            title: "Climate-Controlled Facilities",
-            body: "Rank for the renters who search specifically for temperature-controlled storage.",
-            href: "/who-we-serve/climate-controlled-facilities",
+            // eyebrow: "Premium Units",
+            title: "Storage Warehouse",
+            body: "Warehouse facilities provide excellent security, 24/7 access, and flexible space options.",
+            href: "/who-we-serve/storage-warehouse",
             ctaLabel: "Learn more",
           },
           {
-            eyebrow: "Specialty Storage",
-            title: "Vehicle, RV & Boat Storage",
-            body: "Capture the larger trade area that RV and boat storage renters search from.",
+            // eyebrow: "Specialty Storage",
+            title: "Containers",
+            body: "Hiring a storage container is often a cheaper storage option than placing items in a warehouse unit.",
             href: "/who-we-serve/vehicle-rv-boat-storage",
             ctaLabel: "Learn more",
           },
           {
-            eyebrow: "New Development",
-            title: "New Facility Openings",
-            body: "Start your lease-up from a position of visibility, not catch-up.",
+            // eyebrow: "New Development",
+            title: "Furniture depositories ",
+            body: "The moving firm takes care of transport. Storage prices may be competitive.",
             href: "/who-we-serve/new-facility-openings",
             ctaLabel: "Learn more",
           },
-          {
-            eyebrow: "See Results",
-            title: "Case Studies",
-            body: "Real facilities, real occupancy gains. See what we delivered for operators like you.",
-            href: "/case-studies",
-            ctaLabel: "Browse case studies",
-          },
+          // {
+          //   eyebrow: "See Results",
+          //   title: "Case Studies",
+          //   body: "Real facilities, real occupancy gains. See what we delivered for operators like you.",
+          //   href: "/case-studies",
+          //   ctaLabel: "Browse case studies",
+          // },
         ]}
       />
 
