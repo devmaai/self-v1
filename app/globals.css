@@ -126,7 +126,7 @@ nav {
 .nav-links a:hover { color: var(--rust); }
 
 .nav-cta {
-  background: var(--ink);
+  background: var(--rust);
   color: var(--paper) !important;
   padding: 11px 22px;
   border-radius: 2px;
@@ -134,7 +134,7 @@ nav {
   font-size: 14px;
   transition: background 0.2s;
 }
-.nav-cta:hover { background: var(--rust) !important; }
+.nav-cta:hover { background: var(--ink) !important; }
 
 .hamburger { display: none; font-size: 24px; }
 
@@ -198,7 +198,7 @@ nav {
    ============================================================ */
 .hero {
   position: relative;
-  padding: 100px 0 120px;
+  padding: 64px 0 80px;
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -256,7 +256,7 @@ nav {
 }
 
 .btn-primary {
-  background: var(--ink);
+  background: var(--rust);
   color: var(--paper);
   padding: 17px 32px;
   border-radius: 2px;
@@ -268,17 +268,20 @@ nav {
   transition: all 0.25s ease;
 }
 .btn-primary:hover {
-  background: var(--rust);
+  background: var(--ink);
   transform: translateY(-1px);
 }
 .btn-primary svg { transition: transform 0.25s; }
 .btn-primary:hover svg { transform: translateX(4px); }
 
+.btn-primary.sent { background: var(--success); }
+.btn-primary:disabled { opacity: 0.7; cursor: default; }
+
 .btn-primary-rust {
   background: var(--rust);
 }
 .btn-primary-rust:hover {
-  background: var(--rust-deep);
+  background: var(--ink);
 }
 
 .btn-secondary {
@@ -296,7 +299,6 @@ nav {
   display: flex;
   gap: 48px;
   padding-top: 32px;
-  border-top: 1px solid var(--line);
 }
 .hero-meta-item .num {
   font-family: var(--font-display);
@@ -366,7 +368,7 @@ nav {
    ============================================================ */
 .marquee {
   background: var(--paper-warm);
-  padding: 28px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -443,7 +445,7 @@ section { position: relative; z-index: 2; }
   font-size: 18px;
   color: var(--ink-soft);
   max-width: 640px;
-  margin-bottom: 72px;
+  margin-bottom: 48px;
   line-height: 1.6;
 }
 
@@ -451,7 +453,7 @@ section { position: relative; z-index: 2; }
    PROBLEM SECTION
    ============================================================ */
 .problem {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--paper);
 }
 
@@ -491,11 +493,8 @@ section { position: relative; z-index: 2; }
   line-height: 1.6;
 }
 
-/* ============================================================
-   SERVICES SECTION
-   ============================================================ */
 .services {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--ink);
   color: var(--paper);
 }
@@ -551,7 +550,7 @@ section { position: relative; z-index: 2; }
    PROCESS
    ============================================================ */
 .process {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--paper-warm);
 }
 
@@ -597,7 +596,7 @@ section { position: relative; z-index: 2; }
    RESULTS
    ============================================================ */
 .results {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--paper);
 }
 
@@ -696,7 +695,7 @@ section { position: relative; z-index: 2; }
    VISIBILITY IMAGE SECTION
    ============================================================ */
 .visibility-image-section {
-  padding: 60px 0;
+  padding: 40px 0;
   background: var(--paper);
 }
 
@@ -710,7 +709,7 @@ section { position: relative; z-index: 2; }
    TESTIMONIAL
    ============================================================ */
 .testimonial {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--steel);
   color: var(--paper);
   position: relative;
@@ -724,8 +723,8 @@ section { position: relative; z-index: 2; }
   line-height: 0.8;
   opacity: 0.25;
   position: absolute;
-  top: 40px;
-  left: 32px;
+  top: 20px;
+  left: 24px;
 }
 
 .testimonial-content { max-width: 900px; position: relative; z-index: 2; }
@@ -736,7 +735,7 @@ section { position: relative; z-index: 2; }
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .testimonial blockquote em { font-style: italic; color: var(--ochre); }
@@ -840,7 +839,7 @@ section { position: relative; z-index: 2; }
     font-size: 14px;
   }
 }
-.pricing { padding: 120px 0; background: var(--paper); }
+.pricing { padding: 80px 0; background: var(--paper); }
 
 .pricing-grid {
   display: grid;
@@ -918,9 +917,9 @@ section { position: relative; z-index: 2; }
 .price-cta {
   width: 100%;
   padding: 14px;
-  background: var(--paper);
-  color: var(--ink);
-  border: 1px solid var(--ink);
+  background: var(--rust);
+  color: var(--paper);
+  border: 1px solid var(--rust);
   font-weight: 500;
   font-size: 14px;
   border-radius: 2px;
@@ -928,7 +927,7 @@ section { position: relative; z-index: 2; }
 }
 .price-cta:hover { background: var(--ink); color: var(--paper); }
 .price-card.featured .price-cta { background: var(--ochre); border-color: var(--ochre); color: var(--ink); }
-.price-card.featured .price-cta:hover { background: var(--paper); border-color: var(--paper); }
+.price-card.featured .price-cta:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
 .pricing-note {
   margin-top: 28px;
@@ -940,7 +939,7 @@ section { position: relative; z-index: 2; }
 /* ============================================================
    FAQ
    ============================================================ */
-.faq { padding: 120px 0; background: var(--paper-warm); }
+.faq { padding: 80px 0; background: var(--paper-warm); }
 
 .faq-list { max-width: 840px; margin-top: 48px; }
 
@@ -991,7 +990,7 @@ section { position: relative; z-index: 2; }
    CTA BANNER
    ============================================================ */
 .cta-banner {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--rust);
   color: var(--paper);
   position: relative;
@@ -1157,7 +1156,7 @@ footer {
 /* ============================================================
    FEATURE LIST (numbered or bulleted list sections)
    ============================================================ */
-.feature-list { padding: 120px 0; }
+.feature-list { padding: 80px 0; }
 .feature-list.light { background: var(--paper); }
 .feature-list.warm  { background: var(--paper-warm); }
 .feature-list.dark  { background: var(--ink); color: var(--paper); }
@@ -1232,7 +1231,7 @@ footer {
 /* ============================================================
    CONTENT BLOCK (prose section: headline + body + optional bullets)
    ============================================================ */
-.content-block { padding: 100px 0; }
+.content-block { padding: 80px 0; }
 .content-block.light { background: var(--paper); }
 .content-block.warm  { background: var(--paper-warm); }
 .content-block.dark  { background: var(--ink); color: var(--paper); }
@@ -1301,7 +1300,7 @@ footer {
    SIMPLE CTA (rust bg, no form)
    ============================================================ */
 .simple-cta {
-  padding: 100px 0;
+  padding: 80px 0;
   background: var(--rust);
   color: var(--paper);
   position: relative;
@@ -1353,7 +1352,7 @@ footer {
 /* ============================================================
    CARD GRID (linked service/segment/resource cards)
    ============================================================ */
-.card-grid-section { padding: 120px 0; }
+.card-grid-section { padding: 80px 0; }
 .card-grid-section.light { background: var(--paper); }
 .card-grid-section.warm  { background: var(--paper-warm); }
 .card-grid-section.dark  { background: var(--ink); color: var(--paper); }
@@ -1461,7 +1460,7 @@ footer {
 .contact-option button:hover { background: var(--rust); }
 
 .contact-direct {
-  padding: 60px 0;
+  padding: 40px 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }

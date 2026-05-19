@@ -12,6 +12,7 @@ export interface HeroProps {
 
 const defaults: Required<HeroProps> = {
   eyebrow: "SEO for self-storage owners across THE USA",
+  showDivider: false,
   headline: (
     <>
       Stop Losing Storage Renters to the Facility Down the Road.
@@ -20,7 +21,6 @@ const defaults: Required<HeroProps> = {
   subheadline:
     "National chains and aggregator sites are stealing your move-ins because your facility is invisible on Google Maps, outdated on Google Business Profile, and buried under generic websites. We fix that with OUR self-storage-specific Local SEO that puts operators in the top 3 map results.",
   primaryCta: { label: "Get Your Free Google Maps Visibility Audit", href: "#contact" },
-  secondaryCta: { label: "See what we deliver", href: "#results" },
   stats: [
     { num: "94%", label: "Clients renew year two" },
     { num: "3.2×", label: "Avg organic lead lift" },
@@ -54,9 +54,9 @@ export default function Hero(props: HeroProps) {
                 />
               </svg>
             </Link>
-            <Link href={secondaryCta.href} className="btn-secondary">
+            {/* <Link href={secondaryCta.href} className="btn-secondary">
               {secondaryCta.label}
-            </Link>
+            </Link> */}
           </div>
 
           <div className="hero-meta">
@@ -72,7 +72,7 @@ export default function Hero(props: HeroProps) {
         <div className="hero-visual">
           <StorageIllo />
 
-          <div className="hero-badge top">
+          {/* <div className="hero-badge top">
             <span className="dot" />
             <div>
               <strong>Ranking #1</strong>
@@ -90,7 +90,7 @@ export default function Hero(props: HeroProps) {
               <br />
               <span>6-month window</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

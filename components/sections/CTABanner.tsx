@@ -88,11 +88,7 @@ export default function CTABanner({
             aria-label={inputType === "email" ? "Email address" : "Website URL"}
             onChange={() => error && setError(null)}
           />
-          <button
-            type="submit"
-            disabled={busy}
-            style={sent ? { background: "#2d5a3d" } : undefined}
-          >
+          <button type="submit" disabled={busy} className={sent ? "btn-primary sent" : "btn-primary"}>
             {sent ? "Sent ✓" : busy ? "Checking…" : ctaLabel}
           </button>
         </form>
