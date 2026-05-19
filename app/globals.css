@@ -206,7 +206,13 @@ nav {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
-  gap: 80px;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-visual-img {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -1481,7 +1487,7 @@ footer {
   .contact-options-grid { grid-template-columns: 1fr; }
   .contact-direct-grid { grid-template-columns: 1fr 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 60px; }
-  .hero-visual { max-width: 480px; margin: 0 auto; }
+  .hero-visual, .hero-visual-img { max-width: 560px; margin: 0 auto; }
   .hero-badge.top { left: 0; }
   .hero-badge.bottom { right: 0; }
   .problem-grid { grid-template-columns: repeat(2, 1fr); }

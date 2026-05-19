@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.storeazy.com)",
-      "WebFetch(domain:www.storagepug.com)"
+      "WebFetch(domain:www.storagepug.com)",
+      "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('public/images/hero-homepage.png'\\);const i=s.indexOf\\(Buffer.from\\('IHDR'\\)\\);console.log\\(s.readUInt32BE\\(i+4\\)+'x'+s.readUInt32BE\\(i+8\\)\\);\")"
     ]
   }
 }

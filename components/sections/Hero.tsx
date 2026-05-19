@@ -1,5 +1,5 @@
 import Link from "next/link";
-import StorageIllo from "@/components/ui/StorageIllo";
+import HeroImage from "@/components/sections/HeroImage";
 
 export interface HeroProps {
   eyebrow?: string;
@@ -69,8 +69,8 @@ export default function Hero(props: HeroProps) {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <StorageIllo />
+        <div className="hero-visual-img">
+          <HeroImage />
 
           {/* <div className="hero-badge top">
             <span className="dot" />
