@@ -105,14 +105,14 @@ export default function HomePage() {
             // eyebrow: "Specialty Storage",
             title: "Containers",
             body: "Hiring a storage container is often a cheaper storage option than placing items in a warehouse unit.",
-            href: "/who-we-serve/vehicle-rv-boat-storage",
+            href: "/who-we-serve/containers",
             ctaLabel: "Learn more",
           },
           {
             // eyebrow: "New Development",
             title: "Furniture depositories ",
             body: "The moving firm takes care of transport. Storage prices may be competitive.",
-            href: "/who-we-serve/new-facility-openings",
+            href: "/who-we-serve/furniture-depositories",
             ctaLabel: "Learn more",
           },
           // {

@@ -10,9 +10,8 @@ export interface HeroProps {
   stats?: { num: string; label: string }[];
 }
 
-const defaults: Required<HeroProps> = {
+const defaults: Required<Omit<HeroProps, "secondaryCta">> = {
   eyebrow: "SEO for self-storage owners across THE USA",
-  showDivider: false,
   headline: (
     <>
       Stop Losing Storage Renters to the Facility Down the Road.
