@@ -7,6 +7,7 @@ export interface GridCard {
   body: string;
   href?: string;
   ctaLabel?: string;
+  image?: string;
 }
 
 export interface CardGridProps {
@@ -14,6 +15,7 @@ export interface CardGridProps {
   cols?: 2 | 3 | 4;
   label?: string;
   headline?: React.ReactNode;
+  headlineCentered?: boolean;
   intro?: string;
   cards: GridCard[];
   id?: string;
@@ -24,6 +26,7 @@ export default function CardGrid({
   cols = 3,
   label,
   headline,
+  headlineCentered = false,
   intro,
   cards,
   id,
@@ -32,7 +35,11 @@ export default function CardGrid({
     <RevealSection className={`card-grid-section ${variant}`} id={id}>
       <div className="container">
         {label && <div className="section-label">{label}</div>}
-        {headline && <h2 className="section-title">{headline}</h2>}
+        {headline && (
+          <h2 className={`section-title ${headlineCentered ? "centered" : ""}`}>
+            {headline}
+          </h2>
+        )}
         {intro && <p className="section-intro">{intro}</p>}
 
         <div className={`card-grid${cols !== 3 ? ` cols-${cols}` : ""}`}>
@@ -50,13 +57,23 @@ export default function CardGrid({
               </>
             );
 
+            const className = `grid-card${card.image ? " has-image" : ""}`;
+            const style = card.image
+              ? { backgroundImage: `url(${card.image})` }
+              : undefined;
+            const content = card.image ? (
+              <span className="grid-card-inner">{inner}</span>
+            ) : (
+              inner
+            );
+
             return card.href ? (
-              <Link key={i} href={card.href} className="grid-card">
-                {inner}
+              <Link key={i} href={card.href} className={className} style={style}>
+                {content}
               </Link>
             ) : (
-              <div key={i} className="grid-card">
-                {inner}
+              <div key={i} className={className} style={style}>
+                {content}
               </div>
             );
           })}

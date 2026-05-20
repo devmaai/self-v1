@@ -16,6 +16,7 @@ const resourceSections = [
     body: "Google algorithm updates, local SEO tactics, self-storage marketing trends, and operator case studies. Published weekly.",
     href: "/blog",
     ctaLabel: "Read the blog",
+    image: "/images/resources/blog.jpg",
   },
   {
     eyebrow: "Guides",
@@ -23,6 +24,7 @@ const resourceSections = [
     body: "The 2026 Self-Storage SEO Playbook. The Unit Size Guide Template. The Pre-Opening Marketing Timeline. Each guide is a downloadable, self-contained resource.",
     href: "/contact",
     ctaLabel: "Coming soon",
+    image: "/images/resources/guides.jpg",
   },
   {
     eyebrow: "Tools",
@@ -30,6 +32,7 @@ const resourceSections = [
     body: "Local Visibility Checker, Google Business Profile Grader, Occupancy Calculator, Unit Mix Analyzer. Built specifically for storage facilities, free to use.",
     href: "/contact",
     ctaLabel: "Coming soon",
+    image: "/images/resources/tools.jpg",
   },
   {
     eyebrow: "Glossary",
@@ -37,6 +40,7 @@ const resourceSections = [
     body: "Map pack, local pack, direction requests, economic occupancy, canonical URL, schema markup, and more. Written for operators, not marketers.",
     href: "/contact",
     ctaLabel: "Coming soon",
+    image: "/images/resources/glossary.jpg",
   },
 ];
 
@@ -54,11 +58,12 @@ export default function ResourcesPage() {
         cols={2}
         // label="What you will find"
         headline="Resources to grow your self storage business."
+        headlineCentered={true}
         cards={resourceSections}
       />
 
       <CTABanner
-        headline={<>Get your <em>free</em> SEO audit</>}
+        headline={<>Get your <em>Free</em> SEO audit</>}
         subtext=""
         placeholder="your@email.com"
         ctaLabel="Subscribe"
