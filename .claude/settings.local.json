@@ -5,7 +5,11 @@
       "WebFetch(domain:www.storagepug.com)",
       "Bash(node -e \"const s=require\\('fs'\\).readFileSync\\('public/images/hero-homepage.png'\\);const i=s.indexOf\\(Buffer.from\\('IHDR'\\)\\);console.log\\(s.readUInt32BE\\(i+4\\)+'x'+s.readUInt32BE\\(i+8\\)\\);\")",
       "WebSearch",
-      "WebFetch(domain:pixis.ai)"
+      "WebFetch(domain:pixis.ai)",
+      "Bash(mkdir -p \"c:/Users/sanaf/self-v1-main/self-v1-main/app/case-studies/[slug]\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\sanaf\\self-v1-main\\self-v1-main\\app\\case-studies"
     ]
   }
 }
