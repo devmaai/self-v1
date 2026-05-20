@@ -5,7 +5,7 @@ import RevealSection from "@/components/ui/RevealSection";
 export const metadata: Metadata = {
   title: "Contact | SelfStorage.help",
   description:
-    "Start with an audit, book a call, or send us a question. We reply to every message within one business day.",
+    "Start with an audit, book a call, or send us a question. We reply to every message within two-three business day.",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         headline={<>Let us help you <em>fill more units</em>.</>}
-        subheadline="Start with an audit, book a call, or send us a question. We reply to every message within one business day."
+        subheadline="Start with an audit, book a call, or send us a question. We reply to every message within two-three business day."
       />
 
       <RevealSection className="contact-options">
@@ -24,20 +24,20 @@ export default function ContactPage() {
               <h3>Free audit</h3>
               <p>
                 Tell us about your facility and we will send a full local visibility audit within
-                three business days.
+                two-three business days.
               </p>
               <a href="mailto:hello@selfstorage.help?subject=Free+Audit+Request">
                 Request an audit
               </a>
             </div>
 
-            <div className="contact-option">
+            {/* <div className="contact-option">
               <h3>Book a call</h3>
               <p>
                 Talk to our team about your facility, your goals, and whether we are a fit.
               </p>
               <a href="#">Book a 30-minute call</a>
-            </div>
+            </div> */}
 
             <div className="contact-option">
               <h3>Send a message</h3>
@@ -60,14 +60,14 @@ export default function ContactPage() {
               <h4>Audit requests</h4>
               <p>Response within three business days</p>
             </div>
-            <div className="contact-direct-item">
+            {/* <div className="contact-direct-item">
               <h4>Strategy calls</h4>
               <p>Booked within five business days</p>
             </div>
             <div className="contact-direct-item">
               <h4>General messages</h4>
               <p>Response within one business day</p>
-            </div>
+            </div> */}
             <div className="contact-direct-item">
               <h4>Mailing address</h4>
               <p>MAAI LLC, Wyoming, USA</p>
