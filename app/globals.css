@@ -177,7 +177,9 @@ nav {
   transition: opacity 0.18s ease, transform 0.18s ease;
   z-index: 200;
 }
-.nav-group:hover .nav-dropdown {
+.nav-group:hover .nav-dropdown,
+.nav-group.open .nav-dropdown,
+.nav-group:focus-within .nav-dropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
@@ -198,7 +200,7 @@ nav {
    ============================================================ */
 .hero {
   position: relative;
-  padding: 64px 0 80px;
+  padding: 48px 0 80px;
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -285,6 +287,16 @@ nav {
 
 .btn-primary-rust {
   background: var(--rust);
+}
+
+/* Simple CTA: use black button that turns rust on hover */
+.simple-cta .btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.simple-cta .btn-primary:hover {
+  background: var(--ochre);
+  color: var(--ink);
 }
 .btn-primary-rust:hover {
   background: var(--ink);
@@ -1111,7 +1123,7 @@ section { position: relative; z-index: 2; }
   font-size: 14px;
   transition: background 0.2s;
 }
-.audit-form button:hover { background: var(--ink-soft); }
+.audit-form button:hover { background: var(--rust); color: var(--paper); }
 
 .form-note { margin-top: 16px; font-size: 13px; opacity: 0.75; }
 
@@ -1193,7 +1205,7 @@ footer {
    PAGE HERO (inner pages — no illustration)
    ============================================================ */
 .page-hero {
-  padding: 80px 0 100px;
+  padding: 48px 0 100px;
   border-bottom: 1px solid var(--line);
   background: var(--paper);
 }
@@ -1650,6 +1662,16 @@ footer {
     gap: 16px;
   }
 
+  /* Center top-level links and CTA inside mobile menu */
+  .nav-links.open > a,
+  .nav-links.open > .nav-group-trigger,
+  .nav-links.open .nav-cta {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-links.open .nav-cta { display: inline-block; margin: 8px auto 0; }
+
   /* Mobile nav-groups: disable hover, show all sub-links flat */
   .nav-group:hover .nav-dropdown { opacity: 0; pointer-events: none; transform: none; }
   .nav-group:hover .nav-group-trigger { color: var(--ink); }
@@ -1658,7 +1680,10 @@ footer {
   .nav-links.open .nav-group { width: 100%; }
   .nav-links.open .nav-group-trigger { width: 100%; }
 
-  .nav-links.open .nav-dropdown {
+  .nav-links.open .nav-group { width: 100%; }
+  .nav-links.open .nav-group-trigger { width: 100%; }
+
+  .nav-links.open .nav-group.open .nav-dropdown {
     position: static !important;
     transform: none !important;
     opacity: 1 !important;
@@ -1672,6 +1697,13 @@ footer {
     display: flex;
     flex-direction: column;
     transition: none;
+  }
+  /* Center submenu items on mobile for better touch targets */
+  .nav-links.open .nav-group.open .nav-dropdown a {
+    padding: 12px 0;
+    padding-left: 0;
+    text-align: center;
+    font-size: 16px;
   }
 }
 

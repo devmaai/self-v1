@@ -52,7 +52,6 @@ export default function LocalSeoGbpPage() {
         style="numbered"
         label="Our approach"
         headline="We optimize your storage business listings for organic lead generation"
-        centeredHeadline
         showDividers={false}
         items={[
           {

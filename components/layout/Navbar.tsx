@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const serviceLinks = [
@@ -27,7 +27,26 @@ const ChevronSvg = () => (
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
   function close() { setMenuOpen(false); }
+
+  useEffect(() => {
+    function onDoc(e: MouseEvent) {
+      if (!servicesRef.current) return;
+      if (servicesRef.current.contains(e.target as Node)) return;
+      setServicesOpen(false);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setServicesOpen(false);
+    }
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
 
   return (
     <nav>
@@ -38,16 +57,22 @@ export default function Navbar() {
         </Link>
 
         <div className={`nav-links${menuOpen ? " open" : ""}`}>
-          <div className="nav-group">
-            <Link href="/#services" className="nav-group-trigger" onClick={close}>
-              Services <ChevronSvg />
-            </Link>
-            <div className="nav-dropdown">
-              {serviceLinks.map(({ href, label }) => (
-                <Link key={href} href={href} onClick={close}>{label}</Link>
-              ))}
+            <div className={`nav-group ${servicesOpen ? "open" : ""}`} ref={servicesRef}>
+              <button
+                type="button"
+                className="nav-group-trigger"
+                aria-expanded={servicesOpen}
+                aria-haspopup="menu"
+                onClick={() => setServicesOpen(v => !v)}
+              >
+                Services <ChevronSvg />
+              </button>
+              <div className="nav-dropdown" role="menu">
+                {serviceLinks.map(({ href, label }) => (
+                  <Link key={href} href={href} onClick={() => { close(); setServicesOpen(false); }}>{label}</Link>
+                ))}
+              </div>
             </div>
-          </div>
 
           {/* <div className="nav-group">
             <Link href="/who-we-serve/independent-facility-owners" className="nav-group-trigger" onClick={close}>
