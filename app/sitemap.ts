@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/content-keyword-strategy",
     "/services/multi-location-seo",
     "/services/backlinks",
-    "/services/Aeo&Geo",
+    "/services/Aeo%26Geo",
     "/services/SEO-reporting",
     "/who-we-serve/independent-facility-owners",
     "/who-we-serve/multi-location-operators",
