@@ -60,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "From position seven to the",
     headlineAccent: "map pack top three in 60 days.",
     excerpt:
-      "A single-location operator in Florida had strong occupancy history but had lost visibility after a Google algorithm update. Citation cleanup, GBP overhaul, and a focused on-page rebuild tripled direction requests inside two months — without paid ads.",
+      "A single-location operator in Florida had strong occupancy history but had lost visibility after a Google algorithm update. Citation cleanup, GBP overhaul, and a focused on-page rebuild tripled direction requests inside two months without paid ads.",
     heroImage:
       "https://images.unsplash.com/photo-1577906096429-f73c2c312435?auto=format&fit=crop&w=1600&q=80",
     metrics: [
@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
       body: "A family-owned facility with twenty years of operating history in a competitive Central Florida trade area. Strong word-of-mouth and repeat business, but their organic acquisition pipeline depended almost entirely on Google search. When an algorithm update dropped them from the map pack, monthly inquiries fell by roughly a third inside six weeks.",
     },
     challenge: [
-      "Lost the map pack for their primary city term after a Google update — dropped from the top three to position seven.",
+      "Lost the map pack for their primary city term after a Google update dropped from the top three to position seven.",
       "Google Business Profile had outdated hours, an old phone number, and no recent photos. Citations across the web were inconsistent.",
       "On-page content was thin: the homepage targeted a generic 'storage units' phrase, with no location-specific pages.",
       "Owner had tried boosting paid spend as a stopgap, but cost-per-move-in had climbed 38% in three months.",
@@ -104,25 +104,25 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     resultsIntro:
-      "Within sixty days the facility had returned to the top three of the map pack for its primary city term — and held a top-three position for four of its five secondary terms. The audit dashboard below shows the technical foundation that supported the local SEO work.",
+      "Within sixty days the facility had returned to the top three of the map pack for its primary city term and held a top-three position for four of its five secondary terms. The audit dashboard below shows the technical foundation that supported the local SEO work.",
     resultsImages: [
       {
         src: "/images/case-studies/site-health.png",
         alt: "Site health dashboard showing 65% site health and 1,363 crawled pages",
         caption:
-          "Baseline site audit dashboard at the start of engagement — site health was 65% with 50,021 outstanding issues blocking ranking signals.",
+          "Baseline site audit dashboard at the start of engagement site health was 65% with 50,021 outstanding issues blocking ranking signals.",
       },
       {
         src: "/images/case-studies/audit-cards.png",
         alt: "Audit category scores: Crawlability 84%, HTTPS 97%, Site Performance 88%, Internal Linking 75%",
         caption:
-          "Category scores after the first technical pass — Crawlability lifted from 61% to 84%, Internal Linking from 52% to 75%.",
+          "Category scores after the first technical pass Crawlability lifted from 61% to 84%, Internal Linking from 52% to 75%.",
       },
       {
         src: "/images/case-studies/site-performance.png",
         alt: "Site performance score 88% with HTML load speed breakdown",
         caption:
-          "Site performance reached 88% — 546 of 1,332 pages now load in under half a second, only 3 above 3 seconds.",
+          "Site performance reached 88% 546 of 1,332 pages now load in under half a second, only 3 above 3 seconds.",
       },
       {
         src: "/images/case-studies/errors-warnings.png",
@@ -160,7 +160,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "Portfolio-wide top three rankings in",
     headlineAccent: "six months.",
     excerpt:
-      "A twelve-facility multi-state operator was treating SEO as twelve separate problems. We rebuilt their site architecture around a shared template system and rolled out location-specific signals in parallel — moving every facility into the top three for its primary keyword set.",
+      "A twelve-facility multi-state operator was treating SEO as twelve separate problems. We rebuilt their site architecture around a shared template system and rolled out location-specific signals in parallel moving every facility into the top three for its primary keyword set.",
     heroImage:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
     metrics: [
@@ -176,10 +176,10 @@ export const caseStudies: CaseStudy[] = [
       body: "A regional operator built through acquisition. Twelve facilities across three states, each with its own legacy website, citation history, and review profile. The team was managing twelve isolated SEO problems instead of one portfolio problem.",
     },
     challenge: [
-      "Four of twelve facilities ranked below the map pack for their primary city term — the worst was on page two.",
+      "Four of twelve facilities ranked below the map pack for their primary city term the worst was on page two.",
       "Each facility ran on a different CMS with no shared template. Updates had to be hand-edited per site.",
       "Citation consistency was poor across acquired facilities; some still showed the previous owner's brand.",
-      "Internal linking between facility sites was zero — none of the portfolio authority was being shared.",
+      "Internal linking between facility sites was zero none of the portfolio authority was being shared.",
     ],
     approach: [
       {
@@ -195,7 +195,7 @@ export const caseStudies: CaseStudy[] = [
       {
         num: "03",
         title: "Portfolio-wide citation reconciliation",
-        desc: "Audited 1,400+ citations across the portfolio and corrected 380 inconsistencies — biggest single source of ranking gains.",
+        desc: "Audited 1,400+ citations across the portfolio and corrected 380 inconsistencies biggest single source of ranking gains.",
       },
       {
         num: "04",
@@ -251,14 +251,14 @@ export const caseStudies: CaseStudy[] = [
     },
     challenge: [
       "Site treated vehicle storage as a single generic page. No coverage of covered vs. uncovered, dimensions, or RV-specific concerns.",
-      "Seasonal demand was being missed — content didn't surface for snowbird-pattern searches in September and October.",
+      "Seasonal demand was being missed content didn't surface for snowbird-pattern searches in September and October.",
       "Competing facilities owned the 'RV storage Phoenix' keyword by a large margin in organic search.",
     ],
     approach: [
       {
         num: "01",
         title: "RV-specific keyword cluster build-out",
-        desc: "Mapped 47 RV-specific search intents — from 'covered RV storage 40 foot' to 'snowbird storage Arizona winter' — and built dedicated pages for each cluster.",
+        desc: "Mapped 47 RV-specific search intents from 'covered RV storage 40 foot' to 'snowbird storage Arizona winter' — and built dedicated pages for each cluster.",
       },
       {
         num: "02",
@@ -307,7 +307,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "Premium unit occupancy at 97% in",
     headlineAccent: "eight months.",
     excerpt:
-      "Climate-controlled units are a different sale. The renter is storing something they actually care about — wine, documents, art, instruments — and the search behavior reflects that. We rebuilt the funnel around what climate-controlled buyers actually research.",
+      "Climate-controlled units are a different sale. The renter is storing something they actually care about wine, documents, art, instruments and the search behavior reflects that. We rebuilt the funnel around what climate-controlled buyers actually research.",
     heroImage:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80",
     metrics: [
@@ -323,7 +323,7 @@ export const caseStudies: CaseStudy[] = [
       body: "A purpose-built climate-controlled facility serving a high-income North Dallas trade area. Customer base skews toward households storing wine, art, documents, and seasonal high-value items.",
     },
     challenge: [
-      "Premium units sat at 71% occupancy while standard units ran at 94% — pricing was leaving revenue on the table.",
+      "Premium units sat at 71% occupancy while standard units ran at 94% pricing was leaving revenue on the table.",
       "Site copy emphasized 'climate-controlled' as a feature, not as a solution to the specific problems climate buyers have.",
       "No content targeting high-intent searches like 'wine storage Dallas' or 'document storage climate controlled'.",
       "Photos showed empty units, not the high-end use cases that justify premium pricing.",
@@ -381,7 +381,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "Hit 62% occupancy by",
     headlineAccent: "month twelve.",
     excerpt:
-      "Lease-up is the single most expensive period in a self-storage project. We started the SEO program six months before doors opened — so day-one traffic existed when the first customer searched. The facility was at 62% by month twelve, well ahead of the underwriting model.",
+      "Lease-up is the single most expensive period in a self-storage project. We started the SEO program six months before doors opened so day-one traffic existed when the first customer searched. The facility was at 62% by month twelve, well ahead of the underwriting model.",
     heroImage:
       "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&w=1600&q=80",
     metrics: [
@@ -397,7 +397,7 @@ export const caseStudies: CaseStudy[] = [
       body: "A first-time owner-operator developing a 780-unit climate and non-climate mixed facility on the Front Range. Underwriting assumed 24-month lease-up; we were brought in six months before doors opened to compress that curve.",
     },
     challenge: [
-      "No domain history, no reviews, no GBP — zero local authority signals at the start.",
+      "No domain history, no reviews, no GBP zero local authority signals at the start.",
       "Two established competitors within three miles, each with 200+ reviews and ten-plus years of citation history.",
       "Construction delays meant the opening date moved twice, so content and outreach had to be replanned mid-build.",
       "Owner had no budget for paid acquisition during lease-up.",
@@ -425,7 +425,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     resultsIntro:
-      "The facility reached 62% occupancy by month twelve — four months ahead of the underwriting model's lease-up curve. Cash flow positive at month nine instead of month thirteen.",
+      "The facility reached 62% occupancy by month twelve four months ahead of the underwriting model's lease-up curve. Cash flow positive at month nine instead of month thirteen.",
     resultsBullets: [
       "62% occupancy at month 12 (vs. 41% in underwriting assumption).",
       "Cash flow positive four months ahead of plan.",
@@ -434,7 +434,7 @@ export const caseStudies: CaseStudy[] = [
       "47 reviews and 4.8 average rating inside the first six months.",
     ],
     quote: {
-      text: "Starting the SEO before construction finished felt premature at the time. In hindsight it was the single highest-leverage decision in the project — those six months of compounding meant we never had a slow opening month.",
+      text: "Starting the SEO before construction finished felt premature at the time. In hindsight it was the single highest-leverage decision in the project those six months of compounding meant we never had a slow opening month.",
       name: "Owner-developer",
       role: "Colorado ground-up project",
     },
@@ -455,7 +455,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "Page two to the top three-pack in",
     headlineAccent: "four months.",
     excerpt:
-      "When a facility is on page two of Google for its own city term, it's effectively invisible — the map pack captures most of the click-through. We focused entirely on the signals that drive map pack inclusion and moved this facility from page two to the three-pack in sixteen weeks.",
+      "When a facility is on page two of Google for its own city term, it's effectively invisible the map pack captures most of the click-through. We focused entirely on the signals that drive map pack inclusion and moved this facility from page two to the three-pack in sixteen weeks.",
     heroImage:
       "https://images.unsplash.com/photo-1601158935942-52255782d322?auto=format&fit=crop&w=1600&q=80",
     metrics: [
@@ -471,7 +471,7 @@ export const caseStudies: CaseStudy[] = [
       body: "A fifteen-year-old single-location facility in a mid-sized Ohio market. Three corporate competitors in town with stronger online presence; owner had relied on signage and word-of-mouth for most of the business's history.",
     },
     challenge: [
-      "Ranked on page two of Google for the primary city term — effectively zero map pack visibility.",
+      "Ranked on page two of Google for the primary city term effectively zero map pack visibility.",
       "Google Business Profile had not been updated in five years.",
       "Only 18 reviews compared to 200+ at each of the three corporate competitors.",
       "Owner was skeptical about SEO after a prior agency took payments without delivering ranking gains.",
@@ -480,7 +480,7 @@ export const caseStudies: CaseStudy[] = [
       {
         num: "01",
         title: "Citation reconciliation across 80+ directories",
-        desc: "Found and corrected 24 inconsistent listings — the largest signal Google uses to confirm business legitimacy.",
+        desc: "Found and corrected 24 inconsistent listings the largest signal Google uses to confirm business legitimacy.",
       },
       {
         num: "02",
