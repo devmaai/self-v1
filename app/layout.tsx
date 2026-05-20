@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Search-first growth for independent self-storage operators in the US. We help owners outrank national chains and capture local demand.",
   verification: {
-    google: "f-gmJdDgyWIK4pKf3KB43oR3o2IDNyWdw6YZ32_5XG8",
+    google: "vx3Yk7Ksbm533St9u211RG7l9kvTrHiWJ52p2WFuc4g",
   },
 };
 
