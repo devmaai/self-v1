@@ -1832,8 +1832,9 @@ footer {
   .grid-card h3 { font-size: 18px; }
 
   /* FEATURE LIST / CONTENT BLOCK */
-  .feature-row { padding: 24px 0; }
+  .feature-row { padding: 24px 0; grid-template-columns: 40px 1fr; gap: 16px; }
   .feature-row h3 { font-size: 19px; }
+  .feature-num { font-size: 16px; }
   .content-block-body { font-size: 16px; }
   .callout-box { padding: 22px 24px; font-size: 17px; }
 
