@@ -50,7 +50,7 @@ export default function Problem({
   label = "The challenge",
   headline = (
     <>
-      The national chains have bigger budgets. You have the <em>local advantage</em>.
+      The national chains have bigger budgets.<br className="br-mobile" /> You have the <em>local advantage</em>.
     </>
   ),
   intro = "Most independent operators we meet are losing ground on Google without knowing why. Here is where the leaks usually show up.",

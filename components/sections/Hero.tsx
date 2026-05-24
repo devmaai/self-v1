@@ -11,14 +11,14 @@ export interface HeroProps {
 }
 
 const defaults: Required<Omit<HeroProps, "secondaryCta">> = {
-  eyebrow: "SEO for self-storage owners across THE USA",
+  eyebrow: "SEO for self-storage owners across the USA",
   headline: (
     <>
-      Stop Losing Storage Renters to the Facility Down the Road.
+      Outrank the Facility <em>Down the Road</em>.
     </>
   ),
   subheadline:
-    "National chains and aggregator sites are stealing your move-ins because your facility is invisible on Google Maps, outdated on Google Business Profile, and buried under generic websites. We fix that with OUR self-storage-specific Local SEO that puts operators in the top 3 map results.",
+    "National chains and aggregators are pulling move-ins away from your facility on Google. We fix the local SEO gaps so renters in your city find you first.",
   primaryCta: { label: "Get Your Free Google Maps Visibility Audit", href: "#contact" },
   stats: [
     { num: "94%", label: "Clients renew year two" },

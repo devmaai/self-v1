@@ -4,6 +4,7 @@ export interface ProcessStep {
   num: string;
   title: string;
   desc: string;
+  days?: string;
 }
 
 export interface ProcessProps {
@@ -16,21 +17,25 @@ export interface ProcessProps {
 const defaultSteps: ProcessStep[] = [
   {
     num: "1",
+    days: "Days 1 to 7",
     title: "Audit",
     desc: "Full technical and content audit of your site, GBP, reviews, and competitor landscape. Delivered in week one.",
   },
   {
     num: "2",
+    days: "Days 8 to 30",
     title: "Foundation",
     desc: "We fix indexation, schema, citations, and GBP optimization in the first thirty days. This is where most sites double their visibility.",
   },
   {
     num: "3",
+    days: "Days 31 to 60",
     title: "Scale",
     desc: "Location pages, content, link earning, and review automation roll out across months two and three. Rankings compound.",
   },
   {
     num: "4",
+    days: "Days 61 to 90",
     title: "Measure",
     desc: "Monthly reports track rankings to move-ins. We adjust the plan based on what each report reveals.",
   },
@@ -63,6 +68,7 @@ export default function Process({
           {steps.map((step) => (
             <div key={step.num} className="process-step">
               <div className="step-badge">{step.num}</div>
+              {step.days && <div className="step-days">{step.days}</div>}
               <h3>{step.title}</h3>
               <p>{step.desc}</p>
             </div>

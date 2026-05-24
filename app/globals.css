@@ -404,7 +404,7 @@ nav {
   gap: 80px;
   white-space: nowrap;
   align-items: center;
-  animation: scroll 40s linear infinite;
+  animation: scroll 32s linear infinite;
 }
 .marquee-item {
   font-family: var(--font-display);
@@ -430,6 +430,11 @@ nav {
    SECTION SHARED
    ============================================================ */
 section { position: relative; z-index: 2; }
+
+.br-mobile { display: none; }
+@media (max-width: 768px) {
+  .br-mobile { display: inline; }
+}
 
 .section-label {
   display: flex;
@@ -532,6 +537,8 @@ section { position: relative; z-index: 2; }
 .services .section-intro { color: rgba(245, 240, 232, 0.7); }
 
 .services-list { display: flex; flex-direction: column; }
+
+.sr-toggle { display: none; }
 
 .service-row {
   position: relative;
@@ -651,6 +658,18 @@ section { position: relative; z-index: 2; }
 
 .process-step h3 { font-size: 22px; margin-bottom: 10px; line-height: 1.2; }
 .process-step p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+.step-days {
+  display: inline-block;
+  background: rgba(181, 68, 31, 0.08);
+  color: var(--rust);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
 
 /* ============================================================
    RESULTS
@@ -2446,13 +2465,14 @@ footer {
   .problem-card { padding: 28px 22px; }
   .problem-card h3 { font-size: 20px; }
 
-  /* SERVICES — flatten the 4-track grid into a clean vertical stack */
+  /* SERVICES — flatten into a vertical stack with tap-to-expand */
   .service-row {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
     padding: 24px 0;
+    position: relative;
   }
   .service-row:hover { padding-left: 0; }
   .service-row > * { width: 100%; }
@@ -2462,9 +2482,44 @@ footer {
     line-height: 1.25;
     overflow-wrap: normal;
     word-break: normal;
+    padding-right: 40px;
   }
+  .service-row p,
+  .service-row .service-tags {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+  .service-row.is-open p,
+  .service-row.is-open .service-tags {
+    max-height: 400px;
+    opacity: 1;
+  }
+  .service-row.is-open .service-tags { margin-top: 4px; }
   .service-row p { font-size: 15px; }
-  .service-tags { margin-top: 4px; }
+  .sr-toggle {
+    display: flex;
+    position: absolute;
+    top: 28px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    color: var(--ochre);
+    transition: transform 0.3s;
+  }
+  .service-row.is-open .sr-toggle { transform: rotate(45deg); }
+  .sr-toggle::before,
+  .sr-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--ochre);
+  }
+  .sr-toggle::before { width: 14px; height: 2px; }
+  .sr-toggle::after { width: 2px; height: 14px; }
 
   /* PROCESS — vertical timeline: badge left, text right, connected line */
   .process-steps { gap: 0; margin-top: 8px; }
@@ -2497,7 +2552,8 @@ footer {
     position: relative;
     z-index: 1;
   }
-  .process-step h3 { font-size: 19px; margin-bottom: 6px; padding-top: 9px; }
+  .step-days { grid-column: 2; margin-bottom: 8px; margin-top: 4px; }
+  .process-step h3 { font-size: 19px; margin-bottom: 6px; padding-top: 0; }
   .process-step p { grid-column: 2; font-size: 14px; }
 
   /* RESULTS */
