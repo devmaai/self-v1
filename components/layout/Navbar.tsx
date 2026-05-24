@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const serviceLinks = [
   { href: "/services/local-seo-gbp-optimization", label: "Local SEO & Map Pack" },
@@ -52,7 +53,14 @@ export default function Navbar() {
     <nav>
       <div className="container nav-inner">
         <Link href="/" className="logo" onClick={close}>
-          <span className="logo-mark" />
+          <Image
+            src="/images/logo.png"
+            alt="SelfStorage.help logo"
+            width={36}
+            height={36}
+            className="logo-mark"
+            priority
+          />
           SelfStorage.help
         </Link>
 
