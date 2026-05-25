@@ -4,6 +4,7 @@ import Problem from "@/components/sections/Problem";
 import Services from "@/components/sections/Services";
 import CardGrid from "@/components/sections/CardGrid";
 import Process from "@/components/sections/Process";
+import VideoPlaceholder from "@/components/sections/VideoPlaceholder";
 import Results from "@/components/sections/Results";
 import Testimonial from "@/components/sections/Testimonial";
 import Operators from "@/components/sections/Operators";
@@ -64,6 +65,7 @@ export default function HomePage() {
       </div>
 
       <Process />
+      <VideoPlaceholder />
       <Results />
       <Testimonial />
 

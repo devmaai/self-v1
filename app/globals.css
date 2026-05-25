@@ -2823,6 +2823,12 @@ footer {
 /* ============================================================
    VIDEO PLACEHOLDER
    ============================================================ */
+.video-placeholder-section {
+  background: var(--paper-warm);
+  padding: 20px 0 80px;
+}
+.video-placeholder-section .video-placeholder { margin: 0 auto; max-width: 980px; }
+
 .video-placeholder {
   margin: 48px 0 56px;
   position: relative;
