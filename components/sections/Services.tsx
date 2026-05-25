@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import RevealSection from "@/components/ui/RevealSection";
 
 export interface ServiceItem {
@@ -74,15 +71,6 @@ export default function Services({
   intro = "We only work with storage facilities. Every strategy, every landing page, and every optimization is informed by real patterns we have seen across dozens of storage business operators, from single facilities to regional portfolios.",
   items = defaultItems,
 }: ServicesProps) {
-  const [openNum, setOpenNum] = useState<string | null>(null);
-
-  const handleMobileToggle = (e: React.MouseEvent, num: string) => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768) {
-      e.preventDefault();
-      setOpenNum((cur) => (cur === num ? null : num));
-    }
-  };
-
   return (
     <RevealSection className="services" id="services">
       <div className="container">
@@ -92,8 +80,6 @@ export default function Services({
 
         <div className="services-list">
           {items.map((item) => {
-            const isOpen = openNum === item.num;
-            const className = `service-row${isOpen ? " is-open" : ""}`;
             const inner = (
               <>
                 <div className="service-num">{item.num}</div>
@@ -104,24 +90,14 @@ export default function Services({
                     <span key={tag} className="service-tag">{tag}</span>
                   ))}
                 </div>
-                <span className="sr-toggle" aria-hidden="true" />
               </>
             );
             return item.href ? (
-              <Link
-                key={item.num}
-                href={item.href}
-                className={className}
-                onClick={(e) => handleMobileToggle(e, item.num)}
-              >
+              <Link key={item.num} href={item.href} className="service-row">
                 {inner}
               </Link>
             ) : (
-              <div
-                key={item.num}
-                className={className}
-                onClick={(e) => handleMobileToggle(e, item.num)}
-              >
+              <div key={item.num} className="service-row">
                 {inner}
               </div>
             );
