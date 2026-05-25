@@ -3,6 +3,7 @@ import MarqueeBanner from "@/components/sections/MarqueeBanner";
 import Problem from "@/components/sections/Problem";
 import Services from "@/components/sections/Services";
 import CardGrid from "@/components/sections/CardGrid";
+import { LocalSeoVisual, TechnicalSeoVisual, MultiLocationVisual } from "@/components/sections/ProgramCardVisuals";
 import Process from "@/components/sections/Process";
 import VideoPlaceholder from "@/components/sections/VideoPlaceholder";
 import Results from "@/components/sections/Results";
@@ -33,6 +34,7 @@ export default function HomePage() {
             body: "Own the map pack and Google Maps results in your trade area.",
             href: "/services/local-seo-gbp-optimization",
             ctaLabel: "Learn more",
+            visual: <LocalSeoVisual />,
           },
           {
             eyebrow: "Site Performance",
@@ -40,6 +42,7 @@ export default function HomePage() {
             body: "Fast, crawlable sites that load on mobile and convert reservations.",
             href: "/services/technical-seo",
             ctaLabel: "Learn more",
+            visual: <TechnicalSeoVisual />,
           },
           {
             eyebrow: "Portfolio Growth",
@@ -47,6 +50,7 @@ export default function HomePage() {
             body: "Scale local visibility across every facility without internal cannibalization.",
             href: "/services/multi-location-seo",
             ctaLabel: "Learn more",
+            visual: <MultiLocationVisual />,
           },
         ]}
       />

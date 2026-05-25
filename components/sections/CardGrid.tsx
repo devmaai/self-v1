@@ -8,6 +8,7 @@ export interface GridCard {
   href?: string;
   ctaLabel?: string;
   image?: string;
+  visual?: React.ReactNode;
 }
 
 export interface CardGridProps {
@@ -49,6 +50,7 @@ export default function CardGrid({
           {cards.map((card, i) => {
             const inner = (
               <>
+                {card.visual && <div className="grid-card-visual">{card.visual}</div>}
                 {card.eyebrow && <div className="grid-card-eyebrow">{card.eyebrow}</div>}
                 <h3>{card.title}</h3>
                 <p>{card.body}</p>
@@ -60,7 +62,7 @@ export default function CardGrid({
               </>
             );
 
-            const className = `grid-card${card.image ? " has-image" : ""}`;
+            const className = `grid-card${card.image ? " has-image" : ""}${card.visual ? " has-visual" : ""}`;
             const style = card.image
               ? { backgroundImage: `url(${card.image})` }
               : undefined;

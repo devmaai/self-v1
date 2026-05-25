@@ -59,7 +59,7 @@ export default function FAQ({
         {label && <div className="section-label">{label}</div>}
         <h2 className="section-title">{headline}</h2>
 
-        <div className="faq-list">
+        <div className="faq-list two-col">
           {items.map((item, i) => (
             <div key={i} className={`faq-item${activeIndex === i ? " active" : ""}`}>
               <div className="faq-q" onClick={() => toggle(i)} role="button" aria-expanded={activeIndex === i}>

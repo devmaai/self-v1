@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import RevealSection from "@/components/ui/RevealSection";
 
 export interface ProcessStep {
@@ -56,6 +59,37 @@ export default function Process({
   ),
   steps = defaultSteps,
 }: ProcessProps) {
+  const stepsRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(-1);
+
+  useEffect(() => {
+    const el = stepsRef.current;
+    if (!el) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        if (reduced) {
+          setActiveIdx(steps.length - 1);
+          return;
+        }
+        steps.forEach((_, i) => {
+          timers.push(setTimeout(() => setActiveIdx(i), 300 + i * 450));
+        });
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      timers.forEach((t) => clearTimeout(t));
+    };
+  }, [steps]);
+
+  const fillW = activeIdx < 0 ? "0%" : `${(activeIdx / (steps.length - 1)) * 100}%`;
+
   return (
     <RevealSection className="process" id="process">
       <div className="container">
@@ -63,10 +97,14 @@ export default function Process({
         <h2 className="section-title">{headline}</h2>
         <p className="section-intro">{intro}</p>
 
-        <div className="process-steps">
+        <div className="process-steps" ref={stepsRef}>
           <div className="process-line" aria-hidden="true" />
-          {steps.map((step) => (
-            <div key={step.num} className="process-step">
+          <div className="process-line-fill" style={{ width: fillW }} aria-hidden="true" />
+          {steps.map((step, i) => (
+            <div
+              key={step.num}
+              className={`process-step${i <= activeIdx ? " in active" : ""}`}
+            >
               <div className="step-badge">{step.num}</div>
               {step.days && <div className="step-days">{step.days}</div>}
               <h3>{step.title}</h3>
