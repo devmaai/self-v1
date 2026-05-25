@@ -19,6 +19,7 @@ export interface CardGridProps {
   intro?: string;
   cards: GridCard[];
   id?: string;
+  prepend?: React.ReactNode;
 }
 
 export default function CardGrid({
@@ -30,6 +31,7 @@ export default function CardGrid({
   intro,
   cards,
   id,
+  prepend,
 }: CardGridProps) {
   return (
     <RevealSection className={`card-grid-section ${variant}`} id={id}>
@@ -41,6 +43,7 @@ export default function CardGrid({
           </h2>
         )}
         {intro && <p className="section-intro">{intro}</p>}
+        {prepend}
 
         <div className={`card-grid${cols !== 3 ? ` cols-${cols}` : ""}`}>
           {cards.map((card, i) => {

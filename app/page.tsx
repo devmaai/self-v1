@@ -6,6 +6,7 @@ import CardGrid from "@/components/sections/CardGrid";
 import Process from "@/components/sections/Process";
 import Results from "@/components/sections/Results";
 import Testimonial from "@/components/sections/Testimonial";
+import Operators from "@/components/sections/Operators";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
@@ -39,13 +40,6 @@ export default function HomePage() {
             href: "/services/technical-seo",
             ctaLabel: "Learn more",
           },
-          // {
-          //   eyebrow: "Search Content",
-          //   title: "Content & Keywords",
-          //   body: "Pages that answer what renters are searching before they book.",
-          //   href: "/services/content-keyword-strategy",
-          //   ctaLabel: "Learn more",
-          // },
           {
             eyebrow: "Portfolio Growth",
             title: "Multi-Location SEO",
@@ -68,62 +62,12 @@ export default function HomePage() {
           />
         </div>
       </div>
-      
+
       <Process />
       <Results />
       <Testimonial />
 
-      <CardGrid
-        variant="light"
-        cols={3}
-        // label="Who we work with"
-        headline={<>Built for operators who <em>run the Business themselves</em>.</>}
-        intro="From single-facility independents to regional portfolios, every program is tailored to how you actually operate."
-        cards={[
-          {
-            // eyebrow: "Single Facilities",
-            title: "Independent Owners",
-            body: "Fill units without hiring a marketing team or learning SEO yourself.",
-            href: "/who-we-serve/independent-facility-owners",
-            ctaLabel: "Learn more",
-          },
-          {
-            // eyebrow: "Portfolio Growth",
-            title: "Multi-Location Operators",
-            body: "Consistent local visibility across every facility, with portfolio-level reporting.",
-            href: "/who-we-serve/multi-location-operators",
-            ctaLabel: "Learn more",
-          },
-          {
-            // eyebrow: "Premium Units",
-            title: "Storage Warehouse",
-            body: "Warehouse facilities provide excellent security, 24/7 access, and flexible space options.",
-            href: "/who-we-serve/storage-warehouse",
-            ctaLabel: "Learn more",
-          },
-          {
-            // eyebrow: "Specialty Storage",
-            title: "Containers",
-            body: "Hiring a storage container is often a cheaper storage option than placing items in a warehouse unit.",
-            href: "/who-we-serve/containers",
-            ctaLabel: "Learn more",
-          },
-          {
-            // eyebrow: "New Development",
-            title: "Furniture depositories ",
-            body: "The moving firm takes care of transport. Storage prices may be competitive.",
-            href: "/who-we-serve/furniture-depositories",
-            ctaLabel: "Learn more",
-          },
-          // {
-          //   eyebrow: "See Results",
-          //   title: "Case Studies",
-          //   body: "Real facilities, real occupancy gains. See what we delivered for operators like you.",
-          //   href: "/case-studies",
-          //   ctaLabel: "Browse case studies",
-          // },
-        ]}
-      />
+      <Operators />
 
       <Pricing />
       <FAQ label="" />
