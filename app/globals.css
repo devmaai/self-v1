@@ -849,6 +849,27 @@ section { position: relative; z-index: 2; }
 }
 
 /* ============================================================
+   GSC PERFORMANCE WIDGET
+   ============================================================ */
+.gsc-performance-section {
+  padding: 60px 0 40px;
+  background: var(--paper);
+}
+
+.gsc-performance-frame {
+  width: 100%;
+  height: 520px;
+  border: 0;
+  display: block;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .gsc-performance-section { padding: 32px 0 24px; }
+  .gsc-performance-frame { height: 600px; }
+}
+
+/* ============================================================
    TESTIMONIAL
    ============================================================ */
 .testimonial {

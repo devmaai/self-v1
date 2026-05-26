@@ -6,6 +6,7 @@ import CardGrid from "@/components/sections/CardGrid";
 import { LocalSeoVisual, TechnicalSeoVisual, MultiLocationVisual } from "@/components/sections/ProgramCardVisuals";
 import Process from "@/components/sections/Process";
 import VideoPlaceholder from "@/components/sections/VideoPlaceholder";
+import GscPerformance from "@/components/sections/GscPerformance";
 import Results from "@/components/sections/Results";
 import Testimonial from "@/components/sections/Testimonial";
 import Operators from "@/components/sections/Operators";
@@ -67,6 +68,8 @@ export default function HomePage() {
           />
         </div>
       </div>
+
+      <GscPerformance />
 
       <Process />
       <VideoPlaceholder />
