@@ -50,7 +50,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav>
+    <nav className="v1-chrome">
       <div className="container nav-inner">
         <Link href="/" className="logo" onClick={close}>
           <Image

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="v1-chrome">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
