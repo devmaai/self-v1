@@ -455,19 +455,18 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                <div className="proof-audit-cta reveal">
+                  <div className="pac-label">Your facility could look like this</div>
+                  <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
+                  <div className="pac-features">
+                    <div className="pac-feat">Full technical audit delivered in week one</div>
+                    <div className="pac-feat">GBP and map pack gap analysis included</div>
+                    <div className="pac-feat">Keyword ranking baseline report</div>
+                    <div className="pac-feat">No sales call required to receive the audit</div>
+                  </div>
+                  <a href="#audit" className="btn-pac">Request your free audit →</a>
+                </div>
               </div>
-            </div>
-
-            <div className="proof-audit-cta proof-audit-cta--centered reveal">
-              <div className="pac-label">Your facility could look like this</div>
-              <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
-              <div className="pac-features">
-                <div className="pac-feat">Full technical audit delivered in week one</div>
-                <div className="pac-feat">GBP and map pack gap analysis included</div>
-                <div className="pac-feat">Keyword ranking baseline report</div>
-                <div className="pac-feat">No sales call required to receive the audit</div>
-              </div>
-              <a href="#audit" className="btn-pac">Request your free audit →</a>
             </div>
           </div>
         </section>
