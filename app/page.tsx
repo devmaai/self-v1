@@ -125,22 +125,6 @@ export default function HomePage() {
                   </a>
                   <a href="#proof" className="btn-hero-ghost">See ranking data →</a>
                 </div>
-                <div className="hero-stats">
-                  <div className="hstat">
-                    <div className="hstat-num">94<span>%</span></div>
-                    <div className="hstat-label">Client renewal rate at year two</div>
-                    <div className="hstat-note">All active engagements since 2023</div>
-                  </div>
-                  <div className="hstat">
-                    <div className="hstat-num">3.2<span>×</span></div>
-                    <div className="hstat-label">Average organic lead lift</div>
-                    <div className="hstat-note">Measured at 12 months post-start</div>
-                  </div>
-                  <div className="hstat">
-                    <div className="hstat-num">$0</div>
-                    <div className="hstat-label">Cost per organic lead after month 6</div>
-                  </div>
-                </div>
               </div>
 
               <div className="hero-dashboard reveal">
@@ -471,23 +455,19 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="testimonial-card reveal">
-                  <p className="test-quote">&ldquo;We stopped paying for leads entirely by month six. The rankings are there in GSC every day. I can see exactly where each booking came from.&rdquo;</p>
-                  <div className="test-attr"><span className="test-facility">Storage operator, San Antonio TX</span> &nbsp;·&nbsp; Single facility, 9-month engagement</div>
-                </div>
-
-                <div className="proof-audit-cta reveal">
-                  <div className="pac-label">Your facility could look like this</div>
-                  <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
-                  <div className="pac-features">
-                    <div className="pac-feat">Full technical audit delivered in week one</div>
-                    <div className="pac-feat">GBP and map pack gap analysis included</div>
-                    <div className="pac-feat">Keyword ranking baseline report</div>
-                    <div className="pac-feat">No sales call required to receive the audit</div>
-                  </div>
-                  <a href="#audit" className="btn-pac">Request your free audit →</a>
-                </div>
               </div>
+            </div>
+
+            <div className="proof-audit-cta proof-audit-cta--centered reveal">
+              <div className="pac-label">Your facility could look like this</div>
+              <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
+              <div className="pac-features">
+                <div className="pac-feat">Full technical audit delivered in week one</div>
+                <div className="pac-feat">GBP and map pack gap analysis included</div>
+                <div className="pac-feat">Keyword ranking baseline report</div>
+                <div className="pac-feat">No sales call required to receive the audit</div>
+              </div>
+              <a href="#audit" className="btn-pac">Request your free audit →</a>
             </div>
           </div>
         </section>
