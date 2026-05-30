@@ -101,7 +101,24 @@ export default function HomePage() {
             <a href="#proof" className="btn-nav-ghost">See client data</a>
             <a href="#audit" className="btn-nav-cta">Get free audit →</a>
           </div>
+          <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </nav>
+
+        <div className="v2-mobile-menu" data-mobile-panel>
+          <ul className="mobile-menu-links">
+            <li><a href="#services" data-mobile-close>Services</a></li>
+            <li><a href="#proof" data-mobile-close>Results</a></li>
+            <li><a href="#process" data-mobile-close>Process</a></li>
+            <li><a href="#pricing" data-mobile-close>Pricing</a></li>
+            <li><a href="#faq" data-mobile-close>FAQ</a></li>
+          </ul>
+          <div className="mobile-menu-actions">
+            <a href="#proof" className="btn-nav-ghost" data-mobile-close>See client data</a>
+            <a href="#audit" className="btn-nav-cta" data-mobile-close>Get free audit →</a>
+          </div>
+        </div>
 
         <section className="hero">
           <div className="hero-inner">
@@ -206,13 +223,11 @@ export default function HomePage() {
 
         <div className="marquee" aria-hidden="true">
           <div className="marquee-track">
-            {[...Array(2)].map((_, dup) => (
-              <div key={dup} style={{ display: "contents" }}>
-                {["Local SEO","Google Maps Ranking","GBP Optimisation","Technical SEO","Location Pages","Citation Building","Content Writing","AEO & GEO","Backlink Building","Core Web Vitals","Review Strategy","SEO Reporting"].map((t, i) => (
-                  <span key={`${dup}-${i}`} className="marquee-item">{t}</span>
-                ))}
-              </div>
-            ))}
+            {[...Array(2)].flatMap((_, dup) =>
+              ["Local SEO","Google Maps Ranking","GBP Optimisation","Technical SEO","Location Pages","Citation Building","Content Writing","AEO & GEO","Backlink Building","Core Web Vitals","Review Strategy","SEO Reporting"].map((t, i) => (
+                <span key={`${dup}-${i}`} className="marquee-item">{t}</span>
+              ))
+            )}
           </div>
         </div>
 

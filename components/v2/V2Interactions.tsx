@@ -6,8 +6,32 @@ export default function V2Interactions() {
     const root = document.querySelector(".v2-home");
     if (!root) return;
 
+    const burger = root.querySelector<HTMLButtonElement>("[data-mobile-toggle]");
+    const panel = root.querySelector<HTMLElement>("[data-mobile-panel]");
+    const closeMenu = () => {
+      root.classList.remove("mobile-menu-open");
+      burger?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    };
+    const openMenu = () => {
+      root.classList.add("mobile-menu-open");
+      burger?.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    };
+
     const handleClick = (e: Event) => {
       const target = e.target as HTMLElement;
+
+      if (target.closest("[data-mobile-toggle]")) {
+        e.preventDefault();
+        if (root.classList.contains("mobile-menu-open")) closeMenu();
+        else openMenu();
+        return;
+      }
+      if (target.closest("[data-mobile-close]")) {
+        closeMenu();
+      }
+
       const q = target.closest(".faq-q");
       if (!q) return;
       const item = q.parentElement;
@@ -17,6 +41,13 @@ export default function V2Interactions() {
       if (!wasOpen) item.classList.add("open");
     };
     root.addEventListener("click", handleClick);
+
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) closeMenu();
+    };
+    window.addEventListener("resize", handleResize);
+
+    void panel;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,6 +64,8 @@ export default function V2Interactions() {
 
     return () => {
       root.removeEventListener("click", handleClick);
+      window.removeEventListener("resize", handleResize);
+      document.body.style.overflow = "";
       observer.disconnect();
     };
   }, []);
