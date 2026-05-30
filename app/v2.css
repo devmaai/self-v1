@@ -59,6 +59,31 @@
   .v2-home .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--slate-600); transition: color 0.15s; }
   .v2-home .nav-links a:hover { color: var(--slate-900); }
   .v2-home .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .v2-home .nav-services { position: relative; }
+  .v2-home .nav-services-trigger {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: none; border: none; cursor: pointer; padding: 0;
+    font: inherit; font-size: 13.5px; font-weight: 400; color: var(--slate-600);
+    transition: color 0.15s;
+  }
+  .v2-home .nav-services-trigger:hover,
+  .v2-home .nav-services.open .nav-services-trigger { color: var(--slate-900); }
+  .v2-home .nav-services-trigger svg { transition: transform 0.2s; }
+  .v2-home .nav-services.open .nav-services-trigger svg { transform: rotate(180deg); }
+  .v2-home .nav-services-menu {
+    position: absolute; top: calc(100% + 14px); left: -16px; min-width: 240px;
+    background: var(--white); border: 1px solid var(--slate-100); border-radius: var(--radius);
+    box-shadow: var(--shadow-md); padding: 8px;
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    z-index: 210;
+  }
+  .v2-home .nav-services.open .nav-services-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .v2-home .nav-services-menu a {
+    display: block; padding: 9px 12px; font-size: 13.5px; color: var(--slate-700);
+    border-radius: 6px; transition: background 0.12s, color 0.12s;
+  }
+  .v2-home .nav-services-menu a:hover { background: var(--accent-pale); color: var(--accent-dark); }
   .v2-home .btn-nav-ghost { font-size: 13.5px; font-weight: 500; color: var(--slate-700); padding: 8px 16px; border-radius: 8px; border: 1px solid var(--slate-200); transition: border-color 0.15s, background 0.15s; }
   .v2-home .btn-nav-ghost:hover { border-color: var(--slate-400); background: var(--slate-50); }
   .v2-home .btn-nav-cta { font-size: 13.5px; font-weight: 600; color: var(--white); background: var(--slate-900); padding: 9px 20px; border-radius: 8px; transition: background 0.15s; letter-spacing: -0.1px; }
@@ -498,6 +523,22 @@
   }
   .v2-home .mobile-menu-links a:hover { color: var(--accent); }
   .v2-home .mobile-menu-links a:hover::after { color: var(--accent); transform: translateX(3px); }
+  .v2-home .mobile-services { width: 100%; }
+  .v2-home .mobile-services summary {
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 4px; font-size: 16px; font-weight: 500; color: var(--slate-900);
+  }
+  .v2-home .mobile-services summary::-webkit-details-marker { display: none; }
+  .v2-home .mobile-services summary::after {
+    content: "+"; color: var(--slate-400); font-size: 20px; transition: transform 0.2s;
+  }
+  .v2-home .mobile-services[open] summary::after { transform: rotate(45deg); color: var(--accent); }
+  .v2-home .mobile-sub-links { list-style: none; padding: 4px 0 12px 12px; margin: 0; }
+  .v2-home .mobile-sub-links li { border-bottom: none; }
+  .v2-home .mobile-sub-links a {
+    padding: 12px 4px; font-size: 14px; color: var(--slate-600);
+  }
   .v2-home .mobile-menu-actions {
     display: flex; flex-direction: column; gap: 10px;
     margin-top: auto; padding-top: 16px;

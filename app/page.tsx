@@ -15,6 +15,8 @@ import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import V2Interactions from "@/components/v2/V2Interactions";
+import V2Nav from "@/components/v2/V2Nav";
+import V2Footer from "@/components/v2/V2Footer";
 
 export default function HomePage() {
   return (
@@ -87,38 +89,7 @@ export default function HomePage() {
 
       <div className="v2-home">
         <V2Interactions />
-
-        <nav className="v2-nav">
-          <div className="nav-brand">SelfStorage<span>.help</span></div>
-          <ul className="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#proof">Results</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-          <div className="nav-actions">
-            <a href="#proof" className="btn-nav-ghost">See client data</a>
-            <a href="#audit" className="btn-nav-cta">Get free audit →</a>
-          </div>
-          <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </nav>
-
-        <div className="v2-mobile-menu" data-mobile-panel>
-          <ul className="mobile-menu-links">
-            <li><a href="#services" data-mobile-close>Services</a></li>
-            <li><a href="#proof" data-mobile-close>Results</a></li>
-            <li><a href="#process" data-mobile-close>Process</a></li>
-            <li><a href="#pricing" data-mobile-close>Pricing</a></li>
-            <li><a href="#faq" data-mobile-close>FAQ</a></li>
-          </ul>
-          <div className="mobile-menu-actions">
-            <a href="#proof" className="btn-nav-ghost" data-mobile-close>See client data</a>
-            <a href="#audit" className="btn-nav-cta" data-mobile-close>Get free audit →</a>
-          </div>
-        </div>
+        <V2Nav variant="home" />
 
         <section className="hero">
           <div className="hero-inner">
@@ -631,47 +602,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <footer className="v2-footer">
-          <div className="footer-grid">
-            <div>
-              <div className="fb-brand">SelfStorage<span>.help</span></div>
-              <div className="fb-desc">Specialist SEO for independent self-storage operators across the USA. Single-facility to regional portfolio. Operated under MAAI LLC, Wyoming.</div>
-            </div>
-            <div>
-              <div className="fc-head">Services</div>
-              <ul className="fc-links">
-                <li><a href="/services/local-seo-gbp-optimization">Local SEO &amp; Maps</a></li>
-                <li><a href="/services/aeo-geo">AEO &amp; GEO</a></li>
-                <li><a href="/services/technical-seo">Technical SEO</a></li>
-                <li><a href="/services/backlinks">Backlink Building</a></li>
-                <li><a href="/services/content-keyword-strategy">Content Writing</a></li>
-                <li><a href="/services/multi-location-seo">SEO Reporting</a></li>
-              </ul>
-            </div>
-            <div>
-              <div className="fc-head">Company</div>
-              <ul className="fc-links">
-                <li><a href="/case-studies">Case Studies</a></li>
-                <li><a href="/resources">Resources</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <div className="fc-head">Contact</div>
-              <ul className="fc-links">
-                <li><a href="mailto:hello@selfstorage.help">hello@selfstorage.help</a></li>
-                <li><a href="/contact">Request an audit</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div className="footer-copy">© 2026 MAAI LLC. All rights reserved.</div>
-            <div className="footer-copy" style={{ display: "flex", gap: 20 }}>
-              <a href="/privacy" style={{ color: "rgba(255,255,255,0.2)" }}>Privacy Policy</a>
-              <a href="/terms" style={{ color: "rgba(255,255,255,0.2)" }}>Terms</a>
-            </div>
-          </div>
-        </footer>
+        <V2Footer />
       </div>
     </>
   );
