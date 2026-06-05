@@ -18,7 +18,50 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 
+// Real Visibility Index data — daily readings (08.05 → 02.06)
+const VISIBILITY_INDEX = [
+  { d: "08.05", v: 12 },
+  { d: "09.05", v: 68 },
+  { d: "11.05", v: 68 },
+  { d: "12.05", v: 69 },
+  { d: "13.05", v: 73 },
+  { d: "14.05", v: 74 },
+  { d: "15.05", v: 75 },
+  { d: "16.05", v: 79 },
+  { d: "17.05", v: 74 },
+  { d: "18.05", v: 76 },
+  { d: "19.05", v: 56 },
+  { d: "20.05", v: 76 },
+  { d: "21.05", v: 60 },
+  { d: "22.05", v: 64 },
+  { d: "24.05", v: 75 },
+  { d: "25.05", v: 69 },
+  { d: "26.05", v: 69 },
+  { d: "27.05", v: 69 },
+  { d: "28.05", v: 73 },
+  { d: "29.05", v: 67 },
+  { d: "30.05", v: 69 },
+  { d: "31.05", v: 73 },
+  { d: "01.06", v: 72 },
+  { d: "02.06", v: 79 },
+];
+
 export default function HomePage() {
+  // Visibility Index line-chart geometry (SVG user units)
+  const viMax = 80;
+  const VW = 820;
+  const VH = 180;
+  const mL = 30;
+  const mR = 14;
+  const mT = 12;
+  const mB = 40;
+  const viX = (i: number) => mL + (i / (VISIBILITY_INDEX.length - 1)) * (VW - mL - mR);
+  const viY = (val: number) => mT + (1 - val / viMax) * (VH - mT - mB);
+  const viLine = VISIBILITY_INDEX.map((p, i) => `${viX(i).toFixed(1)},${viY(p.v).toFixed(1)}`).join(" ");
+  const viTicks = [0, 40, 80];
+  const viFirst = VISIBILITY_INDEX[0].v;
+  const viLast = VISIBILITY_INDEX[VISIBILITY_INDEX.length - 1].v;
+
   return (
     <>
       <div className="v1-home">
@@ -129,63 +172,51 @@ export default function HomePage() {
                 <div className="dash-metrics">
                   <div className="dm">
                     <div className="dm-label">Impressions</div>
-                    <div className="dm-val">79.8K</div>
-                    <div className="dm-delta">↑ 142% vs prior period</div>
+                    <div className="dm-val">9.25M</div>
+                    <div className="dm-delta flat">Storage search demand</div>
                   </div>
                   <div className="dm">
                     <div className="dm-label">Clicks</div>
-                    <div className="dm-val">18.3K</div>
-                    <div className="dm-delta">↑ 189% vs prior period</div>
+                    <div className="dm-val">43.3K</div>
+                    <div className="dm-delta flat">Organic site visits</div>
                   </div>
                   <div className="dm">
-                    <div className="dm-label">Avg. Position</div>
-                    <div className="dm-val">4.1</div>
-                    <div className="dm-delta">Was 14.7 at start</div>
+                    <div className="dm-label">Avg. CTR</div>
+                    <div className="dm-val">0.5%</div>
+                    <div className="dm-delta flat">Clicks per impression</div>
                   </div>
                 </div>
                 <div className="dash-chart">
-                  <div className="dash-chart-label">Weekly clicks — trailing 14 weeks</div>
+                  <div className="dash-chart-label">Visibility Index — daily, last 24 days</div>
                   <div className="sparkline">
-                    {[24, 29, 27, 38, 35, 48, 52, 60, 65, 70, 78, 83, 88, 95].map((h, i) => (
+                    {VISIBILITY_INDEX.map(({ v }, i) => (
                       <div
                         key={i}
-                        className={`spark-bar${i >= 10 && i < 13 ? " high" : ""}${i === 13 ? " hi" : ""}`}
-                        style={{ height: `${h}%`, animationDelay: `${i * 0.04}s` }}
+                        className={`spark-bar${v >= 74 ? " high" : ""}${i === VISIBILITY_INDEX.length - 1 ? " hi" : ""}`}
+                        style={{ height: `${v}%`, animationDelay: `${i * 0.03}s` }}
                       />
                     ))}
                   </div>
                 </div>
                 <div className="dash-rankings">
                   <div className="dash-rank-head">
-                    <div className="drh">Pos.</div>
-                    <div className="drh">Keyword</div>
-                    <div className="drh" style={{ textAlign: "center" }}>Change</div>
+                    <div className="drh">Top query</div>
                     <div className="drh" style={{ textAlign: "right" }}>Clicks</div>
+                    <div className="drh" style={{ textAlign: "right" }}>Impressions</div>
                   </div>
-                  <div className="dash-rank-row">
-                    <div className="dr-pos p1">#1</div>
-                    <div className="dr-kw">storage units near me</div>
-                    <div className="dr-change">↑ +11</div>
-                    <div className="dr-clicks">841</div>
-                  </div>
-                  <div className="dash-rank-row">
-                    <div className="dr-pos p1">#2</div>
-                    <div className="dr-kw">self storage [city]</div>
-                    <div className="dr-change">↑ +8</div>
-                    <div className="dr-clicks">612</div>
-                  </div>
-                  <div className="dash-rank-row">
-                    <div className="dr-pos">#3</div>
-                    <div className="dr-kw">10x10 storage unit near me</div>
-                    <div className="dr-change new">New</div>
-                    <div className="dr-clicks">388</div>
-                  </div>
-                  <div className="dash-rank-row">
-                    <div className="dr-pos">#5</div>
-                    <div className="dr-kw">climate controlled storage</div>
-                    <div className="dr-change">↑ +6</div>
-                    <div className="dr-clicks">271</div>
-                  </div>
+                  {[
+                    { kw: "self storage near me", clicks: 7, impr: "69,247" },
+                    { kw: "self storage", clicks: 7, impr: "30,633" },
+                    { kw: "furniture self storage", clicks: 0, impr: "17,285" },
+                    { kw: "cheap self storage", clicks: 0, impr: "14,477" },
+                    { kw: "self storage cost", clicks: 5, impr: "13,509" },
+                  ].map((r) => (
+                    <div key={r.kw} className="dash-rank-row">
+                      <div className="dr-kw">{r.kw}</div>
+                      <div className="dr-clk">{r.clicks}</div>
+                      <div className="dr-impr">{r.impr}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -207,6 +238,21 @@ export default function HomePage() {
             <div className="pill">Why organic search matters for storage</div>
             <h2 className="section-h2">Every week you are invisible on Google,<br />a renter chooses someone else.</h2>
             <p className="section-lead">Independent operators across the USA are losing ground to national chains and listing platforms that dominate the same searches their local customers run. Here is what that actually costs.</p>
+
+            <div className="demand-band reveal">
+              <div className="demand-stat">
+                <div className="demand-num accent">619K</div>
+                <div className="demand-text">Search impressions one storage site earned for self-storage queries in 12 months. The demand is already there.</div>
+              </div>
+              <div className="demand-stat">
+                <div className="demand-num warn">39.8</div>
+                <div className="demand-text">Its average Google position. Buried on page four, where almost no renter ever looks.</div>
+              </div>
+              <div className="demand-stat">
+                <div className="demand-num warn">0.1%</div>
+                <div className="demand-text">Share of that demand it actually turned into clicks. Nearly all of it went to someone else.</div>
+              </div>
+            </div>
 
             <div className="problem-layout">
               <div className="problem-right">
@@ -348,11 +394,12 @@ export default function HomePage() {
             <h2 className="section-h2">Data from active client accounts.</h2>
 
             <div className="proof-layout">
-              <div className="proof-data-card reveal">
+              <div className="proof-left">
+                <div className="proof-data-card reveal">
                 <div className="pdc-header">
                   <div className="pdc-title">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="6.5" fill="#4285F4" /><path d="M6.5 3.5A3 3 0 1 0 9.5 6.5H6.5V4.8h3.7v.7a4.4 4.4 0 1 1-3.7-4.5V3.5z" fill="#fff" /></svg>
-                    Search Console — Single facility, TX
+                    Search Console — Single facility, Pickfords
                   </div>
                   <div className="pdc-source">Months 1–9</div>
                 </div>
@@ -415,6 +462,55 @@ export default function HomePage() {
                     {["M1","M2","M3","M4","M5","M6","M7","M8","M9"].map((m) => <span key={m} className="jc-month">{m}</span>)}
                   </div>
                 </div>
+                </div>
+
+                <div className="vi-card reveal">
+                  <div className="vi-head">
+                    <div className="vi-head-main">
+                      <div className="vi-title">Visibility Index — onboarding ramp</div>
+                      <div className="vi-value">
+                        <span className="vi-from">{viFirst}</span>
+                        <span className="vi-arrow">→</span>
+                        {viLast}
+                      </div>
+                    </div>
+                    <span className="vi-trend-up">↑ {viLast - viFirst} pts in {VISIBILITY_INDEX.length} days</span>
+                  </div>
+                  <div className="vi-chart">
+                    <svg viewBox={`0 0 ${VW} ${VH}`} role="img" aria-label={`Visibility Index trend from ${viFirst} to ${viLast}`}>
+                      {viTicks.map((t) => (
+                        <g key={t}>
+                          <line className="vi-grid" x1={mL} y1={viY(t)} x2={VW - mR} y2={viY(t)} />
+                          <text className="vi-axis" x={mL - 8} y={viY(t) + 3} textAnchor="end">{t}</text>
+                        </g>
+                      ))}
+                      <polyline className="vi-line" points={viLine} fill="none" />
+                      {VISIBILITY_INDEX.map((p, i) => (
+                        <circle
+                          key={p.d}
+                          className="vi-dot"
+                          cx={viX(i)}
+                          cy={viY(p.v)}
+                          r={2.4}
+                          style={{ animationDelay: `${0.5 + i * 0.045}s` }}
+                        />
+                      ))}
+                      {VISIBILITY_INDEX.map((p, i) =>
+                        i % 4 === 0 || i === VISIBILITY_INDEX.length - 1 ? (
+                          <text
+                            key={p.d}
+                            className="vi-axis"
+                            x={viX(i)}
+                            y={VH - mB + 18}
+                            textAnchor="middle"
+                          >
+                            {p.d}
+                          </text>
+                        ) : null
+                      )}
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               <div className="proof-right">
@@ -422,7 +518,7 @@ export default function HomePage() {
                   <div className="agg-card">
                     <div className="agg-num">94<span>%</span></div>
                     <div className="agg-label">Client renewal at year two</div>
-                    <div className="agg-note">All engagements since 2023</div>
+                    <div className="agg-note">All engagements since 2025</div>
                   </div>
                   <div className="agg-card">
                     <div className="agg-num">34</div>

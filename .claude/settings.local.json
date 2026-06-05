@@ -17,7 +17,8 @@
     ],
     "additionalDirectories": [
       "c:\\Users\\sanaf\\self-v1-main\\self-v1-main\\app\\case-studies",
-      "C:\\Users\\sanaf\\Downloads"
+      "C:\\Users\\sanaf\\Downloads",
+      "c:\\Users\\sanaf\\self-v1-main\\self-v1-main\\.next"
     ]
   }
 }
