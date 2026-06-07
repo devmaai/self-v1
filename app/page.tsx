@@ -15,6 +15,7 @@ import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
 import Image from "next/image";
 import V2Interactions from "@/components/v2/V2Interactions";
+import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 
@@ -323,68 +324,7 @@ export default function HomePage() {
             <div className="pill">What we do</div>
             <h2 className="section-h2">Six services. All built specifically<br />for self-storage operators.</h2>
             <p className="section-lead">We do not do generic SEO. Our activities are tailored for real estate owners, especially focused on growing the business for self-storage business owners.</p>
-            <div className="services-grid">
-              {[
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#0EA5E9" strokeWidth="1.6" /><path d="M10 6v5l3 2" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" /></svg>,
-                  title: "Local SEO & Google Maps Ranking",
-                  desc: "Own the map pack for storage searches in your trade area. We handle GBP optimisation, citation building, review systems, and the NAP consistency that keeps your listing in the top 3.",
-                  tags: ["GBP", "Citations", "NAP", "Map Pack"],
-                  href: "/services/local-seo-gbp-optimization",
-                },
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#0EA5E9" strokeWidth="1.6" /><path d="M7 9h6M7 12h4" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" /></svg>,
-                  title: "AEO & GEO — AI Search Visibility",
-                  desc: "Get cited by ChatGPT, Perplexity, and Google AI Overviews when renters ask about storage. Schema markup, GEO pages, and structured content built for the way AI answers search queries.",
-                  tags: ["Schema", "GEO Pages", "AI Search"],
-                  href: "/services/aeo-geo",
-                },
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16V8l6-4 6 4v8" stroke="#0EA5E9" strokeWidth="1.6" strokeLinejoin="round" /><rect x="8" y="11" width="4" height="5" rx="0.5" stroke="#0EA5E9" strokeWidth="1.4" /></svg>,
-                  title: "Technical SEO",
-                  desc: "Fast, crawlable storage websites that load on mobile and convert reservations. Core Web Vitals, crawl error resolution, schema implementation, and site speed work built for storage platforms.",
-                  tags: ["CWV", "Speed", "Crawl", "Schema"],
-                  href: "/services/technical-seo",
-                },
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" /><circle cx="10" cy="10" r="7" stroke="#0EA5E9" strokeWidth="1.6" /></svg>,
-                  title: "Backlink Building",
-                  desc: "Earn the links that move Google rankings. Local outreach, digital PR, and resource link building designed for independent self-storage operators. No link farms, no shortcuts that penalise you later.",
-                  tags: ["Local Outreach", "Digital PR", "Authority"],
-                  href: "/services/backlinks",
-                },
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8h10M5 12h7" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" /><rect x="3" y="4" width="14" height="12" rx="2" stroke="#0EA5E9" strokeWidth="1.6" /></svg>,
-                  title: "SEO Content Writing",
-                  desc: "Storage-specific writers who produce content that ranks, builds authority, and helps renters choose your facility. Unit-size pages, location guides, neighbourhood content, and monthly blog articles.",
-                  tags: ["Location Pages", "Unit Pages", "Blog"],
-                  href: "/services/content-keyword-strategy",
-                },
-                {
-                  icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 14l4-4 3 3 5-6" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /><rect x="3" y="3" width="14" height="14" rx="2" stroke="#0EA5E9" strokeWidth="1.6" /></svg>,
-                  title: "SEO Reporting & Analytics",
-                  desc: "Live dashboards connected to your GA4 and Google Search Console accounts. Monthly reports that connect ranking movements directly to move-in volume so you know exactly what the SEO programme produces.",
-                  tags: ["GA4", "GSC", "Monthly Report"],
-                  href: "/services/multi-location-seo",
-                },
-              ].map((s, i) => (
-                <div key={i} className="svc-card reveal">
-                  <div className="svc-icon">{s.icon}</div>
-                  <div className="svc-title">{s.title}</div>
-                  <div className="svc-desc">{s.desc}</div>
-                  <div className="svc-tags">{s.tags.map((t) => <span key={t} className="svc-tag">{t}</span>)}</div>
-                  <a href={s.href} className="svc-link">Learn more →</a>
-                </div>
-              ))}
-            </div>
-
-            <div className="svc-cta-bar reveal">
-              <div className="svc-cta-text">
-                Not sure which services your facility needs?
-                <span>We map the gaps in a free audit and recommend only what will move rankings for your specific location.</span>
-              </div>
-              <a href="#audit" className="btn-cta-dark">Get your free audit →</a>
-            </div>
+            <V2ServicesDrawer />
           </div>
         </section>
 
@@ -399,35 +339,35 @@ export default function HomePage() {
                 <div className="pdc-header">
                   <div className="pdc-title">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="6.5" fill="#4285F4" /><path d="M6.5 3.5A3 3 0 1 0 9.5 6.5H6.5V4.8h3.7v.7a4.4 4.4 0 1 1-3.7-4.5V3.5z" fill="#fff" /></svg>
-                    Search Console — Single facility, Pickfords
+                    Search Console — Pickfords
                   </div>
-                  <div className="pdc-source">Months 1–9</div>
+                  <div className="pdc-source">Last 12 months</div>
                 </div>
                 <div className="pdc-kpi-row">
                   <div className="pkpi">
                     <div className="pkpi-label">Organic clicks</div>
-                    <div className="pkpi-val">18.3K</div>
-                    <div className="pkpi-delta">↑ 189% vs baseline</div>
+                    <div className="pkpi-val">185K</div>
+                    <div className="pkpi-delta flat">Last 12 months</div>
+                  </div>
+                  <div className="pkpi">
+                    <div className="pkpi-label">Impressions</div>
+                    <div className="pkpi-val">36.1M</div>
+                    <div className="pkpi-delta flat">Self-storage demand</div>
                   </div>
                   <div className="pkpi">
                     <div className="pkpi-label">Avg. position</div>
-                    <div className="pkpi-val">4.1</div>
-                    <div className="pkpi-delta">Was 14.7 at start</div>
-                  </div>
-                  <div className="pkpi">
-                    <div className="pkpi-label">CTR</div>
-                    <div className="pkpi-val">6.8%</div>
-                    <div className="pkpi-delta">Was 1.2% at start</div>
+                    <div className="pkpi-val">18.3</div>
+                    <div className="pkpi-delta flat">Across tracked queries</div>
                   </div>
                 </div>
                 <div className="pos-tracker">
-                  <div className="pos-label">Google Maps position — primary keywords</div>
+                  <div className="pos-label">Top self-storage queries — by impressions</div>
                   {[
-                    { kw: "storage units near me", w: "97%", num: "#1", top: true, delay: 0 },
-                    { kw: "self storage [city name]", w: "90%", num: "#2", top: true, delay: 0.1 },
-                    { kw: "10x10 storage unit [zip]", w: "83%", num: "#3", top: false, delay: 0.2 },
-                    { kw: "climate controlled storage", w: "72%", num: "#4", top: false, delay: 0.3 },
-                    { kw: "cheap storage near [zip]", w: "62%", num: "#6", top: false, delay: 0.4 },
+                    { kw: "self storage near me", w: "100%", num: "69,247", delay: 0 },
+                    { kw: "self storage", w: "44%", num: "30,633", delay: 0.1 },
+                    { kw: "furniture self storage", w: "25%", num: "17,285", delay: 0.2 },
+                    { kw: "cheap self storage", w: "21%", num: "14,477", delay: 0.3 },
+                    { kw: "self storage cost", w: "20%", num: "13,509", delay: 0.4 },
                   ].map((row, i) => (
                     <div key={i} className="pos-row">
                       <div className="pos-kw">{row.kw}</div>
@@ -437,7 +377,7 @@ export default function HomePage() {
                           style={{ ["--w" as string]: row.w, animationDelay: `${row.delay}s` } as React.CSSProperties}
                         />
                       </div>
-                      <div className={`pos-num${row.top ? " top1" : ""}`}>{row.num}</div>
+                      <div className="pos-num val">{row.num}</div>
                     </div>
                   ))}
                 </div>

@@ -300,6 +300,49 @@
   .v2-home .btn-cta-dark { background: var(--accent); color: var(--white); font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: background 0.15s; white-space: nowrap; }
   .v2-home .btn-cta-dark:hover { background: var(--accent-dark); }
 
+  /* SERVICE CARD AS BUTTON */
+  .v2-home .svc-card-btn { font-family: inherit; text-align: left; cursor: pointer; width: 100%; }
+  .v2-home .svc-card-btn .svc-link { margin-top: auto; }
+
+  /* SERVICES DRAWER */
+  .svc-drawer-portal { position: static; }
+  .v2-home .svc-drawer-root { position: fixed; inset: 0; z-index: 1000; visibility: hidden; pointer-events: none; }
+  .v2-home .svc-drawer-root.open { visibility: visible; pointer-events: auto; }
+  .v2-home .svc-drawer-backdrop { position: absolute; inset: 0; background: rgba(15,23,42,0.45); opacity: 0; transition: opacity 0.3s ease; }
+  .v2-home .svc-drawer-root.open .svc-drawer-backdrop { opacity: 1; }
+  .v2-home .svc-drawer {
+    position: absolute; top: 0; right: 0; height: 100%; width: 520px; max-width: 92vw;
+    background: var(--white); box-shadow: -8px 0 40px rgba(15,23,42,0.18);
+    display: flex; flex-direction: column;
+    transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+  }
+  .v2-home .svc-drawer-root.open .svc-drawer { transform: translateX(0); }
+  .v2-home .svc-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 28px; border-bottom: 1px solid var(--slate-100); background: var(--white); }
+  .v2-home .svc-drawer-head-main { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .v2-home .svc-drawer-head-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: var(--accent-pale); display: flex; align-items: center; justify-content: center; }
+  .v2-home .svc-drawer-pill { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding: 0; border-radius: 6px; margin-bottom: 5px; }
+  .v2-home .svc-drawer-title { font-family: var(--serif); font-size: 21px; font-weight: 400; color: var(--slate-900); line-height: 1.25; }
+  .v2-home .svc-drawer-close { flex-shrink: 0; width: 36px; height: 36px; border: 1px solid var(--slate-100); background: var(--white); border-radius: 8px; color: var(--slate-500); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s, color 0.15s; }
+  .v2-home .svc-drawer-close:hover { background: var(--slate-50); color: var(--slate-900); }
+  .v2-home .svc-drawer-body { flex: 1; overflow-y: auto; padding: 24px 32px; }
+  .v2-home .svc-drawer-lead { font-size: 14px; font-weight: 300; color: var(--slate-600); line-height: 1.65; margin-bottom: 24px; }
+  .v2-home .svc-drawer-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate-400); margin: 24px 0 14px; }
+  .v2-home .svc-drawer-steps { display: flex; flex-direction: column; gap: 14px; }
+  .v2-home .svc-drawer-step { border: 1px solid var(--slate-100); border-radius: var(--radius); padding: 16px 18px; }
+  .v2-home .svc-drawer-step-phase { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .v2-home .svc-drawer-step-title { font-size: 14px; font-weight: 600; color: var(--slate-900); margin-bottom: 6px; }
+  .v2-home .svc-drawer-step-desc { font-size: 13px; font-weight: 300; color: var(--slate-600); line-height: 1.6; margin-bottom: 10px; }
+  .v2-home .svc-drawer-step .svc-tags { margin-bottom: 0; }
+  .v2-home .svc-drawer-faq { display: flex; flex-direction: column; }
+  .v2-home .svc-drawer-faq-item { border-bottom: 1px solid var(--slate-100); }
+  .v2-home .svc-drawer-faq-q { width: 100%; font-family: inherit; text-align: left; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; font-size: 13.5px; font-weight: 500; color: var(--slate-900); }
+  .v2-home .svc-drawer-faq-toggle { flex-shrink: 0; font-size: 18px; font-weight: 300; color: var(--accent); transition: transform 0.2s; }
+  .v2-home .svc-drawer-faq-item.open .svc-drawer-faq-toggle { transform: rotate(45deg); }
+  .v2-home .svc-drawer-faq-a { max-height: 0; overflow: hidden; font-size: 13px; font-weight: 300; color: var(--slate-600); line-height: 1.65; transition: max-height 0.25s ease, padding 0.25s ease; }
+  .v2-home .svc-drawer-faq-item.open .svc-drawer-faq-a { max-height: 400px; padding-bottom: 14px; }
+  .v2-home .svc-drawer-foot { padding: 18px 32px; border-top: 1px solid var(--slate-100); }
+  .v2-home .svc-drawer-foot .btn-cta-dark { display: block; text-align: center; }
+
   /* PROOF */
   .v2-home .proof-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; align-items: stretch; }
   .v2-home .proof-left { display: flex; flex-direction: column; gap: 16px; }
@@ -328,6 +371,7 @@
   .v2-home .pos-fill { height: 100%; border-radius: 3px; background: var(--accent); animation: v2fillW 1s ease-out forwards; width: 0; }
   .v2-home .pos-num { font-size: 12px; font-weight: 700; color: var(--slate-800); width: 24px; text-align: right; flex-shrink: 0; }
   .v2-home .pos-num.top1 { color: var(--accent); }
+  .v2-home .pos-num.val { width: 56px; color: var(--slate-500); font-weight: 600; font-variant-numeric: tabular-nums; }
 
   .v2-home .journey-chart { padding: 18px 22px; border-top: 1px solid var(--slate-100); }
   .v2-home .jc-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--slate-400); margin-bottom: 14px; }
@@ -437,7 +481,7 @@
 
   /* FAQ */
   .v2-home .faq-layout { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: start; }
-  .v2-home .faq-aside-cta { margin-top: 160px; background: var(--slate-900); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .v2-home .faq-aside-cta { margin-top: 40px; background: var(--slate-900); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
   .v2-home .fac-text { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
   .v2-home .fac-text strong { color: var(--white); display: block; font-size: 16px; margin-bottom: 4px; }
   .v2-home .btn-fac { background: var(--accent); color: var(--white); font-size: 13px; font-weight: 600; padding: 11px 18px; border-radius: 8px; display: block; text-align: center; transition: background 0.15s; }
@@ -445,7 +489,7 @@
 
   .v2-home .faq-list { display: flex; flex-direction: column; }
   .v2-home .faq-item { border-bottom: none; }
-  .v2-home .faq-q { font-size: 14px; font-weight: 600; color: var(--slate-800); cursor: pointer; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; user-select: none; transition: color 0.15s; }
+  .v2-home .faq-q { font-size: 14px; font-weight: 600; color: var(--slate-800); cursor: pointer; padding: 6px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; user-select: none; transition: color 0.15s; }
   .v2-home .faq-q:hover { color: var(--accent); }
   .v2-home .faq-toggle { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--slate-200); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; color: var(--slate-400); transition: all 0.2s; line-height: 1; }
   .v2-home .faq-item.open .faq-toggle { background: var(--accent); border-color: var(--accent); color: var(--white); transform: rotate(45deg); }
@@ -628,6 +672,11 @@
   .v2-home .services-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
   .v2-home .svc-cta-bar { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; margin-top: 28px; }
   .v2-home .btn-cta-dark { width: 100%; text-align: center; }
+  .v2-home .svc-drawer { width: 100%; max-width: 100vw; }
+  .v2-home .svc-drawer-head { padding: 22px 20px 18px; }
+  .v2-home .svc-drawer-title { font-size: 21px; }
+  .v2-home .svc-drawer-body { padding: 20px; }
+  .v2-home .svc-drawer-foot { padding: 16px 20px; }
 
   /* PROOF */
   .v2-home .proof-layout { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
