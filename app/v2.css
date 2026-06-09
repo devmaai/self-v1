@@ -513,7 +513,7 @@
 
   /* FOOTER */
   .v2-home .v2-footer { background: #080F1E; padding: 56px 48px 32px; }
-  .v2-home .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; max-width: 1120px; margin: 0 auto 48px; }
+  .v2-home .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; max-width: 1120px; margin: 0 auto 48px; }
   .v2-home .fb-brand { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
   .v2-home .fb-brand span { color: var(--accent); }
   .v2-home .fb-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.65; }

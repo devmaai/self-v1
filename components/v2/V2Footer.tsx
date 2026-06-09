@@ -9,17 +9,6 @@ export default function V2Footer() {
           <div className="fb-desc">Specialist SEO for independent self-storage operators across the USA. Single-facility to regional portfolio. Operated under MAAI LLC, Wyoming.</div>
         </div>
         <div>
-          <div className="fc-head">Services</div>
-          <ul className="fc-links">
-            <li><Link href="/services/local-seo-gbp-optimization">Local SEO &amp; Maps</Link></li>
-            <li><Link href="/services/aeo-geo">AEO &amp; GEO</Link></li>
-            <li><Link href="/services/technical-seo">Technical SEO</Link></li>
-            <li><Link href="/services/backlinks">Backlink Building</Link></li>
-            <li><Link href="/services/content-keyword-strategy">Content Writing</Link></li>
-            <li><Link href="/services/multi-location-seo">SEO Reporting</Link></li>
-          </ul>
-        </div>
-        <div>
           <div className="fc-head">Company</div>
           <ul className="fc-links">
             <li><Link href="/case-studies">Case Studies</Link></li>
