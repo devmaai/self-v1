@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div>© 2026 SelfStorage.help. Operated by MAAI LLC, Wyoming, USA.</div>
           <div>
-            <a href="mailto:hello@selfstorage.help">hello@selfstorage.help</a>
+            <a href="mailto:business@maai.agency">business@maai.agency</a>
           </div>
         </div>
       </div>

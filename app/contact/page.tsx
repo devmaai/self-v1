@@ -26,7 +26,7 @@ export default function ContactPage() {
                 Tell us about your facility and we will send a full local visibility audit within
                 two-three business days.
               </p>
-              <a href="mailto:hello@selfstorage.help?subject=Free+Audit+Request">
+              <a href="mailto:business@maai.agency?subject=Free+Audit+Request">
                 Request an audit
               </a>
             </div>
@@ -42,7 +42,7 @@ export default function ContactPage() {
             <div className="contact-option">
               <h3>Send a message</h3>
               <p>A quick question, a specific situation, or just an introduction.</p>
-              <a href="mailto:hello@selfstorage.help">Send us a message</a>
+              <a href="mailto:business@maai.agency">Send us a message</a>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
           <div className="contact-direct-grid">
             <div className="contact-direct-item">
               <h4>Email</h4>
-              <a href="mailto:hello@selfstorage.help">hello@selfstorage.help</a>
+              <a href="mailto:business@maai.agency">business@maai.agency</a>
             </div>
             <div className="contact-direct-item">
               <h4>Audit requests</h4>
