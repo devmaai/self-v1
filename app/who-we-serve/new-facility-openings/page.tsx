@@ -17,7 +17,7 @@ export default function NewFacilityOpeningsPage() {
         eyebrow="For New Facility Openings"
         headline={<>Hit your lease-up targets <em>from day one</em>.</>}
         subheadline="A pre-opening SEO program designed to have your facility ranked, reviewed, and reserving units the moment your doors open."
-        primaryCta={{ label: "Get my free pre-opening plan", href: "/contact" }}
+        primaryCta={{ label: "Get my free pre-opening plan", href: "/audit" }}
       />
 
       <ContentBlock
@@ -77,6 +77,7 @@ export default function NewFacilityOpeningsPage() {
         headline="Planning a grand opening?"
         body="Get a free pre-opening plan. Tell us your opening date and we will map out what should happen every month between now and doors open."
         ctaLabel="Get my free pre-opening plan"
+        ctaHref="/audit"
       />
     </>
   );

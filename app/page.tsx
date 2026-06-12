@@ -18,7 +18,6 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
-import V2AuditForm from "@/components/v2/V2AuditForm";
 
 // Real Visibility Index data — daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
@@ -152,7 +151,7 @@ export default function HomePage() {
                   Independent self-storage operators lose move-ins every day to bigger chains and listing platforms that charge them per lead. We specialise in SEO &amp; AEO for self-storage business owners and fix the organic search gap so renters find your storage facility first.
                 </p>
                 <div className="hero-cta-row">
-                  <a href="#audit" className="btn-hero">
+                  <a href="/audit" className="btn-hero">
                     Get your free site audit
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </a>
@@ -313,7 +312,7 @@ export default function HomePage() {
                     <strong>See what you are losing each month</strong>
                     Get a free audit. We map your gaps and show you exactly what it would take to rank.
                   </div>
-                  <a href="#audit" className="btn-inline">Get free audit →</a>
+                  <a href="/audit" className="btn-inline">Get free audit →</a>
                 </div>
               </div>
             </div>
@@ -487,7 +486,7 @@ export default function HomePage() {
                     <div className="pac-feat">Keyword ranking baseline report</div>
                     <div className="pac-feat">No sales call required to receive the audit</div>
                   </div>
-                  <a href="#audit" className="btn-pac">Request your free audit →</a>
+                  <a href="/audit" className="btn-pac">Request your free audit →</a>
                 </div>
               </div>
             </div>
@@ -518,7 +517,7 @@ export default function HomePage() {
             </div>
             <div className="process-cta-row reveal">
               <div className="pct-text"><strong>Ready to see what phase one finds in your site?</strong> The audit is free and delivered in writing within five business days.</div>
-              <a href="#audit" className="btn-pct">Start with a free audit →</a>
+              <a href="/audit" className="btn-pct">Start with a free audit →</a>
             </div>
           </div>
         </section>
@@ -543,7 +542,7 @@ export default function HomePage() {
                   <li className="pc-feat">Review automation setup</li>
                   <li className="pc-feat">Monthly GA4 and GSC reporting call</li>
                 </ul>
-                <div className="pc-cta"><a href="#audit" className="pc-btn">Start with Single →</a></div>
+                <div className="pc-cta"><a href="/audit" className="pc-btn">Start with Single →</a></div>
               </div>
               <div className="pricing-card featured reveal">
                 <div className="pc-head">
@@ -561,7 +560,7 @@ export default function HomePage() {
                   <li className="pc-feat">Dedicated SEO lead on your account</li>
                   <li className="pc-feat">Quarterly strategy review</li>
                 </ul>
-                <div className="pc-cta"><a href="#audit" className="pc-btn primary">Start with Growth →</a></div>
+                <div className="pc-cta"><a href="/audit" className="pc-btn primary">Start with Growth →</a></div>
               </div>
               <div className="pricing-card reveal">
                 <div className="pc-head">
@@ -578,7 +577,7 @@ export default function HomePage() {
                   <li className="pc-feat">Weekly reporting dashboard access</li>
                   <li className="pc-feat">Priority response SLA</li>
                 </ul>
-                <div className="pc-cta"><a href="#audit" className="pc-btn">Talk to us →</a></div>
+                <div className="pc-cta"><a href="/audit" className="pc-btn">Talk to us →</a></div>
               </div>
             </div>
             <div className="pricing-guarantee reveal">
@@ -597,7 +596,7 @@ export default function HomePage() {
                 <p className="section-lead" style={{ marginBottom: 0 }}>If your question is not here, reach out directly. We answer before you commit to anything.</p>
                 <div className="faq-aside-cta">
                   <div className="fac-text"><strong>Still not sure? Talk to us first.</strong>We will answer your questions, review your current rankings, and tell you honestly whether SEO makes sense for your facility right now.</div>
-                  <a href="#audit" className="btn-fac">Request a free conversation →</a>
+                  <a href="/audit" className="btn-fac">Request a free conversation →</a>
                 </div>
               </div>
               <div className="faq-list">
@@ -623,7 +622,13 @@ export default function HomePage() {
           <div className="inner">
             <h2 className="final-h2">Find out exactly where your facility<br />is losing organic search visibility.</h2>
             <p className="final-lead">Request a free audit. We review your site, GBP, and local rankings and deliver a written report within five business days. No sales call required to receive it.</p>
-            <V2AuditForm />
+            <div className="final-actions">
+              <a href="/audit" className="btn-final">
+                Get my free audit
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+              <a href="#proof" className="btn-final-ghost">See ranking data first</a>
+            </div>
             <div className="final-reassurance">
               <div className="fr-item">Free, no obligation</div>
               <div className="fr-item">Written report in 5 business days</div>

@@ -17,7 +17,7 @@ export default function ContainersPage() {
         eyebrow="For Storage Container Operators"
         headline={<>Rank for renters comparing a <em>storage container</em> to a unit.</>}
         subheadline="A local SEO and content program built for container operators competing on price, delivery, and on-site convenience."
-        primaryCta={{ label: "Get my free audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -78,6 +78,7 @@ export default function ContainersPage() {
         headline="See how visible your container pricing actually is."
         body="Get a free audit focused on container keyword coverage and local visibility."
         ctaLabel="Get my free audit"
+        ctaHref="/audit"
       />
     </div>
   );

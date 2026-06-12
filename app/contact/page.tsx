@@ -26,7 +26,7 @@ export default function ContactPage() {
                 Tell us about your facility and we will send a full local visibility audit within
                 two-three business days.
               </p>
-              <a href="mailto:business@maai.agency?subject=Free+Audit+Request">
+              <a href="/audit">
                 Request an audit
               </a>
             </div>

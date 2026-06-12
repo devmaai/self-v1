@@ -17,7 +17,7 @@ export default function VehicleRvBoatStoragePage() {
         eyebrow="For Vehicle, RV & Boat Storage"
         headline={<>Book more vehicle, RV, and boat <em>storage spaces</em>.</>}
         subheadline="Specialized SEO for facilities that offer outdoor, covered, or enclosed vehicle storage, where the renter profile and search patterns are nothing like traditional storage."
-        primaryCta={{ label: "Get my free audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -81,6 +81,7 @@ export default function VehicleRvBoatStoragePage() {
         headline="See how your vehicle storage ranks today."
         body="Get a free audit focused on RV, boat, and vehicle storage keyword coverage."
         ctaLabel="Get my free audit"
+        ctaHref="/audit"
       />
     </>
   );

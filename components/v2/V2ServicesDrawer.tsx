@@ -109,7 +109,7 @@ export default function V2ServicesDrawer() {
           Not sure which services your facility needs?
           <span>We map the gaps in a free audit and recommend only what will move rankings for your specific location.</span>
         </div>
-        <a href="#audit" className="btn-cta-dark">Get your free audit →</a>
+        <a href="/audit" className="btn-cta-dark">Get your free audit →</a>
       </div>
 
       {mounted && createPortal(
@@ -164,7 +164,7 @@ export default function V2ServicesDrawer() {
               </div>
 
               <div className="svc-drawer-foot">
-                <a href="#audit" className="btn-cta-dark" onClick={close}>Get your free audit →</a>
+                <a href="/audit" className="btn-cta-dark" onClick={close}>Get your free audit →</a>
               </div>
             </>
           )}

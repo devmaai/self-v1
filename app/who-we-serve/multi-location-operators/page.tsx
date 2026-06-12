@@ -18,7 +18,7 @@ export default function MultiLocationOperatorsPage() {
         eyebrow="For Multi-Location Operators"
         headline="Scale local SEO across every facility you operate."
         subheadline="For regional and national operators running five or more facilities who need one partner, one reporting layer, and consistent visibility gains across every location."
-        primaryCta={{ label: "Get my free multi-location audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free multi-location audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -85,6 +85,7 @@ export default function MultiLocationOperatorsPage() {
         headline="Ready to run local SEO like a system?"
         body="Get a free multi-location audit. We will map the current state of every facility and show you the path to portfolio-wide performance."
         ctaLabel="Get my free multi-location audit"
+        ctaHref="/audit"
       />
     </>
   );

@@ -17,7 +17,7 @@ export default function FurnitureDepositoriesPage() {
         eyebrow="For Furniture Depositories"
         headline={<>Rank for movers searching for a <em>furniture depository</em>.</>}
         subheadline="A local SEO and content program built for depositories where the moving firm handles transport and pricing stays competitive."
-        primaryCta={{ label: "Get my free audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -78,6 +78,7 @@ export default function FurnitureDepositoriesPage() {
         headline="See how visible your depository service actually is."
         body="Get a free audit focused on depository keyword coverage and local visibility."
         ctaLabel="Get my free audit"
+        ctaHref="/audit"
       />
     </div>
   );

@@ -17,7 +17,7 @@ export default function StorageWarehousePage() {
         eyebrow="For Storage Warehouse Facilities"
         headline={<>Rank for the businesses searching for a <em>storage warehouse</em>.</>}
         subheadline="A local SEO and content program built for warehouse facilities competing on security, 24/7 access, and flexible space."
-        primaryCta={{ label: "Get my free audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -78,6 +78,7 @@ export default function StorageWarehousePage() {
         headline="See how visible your warehouse storage actually is."
         body="Get a free audit focused on commercial keyword coverage and local visibility."
         ctaLabel="Get my free audit"
+        ctaHref="/audit"
       />
     </div>
   );

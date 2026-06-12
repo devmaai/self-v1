@@ -12,7 +12,7 @@ export default function V2Footer() {
           <div className="fc-head">Contact</div>
           <ul className="fc-links">
             <li><a href="mailto:business@maai.agency">business@maai.agency</a></li>
-            <li><Link href="/contact">Request an audit</Link></li>
+            <li><Link href="/audit">Request an audit</Link></li>
           </ul>
         </div>
       </div>

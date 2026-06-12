@@ -20,7 +20,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         </ul>
         <div className="nav-actions">
           <a href={`${prefix}proof`} className="btn-nav-ghost">See client data</a>
-          <a href={variant === "home" ? "#audit" : "/contact"} className="btn-nav-cta">Get free audit →</a>
+          <a href="/audit" className="btn-nav-cta">Get free audit →</a>
         </div>
         <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -36,7 +36,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         </ul>
         <div className="mobile-menu-actions">
           <a href={`${prefix}proof`} className="btn-nav-ghost" data-mobile-close>See client data</a>
-          <a href={variant === "home" ? "#audit" : "/contact"} className="btn-nav-cta" data-mobile-close>Get free audit →</a>
+          <a href="/audit" className="btn-nav-cta" data-mobile-close>Get free audit →</a>
         </div>
       </div>
     </>

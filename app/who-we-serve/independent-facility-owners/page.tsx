@@ -18,7 +18,7 @@ export default function IndependentOwnersPage() {
         eyebrow="For Independent Owners"
         headline="Fill units without hiring a marketing team."
         subheadline="Performance SEO for independent self-storage owners who want to compete with the REITs without the staffing, the overhead, or the long agency sales process."
-        primaryCta={{ label: "Get my free audit", href: "/contact" }}
+        primaryCta={{ label: "Get my free audit", href: "/audit" }}
       />
 
       <ContentBlock
@@ -79,6 +79,7 @@ export default function IndependentOwnersPage() {
         headline="Find out what your facility is missing."
         body="Get a free audit. We will show you the three or four highest-impact fixes we would prioritize in your first 90 days."
         ctaLabel="Get my free audit"
+        ctaHref="/audit"
       />
     </>
   );

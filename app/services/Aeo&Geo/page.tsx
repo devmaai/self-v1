@@ -20,7 +20,7 @@ export default function AeoGeo() {
         eyebrow="AEO & GEO"
         headline="Rank on AEO & GEO: Get Found in AI Answers, Not Just Google Search"
         subheadline={"SEO is not dead. It has changed. When potential renters ask AI tools like Google Gemini, ChatGPT, or Perplexity “best climate-controlled storage near me” or “cheapest 10x10 storage units near me,” your facility needs to be the one they recommend and not your competitors.\nWe help self-storage operators dominate both traditional local search and the new Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) landscape."}
-        primaryCta={{ label: "Get Your Free AEO + GEO Visibility Audit", href: "/contact" }}
+        primaryCta={{ label: "Get Your Free AEO + GEO Visibility Audit", href: "/audit" }}
         note="100% focused on self-storage occupancy growth."
       />
 
@@ -189,6 +189,7 @@ export default function AeoGeo() {
         headline="Ready to Rank in Both Google Maps and AI Answers?"
         body="Get a free audit that shows your current visibility on traditional search and emerging AI engines. We’ll identify exactly why you’re missing opportunities and how to fix it."
         ctaLabel="Claim Your Free AEO + GEO Audit"
+        ctaHref="/audit"
       />
     </>
   );
