@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { caseStudies } from "@/lib/case-studies";
 import { getAllPostSlugs } from "@/lib/posts";
 
 const BASE_URL = "https://selfstorage.help";
@@ -10,8 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/contact",
-    "/case-studies",
-    "/resources",
     "/blog",
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",
@@ -36,13 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1.0 : 0.7,
   }));
 
-  const caseStudyEntries: MetadataRoute.Sitemap = caseStudies.map((c) => ({
-    url: `${BASE_URL}/case-studies/${c.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
   const blogEntries: MetadataRoute.Sitemap = getAllPostSlugs().map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: now,
@@ -50,5 +40,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...blogEntries];
+  return [...staticEntries, ...blogEntries];
 }

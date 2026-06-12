@@ -511,9 +511,33 @@
   .v2-home .fr-item { font-size: 12px; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 6px; }
   .v2-home .fr-item::before { content: '✓'; color: var(--green); font-weight: 700; }
 
+  /* AUDIT FORM */
+  .v2-home .af-card { max-width: 600px; margin: 0 auto 32px; text-align: left; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px; }
+  .v2-home .af-form { display: flex; flex-direction: column; gap: 16px; }
+  .v2-home .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .v2-home .af-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .v2-home .af-field label { font-size: 12px; font-weight: 500; letter-spacing: 0.02em; color: rgba(255,255,255,0.7); }
+  .v2-home .af-hint { color: rgba(255,255,255,0.4); font-weight: 400; }
+  .v2-home .af-field input { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 11px 14px; color: var(--white); font-family: inherit; font-size: 14px; transition: border-color 0.15s, background 0.15s; }
+  .v2-home .af-field input::placeholder { color: rgba(255,255,255,0.32); }
+  .v2-home .af-field input:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.09); }
+  .v2-home .af-error { font-size: 12px; color: #ffb4a2; }
+  .v2-home .af-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .v2-home .af-turnstile { margin-top: 2px; }
+  .v2-home .af-form-error { font-size: 13px; color: #ffb4a2; margin: -2px 0 0; }
+  .v2-home .af-submit { margin-top: 4px; width: 100%; background: var(--accent); color: var(--white); border: none; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 600; padding: 15px 24px; border-radius: 10px; transition: background 0.15s, transform 0.15s; }
+  .v2-home .af-submit:hover:not(:disabled) { background: var(--accent-dark); transform: translateY(-1px); }
+  .v2-home .af-submit:disabled { opacity: 0.6; cursor: default; }
+  .v2-home .af-note { font-size: 12px; color: rgba(255,255,255,0.45); text-align: center; margin: 2px 0 0; }
+  .v2-home .af-success { text-align: center; }
+  .v2-home .af-success-check { width: 52px; height: 52px; margin: 0 auto 16px; border-radius: 50%; background: rgba(45,90,61,0.25); color: var(--green); font-size: 26px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .v2-home .af-success h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+  .v2-home .af-success p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); }
+
   /* FOOTER */
   .v2-home .v2-footer { background: #080F1E; padding: 56px 48px 32px; }
-  .v2-home .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; max-width: 1120px; margin: 0 auto 48px; }
+  .v2-home .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; max-width: 1120px; margin: 0 auto 48px; }
+  .v2-home .footer-grid > div:last-child { text-align: right; justify-self: end; }
   .v2-home .fb-brand { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
   .v2-home .fb-brand span { color: var(--accent); }
   .v2-home .fb-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.65; }
@@ -714,6 +738,8 @@
   .v2-home .btn-final { justify-content: center; }
   .v2-home .btn-final-ghost { text-align: center; }
   .v2-home .final-reassurance { flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .v2-home .af-card { padding: 20px; }
+  .v2-home .af-row { grid-template-columns: 1fr; }
 
   /* FOOTER */
   .v2-home .v2-footer { padding: 40px 20px 24px; }

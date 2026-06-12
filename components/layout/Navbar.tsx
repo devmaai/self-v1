@@ -93,9 +93,6 @@ export default function Navbar() {
             </div>
           </div> */}
 
-          <Link href="/case-studies" onClick={close}>Case Studies</Link>
-          <Link href="/resources" onClick={close}>Resources</Link>
-
           <Link href="/contact" className="nav-cta" onClick={close}>
             Free Audit
           </Link>

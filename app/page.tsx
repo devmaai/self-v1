@@ -18,6 +18,7 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
+import V2AuditForm from "@/components/v2/V2AuditForm";
 
 // Real Visibility Index data — daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
@@ -622,13 +623,7 @@ export default function HomePage() {
           <div className="inner">
             <h2 className="final-h2">Find out exactly where your facility<br />is losing organic search visibility.</h2>
             <p className="final-lead">Request a free audit. We review your site, GBP, and local rankings and deliver a written report within five business days. No sales call required to receive it.</p>
-            <div className="final-actions">
-              <a href="/contact" className="btn-final">
-                Get my free audit
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              <a href="#proof" className="btn-final-ghost">See ranking data first</a>
-            </div>
+            <V2AuditForm />
             <div className="final-reassurance">
               <div className="fr-item">Free, no obligation</div>
               <div className="fr-item">Written report in 5 business days</div>
