@@ -348,6 +348,8 @@
   .v2-home .proof-left { display: flex; flex-direction: column; gap: 16px; }
 
   .v2-home .proof-data-card { background: var(--white); border: 1px solid var(--slate-100); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  /* Fill the left column so its bottom aligns with the right column's cards. */
+  .v2-home .proof-left .proof-data-card { flex: 1; }
   .v2-home .proof-data-card .journey-chart { flex: 1; display: flex; flex-direction: column; }
   .v2-home .proof-data-card .jc-bars { flex: 1; height: auto; min-height: 60px; }
   .v2-home .pdc-header { padding: 18px 22px; border-bottom: 1px solid var(--slate-100); display: flex; align-items: center; justify-content: space-between; }
@@ -429,6 +431,10 @@
   .v2-home .vi-trend-up { font-size: 11px; font-weight: 700; color: var(--green); background: var(--green-pale); padding: 4px 9px; border-radius: 6px; flex-shrink: 0; white-space: nowrap; }
   .v2-home .vi-chart { width: 100%; }
   .v2-home .vi-chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+  /* In the right column, grow the card to align its bottom with the Search Console card. */
+  .v2-home .proof-right .vi-card { flex: 1; display: flex; flex-direction: column; }
+  .v2-home .proof-right .vi-chart { flex: 1; display: flex; align-items: center; }
+  .v2-home .proof-right .vi-chart svg { height: 100%; }
   .v2-home .vi-grid { stroke: var(--slate-100); stroke-width: 1; }
   .v2-home .vi-axis { font-family: var(--sans); font-size: 9px; fill: var(--slate-400); }
   .v2-home .vi-line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: viDraw 1.8s ease-out forwards; }
@@ -751,4 +757,5 @@
   .v2-home .agg-grid { grid-template-columns: 1fr; }
   .v2-home .pdc-header { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
+
 

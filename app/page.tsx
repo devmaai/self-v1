@@ -51,7 +51,7 @@ export default function HomePage() {
   // Visibility Index line-chart geometry (SVG user units)
   const viMax = 80;
   const VW = 820;
-  const VH = 180;
+  const VH = 300;
   const mL = 30;
   const mR = 14;
   const mT = 12;
@@ -403,6 +403,20 @@ export default function HomePage() {
                   </div>
                 </div>
                 </div>
+              </div>
+
+              <div className="proof-right">
+                <div className="proof-audit-cta reveal">
+                  <div className="pac-label">Your facility could look like this</div>
+                  <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
+                  <div className="pac-features">
+                    <div className="pac-feat">Full technical audit delivered in week one</div>
+                    <div className="pac-feat">GBP and map pack gap analysis included</div>
+                    <div className="pac-feat">Keyword ranking baseline report</div>
+                    <div className="pac-feat">No sales call required to receive the audit</div>
+                  </div>
+                  <a href="/audit" className="btn-pac">Request your free audit →</a>
+                </div>
 
                 <div className="vi-card reveal">
                   <div className="vi-head">
@@ -450,43 +464,6 @@ export default function HomePage() {
                       )}
                     </svg>
                   </div>
-                </div>
-              </div>
-
-              <div className="proof-right">
-                <div className="agg-grid reveal">
-                  <div className="agg-card">
-                    <div className="agg-num">94<span>%</span></div>
-                    <div className="agg-label">Client renewal at year two</div>
-                    <div className="agg-note">All engagements since 2025</div>
-                  </div>
-                  <div className="agg-card">
-                    <div className="agg-num">34</div>
-                    <div className="agg-label">Facilities in active programme</div>
-                    <div className="agg-note">Single and multi-location</div>
-                  </div>
-                  <div className="agg-card">
-                    <div className="agg-num">4.1</div>
-                    <div className="agg-label">Avg. map pack position at month 6</div>
-                    <div className="agg-note">Was 14.7 at engagement start</div>
-                  </div>
-                  <div className="agg-card">
-                    <div className="agg-num">$0</div>
-                    <div className="agg-label">Organic cost per lead, month 6+</div>
-                    <div className="agg-note">Across all active clients</div>
-                  </div>
-                </div>
-
-                <div className="proof-audit-cta reveal">
-                  <div className="pac-label">Your facility could look like this</div>
-                  <div className="pac-text">We connect your GSC and GA4 in the first week. You see your own data in the same dashboard format above.</div>
-                  <div className="pac-features">
-                    <div className="pac-feat">Full technical audit delivered in week one</div>
-                    <div className="pac-feat">GBP and map pack gap analysis included</div>
-                    <div className="pac-feat">Keyword ranking baseline report</div>
-                    <div className="pac-feat">No sales call required to receive the audit</div>
-                  </div>
-                  <a href="/audit" className="btn-pac">Request your free audit →</a>
                 </div>
               </div>
             </div>
