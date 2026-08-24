@@ -1,7 +1,8 @@
 ---
-title: Self Storage Business Insurance: A Complete Guide
-date: 2026-07-28T00:00:00.000Z
-excerpt: 'Learn what self storage business insurance covers, why it matters, and how to choose the right policy for your facility. Practical guidance for owners.'
+title: 'Self Storage Business Insurance: A Complete Guide'
+date: '2026-07-28T00:00:00.000Z'
+excerpt: Learn what self storage business insurance covers, why it matters, and how
+  to choose the right policy for your facility. Practical guidance for owners.
 published: true
 ---
 TLDR
