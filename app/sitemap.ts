@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/audit",
     "/contact",
     "/blog",
+    "/storage-search",
+    "/storage-search/salt-lake-city",
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",
     "/services/content-keyword-strategy",
