@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
+
+const TO_EMAIL = process.env.AUDIT_TO_EMAIL || "business@maai.agency";
+const FROM_EMAIL = process.env.AUDIT_FROM_EMAIL || "SelfStorage Audit <onboarding@resend.dev>";
 
 // Accepts a bare domain or full URL, normalizes it, and checks the site
 // actually responds before we promise the visitor an audit.
@@ -74,6 +78,46 @@ export async function POST(request: Request) {
       { ok: false, error: "unreachable", normalized },
       { status: 422 }
     );
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ ok: false, error: "email_not_configured" }, { status: 500 });
+  }
+
+  const referer = request.headers.get("referer") || "unknown";
+  const ua = request.headers.get("user-agent") || "unknown";
+  const subject = "New CTA report request";
+  const text = [
+    "A CTA report request was submitted.",
+    "",
+    `Website: ${normalized}`,
+    `Source page: ${referer}`,
+    `User agent: ${ua}`,
+  ].join("\n");
+  const html = `
+    <h2 style="font-family:sans-serif;margin:0 0 16px">New CTA report request</h2>
+    <p style="font-family:sans-serif;font-size:14px;margin:0 0 8px"><strong>Website:</strong> ${normalized}</p>
+    <p style="font-family:sans-serif;font-size:14px;margin:0 0 8px"><strong>Source page:</strong> ${referer}</p>
+    <p style="font-family:sans-serif;font-size:14px;margin:0"><strong>User agent:</strong> ${ua}</p>
+  `;
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [TO_EMAIL],
+      subject,
+      text,
+      html,
+    });
+    if (error) {
+      console.error("[verify-site] Resend send error:", error);
+      return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
+    }
+  } catch (err) {
+    console.error("[verify-site] Resend threw:", err);
+    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true, normalized });

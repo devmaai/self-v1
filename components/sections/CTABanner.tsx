@@ -56,6 +56,10 @@ export default function CTABanner({
         setError(
           data.error === "unreachable"
             ? "We couldn't reach that site. Double-check the address and try again."
+            : data.error === "email_not_configured"
+            ? "This form isn't connected to email yet. Please use the full audit form on /audit for now."
+            : data.error === "send_failed"
+            ? "We validated the site, but couldn't deliver your request. Please try again in a moment."
             : "That doesn't look like a valid website address."
         );
         return;
