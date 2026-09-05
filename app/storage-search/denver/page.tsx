@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
+import StorageStateLinks from "@/components/sections/StorageStateLinks";
 
 const facilities = [
   {
@@ -140,6 +141,8 @@ export default function DenverStoragePage() {
       <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">Denver self storage information</span><h2>Storage that fits the Mile High City.</h2></div><div><p>Whether you are moving across town, making room for a growing business, or storing a car between seasons, Denver facilities offer flexible unit sizes and locations across the metro area.</p><p>Use the search above to check a ZIP code or neighborhood, then compare monthly rates, unit sizes, and move-in options before you reserve.</p></div></div><div className="city-storage-feature-row"><div><strong>Common sizes</strong><span>5' x 5' to 10' x 20'</span></div><div><strong>Popular amenities</strong><span>Climate control, drive-up access</span></div><div><strong>Average unit price</strong><span>$62.34 in recent reservations</span></div></div></section>
 
       <section className="city-storage-links"><div><span className="city-storage-label">Keep exploring</span><h2>Nearby Colorado cities</h2></div><div className="nearby-city-grid">{nearbyCities.map((city) => <Link href={`/storage-search?location=${encodeURIComponent(city + ", CO")}`} key={city}>{city}</Link>)}</div></section>
+      <StorageStateLinks />
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Denver, Colorado</span></nav>
     </main>
   );
 }

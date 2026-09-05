@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/blog",
     "/storage-search",
+    "/storage-search/utah",
     "/storage-search/salt-lake-city",
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",

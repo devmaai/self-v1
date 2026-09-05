@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
+import StorageStateLinks from "@/components/sections/StorageStateLinks";
 
 const facilities = [
   { name: "Extra Space Storage - 8002 - East Millcreek - E 3300 S", address: "2150 East 3300 South, Salt Lake City, UT 84109", distance: "5.3 miles away", price: "$61", unit: "5' x 5'", fee: "No booking fee shown", href: "https://www.selfstorage.com/self-storage/utah/salt-lake-city/extra-space-storage-8002-east-millcreek-e-3300-s-212335/", online: true, rating: "5.0" },
@@ -62,6 +63,8 @@ export default function SaltLakeCityStoragePage() {
       <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">Salt Lake City self storage information</span><h2>Storage for life at the Crossroads of the West.</h2></div><div><p>Salt Lake City storage gives residents flexible space for moves, seasonal gear, business inventory, and everything that comes with life near the Wasatch Mountains.</p><p>Compare Salt Lake City mini storage by ZIP code, unit size, monthly price, and move-in options before you reserve.</p></div></div><div className="city-storage-feature-row"><div><strong>Common sizes</strong><span>5' x 5' to 10' x 20'</span></div><div><strong>Popular amenities</strong><span>Climate control, drive-up access</span></div><div><strong>Average unit price</strong><span>$75.00 in recent reservations</span></div></div></section>
 
       <section className="city-storage-links"><div><span className="city-storage-label">Keep exploring</span><h2>Nearby Utah cities</h2></div><div className="nearby-city-grid">{nearbyCities.map((city) => <Link href={`/storage-search?location=${encodeURIComponent(city + ", UT")}`} key={city}>{city}</Link>)}</div></section>
+      <StorageStateLinks />
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Salt Lake City, Utah</span></nav>
     </main>
   );
 }
