@@ -129,7 +129,7 @@ export default function StorageSearchPage() {
         </div>
       </section>
 
-      <section className="unit-size-guide" aria-labelledby="unit-size-heading">
+      <section id="unit-size-guide" className="unit-size-guide" aria-labelledby="unit-size-heading">
         <div className="storage-guide-heading">
           <span className="storage-guide-symbol" aria-hidden="true">↕</span>
           <h2 id="unit-size-heading">Picking a storage unit size</h2>
