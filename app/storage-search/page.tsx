@@ -39,7 +39,19 @@ const UNIT_SIZES = [
 ];
 
 function cityHref(city: string) {
+  const liveCitySlugs: Record<string, string> = {
+    "Yuba City": "yuba-city",
+    "National City": "national-city",
+    "Culver City": "culver-city",
+    "Daly City": "daly-city",
+    "Redwood City": "redwood-city",
+    "Cathedral City": "cathedral-city",
+    "Sun City": "sun-city",
+    "Harbor City": "harbor-city",
+    "Sand City": "sand-city",
+  };
   if (city === "Salt Lake City") return "/storage-search/salt-lake-city";
+  if (liveCitySlugs[city]) return `/storage-search/${liveCitySlugs[city]}`;
   return `/storage-search?location=${encodeURIComponent(city)}`;
 }
 
