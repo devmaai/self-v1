@@ -191,7 +191,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .city-storage-search-pin { width: 22px; height: 22px; flex: 0 0 22px; margin: 0 14px; color: var(--city-blue); }
 .facility-pin { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border-radius: 50%; background: var(--city-blue-soft); color: var(--city-blue); }
 .facility-pin svg { width: 20px; height: 20px; }
-.facility-card-meta { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding: 12px 0; border-top: 1px solid #edf2f5; border-bottom: 1px solid #edf2f5; }
+.facility-unit-options { margin-top: 18px; border-top: 1px solid #edf2f5; }
+.facility-unit-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 0; border-bottom: 1px solid #edf2f5; }
+.facility-unit-row:nth-child(even) { background: #f4f8fb; }
+.facility-unit-row .facility-unit { padding-left: 8px; }
+.facility-unit-row .facility-price { padding-right: 8px; }
+.facility-unit-row del { margin-right: 8px; color: #91a0aa; font-size: 14px; }
+.facility-card-meta { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding: 12px 0; border-bottom: 1px solid #edf2f5; }
 .facility-unit { color: var(--city-ink); font-size: 14px; font-weight: 700; }
 .facility-price { color: #7890a3; font-size: 12px; }
 .facility-price strong { color: var(--rust); font-size: 18px; }

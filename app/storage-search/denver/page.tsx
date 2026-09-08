@@ -130,7 +130,7 @@ export default function DenverStoragePage() {
               <article className="facility-card" key={facility.name}>
                 <div className="facility-card-top"><div><span className="facility-distance">{facility.distance}</span><h3>{facility.name}</h3><p>{facility.address}</p></div><div className="facility-pin"><LocationPin /></div></div>
                 <div className="facility-card-meta"><span className="facility-unit">{facility.unit}</span><span className="facility-price"><strong>{facility.price}</strong> / month</span><span className="facility-fee">{facility.fee}</span></div>
-                <div className="facility-card-bottom"><div className="facility-signals">{facility.online && <span className="facility-online">Online move-in</span>}{facility.rating && <span className="facility-rating">{facility.rating} <span aria-hidden="true">★</span></span>}</div><a href={facility.href} target="_blank" rel="noreferrer">View units <span aria-hidden="true">↗</span></a></div>
+                <div className="facility-card-bottom"><div className="facility-signals">{facility.online && <span className="facility-online">Online move-in</span>}{facility.rating && <span className="facility-rating">{facility.rating} <span aria-hidden="true">★</span></span>}</div><a href={facility.href} target="_blank" rel="noreferrer">Get quote <span aria-hidden="true">↗</span></a></div>
               </article>
             ))}
           </div>

@@ -1,10 +1,19 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+
+type UnitOption = {
+  size: string;
+  price: string;
+  regular_price: string;
+  quantity_available: string;
+  special: string;
+  amenities: string;
+};
 
 const facilities = [
   { name: "Extra Space Storage - 1783 - Murray - Van Winkle Expressway", address: "5572 Van Winkle, Salt Lake City, UT 84117", distance: "2.9 miles away", price: "$35", unit: "5' x 5'", fee: "Fees shown: $29", href: "https://www.selfstorage.com/self-storage/utah/salt-lake-city/extra-space-storage-1783-murray-van-winkle-expressway-210773/", online: true },
@@ -39,6 +48,16 @@ const nearbyCities = ["South Salt Lake", "North Salt Lake", "Millcreek", "Murray
 export default function SaltLakeCityStoragePage() {
   const router = useRouter();
   const [location, setLocation] = useState("Salt Lake City, UT");
+  const [unitOptions, setUnitOptions] = useState<Record<string, UnitOption[]>>({});
+
+  useEffect(() => {
+    fetch("/api/storage/salt-lake-city")
+      .then((response) => (response.ok ? response.json() : []))
+      .then((groups: { name: string; units: UnitOption[] }[]) => {
+        setUnitOptions(Object.fromEntries(groups.map((group) => [group.name, group.units])));
+      })
+      .catch(() => undefined);
+  }, []);
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -71,7 +90,10 @@ export default function SaltLakeCityStoragePage() {
         </div>
         <div className="city-storage-layout">
           <div className="city-storage-list">
-            {facilities.map((facility) => <article className="facility-card" key={facility.name}><div className="facility-card-top"><div><span className="facility-distance">{facility.distance}</span><h3>{facility.name}</h3><p>{facility.address}</p></div><div className="facility-pin"><LocationPin /></div></div><div className="facility-card-meta"><span className="facility-unit">{facility.unit}</span><span className="facility-price"><strong>{facility.price}</strong> / month</span><span className="facility-fee">{facility.fee}</span></div><div className="facility-card-bottom"><div className="facility-signals">{facility.online && <span className="facility-online">Online move-in</span>}</div><a href={facility.href} target="_blank" rel="noreferrer">View units <span aria-hidden="true">↗</span></a></div></article>)}
+            {facilities.map((facility) => {
+              const units = unitOptions[facility.name] ?? [{ size: facility.unit, price: facility.price.slice(1), regular_price: facility.price.slice(1), quantity_available: "", special: "", amenities: "" }];
+              return <article className="facility-card" key={facility.name}><div className="facility-card-top"><div><span className="facility-distance">{facility.distance}</span><h3>{facility.name}</h3><p>{facility.address}</p></div><div className="facility-pin"><LocationPin /></div></div><div className="facility-unit-options">{units.map((unit) => <div className="facility-unit-row" key={`${unit.size}-${unit.price}`}><span className="facility-unit">{unit.size}</span><span className="facility-price">{unit.regular_price && unit.regular_price !== unit.price && <del>${unit.regular_price}</del>} <strong>${unit.price}</strong></span></div>)}</div><div className="facility-card-meta"><span className="facility-fee">{facility.fee}</span></div><div className="facility-card-bottom"><div className="facility-signals">{facility.online && <span className="facility-online">Online move-in</span>}</div><a href={facility.href} target="_blank" rel="noreferrer">Get quote <span aria-hidden="true">↗</span></a></div></article>;
+            })}
           </div>
           <aside className="city-storage-map" aria-label="Salt Lake City storage area map"><div className="map-grid" /><div className="map-route map-route-one" /><div className="map-route map-route-two" /><div className="map-marker marker-one">1</div><div className="map-marker marker-two">$</div><div className="map-marker marker-three">3</div><div className="map-label">Salt Lake City storage area</div><span className="map-compass">N</span></aside>
         </div>
