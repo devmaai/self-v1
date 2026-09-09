@@ -33,9 +33,9 @@ function StorageTypeIcon({ name }: { name: StorageTypeIconName }) {
 }
 
 const UNIT_SIZES = [
-  { icon: "▧", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
-  { icon: "▦", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
-  { icon: "▥", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
+  { image: "/images/storage-guide/boxes.jpg", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
+  { image: "/images/storage-guide/medium-unit.jpg", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
+  { image: "/images/storage-guide/large-unit.jpg", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
 ];
 
 function cityHref(city: string) {
@@ -146,12 +146,12 @@ export default function StorageSearchPage() {
           <span className="storage-guide-symbol" aria-hidden="true">↕</span>
           <h2 id="unit-size-heading">Picking a storage unit size</h2>
           <p>Use our storage unit size guide to identify what size storage unit you need.</p>
-          <Link className="storage-guide-link" href="/storage-search">View the full size guide <span aria-hidden="true">→</span></Link>
+          <Link className="storage-guide-link" href="/storage-size-guide">View the full size guide <span aria-hidden="true">→</span></Link>
         </div>
         <div className="unit-size-grid">
           {UNIT_SIZES.map((unit) => (
             <article className="unit-size-card" key={unit.title}>
-              <div className="unit-size-icon" aria-hidden="true">{unit.icon}</div>
+              <div className="unit-size-image"><img src={unit.image} alt={`${unit.title} storage facility`} /></div>
               <h3>{unit.title}</h3><span className="unit-size-range">{unit.range}</span>
               <div className="unit-size-tags">{unit.sizes.map((size) => <span key={size}>{size}</span>)}</div>
               <p><strong>Looks Like:</strong> {unit.looksLike}</p><p><strong>Fits:</strong> {unit.fits}</p>
