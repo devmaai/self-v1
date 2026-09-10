@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 
 type StateStorageConfig = {
   state: string;
@@ -78,6 +79,7 @@ export default function StateStoragePage({ config }: { config: StateStorageConfi
         <div className="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div>
       </section>
 
+      <StorageLocationSearch />
       <StorageStateLinks />
       <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{config.state}</span></nav>
     </main>

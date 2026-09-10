@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
-import LocationPin from "@/components/ui/LocationPin";
+import CityStorageResults, { type CityStorageFacility } from "@/components/sections/CityStorageResults";
+import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 
 export const revalidate = 604800;
 
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk/export?format=csv&gid=122002072";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk/export?format=csv&gid=870162583";
 
 const CITY_STATES: Record<string, string> = {
+  "american-fork": "UT", "apple-valley": "UT", bluffdale: "UT", bountiful: "UT", "cedar-city": "UT", centerville: "UT", clearfield: "UT", clinton: "UT", draper: "UT", farmington: "UT", "garden-city": "UT", grantsville: "UT", "heber-city": "UT", herriman: "UT", highland: "UT", hooper: "UT", hurricane: "UT", kearns: "UT", layton: "UT", lehi: "UT", lindon: "UT", logan: "UT", magna: "UT", midvale: "UT", millcreek: "UT", "mountain-green": "UT", murray: "UT", "north-logan": "UT", "north-ogden": "UT", "north-salt-lake": "UT", ogden: "UT", orem: "UT", "park-city": "UT", parowan: "UT", payson: "UT", "pleasant-grove": "UT", providence: "UT", provo: "UT", richmond: "UT", riverdale: "UT", riverton: "UT", roosevelt: "UT", "salt-lake-city": "UT", sandy: "UT", "saratoga-springs": "UT", "south-jordan": "UT", "south-salt-lake": "UT", "spanish-fork": "UT", springville: "UT", "st-george": "UT", sunset: "UT", syracuse: "UT", taylorsville: "UT", tooele: "UT", washington: "UT", "west-bountiful": "UT", "west-jordan": "UT", "west-point": "UT", "west-valley-city": "UT", "woods-cross": "UT",
   "yuba-city": "CA",
   "national-city": "CA",
   "culver-city": "CA",
@@ -28,6 +32,12 @@ type SheetRow = {
   size: string;
   quantity_available: string;
   price: string;
+  street_address: string;
+  zip: string;
+  facility_url: string;
+  distance_mi: string;
+  latitude: string;
+  longitude: string;
 };
 
 type Facility = {
@@ -37,6 +47,11 @@ type Facility = {
   unit: string;
   quantity: string;
   href: string;
+  city: string;
+  distanceMiles: number;
+  isNearby: boolean;
+  latitude: number;
+  longitude: number;
 };
 
 function parseCsvLine(line: string) {
@@ -76,19 +91,100 @@ function parseCsv(csv: string): SheetRow[] {
   });
 }
 
-async function getFacilities(city: string, state: string): Promise<Facility[]> {
-  const response = await fetch(SHEET_CSV_URL, { next: { revalidate } });
-  if (!response.ok) throw new Error(`Storage data request failed: ${response.status}`);
+let storageRowsCache: { expiresAt: number; rows: SheetRow[] } | null = null;
+let storageRowsRequest: Promise<SheetRow[]> | null = null;
 
-  const rows = parseCsv(await response.text()).filter((row) => row.city === city && row.state === state && row.facility_id && row.size);
-  return rows.map((row) => ({
-    name: row.facility_name,
-    address: `${city}, ${state}`,
-    price: `$${row.price}`,
-    unit: row.size,
-    quantity: row.quantity_available,
-    href: `/storage-search?location=${encodeURIComponent(`${city}, ${state}`)}`,
-  }));
+async function getStorageRows() {
+  if (storageRowsCache && storageRowsCache.expiresAt > Date.now()) return storageRowsCache.rows;
+  if (storageRowsRequest) return storageRowsRequest;
+
+  storageRowsRequest = fetch(SHEET_CSV_URL, {
+    next: { revalidate },
+    signal: AbortSignal.timeout(8000),
+  })
+    .then(async (response) => {
+      if (!response.ok) throw new Error(`Storage data request failed: ${response.status}`);
+      return parseCsv(await response.text()).filter((row) => row.facility_id && row.size && row.price);
+    })
+    .catch(async () => {
+      try {
+        const localCsv = await readFile(path.join(process.cwd(), "sheet_870162583.csv"), "utf8");
+        return parseCsv(localCsv).filter((row) => row.facility_id && row.size && row.price);
+      } catch {
+        return [];
+      }
+    })
+    .then((rows) => {
+      storageRowsCache = { expiresAt: Date.now() + revalidate * 1000, rows };
+      return rows;
+    })
+    .finally(() => {
+      storageRowsRequest = null;
+    });
+
+  return storageRowsRequest;
+}
+
+async function getFacilities(city: string, state: string): Promise<Facility[]> {
+  const rows = await getStorageRows();
+  const cityRows = rows.filter((row) => row.city === city && row.state === state);
+  const cityCoordinates = cityRows.reduce(
+    (center, row) => {
+      const latitude = Number(row.latitude);
+      const longitude = Number(row.longitude);
+      if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return center;
+      center.latitude += latitude;
+      center.longitude += longitude;
+      center.count += 1;
+      return center;
+    },
+    { latitude: 0, longitude: 0, count: 0 },
+  );
+
+  if (!cityRows.length || !cityCoordinates.count) return [];
+
+  const center = {
+    latitude: cityCoordinates.latitude / cityCoordinates.count,
+    longitude: cityCoordinates.longitude / cityCoordinates.count,
+  };
+  const nearbyRadiusMiles = 15;
+  const milesBetween = (latitude: number, longitude: number) => {
+    const latitudeDelta = (latitude - center.latitude) * Math.PI / 180;
+    const longitudeDelta = (longitude - center.longitude) * Math.PI / 180;
+    const latitudeRadians = center.latitude * Math.PI / 180;
+    const targetLatitudeRadians = latitude * Math.PI / 180;
+    const haversine = Math.sin(latitudeDelta / 2) ** 2
+      + Math.cos(latitudeRadians) * Math.cos(targetLatitudeRadians) * Math.sin(longitudeDelta / 2) ** 2;
+    return 3959 * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+  };
+
+  const candidateRows = rows.filter((row) => {
+    const latitude = Number(row.latitude);
+    const longitude = Number(row.longitude);
+    return Number.isFinite(latitude) && Number.isFinite(longitude) && milesBetween(latitude, longitude) <= nearbyRadiusMiles;
+  });
+  const grouped = new Map<string, Facility>();
+  for (const row of candidateRows) {
+    if (grouped.has(row.facility_id)) continue;
+    const distanceMiles = milesBetween(Number(row.latitude), Number(row.longitude));
+    grouped.set(row.facility_id, {
+      name: row.facility_name,
+      address: [row.street_address, row.city, row.state, row.zip].filter(Boolean).join(", "),
+      price: `$${row.price}`,
+      unit: row.size,
+      quantity: row.quantity_available,
+      href: `/storage-search?location=${encodeURIComponent(`${row.city}, ${row.state}`)}`,
+      city: row.city,
+      distanceMiles,
+      isNearby: row.city !== city || row.state !== state,
+      latitude: Number(row.latitude),
+      longitude: Number(row.longitude),
+    });
+  }
+  return [...grouped.values()].sort((first, second) => {
+    if (first.isNearby !== second.isNearby) return first.isNearby ? 1 : -1;
+    return first.distanceMiles - second.distanceMiles;
+  });
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
@@ -108,10 +204,10 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
 
   return (
     <main className="city-storage-page">
-      <section className="city-storage-hero"><div className="city-storage-hero-inner"><div className="city-storage-breadcrumb"><Link href="/storage-search">Storage search</Link><span>/</span>{city}</div><div className="city-storage-eyebrow"><span /> Live local availability</div><h1>Cheap self storage<br /><em>in {city}, {state}.</em></h1><p>Compare storage units, sizes, and move-in prices from facilities in {city}.</p><div className="city-storage-hero-facts"><span><strong>{facilities.length}</strong> live listings</span><span><strong>From {facilities[0].price}</strong> available</span><span><strong>{state}</strong> local market</span></div></div></section>
-      <section className="city-storage-results" aria-labelledby="city-results-heading"><div className="city-storage-results-head"><div><span className="city-storage-label">{city}, {state}</span><h2 id="city-results-heading">Storage units near you</h2><p>Live listings refreshed weekly. Prices and availability can change, so confirm details before reserving.</p></div><label className="city-storage-sort">Sort by <select defaultValue="recommended"><option value="recommended">Recommended</option><option value="price">Lowest price</option></select></label></div><div className="city-storage-layout"><div className="city-storage-list">{facilities.map((facility) => <article className="facility-card" key={`${facility.name}-${facility.unit}`}><div className="facility-card-top"><div><span className="facility-distance">Live listing</span><h3>{facility.name}</h3><p>{facility.address}</p></div><div className="facility-pin"><LocationPin /></div></div><div className="facility-card-meta"><span className="facility-unit">{facility.unit}</span><span className="facility-price"><strong>{facility.price}</strong> / month</span><span className="facility-fee">{facility.quantity} available</span></div><div className="facility-card-bottom"><div className="facility-signals"><span className="facility-online">From live sheet</span></div><a href={facility.href}>Get quote <span aria-hidden="true">↗</span></a></div></article>)}</div><aside className="city-storage-map" aria-label={`${city} storage area map`}><div className="map-grid" /><div className="map-route map-route-one" /><div className="map-route map-route-two" /><div className="map-marker marker-one">1</div><div className="map-marker marker-two">$</div><div className="map-marker marker-three">3</div><div className="map-label">{city} storage area</div><span className="map-compass">N</span></aside></div></section>
+      <section className="city-storage-hero"><div className="city-storage-hero-inner"><div className="city-storage-breadcrumb"><Link href="/storage-search">Storage search</Link><span>/</span>{city}</div><div className="city-storage-eyebrow"><span /> Live local availability</div><h1>Cheap self storage<br /><em>in {city}, {state}.</em></h1><p>Compare storage units, sizes, and move-in prices from facilities in {city} and nearby communities.</p><div className="city-storage-hero-facts"><span><strong>{facilities.length}</strong> live listings</span><span><strong>From {facilities[0].price}</strong> available</span><span><strong>{state}</strong> local market</span></div></div></section>
+      <CityStorageResults city={`${city}, ${state}`} facilities={facilities as CityStorageFacility[]} />
       <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">{city} self storage information</span><h2>Storage for moves, seasons, and everyday space.</h2></div><div><p>Compare unit sizes and current prices from storage facilities serving {city}.</p><p>Review the unit size, monthly price, and availability before you reserve.</p></div></div></section>
-      <StorageStateLinks /><nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{city}, {state}</span></nav>
+      <StorageLocationSearch /><StorageStateLinks /><nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{city}, {state}</span></nav>
     </main>
   );
 }

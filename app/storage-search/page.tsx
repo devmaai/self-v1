@@ -2,13 +2,18 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 
 const FEATURED_CITIES = [
   "Salt Lake City", "West Valley City", "Cedar City", "Park City", "Heber City", "Brigham City", "Yuba City", "National City", "Culver City", "Daly City", "Redwood City", "King City", "Cathedral City", "Sun City", "Harbor City", "Sand City", "New York City", "Long Island City", "Garden City", "Newburgh", "City Island", "Co-op City", "Starrett City", "LeFrak City", "Kansas City", "Jefferson City", "Platte City", "University City", "Webb City", "Wright City", "Kimberling City", "Crystal City", "Panama City / Panama City Beach", "Lake City", "Cooper City", "Plant City", "Florida City", "Orange City", "Dade City", "Haines City", "Palm City", "Polk City", "Jersey City", "Union City", "Atlantic City", "Ocean City", "Gloucester City", "Neptune City", "Oklahoma City", "Midwest City", "Del City", "Ponca City", "Park City", "Kansas City (KS)", "Junction City", "Garden City", "Dodge City", "Baldwin City", "Missouri City", "Royse City", "League City", "Texas City", "Bay City", "Haltom City", "Universal City", "Lakeside City", "Horizon City", "Rapid City",
 ];
+
+const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.localeCompare(second));
+const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city[0]))];
 
 const STORAGE_TYPES = [
   { icon: "box", title: "Self Storage", body: "Self-storage units are most commonly used to store personal items, furniture, and excess belongings. Units come in different sizes, from small lockers to large spaces.", href: "/storage-search?location=Self%20Storage" },
@@ -33,9 +38,9 @@ function StorageTypeIcon({ name }: { name: StorageTypeIconName }) {
 }
 
 const UNIT_SIZES = [
-  { image: "/images/storage-guide/boxes.jpg", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
-  { image: "/images/storage-guide/medium-unit.jpg", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
-  { image: "/images/storage-guide/large-unit.jpg", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
+  { image: "/images/storage-guide/boxes.png", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
+  { image: "/images/storage-guide/threebedroom.png", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
+  { image: "/images/storage-guide/fourbedroom.png", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
 ];
 
 function cityHref(city: string) {
@@ -50,7 +55,7 @@ function cityHref(city: string) {
     "Harbor City": "harbor-city",
     "Sand City": "sand-city",
   };
-  if (city === "Salt Lake City") return "/storage-search/salt-lake-city";
+  if (city.endsWith("City") || city === "St. George") return `/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`;
   if (liveCitySlugs[city]) return `/storage-search/${liveCitySlugs[city]}`;
   return `/storage-search?location=${encodeURIComponent(city)}`;
 }
@@ -59,6 +64,7 @@ export default function StorageSearchPage() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [searchedLocation, setSearchedLocation] = useState("");
+  const [cityLetter, setCityLetter] = useState("all");
 
   useEffect(() => {
     const location = new URLSearchParams(window.location.search).get("location") ?? "";
@@ -68,9 +74,12 @@ export default function StorageSearchPage() {
 
   const matchingCities = useMemo(() => {
     const normalized = searchedLocation.trim().toLowerCase();
-    if (!normalized || /^\d{5}(-\d{4})?$/.test(normalized)) return FEATURED_CITIES;
-    return FEATURED_CITIES.filter((city) => city.toLowerCase().includes(normalized));
-  }, [searchedLocation]);
+    return SORTED_FEATURED_CITIES.filter((city) => {
+      const matchesLetter = cityLetter === "all" || city.startsWith(cityLetter);
+      const matchesSearch = !normalized || /^\d{5}(-\d{4})?$/.test(normalized) || city.toLowerCase().includes(normalized);
+      return matchesLetter && matchesSearch;
+    });
+  }, [cityLetter, searchedLocation]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -109,6 +118,12 @@ export default function StorageSearchPage() {
           </div>
           <p>Browse storage locations in popular cities, or search above for your ZIP code.</p>
         </div>
+        <label className="storage-city-filter">Browse by letter
+          <select value={cityLetter} onChange={(event) => setCityLetter(event.target.value)}>
+            <option value="all">All cities</option>
+            {CITY_LETTERS.map((letter) => <option value={letter} key={letter}>{letter}</option>)}
+          </select>
+        </label>
         {matchingCities.length ? (
           <div className="storage-city-grid">
             {matchingCities.map((city, index) => (
@@ -151,7 +166,7 @@ export default function StorageSearchPage() {
         <div className="unit-size-grid">
           {UNIT_SIZES.map((unit) => (
             <article className="unit-size-card" key={unit.title}>
-              <div className="unit-size-image"><img src={unit.image} alt={`${unit.title} storage facility`} /></div>
+              <div className="unit-size-image"><Image src={unit.image} alt={`${unit.title} storage guide`} width={800} height={500} sizes="(max-width: 540px) 100vw, 33vw" /></div>
               <h3>{unit.title}</h3><span className="unit-size-range">{unit.range}</span>
               <div className="unit-size-tags">{unit.sizes.map((size) => <span key={size}>{size}</span>)}</div>
               <p><strong>Looks Like:</strong> {unit.looksLike}</p><p><strong>Fits:</strong> {unit.fits}</p>
@@ -160,10 +175,7 @@ export default function StorageSearchPage() {
         </div>
       </section>
 
-      <section className="storage-search-note">
-        <div className="storage-search-note-mark" aria-hidden="true">+</div>
-        <div><strong>Looking for a specific facility?</strong><span>Search by ZIP code above and we&apos;ll point you toward storage options in that area.</span></div>
-      </section>
+      <StorageLocationSearch />
 
       <StorageStateLinks />
       <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>

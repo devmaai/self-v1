@@ -2,6 +2,7 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
+import HomeStorageSearch from "@/components/v2/HomeStorageSearch";
 
 // Real Visibility Index data — daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
@@ -75,6 +76,7 @@ export default function HomePage() {
                   </a>
                   <a href="#proof" className="btn-hero-ghost">See ranking data →</a>
                 </div>
+                <HomeStorageSearch />
               </div>
 
               <div className="hero-dashboard reveal">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 
 export const metadata: Metadata = {
   title: "Utah Self Storage | Find Storage Units Near You",
@@ -8,12 +9,7 @@ export const metadata: Metadata = {
 };
 
 const UTAH_CITIES = [
-  "Salt Lake City",
-  "West Valley City",
-  "Cedar City",
-  "Park City",
-  "Heber City",
-  "Brigham City",
+  "American Fork", "Apple Valley", "Bluffdale", "Bountiful", "Cedar City", "Centerville", "Clearfield", "Clinton", "Draper", "Farmington", "Garden City", "Grantsville", "Heber City", "Herriman", "Highland", "Hooper", "Hurricane", "Kearns", "Layton", "Lehi", "Lindon", "Logan", "Magna", "Midvale", "Millcreek", "Mountain Green", "Murray", "North Logan", "North Ogden", "North Salt Lake", "Ogden", "Orem", "Park City", "Parowan", "Payson", "Pleasant Grove", "Providence", "Provo", "Richmond", "Riverdale", "Riverton", "Roosevelt", "Salt Lake City", "Sandy", "Saratoga Springs", "South Jordan", "South Salt Lake", "Spanish Fork", "Springville", "St. George", "Sunset", "Syracuse", "Taylorsville", "Tooele", "Washington", "West Bountiful", "West Jordan", "West Point", "West Valley City", "Woods Cross",
 ];
 
 const FAQS = [
@@ -61,7 +57,7 @@ export default function UtahStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="utah-cities-heading">
         <div className="state-storage-heading"><span className="city-storage-label">Featured locations</span><h2 id="utah-cities-heading">Utah cities with storage options</h2><p>Start with a featured Utah city, or search by ZIP code to find facilities near your move.</p></div>
-        <div className="state-city-grid">{UTAH_CITIES.map((city) => <Link href={city === "Salt Lake City" ? "/storage-search/salt-lake-city" : `/storage-search?location=${encodeURIComponent(city + ", UT")}`} key={city}>{city}<span aria-hidden="true">→</span></Link>)}</div>
+        <div className="state-city-grid">{UTAH_CITIES.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>{city}<span aria-hidden="true">→</span></Link>)}</div>
       </section>
 
       <section className="state-storage-content" aria-labelledby="utah-storage-heading">
@@ -83,6 +79,7 @@ export default function UtahStoragePage() {
         <div className="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div>
       </section>
 
+      <StorageLocationSearch />
       <StorageStateLinks />
       <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Utah</span></nav>
     </main>

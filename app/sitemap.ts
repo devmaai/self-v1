@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/texas",
     "/storage-search/south-dakota",
     "/storage-search/salt-lake-city",
+    ...["american-fork", "apple-valley", "bluffdale", "bountiful", "cedar-city", "centerville", "clearfield", "clinton", "draper", "farmington", "garden-city", "grantsville", "heber-city", "herriman", "highland", "hooper", "hurricane", "kearns", "layton", "lehi", "lindon", "logan", "magna", "midvale", "millcreek", "mountain-green", "murray", "north-logan", "north-ogden", "north-salt-lake", "ogden", "orem", "park-city", "parowan", "payson", "pleasant-grove", "providence", "provo", "richmond", "riverdale", "riverton", "roosevelt", "salt-lake-city", "sandy", "saratoga-springs", "south-jordan", "south-salt-lake", "spanish-fork", "springville", "st-george", "sunset", "syracuse", "taylorsville", "tooele", "washington", "west-bountiful", "west-jordan", "west-point", "west-valley-city", "woods-cross"].map((city) => `/storage-search/${city}`),
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",
     "/services/content-keyword-strategy",

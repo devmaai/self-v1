@@ -1,6 +1,21 @@
+"use client";
+
+import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { STORAGE_STATES } from "@/components/sections/StorageStateLinks";
 
 export default function Footer() {
+  const router = useRouter();
+  const [location, setLocation] = useState("");
+
+  function handleSearch(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const value = location.trim();
+    if (!value) return;
+    router.push(`/storage-search?location=${encodeURIComponent(value)}`);
+  }
+
   return (
     <footer className="v1-chrome">
       <div className="container">
@@ -40,6 +55,25 @@ export default function Footer() {
               <li><Link href="/#pricing">Pricing</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
+          </div>
+          <div className="footer-col footer-storage">
+            <h5>Find storage</h5>
+            <form className="footer-search" onSubmit={handleSearch} role="search">
+              <label htmlFor="footer-location" className="sr-only">Search by city or ZIP code</label>
+              <input
+                id="footer-location"
+                value={location}
+                onChange={(event) => setLocation(event.target.value)}
+                placeholder="City or ZIP code"
+                autoComplete="postal-code"
+              />
+              <button type="submit" aria-label="Search storage locations">Search</button>
+            </form>
+            <div className="footer-state-links">
+              {STORAGE_STATES.map((state) => (
+                <Link href={state.href} key={state.name}>{state.name}</Link>
+              ))}
+            </div>
           </div>
         </div>
         <div className="footer-bottom">
