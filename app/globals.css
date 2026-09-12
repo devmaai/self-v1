@@ -148,9 +148,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .utah-feature-image { height: 220px; margin-bottom: 24px; overflow: hidden; border-radius: 5px; background: #dcebf6; }
 .utah-feature-image img { width: 100%; height: 100%; object-fit: cover; }
 .utah-needs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.utah-needs-grid-4up { grid-template-columns: repeat(2, 1fr); }
 .utah-needs-grid article { padding: 26px; border: 1px solid #d6e1ea; border-radius: 5px; background: #fff; box-shadow: 0 3px 12px rgba(24,70,105,.05); }
-.utah-needs-image { height: 170px; margin: -26px -26px 22px; overflow: hidden; background: #dcebf6; }
-.utah-needs-image img { width: 100%; height: 100%; object-fit: cover; }
+.utah-needs-image { height: 260px; margin: -26px -26px 22px; overflow: hidden; background: #dcebf6; }
+.utah-needs-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 .utah-needs-grid h3 { margin-bottom: 10px; color: #16334b; font-size: 21px; }
 .utah-needs-grid p, .utah-needs-grid li { color: #526d81; font-size: 15px; line-height: 1.7; }
 .utah-needs-grid ul { margin: 16px 0 20px; padding-left: 20px; }
@@ -172,11 +173,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .utah-price-table tbody td:nth-child(2) { color: var(--storage-blue); font-weight: 700; white-space: nowrap; }
 .utah-price-table tbody td:last-child { color: #60788b; font-size: 14px; }
 .utah-price-factors { max-width: 900px; margin: 34px auto 0; text-align: left; }
+.utah-price-factors > p { margin-bottom: 20px; color: #526d81; font-size: 15px; line-height: 1.7; }
 .utah-price-factors h3 { margin-bottom: 12px; color: #16334b; font-size: 21px; }
 .utah-price-factors ul { margin: 0; padding-left: 0; color: #526d81; font-size: 15px; line-height: 1.7; list-style: none; }
 .utah-price-factors li { position: relative; padding-left: 25px; }
 .utah-price-factors li::before { position: absolute; left: 0; color: var(--storage-blue); content: "→"; font-weight: 700; }
 .utah-price-factors li { margin-bottom: 7px; }
+.utah-price-factors .state-storage-guide-button { margin-top: 22px; }
+.state-city-caption { margin-top: 16px; color: #60788b; font-size: 14px; }
+.utah-climate-regions { margin: 22px 0 0; padding-left: 0; list-style: none; }
+.utah-climate-regions li { position: relative; margin-bottom: 10px; padding-left: 25px; color: #526d81; font-size: 15px; line-height: 1.7; }
+.utah-climate-regions li::before { position: absolute; left: 0; color: var(--storage-blue); content: "→"; font-weight: 700; }
+.utah-climate-regions strong { color: #16334b; }
+.utah-vehicle-block-text ul { margin: 0 0 15px; padding-left: 20px; color: #526d81; font-size: 16px; line-height: 1.7; }
+.utah-vehicle-block-text li { margin-bottom: 8px; }
 .utah-policy-section { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
 .utah-policy-block { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: start; padding: 64px 0; border-top: 1px solid #d6e1ea; }
 .utah-policy-block:first-child { border-top: 0; }
@@ -211,7 +221,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .utah-closing-cta p { max-width: 680px; color: #c5dbea; font-size: 16px; line-height: 1.7; }.utah-closing-cta small { display: block; margin-top: 14px; color: #9fc5dc; font-size: 13px; }
 .utah-closing-cta .state-storage-cta { flex: 0 0 auto; background: var(--rust); color: #fff; }
 .utah-lifestyle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 10px; }
-.utah-lifestyle-grid article { padding: 22px 0; border-top: 1px solid #d6e1ea; }
+.utah-lifestyle-grid article { padding: 22px 0; }
 .utah-lifestyle-grid strong { display: block; margin-bottom: 6px; color: #16334b; font-family: var(--font-display); font-size: 18px; }
 .utah-lifestyle-grid p { margin: 0; color: #526d81; font-size: 15px; line-height: 1.7; }
 .utah-vehicle-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; margin-top: 10px; }
