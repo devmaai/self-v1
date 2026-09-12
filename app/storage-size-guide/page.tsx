@@ -16,7 +16,7 @@ const storageScenarios = [
     items: "Holiday decorations, seasonal clothing, a small dresser, a chair, and a stack of boxes.",
     fit: "Good for clearing out a closet or storing between seasons.",
     boxSize: "small",
-    image: "/images/storage-guide/boxes.png",
+    image: "/images/storage-guide/boxes.jpg",
   },
   {
     label: "One room set",
@@ -26,7 +26,7 @@ const storageScenarios = [
     items: "A full bedroom set such as a bed frame, mattress, dresser, nightstand, and around ten to fifteen boxes.",
     fit: "Good for a single room during a renovation or move.",
     boxSize: "small-wide",
-    image: "/images/storage-guide/5_10.png",
+    image: "/images/storage-guide/5_10.jpg",
   },
   {
     label: "Kitchen",
@@ -36,7 +36,7 @@ const storageScenarios = [
     items: "A refrigerator, stove, dishwasher, microwave, and boxes of cookware and dishes.",
     fit: "Good for a kitchen remodel or an appliance upgrade.",
     boxSize: "small",
-    image: "/images/storage-guide/kitchen.png",
+    image: "/images/storage-guide/kitchen.jpg",
   },
   {
     label: "Popular size",
@@ -46,7 +46,7 @@ const storageScenarios = [
     items: "A bed, a sofa, a dining set, appliances, and boxes.",
     fit: "Choose 5' x 10' for a sparsely furnished space and 10' x 10' for a full one bedroom. Good for a first move or a short-term stay elsewhere.",
     boxSize: "medium",
-    image: "/images/storage-guide/studio.png",
+    image: "/images/storage-guide/studio.jpg",
   },
   {
     label: "Most rented",
@@ -56,7 +56,7 @@ const storageScenarios = [
     items: "Furniture from two bedrooms, a living room, major appliances, and boxes.",
     fit: "Good for a couple or a small family in transition.",
     boxSize: "medium-wide",
-    image: "/images/storage-guide/twobedroom.png",
+    image: "/images/storage-guide/twobedroom.jpg",
   },
   {
     label: "Whole home",
@@ -66,7 +66,7 @@ const storageScenarios = [
     items: "Furniture from three bedrooms, living and dining rooms, appliances, and garage items.",
     fit: "Good for a full household move or a home renovation.",
     boxSize: "large",
-    image: "/images/storage-guide/threebedroom.png",
+    image: "/images/storage-guide/threebedroom.jpg",
   },
   {
     label: "Large home",
@@ -76,7 +76,7 @@ const storageScenarios = [
     items: "The contents of a large home, including bulky furniture, appliances, and outdoor equipment.",
     fit: "Good for a large family relocation or long-term storage.",
     boxSize: "large-wide",
-    image: "/images/storage-guide/fourbedroom.png",
+    image: "/images/storage-guide/fourbedroom.jpg",
   },
   {
     label: "Vehicle",
@@ -86,7 +86,7 @@ const storageScenarios = [
     items: "A sedan or compact car with room to walk around it. Larger vehicles need 10' x 20' or more.",
     fit: "Good for seasonal storage or a car you use rarely.",
     boxSize: "vehicle",
-    image: "/images/storage-guide/car.png",
+    image: "/images/storage-guide/car.jpg",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function StorageSizeGuidePage() {
 
       <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="vehicle-heading">
         <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Vehicle storage</span><h2 id="vehicle-heading">What size storage unit for a car?</h2><p>For a standard sedan or compact car, a 10x15 or 10x20 unit gives you enough length to park the vehicle and still open the doors and walk around it. A 10x20 is the safer choice for larger cars, since it matches a one-car garage. For an SUV, truck, or van, plan on 10x20 or larger, and a motorcycle fits comfortably in a 5x10.</p><p>If you are storing a vehicle for several months, ask the facility whether covered or climate-controlled options are available, and confirm the driveway and door clearances before you book so your vehicle fits through the opening.</p><div className="storage-reference-list"><strong>Vehicle quick reference</strong>{vehicleReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div></div>
-        <div className="storage-vehicle-visual"><img src="/images/storage-guide/vehiclestorage.png" alt="Vehicle storage" /><span className="storage-vehicle-caption">Room to park, open doors, and walk around</span></div>
+        <div className="storage-vehicle-visual"><img src="/images/storage-guide/vehiclestorage.jpg" alt="Vehicle storage" /><span className="storage-vehicle-caption">Room to park, open doors, and walk around</span></div>
       </section>
 
       <section className="storage-size-feature storage-size-feature-business" aria-labelledby="business-heading">

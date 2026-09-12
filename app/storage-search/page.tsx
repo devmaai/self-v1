@@ -1,19 +1,14 @@
-"use client";
-
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import LocationPin from "@/components/ui/LocationPin";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
+import CityExplorer from "@/components/sections/CityExplorer";
 
-const FEATURED_CITIES = [
-  "Salt Lake City", "West Valley City", "Cedar City", "Park City", "Heber City", "Brigham City", "Yuba City", "National City", "Culver City", "Daly City", "Redwood City", "King City", "Cathedral City", "Sun City", "Harbor City", "Sand City", "New York City", "Long Island City", "Garden City", "Newburgh", "City Island", "Co-op City", "Starrett City", "LeFrak City", "Kansas City", "Jefferson City", "Platte City", "University City", "Webb City", "Wright City", "Kimberling City", "Crystal City", "Panama City / Panama City Beach", "Lake City", "Cooper City", "Plant City", "Florida City", "Orange City", "Dade City", "Haines City", "Palm City", "Polk City", "Jersey City", "Union City", "Atlantic City", "Ocean City", "Gloucester City", "Neptune City", "Oklahoma City", "Midwest City", "Del City", "Ponca City", "Park City", "Kansas City (KS)", "Junction City", "Garden City", "Dodge City", "Baldwin City", "Missouri City", "Royse City", "League City", "Texas City", "Bay City", "Haltom City", "Universal City", "Lakeside City", "Horizon City", "Rapid City",
-];
-
-const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.localeCompare(second));
-const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city[0]))];
+export const metadata: Metadata = {
+  title: "Storage Search | Find A Storage Unit Near You",
+  description: "Compare storage options in your area and find a space that fits your move, your budget, and your plans.",
+};
 
 const STORAGE_TYPES = [
   { icon: "box", title: "Self Storage", body: "Self-storage units are most commonly used to store personal items, furniture, and excess belongings. Units come in different sizes, from small lockers to large spaces.", href: "/storage-search?location=Self%20Storage" },
@@ -38,107 +33,21 @@ function StorageTypeIcon({ name }: { name: StorageTypeIconName }) {
 }
 
 const UNIT_SIZES = [
-  { image: "/images/storage-guide/boxes.png", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
-  { image: "/images/storage-guide/threebedroom.png", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
-  { image: "/images/storage-guide/fourbedroom.png", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
+  { image: "/images/storage-guide/boxes.jpg", title: "Small Units", range: "25 to 75 SQ FT", sizes: ["5' x 5'", "5' x 10'", "5' x 15'"], looksLike: "A closet, a half bathroom, or a small bedroom.", fits: "Small furniture and personal items stored in boxes to the contents that make up a small bedroom." },
+  { image: "/images/storage-guide/threebedroom.jpg", title: "Medium Units", range: "75 to 200 SQ FT", sizes: ["10' x 10'", "10' x 15'", "10' x 20'"], looksLike: "An average bedroom or a small garage depending on the unit size.", fits: "The contents of a one-bedroom apartment to the contents of a two-to-three bedroom house." },
+  { image: "/images/storage-guide/fourbedroom.jpg", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
 ];
 
-function cityHref(city: string) {
-  const liveCitySlugs: Record<string, string> = {
-    "Yuba City": "yuba-city",
-    "National City": "national-city",
-    "Culver City": "culver-city",
-    "Daly City": "daly-city",
-    "Redwood City": "redwood-city",
-    "Cathedral City": "cathedral-city",
-    "Sun City": "sun-city",
-    "Harbor City": "harbor-city",
-    "Sand City": "sand-city",
-  };
-  if (city.endsWith("City") || city === "St. George") return `/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`;
-  if (liveCitySlugs[city]) return `/storage-search/${liveCitySlugs[city]}`;
-  return `/storage-search?location=${encodeURIComponent(city)}`;
-}
-
-export default function StorageSearchPage() {
-  const router = useRouter();
-  const [query, setQuery] = useState("");
-  const [searchedLocation, setSearchedLocation] = useState("");
-  const [cityLetter, setCityLetter] = useState("all");
-
-  useEffect(() => {
-    const location = new URLSearchParams(window.location.search).get("location") ?? "";
-    setQuery(location);
-    setSearchedLocation(location);
-  }, []);
-
-  const matchingCities = useMemo(() => {
-    const normalized = searchedLocation.trim().toLowerCase();
-    return SORTED_FEATURED_CITIES.filter((city) => {
-      const matchesLetter = cityLetter === "all" || city.startsWith(cityLetter);
-      const matchesSearch = !normalized || /^\d{5}(-\d{4})?$/.test(normalized) || city.toLowerCase().includes(normalized);
-      return matchesLetter && matchesSearch;
-    });
-  }, [cityLetter, searchedLocation]);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const location = query.trim();
-    if (!location) return;
-    setSearchedLocation(location);
-    router.replace(`/storage-search?location=${encodeURIComponent(location)}`);
-  }
+export default async function StorageSearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ location?: string }>;
+}) {
+  const { location } = await searchParams;
 
   return (
     <main className="storage-search-page">
-      <section className="storage-search-hero">
-        <div className="storage-search-hero-inner">
-          <div className="storage-search-kicker"><span /> Storage search, made simple</div>
-          <h1>Find a storage unit<br /><em>near you.</em></h1>
-          <p>Compare storage options in your area and find a space that fits your move, your budget, and your plans.</p>
-          <form className="storage-search-form" onSubmit={handleSubmit} role="search">
-            <label className="sr-only" htmlFor="storage-location">Enter ZIP code or city</label>
-            <LocationPin className="storage-search-pin" />
-            <input id="storage-location" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Enter ZIP code or city" autoComplete="postal-code" />
-            <button type="submit">Find units <span aria-hidden="true">→</span></button>
-          </form>
-          {searchedLocation && (
-            <p className="storage-search-status" aria-live="polite">
-              Searching around <strong>{searchedLocation}</strong>{matchingCities.length < FEATURED_CITIES.length ? `, ${matchingCities.length} featured ${matchingCities.length === 1 ? "city" : "cities"} found` : ""}.
-            </p>
-          )}
-        </div>
-      </section>
-
-      <section className="storage-search-directory" aria-labelledby="featured-cities-heading">
-        <div className="storage-search-section-heading">
-          <div>
-            <span className="storage-search-label">Explore by location</span>
-            <h2 id="featured-cities-heading">Featured cities</h2>
-          </div>
-          <p>Browse storage locations in popular cities, or search above for your ZIP code.</p>
-        </div>
-        <label className="storage-city-filter">Browse by letter
-          <select value={cityLetter} onChange={(event) => setCityLetter(event.target.value)}>
-            <option value="all">All cities</option>
-            {CITY_LETTERS.map((letter) => <option value={letter} key={letter}>{letter}</option>)}
-          </select>
-        </label>
-        {matchingCities.length ? (
-          <div className="storage-city-grid">
-            {matchingCities.map((city, index) => (
-              <Link className="storage-city-card" href={cityHref(city)} key={`${city}-${index}`}>
-                <span>{city}</span>
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <div className="storage-search-empty">
-            <h3>No featured city matches yet.</h3>
-            <p>Try a different city name or enter a ZIP code to search the area around you.</p>
-          </div>
-        )}
-      </section>
+      <CityExplorer initialLocation={location ?? ""} />
 
       <section className="storage-types" aria-labelledby="storage-types-heading">
         <div className="storage-guide-heading">

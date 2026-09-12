@@ -155,7 +155,7 @@ export default function UtahStoragePage() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" /><path d="M7 21v-6h10v6" /></svg>
               Standard drive-up units
             </h3>
-            <div className="utah-climate-image"><Image src="/images/storage-guide/car.png" alt="Car parked in an open drive-up storage unit" width={1290} height={860} /></div>
+            <div className="utah-climate-image"><Image src="/images/storage-guide/car.jpg" alt="Car parked in an open drive-up storage unit" width={1290} height={860} /></div>
             <p>A standard drive up unit works well for tools, patio furniture, plastic bins, sporting equipment and vehicles. Whichever you choose, lift boxes off the floor on pallets or shelving and leave a gap between your belongings and the walls.</p>
           </article>
         </div>
@@ -164,7 +164,7 @@ export default function UtahStoragePage() {
       <section className="utah-content-section" aria-labelledby="utah-vehicle-heading">
         <div className="state-storage-heading"><h2 id="utah-vehicle-heading">RV, boat, and vehicle storage in Utah.</h2></div>
         <div className="utah-vehicle-block">
-          <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.png" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
+          <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.jpg" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
           <div className="utah-vehicle-block-text">
             <p>Utah households run heavy on trailers, boats, campers, and off-road vehicles, and many HOAs restrict driveway parking. Choose uncovered outdoor parking, covered parking, or enclosed drive-up units.</p>
             <p>Filter for parking availability, gate hours, and vehicle length. Spaces range from 20 to 45 feet, so confirm the maximum length before you reserve, and check whether current registration and insurance are required.</p>

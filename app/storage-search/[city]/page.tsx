@@ -158,10 +158,19 @@ async function getFacilities(city: string, state: string): Promise<Facility[]> {
     return 3959 * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
   };
 
+  // Cheap bounding-box pre-check before the trig-heavy haversine call, since the
+  // vast majority of rows in the shared, nationwide sheet are nowhere near this city.
+  const milesPerDegreeLat = 69;
+  const latDeltaLimit = nearbyRadiusMiles / milesPerDegreeLat;
+  const lonDeltaLimit = nearbyRadiusMiles / (milesPerDegreeLat * Math.cos((center.latitude * Math.PI) / 180) || 1);
+
   const candidateRows = rows.filter((row) => {
     const latitude = Number(row.latitude);
     const longitude = Number(row.longitude);
-    return Number.isFinite(latitude) && Number.isFinite(longitude) && milesBetween(latitude, longitude) <= nearbyRadiusMiles;
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return false;
+    if (Math.abs(latitude - center.latitude) > latDeltaLimit) return false;
+    if (Math.abs(longitude - center.longitude) > lonDeltaLimit) return false;
+    return milesBetween(latitude, longitude) <= nearbyRadiusMiles;
   });
   const grouped = new Map<string, Facility>();
   for (const row of candidateRows) {
