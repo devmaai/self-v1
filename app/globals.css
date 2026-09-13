@@ -347,6 +347,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .facility-online { background: #e1f4eb; color: #267a55; }
 .facility-rating { background: #fff3d8; color: #9a6815; }
 .facility-card-bottom > a { color: var(--city-blue); font-size: 13px; font-weight: 700; }
+.facility-view-all { display: block; width: 100%; margin-top: 12px; padding: 11px; border-radius: 4px; background: var(--city-ink); color: #fff; font-size: 13px; font-weight: 700; text-align: center; }
+.facility-view-all:hover { background: var(--city-blue); }
 .city-storage-map { position: sticky; top: 88px; height: 610px; overflow: hidden; border: 1px solid #b9cfde; border-radius: 7px; background: #dcecf5; box-shadow: 0 8px 24px rgba(24, 70, 105, .08); }
 .map-grid { position: absolute; inset: 0; opacity: .65; background-image: linear-gradient(28deg, transparent 47%, #b5cfdd 48%, #b5cfdd 49%, transparent 50%), linear-gradient(112deg, transparent 47%, #c4d8e2 48%, #c4d8e2 49%, transparent 50%), linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 190px 150px, 240px 170px, 40px 40px, 40px 40px; }
 .map-route { position: absolute; width: 145%; height: 16px; border-top: 4px solid rgba(255,255,255,.95); border-bottom: 2px solid #8bb3c8; transform: rotate(-24deg); }

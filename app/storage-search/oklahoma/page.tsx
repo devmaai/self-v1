@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description: "Find storage units in Oklahoma near your location. Compare 560 facilities and 4,912 available units across Oklahoma City, Tulsa, Norman, Edmond and Broken Arrow, with current monthly prices.",
 };
 
+// Shawnee also belongs to a bigger namesake city in Kansas, so it links to a
+// disambiguated slug instead of the plain one.
+const CITY_SLUG_OVERRIDES: Record<string, string> = {
+  Shawnee: "shawnee-ok",
+};
+
 const CITY_LINKS = [
   "Oklahoma City", "Tulsa", "Norman", "Broken Arrow", "Edmond", "Lawton", "Moore", "Midwest City", "Stillwater", "Owasso", "Shawnee", "Bixby", "Mustang", "Bethany", "Yukon", "Sapulpa", "Del City", "Chickasha", "Glenpool", "Newcastle", "Sand Springs", "Jenks", "Claremore", "Bartlesville", "Guthrie", "Warr Acres", "El Reno", "Choctaw", "Coweta",
 ];
@@ -113,7 +119,7 @@ export default function OklahomaStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ok-cities-heading">
         <div className="state-storage-heading"><h2 id="ok-cities-heading">Storage units near you in Oklahoma by city</h2><p>Oklahoma rates vary more by suburb than by metro, and the gap between two facilities on opposite sides of the same city is often larger than the gap between Oklahoma City and Tulsa. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 

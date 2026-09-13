@@ -4,12 +4,17 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import LocationPin from "@/components/ui/LocationPin";
 
+export type CityStorageUnit = {
+  size: string;
+  price: string;
+  regularPrice: string;
+  quantity: string;
+};
+
 export type CityStorageFacility = {
   name: string;
   address: string;
-  price: string;
-  unit: string;
-  quantity: string;
+  units: CityStorageUnit[];
   href: string;
   city: string;
   distanceMiles: number;
@@ -21,6 +26,7 @@ export type CityStorageFacility = {
 type SortOption = "recommended" | "price" | "distance";
 
 const PAGE_SIZE = 15;
+const UNIT_PREVIEW_COUNT = 3;
 
 function paginationItems(page: number, pageCount: number) {
   if (pageCount <= 7) return Array.from({ length: pageCount }, (_, index) => index + 1);
@@ -33,13 +39,56 @@ function priceValue(price: string) {
   return Number(price.replace(/[^0-9.]/g, "")) || Number.POSITIVE_INFINITY;
 }
 
+function lowestPrice(facility: CityStorageFacility) {
+  return facility.units.reduce((lowest, unit) => Math.min(lowest, priceValue(unit.price)), Number.POSITIVE_INFINITY);
+}
+
+function FacilityCard({ facility, city }: { facility: CityStorageFacility; city: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const visibleUnits = expanded ? facility.units : facility.units.slice(0, UNIT_PREVIEW_COUNT);
+  const hasMore = facility.units.length > UNIT_PREVIEW_COUNT;
+
+  return (
+    <article className="facility-card">
+      <div className="facility-card-top">
+        <div>
+          <span className="facility-distance">{facility.isNearby ? `${facility.city} · ${facility.distanceMiles.toFixed(1)} mi away` : `In ${city}`}</span>
+          <h3>{facility.name}</h3>
+          <p>{facility.address}</p>
+        </div>
+        <div className="facility-pin"><LocationPin /></div>
+      </div>
+      <div className="facility-unit-options">
+        {visibleUnits.map((unit, index) => (
+          <div className="facility-unit-row" key={`${unit.size}-${index}`}>
+            <span className="facility-unit">{unit.size}</span>
+            <span className="facility-price">
+              {unit.regularPrice && unit.regularPrice !== unit.price && <del>{unit.regularPrice}</del>}
+              <strong>{unit.price}</strong>
+            </span>
+          </div>
+        ))}
+      </div>
+      {hasMore && (
+        <button type="button" className="facility-view-all" onClick={() => setExpanded((value) => !value)}>
+          {expanded ? "Show fewer units" : `View all ${facility.units.length} units`}
+        </button>
+      )}
+      <div className="facility-card-bottom">
+        <div className="facility-signals"><span className="facility-online">From live sheet</span></div>
+        <a href={facility.href}>View local options <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  );
+}
+
 export default function CityStorageResults({ city, facilities }: { city: string; facilities: CityStorageFacility[] }) {
   const [sort, setSort] = useState<SortOption>("recommended");
   const [page, setPage] = useState(1);
 
   const sortedFacilities = useMemo(() => {
     const sorted = [...facilities];
-    if (sort === "price") sorted.sort((first, second) => priceValue(first.price) - priceValue(second.price));
+    if (sort === "price") sorted.sort((first, second) => lowestPrice(first) - lowestPrice(second));
     if (sort === "distance") sorted.sort((first, second) => first.distanceMiles - second.distanceMiles);
     return sorted;
   }, [facilities, sort]);
@@ -84,25 +133,7 @@ export default function CityStorageResults({ city, facilities }: { city: string;
         <div>
           <div className="city-storage-list">
             {visibleFacilities.map((facility) => (
-              <article className="facility-card" key={`${facility.name}-${facility.unit}-${facility.address}`}>
-                <div className="facility-card-top">
-                  <div>
-                    <span className="facility-distance">{facility.isNearby ? `${facility.city} · ${facility.distanceMiles.toFixed(1)} mi away` : `In ${city}`}</span>
-                    <h3>{facility.name}</h3>
-                    <p>{facility.address}</p>
-                  </div>
-                  <div className="facility-pin"><LocationPin /></div>
-                </div>
-                <div className="facility-card-meta">
-                  <span className="facility-unit">{facility.unit}</span>
-                  <span className="facility-price"><strong>{facility.price}</strong> / month</span>
-                  <span className="facility-fee">{facility.quantity} available</span>
-                </div>
-                <div className="facility-card-bottom">
-                  <div className="facility-signals"><span className="facility-online">From live sheet</span></div>
-                  <a href={facility.href}>View local options <span aria-hidden="true">↗</span></a>
-                </div>
-              </article>
+              <FacilityCard facility={facility} city={city} key={`${facility.name}-${facility.address}`} />
             ))}
           </div>
           {pageCount > 1 && (

@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   description: "Find storage units in Kansas near your location. Compare 251 facilities and 2,258 available units across Wichita, Overland Park, Olathe, Topeka, Lawrence and Manhattan, with current monthly prices.",
 };
 
+// These four names also belong to a bigger namesake city in another state
+// page, so they link to a disambiguated slug instead of the plain one.
+const CITY_SLUG_OVERRIDES: Record<string, string> = {
+  "Kansas City": "kansas-city-ks",
+  Manhattan: "manhattan-ks",
+  "Spring Hill": "spring-hill-ks",
+  "Park City": "park-city-ks",
+};
+
 const CITY_LINKS = [
   "Wichita", "Overland Park", "Olathe", "Topeka", "Lawrence", "Manhattan", "Kansas City", "Lenexa", "Shawnee", "Salina", "Leavenworth", "Hutchinson", "Merriam", "Gardner", "Mission", "Derby", "Spring Hill", "Newton", "Andover", "Lansing", "El Dorado", "Park City", "Haysville", "De Soto", "Eudora", "Bonner Springs", "Valley Center", "Maize", "Winfield",
 ];
@@ -107,7 +116,7 @@ export default function KansasStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ks-cities-heading">
         <div className="state-storage-heading"><h2 id="ks-cities-heading">Storage units near you in Kansas by city</h2><p>Kansas rates vary sharply between metros, and again between neighbourhoods inside them. The average unit in Overland Park runs around $205 a month against around $148 in Wichita, so where you search matters as much as what you rent. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 
