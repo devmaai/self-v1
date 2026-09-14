@@ -7,33 +7,15 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import CityStorageResults, { type CityStorageFacility } from "@/components/sections/CityStorageResults";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
+import { CITY_STATES, CITY_NAME_OVERRIDES } from "@/lib/cityStates";
+import { US_STATE_NAMES } from "@/lib/usStates";
+import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
 export const revalidate = 604800;
 
 const SPREADSHEET_ID = "1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk";
 const FACILITIES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=Facilities`;
 const UNITS_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=Units`;
-
-const CITY_STATES: Record<string, string> = {
-  "american-fork": "UT", "apple-valley": "UT", bluffdale: "UT", bountiful: "UT", "cedar-city": "UT", centerville: "UT", clearfield: "UT", clinton: "UT", draper: "UT", farmington: "UT", "garden-city": "UT", grantsville: "UT", "heber-city": "UT", herriman: "UT", highland: "UT", hooper: "UT", hurricane: "UT", kearns: "UT", layton: "UT", lehi: "UT", lindon: "UT", logan: "UT", magna: "UT", midvale: "UT", millcreek: "UT", "mountain-green": "UT", murray: "UT", "north-logan": "UT", "north-ogden": "UT", "north-salt-lake": "UT", ogden: "UT", orem: "UT", "park-city": "UT", parowan: "UT", payson: "UT", "pleasant-grove": "UT", providence: "UT", provo: "UT", richmond: "UT", riverdale: "UT", riverton: "UT", roosevelt: "UT", "salt-lake-city": "UT", sandy: "UT", "saratoga-springs": "UT", "south-jordan": "UT", "south-salt-lake": "UT", "spanish-fork": "UT", springville: "UT", "st-george": "UT", sunset: "UT", "syracuse-ut": "UT", taylorsville: "UT", tooele: "UT", washington: "UT", "west-bountiful": "UT", "west-jordan": "UT", "west-point": "UT", "west-valley-city": "UT", "woods-cross": "UT",
-  anaheim: "CA", bakersfield: "CA", "cathedral-city": "CA", "chula-vista": "CA", "culver-city": "CA", "daly-city": "CA", "elk-grove": "CA", fontana: "CA", fremont: "CA", fresno: "CA", "garden-grove": "CA", glendale: "CA", "harbor-city": "CA", "huntington-beach": "CA", irvine: "CA", "long-beach": "CA", "los-angeles": "CA", modesto: "CA", "moreno-valley": "CA", "national-city": "CA", oakland: "CA", oceanside: "CA", ontario: "CA", oxnard: "CA", "rancho-cucamonga": "CA", "redwood-city": "CA", riverside: "CA", sacramento: "CA", "san-bernardino": "CA", "san-diego": "CA", "san-francisco": "CA", "san-jose": "CA", "sand-city": "CA", "santa-ana": "CA", "santa-clarita": "CA", "santa-rosa": "CA", stockton: "CA", "sun-city": "CA", "yuba-city": "CA",
-  "boca-raton": "FL", brandon: "FL", "cape-coral": "FL", clearwater: "FL", "coral-springs": "FL", davie: "FL", "fort-lauderdale": "FL", gainesville: "FL", hialeah: "FL", hollywood: "FL", jacksonville: "FL", "lake-worth": "FL", lakeland: "FL", miami: "FL", "miami-gardens": "FL", miramar: "FL", orlando: "FL", "palm-bay": "FL", "palm-coast": "FL", "pembroke-pines": "FL", plantation: "FL", "pompano-beach": "FL", "port-st-lucie": "FL", riverview: "FL", "saint-cloud": "FL", "spring-hill": "FL", "st-petersburg": "FL", tallahassee: "FL", tampa: "FL", "west-palm-beach": "FL",
-  andover: "KS", "bonner-springs": "KS", "de-soto": "KS", derby: "KS", "el-dorado": "KS", eudora: "KS", gardner: "KS", haysville: "KS", hutchinson: "KS", "kansas-city-ks": "KS", lansing: "KS", lawrence: "KS", leavenworth: "KS", lenexa: "KS", maize: "KS", "manhattan-ks": "KS", merriam: "KS", mission: "KS", newton: "KS", olathe: "KS", "overland-park": "KS", "park-city-ks": "KS", salina: "KS", shawnee: "KS", "spring-hill-ks": "KS", topeka: "KS", "valley-center": "KS", wichita: "KS", winfield: "KS",
-  affton: "MO", arnold: "MO", ballwin: "MO", belton: "MO", "blue-springs": "MO", chesterfield: "MO", "creve-coeur": "MO", fenton: "MO", florissant: "MO", gladstone: "MO", grandview: "MO", hazelwood: "MO", independence: "MO", "kansas-city": "MO", kirkwood: "MO", "lake-st-louis": "MO", "lees-summit": "MO", liberty: "MO", "maryland-heights": "MO", mehlville: "MO", oakville: "MO", ofallon: "MO", raymore: "MO", raytown: "MO", springfield: "MO", "st-charles": "MO", "st-louis": "MO", "st-peters": "MO", "webster-groves": "MO", wentzville: "MO",
-  albany: "NY", bronx: "NY", brooklyn: "NY", buffalo: "NY", "clifton-park": "NY", commack: "NY", coram: "NY", hempstead: "NY", henrietta: "NY", hicksville: "NY", "huntington-station": "NY", manhattan: "NY", "mount-vernon": "NY", "new-rochelle": "NY", "new-york-city": "NY", "niagara-falls": "NY", penfield: "NY", queens: "NY", rochester: "NY", schenectady: "NY", "spring-valley": "NY", "staten-island": "NY", syracuse: "NY", troy: "NY", "valley-stream": "NY", "west-babylon": "NY", "west-seneca": "NY", "white-plains": "NY", yonkers: "NY",
-  bartlesville: "OK", bethany: "OK", bixby: "OK", "broken-arrow": "OK", chickasha: "OK", choctaw: "OK", claremore: "OK", coweta: "OK", "del-city": "OK", edmond: "OK", "el-reno": "OK", glenpool: "OK", guthrie: "OK", jenks: "OK", lawton: "OK", "midwest-city": "OK", moore: "OK", mustang: "OK", newcastle: "OK", norman: "OK", "oklahoma-city": "OK", owasso: "OK", "sand-springs": "OK", sapulpa: "OK", "shawnee-ok": "OK", stillwater: "OK", tulsa: "OK", "warr-acres": "OK", yukon: "OK",
-  aberdeen: "SD", "belle-fourche": "SD", "box-elder": "SD", "brandon-sd": "SD", brookings: "SD", canton: "SD", custer: "SD", deadwood: "SD", "dell-rapids": "SD", harrisburg: "SD", "hot-springs": "SD", huron: "SD", lead: "SD", madison: "SD", milbank: "SD", mitchell: "SD", "north-sioux-city": "SD", pierre: "SD", "rapid-city": "SD", redfield: "SD", "sioux-falls": "SD", sisseton: "SD", spearfish: "SD", sturgis: "SD", tea: "SD", vermillion: "SD", volga: "SD", watertown: "SD", winner: "SD", yankton: "SD",
-  amarillo: "TX", arlington: "TX", austin: "TX", brownsville: "TX", carrollton: "TX", "corpus-christi": "TX", cypress: "TX", dallas: "TX", denton: "TX", "el-paso": "TX", "fort-worth": "TX", frisco: "TX", garland: "TX", "grand-prairie": "TX", houston: "TX", irving: "TX", killeen: "TX", laredo: "TX", lewisville: "TX", lubbock: "TX", mcallen: "TX", mckinney: "TX", mesquite: "TX", midland: "TX", pasadena: "TX", pearland: "TX", plano: "TX", "round-rock": "TX", "san-antonio": "TX", waco: "TX",
-};
-
-// The slug-derived title case doesn't always match how a city is actually
-// named in the sheet (NYC boroughs in particular are filed under plain
-// "New York" rather than "New York City" or "Manhattan"). This overrides
-// the city name used to query the data, independent of the URL slug.
-const CITY_NAME_OVERRIDES: Record<string, string> = {
-  manhattan: "New York",
-  "new-york-city": "New York",
-};
 
 type SheetRow = {
   facility_id: string;
@@ -307,6 +289,8 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
+  const stateName = US_STATE_NAMES[state] ?? state;
+  const statePageSlug = STATE_PAGE_SLUGS[state];
   const { facilities, hasLocalData } = await getFacilities(citySlug, queryCity, state);
   if (!facilities.length) notFound();
 
@@ -319,7 +303,11 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
     <main className="city-storage-page">
       <section className="city-storage-hero">
         <div className="city-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/storage-search">Storage search</Link><span>/</span>{city}</div>
+          <div className="city-storage-breadcrumb">
+            <Link href="/storage-search">Storage search</Link><span>/</span>
+            {statePageSlug ? <Link href={`/storage-search/${statePageSlug}`}>{stateName}</Link> : <span>{stateName}</span>}<span>/</span>
+            {city}
+          </div>
           <div className="city-storage-eyebrow"><span /> {hasLocalData ? "Live local availability" : "Nearest available listings"}</div>
           <h1>Cheap self storage<br /><em>in {city}, {state}.</em></h1>
           {hasLocalData ? (

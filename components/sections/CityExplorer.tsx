@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
+import { resolveStorageSearchHref } from "@/lib/storageSearchLookup";
 
 const FEATURED_CITIES = [
   "Salt Lake City", "West Valley City", "Cedar City", "Park City", "Heber City", "Brigham City", "Yuba City", "National City", "Culver City", "Daly City", "Redwood City", "King City", "Cathedral City", "Sun City", "Harbor City", "Sand City", "New York City", "Long Island City", "Garden City", "Newburgh", "City Island", "Co-op City", "Starrett City", "LeFrak City", "Kansas City", "Jefferson City", "Platte City", "University City", "Webb City", "Wright City", "Kimberling City", "Crystal City", "Panama City / Panama City Beach", "Lake City", "Cooper City", "Plant City", "Florida City", "Orange City", "Dade City", "Haines City", "Palm City", "Polk City", "Jersey City", "Union City", "Atlantic City", "Ocean City", "Gloucester City", "Neptune City", "Oklahoma City", "Midwest City", "Del City", "Ponca City", "Park City", "Kansas City (KS)", "Junction City", "Garden City", "Dodge City", "Baldwin City", "Missouri City", "Royse City", "League City", "Texas City", "Bay City", "Haltom City", "Universal City", "Lakeside City", "Horizon City", "Rapid City",
@@ -48,8 +49,15 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
     event.preventDefault();
     const location = query.trim();
     if (!location) return;
+
+    const href = resolveStorageSearchHref(location);
+    if (!href.startsWith("/storage-search?location=")) {
+      router.push(href);
+      return;
+    }
+
     setSearchedLocation(location);
-    router.replace(`/storage-search?location=${encodeURIComponent(location)}`);
+    router.replace(href);
   }
 
   return (
@@ -60,9 +68,9 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
           <h1>Find a storage unit<br /><em>near you.</em></h1>
           <p>Compare storage options in your area and find a space that fits your move, your budget, and your plans.</p>
           <form className="storage-search-form" onSubmit={handleSubmit} role="search">
-            <label className="sr-only" htmlFor="storage-location">Enter ZIP code or city</label>
+            <label className="sr-only" htmlFor="storage-location">Enter ZIP code, city, or state</label>
             <LocationPin className="storage-search-pin" />
-            <input id="storage-location" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Enter ZIP code or city" autoComplete="postal-code" />
+            <input id="storage-location" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Enter ZIP code, city, or state" autoComplete="postal-code" />
             <button type="submit">Find units <span aria-hidden="true">→</span></button>
           </form>
           {searchedLocation && (
