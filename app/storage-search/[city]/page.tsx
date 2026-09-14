@@ -10,6 +10,7 @@ import { CITY_COORDINATES } from "@/lib/cityCoordinates";
 import { CITY_STATES, CITY_NAME_OVERRIDES } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
+import { getCitySeoContent, fillPricePlaceholder } from "@/lib/citySeoContent";
 
 export const revalidate = 604800;
 
@@ -279,6 +280,10 @@ function priceNumber(price: string): number {
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
   const { city: citySlug } = await params;
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+  const seoContent = await getCitySeoContent(citySlug);
+  if (seoContent?.metaTitle && seoContent?.metaDescription) {
+    return { title: seoContent.metaTitle, description: seoContent.metaDescription };
+  }
   return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
 }
 
@@ -291,13 +296,18 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
   const stateName = US_STATE_NAMES[state] ?? state;
   const statePageSlug = STATE_PAGE_SLUGS[state];
-  const { facilities, hasLocalData } = await getFacilities(citySlug, queryCity, state);
+  const [{ facilities, hasLocalData }, seoContent] = await Promise.all([
+    getFacilities(citySlug, queryCity, state),
+    getCitySeoContent(citySlug),
+  ]);
   if (!facilities.length) notFound();
 
   const lowestPrice = facilities
     .flatMap((facility) => facility.units.map((unit) => priceNumber(unit.price)))
     .reduce((lowest, value) => Math.min(lowest, value), Number.POSITIVE_INFINITY);
   const closest = facilities[0];
+  const fromPrice = Number.isFinite(lowestPrice) ? `$${lowestPrice}` : "our listed rates";
+  const fillPrice = (text: string) => fillPricePlaceholder(text, fromPrice);
 
   return (
     <main className="city-storage-page">
@@ -309,7 +319,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
             {city}
           </div>
           <div className="city-storage-eyebrow"><span /> {hasLocalData ? "Live local availability" : "Nearest available listings"}</div>
-          <h1>Cheap self storage<br /><em>in {city}, {state}.</em></h1>
+          {seoContent?.h1 ? <h1>{seoContent.h1}</h1> : <h1>Cheap self storage<br /><em>in {city}, {state}.</em></h1>}
           {hasLocalData ? (
             <p>Compare storage units, sizes, and move-in prices from facilities in {city} and nearby communities.</p>
           ) : (
@@ -320,6 +330,48 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
       </section>
       <CityStorageResults city={`${city}, ${state}`} facilities={facilities as CityStorageFacility[]} />
       <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">{city} self storage information</span><h2>Storage for moves, seasons, and everyday space.</h2></div><div><p>Compare unit sizes and current prices from storage facilities serving {city}.</p><p>Review the unit size, monthly price, and availability before you reserve.</p></div></div></section>
+      {seoContent && (
+        <section className="city-storage-seo">
+          <div className="city-storage-seo-inner">
+            {seoContent.intro && <p className="city-storage-seo-intro">{fillPrice(seoContent.intro)}</p>}
+            {seoContent.sections.map((section) => (
+              <div className="city-storage-seo-section" key={section.heading}>
+                <h2>{section.heading}</h2>
+                <p>{fillPrice(section.body)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      {seoContent && seoContent.faqs.length > 0 && (
+        <section className="city-storage-faq">
+          <div className="city-storage-faq-inner">
+            <h2>{seoContent.faqHeading}</h2>
+            <div className="city-storage-faq-list">
+              {seoContent.faqs.map((faq) => (
+                <div className="city-storage-faq-item" key={faq.question}>
+                  <h3>{faq.question}</h3>
+                  <p>{fillPrice(faq.answer)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: seoContent.faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: { "@type": "Answer", text: fillPrice(faq.answer) },
+                })),
+              }),
+            }}
+          />
+        </section>
+      )}
       <StorageLocationSearch /><StorageStateLinks /><nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{city}, {state}</span></nav>
     </main>
   );
