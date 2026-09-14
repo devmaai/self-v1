@@ -76,7 +76,7 @@ function FacilityCard({ facility, city }: { facility: CityStorageFacility; city:
       )}
       <div className="facility-card-bottom">
         <div className="facility-signals"><span className="facility-online">From live sheet</span></div>
-        <a href={facility.href}>Get quote <span aria-hidden="true">↗</span></a>
+        <a href={`mailto:business@maai.agency?subject=${encodeURIComponent(`Quote request: ${facility.name}`)}&body=${encodeURIComponent(`Hi,\n\nI'd like a quote for ${facility.name} (${facility.address}).\n\nThanks!`)}`}>Get quote <span aria-hidden="true">↗</span></a>
       </div>
     </article>
   );
