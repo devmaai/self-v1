@@ -277,6 +277,18 @@ function priceNumber(price: string): number {
   return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
 }
 
+// Pre-render every known city at build time (and refresh in the background
+// every `revalidate` seconds) instead of fetching and parsing the shared
+// nationwide sheet on every single visitor request.
+export function generateStaticParams() {
+  return Object.entries(CITY_STATES)
+    .map(([city, state]) => {
+      const statePageSlug = STATE_PAGE_SLUGS[state];
+      return statePageSlug ? { state: statePageSlug, city } : null;
+    })
+    .filter((entry): entry is { state: string; city: string } => entry !== null);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ state: string; city: string }> }): Promise<Metadata> {
   const { state: stateSlug, city: citySlug } = await params;
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
