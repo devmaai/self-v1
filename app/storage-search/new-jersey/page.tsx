@@ -4,9 +4,12 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
-import { getStorageRows, priceNumber, STORAGE_DATA_REVALIDATE } from "@/lib/liveStorageData";
+import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
 
-export const revalidate = STORAGE_DATA_REVALIDATE;
+// Next.js requires a literal number here for its static route-segment-config
+// analysis — it cannot be an imported constant. Keep in sync with
+// STORAGE_DATA_REVALIDATE in lib/liveStorageData.ts.
+export const revalidate = 604800;
 
 export const metadata: Metadata = {
   title: "Cheap Self Storage in New Jersey | Compare Units & Prices by City",

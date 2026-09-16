@@ -8,10 +8,28 @@ import { CITY_COORDINATES } from "@/lib/cityCoordinates";
 import { CITY_STATES, CITY_NAME_OVERRIDES } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
-import { getCitySeoContent, fillPricePlaceholder } from "@/lib/citySeoContent";
-import { getStorageRows, priceNumber, STORAGE_DATA_REVALIDATE } from "@/lib/liveStorageData";
+import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
+import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
 
-export const revalidate = STORAGE_DATA_REVALIDATE;
+// Next.js requires a literal number here for its static route-segment-config
+// analysis — it cannot be an imported constant. Keep in sync with
+// STORAGE_DATA_REVALIDATE in lib/liveStorageData.ts.
+export const revalidate = 604800;
+
+function renderBlocks(blocks: CitySeoBlock[], fillPrice: (text: string) => string, keyPrefix: string) {
+  return blocks.map((block, index) => {
+    const key = `${keyPrefix}-${index}`;
+    if (block.type === "p") return <p key={key}>{fillPrice(block.text)}</p>;
+    const items = block.items.map((item, itemIndex) => <li key={`${key}-${itemIndex}`}>{fillPrice(item)}</li>);
+    return block.type === "ul" ? <ul key={key}>{items}</ul> : <ol key={key}>{items}</ol>;
+  });
+}
+
+function blocksToPlainText(blocks: CitySeoBlock[], fillPrice: (text: string) => string): string {
+  return blocks
+    .map((block) => (block.type === "p" ? fillPrice(block.text) : block.items.map(fillPrice).join(" ")))
+    .join(" ");
+}
 
 type FacilityUnit = {
   size: string;
@@ -213,11 +231,11 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
       {seoContent && (
         <section className="city-storage-seo">
           <div className="city-storage-seo-inner">
-            {seoContent.intro && <p className="city-storage-seo-intro">{fillPrice(seoContent.intro)}</p>}
+            {seoContent.intro.length > 0 && <div className="city-storage-seo-intro">{renderBlocks(seoContent.intro, fillPrice, "intro")}</div>}
             {seoContent.sections.map((section) => (
               <div className="city-storage-seo-section" key={section.heading}>
                 <h2>{section.heading}</h2>
-                <p>{fillPrice(section.body)}</p>
+                {renderBlocks(section.blocks, fillPrice, section.heading)}
               </div>
             ))}
           </div>
@@ -231,7 +249,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
               {seoContent.faqs.map((faq) => (
                 <div className="city-storage-faq-item" key={faq.question}>
                   <h3>{faq.question}</h3>
-                  <p>{fillPrice(faq.answer)}</p>
+                  {renderBlocks(faq.answerBlocks, fillPrice, faq.question)}
                 </div>
               ))}
             </div>
@@ -245,7 +263,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
                 mainEntity: seoContent.faqs.map((faq) => ({
                   "@type": "Question",
                   name: faq.question,
-                  acceptedAnswer: { "@type": "Answer", text: fillPrice(faq.answer) },
+                  acceptedAnswer: { "@type": "Answer", text: blocksToPlainText(faq.answerBlocks, fillPrice) },
                 })),
               }),
             }}
