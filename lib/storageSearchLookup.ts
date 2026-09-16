@@ -51,7 +51,9 @@ export function resolveStorageSearchHref(rawQuery: string): string {
   if (stateSlug) return `/storage-search/${stateSlug}`;
 
   const citySlug = slugifyCity(query);
-  if (CITY_STATES[citySlug]) return `/storage-search/${citySlug}`;
+  const cityState = CITY_STATES[citySlug];
+  const cityStateSlug = cityState ? STATE_PAGE_SLUGS[cityState] : undefined;
+  if (cityStateSlug) return `/storage-search/${cityStateSlug}/${citySlug}`;
 
   return `/storage-search?location=${encodeURIComponent(query)}`;
 }

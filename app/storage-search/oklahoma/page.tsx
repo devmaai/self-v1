@@ -119,7 +119,7 @@ export default function OklahomaStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ok-cities-heading">
         <div className="state-storage-heading"><h2 id="ok-cities-heading">Storage units near you in Oklahoma by city</h2><p>Oklahoma rates vary more by suburb than by metro, and the gap between two facilities on opposite sides of the same city is often larger than the gap between Oklahoma City and Tulsa. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/oklahoma/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 

@@ -110,7 +110,7 @@ export default function SouthDakotaStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="sd-cities-heading">
         <div className="state-storage-heading"><h2 id="sd-cities-heading">Storage units near you in South Dakota by city</h2><p>Supply here is tighter than in most states, so the facility with the unit you want may be a town over rather than a street over. Start with your city and widen your radius if nothing comes back.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/south-dakota/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to ten or twenty five miles.</p>
       </section>
 

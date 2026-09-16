@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPostSlugs } from "@/lib/posts";
+import { CITY_STATES } from "@/lib/cityStates";
+import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
 const BASE_URL = "https://selfstorage.help";
 
@@ -22,8 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/kansas",
     "/storage-search/texas",
     "/storage-search/south-dakota",
-    "/storage-search/salt-lake-city",
-    ...["american-fork", "apple-valley", "bluffdale", "bountiful", "cedar-city", "centerville", "clearfield", "clinton", "draper", "farmington", "garden-city", "grantsville", "heber-city", "herriman", "highland", "hooper", "hurricane", "kearns", "layton", "lehi", "lindon", "logan", "magna", "midvale", "millcreek", "mountain-green", "murray", "north-logan", "north-ogden", "north-salt-lake", "ogden", "orem", "park-city", "parowan", "payson", "pleasant-grove", "providence", "provo", "richmond", "riverdale", "riverton", "roosevelt", "salt-lake-city", "sandy", "saratoga-springs", "south-jordan", "south-salt-lake", "spanish-fork", "springville", "st-george", "sunset", "syracuse", "taylorsville", "tooele", "washington", "west-bountiful", "west-jordan", "west-point", "west-valley-city", "woods-cross"].map((city) => `/storage-search/${city}`),
+    ...Object.entries(CITY_STATES)
+      .map(([citySlug, state]) => {
+        const stateSlug = STATE_PAGE_SLUGS[state];
+        return stateSlug ? `/storage-search/${stateSlug}/${citySlug}` : null;
+      })
+      .filter((path): path is string => path !== null),
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",
     "/services/content-keyword-strategy",

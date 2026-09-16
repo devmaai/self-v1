@@ -277,20 +277,24 @@ function priceNumber(price: string): number {
   return Number.isFinite(value) ? value : Number.POSITIVE_INFINITY;
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
-  const { city: citySlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ state: string; city: string }> }): Promise<Metadata> {
+  const { state: stateSlug, city: citySlug } = await params;
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
-  const seoContent = await getCitySeoContent(citySlug);
+  const state = CITY_STATES[citySlug];
+  if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) {
+    return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
+  }
+  const seoContent = await getCitySeoContent(citySlug, state);
   if (seoContent?.metaTitle && seoContent?.metaDescription) {
     return { title: seoContent.metaTitle, description: seoContent.metaDescription };
   }
   return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
 }
 
-export default async function LiveCityStoragePage({ params }: { params: Promise<{ city: string }> }) {
-  const { city: citySlug } = await params;
+export default async function LiveCityStoragePage({ params }: { params: Promise<{ state: string; city: string }> }) {
+  const { state: stateSlug, city: citySlug } = await params;
   const state = CITY_STATES[citySlug];
-  if (!state) notFound();
+  if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
@@ -298,7 +302,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   const statePageSlug = STATE_PAGE_SLUGS[state];
   const [{ facilities, hasLocalData }, seoContent] = await Promise.all([
     getFacilities(citySlug, queryCity, state),
-    getCitySeoContent(citySlug),
+    getCitySeoContent(citySlug, state),
   ]);
   if (!facilities.length) notFound();
 

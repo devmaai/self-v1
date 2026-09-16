@@ -99,7 +99,7 @@ export default function UtahStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="utah-cities-heading">
         <div className="state-storage-heading"><h2 id="utah-cities-heading">Storage units near you in Utah by city</h2><p>Availability changes street by street in Utah, so the closest facility is often the one holding the rate you want. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/utah/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
       </section>
 
       <section className="utah-pricing-section" aria-labelledby="utah-storage-heading">

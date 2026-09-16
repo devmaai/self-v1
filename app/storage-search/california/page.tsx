@@ -103,7 +103,7 @@ export default function CaliforniaStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ca-cities-heading">
         <div className="state-storage-heading"><h2 id="ca-cities-heading">Storage units near you in California by city</h2><p>Rates in California change by neighbourhood, not just by city. A unit ten minutes inland can cost half what you pay near the coast. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/california/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 

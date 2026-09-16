@@ -116,7 +116,7 @@ export default function KansasStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ks-cities-heading">
         <div className="state-storage-heading"><h2 id="ks-cities-heading">Storage units near you in Kansas by city</h2><p>Kansas rates vary sharply between metros, and again between neighbourhoods inside them. The average unit in Overland Park runs around $205 a month against around $148 in Wichita, so where you search matters as much as what you rent. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/kansas/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 

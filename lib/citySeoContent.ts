@@ -120,9 +120,17 @@ async function getContentMap(): Promise<Map<string, CitySeoContent>> {
   return contentRequest;
 }
 
-export async function getCitySeoContent(citySlug: string): Promise<CitySeoContent | null> {
+/**
+ * Some slugs are shared by two different cities in different states (e.g.
+ * "bay-city" is both Bay City, TX and Bay City, MI), so a slug match alone
+ * isn't enough — the sheet row's state must match the page's state or the
+ * wrong city's content would render.
+ */
+export async function getCitySeoContent(citySlug: string, state: string): Promise<CitySeoContent | null> {
   const map = await getContentMap();
-  return map.get(citySlug) ?? null;
+  const content = map.get(citySlug);
+  if (!content) return null;
+  return content.state === state ? content : null;
 }
 
 export function fillPricePlaceholder(text: string, fromPrice: string): string {

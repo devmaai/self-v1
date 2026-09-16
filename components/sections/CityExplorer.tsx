@@ -4,7 +4,8 @@ import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
-import { resolveStorageSearchHref } from "@/lib/storageSearchLookup";
+import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
+import { CITY_STATES } from "@/lib/cityStates";
 
 const FEATURED_CITIES = [
   "Salt Lake City", "West Valley City", "Cedar City", "Park City", "Heber City", "Brigham City", "Yuba City", "National City", "Culver City", "Daly City", "Redwood City", "King City", "Cathedral City", "Sun City", "Harbor City", "Sand City", "New York City", "Long Island City", "Garden City", "Newburgh", "City Island", "Co-op City", "Starrett City", "LeFrak City", "Kansas City", "Jefferson City", "Platte City", "University City", "Webb City", "Wright City", "Kimberling City", "Crystal City", "Panama City / Panama City Beach", "Lake City", "Cooper City", "Plant City", "Florida City", "Orange City", "Dade City", "Haines City", "Palm City", "Polk City", "Jersey City", "Union City", "Atlantic City", "Ocean City", "Gloucester City", "Neptune City", "Oklahoma City", "Midwest City", "Del City", "Ponca City", "Park City", "Kansas City (KS)", "Junction City", "Garden City", "Dodge City", "Baldwin City", "Missouri City", "Royse City", "League City", "Texas City", "Bay City", "Haltom City", "Universal City", "Lakeside City", "Horizon City", "Rapid City",
@@ -25,8 +26,11 @@ function cityHref(city: string) {
     "Harbor City": "harbor-city",
     "Sand City": "sand-city",
   };
-  if (city.endsWith("City") || city === "St. George") return `/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`;
-  if (liveCitySlugs[city]) return `/storage-search/${liveCitySlugs[city]}`;
+  const guessedSlug = city.toLowerCase().replace(/\./g, "").replace(/ /g, "-");
+  const slug = liveCitySlugs[city] ?? guessedSlug;
+  const state = CITY_STATES[slug];
+  const stateSlug = state ? STATE_PAGE_SLUGS[state] : undefined;
+  if (stateSlug) return `/storage-search/${stateSlug}/${slug}`;
   return `/storage-search?location=${encodeURIComponent(city)}`;
 }
 

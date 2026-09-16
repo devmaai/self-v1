@@ -103,7 +103,7 @@ export default function FloridaStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="fl-cities-heading">
         <div className="state-storage-heading"><h2 id="fl-cities-heading">Storage units near you in Florida by city</h2><p>Florida rates move with the season and with the coast. A facility a few miles inland often costs noticeably less than one near the water. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/florida/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten or twenty five miles.</p>
       </section>
 
