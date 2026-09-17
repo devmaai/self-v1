@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter_Tight, DM_Sans, DM_Serif_Display } from "next/font/google";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import "./v2.css";
 import Navbar from "@/components/layout/Navbar";

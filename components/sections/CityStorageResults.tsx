@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import LocationPin from "@/components/ui/LocationPin";
+import FacilityMap from "@/components/sections/FacilityMap";
 
 export type CityStorageUnit = {
   size: string;
@@ -43,7 +43,7 @@ function lowestPrice(facility: CityStorageFacility) {
   return facility.units.reduce((lowest, unit) => Math.min(lowest, priceValue(unit.price)), Number.POSITIVE_INFINITY);
 }
 
-function FacilityCard({ facility, city }: { facility: CityStorageFacility; city: string }) {
+function FacilityCard({ facility, city, mapIndex }: { facility: CityStorageFacility; city: string; mapIndex: number }) {
   const [expanded, setExpanded] = useState(false);
   const visibleUnits = expanded ? facility.units : facility.units.slice(0, UNIT_PREVIEW_COUNT);
   const hasMore = facility.units.length > UNIT_PREVIEW_COUNT;
@@ -53,7 +53,7 @@ function FacilityCard({ facility, city }: { facility: CityStorageFacility; city:
       <div className="facility-card-top">
         <div>
           <span className="facility-distance">{facility.isNearby ? `${facility.city} · ${facility.distanceMiles.toFixed(1)} mi away` : `In ${city}`}</span>
-          <h3>{facility.name}</h3>
+          <h3><span className="facility-map-index" aria-label={`Map marker ${mapIndex}`}>{mapIndex}</span>{facility.name}</h3>
           <p>{facility.address}</p>
         </div>
         <div className="facility-pin"><LocationPin /></div>
@@ -97,16 +97,6 @@ export default function CityStorageResults({ city, facilities }: { city: string;
   const currentPage = Math.min(page, pageCount);
   const visibleFacilities = sortedFacilities.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  const coordinates = facilities.filter((facility) => Number.isFinite(facility.latitude) && Number.isFinite(facility.longitude));
-  const latitudeValues = coordinates.map((facility) => facility.latitude);
-  const longitudeValues = coordinates.map((facility) => facility.longitude);
-  const minLatitude = Math.min(...latitudeValues);
-  const maxLatitude = Math.max(...latitudeValues);
-  const minLongitude = Math.min(...longitudeValues);
-  const maxLongitude = Math.max(...longitudeValues);
-  const latitudeSpan = Math.max(maxLatitude - minLatitude, 0.025);
-  const longitudeSpan = Math.max(maxLongitude - minLongitude, 0.025);
-
   function changeSort(value: SortOption) {
     setSort(value);
     setPage(1);
@@ -132,8 +122,8 @@ export default function CityStorageResults({ city, facilities }: { city: string;
       <div className="city-storage-layout">
         <div>
           <div className="city-storage-list">
-            {visibleFacilities.map((facility) => (
-              <FacilityCard facility={facility} city={city} key={`${facility.name}-${facility.address}`} />
+            {visibleFacilities.map((facility, index) => (
+              <FacilityCard facility={facility} city={city} mapIndex={index + 1} key={`${facility.name}-${facility.address}`} />
             ))}
           </div>
           {pageCount > 1 && (
@@ -148,27 +138,8 @@ export default function CityStorageResults({ city, facilities }: { city: string;
         </div>
 
         <aside className="city-storage-map" aria-label={`${city} storage facility map`}>
-          <div className="map-grid" />
-          <div className="map-route map-route-one" />
-          <div className="map-route map-route-two" />
-          {coordinates.map((facility, index) => {
-            const left = 12 + ((facility.longitude - minLongitude) / longitudeSpan) * 76;
-            const top = 82 - ((facility.latitude - minLatitude) / latitudeSpan) * 72;
-            return (
-              <Link
-                className={`map-facility-marker${index === 0 ? " primary" : ""}`}
-                href={facility.href}
-                key={`${facility.name}-${facility.address}-map`}
-                style={{ left: `${left}%`, top: `${top}%` }}
-                title={`${facility.name}, ${facility.city}`}
-                aria-label={`${facility.name}, ${facility.city}`}
-              >
-                <span>{index + 1}</span>
-              </Link>
-            );
-          })}
-          <div className="map-label">{city} area facilities</div>
-          <span className="map-compass">N</span>
+          <FacilityMap city={city} facilities={visibleFacilities} />
+          <div className="map-label">Numbers match the listings shown</div>
         </aside>
       </div>
     </section>

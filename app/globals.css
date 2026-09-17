@@ -350,6 +350,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .facility-view-all { display: block; width: 100%; margin-top: 12px; padding: 11px; border-radius: 4px; background: var(--city-ink); color: #fff; font-size: 13px; font-weight: 700; text-align: center; }
 .facility-view-all:hover { background: var(--city-blue); }
 .city-storage-map { position: sticky; top: 88px; height: 610px; overflow: hidden; border: 1px solid #b9cfde; border-radius: 7px; background: #dcecf5; box-shadow: 0 8px 24px rgba(24, 70, 105, .08); }
+.city-storage-map-canvas { width: 100%; height: 100%; }
+.city-storage-map .leaflet-control-attribution { font-size: 9px; }
+.facility-map-marker { background: transparent; border: 0; }
+.facility-map-marker span { display: grid; width: 30px; height: 30px; place-items: center; border: 2px solid #fff; border-radius: 50% 50% 50% 0; background: var(--rust); color: #fff; font-size: 11px; font-weight: 700; transform: rotate(-45deg); box-shadow: 0 2px 7px rgba(22,51,75,.3); }
+.facility-map-marker i { font-style: normal; transform: rotate(45deg); }
+.facility-card h3 { display: flex; align-items: center; gap: 8px; }
+.facility-map-index { display: inline-grid; width: 21px; height: 21px; place-items: center; flex: 0 0 auto; border-radius: 50%; background: var(--rust); color: #fff; font-size: 11px; font-weight: 700; }
 .map-grid { position: absolute; inset: 0; opacity: .65; background-image: linear-gradient(28deg, transparent 47%, #b5cfdd 48%, #b5cfdd 49%, transparent 50%), linear-gradient(112deg, transparent 47%, #c4d8e2 48%, #c4d8e2 49%, transparent 50%), linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 190px 150px, 240px 170px, 40px 40px, 40px 40px; }
 .map-route { position: absolute; width: 145%; height: 16px; border-top: 4px solid rgba(255,255,255,.95); border-bottom: 2px solid #8bb3c8; transform: rotate(-24deg); }
 .map-route-one { top: 37%; left: -18%; }.map-route-two { top: 62%; left: -10%; transform: rotate(34deg); }
@@ -358,7 +365,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .map-facility-marker span { transform: rotate(45deg); }
 .map-facility-marker:hover, .map-facility-marker.primary { z-index: 3; background: var(--city-blue); transform: translate(-50%, -50%) rotate(-45deg) scale(1.12); }
 .map-marker::first-letter { transform: rotate(45deg); }.marker-one { top: 28%; left: 28%; }.marker-two { top: 52%; left: 57%; background: var(--city-blue); }.marker-three { top: 67%; left: 35%; }
-.map-label { position: absolute; right: 18px; bottom: 18px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.8); border-radius: 4px; background: rgba(255,255,255,.86); color: var(--city-ink); font-size: 12px; font-weight: 700; }
+.map-label { position: absolute; z-index: 1; right: 18px; bottom: 18px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.8); border-radius: 4px; background: rgba(255,255,255,.92); color: var(--city-ink); font-size: 12px; font-weight: 700; }
 .map-compass { position: absolute; top: 18px; right: 18px; display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #fff; color: var(--city-blue); font-size: 11px; font-weight: 700; }
 .city-storage-info { padding: 82px max(24px, calc((100% - 1160px) / 2)); background: #eaf3f8; }
 .city-storage-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; }.city-storage-info p { margin-bottom: 15px; color: #526d81; font-size: 15px; line-height: 1.7; }
