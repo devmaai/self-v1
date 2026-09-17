@@ -10,10 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     "",
+    "/agency",
     "/audit",
     "/contact",
     "/blog",
-    "/storage-search",
     "/storage-search/utah",
     "/storage-search/california",
     "/storage-search/new-york",

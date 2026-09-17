@@ -4,6 +4,9 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import CityExplorer from "@/components/sections/CityExplorer";
+import V2Interactions from "@/components/v2/V2Interactions";
+import V2Nav from "@/components/v2/V2Nav";
+import V2Footer from "@/components/v2/V2Footer";
 
 export const metadata: Metadata = {
   title: "Storage Search | Find A Storage Unit Near You",
@@ -38,7 +41,7 @@ const UNIT_SIZES = [
   { image: "/images/storage-guide/fourbedroom.jpg", title: "Large Units", range: "200 to 300 SQ FT", sizes: ["10' x 25'", "10' x 30'"], looksLike: "A large bedroom to a two-car garage depending on the unit size.", fits: "The contents of a three-bedroom house or full garage to the contents of a four or five-bedroom house." },
 ];
 
-export default async function StorageSearchPage({
+export default async function HomePage({
   searchParams,
 }: {
   searchParams: Promise<{ location?: string }>;
@@ -46,48 +49,53 @@ export default async function StorageSearchPage({
   const { location } = await searchParams;
 
   return (
-    <main className="storage-search-page">
-      <CityExplorer initialLocation={location ?? ""} />
+    <div className="v2-home">
+      <V2Interactions />
+      <V2Nav variant="inner" />
+      <main className="storage-search-page">
+        <CityExplorer initialLocation={location ?? ""} />
 
-      <section className="storage-types" aria-labelledby="storage-types-heading">
-        <div className="storage-guide-heading">
-          <span className="storage-search-label">Find the right fit</span>
-          <h2 id="storage-types-heading">Types of self storage</h2>
-          <p>Learn more about the types of self storage to identify what type of storage unit you need.</p>
-        </div>
-        <div className="storage-types-grid">
-          {STORAGE_TYPES.map((type) => (
-            <article className="storage-type-item" key={type.title}>
-              <div className="storage-type-icon"><StorageTypeIcon name={type.icon} /></div>
-              <div><h3>{type.title}</h3><p>{type.body}</p><Link href={type.href}>Learn about {type.title} <span aria-hidden="true">→</span></Link></div>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="storage-types" aria-labelledby="storage-types-heading">
+          <div className="storage-guide-heading">
+            <span className="storage-search-label">Find the right fit</span>
+            <h2 id="storage-types-heading">Types of self storage</h2>
+            <p>Learn more about the types of self storage to identify what type of storage unit you need.</p>
+          </div>
+          <div className="storage-types-grid">
+            {STORAGE_TYPES.map((type) => (
+              <article className="storage-type-item" key={type.title}>
+                <div className="storage-type-icon"><StorageTypeIcon name={type.icon} /></div>
+                <div><h3>{type.title}</h3><p>{type.body}</p><Link href={type.href}>Learn about {type.title} <span aria-hidden="true">→</span></Link></div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section id="unit-size-guide" className="unit-size-guide" aria-labelledby="unit-size-heading">
-        <div className="storage-guide-heading">
-          <span className="storage-guide-symbol" aria-hidden="true">↕</span>
-          <h2 id="unit-size-heading">Picking a storage unit size</h2>
-          <p>Use our storage unit size guide to identify what size storage unit you need.</p>
-          <Link className="storage-guide-link" href="/storage-size-guide">View the full size guide <span aria-hidden="true">→</span></Link>
-        </div>
-        <div className="unit-size-grid">
-          {UNIT_SIZES.map((unit) => (
-            <article className="unit-size-card" key={unit.title}>
-              <div className="unit-size-image"><Image src={unit.image} alt={`${unit.title} storage guide`} width={800} height={500} sizes="(max-width: 540px) 100vw, 33vw" /></div>
-              <h3>{unit.title}</h3><span className="unit-size-range">{unit.range}</span>
-              <div className="unit-size-tags">{unit.sizes.map((size) => <span key={size}>{size}</span>)}</div>
-              <p><strong>Looks Like:</strong> {unit.looksLike}</p><p><strong>Fits:</strong> {unit.fits}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section id="unit-size-guide" className="unit-size-guide" aria-labelledby="unit-size-heading">
+          <div className="storage-guide-heading">
+            <span className="storage-guide-symbol" aria-hidden="true">↕</span>
+            <h2 id="unit-size-heading">Picking a storage unit size</h2>
+            <p>Use our storage unit size guide to identify what size storage unit you need.</p>
+            <Link className="storage-guide-link" href="/storage-size-guide">View the full size guide <span aria-hidden="true">→</span></Link>
+          </div>
+          <div className="unit-size-grid">
+            {UNIT_SIZES.map((unit) => (
+              <article className="unit-size-card" key={unit.title}>
+                <div className="unit-size-image"><Image src={unit.image} alt={`${unit.title} storage guide`} width={800} height={500} sizes="(max-width: 540px) 100vw, 33vw" /></div>
+                <h3>{unit.title}</h3><span className="unit-size-range">{unit.range}</span>
+                <div className="unit-size-tags">{unit.sizes.map((size) => <span key={size}>{size}</span>)}</div>
+                <p><strong>Looks Like:</strong> {unit.looksLike}</p><p><strong>Fits:</strong> {unit.fits}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <StorageLocationSearch />
+        <StorageLocationSearch />
 
-      <StorageStateLinks />
-      <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>
-    </main>
+        <StorageStateLinks />
+        <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>
+      </main>
+      <V2Footer />
+    </div>
   );
 }

@@ -6,7 +6,32 @@ type V2NavProps = {
 };
 
 export default function V2Nav({ variant = "home" }: V2NavProps) {
-  const prefix = variant === "home" ? "#" : "/#";
+  const isConsumerHome = variant === "inner";
+  const prefix = variant === "home" ? "#" : "/agency#";
+
+  if (isConsumerHome) {
+    return (
+      <>
+        <nav className="v2-nav v2-nav-home">
+          <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
+          <Link href="/agency" className="btn-nav-cta nav-business-owner">
+            For Business Owners →
+          </Link>
+          <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+
+        <div className="v2-mobile-menu" data-mobile-panel>
+          <div className="mobile-menu-actions">
+            <Link href="/agency" className="btn-nav-cta" data-mobile-close>
+              For Business Owners →
+            </Link>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

@@ -15,6 +15,13 @@ const nextConfig: NextConfig = {
       { source: "/admin", destination: "/admin/index.html" },
     ];
   },
+  async redirects() {
+    return [
+      // The storage search page is now served at "/" (the home page); the
+      // former marketing homepage moved to /agency.
+      { source: "/storage-search", destination: "/", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
