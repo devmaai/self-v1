@@ -2,17 +2,13 @@
 title: 'Northern Celebrities: Famous People from the North East: Celebrities Born
   & Raised Here'
 date: '2026-08-27T00:00:00.000Z'
-excerpt: Discover notable northern celebrities born and raised in the North East.
-  Learn about their roots, achievements, and connections to the region in this...
+excerpt: Discover famous northern celebrities from the North East of England, including
+  actors, musicians, athletes and broadcasters with verified regional roots.
 coverImage: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaOQ7oRffbN_CpAkJpUtdN3FAytKcj0VhrfeUiBhU6Ew&s=10
 published: true
 ---
 
 # Northern Celebrities: Famous People from the North East
-
-**Meta description:** Discover famous northern celebrities from the North East of England, including actors, musicians, athletes and broadcasters with verified regional roots.
-
-**URL slug:** `northern-celebrities-north-east-england`
 
 ## TLDR
 

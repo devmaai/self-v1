@@ -233,6 +233,44 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .utah-steps-grid article { display: flex; gap: 16px; }
 .utah-steps-grid span { display: flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--storage-blue); color: #fff; font-family: var(--font-display); font-size: 15px; font-weight: 700; }
 .utah-steps-grid p { margin: 0; padding-top: 5px; color: #526d81; font-size: 15px; line-height: 1.6; }
+/* Blog — same storage-search language as / and /storage-search/utah */
+.blog-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; color: var(--storage-blue); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.blog-eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: #2d9c6c; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.blog-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px; border: 1px solid #d6e1ea; border-radius: 5px; background: #fff; box-shadow: 0 3px 12px rgba(24,70,105,.05); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.blog-card:hover { transform: translateY(-2px); border-color: var(--storage-blue); box-shadow: 0 8px 22px rgba(24,70,105,.12); }
+.blog-card.is-featured { border-top: 4px solid var(--storage-blue); }
+.blog-card-date { margin-bottom: 10px; color: var(--storage-blue); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.blog-card h3 { margin-bottom: 10px; color: #16334b; font-size: 21px; line-height: 1.3; }
+.blog-card > p { flex: 1; color: #526d81; font-size: 15px; line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.blog-card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; color: var(--storage-blue); font-size: 14px; font-weight: 700; }
+.blog-topics-card { width: min(900px, 100%); margin: 30px auto 0; padding: 30px 32px; border: 1px solid #c9dce8; border-radius: 6px; background: #fff; box-shadow: 0 3px 12px rgba(24,70,105,.06); text-align: left; }
+.blog-topic-chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.blog-topic-chips span { padding: 8px 11px; border-radius: 3px; background: #5d8ba3; color: #fff; font-size: 14px; font-weight: 700; }
+.blog-topics-note { margin-top: 20px; color: #60788b; font-size: 14px; line-height: 1.6; }
+.blog-reading-card { width: min(860px, 100%); margin: 0 auto; padding: 44px 48px; border: 1px solid #d6e1ea; border-radius: 7px; background: #fff; box-shadow: 0 5px 16px rgba(24,70,105,.06); }
+.blog-prose { color: #526d81; font-size: 16px; line-height: 1.75; }
+.blog-prose > *:first-child { margin-top: 0; }
+.blog-prose p { margin-bottom: 14px; }
+.blog-prose p:last-child { margin-bottom: 0; }
+.blog-prose h2 { margin-bottom: 14px; padding-top: 40px; color: #16334b; font-size: clamp(24px, 3vw, 30px); }
+.blog-prose h3 { margin-bottom: 10px; padding-top: 28px; color: #16334b; font-size: 20px; }
+.blog-prose a { color: var(--storage-blue); font-weight: 700; }
+.blog-prose ul, .blog-prose ol { margin: 0 0 14px; padding-left: 0; list-style: none; }
+.blog-prose li { position: relative; margin-bottom: 8px; padding-left: 25px; }
+.blog-prose li::before { position: absolute; left: 0; color: var(--storage-blue); font-weight: 700; content: "→"; }
+.blog-prose blockquote { margin: 1.5em 0; padding: 16px 20px; border-left: 4px solid var(--storage-blue); border-radius: 0 5px 5px 0; background: #eaf3f8; color: #34566e; font-size: 15px; }
+.blog-prose img { max-width: 100%; height: auto; margin: 1.5em 0; border-radius: 5px; }
+.blog-prose code { padding: 2px 6px; border-radius: 4px; background: #eaf3f8; font-size: .88em; }
+.blog-prose pre { margin: 1.5em 0; padding: 18px 20px; overflow-x: auto; border-radius: 6px; background: #16334b; color: #e8f2fa; }
+.blog-prose pre code { padding: 0; background: transparent; color: inherit; }
+.blog-prose table { display: block; width: 100%; margin: 1.5em 0; overflow-x: auto; border-collapse: collapse; font-size: 14px; }
+.blog-prose th, .blog-prose td { padding: 12px 15px; border: 1px solid #d6e1ea; text-align: left; }
+.blog-prose th { background: #dcebf6; color: #16334b; }
+.blog-prose p > strong:only-child { display: block; color: #16334b; font-size: 17px; }
+.blog-back-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #d6e1ea; }
+.blog-back-row a { color: var(--storage-blue); font-size: 14px; font-weight: 700; }
+.blog-back-row a:first-child { color: #60788b; }
 @media (max-width: 800px) {
   .utah-lifestyle-grid, .utah-vehicle-block, .utah-steps-grid { grid-template-columns: 1fr; gap: 0; }
   .utah-climate-grid { grid-template-columns: 1fr; gap: 14px; }
@@ -253,6 +291,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .state-city-grid { grid-template-columns: 1fr; }
   .state-size-grid { grid-template-columns: none; display: flex; gap: 14px; margin: 0 -24px; padding: 4px 24px 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
   .state-size-grid article { flex: 0 0 78%; scroll-snap-align: start; }
+  .blog-grid { grid-template-columns: none; display: flex; gap: 14px; margin: 0 -24px; padding: 4px 24px 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .blog-grid .blog-card { flex: 0 0 84%; scroll-snap-align: start; }
+  .blog-reading-card { padding: 30px 24px; }
+  .blog-topics-card { padding: 24px 20px; }
   .card-slider-dots { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; }
   .card-slider-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #c7d6e0; transition: background .2s, transform .2s; }
   .card-slider-dots button.is-active { background: var(--storage-blue); transform: scale(1.25); }

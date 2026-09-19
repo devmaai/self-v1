@@ -7,8 +7,12 @@ const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 export interface PostMeta {
   slug: string;
   title: string;
+  /** Optional SEO <title> override (e.g. suggested title tag with year). Falls back to title. */
+  seoTitle?: string;
   date: string;
   excerpt: string;
+  /** Target keywords from the publishing brief. Used for metadata only, never rendered. */
+  keywords?: string[];
   coverImage?: string;
   published: boolean;
 }
@@ -27,8 +31,10 @@ function readPostFile(slug: string): Post | null {
   return {
     slug,
     title: data.title ?? slug,
+    seoTitle: data.seoTitle || undefined,
     date: data.date ? new Date(data.date).toISOString() : "",
     excerpt: data.excerpt ?? "",
+    keywords: Array.isArray(data.keywords) ? data.keywords.filter((k): k is string => typeof k === "string") : undefined,
     coverImage: data.coverImage || undefined,
     // Default to published when the flag is absent so older files still show.
     published: data.published !== false,
