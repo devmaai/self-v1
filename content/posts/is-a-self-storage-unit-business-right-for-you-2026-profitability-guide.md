@@ -57,12 +57,12 @@ Key local market indicators include current vacancy rates, average rental rates 
 
 Ready to evaluate a specific self storage opportunity or market? Our team provides independent market assessments and feasibility analyses tailored to prospective investors. We help you analyze local demand, competitive supply, and financial projections to support informed investment decisions.
 
-[Request Your Assessment](https://selfstorage.help/contact)
+[Request Your Assessment](https://www.selfstorage.help/contact)
 
 ## Related Reading
 
-- [storage facility audit](https://selfstorage.help/audit)
-- [local market visibility](https://selfstorage.help/services/local-seo-gbp-optimization)
-- [Home](https://selfstorage.help)
+- [storage facility audit](https://www.selfstorage.help/audit)
+- [local market visibility](https://www.selfstorage.help/services/local-seo-gbp-optimization)
+- [Home](https://www.selfstorage.help)
 
 ![Well-maintained self storage facility with modern unit doors, paved driveway, and clear facility signage under clear daylight sky](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiopMq_Fm8fqxgWEM4_gCDJx2o9Rt3mJa3TBIy6kQECaZwE9dM1OBEDEn9&s=10)

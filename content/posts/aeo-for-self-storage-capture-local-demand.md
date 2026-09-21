@@ -53,12 +53,12 @@ Yes, AEO is particularly effective for capturing demand for niche storage types.
 
 Our team specializes in helping self-storage operators implement AEO strategies that capture local demand and drive qualified leads. We’ll audit your current presence, optimize your Google Business Profile, and structure your website content for answer engine visibility.
 
-[Schedule a Consultation](https://selfstorage.help/contact)
+[Schedule a Consultation](https://www.selfstorage.help/contact)
 
 ## Related Reading
 
-- [local SEO and GBP optimization](https://selfstorage.help/services/local-seo-gbp-optimization)
-- [content keyword strategy](https://selfstorage.help/services/content-keyword-strategy)
-- [independent facility owners](https://selfstorage.help/who-we-serve/independent-facility-owners)
+- [local SEO and GBP optimization](https://www.selfstorage.help/services/local-seo-gbp-optimization)
+- [content keyword strategy](https://www.selfstorage.help/services/content-keyword-strategy)
+- [independent facility owners](https://www.selfstorage.help/who-we-serve/independent-facility-owners)
 
 ![Customer using voice search on smartphone to find local self-storage options while standing outside a secure facility with visible unit doors and security gate](https://bpolvxmhhzwawzjwvhjr.supabase.co/storage/v1/object/public/blog-images/1e16e0d9ea47/2026/08/ac1d3004c4574129ac7a76b2ce4ee10b.png?)

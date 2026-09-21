@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/posts";
 import { CITY_STATES } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
-const BASE_URL = "https://selfstorage.help";
+const BASE_URL = "https://www.selfstorage.help";
 
 /** mtime of a file, or null when it does not exist. */
 function fileMtime(absPath: string): Date | null {

@@ -39,6 +39,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.selfstorage.help"),
   title: "SelfStorage.help | SEO That Fills Your Units",
   description:
     "Search-first growth for independent self-storage operators in the US. We help owners outrank national chains and capture local demand.",

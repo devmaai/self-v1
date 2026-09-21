@@ -11,6 +11,7 @@ import V2Footer from "@/components/v2/V2Footer";
 export const metadata: Metadata = {
   title: "Storage Search | Find A Storage Unit Near You",
   description: "Compare storage options in your area and find a space that fits your move, your budget, and your plans.",
+  alternates: { canonical: "/" },
 };
 
 const STORAGE_TYPES = [

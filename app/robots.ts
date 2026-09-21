@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://selfstorage.help";
+const BASE_URL = "https://www.selfstorage.help";
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -53,12 +53,12 @@ Business interruption coverage can be valuable if a covered event like fire or s
 
 Ensure your self storage facility has the right protection in place. Speak with a specialist who understands the unique risks of storage operations and can help you compare tailored coverage options.
 
-[Request a Consultation](https://selfstorage.help/contact)
+[Request a Consultation](https://www.selfstorage.help/contact)
 
 ## Related Reading
 
-- [independent facility owners](https://selfstorage.help/who-we-serve/independent-facility-owners)
-- [storage industry insights](https://selfstorage.help/blog)
-- [Home](https://selfstorage.help)
+- [independent facility owners](https://www.selfstorage.help/who-we-serve/independent-facility-owners)
+- [storage industry insights](https://www.selfstorage.help/blog)
+- [Home](https://www.selfstorage.help)
 
 ![Modern self storage facility with security features including gated access, perimeter fencing, and surveillance cameras](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCY6dv-yv1JZUtTHdw1SJFxKYWo8kKMhKZPrcDndsVuqEqOrD68AXTVReX&s=10)
