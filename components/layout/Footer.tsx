@@ -31,11 +31,11 @@ export default function Footer() {
             <h5>Services</h5>
             <ul>
               <li><Link href="/services/local-seo-gbp-optimization">Local SEO &amp; Map Pack</Link></li>
-              <li><Link href="/services/Aeo&Geo">AEO &amp; GEO</Link></li>
+              <li><Link href="/services/aeo-geo">AEO &amp; GEO</Link></li>
               <li><Link href="/services/technical-seo">Technical SEO</Link></li>
               <li><Link href="/services/backlinks">Backlinks</Link></li>
               <li><Link href="/services/content-keyword-strategy">Content Writing</Link></li>
-              <li><Link href="/services/SEO-reporting">SEO Reporting</Link></li>
+              <li><Link href="/services/seo-reporting">SEO Reporting</Link></li>
             </ul>
           </div>
           {/* <div className="footer-col">

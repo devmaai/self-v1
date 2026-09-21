@@ -55,13 +55,15 @@ export function getAllPosts(): PostMeta[] {
     .map(({ body: _body, ...meta }) => meta);
 }
 
-/** Slugs for generateStaticParams. */
+/** Slugs for generateStaticParams and the sitemap. Only published posts. */
 export function getAllPostSlugs(): string[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
   return fs
     .readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(/\.md$/, ""));
+    .map((f) => readPostFile(f.replace(/\.md$/, "")))
+    .filter((p): p is Post => p !== null && p.published)
+    .map((p) => p.slug);
 }
 
 /** A single post by slug. Returns null for missing or unpublished posts. */

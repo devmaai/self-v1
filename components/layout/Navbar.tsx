@@ -9,7 +9,8 @@ const serviceLinks = [
   { href: "/services/technical-seo", label: "Technical SEO" },
   { href: "/services/backlinks", label: "Backlinks" },
   { href: "/services/content-keyword-strategy", label: "Content Writing" },
-  { href: "/services/multi-location-seo", label: "SEO Reporting" },
+  { href: "/services/multi-location-seo", label: "Multi-Location SEO" },
+  { href: "/services/seo-reporting", label: "SEO Reporting" },
 ];
 
 // const whoWeServeLinks = [

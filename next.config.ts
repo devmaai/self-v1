@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
       // The storage search page is now served at "/" (the home page); the
       // former marketing homepage moved to /agency.
       { source: "/storage-search", destination: "/", permanent: true },
+      // NOTE: legacy mixed-case / &-encoded service URLs redirect to their
+      // lowercase canonicals in middleware.ts (exact, case-sensitive match).
+      // next.config redirects match case-insensitively and would self-loop.
     ];
   },
 };
