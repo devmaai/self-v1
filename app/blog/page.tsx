@@ -33,6 +33,14 @@ const TOPICS = [
   "Review Strategy",
 ];
 
+const BLOG_FILTERS = [
+  { value: "all", label: "All posts" },
+  { value: "facility", label: "Facility blog" },
+  { value: "seo", label: "SEO blog" },
+] as const;
+
+type BlogFilter = (typeof BLOG_FILTERS)[number]["value"];
+
 const STEPS = [
   "Start with the latest post. Each guide is self-contained, so you can read in any order.",
   "Match the topic to your need — map pack visibility, unit-size pages, or reviews.",
@@ -42,9 +50,17 @@ const STEPS = [
   "Need it done for you? The free audit maps your gaps in five business days.",
 ];
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
   const posts = getAllPosts();
-  const [featured, ...rest] = posts;
+  const activeFilter: BlogFilter = category === "facility" || category === "seo" ? category : "all";
+  const activeCategory = activeFilter === "all" ? undefined : activeFilter;
+  const filteredPosts = activeCategory ? posts.filter((post) => post.category === activeCategory) : posts;
+  const [featured, ...rest] = filteredPosts;
   const cards = featured ? [featured, ...rest] : rest;
 
   return (
@@ -87,6 +103,29 @@ export default function BlogIndexPage() {
               what your facility needs right now and skip the rest.
             </p>
           </div>
+          <nav className="blog-filter" aria-label="Filter blog posts">
+            {BLOG_FILTERS.map((filter) => {
+              const count = filter.value === "all"
+                ? posts.length
+                : posts.filter((post) => post.category === filter.value).length;
+              const isActive = filter.value === activeFilter;
+              const href = filter.value === "all"
+                ? "/blog#latest"
+                : `/blog?category=${filter.value}#latest`;
+
+              return (
+                <Link
+                  key={filter.value}
+                  href={href}
+                  className={isActive ? "is-active" : undefined}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {filter.label}
+                  <span className="blog-filter-count" aria-hidden="true">{count}</span>
+                </Link>
+              );
+            })}
+          </nav>
           {cards.length > 0 ? (
             <CardSlider trackClassName="blog-grid">
               {cards.map((p, i) => (
@@ -107,12 +146,9 @@ export default function BlogIndexPage() {
               ))}
             </CardSlider>
           ) : (
-            <div className="blog-grid">
-              <article className="blog-card">
-                <span className="blog-card-date">Soon</span>
-                <h3>First post coming soon</h3>
-                <p>We are putting the finishing touches on the first article. Check back shortly.</p>
-              </article>
+            <div className="blog-filter-empty">
+              <strong>{activeFilter === "all" ? "No posts yet" : "No posts in this category yet"}</strong>
+              <span>{activeFilter === "all" ? "We are putting the finishing touches on the first article. Check back shortly." : "Try another filter to explore the full blog."}</span>
             </div>
           )}
         </section>

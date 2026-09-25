@@ -14,6 +14,10 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
       <>
         <nav className="v2-nav v2-nav-home">
           <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
+          <ul className="nav-links nav-quick-links">
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/storage-size-guide">Size Guide</Link></li>
+          </ul>
           <Link href="/agency" className="btn-nav-cta nav-business-owner">
             For Business Owners →
           </Link>
@@ -23,6 +27,10 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         </nav>
 
         <div className="v2-mobile-menu" data-mobile-panel>
+          <ul className="mobile-menu-links">
+            <li><Link href="/blog" data-mobile-close>Blog</Link></li>
+            <li><Link href="/storage-size-guide" data-mobile-close>Size Guide</Link></li>
+          </ul>
           <div className="mobile-menu-actions">
             <Link href="/agency" className="btn-nav-cta" data-mobile-close>
               For Business Owners →

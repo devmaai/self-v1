@@ -4,6 +4,8 @@ import matter from "gray-matter";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
+export type PostCategory = "facility" | "seo";
+
 export interface PostMeta {
   slug: string;
   title: string;
@@ -13,6 +15,9 @@ export interface PostMeta {
   excerpt: string;
   /** Target keywords from the publishing brief. Used for metadata only, never rendered. */
   keywords?: string[];
+  /** Editorial bucket used by the blog filter. */
+  category: PostCategory;
+  author?: string;
   coverImage?: string;
   published: boolean;
 }
@@ -35,6 +40,8 @@ function readPostFile(slug: string): Post | null {
     date: data.date ? new Date(data.date).toISOString() : "",
     excerpt: data.excerpt ?? "",
     keywords: Array.isArray(data.keywords) ? data.keywords.filter((k): k is string => typeof k === "string") : undefined,
+    category: data.category === "seo" ? "seo" : "facility",
+    author: data.author || undefined,
     coverImage: data.coverImage || undefined,
     // Default to published when the flag is absent so older files still show.
     published: data.published !== false,

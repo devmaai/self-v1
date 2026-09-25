@@ -5,6 +5,7 @@ excerpt: Learn how AEO for self-storage improves local visibility and drives qua
   leads. Practical steps to optimize for answer engines and capture nearby...
 coverImage: https://bpolvxmhhzwawzjwvhjr.supabase.co/storage/v1/object/public/blog-images/1e16e0d9ea47/2026/08/ac1d3004c4574129ac7a76b2ce4ee10b.png?
 published: true
+category: seo
 ---
 
 TLDR

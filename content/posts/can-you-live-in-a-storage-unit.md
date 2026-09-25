@@ -9,6 +9,7 @@ keywords:
   - "living in a storage unit"
   - "sleeping in a storage unit"
 published: true
+category: facility
 ---
 
 No, you cannot live in a storage unit, and doing so is illegal in every US state. Storage facilities are zoned for storing property, not for people to sleep or live in, so every lease bans it and staff will act if they find someone staying overnight. Below is why the law treats it this way, the risks involved, and where to turn for housing help if you are in a tight spot.

@@ -11,6 +11,7 @@ keywords:
   - "climate controlled storage cost"
   - "10x10 storage unit price"
 published: true
+category: facility
 ---
 
 A storage unit in the United States costs about $50 to $260 per month, and the national average sits near $137. The most popular size, a 10x10 unit, runs around $120 a month. What you actually pay comes down to five things: the size you rent, where the facility is, whether you add climate control, the floor and access type, and the season you book. This guide breaks down current prices by size, the fees that get added on top, and the fastest ways to bring the cost down.

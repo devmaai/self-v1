@@ -51,13 +51,15 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--slate-100);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 48px; height: 64px;
+    padding: 0 40px; height: 72px;
   }
-  .v2-home .nav-brand { font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--slate-900); letter-spacing: -0.3px; }
+  .v2-home .nav-brand { font-family: var(--sans); font-size: 18px; font-weight: 600; color: var(--slate-900); letter-spacing: -0.3px; }
   .v2-home .nav-brand span { color: var(--accent); }
-  .v2-home .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-  .v2-home .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--slate-600); transition: color 0.15s; }
+  .v2-home .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+  .v2-home .nav-links a { font-size: 15px; font-weight: 500; line-height: 1.2; color: var(--slate-600); transition: color 0.15s; }
   .v2-home .nav-links a:hover { color: var(--slate-900); }
+  .v2-home .nav-quick-links { gap: clamp(24px, 2.2vw, 34px); margin-left: clamp(28px, 3vw, 48px); }
+  .v2-home .nav-quick-links a { display: inline-flex; min-height: 40px; align-items: center; }
   .v2-home .nav-actions { display: flex; align-items: center; gap: 12px; }
   .v2-home .nav-services { position: relative; }
   .v2-home .nav-services-trigger {
@@ -84,9 +86,9 @@
     border-radius: 6px; transition: background 0.12s, color 0.12s;
   }
   .v2-home .nav-services-menu a:hover { background: var(--accent-pale); color: var(--accent-dark); }
-  .v2-home .btn-nav-ghost { font-size: 13.5px; font-weight: 500; color: var(--slate-700); padding: 8px 16px; border-radius: 8px; border: 1px solid var(--slate-200); transition: border-color 0.15s, background 0.15s; }
+  .v2-home .btn-nav-ghost { font-size: 14px; font-weight: 500; color: var(--slate-700); padding: 10px 17px; border-radius: 8px; border: 1px solid var(--slate-200); transition: border-color 0.15s, background 0.15s; }
   .v2-home .btn-nav-ghost:hover { border-color: var(--slate-400); background: var(--slate-50); }
-  .v2-home .btn-nav-cta { font-size: 13.5px; font-weight: 600; color: var(--white); background: var(--slate-900); padding: 9px 20px; border-radius: 8px; transition: background 0.15s; letter-spacing: -0.1px; }
+  .v2-home .btn-nav-cta { font-size: 14px; font-weight: 600; color: var(--white); background: var(--slate-900); padding: 11px 20px; border-radius: 8px; transition: background 0.15s; letter-spacing: -0.1px; }
   .v2-home .btn-nav-cta:hover { background: var(--accent-dark); }
   .v2-home .v2-nav-home .nav-business-owner { margin-left: auto; }
 

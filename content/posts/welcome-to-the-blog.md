@@ -3,6 +3,7 @@ title: Welcome to the SelfStorage.help blog
 date: 2026-05-18T00:00:00.000Z
 excerpt: 'A quick look at what this blog covers and how often we publish, written for storage operators who want the work explained'
 published: true
+category: seo
 ---
 
 This is the first post on the SelfStorage.help blog. Every week we publish something practical for self-storage operators: a Google algorithm change worth knowing about, a local SEO tactic you can run yourself, or an operator case study with the numbers attached.
