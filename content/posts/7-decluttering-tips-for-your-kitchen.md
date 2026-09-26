@@ -1,5 +1,6 @@
 ---
 title: "7 Decluttering Tips for Your Kitchen"
+slug: "7-decluttering-tips-for-your-kitchen"
 date: "2026-09-19"
 excerpt: "7 Decluttering Tips for Your Kitchen Title tag: 7 Decluttering Tips for Your Kitchen (Full Reset). Meta description: Declutter your kitchen for good with s"
 coverImage: "/images/blog/7-decluttering-tips-for-your-kitchen-img-1.png"
