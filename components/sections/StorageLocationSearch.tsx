@@ -18,7 +18,6 @@ export default function StorageLocationSearch() {
 
   return (
     <section className="storage-search-note" aria-labelledby="storage-location-search-heading">
-      <div className="storage-search-note-mark" aria-hidden="true">+</div>
       <div className="storage-location-search-content">
         <strong id="storage-location-search-heading">Looking for a specific facility?</strong>
         <span>Search by ZIP code, city, or state to find storage options in that area.</span>

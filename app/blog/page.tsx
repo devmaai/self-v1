@@ -153,41 +153,9 @@ export default async function BlogIndexPage({
           )}
         </section>
 
-        <section className="utah-pricing-section" aria-labelledby="blog-topics-heading">
-          <div className="utah-pricing-heading">
-            <h2 id="blog-topics-heading">What the blog covers</h2>
-            <p>
-              Every post fits one of these topics. If it affects the map pack,
-              drive-up visibility, or lease-up timing, we explain why it matters
-              to occupancy before we explain the tactic.
-            </p>
-          </div>
-          <div className="blog-topics-card">
-            <div className="blog-topic-chips">
-              {TOPICS.map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-            <p className="blog-topics-note">
-              Posts are written for owners and managers, not marketers — no jargon without a reason.
-            </p>
-          </div>
-        </section>
+        
 
-        <section className="utah-content-section" aria-labelledby="blog-how-heading">
-          <div className="state-storage-heading">
-            <h2 id="blog-how-heading">How to use this blog</h2>
-            <p>Work through this before you dive into the archive.</p>
-          </div>
-          <div className="utah-steps-grid">
-            {STEPS.map((step, i) => (
-              <article key={i}>
-                <span>{i + 1}</span>
-                <p>{step}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        
 
         <section className="utah-closing-cta" aria-labelledby="blog-closing-heading">
           <div>
