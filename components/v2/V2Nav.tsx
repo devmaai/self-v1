@@ -1,5 +1,7 @@
 "use client";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import V2StorageForm from "./V2StorageForm";
 
 type V2NavProps = {
   variant?: "home" | "inner";
@@ -8,6 +10,26 @@ type V2NavProps = {
 export default function V2Nav({ variant = "home" }: V2NavProps) {
   const isConsumerHome = variant === "inner";
   const prefix = variant === "home" ? "#" : "/agency#";
+  const [formOpen, setFormOpen] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!formOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (formRef.current && !formRef.current.contains(e.target as Node)) {
+        setFormOpen(false);
+      }
+    };
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setFormOpen(false);
+    };
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, [formOpen]);
 
   if (isConsumerHome) {
     return (
@@ -18,9 +40,29 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/storage-size-guide">Size Guide</Link></li>
           </ul>
-          <Link href="/agency" className="btn-nav-cta nav-business-owner">
-            For Business Owners →
-          </Link>
+          <div className="nav-actions">
+            <div className="nav-form-dropdown" ref={formRef}>
+              <button
+                className={`nav-form-toggle ${formOpen ? "open" : ""}`}
+                onClick={() => setFormOpen(!formOpen)}
+                aria-expanded={formOpen}
+                aria-haspopup="true"
+              >
+                Find Storage
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {formOpen && (
+                <div className="nav-form-panel">
+                  <V2StorageForm />
+                </div>
+              )}
+            </div>
+            <Link href="/agency" className="btn-nav-cta nav-business-owner">
+              For Business Owners →
+            </Link>
+          </div>
           <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -35,6 +77,9 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
             <Link href="/agency" className="btn-nav-cta" data-mobile-close>
               For Business Owners →
             </Link>
+          </div>
+          <div className="mobile-menu-form">
+            <V2StorageForm />
           </div>
         </div>
       </>
@@ -53,6 +98,24 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         </ul>
         <div className="nav-actions">
           <a href={`${prefix}proof`} className="btn-nav-ghost">See client data</a>
+          <div className="nav-form-dropdown" ref={formRef}>
+            <button
+              className={`nav-form-toggle ${formOpen ? "open" : ""}`}
+              onClick={() => setFormOpen(!formOpen)}
+              aria-expanded={formOpen}
+              aria-haspopup="true"
+            >
+              Find Storage
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {formOpen && (
+              <div className="nav-form-panel">
+                <V2StorageForm />
+              </div>
+            )}
+          </div>
           <a href="/audit" className="btn-nav-cta">Get free audit →</a>
         </div>
         <button className="nav-burger" data-mobile-toggle aria-label="Open menu" aria-expanded="false">
@@ -70,6 +133,9 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         <div className="mobile-menu-actions">
           <a href={`${prefix}proof`} className="btn-nav-ghost" data-mobile-close>See client data</a>
           <a href="/audit" className="btn-nav-cta" data-mobile-close>Get free audit →</a>
+        </div>
+        <div className="mobile-menu-form">
+          <V2StorageForm />
         </div>
       </div>
     </>
