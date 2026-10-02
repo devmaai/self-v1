@@ -1,8 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Script from "next/script";
 
-type FieldErrors = Partial<Record<"email" | "city" | "unitSize" | "priceRange" | "startDate" | "endDate" | "storageType", string>>;
+declare global {
+  interface Window {
+    turnstile?: { reset: (el?: string | HTMLElement) => void };
+  }
+}
+
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+type FieldErrors = Partial<Record<"email" | "city" | "unitSize" | "priceRange" | "startDate" | "endDate" | "storageType" | "phone", string>>;
 type Status = "idle" | "submitting" | "success" | "error";
 
 const UNIT_SIZES = [
@@ -39,6 +48,10 @@ export default function V2StorageForm() {
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
 
+  const resetCaptcha = () => {
+    if (SITE_KEY && typeof window !== "undefined") window.turnstile?.reset();
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === "submitting") return;
@@ -53,7 +66,9 @@ export default function V2StorageForm() {
       startDate: String(data.get("startDate") || ""),
       endDate: String(data.get("endDate") || ""),
       storageType: String(data.get("storageType") || ""),
+      phone: String(data.get("phone") || ""),
       company: String(data.get("company") || ""), // honeypot
+      captchaToken: String(data.get("cf-turnstile-response") || ""),
     };
 
     setStatus("submitting");
@@ -71,6 +86,7 @@ export default function V2StorageForm() {
       if (res.ok && result.ok) {
         setStatus("success");
         form.reset();
+        resetCaptcha();
         return;
       }
 
@@ -79,13 +95,17 @@ export default function V2StorageForm() {
         setFormError("Please fix the highlighted fields and try again.");
       } else if (result.error === "email_not_configured") {
         setFormError("The form isn't connected to email yet. Please email us directly for now.");
+      } else if (result.error === "captcha") {
+        setFormError("Captcha check failed. Please try the verification again.");
       } else {
         setFormError("Something went wrong sending your request. Please try again in a moment.");
       }
       setStatus("error");
+      resetCaptcha();
     } catch {
       setFormError("Couldn't reach the server. Please check your connection and try again.");
       setStatus("error");
+      resetCaptcha();
     }
   };
 
@@ -101,6 +121,9 @@ export default function V2StorageForm() {
 
   return (
     <div className="af-card">
+      {SITE_KEY && (
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />
+      )}
       <form className="af-form" onSubmit={handleSubmit} noValidate>
         <div className="af-row">
           <div className="af-field">
@@ -113,6 +136,12 @@ export default function V2StorageForm() {
             <input id="sf-city" name="city" type="text" autoComplete="address-level2" placeholder="Your city" required />
             {fieldErrors.city && <span className="af-error">{fieldErrors.city}</span>}
           </div>
+        </div>
+
+        <div className="af-field">
+          <label htmlFor="sf-phone">Phone <span className="af-hint">(US)</span></label>
+          <input id="sf-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
+          {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
         </div>
 
         <div className="af-row">
@@ -167,6 +196,8 @@ export default function V2StorageForm() {
           <label htmlFor="sf-company">Company</label>
           <input id="sf-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
         </div>
+
+        {SITE_KEY && <div className="cf-turnstile af-turnstile" data-sitekey={SITE_KEY} data-theme="dark" />}
 
         {formError && <p className="af-form-error">{formError}</p>}
 

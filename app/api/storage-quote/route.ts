@@ -3,16 +3,18 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.QUOTE_TO_EMAIL || "business@maai.agency";
-const FROM_EMAIL = process.env.QUOTE_FROM_EMAIL || "SelfStorage Quote <onboarding@resend.dev>";
+const TO_EMAIL = process.env.STORAGE_QUOTE_TO_EMAIL || process.env.QUOTE_TO_EMAIL || "business@maai.agency";
+const FROM_EMAIL = process.env.STORAGE_QUOTE_FROM_EMAIL || "SelfStorage Quote <onboarding@resend.dev>";
 
-type QuotePayload = {
+type StorageQuotePayload = {
   email?: unknown;
   city?: unknown;
-  units?: unknown;
-  budgetStart?: unknown;
-  budgetEnd?: unknown;
-  facilityType?: unknown;
+  unitSize?: unknown;
+  priceRange?: unknown;
+  startDate?: unknown;
+  endDate?: unknown;
+  storageType?: unknown;
+  phone?: unknown;
   // Honeypot — must stay empty. Bots tend to fill every field.
   company?: unknown;
   captchaToken?: unknown;
@@ -26,7 +28,21 @@ function esc(s: string): string {
   );
 }
 
- async function verifyCaptcha(token: string, ip: string | null): Promise<boolean> {
+// US phone: common formats accepted, then require exactly 10 digits
+// (optionally a leading country code "1") with NANP area/exchange rules.
+function normalizeUsPhone(raw: string): string | null {
+  const digits = raw.replace(/\D/g, "");
+  const ten = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+  if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(ten)) return null;
+  return `(${ten.slice(0, 3)}) ${ten.slice(3, 6)}-${ten.slice(6)}`;
+}
+
+function isValidDate(raw: string): boolean {
+  const t = Date.parse(raw);
+  return raw.trim() !== "" && !Number.isNaN(t);
+}
+
+async function verifyCaptcha(token: string, ip: string | null): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   // If no secret is configured, captcha is treated as disabled (dev mode).
   if (!secret) return true;
@@ -47,7 +63,7 @@ function esc(s: string): string {
 }
 
 export async function POST(request: Request) {
-  let body: QuotePayload;
+  let body: StorageQuotePayload;
   try {
     body = await request.json();
   } catch {
@@ -58,29 +74,30 @@ export async function POST(request: Request) {
   if (typeof body.company === "string" && body.company.trim() !== "") {
     return NextResponse.json({ ok: true });
   }
- 
 
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const city = typeof body.city === "string" ? body.city.trim() : "";
-  const units = typeof body.units === "string" ? body.units.trim() : "";
-  const budgetStart = typeof body.budgetStart === "string" ? body.budgetStart.trim() : "";
-  const budgetEnd = typeof body.budgetEnd === "string" ? body.budgetEnd.trim() : "";
-  const facilityType = typeof body.facilityType === "string" ? body.facilityType.trim() : "";
+  const unitSize = typeof body.unitSize === "string" ? body.unitSize.trim() : "";
+  const priceRange = typeof body.priceRange === "string" ? body.priceRange.trim() : "";
+  const startDate = typeof body.startDate === "string" ? body.startDate.trim() : "";
+  const endDate = typeof body.endDate === "string" ? body.endDate.trim() : "";
+  const storageType = typeof body.storageType === "string" ? body.storageType.trim() : "";
+  const phoneRaw = typeof body.phone === "string" ? body.phone.trim() : "";
 
   const errors: Record<string, string> = {};
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
   if (!city) errors.city = "Please enter your city.";
-  if (!units || isNaN(Number(units)) || Number(units) < 1)
-    errors.units = "Please enter a valid number of units.";
-  if (!budgetStart || isNaN(Number(budgetStart)) || Number(budgetStart) < 0)
-    errors.budgetStart = "Please enter a valid minimum budget.";
-  if (!budgetEnd || isNaN(Number(budgetEnd)) || Number(budgetEnd) < 0)
-    errors.budgetEnd = "Please enter a valid maximum budget.";
-  if (budgetStart && budgetEnd && !errors.budgetStart && !errors.budgetEnd) {
-    if (Number(budgetEnd) < Number(budgetStart))
-      errors.budgetEnd = "Maximum budget must be greater than minimum.";
+  if (!unitSize) errors.unitSize = "Please select a unit size.";
+  if (!priceRange) errors.priceRange = "Please select a price range.";
+  if (!isValidDate(startDate)) errors.startDate = "Please enter a valid start date.";
+  if (!isValidDate(endDate)) {
+    errors.endDate = "Please enter a valid end date.";
+  } else if (isValidDate(startDate) && Date.parse(endDate) < Date.parse(startDate)) {
+    errors.endDate = "End date must be on or after the start date.";
   }
-  if (!facilityType) errors.facilityType = "Please select a facility type.";
+  if (!storageType) errors.storageType = "Please select a storage type.";
+  const phone = normalizeUsPhone(phoneRaw);
+  if (!phone) errors.phone = "Please enter a valid US phone number.";
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ ok: false, error: "validation", fields: errors }, { status: 422 });
@@ -99,16 +116,19 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const subject = `New quote request — ${city}`;
+  const subject = `New storage quote request — ${city}`;
   const rows: [string, string][] = [
     ["Email", email],
     ["City", city],
-    ["Storage Units", units],
-    ["Budget Range", `$${Number(budgetStart).toLocaleString()} – $${Number(budgetEnd).toLocaleString()}`],
-    ["Type of Facility", facilityType],
+    ["Phone", phone!],
+    ["Unit Size", unitSize],
+    ["Price Range", priceRange],
+    ["Start Date", startDate],
+    ["End Date", endDate],
+    ["Storage Type", storageType],
   ];
   const html = `
-    <h2 style="font-family:sans-serif;margin:0 0 16px">New quote request</h2>
+    <h2 style="font-family:sans-serif;margin:0 0 16px">New storage quote request</h2>
     <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
       ${rows
         .map(
@@ -129,11 +149,11 @@ export async function POST(request: Request) {
       text,
     });
     if (error) {
-      console.error("[quote] Resend send error:", error);
+      console.error("[storage-quote] Resend send error:", error);
       return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
     }
   } catch (err) {
-    console.error("[quote] Resend threw:", err);
+    console.error("[storage-quote] Resend threw:", err);
     return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
   }
 

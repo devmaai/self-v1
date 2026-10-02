@@ -1,7 +1,14 @@
 "use client";
-
+import Script from "next/script";
 import { useState } from "react";
 
+declare global{
+  interface Window {
+    turnstile?: {reset: (el?: string | HTMLElement) => void};
+  }
+}
+
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 type FieldErrors = Partial<
   Record<"email" | "city" | "units" | "budgetStart" | "budgetEnd" | "facilityType", string>
 >;
@@ -21,6 +28,10 @@ export default function V2QuoteForm() {
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
 
+  const resetCaptcha = () => {
+    if (SITE_KEY && typeof window !== "undefined") window.turnstile?.reset();
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === "submitting") return;
@@ -35,6 +46,7 @@ export default function V2QuoteForm() {
       budgetEnd: String(data.get("budgetEnd") || ""),
       facilityType: String(data.get("facilityType") || ""),
       company: String(data.get("company") || ""), // honeypot
+      captchaToken: String(data.get("cf-turnstile-response") || ""),
     };
 
     setStatus("submitting");
@@ -52,6 +64,7 @@ export default function V2QuoteForm() {
       if (res.ok && result.ok) {
         setStatus("success");
         form.reset();
+        resetCaptcha();
         return;
       }
 
@@ -60,13 +73,17 @@ export default function V2QuoteForm() {
         setFormError("Please fix the highlighted fields and try again.");
       } else if (result.error === "email_not_configured") {
         setFormError("The form isn't connected to email yet. Please email us directly for now.");
+      } else if (result.error === "captcha") {
+        setFormError("Captcha check failed. Please try the verification again.");
       } else {
         setFormError("Something went wrong sending your request. Please try again in a moment.");
       }
       setStatus("error");
+      resetCaptcha();
     } catch {
       setFormError("Couldn't reach the server. Please check your connection and try again.");
       setStatus("error");
+      resetCaptcha();
     }
   };
 
@@ -84,6 +101,9 @@ export default function V2QuoteForm() {
 
   return (
     <div className="qf-card">
+      {SITE_KEY && (
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />
+      )}
       <form className="qf-form" onSubmit={handleSubmit} noValidate>
         <div className="qf-row">
           <div className="qf-field">
@@ -182,7 +202,7 @@ export default function V2QuoteForm() {
           <label htmlFor="qf-company">Company</label>
           <input id="qf-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
         </div>
-
+        {SITE_KEY && <div className="cf-turnstile" data-sitekey={SITE_KEY} data-theme="dark" />}
         {formError && <p className="qf-form-error">{formError}</p>}
 
         <button type="submit" className="qf-submit" disabled={status === "submitting"}>
