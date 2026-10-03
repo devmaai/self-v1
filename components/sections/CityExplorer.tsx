@@ -26,7 +26,7 @@ function cityHref(city: string) {
     "Harbor City": "harbor-city",
     "Sand City": "sand-city",
   };
-  const guessedSlug = city.toLowerCase().replace(/\./g, "").replace(/ /g, "-");
+  const guessedSlug = city.split("/")[0].trim().toLowerCase().replace(/[()]/g, "").replace(/\./g, "").replace(/ /g, "-");
   const slug = liveCitySlugs[city] ?? guessedSlug;
   const state = CITY_STATES[slug];
   const stateSlug = state ? STATE_PAGE_SLUGS[state] : undefined;

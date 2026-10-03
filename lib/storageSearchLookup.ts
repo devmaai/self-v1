@@ -30,10 +30,12 @@ export const STATE_NAME_TO_SLUG: Record<string, string> = Object.entries(STATE_P
 
 function slugifyCity(value: string): string {
   return value
+    .split("/")[0]
     .toLowerCase()
     .trim()
     .replace(/'/g, "")
     .replace(/\./g, "")
+    .replace(/[()]/g, "")
     .replace(/\s+/g, "-");
 }
 
