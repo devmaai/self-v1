@@ -4473,7 +4473,7 @@ footer {
 .blog-recent-list a::before { color: var(--blog-blue); content: "•"; }
 .blog-recent-list a span:last-child { font-size: 17px; line-height: 1.2; }
 .blog-recent-list a:hover { color: var(--blog-ink); }
-.blog-sidebar-cta { margin-top: 20px; padding: 24px; background: #163b59; color: #fff; }
+.blog-sidebar-cta { margin-top: 20px; padding: 24px; background: var(--blog-rust); color: #fff; }
 .blog-sidebar-eyebrow { color: #9fd2f1; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .blog-sidebar-cta h2 { margin: 9px 0 10px; color: #fff; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.15; }
 .blog-sidebar-cta p { color: #c5dbea; font-size: 14px; line-height: 1.6; }
