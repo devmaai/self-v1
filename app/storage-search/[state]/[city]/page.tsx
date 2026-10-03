@@ -207,8 +207,47 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   const fromPrice = Number.isFinite(lowestPrice) ? `$${lowestPrice}` : "our listed rates";
   const fillPrice = (text: string) => fillPricePlaceholder(text, fromPrice);
 
+  const items = facilities.flatMap((facility) =>
+    facility.units.map((unit) => ({
+      "@type": "Product",
+      name: `${unit.size} self storage unit at ${facility.name}`,
+      description: `${unit.size} self storage unit at ${facility.name}, ${facility.address}.`,
+      brand: { "@type": "Brand", name: facility.name },
+      offers: {
+        "@type": "Offer",
+        price: unit.price.replace(/[^0-9.]/g, ""),
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: unit.price.replace(/[^0-9.]/g, ""),
+          priceCurrency: "USD",
+          unitText: "MONTH",
+        },
+        availability:
+          Number(unit.quantity) > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+        url: facility.href.startsWith("http") ? facility.href : `https://www.selfstorage.help${facility.href}`,
+      },
+    })),
+  );
+
+  const priceListingSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Self storage unit prices in ${city}, ${state}`,
+    numberOfItems: items.length,
+    itemListElement: items.slice(0, 100).map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item,
+    })),
+  };
+
   return (
     <main className="city-storage-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(priceListingSchema) }}
+      />
       <section className="city-storage-hero">
         <div className="city-storage-hero-inner">
           <div className="city-storage-breadcrumb">

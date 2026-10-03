@@ -74,10 +74,31 @@ export default async function BlogPostPage({
   const categoryLabel = post.category === "seo" ? "SEO & Growth" : "Facility Insights";
   const heroImage = post.coverImage || "/images/storage-guide/boxes.jpg";
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date || undefined,
+    author: {
+      "@type": "Person",
+      name: author,
+    },
+    image: heroImage,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.selfstorage.help/blog/${post.slug}`,
+    },
+  };
+
   return (
     <div className="v2-home">
       <V2Interactions />
       <V2Nav variant="inner" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <main className="blog-article-page">
         <section className="blog-article-hero" aria-labelledby="article-title">
           <div className="blog-article-hero-inner">

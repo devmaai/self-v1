@@ -63,10 +63,38 @@ export default async function BlogIndexPage({
   const [featured, ...rest] = filteredPosts;
   const cards = featured ? [featured, ...rest] : rest;
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "SelfStorage.help Blog",
+    description:
+      "Weekly posts on self-storage SEO: Google algorithm updates, local SEO tactics, marketing trends, and operator case studies.",
+    url: "https://www.selfstorage.help/blog",
+    blogPost: filteredPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date || undefined,
+      author: {
+        "@type": "Person",
+        name: post.author || "SelfStorage.help Editorial",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.selfstorage.help/blog/${post.slug}`,
+      },
+      image: post.coverImage || undefined,
+    })),
+  };
+
   return (
     <div className="v2-home">
       <V2Interactions />
       <V2Nav variant="inner" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       <main className="state-storage-page">
         <section className="state-storage-hero">
           <div className="state-storage-hero-inner">
