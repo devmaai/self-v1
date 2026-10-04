@@ -4,6 +4,7 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Find Storage Units In Missouri Near Your Location | Prices, Sizes And Availability",
@@ -90,9 +91,16 @@ export default function MissouriStoragePage() {
     })),
   };
 
+  const breadcrumbSchema = breadcrumbListSchema([
+    { name: "Home", path: "/" },
+    { name: "Storage search", path: "/storage-search" },
+    { name: "Missouri", path: "/storage-search/missouri" },
+  ]);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>Missouri</div>

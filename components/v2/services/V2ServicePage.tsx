@@ -103,10 +103,20 @@ export type V2ServicePageProps = {
 
 export default function V2ServicePage({ hero, marquee, problem, approach, proof, faq, finalCta }: V2ServicePageProps) {
   const rh = hero.dashboard.rankingsHeader ?? { pos: "Pos.", kw: "Keyword", change: "Change", clicks: "Clicks" };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
   return (
     <div className="v2-home">
       <V2Interactions />
       <V2Nav variant="inner" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="hero">
         <div className="hero-inner">

@@ -5,6 +5,7 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
 import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 // Next.js requires a literal number here for its static route-segment-config
 // analysis — it cannot be an imported constant. Keep in sync with
@@ -106,9 +107,16 @@ export default async function NewJerseyStoragePage() {
     })),
   };
 
+  const breadcrumbSchema = breadcrumbListSchema([
+    { name: "Home", path: "/" },
+    { name: "Storage search", path: "/storage-search" },
+    { name: "New Jersey", path: "/storage-search/new-jersey" },
+  ]);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>New Jersey</div>

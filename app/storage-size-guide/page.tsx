@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Self Storage Size Guide | Find the Right Unit by What You Store",
@@ -126,8 +127,19 @@ const faqs = [
 ];
 
 export default function StorageSizeGuidePage() {
+  const faqSchema = faqPageSchema(
+    faqs.map(([question, answer]) => ({ question, answer })),
+  );
+  const breadcrumbSchema = breadcrumbListSchema([
+    { name: "Home", path: "/" },
+    { name: "Storage search", path: "/storage-search" },
+    { name: "Size guide", path: "/storage-size-guide" },
+  ]);
+
   return (
     <main className="storage-size-guide-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="storage-size-guide-hero">
         <div className="storage-size-guide-hero-inner">
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">

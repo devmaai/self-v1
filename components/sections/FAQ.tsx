@@ -53,8 +53,19 @@ export default function FAQ({
 
   const toggle = (i: number) => setActiveIndex((prev) => (prev === i ? null : i));
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <RevealSection className="faq" id="faq">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="container">
         {label && <div className="section-label">{label}</div>}
         <h2 className="section-title">{headline}</h2>

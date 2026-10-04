@@ -6,6 +6,7 @@ import V2Footer from "@/components/v2/V2Footer";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import CardSlider from "@/components/ui/CardSlider";
 import { getAllPosts } from "@/lib/posts";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Self-Storage SEO Blog | SelfStorage.help",
@@ -94,6 +95,17 @@ export default async function BlogIndexPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbListSchema([
+              { name: "Home", path: "/" },
+              { name: "Blog", path: "/blog" },
+            ]),
+          ),
+        }}
       />
       <main className="state-storage-page">
         <section className="state-storage-hero">

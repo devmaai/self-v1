@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 const facilities = [
   {
@@ -104,6 +105,18 @@ export default function DenverStoragePage() {
 
   return (
     <main className="city-storage-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbListSchema([
+              { name: "Home", path: "/" },
+              { name: "Storage search", path: "/storage-search" },
+              { name: "Denver, Colorado", path: "/storage-search/denver" },
+            ]),
+          ),
+        }}
+      />
       <section className="city-storage-hero">
         <div className="city-storage-hero-inner">
           <div className="city-storage-breadcrumb"><Link href="/storage-search">Storage search</Link><span>/</span>Denver</div>

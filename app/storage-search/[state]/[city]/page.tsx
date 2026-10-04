@@ -10,6 +10,7 @@ import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
 import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 // Next.js requires a literal number here for its static route-segment-config
 // analysis — it cannot be an imported constant. Keep in sync with
@@ -49,6 +50,9 @@ type Facility = {
   isNearby: boolean;
   latitude: number;
   longitude: number;
+  streetAddress: string;
+  postalCode: string;
+  facilityUrl: string;
 };
 
 const LOCAL_RADIUS_MILES = 15;
@@ -133,6 +137,9 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
         isNearby: row.city !== city || row.state !== state,
         latitude,
         longitude,
+        streetAddress: row.street_address ?? "",
+        postalCode: row.zip ?? "",
+        facilityUrl: row.facility_url ?? "",
       };
       grouped.set(row.facility_id, facility);
     }
@@ -242,11 +249,65 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
     })),
   };
 
+  const selfStorageSchema = {
+    "@context": "https://schema.org",
+    "@graph": facilities.map((facility) => {
+      const prices = facility.units
+        .map((unit) => priceNumber(unit.price))
+        .filter((value) => Number.isFinite(value) && value > 0);
+      const minPrice = prices.length ? Math.min(...prices) : undefined;
+      const maxPrice = prices.length ? Math.max(...prices) : undefined;
+      const priceRange =
+        minPrice !== undefined && maxPrice !== undefined
+          ? minPrice === maxPrice
+            ? `$${minPrice}/mo`
+            : `$${minPrice}–$${maxPrice}/mo`
+          : undefined;
+      return {
+        "@type": "SelfStorage",
+        name: facility.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: facility.streetAddress || undefined,
+          addressLocality: facility.city,
+          addressRegion: facility.state,
+          postalCode: facility.postalCode || undefined,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: facility.latitude,
+          longitude: facility.longitude,
+        },
+        url: facility.facilityUrl
+          ? facility.facilityUrl.startsWith("http")
+            ? facility.facilityUrl
+            : `https://www.selfstorage.help${facility.facilityUrl}`
+          : `https://www.selfstorage.help${facility.href}`,
+        priceRange,
+      };
+    }),
+  };
+
+  const breadcrumbSchema = breadcrumbListSchema([
+    { name: "Home", path: "/" },
+    { name: "Storage search", path: "/storage-search" },
+    ...(statePageSlug ? [{ name: stateName, path: `/storage-search/${statePageSlug}` }] : []),
+    { name: `${city}, ${state}`, path: `/storage-search/${stateSlug}/${citySlug}` },
+  ]);
+
   return (
     <main className="city-storage-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(priceListingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(selfStorageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <section className="city-storage-hero">
         <div className="city-storage-hero-inner">

@@ -69,6 +69,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.selfstorage.help/#organization",
+                  name: "SelfStorage.help",
+                  url: "https://www.selfstorage.help",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://www.selfstorage.help/favicon.ico",
+                  },
+                  sameAs: [],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.selfstorage.help/#website",
+                  url: "https://www.selfstorage.help",
+                  name: "SelfStorage.help",
+                  publisher: { "@id": "https://www.selfstorage.help/#organization" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate: "https://www.selfstorage.help/storage-search?location={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

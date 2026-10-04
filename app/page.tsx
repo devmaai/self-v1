@@ -7,6 +7,7 @@ import CityExplorer from "@/components/sections/CityExplorer";
 import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
+import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Storage Search | Find A Storage Unit Near You",
@@ -53,6 +54,17 @@ export default async function HomePage({
     <div className="v2-home">
       <V2Interactions />
       <V2Nav variant="inner" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbListSchema([
+              { name: "Home", path: "/" },
+              { name: "Featured cities and storage guides", path: "/" },
+            ]),
+          ),
+        }}
+      />
       <main className="storage-search-page">
         <CityExplorer initialLocation={location ?? ""} />
 
