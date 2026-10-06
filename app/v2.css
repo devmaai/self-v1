@@ -64,6 +64,10 @@
   .v2-home .nav-quick-links { gap: clamp(24px, 2.2vw, 34px); margin-left: clamp(28px, 3vw, 48px); }
   .v2-home .nav-quick-links a { display: inline-flex; min-height: 40px; align-items: center; }
   .v2-home .nav-actions { display: flex; align-items: center; gap: 12px; }
+  /* Agency nav (default .v2-nav, not .v2-nav-home): give the links
+     breathing room from the brand and push actions to the right edge. */
+  .v2-home .v2-nav:not(.v2-nav-home) .nav-links { margin-left: clamp(28px, 3vw, 48px); }
+  .v2-home .v2-nav:not(.v2-nav-home) .nav-actions { margin-left: auto; }
   .v2-home .nav-form-dropdown { position: relative; }
   .v2-home .nav-form-toggle {
     display: inline-flex; align-items: center; gap: 6px;
@@ -702,6 +706,7 @@
   .v2-home .nav-links { display: none; }
   .v2-home .nav-actions { display: none; }
   .v2-home .v2-nav-home .nav-business-owner { display: none; }
+  .v2-home .v2-nav:not(.v2-nav-home) .nav-burger { margin-left: auto; }
 
   /* Hamburger button */
   .v2-home .nav-burger {
