@@ -72,12 +72,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* Storage directory */
-.storage-search-page, .state-storage-page {
+.storage-search-page, .state-storage-page, .about-page {
   --storage-blue: #146fb5;
   --storage-blue-deep: #104f80;
   --storage-blue-pale: #e8f2fa;
   --storage-border: #d6e1ea;
 }
+.about-page { background: #f7fafc; color: #16334b; }
 .storage-search-page {
   background: #f8fafc;
   color: #13283b;
