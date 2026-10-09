@@ -19,6 +19,7 @@ export default function V2Footer() {
       <div className="footer-bottom">
         <div className="footer-copy">© 2026 MAAI LLC. All rights reserved.</div>
         <div className="footer-copy" style={{ display: "flex", gap: 20 }}>
+          <Link href="/about" style={{ color: "rgba(255,255,255,0.2)" }}>About</Link>
           <Link href="/privacy" style={{ color: "rgba(255,255,255,0.2)" }}>Privacy Policy</Link>
           <Link href="/terms" style={{ color: "rgba(255,255,255,0.2)" }}>Terms</Link>
         </div>
