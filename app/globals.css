@@ -4479,7 +4479,9 @@ footer {
 .blog-sidebar-cta h2 { margin: 9px 0 10px; color: #fff; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.15; }
 .blog-sidebar-cta p { color: #c5dbea; font-size: 14px; line-height: 1.6; }
 .blog-sidebar-cta a { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: #fff; font-size: 14px; font-weight: 700; }
-.blog-article-cta { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 68px max(24px, calc((100% - 1000px) / 2)); background: var(--blog-pale); }
+.blog-article-cta { display: flex; flex-direction: column; gap: 34px; padding: 68px max(24px, calc((100% - 1000px) / 2)); background: var(--blog-pale); }
+.blog-article-cta-row { display: flex; align-items: center; justify-content: space-between; gap: 40px; width: 100%; }
+.blog-article-cta-row > div { max-width: 600px; }
 .blog-article-cta h2 { margin: 0 0 10px; color: var(--blog-ink); font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; line-height: 1.1; }
 .blog-article-cta p { max-width: 600px; color: var(--blog-body); font-size: 16px; line-height: 1.7; }
 .blog-article-cta-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 12px; }
@@ -4495,7 +4497,8 @@ footer {
   .blog-article-layout { grid-template-columns: 1fr; }
   .blog-article-sidebar { position: static; display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .8fr); gap: 20px; }
   .blog-sidebar-cta { margin-top: 0; }
-  .blog-article-cta { align-items: flex-start; flex-direction: column; }
+  .blog-article-cta-row { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .blog-article-cta-row > div { max-width: none; }
 }
 
 @media (max-width: 540px) {

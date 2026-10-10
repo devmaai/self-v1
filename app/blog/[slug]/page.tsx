@@ -116,7 +116,7 @@ export default async function BlogPostPage({
             </figure>
           </div>
         </section>
-
+        
         <div className="blog-article-divider" aria-hidden="true" />
 
         <section className="blog-article-layout" aria-label="Article content">
@@ -163,16 +163,23 @@ export default async function BlogPostPage({
         </section>
 
         <section className="blog-article-cta" aria-labelledby="article-cta-heading">
-          <div>
-            <h2 id="article-cta-heading">Ready to grow your storage business?</h2>
-            <p>
-              Get a clear view of your local search visibility, map pack presence, and the
-              opportunities closest to your facility.
-            </p>
+          <h2 id="article-cta-heading">Ready to grow your storage business?</h2>
+
+          <div className="blog-article-cta-row">
+            <p>Want to list your local business in our directory?</p>
+            <Link className="blog-article-cta-secondary" href="/contact">
+              Talk to our team <span aria-hidden="true">→</span>
+            </Link>
           </div>
-          <div className="blog-article-cta-actions">
-            <Link className="blog-article-cta-primary" href="/audit">Request a free audit <span aria-hidden="true">→</span></Link>
-            <Link className="blog-article-cta-secondary" href="/contact">Talk to our team <span aria-hidden="true">→</span></Link>
+
+          <div className="blog-article-cta-row">
+            <p>
+              We also help local storage businesses grow their organic presence via
+              SEO and AEO.
+            </p>
+            <Link className="blog-article-cta-primary" href="/audit">
+              Request a free audit <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </section>
       </main>
