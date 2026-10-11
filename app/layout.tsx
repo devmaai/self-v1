@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter_Tight, DM_Sans, DM_Serif_Display } from "next/font/google";
+// Leaflet ships CSS without TypeScript declarations.
+// @ts-expect-error -- side-effect import of Leaflet's stylesheet
 import "leaflet/dist/leaflet.css";
+// @ts-expect-error -- side-effect import of the app stylesheet
 import "./globals.css";
+// @ts-expect-error -- side-effect import of the app stylesheet
 import "./v2.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -45,6 +49,9 @@ export const metadata: Metadata = {
     "Search-first growth for independent self-storage operators in the US. We help owners outrank national chains and capture local demand.",
   verification: {
     google: "vx3Yk7Ksbm533St9u211RG7l9kvTrHiWJ52p2WFuc4g",
+    other: {
+      "msvalidate.01": "41EF2815702F126D178455E0011B172C",
+    },
   },
 };
 
