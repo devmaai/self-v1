@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
@@ -81,6 +82,8 @@ function priceRange(prices: number[]): [number, number] | null {
 }
 
 export default async function NewJerseyStoragePage() {
+  notFound();
+
   const rows = await getStorageRows();
   const njRows = rows.filter((row) => row.state === "NJ");
   const prices = njRows.map((row) => priceNumber(row.price)).filter((value) => Number.isFinite(value));

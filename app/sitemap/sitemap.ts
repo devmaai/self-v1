@@ -64,12 +64,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/california",
     "/storage-search/new-york",
     "/storage-search/missouri",
-    "/storage-search/florida",
-    "/storage-search/new-jersey",
-    "/storage-search/oklahoma",
-    "/storage-search/kansas",
-    "/storage-search/texas",
-    "/storage-search/south-dakota",
     ...Object.entries(CITY_STATES)
       .map(([citySlug, state]) => {
         const stateSlug = STATE_PAGE_SLUGS[state];
@@ -93,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((routePath) => ({
-    url: `${BASE_URL}${routePath}`,
+    url: `${BASE_URL}${routePath || "/"}`,
     lastModified: routeMtime(routePath),
     changeFrequency: "weekly",
     priority: routePath === "" ? 1.0 : 0.7,

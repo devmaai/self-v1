@@ -1,19 +1,14 @@
 import { CITY_STATES } from "./cityStates";
 import { US_STATE_NAMES } from "./usStates";
 
-// Two-letter state code -> the folder slug for that state's bespoke landing
-// page. Kept in sync with components/sections/StorageStateLinks.tsx.
+// Two-letter state code -> the folder slug for that state's published landing
+// page. To restore a drafted state, add its entry here and to
+// components/sections/StorageStateLinks.tsx.
 export const STATE_PAGE_SLUGS: Record<string, string> = {
   UT: "utah",
   CA: "california",
   NY: "new-york",
   MO: "missouri",
-  FL: "florida",
-  NJ: "new-jersey",
-  OK: "oklahoma",
-  KS: "kansas",
-  TX: "texas",
-  SD: "south-dakota",
 };
 
 // Lets a visitor type either a state's full name or its abbreviation and

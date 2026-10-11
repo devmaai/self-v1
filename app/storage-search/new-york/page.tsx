@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const CITY_LINKS = [
-  "New York City", "Brooklyn", "Queens", "Manhattan", "Bronx", "Staten Island", "Yonkers", "Mount Vernon", "New Rochelle", "White Plains", "Buffalo", "Rochester", "Syracuse", "Albany", "Schenectady", "Troy", "Niagara Falls", "West Seneca", "Penfield", "Henrietta", "Clifton Park", "Spring Valley", "Hempstead", "Hicksville", "Valley Stream", "West Babylon", "Huntington Station", "Commack", "Coram",
+  "New York City", "Brooklyn", "Queens", "Manhattan", "Bronx", "Staten Island", "Yonkers", "Mount Vernon", "New Rochelle", "White Plains", "Buffalo", "Rochester", "Syracuse", "Albany", "Schenectady", "Troy", "Niagara Falls", "West Seneca", "Penfield", "Henrietta",
 ];
 
 const PRICE_ROWS = [

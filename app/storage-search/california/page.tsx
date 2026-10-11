@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const CITY_LINKS = [
-  "Los Angeles", "San Diego", "San Jose", "San Francisco", "Sacramento", "Fresno", "Long Beach", "Oakland", "Bakersfield", "Anaheim", "Stockton", "Riverside", "Santa Ana", "Irvine", "Chula Vista", "Santa Clarita", "Fremont", "San Bernardino", "Modesto", "Fontana", "Moreno Valley", "Oxnard", "Huntington Beach", "Glendale", "Ontario", "Elk Grove", "Santa Rosa", "Rancho Cucamonga", "Oceanside", "Garden Grove",
+  "Los Angeles", "San Diego", "San Jose", "San Francisco", "Sacramento", "Fresno", "Long Beach", "Oakland", "Bakersfield", "Anaheim", "Stockton", "Riverside", "Santa Ana", "Irvine", "Chula Vista", "Santa Clarita", "Fremont", "San Bernardino", "Modesto", "Fontana",
 ];
 
 const PRICE_ROWS = [

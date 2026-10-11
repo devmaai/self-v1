@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const CITY_LINKS = [
-  "Kansas City", "St. Louis", "Springfield", "St. Charles", "Independence", "O'Fallon", "Lee's Summit", "St. Peters", "Blue Springs", "Florissant", "Chesterfield", "Wentzville", "Ballwin", "Liberty", "Lake St. Louis", "Kirkwood", "Fenton", "Raytown", "Maryland Heights", "Gladstone", "Grandview", "Hazelwood", "Belton", "Raymore", "Webster Groves", "Arnold", "Affton", "Creve Coeur", "Oakville", "Mehlville",
+  "Kansas City", "St. Louis", "Springfield", "St. Charles", "Independence", "O'Fallon", "Lee's Summit", "St. Peters", "Blue Springs", "Florissant", "Chesterfield", "Wentzville", "Ballwin", "Liberty", "Lake St. Louis", "Kirkwood", "Fenton", "Raytown", "Maryland Heights", "Gladstone",
 ];
 
 const PRICE_ROWS = [

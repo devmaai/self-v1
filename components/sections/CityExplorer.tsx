@@ -8,30 +8,47 @@ import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchL
 import { CITY_STATES } from "@/lib/cityStates";
 
 const FEATURED_CITIES = [
-  "Salt Lake City", "West Valley City", "Cedar City", "Park City", "Heber City", "Brigham City", "Yuba City", "National City", "Culver City", "Daly City", "Redwood City", "King City", "Cathedral City", "Sun City", "Harbor City", "Sand City", "New York City", "Long Island City", "Garden City", "Newburgh", "City Island", "Co-op City", "Starrett City", "LeFrak City", "Kansas City", "Jefferson City", "Platte City", "University City", "Webb City", "Wright City", "Kimberling City", "Crystal City", "Panama City / Panama City Beach", "Lake City", "Cooper City", "Plant City", "Florida City", "Orange City", "Dade City", "Haines City", "Palm City", "Polk City", "Jersey City", "Union City", "Atlantic City", "Ocean City", "Gloucester City", "Neptune City", "Oklahoma City", "Midwest City", "Del City", "Ponca City", "Park City", "Kansas City (KS)", "Junction City", "Garden City", "Dodge City", "Baldwin City", "Missouri City", "Royse City", "League City", "Texas City", "Bay City", "Haltom City", "Universal City", "Lakeside City", "Horizon City", "Rapid City",
+  { name: "Salt Lake City", slug: "salt-lake-city" },
+  { name: "West Valley City", slug: "west-valley-city" },
+  { name: "Cedar City", slug: "cedar-city" },
+  { name: "Park City", slug: "park-city" },
+  { name: "Heber City", slug: "heber-city" },
+  { name: "Brigham City", slug: "brigham-city" },
+  { name: "Yuba City", slug: "yuba-city" },
+  { name: "National City", slug: "national-city" },
+  { name: "Culver City", slug: "culver-city" },
+  { name: "Daly City", slug: "daly-city" },
+  { name: "Redwood City", slug: "redwood-city" },
+  { name: "King City", slug: "king-city" },
+  { name: "Cathedral City", slug: "cathedral-city" },
+  { name: "Sun City", slug: "sun-city" },
+  { name: "Harbor City", slug: "harbor-city" },
+  { name: "Sand City", slug: "sand-city" },
+  { name: "New York City", slug: "new-york-city" },
+  { name: "Long Island City", slug: "long-island-city" },
+  { name: "Newburgh", slug: "newburgh" },
+  { name: "City Island", slug: "city-island" },
+  { name: "Co-op City", slug: "co-op-city" },
+  { name: "Starrett City", slug: "starrett-city" },
+  { name: "LeFrak City", slug: "lefrak-city" },
+  { name: "Kansas City", slug: "kansas-city" },
+  { name: "Jefferson City", slug: "jefferson-city" },
+  { name: "Platte City", slug: "platte-city" },
+  { name: "University City", slug: "university-city" },
+  { name: "Webb City", slug: "webb-city" },
+  { name: "Wright City", slug: "wright-city" },
+  { name: "Kimberling City", slug: "kimberling-city" },
+  { name: "Crystal City", slug: "crystal-city" },
 ];
 
-const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.localeCompare(second));
-const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city[0]))];
+const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.name.localeCompare(second.name));
+const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city.name[0]))];
 
-function cityHref(city: string) {
-  const liveCitySlugs: Record<string, string> = {
-    "Yuba City": "yuba-city",
-    "National City": "national-city",
-    "Culver City": "culver-city",
-    "Daly City": "daly-city",
-    "Redwood City": "redwood-city",
-    "Cathedral City": "cathedral-city",
-    "Sun City": "sun-city",
-    "Harbor City": "harbor-city",
-    "Sand City": "sand-city",
-  };
-  const guessedSlug = city.split("/")[0].trim().toLowerCase().replace(/[()]/g, "").replace(/\./g, "").replace(/ /g, "-");
-  const slug = liveCitySlugs[city] ?? guessedSlug;
-  const state = CITY_STATES[slug];
+function cityHref(city: (typeof FEATURED_CITIES)[number]) {
+  const state = CITY_STATES[city.slug];
   const stateSlug = state ? STATE_PAGE_SLUGS[state] : undefined;
-  if (stateSlug) return `/storage-search/${stateSlug}/${slug}`;
-  return `/storage-search?location=${encodeURIComponent(city)}`;
+  if (stateSlug) return `/storage-search/${stateSlug}/${city.slug}`;
+  return `/storage-search?location=${encodeURIComponent(city.name)}`;
 }
 
 export default function CityExplorer({ initialLocation }: { initialLocation: string }) {
@@ -43,8 +60,8 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
   const matchingCities = useMemo(() => {
     const normalized = searchedLocation.trim().toLowerCase();
     return SORTED_FEATURED_CITIES.filter((city) => {
-      const matchesLetter = cityLetter === "all" || city.startsWith(cityLetter);
-      const matchesSearch = !normalized || /^\d{5}(-\d{4})?$/.test(normalized) || city.toLowerCase().includes(normalized);
+      const matchesLetter = cityLetter === "all" || city.name.startsWith(cityLetter);
+      const matchesSearch = !normalized || /^\d{5}(-\d{4})?$/.test(normalized) || city.name.toLowerCase().includes(normalized);
       return matchesLetter && matchesSearch;
     });
   }, [cityLetter, searchedLocation]);
@@ -102,8 +119,8 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
         {matchingCities.length ? (
           <div className="storage-city-grid">
             {matchingCities.map((city, index) => (
-              <Link className="storage-city-card" href={cityHref(city)} key={`${city}-${index}`}>
-                <span>{city}</span>
+              <Link className="storage-city-card" href={cityHref(city)} key={`${city.slug}-${index}`}>
+                <span>{city.name}</span>
               </Link>
             ))}
           </div>
