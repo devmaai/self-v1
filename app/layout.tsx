@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter_Tight, DM_Sans, DM_Serif_Display } from "next/font/google";
-// Leaflet ships CSS without TypeScript declarations.
-// @ts-expect-error -- side-effect import of Leaflet's stylesheet
 import "leaflet/dist/leaflet.css";
-// @ts-expect-error -- side-effect import of the app stylesheet
 import "./globals.css";
-// @ts-expect-error -- side-effect import of the app stylesheet
 import "./v2.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
