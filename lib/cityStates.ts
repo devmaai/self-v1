@@ -1,7 +1,7 @@
 // Every city slug supported by the live city page
 // (app/storage-search/[state]/[city]), mapped to its two-letter state code.
 // State availability is controlled by STATE_PAGE_SLUGS.
-export const CITY_STATES: Record<string, string> = {
+const ALL_CITY_STATES: Record<string, string> = {
   "american-fork": "UT", "apple-valley": "UT", bluffdale: "UT", bountiful: "UT", "brigham-city": "UT", "cedar-city": "UT", centerville: "UT", clearfield: "UT", clinton: "UT", draper: "UT", farmington: "UT", "garden-city": "UT", grantsville: "UT", "heber-city": "UT", herriman: "UT", highland: "UT", hooper: "UT", hurricane: "UT", kearns: "UT", layton: "UT", lehi: "UT", lindon: "UT", logan: "UT", magna: "UT", midvale: "UT", millcreek: "UT", "mountain-green": "UT", murray: "UT", "north-logan": "UT", "north-ogden": "UT", "north-salt-lake": "UT", ogden: "UT", orem: "UT", "park-city": "UT", parowan: "UT", payson: "UT", "pleasant-grove": "UT", providence: "UT", provo: "UT", richmond: "UT", riverdale: "UT", riverton: "UT", roosevelt: "UT", "salt-lake-city": "UT", sandy: "UT", "saratoga-springs": "UT", "south-jordan": "UT", "south-salt-lake": "UT", "spanish-fork": "UT", springville: "UT", "st-george": "UT", sunset: "UT", "syracuse-ut": "UT", taylorsville: "UT", tooele: "UT", washington: "UT", "west-bountiful": "UT", "west-jordan": "UT", "west-point": "UT", "west-valley-city": "UT", "woods-cross": "UT",
   anaheim: "CA", bakersfield: "CA", "cathedral-city": "CA", "chula-vista": "CA", "culver-city": "CA", "daly-city": "CA", "elk-grove": "CA", fontana: "CA", fremont: "CA", fresno: "CA", "garden-grove": "CA", glendale: "CA", "harbor-city": "CA", "huntington-beach": "CA", irvine: "CA", "king-city": "CA", "long-beach": "CA", "los-angeles": "CA", modesto: "CA", "moreno-valley": "CA", "national-city": "CA", oakland: "CA", oceanside: "CA", ontario: "CA", oxnard: "CA", "rancho-cucamonga": "CA", "redwood-city": "CA", riverside: "CA", sacramento: "CA", "san-bernardino": "CA", "san-diego": "CA", "san-francisco": "CA", "san-jose": "CA", "sand-city": "CA", "santa-ana": "CA", "santa-clarita": "CA", "santa-rosa": "CA", stockton: "CA", "sun-city": "CA", "yuba-city": "CA",
   "boca-raton": "FL", brandon: "FL", "cape-coral": "FL", clearwater: "FL", "cooper-city": "FL", "coral-springs": "FL", "dade-city": "FL", davie: "FL", "florida-city": "FL", "fort-lauderdale": "FL", gainesville: "FL", "haines-city": "FL", hialeah: "FL", hollywood: "FL", jacksonville: "FL", "lake-city": "FL", "lake-worth": "FL", lakeland: "FL", miami: "FL", "miami-gardens": "FL", miramar: "FL", "orange-city": "FL", orlando: "FL", "palm-bay": "FL", "palm-city": "FL", "palm-coast": "FL", "panama-city": "FL", "pembroke-pines": "FL", "plant-city": "FL", plantation: "FL", "polk-city": "FL", "pompano-beach": "FL", "port-st-lucie": "FL", riverview: "FL", "saint-cloud": "FL", "spring-hill": "FL", "st-petersburg": "FL", tallahassee: "FL", tampa: "FL", "west-palm-beach": "FL",
@@ -13,6 +13,22 @@ export const CITY_STATES: Record<string, string> = {
   amarillo: "TX", arlington: "TX", austin: "TX", "bay-city": "TX", brownsville: "TX", carrollton: "TX", "corpus-christi": "TX", cypress: "TX", dallas: "TX", denton: "TX", "el-paso": "TX", "fort-worth": "TX", frisco: "TX", garland: "TX", "grand-prairie": "TX", "haltom-city": "TX", "horizon-city": "TX", houston: "TX", irving: "TX", killeen: "TX", laredo: "TX", "lakeside-city": "TX", "league-city": "TX", lewisville: "TX", lubbock: "TX", mcallen: "TX", mckinney: "TX", mesquite: "TX", midland: "TX", "missouri-city": "TX", pasadena: "TX", pearland: "TX", plano: "TX", "round-rock": "TX", "royse-city": "TX", "san-antonio": "TX", "texas-city": "TX", "universal-city": "TX", waco: "TX",
   "atlantic-city": "NJ", "gloucester-city": "NJ", "jersey-city": "NJ", "neptune-city": "NJ", "ocean-city": "NJ", "union-city": "NJ",
 };
+
+const CITY_LIMIT_PER_STATE = 10;
+const stateCityCounts: Record<string, number> = {};
+
+// Keep the first ten cities in the existing catalog order for each state.
+export const CITY_STATES: Record<string, string> = Object.entries(ALL_CITY_STATES).reduce(
+  (cities, [city, state]) => {
+    const count = stateCityCounts[state] ?? 0;
+    if (count < CITY_LIMIT_PER_STATE) {
+      cities[city] = state;
+      stateCityCounts[state] = count + 1;
+    }
+    return cities;
+  },
+  {} as Record<string, string>,
+);
 
 // The slug-derived title case doesn't always match how a city is actually
 // named in the sheet (NYC boroughs in particular are filed under plain

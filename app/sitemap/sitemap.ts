@@ -6,6 +6,7 @@ import { CITY_STATES } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
 const BASE_URL = "https://www.selfstorage.help";
+const MAX_SITEMAP_ENTRIES = 50;
 
 /** mtime of a file, or null when it does not exist. */
 function fileMtime(absPath: string): Date | null {
@@ -101,5 +102,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  return [...staticEntries, ...blogEntries].slice(0, MAX_SITEMAP_ENTRIES);
 }
