@@ -14,21 +14,9 @@ const ALL_CITY_STATES: Record<string, string> = {
   "atlantic-city": "NJ", "gloucester-city": "NJ", "jersey-city": "NJ", "neptune-city": "NJ", "ocean-city": "NJ", "union-city": "NJ",
 };
 
-const CITY_LIMIT_PER_STATE = 10;
-const stateCityCounts: Record<string, number> = {};
-
-// Keep the first ten cities in the existing catalog order for each state.
-export const CITY_STATES: Record<string, string> = Object.entries(ALL_CITY_STATES).reduce(
-  (cities, [city, state]) => {
-    const count = stateCityCounts[state] ?? 0;
-    if (count < CITY_LIMIT_PER_STATE) {
-      cities[city] = state;
-      stateCityCounts[state] = count + 1;
-    }
-    return cities;
-  },
-  {} as Record<string, string>,
-);
+// Keep the complete catalog in sync with the dynamic route and sitemap.
+// Limiting this list causes linked city pages and legacy city URLs to 404.
+export const CITY_STATES: Record<string, string> = ALL_CITY_STATES;
 
 // The slug-derived title case doesn't always match how a city is actually
 // named in the sheet (NYC boroughs in particular are filed under plain
