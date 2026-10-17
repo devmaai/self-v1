@@ -18,6 +18,30 @@ const ALL_CITY_STATES: Record<string, string> = {
 // Limiting this list causes linked city pages and legacy city URLs to 404.
 export const CITY_STATES: Record<string, string> = ALL_CITY_STATES;
 
+// Cities that are live: indexable and listed in the sitemap.
+// Every other city in CITY_STATES is in draft: its page returns 404, it is
+// left out of the sitemap, and links to it are hidden across the site.
+// To publish a drafted city, add its slug here and redeploy.
+export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
+  // Utah
+  "salt-lake-city", "west-valley-city", "provo", "west-jordan", "orem", "sandy",
+  "st-george", "ogden", "layton", "south-jordan", "lehi", "millcreek",
+  // California
+  "los-angeles", "san-diego", "san-jose", "san-francisco", "fresno", "sacramento",
+  "long-beach", "oakland", "bakersfield", "anaheim", "santa-ana", "riverside",
+  "stockton", "irvine",
+  // New York
+  "new-york-city", "brooklyn", "queens", "manhattan", "bronx", "staten-island",
+  "buffalo", "rochester", "yonkers", "syracuse", "albany", "white-plains",
+  // Missouri
+  "kansas-city", "st-louis", "springfield", "independence", "lees-summit", "ofallon",
+  "st-charles", "st-peters", "blue-springs", "florissant", "chesterfield", "jefferson-city",
+]);
+
+export function isCityPublished(citySlug: string): boolean {
+  return PUBLISHED_CITY_SLUGS.has(citySlug);
+}
+
 // The slug-derived title case doesn't always match how a city is actually
 // named in the sheet (NYC boroughs in particular are filed under plain
 // "New York" rather than "New York City" or "Manhattan"). This overrides

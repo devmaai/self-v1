@@ -5,7 +5,7 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import CityStorageResults, { type CityStorageFacility } from "@/components/sections/CityStorageResults";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
-import { CITY_STATES, CITY_NAME_OVERRIDES } from "@/lib/cityStates";
+import { CITY_STATES, CITY_NAME_OVERRIDES, isCityPublished } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
@@ -171,6 +171,7 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
 // nationwide sheet on every single visitor request.
 export function generateStaticParams() {
   return Object.entries(CITY_STATES)
+    .filter(([city]) => isCityPublished(city))
     .map(([city, state]) => {
       const statePageSlug = STATE_PAGE_SLUGS[state];
       return statePageSlug ? { state: statePageSlug, city } : null;
@@ -185,17 +186,20 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) {
     return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
   }
+  const canonical = `https://www.selfstorage.help/storage-search/${stateSlug}/${citySlug}`;
   const seoContent = await getCitySeoContent(citySlug, state);
   if (seoContent?.metaTitle && seoContent?.metaDescription) {
-    return { title: seoContent.metaTitle, description: seoContent.metaDescription };
+    return { title: seoContent.metaTitle, description: seoContent.metaDescription, alternates: { canonical } };
   }
-  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
+  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.`, alternates: { canonical } };
 }
 
 export default async function LiveCityStoragePage({ params }: { params: Promise<{ state: string; city: string }> }) {
   const { state: stateSlug, city: citySlug } = await params;
   const state = CITY_STATES[citySlug];
   if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) notFound();
+  // Drafted cities are not live until added to PUBLISHED_CITY_SLUGS.
+  if (!isCityPublished(citySlug)) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;

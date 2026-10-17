@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { isCityPublished } from "@/lib/cityStates";
 import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
@@ -112,7 +113,7 @@ export default function MissouriStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="mo-cities-heading">
         <div className="state-storage-heading"><h2 id="mo-cities-heading">Storage units near you in Missouri by city.</h2><p>Missouri rates vary by suburb as much as by city, and the difference between two facilities ten minutes apart is often significant. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/missouri/${city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.filter((city) => isCityPublished(city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-"))).map((city) => <Link href={`/storage-search/missouri/${city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 
