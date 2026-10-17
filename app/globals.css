@@ -4546,7 +4546,7 @@ footer {
 .v2-home .v2-nav-home .nav-form-toggle:hover, .v2-home .v2-nav-home .nav-form-toggle.open { background: #9a3818; color: #fff; }
 
 /* Featured cities: scrolling photo cards */
-.city-scroller { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.city-scroller { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
 .city-photo-card { position: relative; flex: 0 0 280px; height: 340px; overflow: hidden; border-radius: 10px; background: linear-gradient(135deg, #2f6ca8, #16334b); scroll-snap-align: start; box-shadow: 0 6px 18px rgba(24, 70, 105, .15); }
 .city-photo-card img { object-fit: cover; transition: transform .35s ease; }
 .city-photo-card:hover img { transform: scale(1.05); }

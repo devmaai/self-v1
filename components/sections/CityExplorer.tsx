@@ -54,7 +54,12 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
   const scrollerRef = useRef<HTMLDivElement>(null);
   const scrollCities = (direction: 1 | -1) => {
     const el = scrollerRef.current;
-    if (el) el.scrollBy({ left: direction * Math.max(el.clientWidth * 0.8, 280), behavior: "smooth" });
+    if (!el) return;
+    const target = el.scrollLeft + direction * Math.max(el.clientWidth * 0.8, 280);
+    el.scrollTo({ left: target, behavior: "smooth" });
+    // Some browsers skip smooth scrolling; jump directly if nothing moved.
+    const start = el.scrollLeft;
+    window.setTimeout(() => { if (Math.abs(el.scrollLeft - start) < 2) el.scrollLeft = target; }, 350);
   };
 
   const matchingCities = useMemo(() => {
