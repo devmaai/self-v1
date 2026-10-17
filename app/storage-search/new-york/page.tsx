@@ -303,9 +303,13 @@ export default function NewYorkStoragePage() {
           <article><span>8</span><p>Confirm insurance. Check your renters or homeowners policy first, then the facility requirement.</p></article>
           <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=New%20York">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=New%20York">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
       </section>
 
+      <section className="state-storage-guide state-love" aria-labelledby="ny-love-heading">
+        <div className="state-storage-heading"><h2 id="ny-love-heading">Why people love New York.</h2><p>And why so many of them need a little extra space.</p></div>
+        <div className="state-size-grid"><article><h3>The energy of the city</h3><p>Broadway, world famous museums and restaurants on every block keep people coming to New York City. Apartments here are compact, so every square foot counts.</p></article><article><h3>A career hub</h3><p>Finance, media, fashion and tech draw talent to Manhattan and Brooklyn. Job changes and lease turnovers make flexible storage useful.</p></article><article><h3>Weekends beyond the city</h3><p>The Hudson Valley, the Finger Lakes, the Adirondacks and the Long Island beaches give you room to breathe. Kayaks, bikes and beach gear need somewhere to go in winter.</p></article><article><h3>Colleges and universities</h3><p>NYU, Columbia, Cornell, the SUNY campuses and many more fill up each fall. Summer storage saves you hauling a full room of furniture home.</p></article><article><h3>More space upstate</h3><p>Buffalo, Rochester, Syracuse and Albany offer more home for the money, and many people relocate there from downstate.</p></article><article><h3>Four real seasons</h3><p>Snowy winters and warm summers mean coats, air conditioners and patio furniture rotate in and out of storage every year.</p></article></div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="ny-faq-heading">
         <div className="state-storage-heading"><h2 id="ny-faq-heading">What New Yorkers ask about storage units.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>

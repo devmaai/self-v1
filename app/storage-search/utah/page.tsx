@@ -257,9 +257,13 @@ export default function UtahStoragePage() {
           <article><span>8</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
           <article><span>9</span><p>Visit if you can. Look at lighting, drainage, snow clearing, and the condition of neighbouring units.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=Utah">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=Utah">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
       </section>
 
+      <section className="state-storage-guide state-love" aria-labelledby="utah-love-heading">
+        <div className="state-storage-heading"><h2 id="utah-love-heading">Why people love Utah.</h2><p>And why so many of them need a little extra space.</p></div>
+        <div className="state-size-grid"><article><h3>Mountains on your doorstep</h3><p>The Wasatch Range sits minutes from Salt Lake City, Ogden and Provo, so you can ski in the morning and be back at your desk by lunch. That lifestyle comes with skis, bikes and camping gear that need a home.</p></article><article><h3>Five national parks</h3><p>Zion, Bryce Canyon, Arches, Canyonlands and Capitol Reef draw road trippers all year. If you own a trailer or RV for those trips, a covered space keeps it ready between adventures.</p></article><article><h3>A booming tech scene</h3><p>Silicon Slopes around Lehi and Draper keeps bringing new jobs and new residents. Many arrive before their home is ready, which makes short term storage part of the move.</p></article><article><h3>Young, growing families</h3><p>Utah has one of the youngest populations in the country. Growing households outgrow garages fast, and a nearby unit takes the pressure off.</p></article><article><h3>Four real seasons</h3><p>Hot, dry summers and snowy winters mean you rotate gear twice a year. Storing the off season keeps your home usable.</p></article><article><h3>Room to grow</h3><p>Communities like St. George, Saratoga Springs and Herriman keep expanding, with new homes and new storage facilities opening nearby.</p></article></div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="utah-faq-heading">
         <div className="state-storage-heading"><h2 id="utah-faq-heading">Your Utah self storage questions, answered.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
