@@ -11,6 +11,8 @@ import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
 import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
 import { breadcrumbListSchema } from "@/lib/schema";
+import { CITY_IMAGES } from "@/lib/cityImages";
+import type React from "react";
 
 // Next.js requires a literal number here for its static route-segment-config
 // analysis — it cannot be an imported constant. Keep in sync with
@@ -330,7 +332,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <section className="city-storage-hero">
+      <section className={CITY_IMAGES[citySlug] ? "city-storage-hero hero-photo" : "city-storage-hero"} style={CITY_IMAGES[citySlug] ? ({ "--hero-image": `url('${CITY_IMAGES[citySlug]}?auto=format&fit=crop&w=1800&q=70')` } as React.CSSProperties) : undefined}>
         <div className="city-storage-hero-inner">
           <div className="city-storage-breadcrumb">
             <Link href="/storage-search">Storage search</Link><span>/</span>

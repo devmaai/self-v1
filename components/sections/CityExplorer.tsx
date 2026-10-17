@@ -1,9 +1,12 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import LocationPin from "@/components/ui/LocationPin";
+import V2StorageForm from "@/components/v2/V2StorageForm";
+import { CITY_IMAGES } from "@/lib/cityImages";
 import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { CITY_STATES, PUBLISHED_CITY_SLUGS } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
@@ -48,6 +51,16 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
   const [query, setQuery] = useState(initialLocation);
   const [searchedLocation, setSearchedLocation] = useState(initialLocation);
   const [cityLetter, setCityLetter] = useState("all");
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const scrollCities = (direction: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const target = el.scrollLeft + direction * Math.max(el.clientWidth * 0.8, 280);
+    el.scrollTo({ left: target, behavior: "smooth" });
+    // Some browsers skip smooth scrolling; jump directly if nothing moved.
+    const start = el.scrollLeft;
+    window.setTimeout(() => { if (Math.abs(el.scrollLeft - start) < 2) el.scrollLeft = target; }, 350);
+  };
 
   const matchingCities = useMemo(() => {
     const normalized = searchedLocation.trim().toLowerCase();
@@ -78,7 +91,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
 
   return (
     <>
-      <section className="storage-search-hero">
+      <section className="storage-search-hero storage-search-hero-banner">
         <div className="storage-search-hero-inner">
           <div className="storage-search-kicker"><span /> Storage search, made simple</div>
           <h1>Find a storage unit<br /><em>near you.</em></h1>
@@ -112,12 +125,22 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
           </select>
         </label>
         {matchingCities.length ? (
-          <div className="storage-city-grid">
-            {matchingCities.map((city, index) => (
-              <Link className="storage-city-card" href={cityHref(city)} key={`${city.slug}-${index}`}>
-                <span>{city.name}</span>
-              </Link>
-            ))}
+          <div className="city-scroller-wrap">
+          <button type="button" className="city-scroll-arrow city-scroll-prev" onClick={() => scrollCities(-1)} aria-label="Previous cities">←</button>
+          <button type="button" className="city-scroll-arrow city-scroll-next" onClick={() => scrollCities(1)} aria-label="More cities">→</button>
+          <div className="city-scroller" role="list" ref={scrollerRef}>
+            {matchingCities.map((city) => {
+              const photo = CITY_IMAGES[city.slug];
+              return (
+                <Link className="city-photo-card" href={cityHref(city)} key={city.slug} role="listitem">
+                  {photo ? (
+                    <Image src={`${photo}?auto=format&fit=crop&w=640&q=70`} alt="" fill sizes="(max-width: 700px) 75vw, 300px" quality={90} unoptimized />
+                  ) : null}
+                  <span className="city-photo-name">{city.name}<small>Storage units →</small></span>
+                </Link>
+              );
+            })}
+          </div>
           </div>
         ) : (
           <div className="storage-search-empty">
@@ -125,6 +148,15 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
             <p>Try a different city name or enter a ZIP code to search the area around you.</p>
           </div>
         )}
+      </section>
+
+      <section className="find-storage-cta hero-photo hero-photo-form" aria-labelledby="find-storage-cta-heading">
+        <div className="find-storage-cta-text">
+          <span className="storage-search-label">Free, no obligation</span>
+          <h2 id="find-storage-cta-heading">Find my storage</h2>
+          <p>Tell us where you need space, the unit size and your budget. We will match you with facilities that fit.</p>
+        </div>
+        <div className="find-storage-cta-form"><V2StorageForm /></div>
       </section>
     </>
   );

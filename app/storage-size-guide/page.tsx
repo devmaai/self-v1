@@ -140,7 +140,7 @@ export default function StorageSizeGuidePage() {
     <main className="storage-size-guide-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <section className="storage-size-guide-hero">
+      <section className="storage-size-guide-hero hero-photo hero-photo-guide">
         <div className="storage-size-guide-hero-inner">
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Size guide</span>
