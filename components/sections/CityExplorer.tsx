@@ -5,44 +5,33 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
-import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
+import { CITY_STATES, PUBLISHED_CITY_SLUGS } from "@/lib/cityStates";
+import { US_STATE_NAMES } from "@/lib/usStates";
 
-const ALL_FEATURED_CITIES = [
-  { name: "Salt Lake City", slug: "salt-lake-city" },
-  { name: "West Valley City", slug: "west-valley-city" },
-  { name: "Cedar City", slug: "cedar-city" },
-  { name: "Park City", slug: "park-city" },
-  { name: "Heber City", slug: "heber-city" },
-  { name: "Brigham City", slug: "brigham-city" },
-  { name: "Yuba City", slug: "yuba-city" },
-  { name: "National City", slug: "national-city" },
-  { name: "Culver City", slug: "culver-city" },
-  { name: "Daly City", slug: "daly-city" },
-  { name: "Redwood City", slug: "redwood-city" },
-  { name: "King City", slug: "king-city" },
-  { name: "Cathedral City", slug: "cathedral-city" },
-  { name: "Sun City", slug: "sun-city" },
-  { name: "Harbor City", slug: "harbor-city" },
-  { name: "Sand City", slug: "sand-city" },
-  { name: "New York City", slug: "new-york-city" },
-  { name: "Long Island City", slug: "long-island-city" },
-  { name: "Newburgh", slug: "newburgh" },
-  { name: "City Island", slug: "city-island" },
-  { name: "Co-op City", slug: "co-op-city" },
-  { name: "Starrett City", slug: "starrett-city" },
-  { name: "LeFrak City", slug: "lefrak-city" },
-  { name: "Kansas City", slug: "kansas-city" },
-  { name: "Jefferson City", slug: "jefferson-city" },
-  { name: "Platte City", slug: "platte-city" },
-  { name: "University City", slug: "university-city" },
-  { name: "Webb City", slug: "webb-city" },
-  { name: "Wright City", slug: "wright-city" },
-  { name: "Kimberling City", slug: "kimberling-city" },
-  { name: "Crystal City", slug: "crystal-city" },
-];
+const NAME_OVERRIDES: Record<string, string> = {
+  "lees-summit": "Lee's Summit",
+  ofallon: "O'Fallon",
+};
 
-// Only cities that are live appear; drafted cities stay hidden.
-const FEATURED_CITIES = ALL_FEATURED_CITIES.filter((city) => isCityPublished(city.slug));
+function cityNameFromSlug(slug: string) {
+  if (NAME_OVERRIDES[slug]) return NAME_OVERRIDES[slug];
+  return slug
+    .split("-")
+    .map((part, index) => (index === 0 && part === "st" ? "St." : part[0].toUpperCase() + part.slice(1)))
+    .join(" ");
+}
+
+// Every live city is featured; drafted cities stay hidden.
+const FEATURED_CITIES = [...PUBLISHED_CITY_SLUGS].map((slug) => ({
+  name: cityNameFromSlug(slug),
+  slug,
+  state: CITY_STATES[slug],
+}));
+
+// Finds a state named in the search text, e.g. "Missouri storage prices" -> "MO".
+function stateInQuery(normalized: string): string | undefined {
+  return Object.entries(US_STATE_NAMES).find(([, name]) => normalized.includes(name.toLowerCase()))?.[0];
+}
 
 const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.name.localeCompare(second.name));
 const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city.name[0]))];
@@ -62,11 +51,14 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
 
   const matchingCities = useMemo(() => {
     const normalized = searchedLocation.trim().toLowerCase();
-    return SORTED_FEATURED_CITIES.filter((city) => {
-      const matchesLetter = cityLetter === "all" || city.name.startsWith(cityLetter);
-      const matchesSearch = !normalized || /^\d{5}(-\d{4})?$/.test(normalized) || city.name.toLowerCase().includes(normalized);
-      return matchesLetter && matchesSearch;
-    });
+    const byLetter = SORTED_FEATURED_CITIES.filter((city) => cityLetter === "all" || city.name.startsWith(cityLetter));
+    if (!normalized || /^\d{5}(-\d{4})?$/.test(normalized)) return byLetter;
+    const byCity = byLetter.filter((city) => city.name.toLowerCase().includes(normalized) || normalized.includes(city.name.toLowerCase()));
+    if (byCity.length) return byCity;
+    const state = stateInQuery(normalized);
+    const byState = state ? byLetter.filter((city) => city.state === state) : [];
+    // Never leave the list empty: fall back to every live city.
+    return byState.length ? byState : byLetter;
   }, [cityLetter, searchedLocation]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
