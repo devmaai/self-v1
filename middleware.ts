@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { CITY_STATES } from "@/lib/cityStates";
+import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
 // City pages moved from /storage-search/{city} to /storage-search/{state}/{city}.
@@ -29,7 +29,7 @@ export function middleware(request: NextRequest) {
   }
 
   const citySlug = pathname.match(/^\/storage-search\/([^/]+)\/?$/)?.[1];
-  if (!citySlug) return NextResponse.next();
+  if (!citySlug || !isCityPublished(citySlug)) return NextResponse.next();
 
   const state = CITY_STATES[citySlug];
   const stateSlug = state ? STATE_PAGE_SLUGS[state] : undefined;

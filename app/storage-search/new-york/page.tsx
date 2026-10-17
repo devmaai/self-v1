@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { isCityPublished } from "@/lib/cityStates";
 import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
@@ -116,7 +117,7 @@ export default function NewYorkStoragePage() {
 
       <section className="state-storage-cities" aria-labelledby="ny-cities-heading">
         <div className="state-storage-heading"><h2 id="ny-cities-heading">Storage units near you in New York by city</h2><p>In New York the right unit is usually the one you can reach without a car. Rates shift block by block, and a facility one subway stop further out can cost noticeably less. Start with your city or borough and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/new-york/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
+        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.filter((city) => isCityPublished(city.toLowerCase().replace(/\./g, "").replace(/ /g, "-"))).map((city) => <Link href={`/storage-search/new-york/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your neighbourhood? Search by ZIP code and set your radius to one, five or ten miles.</p>
       </section>
 

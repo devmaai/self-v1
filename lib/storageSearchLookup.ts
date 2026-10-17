@@ -1,4 +1,4 @@
-import { CITY_STATES } from "./cityStates";
+import { CITY_STATES, isCityPublished } from "./cityStates";
 import { US_STATE_NAMES } from "./usStates";
 
 // Two-letter state code -> the folder slug for that state's published landing
@@ -49,7 +49,7 @@ export function resolveStorageSearchHref(rawQuery: string): string {
 
   const citySlug = slugifyCity(query);
   const cityState = CITY_STATES[citySlug];
-  const cityStateSlug = cityState ? STATE_PAGE_SLUGS[cityState] : undefined;
+  const cityStateSlug = cityState && isCityPublished(citySlug) ? STATE_PAGE_SLUGS[cityState] : undefined;
   if (cityStateSlug) return `/storage-search/${cityStateSlug}/${citySlug}`;
 
   return `/storage-search?location=${encodeURIComponent(query)}`;

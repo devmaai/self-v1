@@ -19,9 +19,9 @@ const ALL_CITY_STATES: Record<string, string> = {
 export const CITY_STATES: Record<string, string> = ALL_CITY_STATES;
 
 // Cities that are live: indexable and listed in the sitemap.
-// Every other city in CITY_STATES is in draft: the page still loads for
-// visitors who follow a link, but it is marked noindex and left out of the
-// sitemap. To publish a drafted city, add its slug here and redeploy.
+// Every other city in CITY_STATES is in draft: its page returns 404, it is
+// left out of the sitemap, and links to it are hidden across the site.
+// To publish a drafted city, add its slug here and redeploy.
 export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // Utah
   "salt-lake-city", "west-valley-city", "provo", "west-jordan", "orem", "sandy",

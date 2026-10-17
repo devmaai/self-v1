@@ -171,6 +171,7 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
 // nationwide sheet on every single visitor request.
 export function generateStaticParams() {
   return Object.entries(CITY_STATES)
+    .filter(([city]) => isCityPublished(city))
     .map(([city, state]) => {
       const statePageSlug = STATE_PAGE_SLUGS[state];
       return statePageSlug ? { state: statePageSlug, city } : null;
@@ -186,19 +187,19 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
   }
   const canonical = `https://www.selfstorage.help/storage-search/${stateSlug}/${citySlug}`;
-  // Drafted cities load for visitors but are kept out of Google's index.
-  const robots = isCityPublished(citySlug) ? undefined : { index: false, follow: true };
   const seoContent = await getCitySeoContent(citySlug, state);
   if (seoContent?.metaTitle && seoContent?.metaDescription) {
-    return { title: seoContent.metaTitle, description: seoContent.metaDescription, alternates: { canonical }, robots };
+    return { title: seoContent.metaTitle, description: seoContent.metaDescription, alternates: { canonical } };
   }
-  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.`, alternates: { canonical }, robots };
+  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.`, alternates: { canonical } };
 }
 
 export default async function LiveCityStoragePage({ params }: { params: Promise<{ state: string; city: string }> }) {
   const { state: stateSlug, city: citySlug } = await params;
   const state = CITY_STATES[citySlug];
   if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) notFound();
+  // Drafted cities are not live until added to PUBLISHED_CITY_SLUGS.
+  if (!isCityPublished(citySlug)) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;

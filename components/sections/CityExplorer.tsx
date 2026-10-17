@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
-import { CITY_STATES } from "@/lib/cityStates";
+import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 
-const FEATURED_CITIES = [
+const ALL_FEATURED_CITIES = [
   { name: "Salt Lake City", slug: "salt-lake-city" },
   { name: "West Valley City", slug: "west-valley-city" },
   { name: "Cedar City", slug: "cedar-city" },
@@ -40,6 +40,9 @@ const FEATURED_CITIES = [
   { name: "Kimberling City", slug: "kimberling-city" },
   { name: "Crystal City", slug: "crystal-city" },
 ];
+
+// Only cities that are live appear; drafted cities stay hidden.
+const FEATURED_CITIES = ALL_FEATURED_CITIES.filter((city) => isCityPublished(city.slug));
 
 const SORTED_FEATURED_CITIES = [...FEATURED_CITIES].sort((first, second) => first.name.localeCompare(second.name));
 const CITY_LETTERS = [...new Set(SORTED_FEATURED_CITIES.map((city) => city.name[0]))];
