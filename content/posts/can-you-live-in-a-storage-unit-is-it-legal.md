@@ -3,7 +3,7 @@ title: "Can You Live in a Storage Unit? Is It Legal?"
 slug: "can-you-live-in-a-storage-unit-is-it-legal"
 date: "2026-09-24"
 excerpt: "Suggested title tag: Can You Live in a Storage Unit? Is It Legal? (2026). Meta description: No, living in a storage unit is illegal across the US and unsaf"
-published: true
+published: false
 ---
 
 *Suggested title tag: Can You Live in a Storage Unit? Is It Legal? (2026). *

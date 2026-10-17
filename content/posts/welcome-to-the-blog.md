@@ -2,7 +2,7 @@
 title: Welcome to the SelfStorage.help blog
 date: 2026-05-18T00:00:00.000Z
 excerpt: 'A quick look at what this blog covers and how often we publish, written for storage operators who want the work explained'
-published: true
+published: false
 category: seo
 ---
 
