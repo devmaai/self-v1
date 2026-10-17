@@ -4542,8 +4542,8 @@ footer {
 .storage-search-hero-banner .storage-search-kicker span { background: #9cc9ef; }
 
 /* Prominent Find Storage button in the header */
-.v2-nav-home .nav-form-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border: 0; border-radius: 6px; background: var(--rust); color: #fff; font-weight: 700; box-shadow: 0 4px 14px rgba(181, 68, 31, .3); cursor: pointer; }
-.v2-nav-home .nav-form-toggle:hover, .v2-nav-home .nav-form-toggle.open { background: #9a3818; color: #fff; }
+.v2-home .v2-nav-home .nav-form-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border: 0; border-radius: 6px; background: var(--rust); color: #fff; font-weight: 700; box-shadow: 0 4px 14px rgba(181, 68, 31, .3); cursor: pointer; }
+.v2-home .v2-nav-home .nav-form-toggle:hover, .v2-home .v2-nav-home .nav-form-toggle.open { background: #9a3818; color: #fff; }
 
 /* Featured cities: scrolling photo cards */
 .city-scroller { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
