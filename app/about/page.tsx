@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 // Add the founder photo at public/images/about/kriti.jpg and the LinkedIn URL here.
 const FOUNDER_PHOTO = "/images/about/kriti.jpg";
-const LINKEDIN_URL = "";
+const LINKEDIN_URL = "https://www.linkedin.com/in/kritikumarii/";
 
 const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", FOUNDER_PHOTO));
 
