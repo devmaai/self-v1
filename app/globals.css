@@ -4648,3 +4648,16 @@ footer {
 }
 .hero-photo .storage-size-guide-eyebrow { color: #fff; }
 .about-founder-photo img { object-position: 35% 70%; }
+
+/* Blog index hero photo with overlay */
+.hero-photo-blog { --hero-image: url("/images/storage-guide/boxes.jpg"); }
+.hero-photo .blog-eyebrow { color: #fff; }
+
+/* Blog FAQ: bulleted bold question, answer below */
+.blog-article-prose ul.blog-faq-list { margin: 0 0 22px; padding-left: 22px; }
+.blog-article-prose .blog-faq-list li { margin-bottom: 22px; }
+.blog-article-prose .blog-faq-q { display: block; margin-bottom: 8px; color: var(--blog-ink); font-weight: 700; }
+.blog-article-prose .blog-faq-a { margin: 0; }
+
+/* Blog closing CTA: single prominent button */
+.blog-article-cta .blog-article-cta-large { padding: 18px 34px; font-size: 18px; font-weight: 700; box-shadow: 0 8px 22px rgba(181, 68, 31, .3); }

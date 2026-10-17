@@ -108,7 +108,7 @@ export default async function BlogIndexPage({
         }}
       />
       <main className="state-storage-page">
-        <section className="state-storage-hero">
+        <section className="state-storage-hero hero-photo hero-photo-blog">
           <div className="state-storage-hero-inner">
             <div className="city-storage-breadcrumb">
               <Link href="/">Home</Link>

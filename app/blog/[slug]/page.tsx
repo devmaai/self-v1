@@ -7,7 +7,7 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 import { getAllPostSlugs, getAllPosts, getPost } from "@/lib/posts";
-import { extractFaqs } from "@/lib/faq";
+import { extractFaqs, splitFaqSection } from "@/lib/faq";
 
 const SITE_URL = "https://www.selfstorage.help";
 const absoluteUrl = (src: string) => (src.startsWith("http") ? src : `${SITE_URL}${src.startsWith("/") ? "" : "/"}${src}`);
@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: `${post.seoTitle ?? post.title} | SelfStorage.help`,
     description: post.metaDescription,
     keywords: post.keywords,
-    authors: post.author ? [{ name: post.author }] : undefined,
+    authors: [{ name: "Marketing Team" }],
     alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
     openGraph: {
       type: "article",
@@ -83,11 +83,10 @@ export default async function BlogPostPage({
   const recent = getAllPosts()
     .filter((recentPost) => recentPost.slug !== post.slug)
     .slice(0, 4);
-  const author = post.author ?? "SelfStorage.help Editorial";
+  const author = "Marketing Team";
   const categoryLabel = post.category === "seo" ? "SEO & Growth" : "Facility Insights";
   const heroImage = post.coverImage || "/images/storage-guide/boxes.jpg";
 
-  const isEditorial = author === "SelfStorage.help Editorial";
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -95,9 +94,7 @@ export default async function BlogPostPage({
     description: post.metaDescription,
     datePublished: post.date || undefined,
     dateModified: post.updated || post.date || undefined,
-    author: isEditorial
-      ? { "@type": "Organization", name: author, url: SITE_URL }
-      : { "@type": "Person", name: author },
+    author: { "@type": "Organization", name: author, url: SITE_URL },
     publisher: { "@id": `${SITE_URL}/#organization` },
     image: absoluteUrl(heroImage),
     mainEntityOfPage: {
@@ -107,6 +104,7 @@ export default async function BlogPostPage({
   };
 
   const faqs = extractFaqs(post.body);
+  const faqSplit = faqs.length ? splitFaqSection(post.body) : null;
   const faqSchema = faqs.length
     ? {
         "@context": "https://schema.org",
@@ -156,7 +154,25 @@ export default async function BlogPostPage({
         <section className="blog-article-layout" aria-label="Article content">
           <article className="blog-article-content">
             <div className="blog-prose blog-article-prose">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
+              {faqSplit ? (
+                <>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{faqSplit.before}</ReactMarkdown>
+                  <h2>{faqSplit.heading}</h2>
+                  <ul className="blog-faq-list">
+                    {faqs.map((faq) => (
+                      <li key={faq.question}>
+                        <strong className="blog-faq-q">{faq.question}</strong>
+                        <p className="blog-faq-a">{faq.answer}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  {faqSplit.after.trim() && (
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{faqSplit.after}</ReactMarkdown>
+                  )}
+                </>
+              ) : (
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
+              )}
             </div>
 
             <div className="blog-article-author">
@@ -201,20 +217,11 @@ export default async function BlogPostPage({
 
           <div className="blog-article-cta-row">
             <p>Want to list your local business in our directory?</p>
-            <Link className="blog-article-cta-secondary" href="/contact">
+            <Link className="blog-article-cta-primary blog-article-cta-large" href="/contact">
               Talk to our team <span aria-hidden="true">→</span>
             </Link>
           </div>
 
-          <div className="blog-article-cta-row">
-            <p>
-              We also help local storage businesses grow their organic presence via
-              SEO and AEO.
-            </p>
-            <Link className="blog-article-cta-primary" href="/audit">
-              Request a free audit <span aria-hidden="true">→</span>
-            </Link>
-          </div>
         </section>
       </main>
       <V2Footer />

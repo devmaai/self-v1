@@ -69,3 +69,21 @@ export function extractFaqs(body: string): FaqItem[] {
   if (current?.answer) faqs.push(current);
   return faqs.filter((f) => f.question && f.answer);
 }
+
+/** Splits a post body around its FAQ section so the FAQ can be rendered with its own layout. */
+export function splitFaqSection(body: string): { before: string; heading: string; after: string } | null {
+  const lines = body.split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{1,3}\s*\**\s*(frequently asked questions|faqs?|people also ask)/i.test(l));
+  if (start === -1) return null;
+  const level = (lines[start].match(/^#+/)?.[0].length) ?? 2;
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    const h = lines[i].match(/^(#+)\s/);
+    if (h && h[1].length <= level) { end = i; break; }
+  }
+  return {
+    before: lines.slice(0, start).join("\n"),
+    heading: lines[start].replace(/^#+\s*/, "").replace(/\*/g, "").trim(),
+    after: lines.slice(end).join("\n"),
+  };
+}
