@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
-import { CITY_STATES } from "@/lib/cityStates";
+import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 
 const BASE_URL = "https://www.selfstorage.help";
@@ -65,6 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/new-york",
     "/storage-search/missouri",
     ...Object.entries(CITY_STATES)
+      // Drafted cities stay out of the sitemap until they are published.
+      .filter(([citySlug]) => isCityPublished(citySlug))
       .map(([citySlug, state]) => {
         const stateSlug = STATE_PAGE_SLUGS[state];
         return stateSlug ? `/storage-search/${stateSlug}/${citySlug}` : null;

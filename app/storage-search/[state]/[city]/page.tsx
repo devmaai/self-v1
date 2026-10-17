@@ -5,7 +5,7 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import CityStorageResults, { type CityStorageFacility } from "@/components/sections/CityStorageResults";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
-import { CITY_STATES, CITY_NAME_OVERRIDES } from "@/lib/cityStates";
+import { CITY_STATES, CITY_NAME_OVERRIDES, isCityPublished } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
@@ -185,11 +185,14 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) {
     return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
   }
+  const canonical = `https://www.selfstorage.help/storage-search/${stateSlug}/${citySlug}`;
+  // Drafted cities load for visitors but are kept out of Google's index.
+  const robots = isCityPublished(citySlug) ? undefined : { index: false, follow: true };
   const seoContent = await getCitySeoContent(citySlug, state);
   if (seoContent?.metaTitle && seoContent?.metaDescription) {
-    return { title: seoContent.metaTitle, description: seoContent.metaDescription };
+    return { title: seoContent.metaTitle, description: seoContent.metaDescription, alternates: { canonical }, robots };
   }
-  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
+  return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.`, alternates: { canonical }, robots };
 }
 
 export default async function LiveCityStoragePage({ params }: { params: Promise<{ state: string; city: string }> }) {
