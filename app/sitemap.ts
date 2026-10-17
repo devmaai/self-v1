@@ -60,6 +60,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/audit",
     "/contact",
     "/blog",
+    "/storage-size-guide",
+    "/about",
     "/storage-search/utah",
     "/storage-search/california",
     "/storage-search/new-york",

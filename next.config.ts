@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
       // Keep the previous sitemap URL working while Search Console switches
       // to the standard metadata route.
       { source: "/sitemap/sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // Retired blog posts: duplicate and off-topic content.
+      { source: "/blog/can-you-live-in-a-storage-unit-is-it-legal", destination: "/blog/can-you-live-in-a-storage-unit", permanent: true },
+      { source: "/blog/removal-costs-calculator-uk-pickfords-global-network", destination: "/blog", permanent: true },
+      { source: "/blog/welcome-to-the-blog", destination: "/blog", permanent: true },
       // NOTE: legacy mixed-case / &-encoded service URLs redirect to their
       // lowercase canonicals in middleware.ts (exact, case-sensitive match).
       // next.config redirects match case-insensitively and would self-loop.
