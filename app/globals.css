@@ -4601,3 +4601,5 @@ footer {
 /* Blog section subtitle contrast */
 .latest-posts .storage-guide-heading p { color: #60788b; }
 .latest-posts .storage-guide-heading h2 { color: #16334b; }
+.hero-photo .city-storage-hero-facts span { color: rgba(255, 255, 255, .8); border-color: rgba(255, 255, 255, .35); }
+.hero-photo .city-storage-hero-facts strong { color: #fff; }
