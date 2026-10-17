@@ -13,6 +13,10 @@ export interface PostMeta {
   seoTitle?: string;
   date: string;
   excerpt: string;
+  /** Meta description from frontmatter (metaDescription). Falls back to a cleaned excerpt. */
+  metaDescription: string;
+  /** Last updated date (frontmatter "updated" or "dateModified"). Falls back to date. */
+  updated: string;
   /** Target keywords from the publishing brief. Used for metadata only, never rendered. */
   keywords?: string[];
   /** Editorial bucket used by the blog filter. */
@@ -26,6 +30,22 @@ export interface Post extends PostMeta {
   body: string;
 }
 
+function toIso(value: unknown): string {
+  if (!value) return "";
+  const d = new Date(value as string);
+  return Number.isNaN(d.getTime()) ? "" : d.toISOString();
+}
+
+/** Strips a leading "Introduction" label and trims to a full sentence under ~160 chars. */
+function cleanDescription(text: string): string {
+  let t = String(text).replace(/^\s*\**introduction\**[:\s]*/i, "").replace(/\s+/g, " ").trim();
+  if (t.length <= 160) return t;
+  const cut = t.slice(0, 160);
+  const lastStop = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("? "), cut.lastIndexOf("! "));
+  if (lastStop > 80) return cut.slice(0, lastStop + 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:]$/, "") + "…";
+}
+
 function readPostFile(slug: string): Post | null {
   const fullPath = path.join(POSTS_DIR, `${slug}.md`);
   if (!fs.existsSync(fullPath)) return null;
@@ -36,9 +56,11 @@ function readPostFile(slug: string): Post | null {
   return {
     slug,
     title: data.title ?? slug,
-    seoTitle: data.seoTitle || undefined,
+    seoTitle: data.seoTitle || data.titleTag || undefined,
     date: data.date ? new Date(data.date).toISOString() : "",
     excerpt: data.excerpt ?? "",
+    metaDescription: cleanDescription(data.metaDescription || data.excerpt || ""),
+    updated: toIso(data.updated ?? data.dateModified) || (data.date ? new Date(data.date).toISOString() : ""),
     keywords: Array.isArray(data.keywords) ? data.keywords.filter((k): k is string => typeof k === "string") : undefined,
     category: data.category === "seo" ? "seo" : "facility",
     author: data.author || undefined,

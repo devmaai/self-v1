@@ -7,6 +7,10 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 import { getAllPostSlugs, getAllPosts, getPost } from "@/lib/posts";
+import { extractFaqs } from "@/lib/faq";
+
+const SITE_URL = "https://www.selfstorage.help";
+const absoluteUrl = (src: string) => (src.startsWith("http") ? src : `${SITE_URL}${src.startsWith("/") ? "" : "/"}${src}`);
 
 export function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
@@ -22,10 +26,19 @@ export async function generateMetadata({
   if (!post) return { title: "Post not found | SelfStorage.help" };
   return {
     title: `${post.seoTitle ?? post.title} | SelfStorage.help`,
-    description: post.excerpt,
+    description: post.metaDescription,
     keywords: post.keywords,
     authors: post.author ? [{ name: post.author }] : undefined,
-    openGraph: post.coverImage ? { images: [post.coverImage] } : undefined,
+    alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.seoTitle ?? post.title,
+      description: post.metaDescription,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      publishedTime: post.date || undefined,
+      modifiedTime: post.updated || undefined,
+      images: post.coverImage ? [absoluteUrl(post.coverImage)] : undefined,
+    },
   };
 }
 
@@ -74,22 +87,37 @@ export default async function BlogPostPage({
   const categoryLabel = post.category === "seo" ? "SEO & Growth" : "Facility Insights";
   const heroImage = post.coverImage || "/images/storage-guide/boxes.jpg";
 
+  const isEditorial = author === "SelfStorage.help Editorial";
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    description: post.excerpt,
+    description: post.metaDescription,
     datePublished: post.date || undefined,
-    author: {
-      "@type": "Person",
-      name: author,
-    },
-    image: heroImage,
+    dateModified: post.updated || post.date || undefined,
+    author: isEditorial
+      ? { "@type": "Organization", name: author, url: SITE_URL }
+      : { "@type": "Person", name: author },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    image: absoluteUrl(heroImage),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.selfstorage.help/blog/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}`,
     },
   };
+
+  const faqs = extractFaqs(post.body);
+  const faqSchema = faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
 
   return (
     <div className="v2-home">
@@ -99,6 +127,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <main className="blog-article-page">
         <section className="blog-article-hero" aria-labelledby="article-title">
           <div className="blog-article-hero-inner">
