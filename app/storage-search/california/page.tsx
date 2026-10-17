@@ -277,9 +277,13 @@ export default function CaliforniaStoragePage() {
           <article><span>8</span><p>Ask about the lock. Many operators specify a type. Avoid buying one twice.</p></article>
           <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=California">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=California">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
       </section>
 
+      <section className="state-storage-guide state-love" aria-labelledby="ca-love-heading">
+        <div className="state-storage-heading"><h2 id="ca-love-heading">Why people love California.</h2><p>And why so many of them need a little extra space.</p></div>
+        <div className="state-size-grid"><article><h3>The coast and the climate</h3><p>More than 800 miles of coastline and mild weather across much of the state draw people from everywhere. Smaller coastal homes often mean less closet space.</p></article><article><h3>Career opportunities</h3><p>Tech in the Bay Area, entertainment in Los Angeles and agriculture in the Central Valley keep people moving into and around the state.</p></article><article><h3>Every landscape in one state</h3><p>Beaches, deserts, redwood forests and the Sierra Nevada are all within driving distance. Surfboards, ski gear and camping kit add up quickly.</p></article><article><h3>World class universities</h3><p>The UC campuses, Stanford and USC bring students in each fall and send them home each summer. Short term storage bridges the gap.</p></article><article><h3>Food and culture from around the world</h3><p>Neighborhoods from San Diego to Sacramento each have their own character, so many people move between cities before they find their fit.</p></article><article><h3>Smaller homes, bigger lives</h3><p>High housing costs mean many Californians live in apartments and condos. A storage unit gives you room for everything that does not fit at home.</p></article></div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="ca-faq-heading">
         <div className="state-storage-heading"><h2 id="ca-faq-heading">Common questions about California storage units.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>

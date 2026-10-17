@@ -295,9 +295,13 @@ export default function MissouriStoragePage() {
           <article><span>9</span><p>Set up autopay and online access. It removes the most common cause of an unexpected fee.</p></article>
           <article><span>10</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=Missouri">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=Missouri">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
       </section>
 
+      <section className="state-storage-guide state-love" aria-labelledby="mo-love-heading">
+        <div className="state-storage-heading"><h2 id="mo-love-heading">Why people love Missouri.</h2><p>And why so many of them need a little extra space.</p></div>
+        <div className="state-size-grid"><article><h3>Two great cities</h3><p>Kansas City is known for barbecue and jazz, and St. Louis for the Gateway Arch and its historic neighborhoods. Both give you big city amenities at a lower cost of living.</p></article><article><h3>Affordable living</h3><p>Housing in Missouri often costs less than the national average, so you get more home for the money, and storage prices tend to follow.</p></article><article><h3>The Ozarks and the lakes</h3><p>Lake of the Ozarks and Table Rock Lake draw boaters and anglers every summer. Covered boat and RV storage protects your gear in the off season.</p></article><article><h3>Right in the middle</h3><p>A central location makes Missouri a natural base for road trips and for small businesses that ship across the country.</p></article><article><h3>Universities and colleges</h3><p>Mizzou in Columbia, Washington University and Saint Louis University fill up each fall, and students need a place for their things over the summer.</p></article><article><h3>Four distinct seasons</h3><p>Humid summers and cold winters mean seasonal gear rotates through the year. Climate controlled storage protects furniture and electronics from the swings.</p></article></div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="mo-faq-heading">
         <div className="state-storage-heading"><h2 id="mo-faq-heading">Missouri self storage FAQs.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
