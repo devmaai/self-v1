@@ -183,12 +183,13 @@ export default function UtahStoragePage() {
       </section>
 
       <section className="state-storage-guide" aria-labelledby="utah-size-guide-heading">
-        <div className="state-storage-heading"><h2 id="utah-size-guide-heading">Find the right unit size for your Utah move.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
+        <div className="state-storage-heading"><h2 id="utah-size-guide-heading">Find the right unit size for your Utah move.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p></div>
         <CardSlider trackClassName="state-size-grid">
-          <article><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
-          <article><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
-          <article><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/boxes.jpg" alt="Boxes and small items packed for a small storage unit" width={640} height={420} quality={90} /></div><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/threebedroom.jpg" alt="Furniture from a few rooms ready for a medium storage unit" width={640} height={420} quality={90} /></div><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/fourbedroom.jpg" alt="Contents of a full home ready for a large storage unit" width={640} height={420} quality={90} /></div><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
         </CardSlider>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
       </section>
 
       <section className="state-policy-section" aria-label="Utah storage rates, access, and rental terms">
@@ -209,6 +210,7 @@ export default function UtahStoragePage() {
             <h2 id="utah-terms-heading">Flexible month to month storage for Utah moves and seasons.</h2>
             <p>Month to month rentals fit Utah's rhythm of ski seasons, summer road trips and new home builds.</p>
             <ul><li><strong>Minimum rental period.</strong> Most facilities rent by the month. Confirm there is no longer minimum attached to an offer rate.</li><li><strong>Move-out notice.</strong> Ten to fourteen days is typical. Put the date in your calendar when you sign.</li><li><strong>Switching sizes.</strong> Ask whether you can move to a bigger unit when the ski gear comes out without signing a new contract.</li><li><strong>Rate increases.</strong> Ask how often rates rise and how much notice you get.</li></ul>
+            <Link className="state-storage-guide-button" href="/storage-search?location=Utah%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
           </article>
         </div>
       </section>

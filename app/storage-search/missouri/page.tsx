@@ -210,12 +210,13 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="state-storage-guide" aria-labelledby="mo-size-guide-heading">
-        <div className="state-storage-heading"><h2 id="mo-size-guide-heading">Pick a Missouri unit size that fits your load.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
+        <div className="state-storage-heading"><h2 id="mo-size-guide-heading">Pick a Missouri unit size that fits your load.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p></div>
         <CardSlider trackClassName="state-size-grid">
-          <article><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
-          <article><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
-          <article><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/boxes.jpg" alt="Boxes and small items packed for a small storage unit" width={640} height={420} quality={90} /></div><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/threebedroom.jpg" alt="Furniture from a few rooms ready for a medium storage unit" width={640} height={420} quality={90} /></div><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
+          <article><div className="state-size-image"><Image src="/images/storage-guide/fourbedroom.jpg" alt="Contents of a full home ready for a large storage unit" width={640} height={420} quality={90} /></div><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
         </CardSlider>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
       </section>
 
       <section className="state-policy-section" aria-label="Missouri storage rates, access, and rental terms">
@@ -236,6 +237,7 @@ export default function MissouriStoragePage() {
             <h2 id="mo-terms-heading">Short stays and month to month rentals in Missouri.</h2>
             <p>Most Missouri units rent month to month, which suits a move, a renovation, a semester away or a lake season.</p>
             <ul><li><strong>Minimum rental period.</strong> Confirm whether the facility rents by the month or offers shorter stays.</li><li><strong>Notice period.</strong> Ask how many days of notice you need to give before moving out.</li><li><strong>Switching units.</strong> Ask whether you can transfer to a different size mid rental.</li><li><strong>Seasonal storage.</strong> Boat and RV owners can book covered spaces for the off season around the Ozarks lakes.</li></ul>
+            <Link className="state-storage-guide-button" href="/storage-search?location=Missouri%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
           </article>
         </div>
       </section>

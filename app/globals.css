@@ -4529,3 +4529,5 @@ footer {
 .state-policy-card li strong { display: block; margin-bottom: 2px; color: #16334b; font-size: 15px; }
 .state-policy-card .state-storage-guide-button { align-self: flex-start; }
 @media (max-width: 900px) { .state-policy-grid { grid-template-columns: 1fr; } .state-policy-section { padding: 48px 0; } }
+.state-size-grid article .state-size-image { margin: -25px -25px 18px; overflow: hidden; }
+.state-size-grid article .state-size-image img { display: block; width: 100%; height: 180px; object-fit: cover; }
