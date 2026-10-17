@@ -209,58 +209,25 @@ export default function CaliforniaStoragePage() {
         </CardSlider>
       </section>
 
-      <section className="utah-policy-section" aria-label="California storage rates, access, and rental terms">
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+      <section className="state-policy-section" aria-label="California storage rates, access, and rental terms">
+        <div className="state-policy-grid">
+          <article className="state-policy-card" aria-labelledby="ca-deals-heading">
             <h2 id="ca-deals-heading">Lower move-in costs and first month free offers in California.</h2>
-            <p>Promotions move constantly in California markets, so the lowest advertised rate today may differ next week. What to look for:</p>
-            <p className="utah-policy-callout">Two questions to ask before you commit: what does my rate become once the promotion ends, and is there an administration fee or a required insurance charge on top of the monthly rent. Compare the twelve month cost rather than the first month.</p>
+            <p>California has some of the highest storage rates in the country, so where you rent matters as much as the offer.</p>
+            <ul><li><strong>Drive inland.</strong> The same unit in the Inland Empire, the Central Valley or Sacramento often costs far less than in Los Angeles, San Francisco or San Diego.</li><li><strong>Reserve online.</strong> Web rates usually sit below the price you get quoted at the counter.</li><li><strong>Compare the twelve month cost.</strong> Promotions often last one to three months before the regular rate applies.</li><li><strong>Ask about fees.</strong> Admin fees, deposits and required insurance change your move-in cost, and some are waived if you ask.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=California%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li><strong>First month free.</strong> Widely offered on new rentals across the state.</li>
-              <li><strong>Discounted first three months.</strong> Common at independently run facilities.</li>
-              <li><strong>Student, military and senior rates.</strong> Ask directly, since these are often unadvertised.</li>
-              <li><strong>Longer term rates.</strong> Committing to six or twelve months can reduce the monthly figure.</li>
-              <li><strong>Inland alternatives.</strong> If your search is coastal, extend the radius inland and compare. The saving is often substantial.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block utah-policy-block-alt">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="ca-access-heading">
             <h2 id="ca-access-heading">Gate hours, cameras and on-site security at California facilities.</h2>
-            <p>Access hours vary widely. Some California facilities open the gate around the clock, many run business hours only, and urban multi storey sites often close earlier than drive-up yards.</p>
-            <p className="utah-policy-lead">Check before you rent:</p>
+            <p>Urban and suburban facilities in California work very differently, so check how you will get in and load.</p>
+            <ul><li><strong>Elevator or drive-up.</strong> Multi story city facilities mean carts and elevators. Suburban sites usually offer drive-up units.</li><li><strong>Gate hours.</strong> City sites often close earlier than you expect. Check that the hours fit your commute.</li><li><strong>Earthquake safety.</strong> Ask how shelving is secured, and keep heavy items low in your unit.</li><li><strong>Security.</strong> Look for gated entry, cameras, on-site staff and individual unit alarms.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=California%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Gate hours and whether they cover your schedule, listed in Pacific Time</li>
-              <li>What time the facility closes on weekends and public holidays</li>
-              <li>Whether the site is staffed, self service, or kiosk operated</li>
-              <li>Perimeter fencing, gated entry, camera coverage, and lighting</li>
-              <li>Individual unit alarms and the lock type required</li>
-              <li>Lift access, trolley availability, and loading bay space at multi storey sites</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="ca-terms-heading">
             <h2 id="ca-terms-heading">Short term storage that flexes with your California lease.</h2>
-            <p>Most California storage units rent month to month, which suits a move, a remodel, a quarter away, or a season between homes.</p>
-            <p className="utah-policy-lead">Before you sign:</p>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Confirm the minimum rental period, if any. Most facilities rent by the month rather than the week.</li>
-              <li>Confirm the notice period required before you move out</li>
-              <li>Ask whether you can transfer to a larger or smaller unit mid rental</li>
-              <li>Ask how rent increases are applied and how much notice you receive, since increases are common after the first few months</li>
-            </ul>
-          </div>
+            <p>Month to month storage suits California's fast moving rental market, from lease gaps to remodels.</p>
+            <ul><li><strong>Lease gaps.</strong> Short term storage covers the weeks between one apartment and the next.</li><li><strong>Notice period.</strong> Confirm how much notice you need to give before you move out.</li><li><strong>Rate increases.</strong> Some facilities raise rates after a few months. Ask how often and by how much.</li><li><strong>Moving within the state.</strong> If you relocate, ask whether the operator has a site near your new home.</li></ul>
+          </article>
         </div>
       </section>
 

@@ -4518,3 +4518,14 @@ footer {
 
 .state-storage-button-row { display: flex; justify-content: center; }
 .state-storage-button-row .state-storage-guide-button { margin-top: 32px; }
+
+.state-policy-section { width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 72px 0; }
+.state-policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+.state-policy-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid #d6e1ea; border-top: 4px solid var(--storage-blue); border-radius: 6px; background: #fff; box-shadow: 0 3px 12px rgba(24,70,105,.06); }
+.state-policy-card h2 { margin-bottom: 12px; color: #16334b; font-size: clamp(21px, 2.2vw, 25px); line-height: 1.25; }
+.state-policy-card > p { margin-bottom: 18px; color: #526d81; font-size: 15px; line-height: 1.65; }
+.state-policy-card ul { margin: 0 0 6px; padding: 0; list-style: none; flex: 1; }
+.state-policy-card li { padding: 12px 0; border-top: 1px solid #eef3f7; color: #526d81; font-size: 14.5px; line-height: 1.6; }
+.state-policy-card li strong { display: block; margin-bottom: 2px; color: #16334b; font-size: 15px; }
+.state-policy-card .state-storage-guide-button { align-self: flex-start; }
+@media (max-width: 900px) { .state-policy-grid { grid-template-columns: 1fr; } .state-policy-section { padding: 48px 0; } }
