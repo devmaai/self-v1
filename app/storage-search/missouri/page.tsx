@@ -218,66 +218,25 @@ export default function MissouriStoragePage() {
         </CardSlider>
       </section>
 
-      <section className="utah-policy-section" aria-label="Missouri storage rates, access, and rental terms">
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+      <section className="state-policy-section" aria-label="Missouri storage rates, access, and rental terms">
+        <div className="state-policy-grid">
+          <article className="state-policy-card" aria-labelledby="mo-deals-heading">
             <h2 id="mo-deals-heading">Missouri storage specials and first month savings.</h2>
-            <p>Missouri is a competitive storage market, which works in your favour. How to find the lowest real cost:</p>
+            <p>Missouri storage is affordable by national standards, and a little comparison can lower your cost further.</p>
+            <ul><li><strong>Compare metros.</strong> Rates in Independence and Springfield often run below St. Louis and Kansas City.</li><li><strong>Look one suburb out.</strong> Prices between neighboring suburbs can differ more than any promotion.</li><li><strong>Ask about student and military rates.</strong> Discounts are common near Mizzou, Fort Leonard Wood and Whiteman Air Force Base, and they are rarely advertised.</li><li><strong>Right size first.</strong> Paying for a 10x10 when a 5x10 fits is the most common way to overpay.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=Missouri%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Compare the twelve month cost, not the first month. A free first month on a higher ongoing rate often loses to a lower rate with no promotion.</li>
-              <li>Search the next suburb out. Within a metro, the saving between neighbourhoods is frequently larger than anything a promotion offers.</li>
-              <li>Ask about the administration fee and deposit. Both change your day one cost and both are often waived.</li>
-              <li>Ask for the unadvertised rates. Student, military, and senior discounts are common and rarely listed.</li>
-              <li>Reserve online. Web rates usually sit below the price quoted at the counter.</li>
-              <li>Right size before you book. Paying for a 10x10 when a 5x10 fits is the most common avoidable cost.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block utah-policy-block-alt">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="mo-access-heading">
             <h2 id="mo-access-heading">Access hours, security, and paying your rent online in Missouri.</h2>
-            <p>Two things decide how easy a unit is to live with: when you can get in, and how simple it is to pay.</p>
-            <p className="utah-policy-lead">Check access before you rent:</p>
+            <p>Missouri weather swings from humid summers to icy winters, so check access for both.</p>
+            <ul><li><strong>Winter access.</strong> Ask whether drive aisles are plowed and treated for ice.</li><li><strong>Gate hours in Central Time.</strong> Confirm weekend and holiday hours as well as weekday hours.</li><li><strong>Security.</strong> Look for perimeter fencing, gated entry, cameras and good lighting.</li><li><strong>Online tools.</strong> Autopay, online reservations and app entry make your unit easier to live with.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=Missouri%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Gate hours and office hours, which usually differ, listed in Central Time</li>
-              <li>Whether 24 hour gate access is available at that site</li>
-              <li>Weekend and public holiday hours</li>
-              <li>Whether the site is staffed, self service, or kiosk operated</li>
-              <li>Perimeter fencing, gated entry, camera coverage, and lighting</li>
-              <li>Individual unit alarms and the lock type required</li>
-              <li>Whether the drive is cleared and gritted through winter</li>
-            </ul>
-            <ul>
-              <li>Online payment and autopay, so a missed month never turns into a late fee</li>
-              <li>App or keypad entry rather than a code you have to collect in person</li>
-              <li>Online reservations, so you can hold the unit before you visit</li>
-              <li>How rent increases are communicated and how much notice you receive</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="mo-terms-heading">
             <h2 id="mo-terms-heading">Short stays and month to month rentals in Missouri.</h2>
-            <p>Most Missouri storage units rent month to month, which suits a move, a renovation, a semester away, or a season between homes.</p>
-            <p className="utah-policy-lead">Before you sign:</p>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Confirm the minimum rental period. Most facilities rent by the month rather than the week.</li>
-              <li>Confirm the notice period required before you move out</li>
-              <li>Ask whether you can transfer to a larger or smaller unit mid rental</li>
-              <li>Ask how rent increases are applied and how much notice you receive</li>
-              <li>Set up autopay if you will be away for part of the year</li>
-            </ul>
-          </div>
+            <p>Most Missouri units rent month to month, which suits a move, a renovation, a semester away or a lake season.</p>
+            <ul><li><strong>Minimum rental period.</strong> Confirm whether the facility rents by the month or offers shorter stays.</li><li><strong>Notice period.</strong> Ask how many days of notice you need to give before moving out.</li><li><strong>Switching units.</strong> Ask whether you can transfer to a different size mid rental.</li><li><strong>Seasonal storage.</strong> Boat and RV owners can book covered spaces for the off season around the Ozarks lakes.</li></ul>
+          </article>
         </div>
       </section>
 

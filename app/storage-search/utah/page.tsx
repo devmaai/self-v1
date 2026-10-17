@@ -191,56 +191,25 @@ export default function UtahStoragePage() {
         </CardSlider>
       </section>
 
-      <section className="utah-policy-section" aria-label="Utah storage rates, access, and rental terms">
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+      <section className="state-policy-section" aria-label="Utah storage rates, access, and rental terms">
+        <div className="state-policy-grid">
+          <article className="state-policy-card" aria-labelledby="utah-deals-heading">
             <h2 id="utah-deals-heading">Save on your first month with Utah storage deals.</h2>
-            <p>Promotions move often across Utah, so the lowest advertised rate today may differ tomorrow. What to look for:</p>
-            <p className="utah-policy-callout">Two questions to ask before you commit: what does my rate become once the promotion ends, and is there an administration fee or a required insurance charge on top of the monthly rent. Compare the twelve month cost rather than the first month.</p>
+            <p>Prices along the Wasatch Front swing with the moving season, so timing and location do most of the work for you.</p>
+            <ul><li><strong>Book before May.</strong> Summer moves and student move-outs at BYU, Utah State and the University of Utah push rates up from May through August.</li><li><strong>Look one exit further.</strong> A facility in Lehi, Springville or West Jordan often costs less than the same size in Salt Lake City or Park City.</li><li><strong>Check the twelve month total.</strong> A free first month on a higher monthly rate can cost you more over a year than a lower rate with no offer.</li><li><strong>Ask for unlisted discounts.</strong> Military rates matter near Hill Air Force Base, and student rates are common near campus.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=Utah%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li><strong>First month free.</strong> Widely offered on new rentals across the Wasatch Front.</li>
-              <li><strong>Discounted first three months.</strong> Common at independently run facilities.</li>
-              <li><strong>Student, military and senior rates.</strong> Ask directly, since these are often unadvertised.</li>
-              <li><strong>Longer term rates.</strong> Committing to six or twelve months can reduce the monthly figure.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block utah-policy-block-alt">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="utah-access-heading">
             <h2 id="utah-access-heading">Early gate hours and secure facilities across Utah.</h2>
-            <p>Access hours vary widely. Some Utah facilities open the gate around the clock, others run business hours only, and a handful operate without staff on site.</p>
-            <p className="utah-policy-lead">Check before you rent:</p>
+            <p>Utah winters decide how easy your unit is to reach, so check access with snow in mind.</p>
+            <ul><li><strong>Snow clearing.</strong> Ask how fast drive aisles and roll-up doors are plowed after a storm.</li><li><strong>Gate hours in Mountain Time.</strong> Early access matters if you load gear before a canyon trip.</li><li><strong>Security you can see.</strong> Look for gated entry, cameras covering every aisle, good lighting and individual door alarms.</li><li><strong>Pay and enter by app.</strong> Autopay and app or keypad entry save you a trip to the office.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=Utah%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Gate hours and whether they cover your schedule, listed in Mountain Time</li>
-              <li>Whether the site is staffed, self service or kiosk operated</li>
-              <li>Perimeter fencing, gated entry, camera coverage and lighting</li>
-              <li>Individual unit alarms and the lock type required</li>
-              <li>Snow clearing on the drive and in front of your door through winter</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="utah-terms-heading">
             <h2 id="utah-terms-heading">Flexible month to month storage for Utah moves and seasons.</h2>
-            <p>Most Utah storage units rent month to month, which suits a move, a renovation, a semester away or a season between homes.</p>
-            <p className="utah-policy-lead">Before you sign:</p>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Confirm the minimum rental period, if any</li>
-              <li>Confirm the notice period required before you move out</li>
-              <li>Ask whether you can transfer to a larger or smaller unit mid rental</li>
-              <li>Ask how rent increases are applied and how much notice you receive</li>
-            </ul>
-          </div>
+            <p>Month to month rentals fit Utah's rhythm of ski seasons, summer road trips and new home builds.</p>
+            <ul><li><strong>Minimum rental period.</strong> Most facilities rent by the month. Confirm there is no longer minimum attached to an offer rate.</li><li><strong>Move-out notice.</strong> Ten to fourteen days is typical. Put the date in your calendar when you sign.</li><li><strong>Switching sizes.</strong> Ask whether you can move to a bigger unit when the ski gear comes out without signing a new contract.</li><li><strong>Rate increases.</strong> Ask how often rates rise and how much notice you get.</li></ul>
+          </article>
         </div>
       </section>
 

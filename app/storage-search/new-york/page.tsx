@@ -235,58 +235,25 @@ export default function NewYorkStoragePage() {
         </CardSlider>
       </section>
 
-      <section className="utah-policy-section" aria-label="New York storage rates, access, and rental terms">
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+      <section className="state-policy-section" aria-label="New York storage rates, access, and rental terms">
+        <div className="state-policy-grid">
+          <article className="state-policy-card" aria-labelledby="ny-deals-heading">
             <h2 id="ny-deals-heading">Find move-in specials and cheaper storage units in New York.</h2>
-            <p>Promotions move constantly in New York markets, so the lowest advertised rate today may differ next week. What to look for:</p>
-            <p className="utah-policy-callout">Two questions to ask before you commit: what does my rate become once the promotion ends, and is there an administration fee or a required insurance charge on top of the monthly rent. Compare the twelve month cost rather than the first month, since increases after the first few months are common.</p>
+            <p>Space is expensive in New York, so small choices make a big difference to what you pay.</p>
+            <ul><li><strong>Look beyond Manhattan.</strong> Facilities in Queens, the Bronx, Staten Island or Westchester often cost less for the same size.</li><li><strong>Size down where you can.</strong> A 5x5 or a locker holds more than you think when you add shelving and stack boxes high.</li><li><strong>Weigh pickup and delivery.</strong> Full service storage can save you a truck rental. Compare the total cost before you book.</li><li><strong>Check the ongoing rate.</strong> Ask what you will pay from month two onward, as well as during the offer.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li><strong>First month free.</strong> Widely offered on new rentals across the state.</li>
-              <li><strong>Discounted first three months.</strong> Common at independently run facilities.</li>
-              <li><strong>Student, military and senior rates.</strong> Ask directly, since these are often unadvertised.</li>
-              <li><strong>Longer term rates.</strong> Committing to six or twelve months can reduce the monthly figure.</li>
-              <li><strong>One stop further out.</strong> Extending your search into the outer boroughs, Westchester or over a bridge is usually the single biggest saving available.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block utah-policy-block-alt">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="ny-access-heading">
             <h2 id="ny-access-heading">Round the clock access and building security in New York storage.</h2>
-            <p>Access hours vary widely, and multi storey city facilities often close earlier than you expect.</p>
-            <p className="utah-policy-lead">Check before you rent:</p>
+            <p>In New York, getting your things in and out is often harder than finding the unit.</p>
+            <ul><li><strong>Elevators and loading.</strong> Ask about freight elevators, carts and loading docks, and whether you need to book them.</li><li><strong>Parking.</strong> Check for a loading area or street parking near the entrance before moving day.</li><li><strong>Building hours.</strong> Many city facilities set fixed access hours. Confirm they fit your schedule.</li><li><strong>Deliveries.</strong> Some facilities accept packages for you, which helps if you run an online business.</li></ul>
             <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Gate and building hours, and whether they cover your schedule, listed in Eastern Time</li>
-              <li>Closing time at weekends and on public holidays</li>
-              <li>Whether the site is staffed, self service or kiosk operated</li>
-              <li>Perimeter security, gated entry, camera coverage and lighting</li>
-              <li>Individual unit alarms and the lock type required</li>
-              <li>Lift access, trolley availability and loading bay space, which decide how long each visit takes</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="utah-policy-block">
-          <div className="utah-policy-text">
+          </article>
+          <article className="state-policy-card" aria-labelledby="ny-terms-heading">
             <h2 id="ny-terms-heading">Rent New York storage for a month or for a season.</h2>
-            <p>Most New York storage units rent month to month, which suits a move, a renovation, a semester away or a season between apartments.</p>
-            <p className="utah-policy-lead">Before you sign:</p>
-          </div>
-          <div className="utah-policy-list">
-            <ul>
-              <li>Confirm the minimum rental period. Most facilities rent by the month rather than the week.</li>
-              <li>Confirm the notice period required before you move out</li>
-              <li>Ask whether you can transfer to a larger or smaller unit mid rental</li>
-              <li>Ask how rent increases are applied and how much notice you receive</li>
-            </ul>
-          </div>
+            <p>Month to month rentals suit New York's lease cycles, college calendars and frequent moves.</p>
+            <ul><li><strong>Lease turnover.</strong> Storage bridges the gap when your new lease starts a few weeks after the old one ends.</li><li><strong>Summer breaks.</strong> Students can book a small unit from May to August instead of shipping furniture home.</li><li><strong>Notice and increases.</strong> Confirm the move-out notice period and how rate changes are communicated.</li><li><strong>Seasonal swaps.</strong> Rotate air conditioners, patio furniture and winter coats between home and storage each season.</li></ul>
+          </article>
         </div>
       </section>
 
