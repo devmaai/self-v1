@@ -1,3 +1,4 @@
+import type React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { isCityPublished } from "@/lib/cityStates";
@@ -97,7 +98,7 @@ export default function UtahStoragePage() {
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <section className="state-storage-hero">
+      <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1621603933126-6c216db10045?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
         <div className="state-storage-hero-inner">
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>Utah</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Utah near you.</em></h1>

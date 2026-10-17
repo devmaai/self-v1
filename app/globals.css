@@ -4580,3 +4580,24 @@ footer {
 .latest-post-link { color: var(--storage-blue); font-weight: 700; font-size: 14px; }
 .latest-posts-more { margin-top: 28px; text-align: center; }
 @media (max-width: 900px) { .latest-posts-grid { grid-template-columns: 1fr; } }
+
+/* Photo headers with a dark overlay (state, city, size guide, form CTA) */
+.hero-photo { position: relative; isolation: isolate; background: var(--hero-image) center / cover no-repeat; border-bottom: 0; }
+.hero-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: linear-gradient(180deg, rgba(14, 33, 51, .70), rgba(14, 33, 51, .84)); }
+.hero-photo-guide { --hero-image: url("/images/storage-guide/studio.jpg"); }
+.hero-photo-form { --hero-image: url("/images/storage-guide/boxes.jpg"); }
+.hero-photo h1, .hero-photo h1 em, .hero-photo .city-storage-eyebrow, .hero-photo .city-storage-breadcrumb, .hero-photo .city-storage-breadcrumb a, .hero-photo .storage-search-breadcrumb, .hero-photo .storage-search-breadcrumb a { color: #fff; }
+.hero-photo h1 em { color: #9cc9ef; }
+.hero-photo > div > p, .hero-photo .state-storage-hero-inner p, .hero-photo .city-storage-hero-inner p, .hero-photo .storage-size-guide-hero-inner p { color: rgba(255, 255, 255, .88); }
+
+/* City scroller arrows */
+.city-scroller-wrap { position: relative; }
+.city-scroll-arrow { position: absolute; top: 50%; z-index: 2; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; margin-top: -32px; border: 0; border-radius: 50%; background: #fff; color: #16334b; font-size: 20px; box-shadow: 0 4px 16px rgba(10, 25, 40, .25); cursor: pointer; }
+.city-scroll-arrow:hover { background: var(--rust); color: #fff; }
+.city-scroll-prev { left: -18px; }
+.city-scroll-next { right: -18px; }
+@media (max-width: 700px) { .city-scroll-prev { left: 4px; } .city-scroll-next { right: 4px; } }
+
+/* Blog section subtitle contrast */
+.latest-posts .storage-guide-heading p { color: #60788b; }
+.latest-posts .storage-guide-heading h2 { color: #16334b; }

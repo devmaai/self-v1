@@ -4,7 +4,7 @@ import { getAllPosts } from "@/lib/posts";
 
 // Latest renter-facing blog posts for the homepage.
 export default function LatestPosts() {
-  const posts = getAllPosts().filter((post) => post.category === "facility").slice(0, 6);
+  const posts = getAllPosts().filter((post) => post.category === "facility").slice(0, 3);
   if (!posts.length) return null;
   return (
     <section className="latest-posts" aria-labelledby="latest-posts-heading">

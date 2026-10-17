@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -51,6 +51,11 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
   const [query, setQuery] = useState(initialLocation);
   const [searchedLocation, setSearchedLocation] = useState(initialLocation);
   const [cityLetter, setCityLetter] = useState("all");
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const scrollCities = (direction: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (el) el.scrollBy({ left: direction * Math.max(el.clientWidth * 0.8, 280), behavior: "smooth" });
+  };
 
   const matchingCities = useMemo(() => {
     const normalized = searchedLocation.trim().toLowerCase();
@@ -115,7 +120,10 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
           </select>
         </label>
         {matchingCities.length ? (
-          <div className="city-scroller" role="list">
+          <div className="city-scroller-wrap">
+          <button type="button" className="city-scroll-arrow city-scroll-prev" onClick={() => scrollCities(-1)} aria-label="Previous cities">←</button>
+          <button type="button" className="city-scroll-arrow city-scroll-next" onClick={() => scrollCities(1)} aria-label="More cities">→</button>
+          <div className="city-scroller" role="list" ref={scrollerRef}>
             {matchingCities.map((city) => {
               const photo = CITY_IMAGES[city.slug];
               return (
@@ -128,6 +136,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
               );
             })}
           </div>
+          </div>
         ) : (
           <div className="storage-search-empty">
             <h3>No featured city matches yet.</h3>
@@ -136,7 +145,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
         )}
       </section>
 
-      <section className="find-storage-cta" aria-labelledby="find-storage-cta-heading">
+      <section className="find-storage-cta hero-photo hero-photo-form" aria-labelledby="find-storage-cta-heading">
         <div className="find-storage-cta-text">
           <span className="storage-search-label">Free, no obligation</span>
           <h2 id="find-storage-cta-heading">Find my storage</h2>
