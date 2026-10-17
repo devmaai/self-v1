@@ -254,6 +254,7 @@ export default function NewYorkStoragePage() {
             <h2 id="ny-terms-heading">Rent New York storage for a month or for a season.</h2>
             <p>Month to month rentals suit New York's lease cycles, college calendars and frequent moves.</p>
             <ul><li><strong>Lease turnover.</strong> Storage bridges the gap when your new lease starts a few weeks after the old one ends.</li><li><strong>Summer breaks.</strong> Students can book a small unit from May to August instead of shipping furniture home.</li><li><strong>Notice and increases.</strong> Confirm the move-out notice period and how rate changes are communicated.</li><li><strong>Seasonal swaps.</strong> Rotate air conditioners, patio furniture and winter coats between home and storage each season.</li></ul>
+            <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
           </article>
         </div>
       </section>

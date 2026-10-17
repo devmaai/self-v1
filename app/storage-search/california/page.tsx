@@ -228,6 +228,7 @@ export default function CaliforniaStoragePage() {
             <h2 id="ca-terms-heading">Short term storage that flexes with your California lease.</h2>
             <p>Month to month storage suits California's fast moving rental market, from lease gaps to remodels.</p>
             <ul><li><strong>Lease gaps.</strong> Short term storage covers the weeks between one apartment and the next.</li><li><strong>Notice period.</strong> Confirm how much notice you need to give before you move out.</li><li><strong>Rate increases.</strong> Some facilities raise rates after a few months. Ask how often and by how much.</li><li><strong>Moving within the state.</strong> If you relocate, ask whether the operator has a site near your new home.</li></ul>
+            <Link className="state-storage-guide-button" href="/storage-search?location=California%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
           </article>
         </div>
       </section>

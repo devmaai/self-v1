@@ -237,6 +237,7 @@ export default function MissouriStoragePage() {
             <h2 id="mo-terms-heading">Short stays and month to month rentals in Missouri.</h2>
             <p>Most Missouri units rent month to month, which suits a move, a renovation, a semester away or a lake season.</p>
             <ul><li><strong>Minimum rental period.</strong> Confirm whether the facility rents by the month or offers shorter stays.</li><li><strong>Notice period.</strong> Ask how many days of notice you need to give before moving out.</li><li><strong>Switching units.</strong> Ask whether you can transfer to a different size mid rental.</li><li><strong>Seasonal storage.</strong> Boat and RV owners can book covered spaces for the off season around the Ozarks lakes.</li></ul>
+            <Link className="state-storage-guide-button" href="/storage-search?location=Missouri%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
           </article>
         </div>
       </section>
