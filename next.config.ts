@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
     // Quality values used by <Image quality={...}> across the site.
     // Required to be declared starting in Next.js 16.
     qualities: [90, 95],
+    // City photos on the homepage are served from Unsplash.
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
   async rewrites() {
     return [

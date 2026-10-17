@@ -4,6 +4,7 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import CityExplorer from "@/components/sections/CityExplorer";
+import LatestPosts from "@/components/sections/LatestPosts";
 import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
@@ -106,6 +107,7 @@ export default async function HomePage({
         <StorageLocationSearch />
 
         <StorageStateLinks />
+        <LatestPosts />
         <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>
       </main>
       <V2Footer />

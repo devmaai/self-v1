@@ -3,7 +3,10 @@
 import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import LocationPin from "@/components/ui/LocationPin";
+import V2StorageForm from "@/components/v2/V2StorageForm";
+import { CITY_IMAGES } from "@/lib/cityImages";
 import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { CITY_STATES, PUBLISHED_CITY_SLUGS } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
@@ -78,7 +81,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
 
   return (
     <>
-      <section className="storage-search-hero">
+      <section className="storage-search-hero storage-search-hero-banner">
         <div className="storage-search-hero-inner">
           <div className="storage-search-kicker"><span /> Storage search, made simple</div>
           <h1>Find a storage unit<br /><em>near you.</em></h1>
@@ -112,12 +115,18 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
           </select>
         </label>
         {matchingCities.length ? (
-          <div className="storage-city-grid">
-            {matchingCities.map((city, index) => (
-              <Link className="storage-city-card" href={cityHref(city)} key={`${city.slug}-${index}`}>
-                <span>{city.name}</span>
-              </Link>
-            ))}
+          <div className="city-scroller" role="list">
+            {matchingCities.map((city) => {
+              const photo = CITY_IMAGES[city.slug];
+              return (
+                <Link className="city-photo-card" href={cityHref(city)} key={city.slug} role="listitem">
+                  {photo ? (
+                    <Image src={`${photo}?auto=format&fit=crop&w=640&q=70`} alt={`${city.name} skyline`} fill sizes="(max-width: 700px) 75vw, 300px" quality={90} unoptimized />
+                  ) : null}
+                  <span className="city-photo-name">{city.name}<small>Storage units →</small></span>
+                </Link>
+              );
+            })}
           </div>
         ) : (
           <div className="storage-search-empty">
@@ -125,6 +134,15 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
             <p>Try a different city name or enter a ZIP code to search the area around you.</p>
           </div>
         )}
+      </section>
+
+      <section className="find-storage-cta" aria-labelledby="find-storage-cta-heading">
+        <div className="find-storage-cta-text">
+          <span className="storage-search-label">Free, no obligation</span>
+          <h2 id="find-storage-cta-heading">Find my storage</h2>
+          <p>Tell us where you need space, the unit size and your budget. We will match you with facilities that fit.</p>
+        </div>
+        <div className="find-storage-cta-form"><V2StorageForm /></div>
       </section>
     </>
   );
