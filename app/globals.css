@@ -4647,3 +4647,4 @@ footer {
   .contact-form-row { grid-template-columns: 1fr; }
 }
 .hero-photo .storage-size-guide-eyebrow { color: #fff; }
+.about-founder-photo img { object-position: 35% 70%; }
