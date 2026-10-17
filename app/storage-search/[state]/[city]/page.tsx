@@ -166,6 +166,22 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
   return { facilities, hasLocalData };
 }
 
+// Rotating copy for the information block so city pages do not repeat the
+// same heading and lines word for word.
+const INFO_COPY = [
+  { heading: "Storage for moves, seasons, and everyday space.", lead: "Compare unit sizes and current prices from storage facilities serving {city}.", note: "Review the unit size, monthly price, and availability before you reserve." },
+  { heading: "Find the space you need without overpaying.", lead: "See what storage facilities around {city} charge for each unit size right now.", note: "Check the monthly rate and access hours before you book." },
+  { heading: "Extra room for your move, your gear, or your business.", lead: "Line up unit sizes and move-in prices from facilities near {city}.", note: "Confirm availability and any fees before you reserve a unit." },
+  { heading: "Make room at home with a unit nearby.", lead: "Browse current storage prices and sizes across {city} and the surrounding area.", note: "Look at the unit size, monthly price and gate hours before you commit." },
+  { heading: "Short term or long term, find a unit that fits.", lead: "Compare live listings and monthly rates from storage facilities in and around {city}.", note: "Ask about the ongoing rate after any move-in offer ends." },
+];
+
+function infoCopyFor(citySlug: string, city: string) {
+  const index = [...citySlug].reduce((sum, character) => sum + character.charCodeAt(0), 0) % INFO_COPY.length;
+  const copy = INFO_COPY[index];
+  return { heading: copy.heading, lead: copy.lead.replace("{city}", city), note: copy.note };
+}
+
 // Pre-render every known city at build time (and refresh in the background
 // every `revalidate` seconds) instead of fetching and parsing the shared
 // nationwide sheet on every single visitor request.
@@ -202,6 +218,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   if (!isCityPublished(citySlug)) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+  const infoCopy = infoCopyFor(citySlug, city);
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
   const stateName = US_STATE_NAMES[state] ?? state;
   const statePageSlug = STATE_PAGE_SLUGS[state];
@@ -331,7 +348,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
         </div>
       </section>
       <CityStorageResults city={`${city}, ${state}`} facilities={facilities as CityStorageFacility[]} />
-      <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">{city} self storage information</span><h2>Storage for moves, seasons, and everyday space.</h2></div><div><p>Compare unit sizes and current prices from storage facilities serving {city}.</p><p>Review the unit size, monthly price, and availability before you reserve.</p></div></div></section>
+      <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">{city} self storage information</span><h2>{infoCopy.heading}</h2></div><div><p>{infoCopy.lead}</p><p>{infoCopy.note}</p></div></div></section>
       {seoContent && (
         <section className="city-storage-seo">
           <div className="city-storage-seo-inner">
