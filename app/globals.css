@@ -4603,3 +4603,48 @@ footer {
 .latest-posts .storage-guide-heading h2 { color: #16334b; }
 .hero-photo .city-storage-hero-facts span { color: rgba(255, 255, 255, .8); border-color: rgba(255, 255, 255, .35); }
 .hero-photo .city-storage-hero-facts strong { color: #fff; }
+
+/* About page */
+.about-founder { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 80px 0; }
+.about-founder-photo img, .about-founder-initial { width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: 14px; object-fit: cover; box-shadow: 0 12px 32px rgba(24, 70, 105, .18); }
+.about-founder-initial { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #146fb5, #16334b); color: #fff; font-family: var(--font-display); font-size: 120px; }
+.about-founder-copy h2 { margin: 8px 0 18px; color: #16334b; font-family: var(--font-display); font-size: clamp(34px, 4.5vw, 52px); }
+.about-founder-copy p { margin-bottom: 16px; color: #526d81; font-size: 17px; line-height: 1.7; }
+.about-founder-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 10px; }
+.about-founder-actions .state-storage-cta { margin-top: 0; }
+.about-linkedin { color: var(--storage-blue); font-weight: 700; }
+.about-paths { width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 20px 0 80px; }
+.about-paths .storage-guide-heading h2 { color: #16334b; }
+.about-paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.about-path-card { display: flex; flex-direction: column; padding: 32px; border: 1px solid #d6e1ea; border-top: 4px solid var(--storage-blue); border-radius: 10px; background: #fff; box-shadow: 0 3px 12px rgba(24, 70, 105, .06); }
+.about-path-card h3 { margin-bottom: 12px; color: #16334b; font-family: var(--font-display); font-size: 26px; }
+.about-path-card p { flex: 1; color: #526d81; font-size: 16px; line-height: 1.65; }
+.about-path-card .state-storage-guide-button { align-self: flex-start; }
+.about-paths-note { margin-top: 24px; color: #60788b; text-align: center; }
+.about-paths-note a { color: var(--storage-blue); font-weight: 700; }
+.about-contact { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; width: min(1160px, calc(100% - 48px)); margin: 0 auto 90px; padding: 48px; border-radius: 14px; background: #16334b; }
+.about-contact-copy h2 { margin: 8px 0 14px; color: #fff; font-family: var(--font-display); font-size: clamp(30px, 4vw, 42px); }
+.about-contact-copy p, .about-contact-copy li { color: rgba(255, 255, 255, .85); font-size: 16px; line-height: 1.7; }
+.about-contact-copy ul { margin-top: 18px; padding: 0; list-style: none; }
+.about-contact-copy a { color: #9cc9ef; }
+.about-contact-copy .storage-search-label { color: #9cc9ef; }
+.contact-form { display: grid; gap: 16px; padding: 28px; border-radius: 12px; background: #fff; }
+.contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form label { display: grid; gap: 6px; color: #16334b; font-size: 14px; font-weight: 600; }
+.contact-form small { color: #60788b; font-weight: 400; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid #c9d6e1; border-radius: 6px; background: #f7fafc; color: #16334b; font: inherit; font-weight: 400; }
+.contact-form button { padding: 14px 20px; border: 0; border-radius: 6px; background: var(--rust); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.contact-form button:disabled { opacity: .7; }
+.contact-form-error { color: #b42318; font-size: 13px; font-weight: 500; }
+.contact-form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-form-done h3 { color: #16334b; font-family: var(--font-display); font-size: 24px; }
+.contact-form-done p { color: #526d81; }
+@media (max-width: 900px) {
+  .about-founder, .about-contact, .about-paths-grid { grid-template-columns: 1fr; }
+  .about-founder { gap: 28px; padding: 48px 0; }
+  .about-founder-photo { max-width: 360px; }
+  .about-contact { padding: 24px 18px; width: calc(100% - 36px); }
+  .contact-form-row { grid-template-columns: 1fr; }
+}
+.hero-photo .storage-size-guide-eyebrow { color: #fff; }
+.about-founder-photo img { object-position: 35% 70%; }
