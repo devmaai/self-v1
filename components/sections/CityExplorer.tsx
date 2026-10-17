@@ -121,7 +121,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
               return (
                 <Link className="city-photo-card" href={cityHref(city)} key={city.slug} role="listitem">
                   {photo ? (
-                    <Image src={`${photo}?auto=format&fit=crop&w=640&q=70`} alt={`${city.name} skyline`} fill sizes="(max-width: 700px) 75vw, 300px" quality={90} unoptimized />
+                    <Image src={`${photo}?auto=format&fit=crop&w=640&q=70`} alt="" fill sizes="(max-width: 700px) 75vw, 300px" quality={90} unoptimized />
                   ) : null}
                   <span className="city-photo-name">{city.name}<small>Storage units →</small></span>
                 </Link>
