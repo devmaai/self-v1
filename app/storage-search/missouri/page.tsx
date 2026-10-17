@@ -112,13 +112,13 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="state-storage-cities" aria-labelledby="mo-cities-heading">
-        <div className="state-storage-heading"><h2 id="mo-cities-heading">Storage units near you in Missouri by city.</h2><p>Missouri rates vary by suburb as much as by city, and the difference between two facilities ten minutes apart is often significant. Start with your city and narrow by radius from there.</p></div>
+        <div className="state-storage-heading"><h2 id="mo-cities-heading">Browse low cost storage units in Missouri's top cities.</h2><p>Missouri rates vary by suburb as much as by city, and the difference between two facilities ten minutes apart is often significant. Start with your city and narrow by radius from there.</p></div>
         <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.filter((city) => isCityPublished(city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-"))).map((city) => <Link href={`/storage-search/missouri/${city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
         <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
       </section>
 
       <section className="utah-pricing-section" aria-labelledby="mo-storage-heading">
-        <div className="utah-pricing-heading"><h2 id="mo-storage-heading">How much does a storage unit cost in Missouri?</h2><p className="utah-pricing-intro">Missouri sits below the national average across most unit sizes. Small units start at around $8 to $12 a month on promotional rates in St. Louis, St. Peters, and Lake St. Louis, and the average unit statewide runs well under what the same space costs on either coast.</p><p className="utah-pricing-caption">Typical monthly ranges by size across Missouri:</p></div>
+        <div className="utah-pricing-heading"><h2 id="mo-storage-heading">What you will pay for a storage unit in Missouri.</h2><p className="utah-pricing-intro">Missouri sits below the national average across most unit sizes. Small units start at around $8 to $12 a month on promotional rates in St. Louis, St. Peters, and Lake St. Louis, and the average unit statewide runs well under what the same space costs on either coast.</p><p className="utah-pricing-caption">Typical monthly ranges by size across Missouri:</p></div>
         <div className="utah-price-table-wrap">
           <table className="utah-price-table">
             <thead><tr><th scope="col">Unit size</th><th scope="col">Typical monthly rate</th><th scope="col">What it holds</th></tr></thead>
@@ -141,7 +141,7 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-needs-heading">
-        <div className="state-storage-heading"><h2 id="mo-needs-heading">Find storage in Missouri by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
+        <div className="state-storage-heading"><h2 id="mo-needs-heading">Missouri storage for every reason you need the space.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
         <CardSlider trackClassName="utah-needs-grid">
           <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for Missouri families</h3><p>Missouri households run four distinct seasons of equipment, and most homes fill the basement and garage long before they run out of things to keep. Storage takes the overflow: patio furniture and mowers through winter, snow blowers and holiday decorations through summer, sports equipment, tools, and the furniture you are holding between houses.</p><ul><li>Clearing the garage or basement: a 5x10 holds seasonal items, tools, and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for drive up access, ground floor units, gritted and cleared drives through winter, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=Missouri%20families">Find family storage near you →</Link></article>
           <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging, and returns. Landscaping and seasonal services store equipment out of season, while practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive up access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples, and electronics: a climate controlled 5x10 protects paper and hardware through humid summers. Look for month to month terms, online payment and invoicing, and autopay so billing runs without a monthly phone call.</li></ul><Link href="/storage-search?location=Missouri%20business%20storage">Find business storage near you →</Link></article>
@@ -150,7 +150,7 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-climate-heading">
-        <div className="state-storage-heading"><h2 id="mo-climate-heading">Do you need climate controlled storage in Missouri?</h2><p>Missouri puts stored belongings through a full annual cycle. Summers run hot and humid, winters drop well below freezing, and spring and autumn swing sharply between the two. Humidity is the part people underestimate, since it causes mould, mildew, and rust in a standard unit long before the cold does any damage.</p></div>
+        <div className="state-storage-heading"><h2 id="mo-climate-heading">Protect your belongings from Missouri humidity with climate control.</h2><p>Missouri puts stored belongings through a full annual cycle. Summers run hot and humid, winters drop well below freezing, and spring and autumn swing sharply between the two. Humidity is the part people underestimate, since it causes mould, mildew, and rust in a standard unit long before the cold does any damage.</p></div>
         <div className="utah-climate-grid">
           <article className="utah-climate-card utah-climate-yes">
             <h3>
@@ -178,7 +178,7 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-vehicle-heading">
-        <div className="state-storage-heading"><h2 id="mo-vehicle-heading">RV, boat, and vehicle storage in Missouri.</h2></div>
+        <div className="state-storage-heading"><h2 id="mo-vehicle-heading">Covered and outdoor RV, boat and vehicle storage across Missouri.</h2></div>
         <div className="utah-vehicle-block">
           <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.jpg" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
           <div className="utah-vehicle-block-text">
@@ -210,7 +210,7 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="state-storage-guide" aria-labelledby="mo-size-guide-heading">
-        <div className="state-storage-heading"><h2 id="mo-size-guide-heading">Choose a unit size with confidence.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
+        <div className="state-storage-heading"><h2 id="mo-size-guide-heading">Pick a Missouri unit size that fits your load.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
         <CardSlider trackClassName="state-size-grid">
           <article><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
           <article><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
@@ -221,7 +221,7 @@ export default function MissouriStoragePage() {
       <section className="utah-policy-section" aria-label="Missouri storage rates, access, and rental terms">
         <div className="utah-policy-block">
           <div className="utah-policy-text">
-            <h2 id="mo-deals-heading">Cheap storage units and first month free deals in Missouri.</h2>
+            <h2 id="mo-deals-heading">Missouri storage specials and first month savings.</h2>
             <p>Missouri is a competitive storage market, which works in your favour. How to find the lowest real cost:</p>
             <Link className="state-storage-guide-button" href="/storage-search?location=Missouri%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
           </div>
@@ -265,7 +265,7 @@ export default function MissouriStoragePage() {
 
         <div className="utah-policy-block">
           <div className="utah-policy-text">
-            <h2 id="mo-terms-heading">Month to month and short term storage in Missouri.</h2>
+            <h2 id="mo-terms-heading">Short stays and month to month rentals in Missouri.</h2>
             <p>Most Missouri storage units rent month to month, which suits a move, a renovation, a semester away, or a season between homes.</p>
             <p className="utah-policy-lead">Before you sign:</p>
           </div>
@@ -282,7 +282,7 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-choose-heading">
-        <div className="state-storage-heading"><h2 id="mo-choose-heading">How to choose a self storage unit in Missouri.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="mo-choose-heading">Choosing a Missouri storage unit, step by step.</h2><p>Work through this before you sign anything.</p></div>
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. A sectional sofa, a chest freezer, or a mower decides your unit more than the number of boxes.</p></article>
           <article><span>2</span><p>Price the small end properly. Compare the locker against the 5x5 before you default to the larger unit.</p></article>
@@ -299,12 +299,12 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="state-storage-faq" aria-labelledby="mo-faq-heading">
-        <div className="state-storage-heading"><h2 id="mo-faq-heading">Missouri storage questions, answered.</h2></div>
+        <div className="state-storage-heading"><h2 id="mo-faq-heading">Missouri self storage FAQs.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
       </section>
 
       <section className="utah-closing-cta" aria-labelledby="mo-closing-heading">
-        <div><h2 id="mo-closing-heading">Find storage units in Missouri near your location today.</h2><p>Search 617 facilities and 6,545 available units across Missouri, compare current rates side by side, and reserve the unit that fits your space and your schedule.</p><small>Current pricing. Month-to-month terms at most facilities. No obligation to reserve.</small></div>
+        <div><h2 id="mo-closing-heading">Find a Missouri storage unit close to you today.</h2><p>Search 617 facilities and 6,545 available units across Missouri, compare current rates side by side, and reserve the unit that fits your space and your schedule.</p><small>Current pricing. Month-to-month terms at most facilities. No obligation to reserve.</small></div>
         <Link className="state-storage-cta" href="/storage-search?location=Missouri">Search storage units near you <span aria-hidden="true">→</span></Link>
       </section>
 
