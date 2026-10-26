@@ -70,7 +70,6 @@ const benefits: { icon: BenefitIcon; label: string; title: string; body: string 
 const itemSizes = [
   { label: "Furniture", title: "One room of furniture", range: "5' x 10'", area: "50 sq ft", body: "A bedroom set, a sofa or a few wood and leather pieces kept free of warping and mildew.", image: "/images/climate-storage/furniture-unit.png" },
   { label: "Furniture", title: "A whole home of furniture", range: "10' x 15' to 10' x 20'", area: "150 to 200 sq ft", body: "Furniture from a two to three bedroom home, with room for a walkway.", image: "/images/storage-guide/fourbedroom.jpg" },
-  { label: "Electronics", title: "TVs and computers", range: "5' x 5' to 5' x 10'", area: "25 to 50 sq ft", body: "Screens and computers are best kept dry and out of extreme heat, especially in hot or humid areas.", image: "/images/storage-guide/studio.jpg" },
   { label: "Documents", title: "Documents and photos", range: "5' x 5'", area: "25 sq ft", body: "File boxes, albums and books, kept away from the damp air that curls and yellows paper.", image: "/images/climate-storage/documents.png" },
   { label: "Heirlooms", title: "Heirlooms, antiques and artwork", range: "5' x 5' to 5' x 10'", area: "25 to 50 sq ft", body: "Quilts, artwork and family keepsakes that need steady conditions over months or years.", image: "/images/climate-storage/heirlooms.png" },
   { label: "Bedding", title: "Mattresses and bedding", range: "5' x 10'", area: "50 sq ft", body: "A mattress set stored upright with bedding, kept dry and ready to use again.", image: "/images/storage-guide/5_10.jpg" },
@@ -81,7 +80,7 @@ const comparison = [
   ["Temperature", "Held in a set range all year", "Follows outdoor weather"],
   ["Humidity", "Managed in most units", "Not managed"],
   ["Location", "Indoor, inside a building", "Usually drive-up"],
-  ["Best for", "Furniture, electronics, documents, heirlooms", "Tools, bins, outdoor and sports gear"],
+  ["Best for", "Furniture, documents, heirlooms, collectibles", "Tools, bins, outdoor and sports gear"],
   ["Best length of stay", "Any, including long-term", "Short stays in mild weather"],
 ];
 
@@ -102,7 +101,7 @@ const checklist = [
 ];
 
 const faqs = [
-  ["Is climate controlled storage worth it?", "Yes, if you are storing furniture, electronics, documents or heirlooms, or storing through extreme heat, cold or humidity."],
+  ["Is climate controlled storage worth it?", "Yes, if you are storing furniture, documents, heirlooms or collectibles, or storing through extreme heat, cold or humidity."],
   ["How much is a climate controlled storage unit?", "Price depends on unit size, city and facility. Search your area to see current climate controlled rates side by side."],
   ["What is the difference between climate controlled and temperature controlled storage?", "Temperature controlled storage manages heat and cold. Climate controlled storage usually manages humidity too."],
   ["Can I store furniture without climate control for 3 months?", "Only in mild weather with solid, well-covered pieces. For upholstery, antiques or a stay through summer or winter, choose climate control."],
@@ -130,7 +129,7 @@ export default async function ClimateControlledStoragePage() {
           </nav>
           <span className="storage-size-guide-eyebrow"><span /> Climate Controlled Storage</span>
           <h1>Climate controlled storage units <em>near you.</em></h1>
-          <p>Protect your furniture, electronics and keepsakes from heat, cold and humidity. Compare units near you and reserve in minutes.</p>
+          <p>Protect your furniture, documents and keepsakes from heat, cold and humidity. Compare units near you and reserve in minutes.</p>
           <ul className="climate-trust-pills">
             <li>Month-to-month rentals</li>
             <li>No booking fees</li>
@@ -156,6 +155,20 @@ export default async function ClimateControlledStoragePage() {
         </div>
       </section>
 
+      {cities.length > 0 && (
+        <section className="storage-search-directory climate-city-section" aria-labelledby="climate-cities-heading">
+          <div className="storage-search-section-heading">
+            <div>
+              <span className="storage-search-label">Compare by city</span>
+              <h2 id="climate-cities-heading">Climate controlled storage by city</h2>
+              <p className="climate-city-intro">Compare climate controlled units from multiple storage brands. Pick your city to see live prices and availability.</p>
+            </div>
+          </div>
+          <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
+          <p className="climate-center-link"><Link className="climate-button" href="/climate-controlled-storage/cities">Explore all climate controlled cities and brands <span aria-hidden="true">→</span></Link></p>
+        </section>
+      )}
+
       <section className="storage-size-guide-content" aria-labelledby="climate-items-heading">
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Sizes by item</span>
@@ -170,7 +183,6 @@ export default async function ClimateControlledStoragePage() {
               <h3>{item.title}</h3>
               <div className="storage-size-card-range"><strong>{item.range}</strong><span>{item.area}</span></div>
               <p>{item.body}</p>
-              <Link href="/storage-search">Find units <span aria-hidden="true">→</span></Link>
             </article>
           ))}
           <article className="storage-size-card climate-card climate-card-cta">
@@ -204,19 +216,6 @@ export default async function ClimateControlledStoragePage() {
         </div>
       </section>
 
-      {cities.length > 0 && (
-        <section className="storage-search-directory climate-city-section" aria-labelledby="climate-cities-heading">
-          <div className="storage-search-section-heading">
-            <div>
-              <span className="storage-search-label">Compare by city</span>
-              <h2 id="climate-cities-heading">Climate controlled storage by city</h2>
-              <p className="climate-city-intro">Compare climate controlled units from multiple storage brands. Pick your city to see live prices and availability.</p>
-            </div>
-          </div>
-          <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
-          <p className="climate-center-link"><Link className="climate-button" href="/climate-controlled-storage/cities">Explore all climate controlled cities and brands <span aria-hidden="true">→</span></Link></p>
-        </section>
-      )}
 
       <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="climate-longterm-heading">
         <div className="storage-size-feature-copy">
@@ -233,7 +232,7 @@ export default async function ClimateControlledStoragePage() {
         <div className="storage-size-feature-copy">
           <span className="storage-size-guide-label">First-time renter checklist</span>
           <h2 id="climate-checklist-heading">Before you book: quick checklist</h2>
-          <div className="storage-reference-list">
+          <div className="storage-reference-list climate-checklist-list">
             <strong>Check these before you sign</strong>
             {checklist.map(([label, detail]) => <div key={label}><span>{label}</span><b>{detail}</b></div>)}
           </div>
