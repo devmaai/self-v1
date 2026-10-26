@@ -42,7 +42,8 @@ const cityFaqs = [
 
 export default async function ClimateCitiesPage() {
   const { cities, brands, ratings } = await getClimateStorageSummary();
-  const topRatings = ratings.slice(0, 8);
+  const ratingByHref = new Map(ratings.map((r) => [r.href, r]));
+  const ratingSource = ratings.some((r) => r.source === "google") ? "Google reviews" : "renter reviews on facility listings";
   const states = [...new Set(cities.map((c) => c.state))].sort((a, b) => (US_STATE_NAMES[a] ?? a).localeCompare(US_STATE_NAMES[b] ?? b));
   const faqSchema = faqPageSchema(cityFaqs.map(([question, answer]) => ({ question, answer })));
   const breadcrumbSchema = breadcrumbListSchema([
@@ -71,7 +72,7 @@ export default async function ClimateCitiesPage() {
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">All cities</span>
           <h2 id="climate-all-cities-heading">Cities with climate controlled storage</h2>
-          <p>Pick your city to compare live prices and availability from each brand.</p>
+          <p>Pick your city to compare live prices and availability. Star ratings show the top-rated brands in each city, based on {ratingSource}, updated weekly.</p>
         </div>
         {states.map((state) => (
           <div className="climate-state-group" key={state}>
@@ -84,10 +85,18 @@ export default async function ClimateCitiesPage() {
                     {c.fromPrice !== null && <span className="climate-city-price">From ${c.fromPrice}/mo</span>}
                   </div>
                   <p>{c.facilityCount} {c.facilityCount === 1 ? "facility" : "facilities"} with climate controlled units</p>
-                  <div className="climate-brand-chips">
-                    {c.brands.slice(0, 3).map((brand) => <span key={brand}>{brand}</span>)}
-                    {c.brands.length > 3 && <span>+{c.brands.length - 3} more</span>}
-                  </div>
+                  {ratingByHref.get(c.href) ? (
+                    <ol className="climate-card-ratings" aria-label={`Top-rated brands in ${c.city}`}>
+                      {ratingByHref.get(c.href)!.brands.map((b) => (
+                        <li key={b.brand}><span>{b.brand}</span><b><span className="climate-star" aria-hidden="true">★</span> {b.rating} <small>({b.reviews.toLocaleString()})</small></b></li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <div className="climate-brand-chips">
+                      {c.brands.slice(0, 3).map((brand) => <span key={brand}>{brand}</span>)}
+                      {c.brands.length > 3 && <span>+{c.brands.length - 3} more</span>}
+                    </div>
+                  )}
                   <span className="climate-city-link">View {c.city} units <span aria-hidden="true">→</span></span>
                 </Link>
               ))}
@@ -103,49 +112,14 @@ export default async function ClimateCitiesPage() {
             <h2 id="climate-brands-heading">Brands offering climate controlled storage</h2>
             <p>Compare these storage brands side by side in the cities above.</p>
           </div>
-          <div className="storage-size-table-wrap">
-            <table className="storage-size-table">
-              <thead><tr><th>Brand</th><th>Facilities with climate control</th><th>Cities</th></tr></thead>
-              <tbody>
-                {brands.map((brand) => (
-                  <tr key={brand.name}><th scope="row">{brand.name}</th><td>{brand.facilityCount}</td><td>{brand.cityCount}</td></tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="climate-brand-pills">
+            {brands.filter((b) => b.facilityCount >= 2).map((brand) => (
+              <span key={brand.name}><strong>{brand.name}</strong><small>{brand.facilityCount} {brand.facilityCount === 1 ? "facility" : "facilities"} · {brand.cityCount} {brand.cityCount === 1 ? "city" : "cities"}</small></span>
+            ))}
           </div>
-        </section>
-      )}
-
-      {topRatings.length > 0 && (
-        <section className="storage-size-guide-content" aria-labelledby="climate-top-rated-heading">
-          <div className="storage-size-guide-heading">
-            <h2 id="climate-top-rated-heading">Top-rated climate controlled storage brands by city</h2>
-            <p>See which brands renters rate highest for climate controlled storage in each city. Ratings come from {topRatings.some((r) => r.source === "google") ? "Google reviews" : "renter reviews on facility listings"} and update weekly.</p>
-          </div>
-          <div className="climate-rating-grid">
-            {topRatings.map((city) => {
-              const [first, second, third] = city.brands;
-              return (
-                <article className="climate-rating-card" key={city.href}>
-                  <h3><Link href={city.href}>{city.city}, {city.state}</Link></h3>
-                  <p>
-                    Renters in {city.city} rate {first.brand} highest at {first.rating} stars across {first.reviews.toLocaleString()} reviews
-                    {second ? `, followed by ${second.brand} at ${second.rating} stars` : ""}
-                    {third ? ` and ${third.brand} at ${third.rating} stars` : ""}.
-                  </p>
-                  <ol>
-                    {city.brands.map((b) => (
-                      <li key={b.brand}>
-                        <span>{b.brand}</span>
-                        <b><span className="climate-star" aria-hidden="true">★</span> {b.rating} <small>({b.reviews.toLocaleString()} reviews)</small></b>
-                      </li>
-                    ))}
-                  </ol>
-                  <Link className="climate-city-link" href={city.href}>Compare {city.city} units <span aria-hidden="true">→</span></Link>
-                </article>
-              );
-            })}
-          </div>
+          {brands.filter((b) => b.facilityCount < 2).length > 0 && (
+            <p className="climate-brand-note">Plus {brands.filter((b) => b.facilityCount < 2).length} local and independent storage brands. Pick a city above to see them all.</p>
+          )}
         </section>
       )}
 
