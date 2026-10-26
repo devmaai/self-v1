@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
+import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import { getClimateStorageSummary } from "@/lib/climateStorage";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
+
+export const revalidate = 604800;
 
 export const metadata: Metadata = {
   title: "Climate Controlled Storage Units Near Me | SelfStorage.help",
@@ -10,11 +14,55 @@ export const metadata: Metadata = {
   alternates: { canonical: "/climate-controlled-storage" },
 };
 
-const benefits = [
-  { label: "Temperature", title: "Steady temperature", body: "Your unit stays within a set range all year, through summer heat and winter freezes." },
-  { label: "Humidity", title: "Humidity protection", body: "Lower moisture means less risk of mold, mildew, warping and rust." },
-  { label: "Indoor", title: "Indoor and secure", body: "Interior units inside a covered building, away from dust, pests and weather." },
-  { label: "Peace of mind", title: "Peace of mind", body: "Your belongings come out in the same condition they went in." },
+type BenefitIcon = "temperature" | "humidity" | "indoor" | "secure";
+
+function BenefitVisual({ icon }: { icon: BenefitIcon }) {
+  const stroke = { fill: "none", stroke: "currentColor", strokeWidth: 3, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  return (
+    <div className={`climate-benefit-visual climate-benefit-visual-${icon}`} aria-hidden="true">
+      <svg viewBox="0 0 160 110">
+        {icon === "temperature" && (
+          <>
+            <circle cx="40" cy="34" r="12" {...stroke} />
+            <path {...stroke} d="M40 12v-6M40 62v-6M18 34h-6M68 34h-6M24 18l-4-4M60 54l-4-4M24 50l-4 4M60 14l-4 4" />
+            <path {...stroke} d="M80 22a8 8 0 0 1 16 0v44a15 15 0 1 1-16 0Z" />
+            <circle cx="88" cy="78" r="7" fill="currentColor" />
+            <path {...stroke} d="M88 71V40" strokeWidth={5} />
+            <path {...stroke} d="M124 22v36M108 31l32 18M108 49l32-18" />
+          </>
+        )}
+        {icon === "humidity" && (
+          <>
+            <path {...stroke} d="M62 14C50 32 40 46 40 60a22 22 0 0 0 44 0c0-14-10-28-22-46Z" />
+            <path {...stroke} d="M54 64a9 9 0 0 0 9 9" />
+            <path {...stroke} d="M100 40h40M100 56h30M100 72h40" />
+            <path {...stroke} d="M30 92l100-80" strokeWidth={4} />
+          </>
+        )}
+        {icon === "indoor" && (
+          <>
+            <path {...stroke} d="M20 50L80 18l60 32" />
+            <path {...stroke} d="M30 46v50h100V46" />
+            <path {...stroke} d="M44 62h24v34H44ZM92 62h24v34H92Z" />
+            <path {...stroke} d="M44 70h24M44 78h24M44 86h24M92 70h24M92 78h24M92 86h24" />
+          </>
+        )}
+        {icon === "secure" && (
+          <>
+            <path {...stroke} d="M80 12l40 14v26c0 26-18 42-40 50-22-8-40-24-40-50V26Z" />
+            <path {...stroke} d="M62 56l12 12 24-26" strokeWidth={4} />
+          </>
+        )}
+      </svg>
+    </div>
+  );
+}
+
+const benefits: { icon: BenefitIcon; label: string; title: string; body: string }[] = [
+  { icon: "temperature", label: "Temperature", title: "Steady temperature", body: "Your unit stays within a set range all year, through summer heat and winter freezes." },
+  { icon: "humidity", label: "Humidity", title: "Humidity protection", body: "Lower moisture means less risk of mold, mildew, warping and rust." },
+  { icon: "indoor", label: "Indoor", title: "Indoor and secure", body: "Interior units inside a covered building, away from dust, pests and weather." },
+  { icon: "secure", label: "Peace of mind", title: "Peace of mind", body: "Your belongings come out in the same condition they went in." },
 ];
 
 const whatToStore = [
@@ -65,7 +113,8 @@ const faqs = [
   ["Can I rent month to month?", "Most units on SelfStorage.help are available month to month. Check each listing for terms."],
 ];
 
-export default function ClimateControlledStoragePage() {
+export default async function ClimateControlledStoragePage() {
+  const { cities, brands } = await getClimateStorageSummary();
   const faqSchema = faqPageSchema(faqs.map(([question, answer]) => ({ question, answer })));
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
@@ -94,8 +143,6 @@ export default function ClimateControlledStoragePage() {
         </div>
       </section>
 
-      <StorageLocationSearch />
-
       <section className="climate-benefits" aria-labelledby="climate-benefits-heading">
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Benefits</span>
@@ -104,6 +151,7 @@ export default function ClimateControlledStoragePage() {
         <div className="climate-benefit-grid">
           {benefits.map((b) => (
             <article className="climate-benefit" key={b.title}>
+              <BenefitVisual icon={b.icon} />
               <span className="storage-size-card-label">{b.label}</span>
               <h3>{b.title}</h3>
               <p>{b.body}</p>
@@ -144,7 +192,59 @@ export default function ClimateControlledStoragePage() {
           </table>
         </div>
         <p className="storage-size-note"><strong>Storing furniture for just a few months?</strong> Climate control is the safer pick if your stay covers summer, winter or a humid season.</p>
+        <div className="climate-table-cta">
+          <div>
+            <strong>Ready to compare climate controlled units?</strong>
+            <span>See prices, sizes and availability from facilities near you.</span>
+          </div>
+          <Link href="/storage-search">Compare climate controlled units <span aria-hidden="true">→</span></Link>
+        </div>
       </section>
+
+      {cities.length > 0 && (
+        <section className="storage-size-guide-content" aria-labelledby="climate-cities-heading">
+          <div className="storage-size-guide-heading">
+            <span className="storage-size-guide-label">Compare by city</span>
+            <h2 id="climate-cities-heading">Climate controlled storage by city</h2>
+            <p>Compare climate controlled units from multiple storage brands in each city. Pick your city to see live prices and availability.</p>
+          </div>
+          <div className="climate-city-grid">
+            {cities.slice(0, 9).map((c) => (
+              <Link className="climate-city-card" href={c.href} key={c.href}>
+                <div className="climate-city-top">
+                  <h3>{c.city}, {c.state}</h3>
+                  {c.fromPrice !== null && <span className="climate-city-price">From ${c.fromPrice}/mo</span>}
+                </div>
+                <p>{c.facilityCount} {c.facilityCount === 1 ? "facility" : "facilities"} with climate controlled units</p>
+                <div className="climate-brand-chips">
+                  {c.brands.slice(0, 3).map((brand) => <span key={brand}>{brand}</span>)}
+                  {c.brands.length > 3 && <span>+{c.brands.length - 3} more</span>}
+                </div>
+                <span className="climate-city-link">View {c.city} units <span aria-hidden="true">→</span></span>
+              </Link>
+            ))}
+          </div>
+          {cities.length > 9 && (
+            <div className="climate-more-cities">
+              <h3>More cities with climate controlled storage</h3>
+              <div>
+                {cities.slice(9).map((c) => <Link href={c.href} key={c.href}>{c.city}, {c.state}</Link>)}
+              </div>
+            </div>
+          )}
+          {brands.length > 0 && (
+            <div className="climate-brands">
+              <h3>Brands offering climate controlled storage</h3>
+              <p>Compare these storage brands side by side in the cities above.</p>
+              <ul>
+                {brands.slice(0, 12).map((brand) => (
+                  <li key={brand.name}><strong>{brand.name}</strong><span>{brand.facilityCount} {brand.facilityCount === 1 ? "facility" : "facilities"} in {brand.cityCount} {brand.cityCount === 1 ? "city" : "cities"}</span></li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
 
       <section className="storage-size-guide-content" aria-labelledby="climate-sizes-heading">
         <div className="storage-size-guide-heading">
@@ -229,6 +329,9 @@ export default function ClimateControlledStoragePage() {
         </div>
         <Link href="/storage-search">Search units <span aria-hidden="true">→</span></Link>
       </section>
+
+      <StorageLocationSearch />
+      <StorageStateLinks />
     </main>
   );
 }
