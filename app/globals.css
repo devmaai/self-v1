@@ -4663,11 +4663,25 @@ footer {
 .blog-article-cta .blog-article-cta-large { padding: 18px 34px; font-size: 18px; font-weight: 700; box-shadow: 0 8px 22px rgba(181, 68, 31, .3); }
 
 /* Climate controlled storage landing page */
-.hero-photo-climate { --hero-image: url("/images/storage-guide/twobedroom.jpg"); }
-.climate-trust-pills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 20px 0 0; }
-.climate-trust-pills li { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .35); color: #fff; }
-.climate-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hero-photo-climate { --hero-image: url("/images/climate-storage/indoor-corridor.png"); }
+.climate-trust-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 26px 0 0; }
+.climate-trust-pills li { padding: 7px 14px; border: 1px solid rgba(255, 255, 255, .4); border-radius: 999px; color: #fff; font-size: 13px; font-weight: 600; }
+.climate-benefits { padding: 80px max(24px, calc((100% - 1180px) / 2)); background: #eaf3f8; }
+.climate-benefit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.climate-benefit { padding: 26px 24px; border: 1px solid #d6e1ea; border-radius: 7px; background: #fff; box-shadow: 0 5px 16px rgba(24,70,105,.06); text-align: center; }
+.climate-benefit h3 { margin: 8px 0; color: #16334b; font-family: var(--font-body); font-size: 20px; }
+.climate-benefit p { color: #526d81; font-size: 15px; line-height: 1.6; }
 .climate-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.climate-checklist { margin: 16px 0 0; padding-left: 20px; display: grid; gap: 8px; }
-.climate-center-link { text-align: center; margin-top: 24px; }
-@media (max-width: 900px) { .climate-grid-4, .climate-grid-3 { grid-template-columns: 1fr; } }
+.climate-card { min-height: 0; padding: 22px 22px 24px; }
+.climate-card h3 { font-size: 21px; }
+.climate-card-cta { justify-content: center; background: #f7fafc; text-align: center; }
+.climate-card-cta a { margin: 0 auto; }
+.climate-inline-link { display: inline-flex; gap: 7px; color: var(--storage-blue); font-size: 15px; font-weight: 700; }
+.climate-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.climate-step { padding: 30px 26px; border: 1px solid #d6e1ea; border-radius: 7px; background: #fff; text-align: center; }
+.climate-step-num { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #146fb5 !important; color: #fff !important; font-size: 18px; font-weight: 700; }
+.climate-step h3 { margin: 14px 0 8px; color: #16334b; font-family: var(--font-body); font-size: 22px; }
+.climate-step p { color: #526d81; font-size: 15px; line-height: 1.6; }
+.climate-center-link { margin-top: 28px; text-align: center; }
+@media (max-width: 1000px) { .climate-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .climate-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .climate-benefits { padding: 58px 18px; } .climate-benefit-grid, .climate-grid-3, .climate-steps { grid-template-columns: 1fr; } }
