@@ -7,7 +7,7 @@ import { STATE_PAGE_SLUGS } from "./storageSearchLookup";
 const SPREADSHEET_ID = "1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk";
 const sheetUrl = (sheet: string) => `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${sheet}`;
 
-type ClimateUnit = { facilityId: string; facilityName: string; city: string; state: string; price: number };
+type ClimateUnit = { facilityId: string; facilityName: string; city: string; state: string; price: number; rating: number; reviews: number; ratingSource: "google" | "renter" | null };
 
 export type ClimateCity = {
   slug: string;
@@ -20,6 +20,19 @@ export type ClimateCity = {
 };
 
 export type ClimateBrand = { name: string; facilityCount: number; cityCount: number };
+
+export type CityBrandRating = { brand: string; rating: number; reviews: number; facilities: number };
+export type ClimateCityRatings = { city: string; state: string; href: string; source: "google" | "renter"; brands: CityBrandRating[] };
+
+function ratingFrom(row: Record<string, string> | undefined) {
+  const g = Number(row?.google_rating ?? 0);
+  const gc = Number(row?.google_review_count ?? 0);
+  if (g > 0 && gc > 0) return { rating: g, reviews: gc, ratingSource: "google" as const };
+  const r = Number(row?.rating ?? 0);
+  const rc = Number(row?.review_count ?? 0);
+  if (r > 0 && rc > 0) return { rating: r, reviews: rc, ratingSource: "renter" as const };
+  return { rating: 0, reviews: 0, ratingSource: null };
+}
 
 const isClimate = (amenities: string) => /climate controlled/i.test(amenities ?? "");
 const toPrice = (value: string) => {
@@ -55,6 +68,7 @@ async function fetchLiveUnits(): Promise<ClimateUnit[]> {
         city: facility?.city || unit.city || "",
         state: facility?.state || unit.state || "",
         price: toPrice(unit.price),
+        ...ratingFrom(facility),
       };
     });
 }
@@ -63,10 +77,10 @@ async function fetchFallbackUnits(): Promise<ClimateUnit[]> {
   const csv = await readFile(path.join(process.cwd(), "sheet_870162583.csv"), "utf8");
   return parseCsv(csv)
     .filter((row) => row.facility_id && isClimate(row.amenities))
-    .map((row) => ({ facilityId: row.facility_id, facilityName: row.facility_name || row.name, city: row.city, state: row.state, price: toPrice(row.price) }));
+    .map((row) => ({ facilityId: row.facility_id, facilityName: row.facility_name || row.name, city: row.city, state: row.state, price: toPrice(row.price), ...ratingFrom(row) }));
 }
 
-export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[]; brands: ClimateBrand[] }> {
+export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[]; brands: ClimateBrand[]; ratings: ClimateCityRatings[] }> {
   let units: ClimateUnit[] = [];
   try {
     units = await fetchLiveUnits();
@@ -131,5 +145,32 @@ export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[
     .map(([name, entry]) => ({ name, facilityCount: entry.facilities.size, cityCount: entry.cities.size }))
     .sort((a, b) => b.facilityCount - a.facilityCount);
 
-  return { cities, brands };
+  const ratings: ClimateCityRatings[] = [];
+  for (const city of cities) {
+    const key = cityKey(city.slug === "new-york-city" ? "New York" : city.city, city.state);
+    const cityUnits = byCity.get(key) ?? [];
+    const perFacility = new Map<string, ClimateUnit>();
+    for (const u of cityUnits) if (u.ratingSource && !perFacility.has(u.facilityId)) perFacility.set(u.facilityId, u);
+    const byBrand = new Map<string, { weighted: number; reviews: number; facilities: number }>();
+    for (const u of perFacility.values()) {
+      const name = brandOf(u.facilityName, u.city);
+      if (!name || !/[a-z]/i.test(name)) continue;
+      const entry = byBrand.get(name) ?? { weighted: 0, reviews: 0, facilities: 0 };
+      entry.weighted += u.rating * u.reviews;
+      entry.reviews += u.reviews;
+      entry.facilities += 1;
+      byBrand.set(name, entry);
+    }
+    const ranked = [...byBrand.entries()]
+      .map(([brand, e]) => ({ brand, rating: Math.round((e.weighted / e.reviews) * 10) / 10, reviews: e.reviews, facilities: e.facilities }))
+      .filter((b) => b.reviews >= 5 && b.rating >= 4)
+      .sort((a, b) => b.rating - a.rating || b.reviews - a.reviews)
+      .slice(0, 3);
+    if (ranked.length >= 2) {
+      const hasGoogle = [...perFacility.values()].some((u) => u.ratingSource === "google");
+      ratings.push({ city: city.city, state: city.state, href: city.href, source: hasGoogle ? "google" : "renter", brands: ranked });
+    }
+  }
+
+  return { cities, brands, ratings };
 }
