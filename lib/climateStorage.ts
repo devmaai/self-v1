@@ -10,6 +10,7 @@ const sheetUrl = (sheet: string) => `https://docs.google.com/spreadsheets/d/${SP
 type ClimateUnit = { facilityId: string; facilityName: string; city: string; state: string; price: number };
 
 export type ClimateCity = {
+  slug: string;
   city: string;
   state: string;
   href: string;
@@ -101,9 +102,10 @@ export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[
     for (const id of facilityIds) {
       const unit = cityUnits.find((u) => u.facilityId === id);
       const name = brandOf(unit?.facilityName ?? "", unit?.city);
-      if (name) brandCounts.set(name, (brandCounts.get(name) ?? 0) + 1);
+      if (name && /[a-z]/i.test(name)) brandCounts.set(name, (brandCounts.get(name) ?? 0) + 1);
     }
     cities.push({
+      slug,
       city: slug === "new-york-city" ? "New York City" : cityUnits[0].city.trim() || titleFromSlug(slug),
       state,
       href: `/storage-search/${stateSlug}/${slug}`,
@@ -119,7 +121,7 @@ export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[
     const key = cityKey(unit.city, unit.state);
     if (!seen.has(key)) continue;
     const name = brandOf(unit.facilityName, unit.city);
-    if (!name) continue;
+    if (!name || !/[a-z]/i.test(name)) continue;
     const entry = brandMap.get(name) ?? { facilities: new Set(), cities: new Set() };
     entry.facilities.add(unit.facilityId);
     entry.cities.add(key);

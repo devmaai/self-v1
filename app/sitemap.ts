@@ -62,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/storage-size-guide",
     "/climate-controlled-storage",
+    "/climate-controlled-storage/cities",
     "/about",
     "/storage-search/utah",
     "/storage-search/california",
