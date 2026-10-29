@@ -21,7 +21,7 @@ const STORAGE_TYPES = [
   { icon: "car", title: "Car Storage", body: "Collector, vintage, classic, or spare cars often need a space to be stored. Choose from indoor, covered, or outdoor options for the protection your vehicle needs.", href: "/storage-search?location=Car%20Storage" },
   { icon: "rv", title: "RV Storage", body: "RV storage is designed for motorhomes, travel trailers, and campers, with options such as electrical hookups, covered spaces, and wide driveways.", href: "/storage-search?location=RV%20Storage" },
   { icon: "boat", title: "Boat Storage", body: "Boat storage can be indoor, covered, or outdoor. Facilities may have restrictions on the size and type of boats they can accommodate.", href: "/storage-search?location=Boat%20Storage" },
-  { icon: "climate", title: "Climate Controlled", body: "Climate-controlled self-storage protects your belongings from environmental changes by maintaining consistent temperature and humidity levels.", href: "/storage-search?location=Climate%20Controlled" },
+  { icon: "climate", title: "Climate Controlled", body: "Climate-controlled self-storage protects your belongings from environmental changes by maintaining consistent temperature and humidity levels.", href: "/climate-controlled-storage" },
   { icon: "business", title: "Business Storage", body: "Small businesses and entrepreneurs often need additional space to store inventory, documents, and equipment. Business storage is designed to fit those needs.", href: "/storage-search?location=Business%20Storage" },
 ];
 

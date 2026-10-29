@@ -29,7 +29,7 @@ export type SheetRow = {
  * than splitting on newlines first, so quoted fields containing embedded
  * line breaks (e.g. facility descriptions) don't shift subsequent columns.
  */
-function parseCsv(csv: string): Record<string, string>[] {
+export function parseCsv(csv: string): Record<string, string>[] {
   const rows: string[][] = [];
   let row: string[] = [];
   let value = "";

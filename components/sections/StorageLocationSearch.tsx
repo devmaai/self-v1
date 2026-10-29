@@ -5,7 +5,11 @@ import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
 import { resolveStorageSearchHref } from "@/lib/storageSearchLookup";
 
-export default function StorageLocationSearch() {
+export default function StorageLocationSearch({
+  id,
+  heading = "Looking for a specific facility?",
+  subtext = "Search by ZIP code, city, or state to find storage options in that area.",
+}: { id?: string; heading?: string; subtext?: string } = {}) {
   const router = useRouter();
   const [location, setLocation] = useState("");
 
@@ -17,10 +21,10 @@ export default function StorageLocationSearch() {
   }
 
   return (
-    <section className="storage-search-note" aria-labelledby="storage-location-search-heading">
+    <section id={id} className="storage-search-note" aria-labelledby="storage-location-search-heading">
       <div className="storage-location-search-content">
-        <strong id="storage-location-search-heading">Looking for a specific facility?</strong>
-        <span>Search by ZIP code, city, or state to find storage options in that area.</span>
+        <strong id="storage-location-search-heading">{heading}</strong>
+        <span>{subtext}</span>
         <form className="storage-location-search-form" onSubmit={handleSubmit} role="search">
           <label className="sr-only" htmlFor="storage-location-search">Search by ZIP code, city, or state</label>
           <LocationPin className="storage-location-search-pin" />

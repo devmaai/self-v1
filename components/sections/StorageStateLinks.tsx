@@ -7,12 +7,12 @@ export const STORAGE_STATES = [
   { name: "Missouri", href: "/storage-search/missouri" },
 ];
 
-export default function StorageStateLinks() {
+export default function StorageStateLinks({ label = "Explore more locations", heading = "Storage by state" }: { label?: string; heading?: string } = {}) {
   return (
     <section className="storage-state-links" aria-labelledby="storage-by-state-heading">
       <div>
-        <span className="storage-search-label">Explore more locations</span>
-        <h2 id="storage-by-state-heading">Storage by state</h2>
+        <span className="storage-search-label">{label}</span>
+        <h2 id="storage-by-state-heading">{heading}</h2>
       </div>
       <div className="storage-state-grid">
         {STORAGE_STATES.map((state) => (
