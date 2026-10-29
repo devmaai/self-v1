@@ -4,7 +4,10 @@ import { Resend } from "resend";
 export const runtime = "nodejs";
 
 const TO_EMAIL = process.env.STORAGE_QUOTE_TO_EMAIL || process.env.QUOTE_TO_EMAIL || "business@maai.agency";
-const FROM_EMAIL = process.env.STORAGE_QUOTE_FROM_EMAIL || "SelfStorage Quote <onboarding@resend.dev>";
+const FROM_EMAIL =
+  process.env.STORAGE_QUOTE_FROM_EMAIL ||
+  process.env.AUDIT_FROM_EMAIL ||
+  "SelfStorage Quote <onboarding@resend.dev>";
 
 type StorageQuotePayload = {
   email?: unknown;

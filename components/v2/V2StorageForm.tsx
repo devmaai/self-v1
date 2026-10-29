@@ -81,7 +81,11 @@ export default function V2StorageForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const result = await res.json();
+      let result: { ok?: boolean; error?: string; fields?: FieldErrors } = {};
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        result = (await res.json()) as typeof result;
+      }
 
       if (res.ok && result.ok) {
         setStatus("success");
@@ -97,6 +101,10 @@ export default function V2StorageForm() {
         setFormError("The form isn't connected to email yet. Please email us directly for now.");
       } else if (result.error === "captcha") {
         setFormError("Captcha check failed. Please try the verification again.");
+      } else if (res.status === 403) {
+        setFormError("This request was blocked by the site security check. Please turn off your VPN and try again, or email us directly.");
+      } else if (res.status >= 500) {
+        setFormError("We couldn't send your request right now. Please try again in a moment.");
       } else {
         setFormError("Something went wrong sending your request. Please try again in a moment.");
       }
