@@ -4771,3 +4771,14 @@ footer {
 .storage-size-guide-grid.storage-size-guide-scroll { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(280px, 300px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; -webkit-overflow-scrolling: touch; }
 .storage-size-guide-scroll .storage-size-card { scroll-snap-align: start; }
 @media (max-width: 700px) { .storage-size-guide-grid.storage-size-guide-scroll { grid-template-columns: none; grid-auto-columns: 82%; } }
+
+.scroll-row-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 18px; color: #526d81; font-size: 14px; font-weight: 600; }
+.scroll-row-arrows button { width: 40px; height: 40px; border: 1px solid #c9dce8; border-radius: 50%; background: #fff; color: var(--storage-blue); font-size: 18px; cursor: pointer; transition: background .2s ease; }
+.scroll-row-arrows button:hover { background: #e8f2fa; }
+.storage-size-guide-scroll .storage-size-card h3 { min-height: 62px; display: flex; align-items: center; justify-content: center; font-size: 22px; line-height: 1.2; }
+.storage-size-guide-scroll .storage-size-card-range { flex-direction: column; align-items: center; gap: 2px; min-height: 64px; justify-content: center; }
+.storage-size-guide-scroll .storage-size-card-range strong { font-size: 19px; white-space: nowrap; }
+.storage-size-guide-scroll .storage-size-card-range span { font-size: 14px; white-space: nowrap; }
+.storage-feature-learn { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 10px 16px; border-radius: 5px; background: var(--rust); color: #fff !important; font-size: 14px; font-weight: 700; }
+.storage-feature-learn:hover { background: var(--rust-deep); }
+.storage-size-guide-page .storage-size-guide-cta a, .storage-size-guide-page .storage-size-guide-cta a span { color: #fff !important; }

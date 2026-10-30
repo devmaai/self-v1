@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import ScrollRowArrows from "@/components/ui/ScrollRowArrows";
 
 export const metadata: Metadata = {
   title: "Self Storage Size Guide | Find the Right Unit by What You Store",
@@ -155,7 +156,7 @@ export default function StorageSizeGuidePage() {
           <span className="storage-size-guide-label">Start with what you store</span>
           <h2 id="size-guide-heading">What storage size unit do you need?</h2>
         </div>
-        <div className="storage-size-guide-grid storage-size-guide-scroll">
+        <div className="storage-size-guide-grid storage-size-guide-scroll" id="size-scenarios">
           {storageScenarios.map((scenario) => (
             <article className="storage-size-card" key={scenario.title}>
               <div className={`storage-box-visual storage-box-${scenario.boxSize}`}><img src={scenario.image} alt={`${scenario.title} storage facility`} /></div>
@@ -168,6 +169,7 @@ export default function StorageSizeGuidePage() {
             </article>
           ))}
         </div>
+        <ScrollRowArrows targetId="size-scenarios" />
       </section>
 
       <section className="storage-size-chart-section" aria-labelledby="size-chart-heading">
@@ -186,12 +188,12 @@ export default function StorageSizeGuidePage() {
       </section>
 
       <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="vehicle-heading">
-        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Vehicle storage</span><h2 id="vehicle-heading">What size storage unit for a car?</h2><p>For a standard sedan or compact car, a 10x15 or 10x20 unit gives you enough length to park the vehicle and still open the doors and walk around it. A 10x20 is the safer choice for larger cars, since it matches a one-car garage. For an SUV, truck, or van, plan on 10x20 or larger, and a motorcycle fits comfortably in a 5x10.</p><p>If you are storing a vehicle for several months, ask the facility whether covered or climate-controlled options are available, and confirm the driveway and door clearances before you book so your vehicle fits through the opening.</p><div className="storage-reference-list"><strong>Vehicle quick reference</strong>{vehicleReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div></div>
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Vehicle storage</span><h2 id="vehicle-heading">What size storage unit for a car?</h2><p>For a standard sedan or compact car, a 10x15 or 10x20 unit gives you enough length to park the vehicle and still open the doors and walk around it. A 10x20 is the safer choice for larger cars, since it matches a one-car garage. For an SUV, truck, or van, plan on 10x20 or larger, and a motorcycle fits comfortably in a 5x10.</p><p>If you are storing a vehicle for several months, ask the facility whether covered or climate-controlled options are available, and confirm the driveway and door clearances before you book so your vehicle fits through the opening.</p><div className="storage-reference-list"><strong>Vehicle quick reference</strong>{vehicleReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/vehicle-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
         <div className="storage-vehicle-visual"><img src="/images/storage-guide/vehiclestorage.jpg" alt="Vehicle storage" /><span className="storage-vehicle-caption">Room to park, open doors, and walk around</span></div>
       </section>
 
       <section className="storage-size-feature storage-size-feature-business" aria-labelledby="business-heading">
-        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Business storage</span><h2 id="business-heading">Storage for your business</h2><p>Documents and files fit in a 5x5 or 5x10, depending on how many boxes and cabinets you need to keep on hand. Retail inventory, seasonal stock, and sample products usually call for a 10x10 to 10x20, which leaves room to shelve items and reach them easily. Equipment and larger fixtures may need 10x20 or more.</p><p>If you restock often, choose a size that lets you create an aisle down the middle. That way you can reach everything without unloading the whole unit each time you visit.</p><div className="storage-reference-list"><strong>Business quick reference</strong>{businessReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div></div>
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Business storage</span><h2 id="business-heading">Storage for your business</h2><p>Documents and files fit in a 5x5 or 5x10, depending on how many boxes and cabinets you need to keep on hand. Retail inventory, seasonal stock, and sample products usually call for a 10x10 to 10x20, which leaves room to shelve items and reach them easily. Equipment and larger fixtures may need 10x20 or more.</p><p>If you restock often, choose a size that lets you create an aisle down the middle. That way you can reach everything without unloading the whole unit each time you visit.</p><div className="storage-reference-list"><strong>Business quick reference</strong>{businessReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/business-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
         <div className="storage-business-visual"><img src="https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80" alt="Row of storage units for business inventory and equipment" /></div>
       </section>
 

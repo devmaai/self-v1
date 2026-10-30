@@ -21,6 +21,7 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
             <ul className="fc-links">
               <li><a href="mailto:business@maai.agency">business@maai.agency</a></li>
               <li><Link href="/audit">Request an audit</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
             </ul>
           </div>
         )}
