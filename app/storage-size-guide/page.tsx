@@ -146,19 +146,16 @@ export default function StorageSizeGuidePage() {
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Size guide</span>
           </nav>
-          <span className="storage-size-guide-eyebrow"><span /> Storage planning guide</span>
           <h1>The self storage size guide, <em>built around what you store.</em></h1>
-          <p>Skip the guesswork over square footage. Tell us what you are moving, whether that is one room, a full house, or a car, and this guide points you to the unit size that fits.</p>
         </div>
       </section>
 
       <section className="storage-size-guide-content" aria-labelledby="size-guide-heading">
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Start with what you store</span>
-          <h2 id="size-guide-heading">What size storage unit do you need?</h2>
-          <p>Use these common scenarios as a starting point. Leave room for walkways and check the facility's exact dimensions before you reserve.</p>
+          <h2 id="size-guide-heading">What storage size unit do you need?</h2>
         </div>
-        <div className="storage-size-guide-grid">
+        <div className="storage-size-guide-grid storage-size-guide-scroll">
           {storageScenarios.map((scenario) => (
             <article className="storage-size-card" key={scenario.title}>
               <div className={`storage-box-visual storage-box-${scenario.boxSize}`}><img src={scenario.image} alt={`${scenario.title} storage facility`} /></div>
