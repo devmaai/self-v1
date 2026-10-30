@@ -51,7 +51,9 @@ export const brandOf = (facilityName: string, city = "") => {
 const cityKey = (city: string, state: string) => `${city.trim().toLowerCase().replace(/[.']/g, "")}|${state.trim().toUpperCase()}`;
 const titleFromSlug = (slug: string) => slug.replace(/-(ut|ks|ok|sd)$/, "").split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 
-async function fetchLiveUnits(): Promise<ClimateUnit[]> {
+export type UnitFilter = (amenities: string) => boolean;
+
+async function fetchLiveUnits(filter: UnitFilter = isClimate): Promise<ClimateUnit[]> {
   const [facilitiesResponse, unitsResponse] = await Promise.all([
     fetch(sheetUrl("Facilities"), { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(10000) }),
     fetch(sheetUrl("Units"), { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(10000) }),
@@ -59,7 +61,7 @@ async function fetchLiveUnits(): Promise<ClimateUnit[]> {
   if (!facilitiesResponse.ok || !unitsResponse.ok) throw new Error("Climate storage sheet request failed");
   const facilities = new Map(parseCsv(await facilitiesResponse.text()).map((row) => [row.facility_id, row]));
   return parseCsv(await unitsResponse.text())
-    .filter((unit) => unit.facility_id && isClimate(unit.amenities))
+    .filter((unit) => unit.facility_id && filter(unit.amenities))
     .map((unit) => {
       const facility = facilities.get(unit.facility_id);
       return {
@@ -73,20 +75,26 @@ async function fetchLiveUnits(): Promise<ClimateUnit[]> {
     });
 }
 
-async function fetchFallbackUnits(): Promise<ClimateUnit[]> {
+async function fetchFallbackUnits(filter: UnitFilter = isClimate): Promise<ClimateUnit[]> {
   const csv = await readFile(path.join(process.cwd(), "sheet_870162583.csv"), "utf8");
   return parseCsv(csv)
-    .filter((row) => row.facility_id && isClimate(row.amenities))
+    .filter((row) => row.facility_id && filter(row.amenities))
     .map((row) => ({ facilityId: row.facility_id, facilityName: row.facility_name || row.name, city: row.city, state: row.state, price: toPrice(row.price), ...ratingFrom(row) }));
 }
 
-export async function getClimateStorageSummary(): Promise<{ cities: ClimateCity[]; brands: ClimateBrand[]; ratings: ClimateCityRatings[] }> {
+export const isDriveUp: UnitFilter = (amenities) => /drive up access|roll up door/i.test(amenities ?? "");
+
+export async function getClimateStorageSummary() {
+  return getStorageSummary(isClimate);
+}
+
+export async function getStorageSummary(filter: UnitFilter): Promise<{ cities: ClimateCity[]; brands: ClimateBrand[]; ratings: ClimateCityRatings[] }> {
   let units: ClimateUnit[] = [];
   try {
-    units = await fetchLiveUnits();
+    units = await fetchLiveUnits(filter);
   } catch {
     try {
-      units = await fetchFallbackUnits();
+      units = await fetchFallbackUnits(filter);
     } catch {
       units = [];
     }

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
+import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
+import { CITY_IMAGES } from "@/lib/cityImages";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 
 export type TypeIcon = "indoor" | "covered" | "outdoor" | "secure" | "power" | "access" | "boxes" | "shelves";
@@ -10,13 +13,18 @@ export type StorageTypeConfig = {
   name: string;
   heroClass: string;
   h1: React.ReactNode;
+  eyebrow: string;
   heroText: string;
   pills: string[];
   benefitsHeading: string;
   benefits: { icon: TypeIcon; label: string; title: string; body: string }[];
   sizesHeading: string;
   sizesIntro: string;
-  sizes: { label: string; title: string; range: string; area: string; body: string }[];
+  sizes: { label: string; title: string; range: string; area: string; body: string; image?: string }[];
+  cityFilter?: "driveUp";
+  cityHeading?: string;
+  cityIntro?: string;
+  infoSections?: { label: string; heading: string; intro?: string; items: { title: string; body: string }[] }[];
   compareHeading: string;
   compareIntro: string;
   compareCols: string[];
@@ -25,7 +33,7 @@ export type StorageTypeConfig = {
   ctaTitle: string;
   ctaText: string;
   ctaLabel: string;
-  feature: { label: string; heading: string; paragraphs: string[]; image: string; alt: string };
+  feature: { label: string; heading: string; paragraphs: string[]; bullets?: string[]; image: string; alt: string };
   checklistImage: { src: string; alt: string };
   checklist: string[][];
   stepsHeading: string;
@@ -107,7 +115,8 @@ function TypeVisual({ icon }: { icon: TypeIcon }) {
   );
 }
 
-export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
+export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
+  const cities = c.cityFilter === "driveUp" ? (await getStorageSummary(isDriveUp)).cities : [];
   const faqSchema = faqPageSchema(c.faqs.map(([question, answer]) => ({ question, answer })));
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
@@ -126,14 +135,16 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{c.name}</span>
           </nav>
+          <span className="storage-size-guide-eyebrow"><span /> {c.eyebrow}</span>
           <h1>{c.h1}</h1>
           <p>{c.heroText}</p>
-          <ul className="climate-trust-pills">{c.pills.map((p) => <li key={p}>{p}</li>)}</ul>
+          <ul className="climate-trust-pills type-trust-pills">{c.pills.map((p) => <li key={p}>{p}</li>)}</ul>
         </div>
       </section>
 
       <section className="climate-benefits" aria-labelledby={`${c.slug}-benefits-heading`}>
         <div className="storage-size-guide-heading">
+          <span className="storage-size-guide-label">Benefits</span>
           <h2 id={`${c.slug}-benefits-heading`}>{c.benefitsHeading}</h2>
         </div>
         <div className="climate-benefit-grid">
@@ -148,14 +159,29 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
         </div>
       </section>
 
+      {cities.length > 0 && (
+        <section className="storage-search-directory climate-city-section" aria-labelledby={`${c.slug}-cities-heading`}>
+          <div className="storage-search-section-heading">
+            <div>
+              <span className="storage-search-label">Compare by city</span>
+              <h2 id={`${c.slug}-cities-heading`}>{c.cityHeading}</h2>
+              <p className="climate-city-intro">{c.cityIntro}</p>
+            </div>
+          </div>
+          <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
+        </section>
+      )}
+
       <section className="storage-size-guide-content" aria-labelledby={`${c.slug}-sizes-heading`}>
         <div className="storage-size-guide-heading">
+          <span className="storage-size-guide-label">Sizes by item</span>
           <h2 id={`${c.slug}-sizes-heading`}>{c.sizesHeading}</h2>
           <p>{c.sizesIntro}</p>
         </div>
         <div className="storage-size-guide-grid climate-grid-3">
           {c.sizes.map((s) => (
             <article className="storage-size-card climate-card" key={s.title}>
+              {s.image && <div className="storage-box-visual"><img src={s.image} alt={`${s.title} in ${c.name.toLowerCase()}`} /></div>}
               <span className="storage-size-card-label">{s.label}</span>
               <h3>{s.title}</h3>
               <div className="storage-size-card-range"><strong>{s.range}</strong><span>{s.area}</span></div>
@@ -173,6 +199,7 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
 
       <section className="storage-size-chart-section" aria-labelledby={`${c.slug}-compare-heading`}>
         <div className="storage-size-guide-heading">
+          <span className="storage-size-guide-label">Quick comparison</span>
           <h2 id={`${c.slug}-compare-heading`}>{c.compareHeading}</h2>
           <p>{c.compareIntro}</p>
         </div>
@@ -192,10 +219,30 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
         </div>
       </section>
 
+      {c.infoSections?.map((sec, i) => (
+        <section className={`climate-benefits type-info-section${i % 2 ? " type-info-alt" : ""}`} key={sec.heading} aria-labelledby={`${c.slug}-info-${i}`}>
+          <div className="storage-size-guide-heading">
+            <span className="storage-size-guide-label">{sec.label}</span>
+            <h2 id={`${c.slug}-info-${i}`}>{sec.heading}</h2>
+            {sec.intro && <p>{sec.intro}</p>}
+          </div>
+          <div className="type-info-grid">
+            {sec.items.map((it) => (
+              <article className="type-info-card" key={it.title}>
+                <h3>{it.title}</h3>
+                <p>{it.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+
       <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby={`${c.slug}-feature-heading`}>
         <div className="storage-size-feature-copy">
+          <span className="storage-size-guide-label">{c.feature.label}</span>
           <h2 id={`${c.slug}-feature-heading`}>{c.feature.heading}</h2>
           {c.feature.paragraphs.map((p) => <p key={p}>{p}</p>)}
+          {c.feature.bullets && <ul className="type-feature-list">{c.feature.bullets.map((b) => <li key={b}>{b}</li>)}</ul>}
         </div>
         <div className="storage-vehicle-visual"><img src={c.feature.image} alt={c.feature.alt} /></div>
       </section>
@@ -203,6 +250,7 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
       <section className="storage-size-feature storage-size-feature-business" aria-labelledby={`${c.slug}-checklist-heading`}>
         <div className="storage-vehicle-visual"><img src={c.checklistImage.src} alt={c.checklistImage.alt} /></div>
         <div className="storage-size-feature-copy">
+          <span className="storage-size-guide-label">First-time renter checklist</span>
           <h2 id={`${c.slug}-checklist-heading`}>Before you book: quick checklist</h2>
           <div className="storage-reference-list climate-checklist-list">
             <strong>Check these before you sign</strong>
@@ -213,6 +261,7 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
 
       <section className="storage-size-guide-content" aria-labelledby={`${c.slug}-steps-heading`}>
         <div className="storage-size-guide-heading">
+          <span className="storage-size-guide-label">How it works</span>
           <h2 id={`${c.slug}-steps-heading`}>{c.stepsHeading}</h2>
         </div>
         <div className="climate-steps">
@@ -229,6 +278,7 @@ export default function StorageTypePage({ c }: { c: StorageTypeConfig }) {
 
       <section className="storage-size-faq" aria-labelledby={`${c.slug}-faq-heading`}>
         <div className="storage-size-guide-heading">
+          <span className="storage-size-guide-label">Common questions</span>
           <h2 id={`${c.slug}-faq-heading`}>{c.faqHeading}</h2>
         </div>
         <div className="storage-size-faq-list">
