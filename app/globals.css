@@ -4782,3 +4782,8 @@ footer {
 .storage-feature-learn { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 10px 16px; border-radius: 5px; background: var(--rust); color: #fff !important; font-size: 14px; font-weight: 700; }
 .storage-feature-learn:hover { background: var(--rust-deep); }
 .storage-size-guide-page .storage-size-guide-cta a, .storage-size-guide-page .storage-size-guide-cta a span { color: #fff !important; }
+
+.hero-photo-car { --hero-image: url("/images/storage-guide/vehiclestorage.jpg"); }
+.hero-photo-rv { --hero-image: url("https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=2000&q=80"); }
+.hero-photo-boat { --hero-image: url("https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=2000&q=80"); }
+.hero-photo-business { --hero-image: url("https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=2000&q=80"); }
