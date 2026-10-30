@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
+import StorageStateLinks from "@/components/sections/StorageStateLinks";
 
 export const metadata: Metadata = {
   title: "Self Storage Size Guide | Find the Right Unit by What You Store",
@@ -194,9 +195,12 @@ export default function StorageSizeGuidePage() {
 
       <section className="storage-size-feature storage-size-feature-business" aria-labelledby="business-heading">
         <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Business storage</span><h2 id="business-heading">Storage for your business</h2><p>Documents and files fit in a 5x5 or 5x10, depending on how many boxes and cabinets you need to keep on hand. Retail inventory, seasonal stock, and sample products usually call for a 10x10 to 10x20, which leaves room to shelve items and reach them easily. Equipment and larger fixtures may need 10x20 or more.</p><p>If you restock often, choose a size that lets you create an aisle down the middle. That way you can reach everything without unloading the whole unit each time you visit.</p><div className="storage-reference-list"><strong>Business quick reference</strong>{businessReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div></div>
+        <div className="storage-business-visual"><img src="https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80" alt="Row of storage units for business inventory and equipment" /></div>
       </section>
 
       <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><div className="storage-size-faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+
+      <StorageStateLinks />
 
       <section className="storage-size-guide-cta">
         <div><span className="storage-size-guide-label">Ready to reserve?</span><h2>Ready to reserve the right size?</h2></div>
