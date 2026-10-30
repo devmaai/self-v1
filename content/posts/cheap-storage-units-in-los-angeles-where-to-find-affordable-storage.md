@@ -78,7 +78,7 @@ Extra Space Storage. Extra Space runs many facilities in Los Angeles, from Downt
 
 CubeSmart. CubeSmart has Los Angeles locations, including West LA, and makes it easy to reserve and rent online. It offers a mix of unit sizes, including drive-up options at some sites.
 
-StorQuest. StorQuest operates several facilities in central and west Los Angeles, including locations on North Figueroa, South Hill Street, and Sawtelle Boulevard. It offers climate-controlled units in sizes from small lockers up to 10x20, plus vehicle and business storage.
+StorQuest. StorQuest operates several facilities in central and west Los Angeles, including locations on North Figueroa, South Hill Street, and Sawtelle Boulevard. It offers [climate-controlled units](/climate-controlled-storage) in sizes from small lockers up to 10x20, plus vehicle and business storage.
 
 SecureSpace. SecureSpace has Los Angeles facilities in Downtown, on Avalon Boulevard, and on Firestone Boulevard. It is known for modern, secure buildings, online-only pricing, and same-day move-in when you rent online.
 

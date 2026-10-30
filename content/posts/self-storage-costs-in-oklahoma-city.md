@@ -55,7 +55,7 @@ It is worth paying for if you are storing:
 
 - Anything stored through a full summer and winter cycle
 
-You can usually skip the upgrade for tools, patio furniture, metal shelving, and outdoor equipment that already handles Oklahoma's weather swings. For more on what to store where, the full breakdown of what climate controlled storage covers walks through it by item type.
+You can usually skip the upgrade for tools, patio furniture, metal shelving, and outdoor equipment that already handles Oklahoma's weather swings. For more on what to store where, the full breakdown of what [climate controlled storage](/climate-controlled-storage) covers walks through it by item type.
 
 ## Cheapest and priciest Oklahoma City areas for storage
 
@@ -77,7 +77,7 @@ Oklahoma City sits in the heart of Tornado Alley, and that shapes how people use
 
 - Spring is storm season. From March through June, severe weather risk is highest, and many residents use storage to clear garages and yards of items that could become debris in high wind.
 
-- Vehicles need cover before storms roll in. RVs, boats, and trailers that normally sit in a driveway often move into a drive-up unit heading into spring, which tightens availability on larger sizes.
+- Vehicles need cover before storms roll in. [RVs](/rv-storage), boats, and trailers that normally sit in a driveway often move into a drive-up unit heading into spring, which tightens availability on larger sizes.
 
 - Summer heat peaks demand for climate control. Once storm season passes, the long run of 95-plus degree days makes climate-controlled units the safer bet for anything heat-sensitive.
 
@@ -115,7 +115,7 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do Oklahoma City renters need?
 
-Most Oklahoma City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for an RV, boat, or trailer ahead of storm season, the vehicle storage guide covers what fits in each unit size. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare Oklahoma City against the rest of the country. You can also browse current listings on our Oklahoma storage search page.
+Most Oklahoma City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for an RV, [boat](/boat-storage), or trailer ahead of storm season, the vehicle storage guide covers what fits in each unit size. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare Oklahoma City against the rest of the country. You can also browse current listings on our Oklahoma storage search page.
 
 If you are weighing Oklahoma City against another market, the cost breakdowns for Miami, Salt Lake City, and New York are worth a look for comparison.
 
@@ -131,7 +131,7 @@ Do I need climate control for storage in Oklahoma City? Many renters benefit fro
 
 Where is storage cheapest in Oklahoma City? Capitol Hill, south Oklahoma City, and Del City tend to run cheaper than Edmond and the downtown core.
 
-Does storm season affect storage prices in Oklahoma City? Yes. Demand for drive-up units and vehicle storage rises every spring as residents move RVs, boats, and yard items out of the way of severe weather.
+Does storm season affect storage prices in Oklahoma City? Yes. Demand for drive-up units and [vehicle storage](/car-storage) rises every spring as residents move RVs, boats, and yard items out of the way of severe weather.
 
 Do I need a bigger unit to store an RV or boat in Oklahoma City? Most RVs and boats need a 10x20 or larger drive-up unit. Check the vehicle storage guide to match your vehicle to a size.
 

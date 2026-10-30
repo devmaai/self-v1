@@ -47,11 +47,11 @@ A well-packed 10x10 unit holds the entire contents of a one to two bedroom home 
 
 - A motorcycle instead of furniture, if you are storing a vehicle rather than a household
 
-Most people use a 10x10 for one of three reasons: moving a one or two bedroom apartment, storing the overflow from a downsize, or keeping business inventory and equipment in one place. If you are trying to fit a full house or a vehicle alongside your furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x10 for one of three reasons: moving a one or two bedroom apartment, storing the overflow from a downsize, or keeping [business inventory](/business-storage) and equipment in one place. If you are trying to fit a full house or a vehicle alongside your furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x10 storage unit cost?
 
-A 10x10 storage unit typically costs $115 to $130 a month for a standard, non-climate-controlled unit, and $145 to $205 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $160 to $250 or more.
+A 10x10 storage unit typically costs $115 to $130 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $145 to $205 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $160 to $250 or more.
 
 |   |   |   |
 | --- | --- | --- |
@@ -93,11 +93,11 @@ A 10x10 unit can fit a compact car or a small sedan, but it is a tight squeeze a
 
 - Midsize or full-size car: often too tight, especially if the door needs to swing open to load or unload items.
 
-- Truck, SUV, or boat on a trailer: generally needs a 10x20 or a dedicated outdoor parking spot instead.
+- Truck, SUV, or [boat](/boat-storage) on a trailer: generally needs a 10x20 or a dedicated outdoor parking spot instead.
 
 - Motorcycle or ATV: fits easily, with plenty of room left over for gear and boxes.
 
-If vehicle storage is your main goal, a dedicated vehicle storage spot is usually cheaper than a household unit this size. Our Car Storage Size Guide breaks down which unit size fits which vehicle, and our Drive-Up vs. Indoor Storage Units guide explains how access type affects both price and ease of loading a car.
+If [vehicle storage](/car-storage) is your main goal, a dedicated vehicle storage spot is usually cheaper than a household unit this size. Our Car Storage Size Guide breaks down which unit size fits which vehicle, and our Drive-Up vs. Indoor Storage Units guide explains how access type affects both price and ease of loading a car.
 
 ## Who actually needs a 10x10 storage unit?
 

@@ -92,7 +92,7 @@ No. Facilities prohibit overnight stays and track access through gates, cameras,
 
 Most do, along with gate access logs and on-site staff, which is how they notice someone living in a unit.
 
-**Can you live in a climate controlled storage unit?**
+**Can you live in a [climate controlled storage](/climate-controlled-storage) unit?**
 
 No. Climate control only changes the temperature inside the unit. The ban on living in any storage unit still applies.
 
@@ -102,4 +102,4 @@ None. It is illegal across the US.
 
 **Can you run a business from a storage unit?**
 
-You can store business inventory and equipment, but you cannot use a unit as a staffed office or a place to live. Check your facility's rules for what is allowed.
+You can store [business inventory](/business-storage) and equipment, but you cannot use a unit as a staffed office or a place to live. Check your facility's rules for what is allowed.

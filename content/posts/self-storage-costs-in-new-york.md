@@ -54,7 +54,7 @@ It is worth paying for if you are storing:
 
 - Anything stored longer than a season, since basements and ground-floor units can pick up moisture
 
-You can usually skip the upgrade for tools, sports gear, seasonal decor, and anything you will pull back out within a month or two. If you are still deciding, the full breakdown of what climate controlled storage covers walks through it by item type.
+You can usually skip the upgrade for tools, sports gear, seasonal decor, and anything you will pull back out within a month or two. If you are still deciding, the full breakdown of what [climate controlled storage](/climate-controlled-storage) covers walks through it by item type.
 
 ## Cheapest and priciest New York City boroughs for storage
 
@@ -112,7 +112,7 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do New York City renters need?
 
-Because apartments run small here, New York renters book smaller units than the national average. A 5x10 unit covers most studios and small one-bedrooms, while a 10x10 handles a full one or two-bedroom move. If you are storing a car you cannot park on the street, the vehicle storage guide covers what size unit fits each type. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare New York against the rest of the country. You can also browse current listings on our New York storage search page.
+Because apartments run small here, New York renters book smaller units than the national average. A 5x10 unit covers most studios and small one-bedrooms, while a 10x10 handles a full one or two-bedroom move. If you are storing [a car](/car-storage) you cannot park on the street, the vehicle storage guide covers what size unit fits each type. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare New York against the rest of the country. You can also browse current listings on our New York storage search page.
 
 If you are weighing New York against another major market, the cost breakdowns for Miami, Salt Lake City, Los Angeles, and Dallas are worth a look for comparison.
 

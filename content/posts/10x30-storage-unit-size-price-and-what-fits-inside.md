@@ -11,7 +11,7 @@ published: true
 
 **Introduction**
 
-A 10x30 storage unit gives you 300 square feet of floor space, enough to hold the entire contents of a four to five bedroom home, several vehicles, or a small business's inventory. It typically rents for $260 to $320 a month, or $320 to $470 with climate control. It is one of the largest standard sizes most facilities carry, usually a step below a 10x40 and a big jump up from a 10x20. Below you will find the exact dimensions, what actually fits inside, current pricing, and how it stacks up against the next size down so you do not pay for more room than you need.
+A 10x30 storage unit gives you 300 square feet of floor space, enough to hold the entire contents of a four to five bedroom home, several vehicles, or a small business's [inventory](/business-storage). It typically rents for $260 to $320 a month, or $320 to $470 with climate control. It is one of the largest standard sizes most facilities carry, usually a step below a 10x40 and a big jump up from a 10x20. Below you will find the exact dimensions, what actually fits inside, current pricing, and how it stacks up against the next size down so you do not pay for more room than you need.
 
 ## How big is a 10x30 storage unit?
 
@@ -47,13 +47,13 @@ A well-packed 10x30 unit holds the entire contents of a four to five bedroom hou
 
 - 60 or more standard moving boxes stacked around the furniture
 
-- One vehicle, such as a car, truck, or small boat on a trailer, if you skip the appliances and furniture
+- One vehicle, such as [a car](/car-storage), truck, or small boat on a trailer, if you skip the appliances and furniture
 
 Most people use a 10x30 for one of two reasons: moving an entire house at once, or storing a mix of household goods and a vehicle in the same space. If you only need to park a car, truck, or motorcycle without anything else, a dedicated vehicle storage spot is often cheaper. See our Car Storage Size Guide for size-specific vehicle options.
 
 ## How much does a 10x30 storage unit cost?
 
-A 10x30 storage unit typically costs $260 to $320 a month for a standard, non-climate-controlled unit, and $320 to $470 a month with climate control added. Where you land in that range depends mostly on your city, the facility's access type, and the season you rent in.
+A 10x30 storage unit typically costs $260 to $320 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $320 to $470 a month with climate control added. Where you land in that range depends mostly on your city, the facility's access type, and the season you rent in.
 
 |   |   |   |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ If your move or inventory does not quite fill a 10x30, a 10x20 or 10x25 can save
 
 ## Is a 10x30 big enough for a vehicle, boat, or RV?
 
-A 10x30 unit comfortably fits one standard car, pickup truck, or a boat on a trailer, with room left over for some boxes or smaller furniture along the sides. It is tighter for larger vehicles.
+A 10x30 unit comfortably fits one standard car, pickup truck, or a [boat](/boat-storage) on a trailer, with room left over for some boxes or smaller furniture along the sides. It is tighter for larger vehicles.
 
 - Car or small SUV: fits easily, with space left for additional items.
 
@@ -97,7 +97,7 @@ A 10x30 unit comfortably fits one standard car, pickup truck, or a boat on a tra
 
 - Boat on a trailer: fits most pontoon and bowrider trailers under 28 feet.
 
-- Travel trailer or small RV: some fit depending on length, but many facilities steer larger RVs to an outdoor vehicle storage lot instead of an enclosed unit.
+- Travel trailer or small [RV](/rv-storage): some fit depending on length, but many facilities steer larger RVs to an outdoor vehicle storage lot instead of an enclosed unit.
 
 - Motorcycle or ATV: fits with plenty of room to spare for other belongings.
 

@@ -50,7 +50,7 @@ Most people use a 5x5 for one of three reasons: clearing out a dorm room or smal
 
 ## How much does a 5x5 storage unit cost?
 
-A 5x5 storage unit typically costs $35 to $55 a month for a standard, non-climate-controlled unit, and $50 to $85 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $70 to $90 or more.
+A 5x5 storage unit typically costs $35 to $55 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $50 to $85 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $70 to $90 or more.
 
 | Unit size | Typical monthly cost | With climate control |
 | --- | --- | --- |
