@@ -985,3 +985,10 @@
 .v2-home .cost-organic-val { font-size: 24px; font-weight: 700; color: #34D399; }
 .v2-home .inline-cta.inline-cta-rust { background: var(--rust); }
 .v2-home .inline-cta-rust .btn-inline { color: var(--rust); }
+.v2-home .problem-layout-agency { gap: 32px; align-items: stretch; }
+.v2-home .problem-layout-agency > div:last-child { position: sticky; top: 96px; align-self: start; }
+@media (max-width: 900px) {
+  .v2-home .problem-layout-agency > div:last-child { position: static; }
+  .v2-home .problem-layout-agency .problem-card-desc { display: none; }
+  .v2-home .problem-layout-agency .problem-card { padding-top: 16px; padding-bottom: 16px; }
+}
