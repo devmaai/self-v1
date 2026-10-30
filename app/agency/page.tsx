@@ -382,40 +382,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section alt" id="process">
-          <div className="inner">
-            <div className="pill">How it works</div>
-            <h2 className="section-h2">Four phases. Ninety days to<br />measurable ranking lift.</h2>
-            <p className="section-lead">No six-month setup period. Quick wins are prioritised in week one while the long-term foundation is built in parallel. Rankings begin moving before the first reporting call.</p>
-            <div className="process-steps">
-              {[
-                { phase: "Phase 01", days: "Days 1 – 7", title: "Audit", desc: "Full technical and content audit of your site, GBP, reviews, and competitor landscape. We connect your GA4 and GSC accounts and deliver a written report with prioritised fixes.", out: "✓ Delivered week 1", active: true },
-                { phase: "Phase 02", days: "Days 8 – 30", title: "Foundation", desc: "Indexation fixes, schema implementation, citation building, and GBP optimisation. This is where most storage sites double their search visibility. Review automation rolls out in months two and three.", out: "✓ Rankings start moving", active: false },
-                { phase: "Phase 03", days: "Days 31 – 60", title: "Scale", desc: "Location pages, unit-size content, link earning, and review velocity campaigns. Rankings compound as content depth and domain authority grow together across your target service area.", out: "✓ Organic leads increasing", active: false },
-                { phase: "Phase 04", days: "Days 61 – 90+", title: "Measure", desc: "Monthly reports connect every ranking position to move-in volume via your GA4 data. We adjust the programme based on what the numbers show. Reporting is tied directly to your accounts.", out: "✓ Monthly reporting call", active: false },
-              ].map((s, i) => (
-                <div key={i} className={`pstep${s.active ? " active" : ""} reveal`}>
-                  <div className="pstep-accent"></div>
-                  <div className="pstep-phase">{s.phase}</div>
-                  <div className="pstep-days">{s.days}</div>
-                  <div className="pstep-title">{s.title}</div>
-                  <div className="pstep-desc">{s.desc}</div>
-                  <div className="pstep-output">{s.out}</div>
-                </div>
-              ))}
-            </div>
-            <div className="process-cta-row reveal">
-              <div className="pct-text"><strong>Ready to see what phase one finds in your site?</strong> The audit is free and delivered in writing within five business days.</div>
-              <a href="/audit" className="btn-pct">Start with a free audit →</a>
-            </div>
-          </div>
-        </section>
-
         <section className="page-section" id="pricing">
           <div className="inner">
             <div className="pill">Pricing</div>
             <h2 className="section-h2">Three programmes. Month-to-month<br />after the first ninety days.</h2>
-            <p className="section-lead">No long-term contracts. No setup fees. Pause or adjust as your portfolio changes. The first ninety days are a fixed onboarding period so we can build the foundation properly.</p>
             <div className="pricing-grid">
               <div className="pricing-card reveal">
                 <div className="pc-head">
@@ -469,9 +439,11 @@ export default function HomePage() {
                 <div className="pc-cta"><a href="/audit" className="pc-btn">Talk to us →</a></div>
               </div>
             </div>
-            <div className="pricing-guarantee reveal">
-              <div className="pg-icon">✓</div>
-              <div className="pg-text"><span>No long-term contracts.</span> Month-to-month after the first 90-day onboarding period. Exit with 30 days notice at any point.</div>
+            <div className="pricing-cta-row reveal">
+              <a href="/contact" className="btn-hero btn-hero-lg">
+                Contact us
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
             </div>
           </div>
         </section>
@@ -503,24 +475,28 @@ export default function HomePage() {
         <section className="final-cta" id="audit">
           <div className="inner">
             <h2 className="final-h2">Find out exactly where your facility<br />is losing organic search visibility.</h2>
-            <p className="final-lead">Request a free audit. We review your site, GBP, and local rankings and deliver a written report within five business days. No sales call required to receive it.</p>
             <div className="final-actions">
               <a href="/audit" className="btn-final">
-                Get my free audit
+                Request a free audit
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
-              <a href="#proof" className="btn-final-ghost">See ranking data first</a>
             </div>
             <div className="final-reassurance">
               <div className="fr-item">Free, no obligation</div>
               <div className="fr-item">Written report in 5 business days</div>
               <div className="fr-item">No sales call required</div>
-              <div className="fr-item">Yours to keep regardless</div>
             </div>
           </div>
         </section>
 
-        <V2Footer />
+        <section className="backlink-cta" id="backlinks">
+          <div className="inner">
+            <h2 className="backlink-h2">Want a backlink from SelfStorage.help?</h2>
+            <a href="/contact" className="btn-backlink">Request a backlink →</a>
+          </div>
+        </section>
+
+        <V2Footer blogColumn />
       </div>
     </>
   );

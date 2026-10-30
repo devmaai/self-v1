@@ -92,7 +92,6 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
         <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
         <ul className="nav-links">
           <li><a href={`${prefix}proof`}>Results</a></li>
-          <li><a href={`${prefix}process`}>Process</a></li>
           <li><a href={`${prefix}pricing`}>Pricing</a></li>
           <li><a href={`${prefix}faq`}>FAQ</a></li>
         </ul>
@@ -126,7 +125,6 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
       <div className="v2-mobile-menu" data-mobile-panel>
         <ul className="mobile-menu-links">
           <li><a href={`${prefix}proof`} data-mobile-close>Results</a></li>
-          <li><a href={`${prefix}process`} data-mobile-close>Process</a></li>
           <li><a href={`${prefix}pricing`} data-mobile-close>Pricing</a></li>
           <li><a href={`${prefix}faq`} data-mobile-close>FAQ</a></li>
         </ul>
