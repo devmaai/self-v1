@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ScrollRowArrows from "@/components/ui/ScrollRowArrows";
 
 export const metadata: Metadata = {
@@ -199,6 +200,7 @@ export default function StorageSizeGuidePage() {
 
       <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><div className="storage-size-faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
 
+      <StorageTypeLinks current="/storage-size-guide" />
       <StorageStateLinks />
 
       <section className="storage-size-guide-cta">

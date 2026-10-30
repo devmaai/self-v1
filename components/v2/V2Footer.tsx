@@ -8,6 +8,17 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
           <div className="fb-brand">SelfStorage<span>.help</span></div>
           <div className="fb-desc">Specialist SEO for independent self-storage operators across the USA. Single-facility to regional portfolio. Operated under MAAI LLC, Wyoming.</div>
         </div>
+        <div>
+          <div className="fc-head">Storage types</div>
+          <ul className="fc-links">
+            <li><Link href="/climate-controlled-storage">Climate controlled storage</Link></li>
+            <li><Link href="/car-storage">Car storage</Link></li>
+            <li><Link href="/rv-storage">RV storage</Link></li>
+            <li><Link href="/boat-storage">Boat storage</Link></li>
+            <li><Link href="/business-storage">Business storage</Link></li>
+            <li><Link href="/storage-size-guide">Storage size guide</Link></li>
+          </ul>
+        </div>
         {blogColumn ? (
           <div>
             <div className="fc-head">Read our latest blog</div>

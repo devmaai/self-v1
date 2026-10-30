@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
 import { getClimateStorageSummary } from "@/lib/climateStorage";
 import { CITY_IMAGES } from "@/lib/cityImages";
@@ -267,6 +268,7 @@ export default async function ClimateControlledStoragePage() {
         </div>
       </section>
 
+      <StorageTypeLinks current="/climate-controlled-storage" />
       <StorageLocationSearch
         id="climate-search"
         heading="Looking for climate controlled storage near you?"

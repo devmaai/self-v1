@@ -1,6 +1,7 @@
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
 import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
 import { CITY_IMAGES } from "@/lib/cityImages";
@@ -298,6 +299,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
         </div>
       </section>
 
+      <StorageTypeLinks current={`/${c.slug}`} />
       <StorageLocationSearch id={searchId} heading={c.searchHeading} subtext={c.searchText} />
       <StorageStateLinks label="Explore more locations" heading={c.stateHeading} />
     </main>
