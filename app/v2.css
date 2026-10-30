@@ -983,3 +983,5 @@
 .v2-home .cost-organic-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 6px rgba(16,185,129,0.2); flex-shrink: 0; }
 .v2-home .cost-organic-label { font-size: 13px; color: rgba(255,255,255,0.75); }
 .v2-home .cost-organic-val { font-size: 24px; font-weight: 700; color: #34D399; }
+.v2-home .inline-cta.inline-cta-rust { background: var(--rust); }
+.v2-home .inline-cta-rust .btn-inline { color: var(--rust); }

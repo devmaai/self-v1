@@ -174,19 +174,21 @@ export default function HomePage() {
                   <div className="problem-card-num">Problem 01</div>
                   <div className="problem-card-title">Your Google Business Profile is not optimised for storage searches</div>
                   <div className="problem-card-desc">Missing service categories, incomplete coverage areas, and outdated photos give Google fewer signals to rank your listing above competitors. The map pack goes to whoever has the most complete and active profile.</div>
-                  <div className="problem-card-tag">GBP · Citations · NAP consistency</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 02</div>
                   <div className="problem-card-title">Your website does not target the terms renters actually search</div>
                   <div className="problem-card-desc">Pages without unit-size terms, zip code content, or neighbourhood-specific copy miss the searches that convert. Renters searching for &ldquo;10x10 storage unit 78201&rdquo; will not find a generic homepage.</div>
-                  <div className="problem-card-tag">Content · Location pages · Unit-size pages</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 03</div>
                   <div className="problem-card-title">Technical issues prevent Google from crawling and ranking your pages</div>
                   <div className="problem-card-desc">Slow load times on mobile, missing schema markup, and crawl errors keep your pages suppressed regardless of how good your content is. A site that does not load in under 2 seconds loses both rankings and reservations.</div>
-                  <div className="problem-card-tag">Core Web Vitals · Schema · Speed</div>
+                </div>
+                <div className="problem-card reveal">
+                  <div className="problem-card-num">Problem 04</div>
+                  <div className="problem-card-title">Your website and Google Business Profile are not optimized for AI search</div>
+                  <div className="problem-card-desc">Renters now ask ChatGPT, Perplexity and Google AI Overviews where to find storage. Without structured data, clear answers and consistent business details, AI tools have nothing to cite, so your facility is left out of their recommendations.</div>
                 </div>
               </div>
 
@@ -217,9 +219,9 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="inline-cta reveal">
+                <div className="inline-cta inline-cta-rust reveal">
                   <div className="inline-cta-text">
-                    <strong>We can rank your facility higher</strong>
+                    <strong>Rank in the top three positions of Google and AI search</strong>
                     Talk to us about moving your facility into the top three.
                   </div>
                   <a href="/contact" className="btn-inline">Contact us →</a>
