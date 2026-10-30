@@ -68,7 +68,7 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div className="v2-home">
+      <div className="v2-home agency-brand">
         <V2Interactions />
         <V2Nav variant="home" />
 
