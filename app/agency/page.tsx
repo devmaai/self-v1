@@ -166,25 +166,9 @@ export default function HomePage() {
         <section className="page-section" id="challenge">
           <div className="inner">
             <div className="pill">Why organic search matters for storage</div>
-            <h2 className="section-h2">Every week you are invisible on Google,<br />a renter chooses someone else.</h2>
-            <p className="section-lead">Independent operators across the USA are losing ground to national chains and listing platforms that dominate the same searches their local customers run. Here is what that actually costs.</p>
+            <h2 className="section-h2">Why your storage unit is not visible on Google</h2>
 
-            <div className="demand-band reveal">
-              <div className="demand-stat">
-                <div className="demand-num accent">619K</div>
-                <div className="demand-text">Search impressions one storage site earned for self-storage queries in 12 months. The demand is already there.</div>
-              </div>
-              <div className="demand-stat">
-                <div className="demand-num warn">39.8</div>
-                <div className="demand-text">Its average Google position. Buried on page four, where almost no renter ever looks.</div>
-              </div>
-              <div className="demand-stat">
-                <div className="demand-num warn">0.1%</div>
-                <div className="demand-text">Share of that demand it actually turned into clicks. Nearly all of it went to someone else.</div>
-              </div>
-            </div>
-
-            <div className="problem-layout">
+            <div className="problem-layout problem-layout-agency">
               <div className="problem-right">
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 01</div>
@@ -207,41 +191,38 @@ export default function HomePage() {
               </div>
 
               <div>
-                <div className="problem-visual reveal" style={{ marginBottom: 16 }}>
-                  <div className="pv-header">
-                    <div className="pv-title">What you are paying per move-in today</div>
-                    <div className="pv-sub">Estimated for a typical single facility</div>
-                  </div>
-                  <div className="pv-rows">
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon r"></span>Paid ads (Google Local Services)</div>
-                      <div className="pv-row-val red">$85–$140 / lead</div>
+                <div className="cost-visual reveal">
+                  <div className="cost-title">What you are paying per move-in today</div>
+                  <div className="cost-sub">Estimated for a typical single facility</div>
+                  <div className="cost-rows">
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Paid ads (Google Local Services)</span><span className="cost-val r">$85–$140 <small>per lead</small></span></div>
+                      <div className="cost-track"><div className="cost-bar r" style={{ left: "61%", width: "39%" }}></div></div>
                     </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon a"></span>Listing platform cut (aggregator)</div>
-                      <div className="pv-row-val red">$60–$110 / move-in</div>
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Listing platform cut</span><span className="cost-val a">$60–$110 <small>per move-in</small></span></div>
+                      <div className="cost-track"><div className="cost-bar a" style={{ left: "43%", width: "36%" }}></div></div>
                     </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon a"></span>Pay-per-lead directory</div>
-                      <div className="pv-row-val red">$40–$80 / inquiry</div>
-                    </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon g"></span>Organic search (after SEO programme)</div>
-                      <div className="pv-row-val green">$0 / lead</div>
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Pay-per-lead directory</span><span className="cost-val a">$40–$80 <small>per inquiry</small></span></div>
+                      <div className="cost-track"><div className="cost-bar a" style={{ left: "29%", width: "28%" }}></div></div>
                     </div>
                   </div>
-                  <div className="pv-total">
-                    <div className="pv-total-label">Your organic cost per lead at month 6</div>
-                    <div className="pv-total-val">$0.00</div>
+                  <div className="cost-organic">
+                    <div className="cost-organic-dot"></div>
+                    <div>
+                      <div className="cost-organic-label">Organic search, after your SEO programme</div>
+                      <div className="cost-organic-val">$0 per lead</div>
+                    </div>
                   </div>
                 </div>
 
                 <div className="inline-cta reveal">
                   <div className="inline-cta-text">
-                    <strong>See what you are losing each month</strong>
-                    Get a free audit. We map your gaps and show you exactly what it would take to rank.
+                    <strong>We can rank your facility higher</strong>
+                    Talk to us about moving your facility into the top three.
                   </div>
-                  <a href="/audit" className="btn-inline">Get free audit →</a>
+                  <a href="/contact" className="btn-inline">Contact us →</a>
                 </div>
               </div>
             </div>
