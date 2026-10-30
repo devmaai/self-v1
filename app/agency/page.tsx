@@ -231,10 +231,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section alt" id="services">
+        <section className="page-section services-agency" id="services">
           <div className="inner">
             <div className="pill">What we do</div>
-            <h2 className="section-h2">Six services. All built specifically<br />for self-storage operators.</h2>
+            <h2 className="section-h2">Steps to rank your self storage unit in SEO and AEO</h2>
             <p className="section-lead">We do not do generic SEO. Our activities are tailored for real estate owners, especially focused on growing the business for self-storage business owners.</p>
             <V2ServicesDrawer />
           </div>

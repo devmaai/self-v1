@@ -27,7 +27,7 @@ const SERVICES: Service[] = [
   },
   {
     icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#0EA5E9" strokeWidth="1.6" /><path d="M7 9h6M7 12h4" stroke="#0EA5E9" strokeWidth="1.6" strokeLinecap="round" /></svg>,
-    title: "AEO & GEO — AI Search Visibility",
+    title: "AEO & GEO: AI Search Visibility",
     desc: "Get cited by ChatGPT, Perplexity, and Google AI Overviews when renters ask about storage. Schema markup, GEO pages, and structured content built for the way AI answers search queries.",
     tags: ["Schema", "GEO Pages", "AI Search"],
     content: aeoGeoContent,
@@ -92,13 +92,11 @@ export default function V2ServicesDrawer() {
 
   return (
     <>
-      <div className="services-grid">
+      <div className="services-grid services-grid-compact">
         {SERVICES.map((s, i) => (
           <button key={i} type="button" className="svc-card svc-card-btn reveal" onClick={() => open(i)}>
             <div className="svc-icon">{s.icon}</div>
             <div className="svc-title">{s.title}</div>
-            <div className="svc-desc">{s.desc}</div>
-            <div className="svc-tags">{s.tags.map((t) => <span key={t} className="svc-tag">{t}</span>)}</div>
             <span className="svc-link">Learn more →</span>
           </button>
         ))}
