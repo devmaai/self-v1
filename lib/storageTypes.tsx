@@ -121,8 +121,8 @@ export const rvStorage: StorageTypeConfig = {
   sizesHeading: "RV storage sizes by vehicle length",
   sizesIntro: "Measure your RV bumper to bumper, including the hitch, ladder and any rear rack, before you reserve.",
   sizes: [
-    { label: "Small", title: "Pop-up camper or teardrop", range: "Up to 20'", area: "10' x 20' space", body: "Fits pop-up campers, teardrop trailers and small truck campers.", image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=900&q=80" },
-    { label: "Mid-size", title: "Travel trailer or Class B", range: "20' to 30'", area: "10' x 30' space", body: "Fits most travel trailers, camper vans and smaller Class C motorhomes.", image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=900&q=80" },
+    { label: "Small", title: "Pop-up camper or teardrop", range: "Up to 20'", area: "10' x 20' space", body: "Fits pop-up campers, teardrop trailers and small truck campers.", image: "https://images.unsplash.com/photo-1596470689657-bcfc0e24f4e0?auto=format&fit=crop&w=900&q=80" },
+    { label: "Mid-size", title: "Travel trailer or Class B", range: "20' to 30'", area: "10' x 30' space", body: "Fits most travel trailers, camper vans and smaller Class C motorhomes.", image: "https://images.unsplash.com/photo-1596613319290-be5e72900f38?auto=format&fit=crop&w=900&q=80" },
     { label: "Large", title: "Fifth wheel or Class C", range: "30' to 40'", area: "12' x 40' space", body: "Fits fifth wheels, toy haulers and full-size Class C motorhomes.", image: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=900&q=80" },
     { label: "Extra large", title: "Class A motorhome", range: "40' and up", area: "12' x 45' space and up", body: "Fits large Class A motorhomes and bus conversions. Confirm height clearance for covered spaces.", image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=900&q=80" },
     { label: "RV and boat", title: "RV and boat storage", range: "Varies", area: "Outdoor or covered", body: "Many facilities offer RV and boat storage in the same lot, so you can keep both in one place.", image: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=900&q=80" },
@@ -145,7 +145,7 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Common RV storage problems",
       heading: "RV storage problems owners face across the U.S.",
-      intro: "The challenges change with your region, but these come up for RV owners in almost every state.",
+      layout: "scroll",
       items: [
         { title: "HOA and city restrictions", body: "Many HOAs ban RVs in driveways, and cities in states like California, Texas and Florida limit RV parking on residential streets." },
         { title: "Waitlists in high-demand areas", body: "In Arizona, Florida, Texas and Colorado, covered RV storage can fill up and run waitlists, especially before snowbird season." },
@@ -158,8 +158,8 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Why RV storage",
       heading: "Why you need RV storage",
-      layout: "accordion",
-      image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=1200&q=80",
+      layout: "cards",
+      image: "https://images.unsplash.com/photo-1596613319290-be5e72900f38?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "HOA and city parking rules", body: "Many homeowners associations ban RVs in driveways, and a lot of cities limit how long an RV can sit on the street. A storage space keeps you clear of fines and warning letters." },
         { title: "Space at home", body: "A motorhome or fifth wheel can take over your driveway, block your garage and frustrate your neighbors. Storage frees up the space for daily life." },
@@ -172,7 +172,7 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Safety and security",
       heading: "RV storage security features to look for",
-      layout: "accordion",
+      layout: "cards",
       image: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "Gated, keypad access", body: "Each renter gets a personal gate code, so the facility knows who comes and goes." },
@@ -186,8 +186,8 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Insurance",
       heading: "RV storage insurance: what you need to know",
-      layout: "accordion",
-      image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=1200&q=80",
+      layout: "cards",
+      image: "https://images.unsplash.com/photo-1596470689657-bcfc0e24f4e0?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "Keep comprehensive coverage", body: "Comprehensive coverage protects against theft, fire, hail and vandalism while your RV is in storage. Most facilities ask for proof of insurance." },
         { title: "Ask about storage or lay-up coverage", body: "Some insurers let you pause liability and collision while the RV is parked long-term, which can lower your premium. Ask your agent what applies in your state." },
@@ -264,10 +264,10 @@ export const boatStorage: StorageTypeConfig = {
   sizesHeading: "Boat storage unit sizes by boat length",
   sizesIntro: "Measure your boat on its trailer, from the hitch to the stern or outboard motor.",
   sizes: [
-    { label: "Small", title: "Jet ski or kayak", range: "5' x 10' to 10' x 10'", area: "50 to 100 sq ft", body: "Fits a personal watercraft on a trailer, kayaks, canoes and paddleboards.", image: "https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=900&q=80" },
-    { label: "Mid-size", title: "Fishing boat or skiff", range: "10' x 20'", area: "200 sq ft", body: "Fits most boats up to about 18 feet on their trailers.", image: "https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=900&q=80" },
+    { label: "Small", title: "Jet ski or kayak", range: "5' x 10' to 10' x 10'", area: "50 to 100 sq ft", body: "Fits a personal watercraft on a trailer, kayaks, canoes and paddleboards.", image: "https://images.unsplash.com/photo-1726992117622-af105bb5d214?auto=format&fit=crop&w=900&q=80" },
+    { label: "Mid-size", title: "Fishing boat or skiff", range: "10' x 20'", area: "200 sq ft", body: "Fits most boats up to about 18 feet on their trailers.", image: "https://images.unsplash.com/photo-1745380494033-c980a76eb84b?auto=format&fit=crop&w=900&q=80" },
     { label: "Large", title: "Bowrider or pontoon", range: "10' x 25' to 10' x 30'", area: "250 to 300 sq ft", body: "Fits boats around 20 to 26 feet, including many pontoons and bowriders.", image: "https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=900&q=80" },
-    { label: "Extra large", title: "Cabin cruiser or sailboat", range: "Outdoor or covered space", area: "30' and up", body: "Larger boats usually go in an outdoor or covered parking space. Check mast and height limits.", image: "https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=900&q=80" },
+    { label: "Extra large", title: "Cabin cruiser or sailboat", range: "Outdoor or covered space", area: "30' and up", body: "Larger boats usually go in an outdoor or covered parking space. Check mast and height limits.", image: "https://images.unsplash.com/photo-1705597185788-f375d03344e2?auto=format&fit=crop&w=900&q=80" },
     { label: "RV and boat", title: "RV and boat storage", range: "Varies", area: "Outdoor or covered", body: "Many facilities offer RV and boat storage in the same lot, so you can keep both in one place.", image: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=900&q=80" },
   ],
   compareHeading: "Indoor vs covered vs outdoor boat storage",
@@ -306,7 +306,7 @@ export const boatStorage: StorageTypeConfig = {
       "Flush and winterize the engine, add fuel stabilizer, and drain all water from the bilge and lines. Remove the battery or keep it on a maintenance charger.",
       "Clean and dry the boat, remove electronics and cushions, and use a fitted, breathable cover to keep out moisture and pests.",
     ],
-    image: "https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1705597185788-f375d03344e2?auto=format&fit=crop&w=1200&q=80",
     alt: "Boats docked at a marina before storage",
   },
   checklistImage: { src: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80", alt: "Storage facility with drive-up access" },
@@ -396,8 +396,8 @@ export const businessStorage: StorageTypeConfig = {
     {
       label: "Who uses business storage",
       heading: "Business storage for every kind of small business",
-      layout: "accordion",
-      image: "/images/storage-guide/boxes.jpg",
+      layout: "cards",
+      image: "/images/climate-storage/indoor-corridor.png",
       items: [
         { title: "E-commerce and online sellers", body: "Store inventory, packaging and shipping supplies in one place. Many sellers pick and pack orders from the unit and stage stock before sending it to a fulfillment center." },
         { title: "D2C brands", body: "Direct-to-consumer brands use storage units for product overflow, launch inventory and marketing kits without paying for warehouse space they do not yet need." },

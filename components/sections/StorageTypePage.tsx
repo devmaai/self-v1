@@ -24,7 +24,7 @@ export type StorageTypeConfig = {
   cityFilter?: "driveUp";
   cityHeading?: string;
   cityIntro?: string;
-  infoSections?: { label: string; heading: string; intro?: string; layout?: "scroll" | "accordion"; image?: string; items: { title: string; body: string }[] }[];
+  infoSections?: { label: string; heading: string; intro?: string; layout?: "scroll" | "cards"; image?: string; items: { title: string; body: string }[] }[];
   checklistHeading: string;
   compareHeading: string;
   compareIntro: string;
@@ -234,16 +234,16 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
               ))}
             </div>
           ) : (
-            <div className="type-info-split">
-              <div className="storage-size-faq-list type-info-accordion">
-                {sec.items.map((it, j) => (
-                  <details key={it.title} open={j === 0}>
-                    <summary>{it.title}<span aria-hidden="true">+</span></summary>
+            <div className={`type-info-split${sec.image ? "" : " type-info-split-full"}${(c.infoSections ?? []).slice(0, i).filter((x) => x.layout !== "scroll").length % 2 ? " type-info-split-reverse" : ""}`}>
+              {sec.image && <div className="storage-vehicle-visual type-info-visual"><img src={sec.image} alt="" /></div>}
+              <div className="type-info-cards">
+                {sec.items.map((it) => (
+                  <article className="type-info-card" key={it.title}>
+                    <h3>{it.title}</h3>
                     <p>{it.body}</p>
-                  </details>
+                  </article>
                 ))}
               </div>
-              {sec.image && <div className="storage-vehicle-visual type-info-visual"><img src={sec.image} alt="" /></div>}
             </div>
           )}
         </section>
