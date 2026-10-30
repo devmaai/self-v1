@@ -182,6 +182,11 @@
     padding: 64px 48px 72px;
     position: relative; overflow: hidden;
   }
+  .v2-home .hero.hero-agency {
+    background:
+      linear-gradient(to right, rgba(10,16,30,0.93) 0%, rgba(10,16,30,0.82) 52%, rgba(10,16,30,0.62) 100%),
+      url('https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  }
   .v2-home .hero::before {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(14,165,233,0.10) 0%, transparent 65%);

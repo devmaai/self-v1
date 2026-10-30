@@ -2,7 +2,6 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
-import HomeStorageSearch from "@/components/v2/HomeStorageSearch";
 
 // Real Visibility Index data — daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
@@ -73,29 +72,19 @@ export default function HomePage() {
         <V2Interactions />
         <V2Nav variant="home" />
 
-        <section className="hero">
+        <section className="hero hero-agency">
           <div className="hero-inner">
             <div className="hero-top">
               <div>
-                <div className="hero-badge">
-                  <span className="hero-badge-dot"></span>
-                  Specialist SEO for self-storage operators
-                </div>
                 <h1 className="hero-h1">
-                  Your storage facility should rank<br />
-                  where <em>local renters search.</em>
+                  We rank your local facility in the <em>top three positions.</em>
                 </h1>
-                <p className="hero-lead">
-                  Independent self-storage operators lose move-ins every day to bigger chains and listing platforms that charge them per lead. We specialise in SEO &amp; AEO for self-storage business owners and fix the organic search gap so renters find your storage facility first.
-                </p>
                 <div className="hero-cta-row">
-                  <a href="/audit" className="btn-hero">
-                    Get your free site audit
+                  <a href="/contact" className="btn-hero">
+                    Contact us
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </a>
-                  <a href="#proof" className="btn-hero-ghost">See ranking data →</a>
                 </div>
-                <HomeStorageSearch />
               </div>
 
               <div className="hero-dashboard reveal">
