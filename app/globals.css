@@ -4804,3 +4804,20 @@ footer {
 .type-feature-list { list-style: disc outside; padding-left: 22px; }
 .type-feature-list li { display: list-item; }
 .storage-size-guide-hero-inner .type-trust-pills { margin-top: 40px; }
+
+/* Storage type + climate pages: layout refinements */
+.climate-storage-page .storage-size-guide-content .storage-size-guide-heading { text-align: center; margin-left: auto; margin-right: auto; }
+.climate-storage-page .storage-size-guide-content .storage-size-guide-heading p { margin-left: auto; margin-right: auto; }
+@media (min-width: 900px) { .climate-storage-page .type-one-line { white-space: nowrap; font-size: clamp(28px, 3.2vw, 42px); } }
+.type-info-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(260px, 300px); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; width: min(1160px, calc(100% - 48px)); margin: 28px auto 0; padding-bottom: 14px; }
+.type-info-scroll .type-info-card { scroll-snap-align: start; }
+.type-info-split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: start; width: min(1160px, calc(100% - 48px)); margin: 28px auto 0; }
+.type-info-accordion { margin: 0; }
+.type-info-visual, .type-info-visual img { min-height: 360px; }
+@media (max-width: 800px) { .type-info-split { grid-template-columns: 1fr; } .type-info-visual { order: -1; } .type-info-visual, .type-info-visual img { min-height: 240px; } .type-info-scroll { width: calc(100% - 36px); grid-auto-columns: 80%; } }
+.type-feature-list { list-style: none; padding-left: 0; }
+.type-feature-list li { position: relative; padding-left: 30px; margin-bottom: 10px; }
+.type-feature-list li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: var(--storage-blue); color: #fff; font-size: 12px; font-weight: 700; line-height: 20px; text-align: center; }
+.climate-storage-page .climate-checklist-list > div { justify-content: flex-start; gap: 16px; text-align: left; }
+.climate-storage-page .climate-checklist-list > div span { flex: 0 0 170px; text-align: left; }
+.climate-storage-page .climate-checklist-list > div b { flex: 1; text-align: left; }

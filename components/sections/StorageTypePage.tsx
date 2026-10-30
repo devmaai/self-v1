@@ -24,7 +24,8 @@ export type StorageTypeConfig = {
   cityFilter?: "driveUp";
   cityHeading?: string;
   cityIntro?: string;
-  infoSections?: { label: string; heading: string; intro?: string; items: { title: string; body: string }[] }[];
+  infoSections?: { label: string; heading: string; intro?: string; layout?: "scroll" | "accordion"; image?: string; items: { title: string; body: string }[] }[];
+  checklistHeading: string;
   compareHeading: string;
   compareIntro: string;
   compareCols: string[];
@@ -165,7 +166,6 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
             <div>
               <span className="storage-search-label">Compare by city</span>
               <h2 id={`${c.slug}-cities-heading`}>{c.cityHeading}</h2>
-              <p className="climate-city-intro">{c.cityIntro}</p>
             </div>
           </div>
           <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
@@ -200,8 +200,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
       <section className="storage-size-chart-section" aria-labelledby={`${c.slug}-compare-heading`}>
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Quick comparison</span>
-          <h2 id={`${c.slug}-compare-heading`}>{c.compareHeading}</h2>
-          <p>{c.compareIntro}</p>
+          <h2 id={`${c.slug}-compare-heading`} className="type-one-line">{c.compareHeading}</h2>
         </div>
         <div className="storage-size-table-wrap">
           <table className="storage-size-table">
@@ -224,16 +223,29 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           <div className="storage-size-guide-heading">
             <span className="storage-size-guide-label">{sec.label}</span>
             <h2 id={`${c.slug}-info-${i}`}>{sec.heading}</h2>
-            {sec.intro && <p>{sec.intro}</p>}
           </div>
-          <div className="type-info-grid">
-            {sec.items.map((it) => (
-              <article className="type-info-card" key={it.title}>
-                <h3>{it.title}</h3>
-                <p>{it.body}</p>
-              </article>
-            ))}
-          </div>
+          {sec.layout === "scroll" ? (
+            <div className="type-info-scroll">
+              {sec.items.map((it) => (
+                <article className="type-info-card" key={it.title}>
+                  <h3>{it.title}</h3>
+                  <p>{it.body}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="type-info-split">
+              <div className="storage-size-faq-list type-info-accordion">
+                {sec.items.map((it, j) => (
+                  <details key={it.title} open={j === 0}>
+                    <summary>{it.title}<span aria-hidden="true">+</span></summary>
+                    <p>{it.body}</p>
+                  </details>
+                ))}
+              </div>
+              {sec.image && <div className="storage-vehicle-visual type-info-visual"><img src={sec.image} alt="" /></div>}
+            </div>
+          )}
         </section>
       ))}
 
@@ -251,7 +263,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
         <div className="storage-vehicle-visual"><img src={c.checklistImage.src} alt={c.checklistImage.alt} /></div>
         <div className="storage-size-feature-copy">
           <span className="storage-size-guide-label">First-time renter checklist</span>
-          <h2 id={`${c.slug}-checklist-heading`}>Before you book: quick checklist</h2>
+          <h2 id={`${c.slug}-checklist-heading`}>{c.checklistHeading}</h2>
           <div className="storage-reference-list climate-checklist-list">
             <strong>Check these before you sign</strong>
             {c.checklist.map(([label, detail]) => <div key={label}><span>{label}</span><b>{detail}</b></div>)}

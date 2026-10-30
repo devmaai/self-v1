@@ -51,7 +51,7 @@ export const carStorage: StorageTypeConfig = {
     {
       label: "Common car storage problems",
       heading: "Car storage problems drivers face across the U.S.",
-      intro: "Where you live shapes how your car ages in storage. These are the issues we hear about most.",
+      layout: "scroll",
       items: [
         { title: "Street parking time limits", body: "Many cities, including Los Angeles and San Francisco, limit how long a car can stay parked on the street, often 72 hours. A stored spare car risks tickets or towing." },
         { title: "HOA and driveway rules", body: "Homeowners associations often ban inoperable or unregistered cars, project cars and extra vehicles in driveways." },
@@ -73,6 +73,7 @@ export const carStorage: StorageTypeConfig = {
     alt: "Car parked inside an indoor storage unit",
   },
   checklistImage: { src: "/images/storage-guide/car.jpg", alt: "Car ready for storage" },
+  checklistHeading: "Before you book car storage: quick checklist",
   checklist: [
     ["Unit size", "Measure your car before you reserve"],
     ["Paperwork", "Have your registration and insurance ready"],
@@ -90,6 +91,9 @@ export const carStorage: StorageTypeConfig = {
     ["What is the cheapest car storage option?", "Outdoor car storage is usually the most affordable. Covered storage costs a little more, and indoor storage costs the most."],
     ["Do I need insurance to store my car?", "Most facilities require proof of registration and insurance. Ask your insurer about a storage policy if you will not drive the car for a while."],
     ["Can I store a car that does not run?", "Many facilities require the car to be in running condition. Check the rules at each facility before you reserve."],
+    ["Do I need to keep my car registered while it is in storage?", "Most states require registration and insurance for any car that is not formally declared off-road. Some states, like New York, let you surrender plates for long-term storage, but check your state DMV rules first."],
+    ["Is indoor car storage worth it in hot or snowy states?", "Yes. In Arizona, Texas and Florida, indoor storage blocks UV and heat. In the Northeast and Midwest, it keeps your car away from snow, ice and road salt."],
+    ["Can I store my car for a military deployment?", "Yes. Many facilities offer military discounts, and the Servicemembers Civil Relief Act gives active-duty members some protections. Ask each facility about its deployment policies."],
   ],
   searchHeading: "Looking for car storage near you?",
   searchText: "Search by ZIP code, city, or state to compare car storage units in that area.",
@@ -154,7 +158,8 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Why RV storage",
       heading: "Why you need RV storage",
-      intro: "Most RV owners use their rig a few weeks or months a year. The rest of the time, it needs a safe place to park.",
+      layout: "accordion",
+      image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "HOA and city parking rules", body: "Many homeowners associations ban RVs in driveways, and a lot of cities limit how long an RV can sit on the street. A storage space keeps you clear of fines and warning letters." },
         { title: "Space at home", body: "A motorhome or fifth wheel can take over your driveway, block your garage and frustrate your neighbors. Storage frees up the space for daily life." },
@@ -167,7 +172,8 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Safety and security",
       heading: "RV storage security features to look for",
-      intro: "Your RV is a major investment. Check these features before you choose a facility.",
+      layout: "accordion",
+      image: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "Gated, keypad access", body: "Each renter gets a personal gate code, so the facility knows who comes and goes." },
         { title: "Video surveillance", body: "Cameras that cover the lot, entrances and drive aisles help deter theft and vandalism." },
@@ -180,7 +186,8 @@ export const rvStorage: StorageTypeConfig = {
     {
       label: "Insurance",
       heading: "RV storage insurance: what you need to know",
-      intro: "Storage facilities usually do not insure the RVs on their lot, so your own coverage matters.",
+      layout: "accordion",
+      image: "https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=1200&q=80",
       items: [
         { title: "Keep comprehensive coverage", body: "Comprehensive coverage protects against theft, fire, hail and vandalism while your RV is in storage. Most facilities ask for proof of insurance." },
         { title: "Ask about storage or lay-up coverage", body: "Some insurers let you pause liability and collision while the RV is parked long-term, which can lower your premium. Ask your agent what applies in your state." },
@@ -208,6 +215,7 @@ export const rvStorage: StorageTypeConfig = {
     alt: "Motorhome parked and ready for storage",
   },
   checklistImage: { src: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80", alt: "Storage facility with wide driveways" },
+  checklistHeading: "Before you book RV storage: quick checklist",
   checklist: [
     ["Length", "Measure bumper to bumper, including the hitch"],
     ["Height", "Confirm clearance for covered or indoor spaces"],
@@ -226,6 +234,9 @@ export const rvStorage: StorageTypeConfig = {
     ["Do I need insurance to store my RV?", "Most facilities ask for proof of insurance and registration. Keep comprehensive coverage so your RV is protected against theft, fire and weather while it is parked."],
     ["Can I store an RV and a boat at the same facility?", "Many facilities offer RV and boat storage in the same lot. Check each listing for space sizes and availability."],
     ["Can I park my RV in my driveway?", "It depends on your HOA and city rules. Many neighborhoods restrict RV parking, which is one of the most common reasons owners choose RV storage."],
+    ["When should I book RV storage in snowbird states?", "In Arizona, Florida and Texas, covered RV storage fills up in the fall before snowbird season. Book a few months ahead if you can."],
+    ["Do I need to winterize my RV in the southern U.S.?", "In mild southern climates, a full winterization is often not needed, but a hard freeze can still crack water lines. Winterize if you store anywhere that drops below freezing."],
+    ["Are RVs allowed in driveways in my state?", "There is no single state rule. Your city ordinances and HOA set the limits, so check both before parking an RV at home."],
   ],
   searchHeading: "Looking for RV storage near you?",
   searchText: "Search by ZIP code, city, or state to compare RV storage facilities in that area.",
@@ -277,7 +288,7 @@ export const boatStorage: StorageTypeConfig = {
     {
       label: "Common boat storage problems",
       heading: "Boat storage problems owners face across the U.S.",
-      intro: "From lake country to the coast, these are the issues that cost boat owners the most.",
+      layout: "scroll",
       items: [
         { title: "Short boating seasons up north", body: "In Michigan, Minnesota, Wisconsin and New England, boats sit for six months or more, so freeze protection and winterization are a must." },
         { title: "Hurricane season on the coast", body: "In Florida, the Carolinas and the Gulf Coast, boats left on lifts or trailers in the open face storm surge and wind damage." },
@@ -299,6 +310,7 @@ export const boatStorage: StorageTypeConfig = {
     alt: "Boats docked at a marina before storage",
   },
   checklistImage: { src: "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80", alt: "Storage facility with drive-up access" },
+  checklistHeading: "Before you book boat storage: quick checklist",
   checklist: [
     ["Length", "Measure your boat on its trailer"],
     ["Height", "Confirm clearance for covered or indoor spaces"],
@@ -316,6 +328,9 @@ export const boatStorage: StorageTypeConfig = {
     ["Can I store my boat on its trailer?", "Yes. Most facilities let you store your boat on its trailer, which makes it easy to tow to the water."],
     ["Is indoor boat storage worth it?", "Yes, if you store through freezing winters or strong sun. Indoor storage protects the engine, hull and upholstery."],
     ["Do facilities limit boat size?", "Some do. Facilities may set limits on length, height and boat type, so check each listing before you reserve."],
+    ["When should I book boat storage for winter?", "In northern states like Michigan, Minnesota and New York, indoor boat storage often fills by early fall. Reserve before the end of the boating season."],
+    ["How do I protect my boat during hurricane season?", "In Florida and the Gulf states, move your boat to indoor or inland storage before a storm, remove loose gear and check your insurance for named-storm coverage."],
+    ["Do I need to register my boat while it is in storage?", "Most states require current registration for boats on the water. Rules for stored boats vary by state, so check with your state's boating agency."],
   ],
   searchHeading: "Looking for boat storage near you?",
   searchText: "Search by ZIP code, city, or state to compare boat storage units in that area.",
@@ -368,7 +383,7 @@ export const businessStorage: StorageTypeConfig = {
     {
       label: "Common business storage problems",
       heading: "Storage problems small businesses face across the U.S.",
-      intro: "American small businesses run into the same space problems as they grow. Storage solves most of them without a new lease.",
+      layout: "scroll",
       items: [
         { title: "Rising commercial rent", body: "Office and retail rent keeps climbing in most metro areas, and long leases lock you into space you may not need." },
         { title: "Home business rules", body: "Many HOAs and city zoning rules limit how much inventory, signage and delivery traffic a home-based business can have." },
@@ -381,7 +396,8 @@ export const businessStorage: StorageTypeConfig = {
     {
       label: "Who uses business storage",
       heading: "Business storage for every kind of small business",
-      intro: "From online sellers to contractors, American small businesses use storage units to grow without signing a commercial lease.",
+      layout: "accordion",
+      image: "/images/storage-guide/boxes.jpg",
       items: [
         { title: "E-commerce and online sellers", body: "Store inventory, packaging and shipping supplies in one place. Many sellers pick and pack orders from the unit and stage stock before sending it to a fulfillment center." },
         { title: "D2C brands", body: "Direct-to-consumer brands use storage units for product overflow, launch inventory and marketing kits without paying for warehouse space they do not yet need." },
@@ -412,6 +428,7 @@ export const businessStorage: StorageTypeConfig = {
     alt: "Row of business storage units",
   },
   checklistImage: { src: "/images/climate-storage/documents.png", alt: "Business documents prepared for storage" },
+  checklistHeading: "Before you book a business storage unit: quick checklist",
   checklist: [
     ["Unit size", "Plan for shelving and a center aisle"],
     ["Access", "Check access hours and drive-up options"],
@@ -430,6 +447,10 @@ export const businessStorage: StorageTypeConfig = {
     ["Can I receive deliveries at my storage unit?", "Some facilities accept deliveries on your behalf. Ask the facility before you reserve if you need this service."],
     ["Is a business storage unit cheaper than warehouse storage?", "For small amounts of stock, usually yes. Storage units rent month to month with no long lease, no fit-out costs and no large minimum footprint."],
     ["Can I deduct business storage on my taxes?", "Storage used for your business is often a deductible business expense. Check with your accountant about your situation."],
+    ["Do I need a business license to rent a business storage unit?", "Most facilities only need ID and a payment method, though some ask for business details for commercial accounts. Check your city and state rules if you plan to use the unit as a business address."],
+    ["Can I use my storage unit as a business address?", "Most facilities do not allow a storage unit to be used as a legal business or mailing address. Use a registered agent or a virtual office for that."],
+    ["Is business storage a good option in high-rent cities?", "Yes. In cities like New York, Los Angeles and San Francisco, a storage unit costs far less per square foot than office or retail space, so it is a common way to free up expensive floor space."],
+    ["How long should I keep business records in storage?", "The IRS generally recommends keeping tax records for at least three years, and longer in some cases. A small climate controlled unit keeps paper records safe for as long as you need them."],
   ],
   searchHeading: "Looking for business storage near you?",
   searchText: "Search by ZIP code, city, or state to compare business storage units in that area.",

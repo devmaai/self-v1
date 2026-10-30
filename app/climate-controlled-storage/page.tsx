@@ -106,6 +106,9 @@ const faqs = [
   ["What is the difference between climate controlled and temperature controlled storage?", "Temperature controlled storage manages heat and cold. Climate controlled storage usually manages humidity too."],
   ["Can I store furniture without climate control for 3 months?", "Only in mild weather with solid, well-covered pieces. For upholstery, antiques or a stay through summer or winter, choose climate control."],
   ["Can I rent month to month?", "Most units on SelfStorage.help are available month to month. Check each listing for terms."],
+  ["Do I need climate controlled storage in Florida or Texas?", "In humid states like Florida, Louisiana and coastal Texas, climate control is the safer choice for furniture, documents, electronics and anything that can mold or warp."],
+  ["Is climate controlled storage needed in cold states?", "In Minnesota, Michigan, New York and other northern states, freezing temperatures can crack wood, damage electronics and ruin liquids. Climate control keeps your unit above freezing."],
+  ["Is climate control worth it in dry desert states?", "In Arizona and Nevada, the main risk is extreme summer heat. Climate control keeps vinyl records, photos, candles and electronics from warping or melting."],
 ];
 
 export default async function ClimateControlledStoragePage() {
@@ -161,7 +164,6 @@ export default async function ClimateControlledStoragePage() {
             <div>
               <span className="storage-search-label">Compare by city</span>
               <h2 id="climate-cities-heading">Climate controlled storage by city</h2>
-              <p className="climate-city-intro">Compare climate controlled units from multiple storage brands. Pick your city to see live prices and availability.</p>
             </div>
           </div>
           <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
@@ -197,8 +199,7 @@ export default async function ClimateControlledStoragePage() {
       <section className="storage-size-chart-section" aria-labelledby="climate-compare-heading">
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Quick comparison</span>
-          <h2 id="climate-compare-heading">Climate controlled vs regular storage unit</h2>
-          <p>See how the two unit types differ before you choose.</p>
+          <h2 id="climate-compare-heading" className="type-one-line">Climate controlled vs regular storage unit</h2>
         </div>
         <div className="storage-size-table-wrap">
           <table className="storage-size-table">
@@ -231,7 +232,7 @@ export default async function ClimateControlledStoragePage() {
         <div className="storage-vehicle-visual"><img src="/images/climate-storage/family-moving.jpg" alt="Family moving boxes into a storage unit" /></div>
         <div className="storage-size-feature-copy">
           <span className="storage-size-guide-label">First-time renter checklist</span>
-          <h2 id="climate-checklist-heading">Before you book: quick checklist</h2>
+          <h2 id="climate-checklist-heading">Before you book climate controlled storage: quick checklist</h2>
           <div className="storage-reference-list climate-checklist-list">
             <strong>Check these before you sign</strong>
             {checklist.map(([label, detail]) => <div key={label}><span>{label}</span><b>{detail}</b></div>)}
