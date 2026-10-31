@@ -61,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/blog",
     "/storage-size-guide",
+    "/storage-unit-size-calculator",
     "/climate-controlled-storage",
     "/climate-controlled-storage/cities",
     "/about",
