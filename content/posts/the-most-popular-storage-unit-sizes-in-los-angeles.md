@@ -27,7 +27,7 @@ Ranked by how often LA renters choose each size:
 
 - 10x15: picked by growing families and anyone storing a couch, mattress, and appliances alongside boxes.
 
-- 10x20: used for full household moves, a vehicle, or a small business's inventory.
+- 10x20: used for full household moves, a vehicle, or a small business's [inventory](/business-storage).
 
 - 10x30: the least common size, reserved for whole-home storage, multiple vehicles, or commercial stock.
 
@@ -66,7 +66,7 @@ If you're only storing the contents of a studio, a 5x10 unit is usually enough a
 
 - 2 to 3-bedroom apartment or house: a 10x15 typically fits a full household, including a sofa, mattresses, and appliances.
 
-- Full house or a house plus a vehicle: a 10x20 or 10x30 gives you room for furniture from every room plus a car, motorcycle, or small boat.
+- Full house or a house plus a vehicle: a 10x20 or 10x30 gives you room for furniture from every room plus [a car](/car-storage), motorcycle, or small boat.
 
 - Seasonal or overflow storage only: a 5x5 handles holiday decorations, sports gear, and a handful of boxes.
 
@@ -76,7 +76,7 @@ If you're only storing the contents of a studio, a 5x10 unit is usually enough a
 
 Climate control is worth far more consideration in LA than in milder parts of the country, because the city's heat, dust, and occasional humidity swings can warp wood, crack leather, and damage electronics stored in a standard unit over a hot summer.
 
-- Climate-controlled units typically add 15% to 35% to the base rate in LA, slightly more than the national average because so many facilities offer it as a premium indoor option.
+- [Climate-controlled units](/climate-controlled-storage) typically add 15% to 35% to the base rate in LA, slightly more than the national average because so many facilities offer it as a premium indoor option.
 
 - It's worth paying for if you're storing wood or leather furniture, electronics, documents, photos, musical instruments, or anything staying in storage longer than a few months.
 

@@ -51,7 +51,7 @@ Most people use a 5x10 for one of two reasons: moving a studio or one-bedroom ap
 
 ## How much does a 5x10 storage unit cost?
 
-A 5x10 storage unit typically costs $60 to $80 a month for a standard, non-climate-controlled unit, and $80 to $125 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $100 or more.
+A 5x10 storage unit typically costs $60 to $80 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $80 to $125 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $100 or more.
 
 |   |   |   |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ In most cases, yes. A 5x10 is the standard recommendation for a studio or one-be
 
 - One-bedroom plus a home office: often needs the next size up once you add a desk, filing cabinets, and extra boxes.
 
-- Vehicle alongside furniture: a motorcycle can share the space if you go light on furniture, but a car needs at least a 10x20.
+- Vehicle alongside furniture: a motorcycle can share the space if you go light on furniture, but [a car](/car-storage) needs at least a 10x20.
 
 If you are on the fence between a 5x10 and a 10x10, renting the bigger size usually costs only $40 to $50 more a month and saves you from a cramped, hard-to-access unit.
 

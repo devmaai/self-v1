@@ -64,7 +64,7 @@ Watch for these exceptions:
 
 - Prepay discounts: paying for six or twelve months up front saves money, but refunds for unused months vary by facility.
 
-- Vehicle and RV spaces: some parking spots carry longer minimums, especially in high-demand areas.
+- Vehicle and [RV](/rv-storage) spaces: some parking spots carry longer minimums, especially in high-demand areas.
 
 Ask the manager to confirm the minimum stay and the move-out notice period before you sign.
 

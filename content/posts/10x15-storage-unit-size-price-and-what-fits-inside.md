@@ -46,11 +46,11 @@ A well-packed 10x15 unit holds the entire contents of a two to three bedroom hom
 
 - Bikes, seasonal gear, and bins stacked along the walls
 
-Most people use a 10x15 for one of three reasons: moving a two or three bedroom home, storing the overflow from a renovation or downsize, or keeping business inventory and equipment that has outgrown a smaller unit. If you are trying to fit a whole house or a vehicle alongside a full load of furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x15 for one of three reasons: moving a two or three bedroom home, storing the overflow from a renovation or downsize, or keeping [business inventory](/business-storage) and equipment that has outgrown a smaller unit. If you are trying to fit a whole house or a vehicle alongside a full load of furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x15 storage unit cost?
 
-A 10x15 storage unit typically costs $150 to $165 a month for a standard, non-climate-controlled unit, and $185 to $260 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
+A 10x15 storage unit typically costs $150 to $165 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $185 to $260 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
 
 | Unit size | Typical monthly cost | With climate control |
 | --- | --- | --- |
@@ -84,7 +84,7 @@ If you are consistently leaving boxes stacked in front of the door or cannot clo
 
 ## Is a 10x15 storage unit big enough for a car?
 
-A 10x15 unit can fit a midsize car or a small SUV, with a little room left over for boxes or small furniture along the walls. It is tighter for full-size trucks, boats, and trailers.
+A 10x15 unit can fit a midsize car or a small SUV, with a little room left over for boxes or small furniture along the walls. It is tighter for full-size trucks, [boats](/boat-storage), and trailers.
 
 - Compact or midsize car: fits comfortably, usually with space left for several boxes.
 
@@ -94,7 +94,7 @@ A 10x15 unit can fit a midsize car or a small SUV, with a little room left over 
 
 - Motorcycle or ATV: fits easily, with plenty of room left over for gear and boxes.
 
-If vehicle storage is your main goal, a dedicated vehicle storage spot is usually cheaper than a household unit this size. Our Car Storage Size Guide breaks down which unit size fits which vehicle, and our Drive-Up vs. Indoor Storage Units guide explains how access type affects both price and ease of loading a car.
+If [vehicle storage](/car-storage) is your main goal, a dedicated vehicle storage spot is usually cheaper than a household unit this size. Our Car Storage Size Guide breaks down which unit size fits which vehicle, and our Drive-Up vs. Indoor Storage Units guide explains how access type affects both price and ease of loading a car.
 
 ## Who actually needs a 10x15 storage unit?
 

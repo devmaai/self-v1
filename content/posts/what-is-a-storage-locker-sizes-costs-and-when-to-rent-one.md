@@ -92,7 +92,7 @@ If you are storing even one large piece of furniture, a locker is usually too sm
 
 ## What can you fit in a storage locker?
 
-A storage locker fits boxes, bins, and small belongings that you can carry by hand. Think in terms of what fits in a car trunk or back seat, not a moving truck.
+A storage locker fits boxes, bins, and small belongings that you can carry by hand. Think in terms of what fits in [a car](/car-storage) trunk or back seat, not a moving truck.
 
 **Good fits for a locker:**
 
@@ -106,7 +106,7 @@ A storage locker fits boxes, bins, and small belongings that you can carry by ha
 
 - Small electronics and spare computer equipment
 
-- Overflow inventory for an online shop or sales rep
+- Overflow [inventory](/business-storage) for an online shop or sales rep
 
 **Usually too big for a locker:**
 

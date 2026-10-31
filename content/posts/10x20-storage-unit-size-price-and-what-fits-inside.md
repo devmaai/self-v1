@@ -11,7 +11,7 @@ published: true
 
 **Introduction**
 
-A 10x20 storage unit gives you 200 square feet of floor space, enough to hold the furniture and boxes from a three to four bedroom home, or a smaller home plus a car. It typically costs $195 to $220 a month for a standard unit, or $240 to $340 with climate control added. It sits right between the 10x15, built for a two to three bedroom home, and the 10x30, built for a whole house or multiple vehicles. Below you will find the exact dimensions, what actually fits inside, current pricing, and how it compares to the sizes on either side so you book the right one the first time.
+A 10x20 storage unit gives you 200 square feet of floor space, enough to hold the furniture and boxes from a three to four bedroom home, or a smaller home plus [a car](/car-storage). It typically costs $195 to $220 a month for a standard unit, or $240 to $340 with climate control added. It sits right between the 10x15, built for a two to three bedroom home, and the 10x30, built for a whole house or multiple vehicles. Below you will find the exact dimensions, what actually fits inside, current pricing, and how it compares to the sizes on either side so you book the right one the first time.
 
 ## How big is a 10x20 storage unit?
 
@@ -47,11 +47,11 @@ A well-packed 10x20 unit holds the entire contents of a three to four bedroom ho
 
 - A car, motorcycle, or small vehicle, if you leave out some of the furniture above
 
-Most people use a 10x20 for one of three reasons: moving a three or four bedroom home, storing a full household alongside a vehicle, or keeping business inventory and equipment that has outgrown a 10x10 or 10x15. If you only need to fit a car or motorcycle without much else, see our Car Storage Size Guide for size-specific options. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x20 for one of three reasons: moving a three or four bedroom home, storing a full household alongside a vehicle, or keeping [business inventory](/business-storage) and equipment that has outgrown a 10x10 or 10x15. If you only need to fit a car or motorcycle without much else, see our Car Storage Size Guide for size-specific options. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x20 storage unit cost?
 
-A 10x20 storage unit typically costs $195 to $220 a month for a standard, non-climate-controlled unit, and $240 to $340 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
+A 10x20 storage unit typically costs $195 to $220 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $240 to $340 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
 
 |   |   |   |
 | --- | --- | --- |
@@ -93,7 +93,7 @@ Yes. A 10x20 is the smallest standard size that comfortably fits most sedans and
 
 - Midsize or full-size truck or SUV: fits, though it leaves little extra space, so a 10x25 or 10x30 is more comfortable.
 
-- Boat or RV: generally needs an outdoor parking spot or a dedicated vehicle storage lot instead, since length matters more than square footage.
+- Boat or [RV](/rv-storage): generally needs an outdoor parking spot or a dedicated vehicle storage lot instead, since length matters more than square footage.
 
 - Motorcycle or ATV: fits easily, with plenty of room left over for furniture and boxes.
 

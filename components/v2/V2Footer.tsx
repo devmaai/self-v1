@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function V2Footer() {
+export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean }) {
   return (
     <footer className="v2-footer">
       <div className="footer-grid">
@@ -9,12 +9,33 @@ export default function V2Footer() {
           <div className="fb-desc">Specialist SEO for independent self-storage operators across the USA. Single-facility to regional portfolio. Operated under MAAI LLC, Wyoming.</div>
         </div>
         <div>
-          <div className="fc-head">Contact</div>
+          <div className="fc-head">Storage types</div>
           <ul className="fc-links">
-            <li><a href="mailto:business@maai.agency">business@maai.agency</a></li>
-            <li><Link href="/audit">Request an audit</Link></li>
+            <li><Link href="/climate-controlled-storage">Climate controlled storage</Link></li>
+            <li><Link href="/car-storage">Car storage</Link></li>
+            <li><Link href="/rv-storage">RV storage</Link></li>
+            <li><Link href="/boat-storage">Boat storage</Link></li>
+            <li><Link href="/business-storage">Business storage</Link></li>
+            <li><Link href="/storage-size-guide">Storage size guide</Link></li>
           </ul>
         </div>
+        {blogColumn ? (
+          <div>
+            <div className="fc-head">Read our latest blog</div>
+            <ul className="fc-links">
+              <li><Link href="/blog">Storage guides and tips →</Link></li>
+            </ul>
+          </div>
+        ) : (
+          <div>
+            <div className="fc-head">Contact</div>
+            <ul className="fc-links">
+              <li><a href="mailto:business@maai.agency">business@maai.agency</a></li>
+              <li><Link href="/audit">Request an audit</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+            </ul>
+          </div>
+        )}
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">© 2026 MAAI LLC. All rights reserved.</div>

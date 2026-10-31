@@ -27,9 +27,9 @@ Ranked by how often San Diego renters choose each size:
 
 - 10x15: used for full two to three-bedroom households, including renters combining homes or clearing out a garage.
 
-- 10x20: less common than in sprawling metros, reserved mostly for full-home moves, vehicle storage, or small business stock.
+- 10x20: less common than in sprawling metros, reserved mostly for full-home moves, [vehicle storage](/car-storage), or small business stock.
 
-- 10x30: the least common size, limited to whole-home storage, multiple vehicles, or commercial inventory.
+- 10x30: the least common size, limited to whole-home storage, multiple vehicles, or commercial [inventory](/business-storage).
 
 This mirrors the nationwide pattern, where the 10x10 and 5x10 together make up roughly half of all rentals, but San Diego leans even harder toward the smaller end because land is scarce, real estate is expensive, and so many residents live in apartments and condos rather than houses with garages.
 
@@ -68,7 +68,7 @@ If you only need to store the contents of a one-bedroom apartment, a 5x10 unit i
 
 - Single-family home, 2 to 3 bedrooms: a 10x15 typically fits a full household, including a sofa, appliances, and bedroom sets.
 
-- Full house, a garage's worth of items, or a vehicle: a 10x20 or 10x30 gives room for furniture from every room plus a car, boat, or small business's stock.
+- Full house, a garage's worth of items, or a vehicle: a 10x20 or 10x30 gives room for furniture from every room plus a car, [boat](/boat-storage), or small business's stock.
 
 - PCS move or deployment: many military families land in a 5x10 or 10x10 depending on whether they are storing a full household or just the extras that will not fit in base housing.
 
@@ -78,7 +78,7 @@ If you only need to store the contents of a one-bedroom apartment, a 5x10 unit i
 
 Climate control is less of a must-have in San Diego than in humid or extreme-temperature markets, since the city's mild, semi-arid climate rarely swings far from comfortable room temperature. Even so, plenty of renters choose it for specific reasons.
 
-- Climate-controlled units typically add 20% to 35% to the base rate in San Diego, in line with the national average.
+- [Climate-controlled units](/climate-controlled-storage) typically add 20% to 35% to the base rate in San Diego, in line with the national average.
 
 - Coastal neighborhoods deal with salt air and ocean humidity, which can corrode metal, warp wood, and damage electronics over time, even without extreme heat.
 

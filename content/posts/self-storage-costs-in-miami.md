@@ -9,7 +9,7 @@ url: "/blog/self-storage-costs-miami/"
 published: true
 ---
 
-A storage unit in Miami costs about $58 to $600 a month depending on size, and most renters land in the $150 to $190 range for the most popular 10x10 unit. Climate controlled units run noticeably higher here than in most US cities, since Miami's heat and humidity make temperature control more of a necessity than a luxury. This guide breaks down current Miami storage prices by size, what pushes them up or down, how hurricane season changes the math, and where in the city you are likely to find the best rate.
+A storage unit in Miami costs about $58 to $600 a month depending on size, and most renters land in the $150 to $190 range for the most popular 10x10 unit. [Climate controlled units](/climate-controlled-storage) run noticeably higher here than in most US cities, since Miami's heat and humidity make temperature control more of a necessity than a luxury. This guide breaks down current Miami storage prices by size, what pushes them up or down, how hurricane season changes the math, and where in the city you are likely to find the best rate.
 
 ## Miami storage unit prices by size
 

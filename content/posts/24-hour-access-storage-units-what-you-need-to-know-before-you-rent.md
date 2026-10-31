@@ -47,7 +47,7 @@ Not everyone does, and plenty of renters pay for it without ever using it outsid
 
 - Shift workers whose schedules fall outside the typical 6 a.m. to 9 p.m. window.
 
-- Small business owners who load and unload inventory on their own timeline, including early morning deliveries.
+- Small business owners who load and unload [inventory](/business-storage) on their own timeline, including early morning deliveries.
 
 - Movers on a tight deadline, packing a truck late at night before a long drive.
 
@@ -141,6 +141,6 @@ Is it safe to visit a storage unit late at night? It depends on the facility's l
 
 What ID or code do I need for after-hours entry? Most facilities use a personal gate code, sometimes paired with a keyfob, access card, or mobile app, plus photo ID on file from move-in.
 
-Can I get 24-hour access with a climate controlled unit? Often yes, though indoor climate controlled buildings may use a separate keypad or fob at the building entrance in addition to the perimeter gate.
+Can I get 24-hour access with a [climate controlled unit](/climate-controlled-storage)? Often yes, though indoor climate controlled buildings may use a separate keypad or fob at the building entrance in addition to the perimeter gate.
 
 Does 24-hour access mean the office is open too? No. The office keeps normal business hours even when the gate and your unit are accessible around the clock.

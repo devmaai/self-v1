@@ -2,7 +2,6 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
-import HomeStorageSearch from "@/components/v2/HomeStorageSearch";
 
 // Real Visibility Index data — daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
@@ -69,33 +68,24 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div className="v2-home">
+      <div className="v2-home agency-brand">
         <V2Interactions />
         <V2Nav variant="home" />
 
-        <section className="hero">
+        <section className="hero hero-agency">
           <div className="hero-inner">
             <div className="hero-top">
               <div>
-                <div className="hero-badge">
-                  <span className="hero-badge-dot"></span>
-                  Specialist SEO for self-storage operators
-                </div>
                 <h1 className="hero-h1">
-                  Your storage facility should rank<br />
-                  where <em>local renters search.</em>
+                  We rank your local self storage units<br />
+                  <em className="hero-h1-line">in the top three positions.</em>
                 </h1>
-                <p className="hero-lead">
-                  Independent self-storage operators lose move-ins every day to bigger chains and listing platforms that charge them per lead. We specialise in SEO &amp; AEO for self-storage business owners and fix the organic search gap so renters find your storage facility first.
-                </p>
                 <div className="hero-cta-row">
-                  <a href="/audit" className="btn-hero">
-                    Get your free site audit
+                  <a href="/contact" className="btn-hero btn-hero-lg">
+                    Contact us
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </a>
-                  <a href="#proof" className="btn-hero-ghost">See ranking data →</a>
                 </div>
-                <HomeStorageSearch />
               </div>
 
               <div className="hero-dashboard reveal">
@@ -176,92 +166,75 @@ export default function HomePage() {
         <section className="page-section" id="challenge">
           <div className="inner">
             <div className="pill">Why organic search matters for storage</div>
-            <h2 className="section-h2">Every week you are invisible on Google,<br />a renter chooses someone else.</h2>
-            <p className="section-lead">Independent operators across the USA are losing ground to national chains and listing platforms that dominate the same searches their local customers run. Here is what that actually costs.</p>
+            <h2 className="section-h2">Why your storage unit is not visible on Google</h2>
 
-            <div className="demand-band reveal">
-              <div className="demand-stat">
-                <div className="demand-num accent">619K</div>
-                <div className="demand-text">Search impressions one storage site earned for self-storage queries in 12 months. The demand is already there.</div>
-              </div>
-              <div className="demand-stat">
-                <div className="demand-num warn">39.8</div>
-                <div className="demand-text">Its average Google position. Buried on page four, where almost no renter ever looks.</div>
-              </div>
-              <div className="demand-stat">
-                <div className="demand-num warn">0.1%</div>
-                <div className="demand-text">Share of that demand it actually turned into clicks. Nearly all of it went to someone else.</div>
-              </div>
-            </div>
-
-            <div className="problem-layout">
+            <div className="problem-layout problem-layout-agency">
               <div className="problem-right">
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 01</div>
                   <div className="problem-card-title">Your Google Business Profile is not optimised for storage searches</div>
                   <div className="problem-card-desc">Missing service categories, incomplete coverage areas, and outdated photos give Google fewer signals to rank your listing above competitors. The map pack goes to whoever has the most complete and active profile.</div>
-                  <div className="problem-card-tag">GBP · Citations · NAP consistency</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 02</div>
                   <div className="problem-card-title">Your website does not target the terms renters actually search</div>
                   <div className="problem-card-desc">Pages without unit-size terms, zip code content, or neighbourhood-specific copy miss the searches that convert. Renters searching for &ldquo;10x10 storage unit 78201&rdquo; will not find a generic homepage.</div>
-                  <div className="problem-card-tag">Content · Location pages · Unit-size pages</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 03</div>
                   <div className="problem-card-title">Technical issues prevent Google from crawling and ranking your pages</div>
                   <div className="problem-card-desc">Slow load times on mobile, missing schema markup, and crawl errors keep your pages suppressed regardless of how good your content is. A site that does not load in under 2 seconds loses both rankings and reservations.</div>
-                  <div className="problem-card-tag">Core Web Vitals · Schema · Speed</div>
+                </div>
+                <div className="problem-card reveal">
+                  <div className="problem-card-num">Problem 04</div>
+                  <div className="problem-card-title">Your website and Google Business Profile are not optimized for AI search</div>
+                  <div className="problem-card-desc">Renters now ask ChatGPT, Perplexity and Google AI Overviews where to find storage. Without structured data, clear answers and consistent business details, AI tools have nothing to cite, so your facility is left out of their recommendations.</div>
                 </div>
               </div>
 
               <div>
-                <div className="problem-visual reveal" style={{ marginBottom: 16 }}>
-                  <div className="pv-header">
-                    <div className="pv-title">What you are paying per move-in today</div>
-                    <div className="pv-sub">Estimated for a typical single facility</div>
-                  </div>
-                  <div className="pv-rows">
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon r"></span>Paid ads (Google Local Services)</div>
-                      <div className="pv-row-val red">$85–$140 / lead</div>
+                <div className="cost-visual reveal">
+                  <div className="cost-title">What you are paying per move-in today</div>
+                  <div className="cost-sub">Estimated for a typical single facility</div>
+                  <div className="cost-rows">
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Paid ads (Google Local Services)</span><span className="cost-val r">$85–$140 <small>per lead</small></span></div>
+                      <div className="cost-track"><div className="cost-bar r" style={{ left: "61%", width: "39%" }}></div></div>
                     </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon a"></span>Listing platform cut (aggregator)</div>
-                      <div className="pv-row-val red">$60–$110 / move-in</div>
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Listing platform cut</span><span className="cost-val a">$60–$110 <small>per move-in</small></span></div>
+                      <div className="cost-track"><div className="cost-bar a" style={{ left: "43%", width: "36%" }}></div></div>
                     </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon a"></span>Pay-per-lead directory</div>
-                      <div className="pv-row-val red">$40–$80 / inquiry</div>
-                    </div>
-                    <div className="pv-row">
-                      <div className="pv-row-label"><span className="pv-row-icon g"></span>Organic search (after SEO programme)</div>
-                      <div className="pv-row-val green">$0 / lead</div>
+                    <div className="cost-row">
+                      <div className="cost-row-top"><span className="cost-label">Pay-per-lead directory</span><span className="cost-val a">$40–$80 <small>per inquiry</small></span></div>
+                      <div className="cost-track"><div className="cost-bar a" style={{ left: "29%", width: "28%" }}></div></div>
                     </div>
                   </div>
-                  <div className="pv-total">
-                    <div className="pv-total-label">Your organic cost per lead at month 6</div>
-                    <div className="pv-total-val">$0.00</div>
+                  <div className="cost-organic">
+                    <div className="cost-organic-dot"></div>
+                    <div>
+                      <div className="cost-organic-label">Organic search, after your SEO programme</div>
+                      <div className="cost-organic-val">$0 per lead</div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="inline-cta reveal">
+                <div className="inline-cta inline-cta-rust reveal">
                   <div className="inline-cta-text">
-                    <strong>See what you are losing each month</strong>
-                    Get a free audit. We map your gaps and show you exactly what it would take to rank.
+                    <strong>Rank in the top three positions of Google and AI search</strong>
+                    Talk to us about moving your facility into the top three.
                   </div>
-                  <a href="/audit" className="btn-inline">Get free audit →</a>
+                  <a href="/contact" className="btn-inline">Contact us →</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="page-section alt" id="services">
+        <section className="page-section services-agency" id="services">
           <div className="inner">
             <div className="pill">What we do</div>
-            <h2 className="section-h2">Six services. All built specifically<br />for self-storage operators.</h2>
+            <h2 className="section-h2">Steps to rank your self storage unit in SEO and AEO</h2>
             <p className="section-lead">We do not do generic SEO. Our activities are tailored for real estate owners, especially focused on growing the business for self-storage business owners.</p>
             <V2ServicesDrawer />
           </div>
@@ -409,40 +382,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="page-section alt" id="process">
-          <div className="inner">
-            <div className="pill">How it works</div>
-            <h2 className="section-h2">Four phases. Ninety days to<br />measurable ranking lift.</h2>
-            <p className="section-lead">No six-month setup period. Quick wins are prioritised in week one while the long-term foundation is built in parallel. Rankings begin moving before the first reporting call.</p>
-            <div className="process-steps">
-              {[
-                { phase: "Phase 01", days: "Days 1 – 7", title: "Audit", desc: "Full technical and content audit of your site, GBP, reviews, and competitor landscape. We connect your GA4 and GSC accounts and deliver a written report with prioritised fixes.", out: "✓ Delivered week 1", active: true },
-                { phase: "Phase 02", days: "Days 8 – 30", title: "Foundation", desc: "Indexation fixes, schema implementation, citation building, and GBP optimisation. This is where most storage sites double their search visibility. Review automation rolls out in months two and three.", out: "✓ Rankings start moving", active: false },
-                { phase: "Phase 03", days: "Days 31 – 60", title: "Scale", desc: "Location pages, unit-size content, link earning, and review velocity campaigns. Rankings compound as content depth and domain authority grow together across your target service area.", out: "✓ Organic leads increasing", active: false },
-                { phase: "Phase 04", days: "Days 61 – 90+", title: "Measure", desc: "Monthly reports connect every ranking position to move-in volume via your GA4 data. We adjust the programme based on what the numbers show. Reporting is tied directly to your accounts.", out: "✓ Monthly reporting call", active: false },
-              ].map((s, i) => (
-                <div key={i} className={`pstep${s.active ? " active" : ""} reveal`}>
-                  <div className="pstep-accent"></div>
-                  <div className="pstep-phase">{s.phase}</div>
-                  <div className="pstep-days">{s.days}</div>
-                  <div className="pstep-title">{s.title}</div>
-                  <div className="pstep-desc">{s.desc}</div>
-                  <div className="pstep-output">{s.out}</div>
-                </div>
-              ))}
-            </div>
-            <div className="process-cta-row reveal">
-              <div className="pct-text"><strong>Ready to see what phase one finds in your site?</strong> The audit is free and delivered in writing within five business days.</div>
-              <a href="/audit" className="btn-pct">Start with a free audit →</a>
-            </div>
-          </div>
-        </section>
-
         <section className="page-section" id="pricing">
           <div className="inner">
             <div className="pill">Pricing</div>
             <h2 className="section-h2">Three programmes. Month-to-month<br />after the first ninety days.</h2>
-            <p className="section-lead">No long-term contracts. No setup fees. Pause or adjust as your portfolio changes. The first ninety days are a fixed onboarding period so we can build the foundation properly.</p>
             <div className="pricing-grid">
               <div className="pricing-card reveal">
                 <div className="pc-head">
@@ -496,9 +439,11 @@ export default function HomePage() {
                 <div className="pc-cta"><a href="/audit" className="pc-btn">Talk to us →</a></div>
               </div>
             </div>
-            <div className="pricing-guarantee reveal">
-              <div className="pg-icon">✓</div>
-              <div className="pg-text"><span>No long-term contracts.</span> Month-to-month after the first 90-day onboarding period. Exit with 30 days notice at any point.</div>
+            <div className="pricing-cta-row reveal">
+              <a href="/contact" className="btn-hero btn-hero-lg">
+                Contact us
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
             </div>
           </div>
         </section>
@@ -530,24 +475,28 @@ export default function HomePage() {
         <section className="final-cta" id="audit">
           <div className="inner">
             <h2 className="final-h2">Find out exactly where your facility<br />is losing organic search visibility.</h2>
-            <p className="final-lead">Request a free audit. We review your site, GBP, and local rankings and deliver a written report within five business days. No sales call required to receive it.</p>
             <div className="final-actions">
               <a href="/audit" className="btn-final">
-                Get my free audit
+                Request a free audit
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
-              <a href="#proof" className="btn-final-ghost">See ranking data first</a>
             </div>
             <div className="final-reassurance">
               <div className="fr-item">Free, no obligation</div>
               <div className="fr-item">Written report in 5 business days</div>
               <div className="fr-item">No sales call required</div>
-              <div className="fr-item">Yours to keep regardless</div>
             </div>
           </div>
         </section>
 
-        <V2Footer />
+        <section className="backlink-cta" id="backlinks">
+          <div className="inner">
+            <h2 className="backlink-h2">Want a backlink from SelfStorage.help?</h2>
+            <a href="/contact" className="btn-backlink">Request a backlink →</a>
+          </div>
+        </section>
+
+        <V2Footer blogColumn />
       </div>
     </>
   );

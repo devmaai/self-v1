@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 
 const STORAGE_TYPES = [
   { icon: "box", title: "Self Storage", body: "Self-storage units are most commonly used to store personal items, furniture, and excess belongings. Units come in different sizes, from small lockers to large spaces.", href: "/storage-search?location=Self%20Storage" },
-  { icon: "car", title: "Car Storage", body: "Collector, vintage, classic, or spare cars often need a space to be stored. Choose from indoor, covered, or outdoor options for the protection your vehicle needs.", href: "/storage-search?location=Car%20Storage" },
-  { icon: "rv", title: "RV Storage", body: "RV storage is designed for motorhomes, travel trailers, and campers, with options such as electrical hookups, covered spaces, and wide driveways.", href: "/storage-search?location=RV%20Storage" },
-  { icon: "boat", title: "Boat Storage", body: "Boat storage can be indoor, covered, or outdoor. Facilities may have restrictions on the size and type of boats they can accommodate.", href: "/storage-search?location=Boat%20Storage" },
+  { icon: "car", title: "Car Storage", body: "Collector, vintage, classic, or spare cars often need a space to be stored. Choose from indoor, covered, or outdoor options for the protection your vehicle needs.", href: "/car-storage" },
+  { icon: "rv", title: "RV Storage", body: "RV storage is designed for motorhomes, travel trailers, and campers, with options such as electrical hookups, covered spaces, and wide driveways.", href: "/rv-storage" },
+  { icon: "boat", title: "Boat Storage", body: "Boat storage can be indoor, covered, or outdoor. Facilities may have restrictions on the size and type of boats they can accommodate.", href: "/boat-storage" },
   { icon: "climate", title: "Climate Controlled", body: "Climate-controlled self-storage protects your belongings from environmental changes by maintaining consistent temperature and humidity levels.", href: "/climate-controlled-storage" },
-  { icon: "business", title: "Business Storage", body: "Small businesses and entrepreneurs often need additional space to store inventory, documents, and equipment. Business storage is designed to fit those needs.", href: "/storage-search?location=Business%20Storage" },
+  { icon: "business", title: "Business Storage", body: "Small businesses and entrepreneurs often need additional space to store inventory, documents, and equipment. Business storage is designed to fit those needs.", href: "/business-storage" },
 ];
 
 type StorageTypeIconName = (typeof STORAGE_TYPES)[number]["icon"];

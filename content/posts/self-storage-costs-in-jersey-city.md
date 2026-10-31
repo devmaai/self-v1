@@ -55,7 +55,7 @@ It is worth paying for if you are storing:
 
 - Anything stored through a full summer and winter cycle
 
-You can usually skip the upgrade for tools, patio furniture, metal shelving, and sports gear that already handles the outdoors. For more on what belongs in a climate controlled unit, the full breakdown of what climate controlled storage covers walks through it by item type.
+You can usually skip the upgrade for tools, patio furniture, metal shelving, and sports gear that already handles the outdoors. For more on what belongs in a [climate controlled unit](/climate-controlled-storage), the full breakdown of what climate controlled storage covers walks through it by item type.
 
 ## Cheapest and priciest Jersey City neighborhoods for storage
 

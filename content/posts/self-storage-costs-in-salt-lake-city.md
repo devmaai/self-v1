@@ -55,7 +55,7 @@ It is worth paying for if you are storing:
 
 - Anything stored longer than a season through both summer heat and winter cold
 
-You can usually skip the upgrade for tools, patio furniture, metal shelving, and camping or ski gear that is built to handle temperature swings. If you are still deciding, the full breakdown of what climate controlled storage covers walks through it by item type.
+You can usually skip the upgrade for tools, patio furniture, metal shelving, and camping or ski gear that is built to handle temperature swings. If you are still deciding, the full breakdown of what [climate controlled storage](/climate-controlled-storage) covers walks through it by item type.
 
 ## Cheapest and priciest Salt Lake City areas for storage
 
@@ -81,7 +81,7 @@ Salt Lake City's storage market runs on a different seasonal clock than most of 
 
 - Spring brings the reverse swap, when ski and snowboard equipment comes out of storage and summer gear, bikes, and patio furniture go back in.
 
-- RVs and boats need a winter home. Many Salt Lake City renters use storage specifically to get vehicles off the driveway before the first heavy snow, which raises demand for larger drive-up units each fall.
+- [RVs](/rv-storage) and boats need a winter home. Many Salt Lake City renters use storage specifically to get vehicles off the driveway before the first heavy snow, which raises demand for larger drive-up units each fall.
 
 If your storage needs are tied to the seasons, booking a few weeks ahead of the fall gear swap gets you more choice and a better rate than waiting until the first snowstorm.
 
@@ -131,7 +131,7 @@ Do I need climate control for storage in Salt Lake City? Many renters benefit fr
 
 Where is storage cheapest in Salt Lake City? West Valley City, West Jordan, Magna, and Midvale tend to run cheaper than downtown, the Avenues, and Sugar House.
 
-Does ski season affect storage prices in Salt Lake City? Yes. Demand rises each fall as gear gets swapped for winter and again each spring when it swaps back, and RV and boat storage gets busier right before the first snow.
+Does ski season affect storage prices in Salt Lake City? Yes. Demand rises each fall as gear gets swapped for winter and again each spring when it swaps back, and RV and [boat storage](/boat-storage) gets busier right before the first snow.
 
 Do I need a bigger unit to store an RV or boat in Salt Lake City? Most RVs and boats need a 10x20 or larger drive-up unit. Check the vehicle storage guide to match your vehicle to a size.
 
