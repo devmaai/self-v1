@@ -715,7 +715,7 @@
   .v2-home .nav-links { display: none; }
   .v2-home .nav-actions { display: none; }
   .v2-home .v2-nav-home .nav-business-owner { display: none; }
-  .v2-home .v2-nav:not(.v2-nav-home) .nav-burger { margin-left: auto; }
+  .v2-home .v2-nav .nav-burger { margin-left: auto; }
 
   /* Hamburger button */
   .v2-home .nav-burger {

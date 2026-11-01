@@ -8,6 +8,7 @@ const FACILITIES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET
 const UNITS_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=Units`;
 
 export type SheetRow = {
+  unit_id: string;
   facility_id: string;
   facility_name: string;
   state: string;
@@ -86,6 +87,7 @@ async function fetchLiveRows(): Promise<SheetRow[]> {
     .map((unit): SheetRow => {
       const facility = facilityById.get(unit.facility_id);
       return {
+        unit_id: unit.unit_id ?? "",
         facility_id: unit.facility_id ?? "",
         facility_name: unit.facility_name || facility?.name || "",
         state: facility?.state || unit.state || "",
