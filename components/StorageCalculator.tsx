@@ -1,585 +1,588 @@
 "use client";
 
+import Link from "next/link";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ChangeEvent,
-  type KeyboardEvent as ReactKeyboardEvent,
-  type MouseEvent as ReactMouseEvent,
-} from "react";
-import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import {
-  calculateRecommendation,
-  getItem,
-  itemGroups,
-  items,
-  PACKING_EFFICIENCY,
-  rooms,
-  storageUnits,
-  unitContext,
-  type ItemGroupId,
-  type Recommendation,
-  type RoomId,
-  type StorageItem,
-} from "@/lib/storageCalculator";
-import { UnitFloorPlan } from "@/components/calculator/UnitFloorPlan";
-import { VolumeVisual } from "@/components/calculator/VolumeVisual";
+  FINDER_CATEGORIES,
+  FINDER_FURNITURE_COLORS,
+  FINDER_ITEMS,
+  FINDER_ROOMS,
+  FINDER_UNITS,
+  type FinderCategory,
+  type FinderIconName,
+  type FinderItemType,
+  type FinderRoom,
+  type FinderUnit,
+} from "@/lib/storageSizeFinder";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 
-type SelectedItem = {
-  item: StorageItem;
-  itemId: string;
-  quantity: number;
+const ICON_PATHS: Record<FinderIconName, ReactNode> = {
+  sofa: <><path d="M4 12V8a3 3 0 013-3h10a3 3 0 013 3v4M2 14a2 2 0 012-2h1a2 2 0 012 2v1h10v-1a2 2 0 012-2h1a2 2 0 012 2v5H2v-5zM6 20v2m12-2v2" /></>,
+  chair: <><path d="M6 19V5a2 2 0 012-2h8a2 2 0 012 2v14M6 12h12M6 19h12" /></>,
+  table: <><path d="M4 10h16M6 10v9m12-9v9M4 10l2-4h12l2 4" /></>,
+  tv: <><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M9 21h6m-3-4v4" /></>,
+  shelf: <><rect x="4" y="3" width="16" height="18" rx="1" /><path d="M4 9h16M4 15h16" /></>,
+  round: <><circle cx="12" cy="12" r="8" /><path d="M12 8v4l2.5 2.5" /></>,
+  bed: <><path d="M3 18v-8a2 2 0 012-2h14a2 2 0 012 2v8M3 18h18M3 18v2m18-2v2M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2" /></>,
+  box: <><path d="M21 8l-9-5-9 5v8l9 5 9-5V8zM3 8l9 5 9-5M12 13v8" /></>,
+  fridge: <><rect x="6" y="2" width="12" height="20" rx="2" /><path d="M9 6h6M9 10h.01" /></>,
+  bike: <><circle cx="6" cy="17" r="3.5" /><circle cx="18" cy="17" r="3.5" /><path d="M6 17l4-8h5l3 8M10 9L8 6h3" /></>,
+  tool: <><path d="M14 7l3 3-8.5 8.5a2.1 2.1 0 01-3-3L14 7zM14 7l-2.5-2.5M17 10l2.5 2.5" /></>,
+  grill: <><circle cx="12" cy="11" r="7" /><path d="M8 21l2-4m6 4l-2-4M9 11h6" /></>,
 };
 
-type GroupTab = {
-  id: ItemGroupId | "all";
-  label: string;
-  count: number;
-};
-
-function formatVolume(volume: number) {
-  return volume % 1 === 0 ? `${volume} cu ft` : `${volume.toFixed(1)} cu ft`;
+function ItemIcon({ name, size = 18 }: { name: FinderIconName; size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {ICON_PATHS[name]}
+    </svg>
+  );
 }
 
-function RoomIcon({ roomId }: { roomId: RoomId }) {
-  const commonProps = {
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.7,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
+function PlusIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width={13} height={13} fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" aria-hidden="true">
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
 
-  switch (roomId) {
-    case "bedroom":
-      return <svg {...commonProps}><path d="M3 19V9.5a1.5 1.5 0 0 1 3 0V12h12V9.5a1.5 1.5 0 0 1 3 0V19" /><path d="M3 15h18M6 12V9h5v3M3 19v2M21 19v2" /></svg>;
-    case "living-room":
-      return <svg {...commonProps}><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3" /><path d="M4 11h16a1 1 0 0 1 1 1v4H3v-4a1 1 0 0 1 1-1ZM5 16v3M19 16v3M8 11V9h8v2" /></svg>;
-    case "kitchen":
-      return <svg {...commonProps}><path d="M5 3v7M8 3v7M5 7h3M6.5 10v11M14 3v18M14 3c3 2 3 5 0 7M18 3v18M14 14h4" /></svg>;
-    case "dining-room":
-      return <svg {...commonProps}><path d="M3 8h18M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M7 13v8M17 13v8M12 3v5M9 5h6" /></svg>;
-    case "home-office":
-      return <svg {...commonProps}><path d="M4 4h16v11H4zM8 19h8M12 15v4M7 8h10M7 11h6" /></svg>;
-    case "garage":
-      return <svg {...commonProps}><path d="m3 10 9-7 9 7v10H3zM7 20v-6h10v6M9 9h6M9 12h6" /></svg>;
+function shade(hex: string, factor: number) {
+  const n = parseInt(hex.slice(1), 16);
+  let r = (n >> 16) & 255;
+  let g = (n >> 8) & 255;
+  let b = n & 255;
+  if (factor >= 0) {
+    r += (255 - r) * factor;
+    g += (255 - g) * factor;
+    b += (255 - b) * factor;
+  } else {
+    r *= 1 + factor;
+    g *= 1 + factor;
+    b *= 1 + factor;
   }
+  return `#${[r, g, b].map((v) => Math.round(v).toString(16).padStart(2, "0")).join("")}`;
 }
 
-function SelectedItemsPanel({
-  selectedItems,
-  totalVolume,
-  liveRecommendation,
-  onQuantityChange,
-  onShowRecommendation,
-  variant = "sidebar",
-  reduceMotion,
+const DIAMOND: Array<[number, number]> = [
+  [160, 72],
+  [138, 85],
+  [182, 85],
+  [116, 98],
+  [160, 98],
+  [204, 98],
+  [138, 111],
+  [182, 111],
+  [160, 124],
+];
+
+function vizCube(cx: number, cy: number, color: string, delay: number, key: number) {
+  const top = shade(color, 0.34);
+  const right = shade(color, -0.2);
+  const stroke = "rgba(15,23,42,.18)";
+  return (
+    <g className="viz-cube" style={{ animationDelay: `${delay}ms` }} key={key}>
+      <polygon points={`${cx - 22},${cy} ${cx},${cy + 12} ${cx},${cy + 34} ${cx - 22},${cy + 22}`} fill={color} stroke={stroke} strokeWidth=".6" />
+      <polygon points={`${cx + 22},${cy} ${cx},${cy + 12} ${cx},${cy + 34} ${cx + 22},${cy + 22}`} fill={right} stroke={stroke} strokeWidth=".6" />
+      <polygon points={`${cx},${cy - 12} ${cx + 22},${cy} ${cx},${cy + 12} ${cx - 22},${cy}`} fill={top} stroke={stroke} strokeWidth=".6" />
+    </g>
+  );
+}
+
+function VolumeVisual({
+  volume,
+  capacity,
+  tags,
+  caption,
+  animate,
+  width,
 }: {
-  selectedItems: SelectedItem[];
-  totalVolume: number;
-  liveRecommendation: Recommendation | null;
-  onQuantityChange: (itemId: string, quantity: number) => void;
-  onShowRecommendation: () => void;
-  variant?: "sidebar" | "drawer";
-  reduceMotion: boolean | null;
+  volume: number;
+  capacity: number;
+  tags: FinderItemType[];
+  caption: string;
+  animate: boolean;
+  width: number;
 }) {
-  const defaultUnit = storageUnits.find((unit) => unit.id === "10x10") ?? storageUnits[0];
-  const unit = liveRecommendation?.unit ?? defaultUnit;
-  const capacity = liveRecommendation?.usableCapacity ?? defaultUnit.capacity * PACKING_EFFICIENCY;
+  const count = volume > 0 ? Math.min(27, Math.max(1, Math.round((volume / capacity) * 27))) : 0;
+  const cubes = [];
+  for (let i = 0; i < count; i += 1) {
+    const level = Math.floor(i / 9);
+    const point = DIAMOND[i % 9];
+    const color = FINDER_FURNITURE_COLORS[tags[i % tags.length] ?? "boxes"];
+    cubes.push(vizCube(point[0], point[1] - 22 * level, color, animate ? i * 22 : 0, i));
+  }
 
   return (
-    <>
-      {selectedItems.length === 0 ? (
-        <div className="calculator-empty">
-          <span aria-hidden="true">＋</span>
-          <p>Your selected items will appear here.</p>
-          <small>Choose a room above or add an item to get started.</small>
-        </div>
-      ) : (
-        <div className={`calculator-selected-list${variant === "drawer" ? " is-drawer" : ""}`}>
-          <AnimatePresence initial={false}>
-            {selectedItems.map(({ item, itemId, quantity }) => (
-              <motion.div
-                layout
-                key={itemId}
-                className="calculator-selected-row"
-                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -14 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <div>
-                  <strong>{item.name}</strong>
-                  <small>{formatVolume(item.volume * quantity)}</small>
-                </div>
-                <div className="calculator-quantity">
-                  <button type="button" aria-label={`Decrease ${item.name}`} onClick={() => onQuantityChange(itemId, quantity - 1)}>−</button>
-                  <span>{quantity}</span>
-                  <button type="button" aria-label={`Increase ${item.name}`} onClick={() => onQuantityChange(itemId, quantity + 1)}>+</button>
-                </div>
-                <button type="button" className="calculator-remove" aria-label={`Remove ${item.name}`} onClick={() => onQuantityChange(itemId, 0)}>Remove</button>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-      )}
-
-      <VolumeVisual volume={totalVolume} capacity={capacity} unitLabel={liveRecommendation ? unit.label : "Your"} />
-
-      <div className="calculator-summary-total">
-        <span>Estimated volume</span>
-        <motion.strong
-          key={totalVolume}
-          initial={reduceMotion ? false : { scale: 1.18, color: "#146fb5" }}
-          animate={{ scale: 1, color: "#16334b" }}
-          transition={{ type: "spring", stiffness: 320, damping: 20 }}
-        >
-          {formatVolume(totalVolume)}
-        </motion.strong>
-      </div>
-
-      <button
-        type="button"
-        className="calculator-primary-button"
-        disabled={selectedItems.length === 0}
-        onClick={onShowRecommendation}
-      >
-        See my recommended size <span aria-hidden="true">→</span>
-      </button>
-      <p className="calculator-summary-note">
-        We allow space for packing gaps and safe access, so the recommendation is more practical than matching box volume alone.
-      </p>
-    </>
+    <svg viewBox="0 0 320 205" aria-label="Your items filling a storage unit" role="img">
+      <ellipse cx="160" cy="172" rx="118" ry="22" fill="rgba(15,23,42,.06)" />
+      {cubes}
+      <g fill="none" strokeLinejoin="round">
+        <polygon points="160,15 94,54 160,93" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="5 4" />
+        <polygon points="226,54 160,15 160,93" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="5 4" />
+        <polygon points="160,15 94,54 94,120 160,159" fill="rgba(20,111,181,.05)" stroke="#0F172A" strokeWidth="2" />
+        <polygon points="160,15 226,54 226,120 160,159" fill="rgba(20,111,181,.09)" stroke="#0F172A" strokeWidth="2" />
+      </g>
+      <g stroke="#146FB5" strokeWidth="1.6" fill="#146FB5">
+        <line x1="94" y1="24" x2="226" y2="24" strokeDasharray="5 4" />
+        <line x1="90" y1="28" x2="98" y2="20" />
+        <line x1="222" y1="28" x2="230" y2="20" />
+        <line x1="246" y1="54" x2="246" y2="120" strokeDasharray="5 4" />
+        <line x1="242" y1="58" x2="250" y2="50" />
+        <line x1="242" y1="124" x2="250" y2="116" />
+        <text x="160" y="16" textAnchor="middle" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 10, letterSpacing: ".14em" }}>
+          {width} FT
+        </text>
+        <text x="258" y="92" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 10, letterSpacing: ".14em" }}>
+          8 FT
+        </text>
+      </g>
+      <text x="160" y="196" textAnchor="middle" fill="#64748B" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: 10, letterSpacing: ".22em" }}>
+        {caption}
+      </text>
+    </svg>
   );
+}
+
+function searchHref(unit: FinderUnit | null) {
+  return `/storage-search?location=${encodeURIComponent(unit ? `${unit.label} storage` : "storage units")}`;
+}
+
+function formUnitSize(unit: FinderUnit) {
+  const depth = unit.sq / unit.w;
+  return `${unit.w}' × ${depth}'`;
+}
+
+function recommend(volume: number) {
+  return FINDER_UNITS.find((unit) => unit.cap >= volume * 1.1) ?? FINDER_UNITS[FINDER_UNITS.length - 1];
 }
 
 export default function StorageCalculator() {
   const [selected, setSelected] = useState<Record<string, number>>({});
-  const [activeRooms, setActiveRooms] = useState<RoomId[]>([]);
-  const [search, setSearch] = useState("");
-  const [activeGroup, setActiveGroup] = useState<ItemGroupId | "all">("all");
-  const [showAllItems, setShowAllItems] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [bumpedItemId, setBumpedItemId] = useState<string | null>(null);
-  const [isWorkspaceVisible, setIsWorkspaceVisible] = useState(true);
-  const reduceMotion = useReducedMotion();
-  const drawerRef = useRef<HTMLDialogElement>(null);
-  const drawerCloseRef = useRef<HTMLButtonElement>(null);
-  const workspaceRef = useRef<HTMLElement>(null);
-  const bumpTimer = useRef<number | null>(null);
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const wasShowingRecommendation = useRef(false);
+  const [category, setCategory] = useState<FinderCategory | "all">("all");
+  const [query, setQuery] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [displayedVolume, setDisplayedVolume] = useState(0);
 
-  const selectedItems = useMemo(
-    () => Object.entries(selected)
-      .map(([itemId, quantity]) => ({ item: getItem(itemId), itemId, quantity }))
-      .filter((entry): entry is SelectedItem => entry.item !== undefined && entry.quantity > 0),
+  const displayedRef = useRef(0);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const workspaceRef = useRef<HTMLElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const itemById = useMemo(() => new Map(FINDER_ITEMS.map((item) => [item.id, item])), []);
+
+  const totalVolume = useMemo(
+    () => Object.entries(selected).reduce((sum, [id, quantity]) => sum + (itemById.get(id)?.vol ?? 0) * quantity, 0),
+    [selected, itemById],
+  );
+
+  const totalCount = useMemo(
+    () => Object.values(selected).reduce((sum, quantity) => sum + quantity, 0),
     [selected],
   );
-  const totalItems = selectedItems.reduce((sum, entry) => sum + entry.quantity, 0);
-  const totalVolume = selectedItems.reduce((sum, entry) => sum + entry.item.volume * entry.quantity, 0);
-  const liveRecommendation = useMemo(() => calculateRecommendation(selected), [selected]);
 
-  const groupLabels = useMemo(
-    () => new Map(itemGroups.map((group) => [group.id, group.label])),
-    [],
+  const recommendation = totalVolume > 0 ? recommend(totalVolume) : null;
+  const activeUnit = recommendation ?? FINDER_UNITS[2];
+  const fillPct = recommendation ? Math.round((totalVolume / activeUnit.cap) * 100) : 0;
+
+  const tags = useMemo(() => {
+    const collected: FinderItemType[] = [];
+    Object.entries(selected).forEach(([id, quantity]) => {
+      const item = itemById.get(id);
+      if (!item) return;
+      for (let i = 0; i < quantity; i += 1) collected.push(item.type);
+    });
+    if (!collected.length) return ["boxes"] as FinderItemType[];
+    const out: FinderItemType[] = [];
+    let index = 0;
+    while (collected.length) {
+      out.push(collected.splice(index % collected.length, 1)[0]);
+      index += 1;
+    }
+    return out;
+  }, [selected, itemById]);
+
+  const filteredItems = useMemo(
+    () => FINDER_ITEMS.filter((item) => {
+      const matchesCategory = category === "all" || item.cat === category;
+      const matchesQuery = !query || item.name.toLowerCase().includes(query);
+      return matchesCategory && matchesQuery;
+    }),
+    [category, query],
   );
-  const tabs = useMemo<GroupTab[]>(() => [
-    { id: "all", label: "All", count: items.length },
-    ...itemGroups.map((group) => ({
-      id: group.id,
-      label: group.label,
-      count: items.filter((item) => item.group === group.id).length,
-    })),
-  ], []);
-  const normalizedSearch = search.trim().toLowerCase();
-  const filteredItems = items.filter((item) => {
-    const groupLabel = groupLabels.get(item.group) ?? "";
-    const matchesSearch = `${item.name} ${item.category} ${groupLabel} ${item.dimensions}`.toLowerCase().includes(normalizedSearch);
-    const matchesGroup = activeGroup === "all" || item.group === activeGroup;
-    return matchesSearch && matchesGroup;
-  });
-  const visibleItems = normalizedSearch || activeGroup !== "all"
-    ? filteredItems
-    : showAllItems
-      ? filteredItems
-      : filteredItems.slice(0, 9);
-  const activeTabId = `calculator-tab-${activeGroup}`;
+
+  const recIndex = recommendation ? FINDER_UNITS.indexOf(recommendation) : -1;
+  const smaller = recommendation && recIndex > 0 ? FINDER_UNITS[recIndex - 1] : null;
+  const larger = recommendation && recIndex < FINDER_UNITS.length - 1 ? FINDER_UNITS[recIndex + 1] : null;
+  const headroom = recommendation ? Math.round(((recommendation.cap - totalVolume) / recommendation.cap) * 100) : 0;
+  const over = recommendation ? recommendation.cap < totalVolume * 1.1 : false;
 
   useEffect(() => {
-    if (!drawerOpen) return;
-    const dialog = drawerRef.current;
-    if (dialog && !dialog.open) dialog.showModal();
-    drawerCloseRef.current?.focus();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      if (dialog?.open && dialog.isConnected) dialog.close();
+    const from = displayedRef.current;
+    const to = totalVolume;
+    if (from === to) return;
+    let frame = 0;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min(1, (now - start) / 420);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const next = Math.round(from + (to - from) * eased);
+      displayedRef.current = next;
+      setDisplayedVolume(next);
+      if (progress < 1) frame = requestAnimationFrame(step);
     };
-  }, [drawerOpen]);
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [totalVolume]);
 
   useEffect(() => () => {
-    if (bumpTimer.current) window.clearTimeout(bumpTimer.current);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
   }, []);
 
   useEffect(() => {
-    if (recommendation) return;
-    const node = workspaceRef.current;
-    if (!node || typeof IntersectionObserver === "undefined") return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsWorkspaceVisible(entry.isIntersecting),
-      { rootMargin: "0px 0px -90px 0px", threshold: 0.01 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [recommendation]);
+    if (!modalOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setModalOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [modalOpen]);
 
-  useEffect(() => {
-    if (recommendation) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    } else if (wasShowingRecommendation.current) {
-      workspaceRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
-    }
-    wasShowingRecommendation.current = Boolean(recommendation);
-  }, [recommendation]);
-
-  function addItem(itemId: string, amount = 1) {
-    setSelected((current) => ({ ...current, [itemId]: (current[itemId] ?? 0) + amount }));
-    setRecommendation(null);
-    setBumpedItemId(itemId);
-    if (bumpTimer.current) window.clearTimeout(bumpTimer.current);
-    bumpTimer.current = window.setTimeout(() => setBumpedItemId(null), 360);
+  function showToast(message: string) {
+    setToastMessage(message);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToastMessage(""), 1500);
   }
 
-  function changeQuantity(itemId: string, quantity: number) {
-    setSelected((current) => {
-      const next = { ...current };
-      if (quantity > 0) next[itemId] = Math.max(1, Math.floor(quantity));
-      else delete next[itemId];
+  function addOne(id: string) {
+    const wasSelected = (selected[id] ?? 0) > 0;
+    if (!wasSelected) showToast(`Added ${itemById.get(id)?.name ?? "item"}`);
+    setSelected((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + 1 }));
+  }
+
+  function removeOne(id: string) {
+    setSelected((prev) => {
+      const next = { ...prev };
+      const quantity = (next[id] ?? 0) - 1;
+      if (quantity <= 0) delete next[id];
+      else next[id] = quantity;
       return next;
     });
-    setRecommendation(null);
   }
 
-  function toggleRoom(roomId: RoomId) {
-    const room = rooms.find((candidate) => candidate.id === roomId);
-    if (!room) return;
-    const isActive = activeRooms.includes(roomId);
-    setActiveRooms((current) => isActive ? current.filter((id) => id !== roomId) : [...current, roomId]);
-    setSelected((current) => {
-      const next = { ...current };
-      room.items.forEach(({ itemId, quantity }) => {
-        const nextQuantity = (next[itemId] ?? 0) + (isActive ? -quantity : quantity);
-        if (nextQuantity > 0) next[itemId] = nextQuantity;
-        else delete next[itemId];
+  function addRoom(room: FinderRoom) {
+    const existingSets = Math.min(
+      ...Object.entries(room.items).map(([id, quantity]) => Math.floor((selected[id] ?? 0) / quantity)),
+    );
+    setSelected((prev) => {
+      const next = { ...prev };
+      Object.entries(room.items).forEach(([id, quantity]) => {
+        next[id] = (next[id] ?? 0) + quantity;
       });
       return next;
     });
-    setRecommendation(null);
+    showToast(existingSets > 0 ? `Added another ${room.name} set` : `Added ${room.name} set`);
+  }
+
+  function clearAll() {
+    setSelected({});
   }
 
   function showRecommendation() {
-    setRecommendation(calculateRecommendation(selected));
+    if (recommendation) {
+      setFormOpen(false);
+      setModalOpen(true);
+      return;
+    }
+    workspaceRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function showRecommendationFromDrawer() {
-    setDrawerOpen(false);
-    showRecommendation();
-  }
-
-  function selectGroup(group: ItemGroupId | "all") {
-    setActiveGroup(group);
-    setShowAllItems(false);
-  }
-
-  function handleSearchChange(event: ChangeEvent<HTMLInputElement>) {
-    const value = event.target.value;
-    setSearch(value);
-    if (!value) setShowAllItems(false);
-  }
-
-  function handleTabKeyDown(event: ReactKeyboardEvent<HTMLButtonElement>, index: number) {
-    let nextIndex = index;
-    if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-    else if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
-    else if (event.key === "Home") nextIndex = 0;
-    else if (event.key === "End") nextIndex = tabs.length - 1;
-    else return;
-    event.preventDefault();
-    const next = tabs[nextIndex];
-    selectGroup(next.id);
-    tabRefs.current[nextIndex]?.focus();
-  }
-
-  function handleDialogClick(event: ReactMouseEvent<HTMLDialogElement>) {
-    if (event.target === event.currentTarget) setDrawerOpen(false);
-  }
+  const compareCard = (unit: FinderUnit | null, label: string, mine = false) => (
+    <div className={`mc${mine ? " me" : ""}`}>
+      {label}
+      <b>{unit ? unit.label : "–"}</b>
+      {unit ? `$${unit.price}/MO` : "NONE"}
+    </div>
+  );
 
   return (
     <div className="storage-calculator-page">
-      {!recommendation ? (
-        <>
-          <section className="calculator-hero">
-            <div className="calculator-hero-inner">
-              <div className="calculator-hero-copy">
-                <span className="calculator-eyebrow"><span /> Free planning tool</span>
-                <h1>Find the right <em>storage size</em>.</h1>
-                <p>Tell us what you&apos;re storing, and we&apos;ll suggest a unit that leaves room to pack safely and move around.</p>
-                <div className="calculator-hero-points">
-                  <span><b>1</b> Pick rooms</span>
-                  <span><b>2</b> Fine-tune items</span>
-                  <span><b>3</b> Get your size</span>
-                </div>
-              </div>
-              <div className="calculator-hero-image">
-                <Image src="/images/climate-storage/indoor-unit.png" alt="Clean storage unit interior with packed belongings" fill priority sizes="(max-width: 800px) 100vw, 45vw" />
-                <span className="calculator-image-caption">Make room for what matters.</span>
-              </div>
+      <section className="calculator-hero hero-photo hero-photo-calculator">
+        <div className="calculator-hero-inner">
+          <div className="calculator-hero-copy">
+            <h1>Find the right <em>storage size</em>.</h1>
+            <p>Tell us what you&apos;re storing, and we&apos;ll suggest a unit that leaves room to pack safely and move around.</p>
+          </div>
+        </div>
+        <span className="calculator-image-caption">Make room for what matters.</span>
+      </section>
+
+      <div className="size-finder">
+        <section className="calc" id="calculator" ref={workspaceRef}>
+          <div className="container">
+            <div className="section-head reveal">
+              <h2>What are <em>you</em> storing?</h2>
+              <p>Start with a room preset for speed, then fine-tune with individual items. Your list and volume estimate update live on the right.</p>
             </div>
-          </section>
-          <main className={`calculator-content${totalItems > 0 ? " has-selection" : ""}`}>
-            <div className="calculator-intro">
-              <span className="calculator-label">Step 1 of 2</span>
-              <h2>Start with a room, or add items one at a time.</h2>
-              <p>Room presets are a quick starting point. You can review every item below and adjust the count before seeing your recommendation.</p>
-            </div>
-            <div className="calculator-guidance">
-              <Image src="/images/storage-guide/boxes.jpg" alt="Moving boxes ready for storage" width={180} height={120} />
-              <div><strong>Not sure where to start?</strong><span>Select every room you plan to store. We&apos;ll add a typical set of belongings, then you can adjust anything that doesn&apos;t match.</span></div>
-            </div>
-            <section className="calculator-workspace" ref={workspaceRef}>
-              <div className="calculator-selection">
-                <div className="calculator-section-heading">
-                  <div><span className="calculator-label">Quick add</span><h3>Which rooms are you storing?</h3></div>
-                  {activeRooms.length > 0 && <span className="calculator-count">{activeRooms.length} selected</span>}
+            <div className="calc-grid">
+              <div className="calc-left">
+                <div className="panel reveal">
+                  <div className="panel-label"><h3>Quick add</h3></div>
+                  <p className="panel-sub">One tap adds a typical set of items for that space. Tap again to add another set.</p>
+                  <div className="rooms">
+                    {FINDER_ROOMS.map((room) => {
+                      const roomCount = Object.values(room.items).reduce((sum, quantity) => sum + quantity, 0);
+                      const sets = Math.min(
+                        ...Object.entries(room.items).map(([id, quantity]) => Math.floor((selected[id] ?? 0) / quantity)),
+                      );
+                      return (
+                        <button
+                          key={room.id}
+                          type="button"
+                          className={`room-card${sets > 0 ? " on" : ""}`}
+                          onClick={() => addRoom(room)}
+                          aria-label={`Add ${room.name} set`}
+                        >
+                          <span className="room-add"><PlusIcon /></span>
+                          <span className="room-ico"><ItemIcon name={room.ico} size={19} /></span>
+                          <h4>{room.name}</h4>
+                          <p>{room.desc}</p>
+                          <span className="rc-n">
+                            {sets > 0 ? `${sets}× SET${sets > 1 ? "S" : ""} ADDED` : `${roomCount} ITEMS`}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="calculator-room-grid">
-                  {rooms.map((room) => {
-                    const active = activeRooms.includes(room.id);
-                    return (
-                      <motion.button
-                        key={room.id}
-                        type="button"
-                        className={`calculator-room-card${active ? " is-selected" : ""}`}
-                        onClick={() => toggleRoom(room.id)}
-                        aria-pressed={active}
-                        whileTap={reduceMotion ? undefined : { scale: 0.985 }}
-                      >
-                        <span className="calculator-room-icon"><RoomIcon roomId={room.id} /></span>
-                        <span><strong>{room.label}</strong><small>{room.description}</small></span>
-                        <span className="calculator-room-check" aria-hidden="true">{active ? "✓" : "+"}</span>
-                      </motion.button>
-                    );
-                  })}
-                </div>
-                <div className="calculator-section-heading calculator-items-heading">
-                  <div><span className="calculator-label">Fine tune</span><h3>Add individual items</h3></div>
-                </div>
-                <div className="calculator-item-filters">
-                  <label className="calculator-search">
-                    <span aria-hidden="true">⌕</span>
+
+                <div className="panel reveal">
+                  <div className="panel-label"><h3>Fine tune</h3></div>
+                  <p className="panel-sub">Search the catalog and add exactly what&apos;s coming with you. Use + and − right on each item.</p>
+                  <div className="search-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden="true">
+                      <circle cx="11" cy="11" r="7" />
+                      <path d="M21 21l-4.3-4.3" />
+                    </svg>
                     <input
-                      value={search}
-                      onChange={handleSearchChange}
-                      placeholder="Search furniture, appliances, boxes..."
+                      type="text"
+                      value={query}
+                      onChange={(event) => setQuery(event.target.value.trim().toLowerCase())}
+                      placeholder="Search items — try 'sofa' or 'box'"
+                      autoComplete="off"
                       aria-label="Search items"
                     />
-                  </label>
+                  </div>
+                  <div className="chips">
+                    {FINDER_CATEGORIES.map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        className={`chip${category === option.id ? " on" : ""}`}
+                        onClick={() => setCategory(option.id)}
+                        aria-pressed={category === option.id}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="items">
+                    {filteredItems.map((item) => {
+                      const quantity = selected[item.id] ?? 0;
+                      return (
+                        <div className={`item-row${quantity > 0 ? " has" : ""}`} key={item.id}>
+                          <span className="item-ico"><ItemIcon name={item.ico} /></span>
+                          <div className="item-info">
+                            <h5>{item.name}</h5>
+                            <span><b>{item.vol} CU FT</b> · {item.dims}</span>
+                          </div>
+                          <div className="ctl">
+                            {quantity > 0 ? (
+                              <>
+                                <button type="button" className="stp" onClick={() => removeOne(item.id)} aria-label={`Remove one ${item.name}`}>−</button>
+                                <output>{quantity}</output>
+                                <button type="button" className="stp" onClick={() => addOne(item.id)} aria-label={`Add one more ${item.name}`}>+</button>
+                              </>
+                            ) : (
+                              <button type="button" className="addbtn" onClick={() => addOne(item.id)} aria-label={`Add ${item.name}`}>
+                                <PlusIcon />
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                    {filteredItems.length === 0 && (
+                      <p className="no-match">No items match. Try a different word or category.</p>
+                    )}
+                  </div>
                 </div>
-                <div className="calculator-group-tabs" role="tablist" aria-label="Filter items by room">
-                  {tabs.map((tab, index) => (
-                    <button
-                      key={tab.id}
-                      ref={(node) => { tabRefs.current[index] = node; }}
-                      type="button"
-                      role="tab"
-                      id={`calculator-tab-${tab.id}`}
-                      aria-selected={activeGroup === tab.id}
-                      aria-controls="calculator-item-panel"
-                      tabIndex={activeGroup === tab.id ? 0 : -1}
-                      className={`calculator-group-tab${activeGroup === tab.id ? " is-active" : ""}`}
-                      onClick={() => selectGroup(tab.id)}
-                      onKeyDown={(event) => handleTabKeyDown(event, index)}
-                    >
-                      {tab.label}<span>{tab.count}</span>
-                    </button>
-                  ))}
-                </div>
-                <div id="calculator-item-panel" role="tabpanel" aria-labelledby={activeTabId} className="calculator-item-list">
-                  {visibleItems.length === 0 ? (
-                    <div className="calculator-no-results">
-                      <strong>{normalizedSearch ? `No items match “${search}”.` : "No items in this room yet."}</strong>
-                      <span>
-                        {activeGroup === "all"
-                          ? "Try a different search."
-                          : `Searching in ${groupLabels.get(activeGroup)}. Choose All to search every room.`}
-                      </span>
+              </div>
+
+              <div className="listpanel reveal">
+                <div className="sticky-panel" aria-live="polite">
+                  <div className="list-head">
+                    <h3>Your list<span className="count-badge">{totalCount}</span></h3>
+                    <button type="button" className="clear-btn" onClick={clearAll}>Clear all</button>
+                  </div>
+
+                  {totalCount === 0 ? (
+                    <div className="empty-state">
+                      <div className="es-ico">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" />
+                          <path d="M3 8l9 5 9-5M12 13v8" />
+                        </svg>
+                      </div>
+                      <b>Nothing added yet</b>
+                      <p>Pick a room preset above, or add items from the catalog.</p>
                     </div>
                   ) : (
-                    visibleItems.map((item) => (
-                      <motion.div
-                        className="calculator-item-row"
-                        key={item.id}
-                        animate={bumpedItemId === item.id && !reduceMotion
-                          ? { scale: [1, 1.025, 1], backgroundColor: ["rgba(234,243,248,0)", "#eaf3f8", "rgba(234,243,248,0)"] }
-                          : { scale: 1, backgroundColor: "rgba(234,243,248,0)" }}
-                        transition={{ duration: 0.34, ease: "easeOut" }}
-                      >
-                        <div>
-                          <strong>{item.name}</strong>
-                          <small>
-                            {activeGroup === "all" || normalizedSearch ? `${groupLabels.get(item.group)} · ` : ""}
-                            {item.category} · {item.dimensions}
-                          </small>
-                        </div>
-                        <motion.button
-                          type="button"
-                          onClick={() => addItem(item.id)}
-                          className="calculator-add-button"
-                          whileTap={reduceMotion ? undefined : { scale: 0.9 }}
-                          whileHover={reduceMotion ? undefined : { scale: 1.04 }}
-                        >
-                          Add
-                        </motion.button>
-                      </motion.div>
-                    ))
+                    <div className="list-items">
+                      {Object.entries(selected).map(([id, quantity]) => {
+                        const item = itemById.get(id);
+                        if (!item) return null;
+                        return (
+                          <div className="li-row" key={id}>
+                            <button type="button" className="qbtn del" onClick={() => removeOne(id)} aria-label={`Remove one ${item.name}`}>−</button>
+                            <span className="li-qty">{quantity}×</span>
+                            <b>{item.name}</b>
+                            <span className="li-vol">{item.vol * quantity} CU FT</span>
+                            <button type="button" className="qbtn" onClick={() => addOne(id)} aria-label={`Add one more ${item.name}`}>+</button>
+                          </div>
+                        );
+                      })}
+                    </div>
                   )}
-                </div>
-                {!normalizedSearch && activeGroup === "all" && filteredItems.length > 9 && (
-                  <button type="button" className="calculator-show-more" onClick={() => setShowAllItems((current) => !current)}>
-                    {showAllItems ? "Show fewer items" : `Show all ${filteredItems.length} items`}
-                  </button>
-                )}
-              </div>
-              <aside className="calculator-summary">
-                <div className="calculator-summary-sticky">
-                  <div className="calculator-summary-head">
-                    <div><span className="calculator-label">Your list</span><h3>Selected items</h3></div>
-                    <strong>{totalItems} {totalItems === 1 ? "item" : "items"}</strong>
+
+                  <div className="viz-wrap">
+                    <VolumeVisual
+                      volume={totalVolume}
+                      capacity={activeUnit.cap}
+                      tags={tags}
+                      caption={`UNIT ${recommendation ? activeUnit.label : "—"} · ${activeUnit.cap} CU FT PACKED`}
+                      animate
+                      width={activeUnit.w}
+                    />
                   </div>
-                  <SelectedItemsPanel
-                    selectedItems={selectedItems}
-                    totalVolume={totalVolume}
-                    liveRecommendation={liveRecommendation}
-                    onQuantityChange={changeQuantity}
-                    onShowRecommendation={showRecommendation}
-                    variant="sidebar"
-                    reduceMotion={reduceMotion}
-                  />
-                </div>
-              </aside>
-            </section>
-          </main>
 
-          <AnimatePresence>
-            {totalItems > 0 && isWorkspaceVisible && (
-              <motion.div
-                className="calculator-mobile-bar"
-                initial={reduceMotion ? false : { y: 80, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={reduceMotion ? { opacity: 0 } : { y: 80, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                role="region"
-                aria-label="Selected items summary"
-              >
-                <button
-                  type="button"
-                  className="calculator-mobile-bar-total"
-                  onClick={() => setDrawerOpen(true)}
-                >
-                  <strong>{totalItems} {totalItems === 1 ? "item" : "items"}</strong>
-                  <span>{formatVolume(totalVolume)} · Review list</span>
-                </button>
-                <span className="sr-only" aria-live="polite">
-                  {totalItems} {totalItems === 1 ? "item" : "items"}, {formatVolume(totalVolume)} selected
-                </span>
-                <button type="button" className="calculator-mobile-bar-button" onClick={showRecommendation}>
-                  View unit size <span aria-hidden="true">→</span>
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <dialog
-            ref={drawerRef}
-            className="calculator-drawer"
-            aria-labelledby="calculator-drawer-title"
-            onClose={() => setDrawerOpen(false)}
-            onClick={handleDialogClick}
-          >
-            <div className="calculator-drawer-panel">
-              <div className="calculator-drawer-handle" aria-hidden="true" />
-              <div className="calculator-drawer-head">
-                <div>
-                  <span className="calculator-label">Your list</span>
-                  <h3 id="calculator-drawer-title">Selected items</h3>
-                </div>
-                <div className="calculator-drawer-head-actions">
-                  <strong>{totalItems} {totalItems === 1 ? "item" : "items"}</strong>
-                  <button
-                    ref={drawerCloseRef}
-                    type="button"
-                    className="calculator-drawer-close"
-                    onClick={() => setDrawerOpen(false)}
-                    aria-label="Close selected items"
-                  >
-                    ×
-                  </button>
+                  <div style={{ marginTop: 18 }}>
+                    <div className="total-row">
+                      <span className="t-label">Estimated volume</span>
+                      <span className="big-count"><span>{displayedVolume}</span><small>CU FT</small></span>
+                    </div>
+                    <div className={`rec-line${recommendation ? " on" : ""}`}>
+                      <span>Recommended unit</span>
+                      <b>{recommendation ? `${activeUnit.label} ft` : "–"}</b>
+                    </div>
+                    <div className="fill-bar-wrap">
+                      <div className="fill-meta">
+                        <span>{recommendation ? `Fill of a ${activeUnit.label} unit` : "Fill of your unit"}</span>
+                        <b>{fillPct}%</b>
+                      </div>
+                      <div className="fill-bar">
+                        <i style={{ width: `${Math.min(100, fillPct)}%` }} className={fillPct > 90 ? "hi" : undefined} />
+                      </div>
+                    </div>
+                    <button type="button" className="btn btn-coral btn-lg see-rec" onClick={showRecommendation} disabled={!recommendation}>
+                      See my recommended size
+                    </button>
+                    <p className="cta-hint">
+                      {recommendation
+                        ? `About ${Math.round(totalVolume * 1.1)} cu ft with 10% headroom for a walkway`
+                        : "Add at least one item to get a size."}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <SelectedItemsPanel
-                selectedItems={selectedItems}
-                totalVolume={totalVolume}
-                liveRecommendation={liveRecommendation}
-                onQuantityChange={changeQuantity}
-                onShowRecommendation={showRecommendationFromDrawer}
-                variant="drawer"
-                reduceMotion={reduceMotion}
-              />
             </div>
-          </dialog>
-        </>
-      ) : (
-        <RecommendationScreen recommendation={recommendation} totalItems={totalItems} onEdit={() => setRecommendation(null)} />
-      )}
-    </div>
-  );
-}
+          </div>
+        </section>
 
-function RecommendationScreen({ recommendation, totalItems, onEdit }: { recommendation: Recommendation; totalItems: number; onEdit: () => void }) {
-  const { unit, smaller, larger } = recommendation;
-  const context = unitContext[unit.id] ?? unitContext["10x10"];
-  return (
-    <main className="calculator-result">
-      <div className="calculator-result-inner">
-        <button type="button" className="calculator-back-button" onClick={onEdit}>← Edit my items</button>
-        <span className="calculator-eyebrow"><span /> Step 2 of 2</span>
-        <h1>You&apos;ll likely need a <em>{unit.label}</em> unit.</h1>
-        <p className="calculator-result-lede">That gives you enough usable room for about {formatVolume(recommendation.estimatedVolume)} of belongings, with space left to pack and reach your things.</p>
-        <div className="calculator-result-grid">
-          <section className="calculator-result-card calculator-result-main">
-            <UnitFloorPlan width={unit.width} length={unit.length} />
-            <div className="calculator-result-copy">
-              <span className="calculator-label">Recommended size</span>
-              <h2>{unit.label} feet</h2>
-              <p>{unit.area} square feet of floor space</p>
-              <p className="calculator-result-context">Roughly the size of {context.comparison}. Fits {context.fits}.</p>
-              <div className="calculator-result-image"><Image src="/images/climate-storage/indoor-corridor.png" alt="Storage facility corridor" fill sizes="160px" /></div>
-            </div>
-          </section>
-          <section className="calculator-result-card calculator-why"><span className="calculator-label">Why this works</span><h2>A little room to breathe.</h2><p>Your {totalItems} selected {totalItems === 1 ? "item fits" : "items fit"} within roughly {Math.round(recommendation.usableCapacity)} cubic feet of practical capacity. The remaining room accounts for awkward furniture shapes, packing gaps, and a walkway.</p><div className="calculator-efficiency"><span>Practical capacity</span><strong>{Math.round(recommendation.packingEfficiency * 100)}% of unit volume</strong></div></section>
+        <div className="mobile-bar">
+          <div className="mb-vol">
+            <b><span>{displayedVolume}</span> CU FT</b>
+            <small>ESTIMATED</small>
+          </div>
+          <button type="button" className="btn btn-coral" onClick={showRecommendation}>My size</button>
         </div>
-        <div className="calculator-alternatives"><h2>Compare nearby sizes</h2><div className="calculator-alternative-grid">{[smaller, larger].filter(Boolean).map((alternative) => <div className={`calculator-alternative${alternative?.id === unit.id ? " is-current" : ""}`} key={alternative?.id}><span>{alternative?.id === unit.id ? "Recommended" : alternative && alternative.area < unit.area ? "Smaller option" : "More room"}</span><strong>{alternative?.label}</strong><small>{alternative?.area} sq ft · {alternative?.capacity} cu ft</small></div>)}</div></div>
-        <button type="button" className="calculator-secondary-button" onClick={onEdit}>Review or change my list</button>
-        <p className="calculator-disclaimer">This is an estimate based on typical item sizes. Unit heights, access, and facility rules vary, so confirm dimensions with your chosen facility.</p>
+
+        <div className={`toast${toastMessage ? " show" : ""}`} role="status">{toastMessage}</div>
+
+        {modalOpen && recommendation && (
+          <div
+            className="modal-backdrop open"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Your recommended storage size"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setModalOpen(false);
+            }}
+          >
+            <div className="modal">
+              <button ref={closeButtonRef} type="button" className="modal-close" onClick={() => setModalOpen(false)} aria-label="Close">×</button>
+              {formOpen ? (
+                <>
+                  <span className="modal-tag">YOUR SIZE IS READY</span>
+                  <h3 className="modal-form-title">Find your unit</h3>
+                  <p className="modal-form-intro">
+                    We selected {recommendation.label} based on what you&apos;re storing. Add your details and we&apos;ll help you find matching options.
+                  </p>
+                  <V2StorageForm initialUnitSize={formUnitSize(recommendation)} />
+                  <button type="button" className="modal-back" onClick={() => setFormOpen(false)}>← Back to my recommendation</button>
+                </>
+              ) : (
+                <>
+                  <span className="modal-tag">YOUR SIZE</span>
+                  <h3>{recommendation.label}</h3>
+                  <div className="m-meta">{recommendation.sq} SQ FT · ~{recommendation.cap} CU FT</div>
+                  <p className="m-fits">{recommendation.fits}</p>
+                  <ul className="m-why">
+                    {over ? (
+                      <li className="warn">Your items may be more than a {recommendation.label} holds comfortably. Ask a facility about two units.</li>
+                    ) : (
+                      <li>Your {totalCount} items pack to about <b>{Math.round(totalVolume)} cu ft</b>. This unit holds {recommendation.cap}, leaving about {headroom}% headroom.</li>
+                    )}
+                    <li>Headroom covers awkward shapes, a slim walkway, and the box you forgot to count.</li>
+                    {larger && (
+                      <li>Sizing up &ldquo;just in case&rdquo; costs <b>${larger.price - recommendation.price}/mo</b> more for space you may not use.</li>
+                    )}
+                  </ul>
+                  <div className="m-cmp">
+                    {compareCard(smaller, "SMALLER")}
+                    {compareCard(recommendation, "YOUR SIZE", true)}
+                    {compareCard(larger, "LARGER")}
+                  </div>
+                  <div className="m-price"><b>${recommendation.price}</b><span>/ MO SAMPLE RATE</span></div>
+                  <div className="m-actions">
+                    <Link href={searchHref(recommendation)} className="btn btn-ghost">Find storage</Link>
+                    <button type="button" className="btn btn-coral" onClick={() => setFormOpen(true)}>Get storage options</button>
+                    <button type="button" className="btn btn-ghost" onClick={() => setModalOpen(false)}>Keep editing</button>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
-    </main>
+    </div>
   );
 }

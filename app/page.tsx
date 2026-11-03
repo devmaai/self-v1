@@ -47,14 +47,14 @@ const UNIT_SIZES = [
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: Promise<{ location?: string }>;
+  searchParams: Promise<{ location?: string; unitSize?: string }>;
 }) {
-  const { location } = await searchParams;
+  const { location, unitSize } = await searchParams;
 
   return (
     <div className="v2-home">
       <V2Interactions />
-      <V2Nav variant="inner" />
+      <V2Nav variant="inner" initialUnitSize={unitSize} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -32,7 +32,7 @@ export function UnitFloorPlan({ width, length }: UnitFloorPlanProps) {
         aria-labelledby={`floor-title-${width}-${length}`}
       >
         <title id={`floor-title-${width}-${length}`}>
-          Top-down floor plan of a {width} by {length} foot storage unit
+          {`Top-down floor plan of a ${width} by ${length} foot storage unit`}
         </title>
         <defs>
           <pattern

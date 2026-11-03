@@ -356,8 +356,7 @@ export default function StoragePriceExplorer({ sizes }: StoragePriceExplorerProp
             aria-labelledby="storage-price-plan-title"
           >
             <title id="storage-price-plan-title">
-              Top-down floor plan of a {selected.label} foot storage unit, {selected.area} square
-              feet, drawn to scale
+              {`Top-down floor plan of a ${selected.label} foot storage unit, ${selected.area} square feet, drawn to scale`}
             </title>
             <desc>{selected.fits}</desc>
             <defs>

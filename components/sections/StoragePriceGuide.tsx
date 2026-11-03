@@ -66,7 +66,7 @@ export default async function StoragePriceGuide() {
     {
       question: "Are first-month promotions the real price?",
       answer:
-        "No. A $1 first month or a percentage discount is a move-in offer, not the ongoing price. Ask for the regular monthly rate and add admin fees, lock fees, and insurance before comparing facilities. The table above uses live move-in prices so you can see the low end of the market, not the price you will pay every month.",
+        "No. A $1 first month or a percentage discount is a move-in offer, not the ongoing price. Ask for the regular monthly rate and add admin fees, lock fees, and insurance before comparing facilities. The live rates above use move-in prices so you can see the low end of the market, not the price you will pay every month.",
     },
   ];
 
@@ -75,124 +75,98 @@ export default async function StoragePriceGuide() {
   return (
     <section className="storage-price-guide" id="storage-prices" aria-labelledby="storage-prices-heading">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div className="storage-price-guide-inner">
-        <div className="storage-price-intro">
-          <span className="storage-price-label">Storage prices</span>
-          <h2 id="storage-prices-heading">How much does a storage unit cost?</h2>
-          <p>
-            The calculator above tells you which size to rent. This table shows what that size costs. Prices are
-            live move-in rates from storage listings across the United States, shown per month, so you can compare a
-            5 × 10 with a 10 × 20 before you call a facility.
-          </p>
-          <p className="storage-price-rule">
-            As a rule of thumb, a one-bedroom apartment usually fits a 10 × 10 unit ({fromText(oneBed)}), a two-bedroom home fits a 10 × 15 ({fromText(twoBed)}), and a three-bedroom home fits a 10 × 20 ({fromText(threeBed)}).
-          </p>
-        </div>
-
-        <StoragePriceExplorer sizes={sizes} />
-
-        <div className="storage-price-table-wrap">
-          <table className="storage-price-table">
-            <caption className="sr-only">
-              Typical monthly storage unit prices by size, based on live move-in rates
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Unit size</th>
-                <th scope="col">What it usually holds</th>
-                <th scope="col">From</th>
-                <th scope="col">Typical range</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sizes.map((size) => {
-                const low = money(size.typicalLow);
-                const high = money(size.typicalHigh);
-                return (
-                  <tr key={size.id}>
-                    <th scope="row">{size.label} ft</th>
-                    <td>{size.fits}</td>
-                    <td className="storage-price-from">
-                      {size.from ? (
-                        <>
-                          <strong>{money(size.from)}</strong>
-                          <span>/mo</span>
-                        </>
-                      ) : (
-                        "See live prices"
-                      )}
-                    </td>
-                    <td>{low && high ? `${low}–${high}/mo` : "See live prices"}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-        <p className="storage-price-note">
-          {totalListings > 0
-            ? `Based on ${totalListings.toLocaleString("en-US")} live unit listings. Prices checked ${updated}. “From” is the lower quartile of move-in prices, rounded to the nearest dollar; the typical range is the middle half of listings. Rates vary by city, facility, and availability and are not a quote.`
-            : `Live prices are temporarily unavailable. Compare current unit sizes and rates near you.`}
-        </p>
-
-        <div className="storage-price-explain">
-          <div>
-            <h2>What changes the price?</h2>
+      <div className="storage-price-guide-top">
+        <div className="storage-price-guide-inner">
+          <div className="storage-price-intro">
+            <span className="storage-price-label">Storage prices</span>
+            <h2 id="storage-prices-heading">How much does a storage unit cost?</h2>
             <p>
-              Five things move a storage quote more than anything else: the size of the unit, whether it is climate
-              controlled, where the facility is, how you access the unit, and whether the rate you see is a
-              move-in promotion or the regular monthly price.
+              The calculator above tells you which size to rent. The live rates below show what that size costs. Prices
+              are live move-in rates from storage listings across the United States, shown per month, so you can compare
+              a 5 × 10 with a 10 × 20 before you call a facility.
             </p>
-            <ul>
-              <li>
-                <strong>Size and height.</strong> Floor area sets the base rate, but a 10-foot ceiling holds more than
-                an 8-foot one at the same square footage.
-              </li>
-              <li>
-                <strong>Climate control.</strong> Heated or cooled indoor units carry a premium over standard
-                drive-up units, especially in humid or desert markets.
-              </li>
-              <li>
-                <strong>Location and demand.</strong> Dense cities, high-occupancy neighborhoods, and peak moving
-                season all push rates up. Smaller markets and off-peak move-in dates cost less.
-              </li>
-              <li>
-                <strong>Access.</strong> Drive-up and ground-floor units usually cost more than upper-floor units
-                reached by elevator or stairs.
-              </li>
-              <li>
-                <strong>Promotions and fees.</strong> A discounted first month is not the ongoing rate. Add admin
-                fees, lock fees, and insurance before comparing two facilities.
-              </li>
-            </ul>
+            <p className="storage-price-rule">
+              As a rule of thumb, a one-bedroom apartment usually fits a 10 × 10 unit ({fromText(oneBed)}), a two-bedroom home fits a 10 × 15 ({fromText(twoBed)}), and a three-bedroom home fits a 10 × 20 ({fromText(threeBed)}).
+            </p>
           </div>
+
+          <StoragePriceExplorer sizes={sizes} />
+
+          <p className="storage-price-note">
+            {totalListings > 0
+              ? `Live prices from ${totalListings.toLocaleString("en-US")} unit listings, checked ${updated}. Rates vary by city, facility, and availability and are not a quote.`
+              : `Live prices are temporarily unavailable. Compare current unit sizes and rates near you.`}
+          </p>
+        </div>
+      </div>
+
+      <section className="storage-price-guide-cta" aria-labelledby="storage-price-guide-cta-heading">
+        <div className="storage-price-guide-cta-inner">
+          <div className="storage-price-guide-cta-copy">
+            <span className="storage-price-guide-cta-label">Free size guide</span>
+            <h2 id="storage-price-guide-cta-heading">Which size actually fits your move?</h2>
+            <p>
+              See room-by-room examples, unit dimensions, and what fits in every size from a 5 × 5 closet to a
+              10 × 30 garage. The full size guide makes the decision simple before you reserve.
+            </p>
+          </div>
+          <Link href="/storage-size-guide" className="storage-price-guide-cta-button">
+            Open the storage size guide <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
+      <div className="storage-price-guide-inner storage-price-guide-bottom">
+        <div className="state-storage-heading">
+          <h2 id="utah-gear-heading">What changes the price?</h2>
+          <p>
+            Five things move a storage quote more than anything else: the size of the unit, whether it is climate
+            controlled, where the facility is, how you access the unit, and whether the rate you see is a
+            move-in promotion or the regular monthly price.
+          </p>
+        </div>
+        <div className="utah-lifestyle-grid">
+          <article><strong>Size and height.</strong><p>Floor area sets the base rate, but a 10-foot ceiling holds more than
+                an 8-foot one at the same square footage.</p></article>
+          <article><strong>Climate control.</strong><p>Heated or cooled indoor units carry a premium over standard
+                drive-up units, especially in humid or desert markets.</p></article>
+          <article><strong>Location and demand.</strong><p>Dense cities, high-occupancy neighborhoods, and peak moving
+                season all push rates up. Smaller markets and off-peak move-in dates cost less.</p></article>
+          <article><strong>Access.</strong><p>Drive-up and ground-floor units usually cost more than upper-floor units
+                reached by elevator or stairs.</p></article>
+          <article><strong>Promotions and fees.</strong><p> A discounted first month is not the ongoing rate. Add admin
+                fees, lock fees, and insurance before comparing two facilities.</p></article>
           <aside className="storage-price-cta">
             <h3>Check prices near you</h3>
-            <p>
-              Storage is priced locally. Use the live search to compare unit sizes and move-in rates from facilities
-              in your city.
-            </p>
-            <Link href="/">Search storage near you →</Link>
-            <Link href="/storage-size-guide">See the full size guide →</Link>
+            <p>Discover storage facilities in your area, explore different unit options, and find the right space for your belongings and budget.</p>
+            <div className="storage-price-cta-actions">
+              <Link href="/" className="storage-price-cta-button">
+                Search storage near you <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </aside>
         </div>
+      </div>
 
-        <div className="storage-price-faq" aria-labelledby="storage-price-faq-heading">
-          <span className="storage-price-label">Common questions</span>
-          <h2 id="storage-price-faq-heading">Storage unit pricing FAQs</h2>
-          <p className="storage-price-faq-intro">Quick answers to the questions people ask before comparing a unit.</p>
-          <div className="storage-price-faq-list">
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
-                <summary>
-                  <span>{faq.question}</span>
-                  <span className="storage-price-faq-toggle" aria-hidden="true">+</span>
-                </summary>
-                <div className="storage-price-faq-answer">
-                  <p>{faq.answer}</p>
-                </div>
-              </details>
-            ))}
+      <div className="storage-price-faq-band">
+        <div className="storage-price-guide-inner storage-price-guide-faq">
+          <div className="storage-price-faq" aria-labelledby="storage-price-faq-heading">
+            <span className="storage-price-label">Common questions</span>
+            <h2 id="storage-price-faq-heading">Storage unit pricing FAQs</h2>
+            <p className="storage-price-faq-intro">Quick answers to the questions people ask before comparing a unit.</p>
+            <div className="storage-price-faq-list">
+              {faqs.map((faq, index) => (
+                <details key={faq.question} open={index === 0}>
+                  <summary>
+                    <span>{faq.question}</span>
+                    <span className="storage-price-faq-toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="storage-price-faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </div>

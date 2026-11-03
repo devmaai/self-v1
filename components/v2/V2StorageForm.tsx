@@ -43,7 +43,7 @@ const STORAGE_TYPES = [
   "Other",
 ];
 
-export default function V2StorageForm() {
+export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSize?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -155,7 +155,7 @@ export default function V2StorageForm() {
         <div className="af-row">
           <div className="af-field">
             <label htmlFor="sf-unitSize">Unit size</label>
-            <select id="sf-unitSize" name="unitSize" required>
+            <select id="sf-unitSize" name="unitSize" defaultValue={initialUnitSize} required>
               <option value="" disabled>Select size</option>
               {UNIT_SIZES.map((s) => (
                 <option key={s} value={s}>{s}</option>

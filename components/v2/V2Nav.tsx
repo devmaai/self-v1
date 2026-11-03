@@ -5,12 +5,13 @@ import V2StorageForm from "./V2StorageForm";
 
 type V2NavProps = {
   variant?: "home" | "inner";
+  initialUnitSize?: string;
 };
 
-export default function V2Nav({ variant = "home" }: V2NavProps) {
+export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavProps) {
   const isConsumerHome = variant === "inner";
   const prefix = variant === "home" ? "#" : "/agency#";
-  const [formOpen, setFormOpen] = useState(false);
+  const [formOpen, setFormOpen] = useState(Boolean(initialUnitSize));
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
               </button>
               {formOpen && (
                 <div className="nav-form-panel">
-                  <V2StorageForm />
+                  <V2StorageForm initialUnitSize={initialUnitSize} />
                 </div>
               )}
             </div>
@@ -79,7 +80,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
             </Link>
           </div>
           <div className="mobile-menu-form">
-            <V2StorageForm />
+            <V2StorageForm initialUnitSize={initialUnitSize} />
           </div>
         </div>
       </>
@@ -111,7 +112,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
             </button>
             {formOpen && (
               <div className="nav-form-panel">
-                <V2StorageForm />
+                <V2StorageForm initialUnitSize={initialUnitSize} />
               </div>
             )}
           </div>
@@ -133,7 +134,7 @@ export default function V2Nav({ variant = "home" }: V2NavProps) {
           <a href="/audit" className="btn-nav-cta" data-mobile-close>Get free audit →</a>
         </div>
         <div className="mobile-menu-form">
-          <V2StorageForm />
+          <V2StorageForm initialUnitSize={initialUnitSize} />
         </div>
       </div>
     </>
