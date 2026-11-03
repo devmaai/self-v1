@@ -573,9 +573,9 @@ export default function StorageCalculator() {
                   </div>
                   <div className="m-price"><b>${recommendation.price}</b><span>/ MO SAMPLE RATE</span></div>
                   <div className="m-actions">
-                    <Link href={searchHref(recommendation)} className="btn btn-ghost">Find storage</Link>
+                    {/* <Link href={searchHref(recommendation)} className="btn btn-ghost">Find storage</Link> */}
                     <button type="button" className="btn btn-coral" onClick={() => setFormOpen(true)}>Get storage options</button>
-                    <button type="button" className="btn btn-ghost" onClick={() => setModalOpen(false)}>Keep editing</button>
+                    {/* <button type="button" className="btn btn-ghost" onClick={() => setModalOpen(false)}>Keep editing</button> */}
                   </div>
                 </>
               )}

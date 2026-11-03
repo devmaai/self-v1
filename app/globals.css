@@ -5365,8 +5365,8 @@ footer {
 .size-finder .m-price { display: flex; align-items: baseline; gap: 8px; margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--sf-line); }
 .size-finder .m-price b { font-size: 32px; font-weight: 800; color: var(--sf-blue); letter-spacing: -.02em; }
 .size-finder .m-price span { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: .12em; color: var(--sf-slate-soft); }
-.size-finder .m-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
-.size-finder .m-actions .btn { min-width: 0; padding-inline: 12px; font-size: 13px; white-space: nowrap; }
+.size-finder .m-actions { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 26px; }
+.size-finder .m-actions .btn { width: 100%; min-width: 0; padding-inline: 24px; font-size: 15px; white-space: nowrap; }
 .size-finder .m-actions .btn-coral { box-shadow: 0 12px 24px rgba(190, 65, 27, .22); }
 .size-finder .modal-form-title { margin-bottom: 8px; }
 .size-finder .modal-form-intro { margin-bottom: 18px; line-height: 1.55; }
