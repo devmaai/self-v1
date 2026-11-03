@@ -26,6 +26,7 @@ export const carStorage: StorageTypeConfig = {
   cityIntro: "Compare drive-up storage from multiple brands in each city. Check each listing for car storage spaces, sizes and live prices.",
   sizesHeading: "Car storage unit sizes for your vehicle",
   sizesIntro: "Match the unit to your car's length, and leave room to open the doors and walk around it.",
+  showCalculatorBanner: true,
   sizes: [
     { label: "Small cars", title: "Compact car or coupe", range: "10' x 15'", area: "150 sq ft", body: "Fits most compact cars, coupes and small sedans with a little space to spare.", image: "/images/storage-guide/car.jpg" },
     { label: "Most popular", title: "Sedan or small SUV", range: "10' x 20'", area: "200 sq ft", body: "The standard car storage unit. Room for a full-size sedan or small SUV and a few boxes.", image: "/images/storage-guide/vehiclestorage.jpg" },
@@ -120,6 +121,7 @@ export const rvStorage: StorageTypeConfig = {
   cityIntro: "Compare drive-up storage from multiple brands in each city. Check each listing for rv storage spaces, sizes and live prices.",
   sizesHeading: "RV storage sizes by vehicle length",
   sizesIntro: "Measure your RV bumper to bumper, including the hitch, ladder and any rear rack, before you reserve.",
+  showCalculatorBanner: true,
   sizes: [
     { label: "Small", title: "Pop-up camper or teardrop", range: "Up to 20'", area: "10' x 20' space", body: "Fits pop-up campers, teardrop trailers and small truck campers.", image: "https://images.unsplash.com/photo-1596470689657-bcfc0e24f4e0?auto=format&fit=crop&w=900&q=80" },
     { label: "Mid-size", title: "Travel trailer or Class B", range: "20' to 30'", area: "10' x 30' space", body: "Fits most travel trailers, camper vans and smaller Class C motorhomes.", image: "https://images.unsplash.com/photo-1596613319290-be5e72900f38?auto=format&fit=crop&w=900&q=80" },
@@ -263,6 +265,7 @@ export const boatStorage: StorageTypeConfig = {
   cityIntro: "Compare drive-up storage from multiple brands in each city. Check each listing for boat storage spaces, sizes and live prices.",
   sizesHeading: "Boat storage unit sizes by boat length",
   sizesIntro: "Measure your boat on its trailer, from the hitch to the stern or outboard motor.",
+  showCalculatorBanner: true,
   sizes: [
     { label: "Small", title: "Jet ski or kayak", range: "5' x 10' to 10' x 10'", area: "50 to 100 sq ft", body: "Fits a personal watercraft on a trailer, kayaks, canoes and paddleboards.", image: "https://images.unsplash.com/photo-1726992117622-af105bb5d214?auto=format&fit=crop&w=900&q=80" },
     { label: "Mid-size", title: "Fishing boat or skiff", range: "10' x 20'", area: "200 sq ft", body: "Fits most boats up to about 18 feet on their trailers.", image: "https://images.unsplash.com/photo-1745380494033-c980a76eb84b?auto=format&fit=crop&w=900&q=80" },
@@ -357,6 +360,7 @@ export const businessStorage: StorageTypeConfig = {
   cityIntro: "Compare drive-up and roll-up door units from multiple storage brands. Pick your city to see live prices and availability.",
   sizesHeading: "Business storage unit sizes for what you store",
   sizesIntro: "Pick a size that leaves an aisle down the middle so you can reach your stock without unloading the unit.",
+  showCalculatorBanner: true,
   sizes: [
     { label: "Documents", title: "Files and records", range: "5' x 5' to 5' x 10'", area: "25 to 50 sq ft", body: "File boxes and filing cabinets for tax records, contracts and client files.", image: "/images/climate-storage/documents.png" },
     { label: "Inventory", title: "E-commerce inventory", range: "10' x 10'", area: "100 sq ft", body: "Shelved stock, packaging and shipping supplies for an online store.", image: "/images/storage-guide/boxes.jpg" },

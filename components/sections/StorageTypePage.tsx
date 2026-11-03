@@ -3,6 +3,7 @@ import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
+import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
 import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
 import { CITY_IMAGES } from "@/lib/cityImages";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
@@ -22,6 +23,7 @@ export type StorageTypeConfig = {
   sizesHeading: string;
   sizesIntro: string;
   sizes: { label: string; title: string; range: string; area: string; body: string; image?: string }[];
+  showCalculatorBanner?: boolean;
   cityFilter?: "driveUp";
   cityHeading?: string;
   cityIntro?: string;
@@ -196,6 +198,11 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
             <Link href="/storage-size-guide">View the size guide <span aria-hidden="true">→</span></Link>
           </article>
         </div>
+        {c.showCalculatorBanner && (
+          <div className="storage-type-calculator-banner">
+            <StorageCalculatorBanner />
+          </div>
+        )}
       </section>
 
       <section className="storage-size-chart-section" aria-labelledby={`${c.slug}-compare-heading`}>

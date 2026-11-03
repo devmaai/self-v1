@@ -4,6 +4,7 @@ import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
+import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
 import { getClimateStorageSummary } from "@/lib/climateStorage";
 import { CITY_IMAGES } from "@/lib/cityImages";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
@@ -194,6 +195,9 @@ export default async function ClimateControlledStoragePage() {
             <p>Compare all sizes with what fits in each one.</p>
             <Link href="/storage-size-guide">View the size guide <span aria-hidden="true">→</span></Link>
           </article>
+        </div>
+        <div className="storage-type-calculator-banner">
+          <StorageCalculatorBanner />
         </div>
       </section>
 

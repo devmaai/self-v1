@@ -5,6 +5,8 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import CityExplorer from "@/components/sections/CityExplorer";
 import LatestPosts from "@/components/sections/LatestPosts";
+import StorageCalculatorCTA from "@/components/sections/StorageCalculatorCTA";
+import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
 import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const STORAGE_TYPES = [
-  { icon: "box", title: "Self Storage", body: "Self-storage units are most commonly used to store personal items, furniture, and excess belongings. Units come in different sizes, from small lockers to large spaces.", href: "/storage-search?location=Self%20Storage" },
+  { icon: "box", title: "Self Storage", body: "Self-storage units are most commonly used to store personal items, furniture, and excess belongings. Units come in different sizes, from small lockers to large spaces.", href: "/storage-size-guide" },
   { icon: "car", title: "Car Storage", body: "Collector, vintage, classic, or spare cars often need a space to be stored. Choose from indoor, covered, or outdoor options for the protection your vehicle needs.", href: "/car-storage" },
   { icon: "rv", title: "RV Storage", body: "RV storage is designed for motorhomes, travel trailers, and campers, with options such as electrical hookups, covered spaces, and wide driveways.", href: "/rv-storage" },
   { icon: "boat", title: "Boat Storage", body: "Boat storage can be indoor, covered, or outdoor. Facilities may have restrictions on the size and type of boats they can accommodate.", href: "/boat-storage" },
@@ -77,10 +79,14 @@ export default async function HomePage({
           </div>
           <div className="storage-types-grid">
             {STORAGE_TYPES.map((type) => (
-              <article className="storage-type-item" key={type.title}>
+              <Link className="storage-type-item" href={type.href} key={type.title}>
                 <div className="storage-type-icon"><StorageTypeIcon name={type.icon} /></div>
-                <div><h3>{type.title}</h3><p>{type.body}</p><Link href={type.href}>Learn about {type.title} <span aria-hidden="true">→</span></Link></div>
-              </article>
+                <div>
+                  <h3>{type.title}</h3>
+                  <p>{type.body}</p>
+                  <span className="storage-type-cta">Learn about {type.title} <span aria-hidden="true">→</span></span>
+                </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -104,10 +110,14 @@ export default async function HomePage({
           </div>
         </section>
 
-        <StorageLocationSearch />
+
+        <StorageCalculatorCTA />
+
+        
 
         <StorageStateLinks />
         <LatestPosts />
+        <StorageLocationSearch />
         <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>
       </main>
       <V2Footer />
