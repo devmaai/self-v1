@@ -236,12 +236,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .blog-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; color: var(--storage-blue); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .blog-eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: #2d9c6c; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.blog-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin: -4px 0 22px; }
+.blog-toolbar .blog-filter { margin: 0; }
 .blog-filter { display: flex; flex-wrap: wrap; gap: 9px; margin: -4px 0 26px; }
-.blog-filter a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border: 1px solid #c9dce8; border-radius: 999px; background: #fff; color: var(--storage-blue); font-size: 14px; font-weight: 700; transition: background .2s ease, border-color .2s ease, color .2s ease; }
-.blog-filter a:hover { border-color: var(--storage-blue); background: #e8f2fa; }
-.blog-filter a.is-active { border-color: var(--storage-blue); background: var(--storage-blue); color: #fff; }
+.blog-filter a, .blog-filter button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border: 1px solid #c9dce8; border-radius: 999px; background: #fff; color: var(--storage-blue); font: inherit; font-size: 14px; font-weight: 700; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.blog-filter a:hover, .blog-filter button:hover { border-color: var(--storage-blue); background: #e8f2fa; }
+.blog-filter a.is-active, .blog-filter button.is-active { border-color: var(--storage-blue); background: var(--storage-blue); color: #fff; }
 .blog-filter-count { display: inline-grid; min-width: 20px; height: 20px; place-items: center; padding: 0 5px; border-radius: 999px; background: #e8f2fa; color: var(--storage-blue-deep); font-size: 11px; }
-.blog-filter a.is-active .blog-filter-count { background: rgba(255,255,255,.2); color: #fff; }
+.blog-filter a.is-active .blog-filter-count, .blog-filter button.is-active .blog-filter-count { background: rgba(255,255,255,.2); color: #fff; }
+.blog-search { position: relative; flex: 1 1 280px; max-width: 380px; }
+.blog-search svg { position: absolute; top: 50%; left: 15px; width: 18px; height: 18px; color: #7890a3; transform: translateY(-50%); pointer-events: none; }
+.blog-search input { width: 100%; padding: 11px 16px 11px 43px; border: 1px solid #c9dce8; border-radius: 999px; background: #fff; color: #16334b; font: inherit; font-size: 14px; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.blog-search input::placeholder { color: #91a0aa; }
+.blog-search input:focus { border-color: var(--storage-blue); box-shadow: 0 0 0 3px rgba(20,111,181,.12); }
+.blog-results-count { margin: -6px 0 16px; color: #60788b; font-size: 13px; }
+.blog-pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 28px; }
+.blog-pagination button { display: grid; min-width: 34px; height: 34px; place-items: center; padding: 0 9px; border: 1px solid #c9dce8; border-radius: 4px; background: #fff; color: #16334b; font-size: 13px; }
+.blog-pagination button:hover:not(:disabled), .blog-pagination button.active { border-color: var(--storage-blue); background: var(--storage-blue); color: #fff; }
+.blog-pagination button:disabled { cursor: not-allowed; opacity: .4; }
+.blog-pagination-gap { padding: 0 3px; color: #7890a3; font-size: 13px; }
 .blog-filter-empty { display: grid; gap: 6px; padding: 34px; border: 1px dashed #a9c2d3; background: #fff; color: #60788b; text-align: center; }
 .blog-filter-empty strong { color: #16334b; font-family: var(--font-display); font-size: 20px; }
 .blog-filter-empty span { font-size: 14px; }
@@ -299,8 +312,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .state-city-grid { grid-template-columns: 1fr; }
   .state-size-grid { grid-template-columns: none; display: flex; gap: 14px; margin: 0 -24px; padding: 4px 24px 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
   .state-size-grid article { flex: 0 0 78%; scroll-snap-align: start; }
-  .blog-grid { grid-template-columns: none; display: flex; gap: 14px; margin: 0 -24px; padding: 4px 24px 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-  .blog-grid .blog-card { flex: 0 0 84%; scroll-snap-align: start; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-toolbar { align-items: stretch; flex-direction: column; }
+  .blog-search { max-width: none; }
   .blog-reading-card { padding: 30px 24px; }
   .blog-topics-card { padding: 24px 20px; }
   .card-slider-dots { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; }
@@ -365,7 +379,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .city-storage-sort { display: flex; align-items: center; gap: 9px; flex: 0 0 auto; color: #60788b; font-size: 13px; }
 .city-storage-sort select { padding: 10px 30px 10px 12px; border: 1px solid var(--city-line); border-radius: 4px; background: #fff; color: var(--city-ink); font: inherit; }
 .city-storage-layout { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 22px; align-items: start; }
-.city-storage-list { display: grid; gap: 12px; }
+.city-storage-list { display: grid; gap: 12px; max-height: 610px; overflow-y: auto; overscroll-behavior: contain; padding-right: 8px; scrollbar-width: thin; scrollbar-color: #b9cfde transparent; }
+.city-storage-list::-webkit-scrollbar { width: 8px; }
+.city-storage-list::-webkit-scrollbar-track { background: transparent; }
+.city-storage-list::-webkit-scrollbar-thumb { border-radius: 999px; background: #b9cfde; }
+.city-storage-list::-webkit-scrollbar-thumb:hover { background: #8fb2c8; }
 .city-storage-pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 28px; }
 .city-storage-pagination button { display: grid; min-width: 34px; height: 34px; place-items: center; padding: 0 9px; border: 1px solid var(--city-line); border-radius: 4px; background: #fff; color: var(--city-ink); font-size: 13px; }
 .city-storage-pagination button:hover:not(:disabled), .city-storage-pagination button.active { border-color: var(--city-blue); background: var(--city-blue); color: #fff; }

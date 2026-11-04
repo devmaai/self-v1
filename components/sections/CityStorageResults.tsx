@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import LocationPin from "@/components/ui/LocationPin";
 import FacilityMap from "@/components/sections/FacilityMap";
 
@@ -25,7 +25,7 @@ export type CityStorageFacility = {
 
 type SortOption = "recommended" | "price" | "distance";
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 10;
 const UNIT_PREVIEW_COUNT = 3;
 
 function paginationItems(page: number, pageCount: number) {
@@ -85,6 +85,7 @@ function FacilityCard({ facility, city, mapIndex }: { facility: CityStorageFacil
 export default function CityStorageResults({ city, facilities }: { city: string; facilities: CityStorageFacility[] }) {
   const [sort, setSort] = useState<SortOption>("recommended");
   const [page, setPage] = useState(1);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const sortedFacilities = useMemo(() => {
     const sorted = [...facilities];
@@ -96,6 +97,10 @@ export default function CityStorageResults({ city, facilities }: { city: string;
   const pageCount = Math.max(1, Math.ceil(sortedFacilities.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
   const visibleFacilities = sortedFacilities.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  useEffect(() => {
+    listRef.current?.scrollTo({ top: 0 });
+  }, [currentPage, sort]);
 
   function changeSort(value: SortOption) {
     setSort(value);
@@ -121,7 +126,7 @@ export default function CityStorageResults({ city, facilities }: { city: string;
 
       <div className="city-storage-layout">
         <div>
-          <div className="city-storage-list">
+          <div className="city-storage-list" ref={listRef}>
             {visibleFacilities.map((facility, index) => (
               <FacilityCard facility={facility} city={city} mapIndex={index + 1} key={`${facility.name}-${facility.address}`} />
             ))}

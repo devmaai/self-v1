@@ -4,7 +4,7 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
-import CardSlider from "@/components/ui/CardSlider";
+import BlogArchive from "@/components/sections/BlogArchive";
 import { getAllPosts } from "@/lib/posts";
 import { breadcrumbListSchema } from "@/lib/schema";
 
@@ -13,15 +13,6 @@ export const metadata: Metadata = {
   description:
     "Weekly posts on self-storage SEO: Google algorithm updates, local SEO tactics, marketing trends, and operator case studies.",
 };
-
-function formatDate(iso: string): string {
-  if (!iso) return "";
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 const TOPICS = [
   "Local SEO",
@@ -34,13 +25,7 @@ const TOPICS = [
   "Review Strategy",
 ];
 
-const BLOG_FILTERS = [
-  { value: "all", label: "All posts" },
-  { value: "facility", label: "Facility blog" },
-  { value: "seo", label: "SEO blog" },
-] as const;
-
-type BlogFilter = (typeof BLOG_FILTERS)[number]["value"];
+type BlogFilter = "all" | "facility" | "seo";
 
 const STEPS = [
   "Start with the latest post. Each guide is self-contained, so you can read in any order.",
@@ -61,8 +46,6 @@ export default async function BlogIndexPage({
   const activeFilter: BlogFilter = category === "facility" || category === "seo" ? category : "all";
   const activeCategory = activeFilter === "all" ? undefined : activeFilter;
   const filteredPosts = activeCategory ? posts.filter((post) => post.category === activeCategory) : posts;
-  const [featured, ...rest] = filteredPosts;
-  const cards = featured ? [featured, ...rest] : rest;
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -143,54 +126,7 @@ export default async function BlogIndexPage({
               what your facility needs right now and skip the rest.
             </p>
           </div>
-          <nav className="blog-filter" aria-label="Filter blog posts">
-            {BLOG_FILTERS.map((filter) => {
-              const count = filter.value === "all"
-                ? posts.length
-                : posts.filter((post) => post.category === filter.value).length;
-              const isActive = filter.value === activeFilter;
-              const href = filter.value === "all"
-                ? "/blog#latest"
-                : `/blog?category=${filter.value}#latest`;
-
-              return (
-                <Link
-                  key={filter.value}
-                  href={href}
-                  className={isActive ? "is-active" : undefined}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {filter.label}
-                  <span className="blog-filter-count" aria-hidden="true">{count}</span>
-                </Link>
-              );
-            })}
-          </nav>
-          {cards.length > 0 ? (
-            <CardSlider trackClassName="blog-grid">
-              {cards.map((p, i) => (
-                <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}`}
-                  className={`blog-card${i === 0 ? " is-featured" : ""}`}
-                >
-                  <span className="blog-card-date">
-                    {i === 0 ? `Featured · ${formatDate(p.date)}` : formatDate(p.date)}
-                  </span>
-                  <h3>{p.title}</h3>
-                  <p>{p.excerpt}</p>
-                  <span className="blog-card-link">
-                    Read post <span aria-hidden="true">→</span>
-                  </span>
-                </Link>
-              ))}
-            </CardSlider>
-          ) : (
-            <div className="blog-filter-empty">
-              <strong>{activeFilter === "all" ? "No posts yet" : "No posts in this category yet"}</strong>
-              <span>{activeFilter === "all" ? "We are putting the finishing touches on the first article. Check back shortly." : "Try another filter to explore the full blog."}</span>
-            </div>
-          )}
+          <BlogArchive posts={posts} initialFilter={activeFilter} />
         </section>
 
         
