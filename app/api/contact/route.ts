@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 const TO_EMAIL = process.env.QUOTE_TO_EMAIL || "business@maai.agency";
 const FROM_EMAIL = process.env.QUOTE_FROM_EMAIL || "SelfStorage Contact <onboarding@resend.dev>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TOPICS = ["List my storage business", "Grow my storage business", "General question"];
+const TOPICS = ["List my storage business", "Grow my storage business", "General question", "Request a backlink", "Business enquiry", "Sales", "Partnership", "Press and media", "Other"];
 
 function esc(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] as string);
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   const rows: Array<[string, string]> = [
     ["Name", name], ["Email", email], ["Topic", topic], ["Business", business || "-"], ["Website", website || "-"], ["Message", message],
   ];
-  const html = `<h2>New contact from the About page</h2><table cellpadding="6">${rows
+  const html = `<h2>New ${esc(topic)} request</h2><table cellpadding="6">${rows
     .map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${esc(v).replace(/\n/g, "<br>")}</td></tr>`)
     .join("")}</table>`;
 

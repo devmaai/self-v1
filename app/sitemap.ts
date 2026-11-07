@@ -58,6 +58,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/agency",
     "/audit",
+    "/find-storage",
+    "/request-backlink",
+    "/list-your-facility",
     "/contact",
     "/blog",
     "/storage-size-guide",
@@ -81,13 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         return stateSlug ? `/storage-search/${stateSlug}/${citySlug}` : null;
       })
       .filter((path): path is string => path !== null),
-    "/services/local-seo-gbp-optimization",
-    "/services/technical-seo",
-    "/services/content-keyword-strategy",
-    "/services/multi-location-seo",
-    "/services/backlinks",
-    "/services/aeo-geo",
-    "/services/seo-reporting",
     "/who-we-serve/independent-facility-owners",
     "/who-we-serve/multi-location-operators",
     "/who-we-serve/new-facility-openings",

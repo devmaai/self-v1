@@ -11,7 +11,8 @@ type V2NavProps = {
 type MenuKey = "storage" | "owners" | "form" | null;
 
 const FIND_STORAGE_LINKS = [
-  { href: "/", label: "Search storage near you", lead: true },
+  { href: "/find-storage", label: "Find storage unit near you", lead: true },
+  { href: "/", label: "Search storage by city or ZIP" },
   { href: "/storage-size-guide", label: "Storage size guide" },
   { href: "/storage-unit-size-calculator", label: "Size calculator" },
   { href: "/climate-controlled-storage", label: "Climate controlled storage" },
@@ -22,18 +23,10 @@ const FIND_STORAGE_LINKS = [
 ];
 
 const OWNER_LINKS = [
-  { href: "/agency", label: "SEO and AEO services overview", lead: true },
-  { href: "/services/local-seo-gbp-optimization", label: "Local SEO and Map Pack" },
-  { href: "/services/aeo-geo", label: "AEO and GEO" },
-  { href: "/services/technical-seo", label: "Technical SEO" },
-  { href: "/services/backlinks", label: "Backlinks" },
-  { href: "/services/content-keyword-strategy", label: "Content Writing" },
-  { href: "/services/multi-location-seo", label: "Multi-Location SEO" },
-  { href: "/services/seo-reporting", label: "SEO Reporting" },
-  { href: "/agency#pricing", label: "Pricing" },
-  { href: "/about#about-contact", label: "List your facility" },
-  { href: "/contact", label: "Request a backlink" },
-  { href: "/audit", label: "Request a free SEO & GEO audit" },
+  { href: "/agency", label: "Local SEO & AEO overview", lead: true },
+  { href: "/request-backlink", label: "Get a backlink" },
+  { href: "/list-your-facility", label: "List your facility" },
+  { href: "/audit", label: "Request a free GEO & AEO audit" },
 ];
 
 const Chevron = () => (
@@ -101,7 +94,6 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
           <li><Link href="/blog">Storage Guides</Link></li>
           {dropdown("owners", "For Storage Owners", OWNER_LINKS, !isStorageSide)}
           <li><Link href="/about">About Us</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
         </ul>
         <div className="nav-actions">
           {isStorageSide ? (
@@ -123,7 +115,7 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
                   </div>
                 )}
               </div>
-              <Link href="/about#about-contact" className="btn-nav-cta">List your facility</Link>
+              <Link href="/list-your-facility" className="btn-nav-cta">List your facility</Link>
             </>
           ) : (
             <>
@@ -161,11 +153,10 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
             </details>
           </li>
           <li><Link href="/about" data-mobile-close>About Us</Link></li>
-          <li><Link href="/contact" data-mobile-close>Contact</Link></li>
         </ul>
         <div className="mobile-menu-actions">
           {isStorageSide ? (
-            <Link href="/about#about-contact" className="btn-nav-cta" data-mobile-close>List your facility</Link>
+            <Link href="/list-your-facility" className="btn-nav-cta" data-mobile-close>List your facility</Link>
           ) : (
             <>
               <a href="/agency#proof" className="btn-nav-ghost" data-mobile-close>See client data</a>

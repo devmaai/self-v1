@@ -18,7 +18,7 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
         <div>
           <div className="fc-head">For renters</div>
           <ul className="fc-links">
-            <li><Link href="/">Find storage unit near you</Link></li>
+            <li><Link href="/find-storage">Find storage unit near you</Link></li>
             <li><Link href="/storage-search">Storage by state</Link></li>
             <li><Link href="/climate-controlled-storage">Storage types</Link></li>
             <li><Link href="/storage-size-guide">Storage size guide</Link></li>
@@ -29,12 +29,11 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
         <div>
           <div className="fc-head">For storage owners</div>
           <ul className="fc-links">
-            <li><Link href="/agency">SEO and AEO services</Link></li>
-            <li><Link href="/about#about-contact">List your facility</Link></li>
-            <li><Link href="/contact">Request a backlink</Link></li>
+            <li><Link href="/agency">Local SEO &amp; AEO overview</Link></li>
+            <li><Link href="/request-backlink">Get a backlink</Link></li>
+            <li><Link href="/list-your-facility">List your facility</Link></li>
+            <li><Link href="/audit">Request a free GEO &amp; AEO audit</Link></li>
             <li><Link href="/agency#pricing">Pricing</Link></li>
-            <li><Link href="/agency#proof">Client results</Link></li>
-            <li><Link href="/audit">Request a free SEO &amp; GEO audit</Link></li>
           </ul>
         </div>
         <div>

@@ -1074,3 +1074,31 @@
 @media (max-width: 600px) {
   .v2-home .footer-grid-unified { grid-template-columns: 1fr; }
 }
+
+/* Two-column landing form pages (audit, backlink, listing, find storage, contact) */
+.v2-home .lead-page { text-align: left; padding: 88px 48px; }
+.v2-home .lead-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.v2-home .lead-page .final-h2 { margin-bottom: 16px; }
+.v2-home .lead-page .final-lead { margin: 0 0 32px; max-width: 520px; color: rgba(255,255,255,0.72); font-size: 17px; line-height: 1.6; }
+.v2-home .lead-section { margin-bottom: 28px; }
+.v2-home .lead-section h2 { font-size: 15px; font-weight: 600; color: var(--white); margin: 0 0 12px; letter-spacing: 0; }
+.v2-home .lead-body, .v2-home .lead-body p { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.72); margin: 0 0 8px; }
+.v2-home .lead-body a { color: #7DD3FC; text-decoration: underline; }
+.v2-home .lead-list { display: flex; flex-direction: column; gap: 9px; }
+.v2-home .lead-list li { position: relative; padding-left: 24px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.78); }
+.v2-home .lead-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+.v2-home .lead-steps { list-style: none; counter-reset: lead-step; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.v2-home .lead-steps li { counter-increment: lead-step; position: relative; padding-left: 36px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.78); }
+.v2-home .lead-steps li::before { content: counter(lead-step); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(125,211,252,0.15); color: #7DD3FC; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.v2-home .lead-form .af-card { margin: 0; max-width: none; }
+.v2-home .lead-form .final-reassurance { justify-content: flex-start; flex-wrap: wrap; gap: 12px 24px; margin-top: 20px; }
+.v2-home .lead-form .af-field textarea { width: 100%; font: inherit; resize: vertical; }
+@media (max-width: 900px) {
+  .v2-home .lead-page { padding: 56px 20px; }
+  .v2-home .lead-grid { grid-template-columns: 1fr; gap: 32px; }
+  .v2-home .lead-form { order: -1; }
+}
+.v2-home .lead-form .af-field textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 11px 14px; color: var(--white); font-size: 14px; }
+.v2-home .lead-form .af-field textarea::placeholder { color: rgba(255,255,255,0.32); }
+.v2-home .lead-form .af-field textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.09); }
+.v2-home .lead-form .af-field select option { color: #0F172A; background: #fff; }
