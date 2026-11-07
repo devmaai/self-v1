@@ -1102,3 +1102,10 @@
 .v2-home .lead-form .af-field textarea::placeholder { color: rgba(255,255,255,0.32); }
 .v2-home .lead-form .af-field textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,0.09); }
 .v2-home .lead-form .af-field select option { color: #0F172A; background: #fff; }
+
+/* Homepage: location search band sits directly on the footer */
+.v2-home main > .storage-search-note:last-child { margin-bottom: 0; }
+
+/* Find my storage band: calmer photo so the form reads clearly */
+.find-storage-cta.hero-photo-form::before { background: linear-gradient(180deg, rgba(14, 33, 51, .90), rgba(14, 33, 51, .95)); }
+.v2-home .find-storage-cta-form .af-card { background: #10263A; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }

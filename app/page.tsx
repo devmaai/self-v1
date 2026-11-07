@@ -120,7 +120,6 @@ export default async function HomePage({
         <StorageStateLinks />
         <LatestPosts />
         <StorageLocationSearch />
-        <nav className="storage-search-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Featured cities and storage guides</span></nav>
       </main>
       <V2Footer />
     </div>
