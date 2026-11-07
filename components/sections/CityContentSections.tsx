@@ -30,9 +30,17 @@ function links(text: string) {
   return [...text.matchAll(LINK_PATTERN)].map((match) => ({ label: match[1], href: match[2] }));
 }
 
-function sizeBox(size: string) {
-  const [width, length] = (size.match(/\d+/g) ?? []).map(Number);
-  return { width: width || 5, length: length || 5 };
+function stripTags(text: string) {
+  return text.replace(LINK_PATTERN, "$1");
+}
+
+function SectionCta({ cta, centered = false, large = false }: { cta?: CityContentSection["cta"]; centered?: boolean; large?: boolean }) {
+  if (!cta) return null;
+  return (
+    <div className={`city-section-cta${centered ? " centered" : ""}${large ? " large" : ""}`}>
+      <Link href={cta.href} className="state-storage-cta">{cta.label}<span aria-hidden="true">→</span></Link>
+    </div>
+  );
 }
 
 function Paragraphs({ items, fill, keyPrefix }: { items?: string[]; fill: (text: string) => string; keyPrefix: string }) {
@@ -52,6 +60,7 @@ function OptionsSection({ section, fill }: { section: CityContentSection; fill: 
             const href = titleLinks[0]?.href;
             return (
               <article className="city-option-card" key={`option-${index}`}>
+                {section.images?.[index] && <img className="city-option-image" src={section.images[index]} alt={stripTags(title)} loading="lazy" />}
                 <h3>{inline(title, `option-title-${index}`)}</h3>
                 <p>{inline(body, `option-body-${index}`)}</p>
                 {href && <Link className="city-option-more" href={href}>Learn more <span aria-hidden="true">→</span></Link>}
@@ -65,28 +74,21 @@ function OptionsSection({ section, fill }: { section: CityContentSection; fill: 
 }
 
 function SizesSection({ section, fill }: { section: CityContentSection; fill: (text: string) => string }) {
-  const [lead, ...after] = section.paragraphs ?? [];
   return (
     <section className="city-content-band city-content-sizes">
-      <div className="city-content-inner">
-        <h2>{section.heading}</h2>
-        {lead && <p>{inline(fill(lead), "sizes-lead")}</p>}
-        <div className="city-size-table" role="table" aria-label="Storage unit sizes">
-          {section.bullets?.map((bullet, index) => {
-            const { title, body } = splitBullet(bullet);
-            const box = sizeBox(title);
-            return (
-              <div className="city-size-row" role="row" key={`size-${index}`}>
-                <span className="city-size-visual" role="cell" aria-hidden="true">
-                  <span data-size={`${box.width}x${box.length}`} />
-                </span>
-                <strong role="cell">{title}</strong>
-                <span role="cell">{body}</span>
-              </div>
-            );
-          })}
+      <div className="city-content-inner city-size-split">
+        {section.image && <img className="city-size-image city-size-image-desktop" src={section.image.src} alt={section.image.alt} />}
+        <div>
+          <h2>{section.heading}</h2>
+          {section.extra && (
+            <>
+              <h3>{section.extra.heading}</h3>
+              {section.image && <img className="city-size-image city-size-image-mobile" src={section.image.src} alt="" aria-hidden="true" />}
+              <Paragraphs items={section.extra.paragraphs} fill={fill} keyPrefix="sizes-extra" />
+            </>
+          )}
+          <SectionCta cta={section.cta} />
         </div>
-        <Paragraphs items={after} fill={fill} keyPrefix="sizes-after" />
       </div>
     </section>
   );
@@ -108,6 +110,7 @@ function NearbySection({ section, fill }: { section: CityContentSection; fill: (
           </div>
         )}
       </div>
+      <SectionCta cta={section.cta} centered large />
     </section>
   );
 }
@@ -141,25 +144,30 @@ export default function CityContentSections({ content, city, fill }: { content: 
 
   return (
     <div className="city-content">
-      <section className="city-content-intro">
-        <div className="city-content-inner city-content-split">
-          <h2>{content.intro.heading}</h2>
-          <div><Paragraphs items={content.intro.paragraphs} fill={fill} keyPrefix="intro" /></div>
-        </div>
-      </section>
+      {content.intro && (
+        <section className="city-content-intro">
+          <div className="city-content-inner city-content-split">
+            <h2>{content.intro.heading}</h2>
+            <div><Paragraphs items={content.intro.paragraphs} fill={fill} keyPrefix="intro" /></div>
+          </div>
+        </section>
+      )}
 
       {cards.length > 0 && (
         <section className="city-content-band city-content-living">
-          <div className="city-content-inner">
-            <span className="city-storage-label">Living in {city}</span>
-            <div className="city-living-grid">
-              {cards.map((section) => (
-                <article className="city-living-card" key={section.heading}>
-                  <h2>{section.heading}</h2>
-                  <Paragraphs items={section.paragraphs} fill={fill} keyPrefix={section.heading} />
-                </article>
-              ))}
+          <div className={content.cardsImage ? "city-content-inner city-living-split" : "city-content-inner"}>
+            <div>
+              <h2>{content.cardsHeading ?? `Living in ${city}`}</h2>
+              <div className="city-living-list">
+                {cards.map((section) => (
+                  <div className="city-living-item" key={section.heading}>
+                    <h3>{section.heading}</h3>
+                    <Paragraphs items={section.paragraphs} fill={fill} keyPrefix={section.heading} />
+                  </div>
+                ))}
+              </div>
             </div>
+            {content.cardsImage && <img className="city-living-image" src={content.cardsImage.src} alt={content.cardsImage.alt} loading="lazy" />}
           </div>
         </section>
       )}

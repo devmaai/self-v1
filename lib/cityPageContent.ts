@@ -15,26 +15,32 @@ export type CityContentLayout = "card" | "options" | "sizes" | "nearby" | "check
 export type CityContentSection = {
   heading: string;
   layout?: CityContentLayout;
+  /** One image per bullet, in order (options layout). */
+  images?: string[];
+  /** Extra sub-section shown under the main content, with an H3. */
+  extra?: { heading: string; paragraphs: string[] };
+  /** Single image for the section (sizes layout shows it on the left). */
+  image?: { src: string; alt: string };
+  /** Call to action button shown at the end of the section. */
+  cta?: { label: string; href: string };
   paragraphs?: string[];
   bullets?: string[];
 };
 
 export type CityPageContent = {
-  intro: { heading: string; paragraphs: string[] };
+  intro?: { heading: string; paragraphs: string[] };
+  /** Heading and photo for the row of "card" sections. */
+  cardsHeading?: string;
+  cardsImage?: { src: string; alt: string };
   sections: CityContentSection[];
   faqHeading: string;
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: string; bullets?: string[] }[];
 };
 
 export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
   "salt-lake-city": {
-    intro: {
-      heading: "Moving to Salt Lake City? Here is why people choose it",
-      paragraphs: [
-        "Salt Lake City puts you minutes from the Wasatch Mountains, with ski resorts, hiking and biking trails close to downtown. You also get a growing job market, a major university and an international airport, all in a city that is easy to get around.",
-        "That outdoor lifestyle comes with a lot of gear. Skis, bikes, camping kits and seasonal clothing fill up apartments and garages fast, which is why self storage in Salt Lake City stays in steady demand.",
-      ],
-    },
+    cardsHeading: "Moving to Salt Lake City?",
+    cardsImage: { src: "https://images.unsplash.com/photo-1621603933126-6c216db10045?auto=format&fit=crop&w=1000&q=75", alt: "Salt Lake City skyline with the Wasatch Mountains" },
     sections: [
       {
         heading: "How much does it cost to live in Salt Lake City?",
@@ -61,12 +67,17 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
         ],
       },
       {
-        heading: "Storage options in Salt Lake City",
+        heading: "Storage solutions in Salt Lake City",
         layout: "options",
+        images: [
+          "/images/climate-storage/indoor-corridor.png",
+          "/images/storage-guide/vehiclestorage.jpg",
+          "/images/state pages/proff and small business.jpg",
+          "/images/state pages/storage for students.jpg",
+        ],
         paragraphs: ["Choose the type of storage that fits what you are storing and how often you need it."],
         bullets: [
           "[Climate controlled storage](/climate-controlled-storage): Salt Lake City has hot summers and cold winters. Climate control protects wood furniture, mattresses, electronics, documents and photos from heat, cold and wide temperature swings.",
-          "Drive-up storage units: the most affordable choice for skis, bikes, camping gear, tools and plastic bins. You park at the door and load directly.",
           "[RV storage](/rv-storage), [boat storage](/boat-storage) and [car storage](/car-storage): outdoor, covered and enclosed spaces priced by length. Measure your vehicle, including the hitch, before you book.",
           "[Business storage](/business-storage): space for inventory, equipment, files and seasonal stock for Salt Lake City businesses that have outgrown their office or shop.",
           "[Student storage](/student-storage): short-term units near campus for the summer break or a semester away.",
@@ -75,17 +86,15 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       {
         heading: "What size storage unit do you need?",
         layout: "sizes",
-        bullets: [
-          "5x5: boxes, ski gear, boots and seasonal clothing.",
-          "5x10: a dorm room, a bedroom of furniture, or a household's bikes and outdoor gear.",
-          "10x10: a one bedroom apartment with a sofa, bed and appliances.",
-          "10x15: a two to three bedroom home if you take apart beds and tables.",
-          "10x20: a larger home or a car.",
-        ],
-        paragraphs: [
-          "Size your unit around your bulkiest items.",
-          "Not sure? Use the [storage unit size guide](/storage-size-guide) to match your belongings to a unit.",
-        ],
+        image: { src: "/images/storage-size-calculator.png", alt: "SelfStorage.help free storage size calculator" },
+        extra: {
+          heading: "Different units for different needs",
+          paragraphs: [
+            "Moving between homes usually needs a 10x10 to 10x20, depending on how many bedrooms you are packing up. A home renovation often fits in a 5x10 or 10x10 for furniture you need out of the way. Students rarely need more than a 5x5 or 5x10 for a dorm room. Businesses storing stock or equipment usually start with a 10x10 and add shelving. Cars, boats and RVs need a 10x20 or a parking space sized to their length.",
+            "See the [storage unit size guide](/storage-size-guide) for photos of each size and what fits inside.",
+          ],
+        },
+        cta: { label: "Not sure? Try our free storage size calculator", href: "/storage-unit-size-calculator" },
       },
       {
         heading: "Where to find cheap storage near Salt Lake City",
@@ -94,17 +103,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
           "Prices usually drop as you move away from downtown. Compare facilities along State Street, Redwood Road and the I-15 and I-80 corridors, then check nearby cities like [West Valley City](/storage-search/utah/west-valley-city), [West Jordan](/storage-search/utah/west-jordan) and [Sandy](/storage-search/utah/sandy).",
           "If you will visit your unit often, pick one on a route you already drive. For long-term storage you rarely open, the lowest monthly rate within a reasonable drive usually wins.",
         ],
-      },
-      {
-        heading: "What to check before you book",
-        layout: "checklist",
-        bullets: [
-          "Snow clearing: ask how quickly aisles and drive-up doors are cleared in winter.",
-          "Climate control: confirm the unit is cooled in summer as well as heated in winter.",
-          "Promotional rates: ask what the monthly price becomes after the first month.",
-          "Insurance: check your renters or homeowners policy before buying extra cover.",
-          "Move-out notice: many facilities ask for 10 to 14 days written notice.",
-        ],
+        cta: { label: "Explore Utah", href: "/storage-search/utah" },
       },
     ],
     faqHeading: "Common questions about renting storage in Salt Lake City",

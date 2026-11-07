@@ -363,9 +363,19 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
             <h2>{handContent.faqHeading}</h2>
             <div className="city-storage-faq-list">
               {handContent.faqs.map((faq) => (
-                <div className="city-storage-faq-item" key={faq.question}>
+                <div className={faq.bullets ? "city-storage-faq-item city-faq-wide" : "city-storage-faq-item"} key={faq.question}>
                   <h3>{faq.question}</h3>
                   <p>{renderInline(fillPrice(faq.answer), faq.question)}</p>
+                  {faq.bullets && (
+                    <ul className="city-faq-checklist">
+                      {faq.bullets.map((bullet) => {
+                        const colon = bullet.indexOf(": ");
+                        const title = colon === -1 ? bullet : bullet.slice(0, colon);
+                        const body = colon === -1 ? "" : bullet.slice(colon + 2);
+                        return <li key={bullet}><strong>{title}</strong>{body && <span>{body.charAt(0).toUpperCase() + body.slice(1)}</span>}</li>;
+                      })}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
@@ -379,7 +389,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
                 mainEntity: handContent.faqs.map((faq) => ({
                   "@type": "Question",
                   name: faq.question,
-                  acceptedAnswer: { "@type": "Answer", text: stripLinks(fillPrice(faq.answer)) },
+                  acceptedAnswer: { "@type": "Answer", text: stripLinks(fillPrice([faq.answer, ...(faq.bullets ?? [])].join(" "))) },
                 })),
               }),
             }}
