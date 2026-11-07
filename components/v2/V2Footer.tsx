@@ -23,7 +23,7 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
             <li><Link href="/climate-controlled-storage">Storage types</Link></li>
             <li><Link href="/storage-size-guide">Storage size guide</Link></li>
             <li><Link href="/storage-unit-size-calculator">Size calculator</Link></li>
-            <li><Link href="/blog">Storage guides</Link></li>
+            <li><Link href="/blog">Blogs</Link></li>
           </ul>
         </div>
         <div>
