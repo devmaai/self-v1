@@ -170,13 +170,22 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
           </div>
         </div>
 
+        {!compact && (
         <div className="af-field">
           <label htmlFor={`${idPrefix}-phone`}>Phone <span className="af-hint">(US)</span></label>
           <input id={`${idPrefix}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
           {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
         </div>
+        )}
 
         <div className="af-row">
+          {compact && (
+          <div className="af-field">
+            <label htmlFor={`${idPrefix}-phone`}>Phone <span className="af-hint">(US)</span></label>
+            <input id={`${idPrefix}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
+            {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
+          </div>
+          )}
           <div className="af-field">
             <label htmlFor={`${idPrefix}-unitSize`}>Unit size</label>
             <select id={`${idPrefix}-unitSize`} name="unitSize" defaultValue={initialUnitSize} required>

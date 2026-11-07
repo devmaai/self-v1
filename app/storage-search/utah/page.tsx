@@ -207,7 +207,7 @@ export default function UtahStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="utah-choose-heading">
-        <div className="state-storage-heading"><h2 id="utah-choose-heading">Your checklist for picking a Utah storage unit.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="utah-choose-heading">Your checklist for picking a Utah storage unit.</h2></div>
         <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. A sectional sofa or chest freezer decides your unit more than the number of boxes.</p></article>
