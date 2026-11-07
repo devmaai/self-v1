@@ -1274,3 +1274,5 @@
 .v2-home .storage-state-links { border-top: 0; }
 .v2-home .latest-posts { border-top: 0; }
 .storage-calculator-cta-simple .storage-calculator-cta-copy h2 { margin-bottom: 24px; }
+
+.state-form-block .state-form-subtext { margin: -6px 0 14px; color: #9cc9ef; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
