@@ -17,6 +17,7 @@ const FIND_STORAGE_LINKS = [
   { href: "/rv-storage", label: "RV storage" },
   { href: "/boat-storage", label: "Boat storage" },
   { href: "/business-storage", label: "Business storage" },
+  { href: "/student-storage", label: "Student storage" },
 ];
 
 const OWNER_LINKS = [

@@ -6,6 +6,7 @@ const TYPES = [
   { href: "/rv-storage", title: "RV storage", body: "Covered, indoor and outdoor spaces for motorhomes, trailers and campers." },
   { href: "/boat-storage", title: "Boat storage", body: "Indoor, covered and outdoor storage for boats on their trailers." },
   { href: "/business-storage", title: "Business storage", body: "Commercial storage units for inventory, documents and equipment." },
+  { href: "/student-storage", title: "Student storage", body: "Small, flexible units near campus for summer break and moves between dorms." },
   { href: "/storage-size-guide", title: "Storage size guide", body: "Find the unit size that fits what you need to store." },
 ];
 

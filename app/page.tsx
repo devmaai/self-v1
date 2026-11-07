@@ -25,6 +25,7 @@ const STORAGE_TYPES = [
   { icon: "boat", title: "Boat Storage", body: "Boat storage can be indoor, covered, or outdoor. Facilities may have restrictions on the size and type of boats they can accommodate.", href: "/boat-storage" },
   { icon: "climate", title: "Climate Controlled", body: "Climate-controlled self-storage protects your belongings from environmental changes by maintaining consistent temperature and humidity levels.", href: "/climate-controlled-storage" },
   { icon: "business", title: "Business Storage", body: "Small businesses and entrepreneurs often need additional space to store inventory, documents, and equipment. Business storage is designed to fit those needs.", href: "/business-storage" },
+  { icon: "student", title: "Student Storage", body: "Students often need small, flexible storage near campus for summer break, study abroad or a move between dorms. Month-to-month units keep things close until classes start.", href: "/student-storage" },
 ];
 
 type StorageTypeIconName = (typeof STORAGE_TYPES)[number]["icon"];
@@ -36,6 +37,7 @@ function StorageTypeIcon({ name }: { name: StorageTypeIconName }) {
   if (name === "rv") return <svg viewBox="0 0 48 48" aria-hidden="true"><path {...common} d="M8 14h25a7 7 0 0 1 7 7v12H8V14Z" /><path {...common} d="M40 26h3v7h-3M13 18h13v9H13zM17 37a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm19 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>;
   if (name === "boat") return <svg viewBox="0 0 48 48" aria-hidden="true"><path {...common} d="M12 28h25l-4 8H16l-4-8Zm4 0 3-11h9l5 11M23 17v-6m0 0h8l-4 4" /><path {...common} d="M9 39c4-3 7 3 11 0 4-3 7 3 11 0 4-3 7 3 10 0" /></svg>;
   if (name === "climate") return <svg viewBox="0 0 48 48" aria-hidden="true"><path {...common} d="M24 9v20M24 29a6 6 0 1 0 4 6V9a4 4 0 0 0-8 0v26a6 6 0 1 0 4-6Z" /><path {...common} d="M11 17h6m-6 7h6m14-7h6m-6 7h6" /></svg>;
+  if (name === "student") return <svg viewBox="0 0 48 48" aria-hidden="true"><path {...common} d="M4 19 24 10l20 9-20 9-20-9Z" /><path {...common} d="M12 23v9c0 3 5 6 12 6s12-3 12-6v-9M44 19v10" /></svg>;
   if (name === "business") return <svg viewBox="0 0 48 48" aria-hidden="true"><rect {...common} x="7" y="11" width="25" height="25" rx="2" /><path {...common} d="M14 36V19h11v17M12 16h15M36 23v13m-5-6h10m-8-5 3-3 3 3" /></svg>;
   return <svg viewBox="0 0 48 48" aria-hidden="true"><path {...common} d="M8 15h32v22H8zM8 15l5-5h22l5 5M16 15v22m16-22v22M8 27h32" /><path {...common} d="M20 21h8" /></svg>;
 }
