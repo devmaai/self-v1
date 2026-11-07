@@ -10,8 +10,7 @@ type V2NavProps = {
 type MenuKey = "storage" | "owners" | null;
 
 const FIND_STORAGE_LINKS = [
-  { href: "/find-storage", label: "Find storage unit near you", lead: true },
-  { href: "/", label: "Search storage by city or ZIP" },
+  { href: "/", label: "Search storage by city or ZIP", lead: false },
   { href: "/storage-size-guide", label: "Storage size guide" },
   { href: "/storage-unit-size-calculator", label: "Size calculator" },
   { href: "/climate-controlled-storage", label: "Climate controlled storage" },
@@ -58,22 +57,29 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
 
   const toggle = (key: MenuKey) => setOpen((cur) => (cur === key ? null : key));
 
-  const dropdown = (key: "storage" | "owners", label: string, links: typeof OWNER_LINKS, active: boolean) => (
+  const dropdown = (key: "storage" | "owners", label: string, links: typeof OWNER_LINKS, active: boolean, href?: string) => (
     <li
       className={`nav-services nav-menu ${open === key ? "open" : ""} ${active ? "is-active" : ""}`}
       onMouseEnter={() => setOpen(key)}
       onMouseLeave={() => setOpen((cur) => (cur === key ? null : cur))}
     >
-      <button
-        type="button"
-        className="nav-services-trigger"
-        aria-expanded={open === key}
-        aria-haspopup="true"
-        onClick={() => toggle(key)}
-      >
-        {label}
-        <Chevron />
-      </button>
+      {href ? (
+        <Link href={href} className="nav-services-trigger" aria-haspopup="true" aria-expanded={open === key} onFocus={() => setOpen(key)}>
+          {label}
+          <Chevron />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          className="nav-services-trigger"
+          aria-expanded={open === key}
+          aria-haspopup="true"
+          onClick={() => toggle(key)}
+        >
+          {label}
+          <Chevron />
+        </button>
+      )}
       <div className="nav-services-menu">
         {links.map((l) => (
           <Link key={l.href + l.label} href={l.href} className={l.lead ? "nav-menu-lead" : undefined} onClick={() => setOpen(null)}>
@@ -89,7 +95,7 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
       <nav ref={navRef} className={`v2-nav v2-nav-unified ${isStorageSide ? "v2-nav-home" : ""}`}>
         <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
         <ul className="nav-links nav-quick-links">
-          {dropdown("storage", "Find Storage", FIND_STORAGE_LINKS, isStorageSide)}
+          {dropdown("storage", "Find Storage", FIND_STORAGE_LINKS, isStorageSide, "/")}
           <li><Link href="/blog">Storage Guides</Link></li>
           {dropdown("owners", "For Storage Owners", OWNER_LINKS, !isStorageSide)}
         </ul>
