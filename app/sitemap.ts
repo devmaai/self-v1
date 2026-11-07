@@ -84,13 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         return stateSlug ? `/storage-search/${stateSlug}/${citySlug}` : null;
       })
       .filter((path): path is string => path !== null),
-    "/who-we-serve/independent-facility-owners",
-    "/who-we-serve/multi-location-operators",
-    "/who-we-serve/new-facility-openings",
-    "/who-we-serve/vehicle-rv-boat-storage",
-    "/who-we-serve/storage-warehouse",
-    "/who-we-serve/containers",
-    "/who-we-serve/furniture-depositories",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((routePath) => ({
