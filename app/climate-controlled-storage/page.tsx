@@ -119,7 +119,7 @@ export default async function ClimateControlledStoragePage() {
   const faqSchema = faqPageSchema(faqs.map(([question, answer]) => ({ question, answer })));
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "Climate controlled storage", path: "/climate-controlled-storage" },
   ]);
 
@@ -131,7 +131,7 @@ export default async function ClimateControlledStoragePage() {
       <section className="storage-size-guide-hero hero-photo hero-photo-climate">
         <div className="storage-size-guide-hero-inner">
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Climate controlled storage</span>
+            <Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Climate controlled storage</span>
           </nav>
           <span className="storage-size-guide-eyebrow"><span /> Climate Controlled Storage</span>
           <h1>Climate controlled storage units <em>near you.</em></h1>
@@ -220,7 +220,7 @@ export default async function ClimateControlledStoragePage() {
             <strong>Ready to compare climate controlled units?</strong>
             <span>See prices, sizes and availability from facilities near you.</span>
           </div>
-          <Link href="/storage-search">Compare climate controlled units <span aria-hidden="true">→</span></Link>
+          <Link href="/storage-state-usa">Compare climate controlled units <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 

@@ -111,7 +111,7 @@ export default function DenverStoragePage() {
           __html: JSON.stringify(
             breadcrumbListSchema([
               { name: "Home", path: "/" },
-              { name: "Storage search", path: "/storage-search" },
+              { name: "Storage by state", path: "/storage-state-usa" },
               { name: "Denver, Colorado", path: "/storage-search/denver" },
             ]),
           ),
@@ -119,7 +119,7 @@ export default function DenverStoragePage() {
       />
       <section className="city-storage-hero">
         <div className="city-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/storage-search">Storage search</Link><span>/</span>Denver</div>
+          <div className="city-storage-breadcrumb"><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Denver</div>
           <div className="city-storage-eyebrow"><span /> Live local availability</div>
           <h1>Cheap self storage<br /><em>in Denver, CO.</em></h1>
           <p>Compare storage units, sizes, and move-in prices from facilities across Denver and nearby communities.</p>
@@ -157,7 +157,7 @@ export default function DenverStoragePage() {
       <section className="city-storage-links"><div><span className="city-storage-label">Keep exploring</span><h2>Nearby Colorado cities</h2></div><div className="nearby-city-grid">{nearbyCities.map((city) => <Link href={`/storage-search?location=${encodeURIComponent(city + ", CO")}`} key={city}>{city}</Link>)}</div></section>
       <StorageLocationSearch />
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Denver, Colorado</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Denver, Colorado</span></nav>
     </main>
   );
 }

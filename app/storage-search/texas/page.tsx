@@ -95,7 +95,7 @@ export default function TexasStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "Texas", path: "/storage-search/texas" },
   ]);
 
@@ -105,7 +105,7 @@ export default function TexasStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>Texas</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Texas</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Texas near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Texas has 3,707 storage facilities holding 44,477 available units right now, more than any other state, from the Gulf Coast through the Hill Country to the Panhandle and the border. Compare monthly rates, unit sizes, access hours and features before you leave the house.</p>
           <Link className="state-storage-cta" href="/storage-search?location=Texas">Search Texas storage <span aria-hidden="true">→</span></Link>
@@ -308,7 +308,7 @@ export default function TexasStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Texas</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Texas</span></nav>
     </main>
   );
 }

@@ -94,7 +94,7 @@ export default function UtahStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "Utah", path: "/storage-search/utah" },
   ]);
 
@@ -109,7 +109,7 @@ export default function UtahStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1621603933126-6c216db10045?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>Utah</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Utah</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Utah near you.</em></h1>
           <p>Compare 457 facilities and 4,963 available units across Utah, with current prices, sizes, and amenities near your location.</p>
           <StateZipSearch id="utah-hero-zip" />
@@ -250,7 +250,7 @@ export default function UtahStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Utah</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Utah</span></nav>
     </main>
   );
 }

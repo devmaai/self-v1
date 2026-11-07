@@ -278,7 +278,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     ...(statePageSlug ? [{ name: stateName, path: `/storage-search/${statePageSlug}` }] : []),
     { name: `${city}, ${state}`, path: `/storage-search/${stateSlug}/${citySlug}` },
   ]);
@@ -296,7 +296,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
       <section className={CITY_IMAGES[citySlug] ? "city-storage-hero hero-photo" : "city-storage-hero"} style={CITY_IMAGES[citySlug] ? ({ "--hero-image": `url('${CITY_IMAGES[citySlug]}?auto=format&fit=crop&w=1800&q=70')` } as React.CSSProperties) : undefined}>
         <div className="city-storage-hero-inner">
           <div className="city-storage-breadcrumb">
-            <Link href="/storage-search">Storage search</Link><span>/</span>
+            <Link href="/storage-state-usa">Storage by state</Link><span>/</span>
             {statePageSlug ? <Link href={`/storage-search/${statePageSlug}`}>{stateName}</Link> : <span>{stateName}</span>}<span>/</span>
             {city}
           </div>
@@ -354,7 +354,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
           />
         </section>
       )}
-      <StorageLocationSearch /><StorageStateLinks /><nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{city}, {state}</span></nav>
+      <StorageLocationSearch /><StorageStateLinks /><nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">{city}, {state}</span></nav>
     </main>
   );
 }

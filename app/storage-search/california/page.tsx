@@ -94,7 +94,7 @@ export default function CaliforniaStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "California", path: "/storage-search/california" },
   ]);
 
@@ -104,7 +104,7 @@ export default function CaliforniaStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>California</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>California</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in California near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. California has 3,098 storage facilities holding 41,949 available units right now, from Redding down to Chula Vista and across every coastal, valley, and desert market in between. Compare monthly rates, unit sizes, access hours, and features before you leave the house.</p>
           <Link className="state-storage-cta" href="/storage-search?location=California">Search California storage <span aria-hidden="true">→</span></Link>
@@ -265,7 +265,7 @@ export default function CaliforniaStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">California</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">California</span></nav>
     </main>
   );
 }

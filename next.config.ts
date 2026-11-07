@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
       // Search queries sent to /storage-search?location=... still go to the
       // home page search. The bare /storage-search URL is the Storage by state hub.
       { source: "/storage-search", has: [{ type: "query", key: "location" }], destination: "/", permanent: false },
+      // The Storage by state hub moved to /storage-state-usa.
+      { source: "/storage-search", destination: "/storage-state-usa", permanent: true },
       // Keep the previous sitemap URL working while Search Console switches
       // to the standard metadata route.
       { source: "/sitemap/sitemap.xml", destination: "/sitemap.xml", permanent: true },

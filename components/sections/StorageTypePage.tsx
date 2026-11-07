@@ -125,7 +125,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
   const faqSchema = faqPageSchema(c.faqs.map(([question, answer]) => ({ question, answer })));
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: c.name, path: `/${c.slug}` },
   ]);
   const searchId = `${c.slug}-search`;
@@ -138,7 +138,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
       <section className={`storage-size-guide-hero hero-photo ${c.heroClass}`}>
         <div className="storage-size-guide-hero-inner">
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">{c.name}</span>
+            <Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">{c.name}</span>
           </nav>
           <span className="storage-size-guide-eyebrow"><span /> {c.eyebrow}</span>
           <h1>{c.h1}</h1>
@@ -225,7 +225,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
             <strong>{c.ctaTitle}</strong>
             <span>{c.ctaText}</span>
           </div>
-          <Link href="/storage-search">{c.ctaLabel} <span aria-hidden="true">→</span></Link>
+          <Link href="/storage-state-usa">{c.ctaLabel} <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 

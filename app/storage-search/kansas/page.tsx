@@ -108,7 +108,7 @@ export default function KansasStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "Kansas", path: "/storage-search/kansas" },
   ]);
 
@@ -118,7 +118,7 @@ export default function KansasStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>Kansas</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Kansas</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Kansas near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Kansas has 251 storage facilities holding 2,258 available units right now, from the Wichita metro across to Johnson County and out through Topeka, Lawrence, Manhattan and Salina. Compare monthly rates, unit sizes, access hours and features before you leave the house.</p>
           <Link className="state-storage-cta" href="/storage-search?location=Kansas">Search Kansas storage <span aria-hidden="true">→</span></Link>
@@ -321,7 +321,7 @@ export default function KansasStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Kansas</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Kansas</span></nav>
     </main>
   );
 }

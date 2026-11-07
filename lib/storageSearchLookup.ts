@@ -41,7 +41,7 @@ function slugifyCity(value: string): string {
  */
 export function resolveStorageSearchHref(rawQuery: string): string {
   const query = rawQuery.trim();
-  if (!query) return "/storage-search";
+  if (!query) return "/storage-state-usa";
 
   const normalized = query.toLowerCase();
   const stateSlug = STATE_NAME_TO_SLUG[normalized];

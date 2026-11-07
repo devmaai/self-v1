@@ -102,7 +102,7 @@ export default function SouthDakotaStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "South Dakota", path: "/storage-search/south-dakota" },
   ]);
 
@@ -112,7 +112,7 @@ export default function SouthDakotaStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>South Dakota</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>South Dakota</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in South Dakota near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. South Dakota has 157 storage facilities holding 871 available units right now, from Sioux Falls and the eastern corridor across to Rapid City and the Black Hills. Compare monthly rates, unit sizes, access hours, and features before you leave the house.</p>
           <Link className="state-storage-cta" href="/storage-search?location=South%20Dakota">Search South Dakota storage <span aria-hidden="true">→</span></Link>
@@ -322,7 +322,7 @@ export default function SouthDakotaStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">South Dakota</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">South Dakota</span></nav>
     </main>
   );
 }

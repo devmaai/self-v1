@@ -99,7 +99,7 @@ export default function NewYorkStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "New York", path: "/storage-search/new-york" },
   ]);
 
@@ -109,7 +109,7 @@ export default function NewYorkStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1536622638768-9403a9d35a1a?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>New York</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>New York</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in New York near you.</em></h1>
           <p>Enter your neighbourhood or ZIP code and see every storage unit available within reach of you. New York has 878 storage facilities holding 14,766 available units right now, from Manhattan and the outer boroughs to Long Island, the Hudson Valley and across upstate. Compare monthly rates, unit sizes, access hours and features before you leave the apartment.</p>
           <Link className="state-storage-cta" href="/storage-search?location=New%20York">Search New York storage <span aria-hidden="true">→</span></Link>
@@ -291,7 +291,7 @@ export default function NewYorkStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">New York</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">New York</span></nav>
     </main>
   );
 }

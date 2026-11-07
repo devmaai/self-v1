@@ -1269,3 +1269,8 @@
   .storage-type-links-grid.storage-type-links-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .storage-type-links-grid.storage-type-links-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 }
+
+/* Homepage: no divider lines around the Storage by state block */
+.v2-home .storage-state-links { border-top: 0; }
+.v2-home .latest-posts { border-top: 0; }
+.storage-calculator-cta-simple .storage-calculator-cta-copy h2 { margin-bottom: 24px; }

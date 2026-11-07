@@ -155,7 +155,7 @@ export default function StorageSizeGuidePage() {
   );
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "Size guide", path: "/storage-size-guide" },
   ]);
 
@@ -166,7 +166,7 @@ export default function StorageSizeGuidePage() {
       <section className="storage-size-guide-hero hero-photo hero-photo-guide">
         <div className="storage-size-guide-hero-inner">
           <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">Size guide</span>
+            <Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Size guide</span>
           </nav>
           <h1>The self storage size guide, <em>built around what you store.</em></h1>
         </div>
@@ -187,7 +187,7 @@ export default function StorageSizeGuidePage() {
               <p><strong>What fits:</strong> {scenario.items}</p>
           <StateZipSearch id="size-guide-hero-zip" />
               <p className="storage-size-card-fit">{scenario.fit}</p>
-              <Link href="/storage-search">Find units <span aria-hidden="true">→</span></Link>
+              <Link href="/storage-state-usa">Find units <span aria-hidden="true">→</span></Link>
             </article>
           ))}
         </div>
@@ -244,7 +244,7 @@ export default function StorageSizeGuidePage() {
 
       <section className="storage-size-guide-cta">
         <div><span className="storage-size-guide-label">Ready to search?</span><h2>Know your size? Find units near you.</h2></div>
-        <Link href="/storage-search">Compare nearby units <span aria-hidden="true">→</span></Link>
+        <Link href="/storage-state-usa">Compare nearby units <span aria-hidden="true">→</span></Link>
       </section>
     </main>
   );

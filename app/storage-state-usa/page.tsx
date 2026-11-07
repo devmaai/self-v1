@@ -4,11 +4,13 @@ import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { breadcrumbListSchema } from "@/lib/schema";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import type React from "react";
 
 export const metadata: Metadata = {
   title: "Storage Units by State | Find Self Storage in Your City",
   description: "Browse self storage by state. Pick your state, open the city list, and compare storage unit prices, sizes and availability near you.",
-  alternates: { canonical: "/storage-search" },
+  alternates: { canonical: "/storage-state-usa" },
 };
 
 const CITY_NAME_FIXES: Record<string, string> = {
@@ -41,16 +43,17 @@ const STATES = Object.entries(STATE_PAGE_SLUGS)
 export default function StorageByStatePage() {
   const breadcrumbs = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage by state", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
   ]);
 
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
-      <section className="state-storage-hero">
+      <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1627750739839-f8b352c30f2e?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
         <div className="state-storage-hero-inner">
           <h1>Storage units <em>by state</em></h1>
           <p>Choose your state, open the city list, and go straight to storage units near you with prices, sizes and availability.</p>
+          <StateZipSearch id="states-hub-zip" />
         </div>
       </section>
 

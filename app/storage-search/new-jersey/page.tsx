@@ -112,7 +112,7 @@ export default async function NewJerseyStoragePage() {
 
   const breadcrumbSchema = breadcrumbListSchema([
     { name: "Home", path: "/" },
-    { name: "Storage search", path: "/storage-search" },
+    { name: "Storage by state", path: "/storage-state-usa" },
     { name: "New Jersey", path: "/storage-search/new-jersey" },
   ]);
 
@@ -122,7 +122,7 @@ export default async function NewJerseyStoragePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="state-storage-hero">
         <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span>New Jersey</div>
+          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>New Jersey</div>
           <h1>Cheap <span className="state-storage-nowrap">self storage</span><br /><em>in New Jersey.</em></h1>
           <p>New Jersey is the most densely populated state in the country, and storage here is shaped by that fact more than any other. Housing stock runs to older homes without garages, walk-up apartments without basements, and shore properties that sit empty for half the year. Enter your city or ZIP code and compare live unit sizes, move-in prices and availability across {listingCount} listings statewide, then use the guidance below to work out what you should be paying and what to check before you sign.</p>
           <Link className="state-storage-cta" href="/storage-search?location=New%20Jersey">Search New Jersey storage <span aria-hidden="true">→</span></Link>
@@ -314,7 +314,7 @@ export default async function NewJerseyStoragePage() {
       </section>
 
       <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-search">Storage search</Link><span>/</span><span aria-current="page">New Jersey</span></nav>
+      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">New Jersey</span></nav>
     </main>
   );
 }
