@@ -4,8 +4,17 @@
 // Paragraph text supports inline links written as [label](/path) and the
 // {{from_price}} token, which is replaced with the live "From $X" price.
 
+// How a section is displayed on the page:
+// card      consecutive "card" sections sit side by side as a row of cards
+// options   bullets become linked storage-type cards ("[Label](/path): text")
+// sizes     bullets become a visual size table ("5x5: what fits")
+// nearby    paragraphs plus the linked cities shown as buttons
+// checklist bullets become a checklist ("Title: text")
+export type CityContentLayout = "card" | "options" | "sizes" | "nearby" | "checklist";
+
 export type CityContentSection = {
   heading: string;
+  layout?: CityContentLayout;
   paragraphs?: string[];
   bullets?: string[];
 };
@@ -29,6 +38,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
     sections: [
       {
         heading: "How much does it cost to live in Salt Lake City?",
+        layout: "card",
         paragraphs: [
           "Housing is your biggest cost. Rent and home prices in Salt Lake City run higher than in many smaller Utah towns, and apartments near downtown and the University of Utah tend to be compact.",
           "Smaller homes are one of the main reasons renters look for storage. A small unit costs far less per month than renting a bigger apartment just to fit your belongings. Storage units on this page start from {{from_price}} a month.",
@@ -36,6 +46,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "Is Salt Lake City student friendly?",
+        layout: "card",
         paragraphs: [
           "Yes. The University of Utah and Westminster University bring thousands of students to the city, and many neighborhoods near campus are built around student life, transit and part-time work.",
           "Student storage is busiest at the end of each semester. A 5x5 or 5x10 unit holds most dorm rooms, and booking a few weeks before move-out week gives you more choice. See our [student storage guide](/student-storage) for tips on summer storage.",
@@ -43,6 +54,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "Is Salt Lake City good for families with kids?",
+        layout: "card",
         paragraphs: [
           "Families like Salt Lake City for its parks, outdoor activities and neighborhoods with more space in the surrounding valley, such as [Sandy](/storage-search/utah/sandy), [South Jordan](/storage-search/utah/south-jordan) and [Millcreek](/storage-search/utah/millcreek).",
           "Family homes collect baby gear, outgrown toys, holiday decorations and sports equipment. A 10x10 or 10x15 unit keeps these out of the garage until you need them again.",
@@ -50,6 +62,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "Storage options in Salt Lake City",
+        layout: "options",
         paragraphs: ["Choose the type of storage that fits what you are storing and how often you need it."],
         bullets: [
           "[Climate controlled storage](/climate-controlled-storage): Salt Lake City has hot summers and cold winters. Climate control protects wood furniture, mattresses, electronics, documents and photos from heat, cold and wide temperature swings.",
@@ -61,6 +74,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "What size storage unit do you need?",
+        layout: "sizes",
         bullets: [
           "5x5: boxes, ski gear, boots and seasonal clothing.",
           "5x10: a dorm room, a bedroom of furniture, or a household's bikes and outdoor gear.",
@@ -75,6 +89,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "Where to find cheap storage near Salt Lake City",
+        layout: "nearby",
         paragraphs: [
           "Prices usually drop as you move away from downtown. Compare facilities along State Street, Redwood Road and the I-15 and I-80 corridors, then check nearby cities like [West Valley City](/storage-search/utah/west-valley-city), [West Jordan](/storage-search/utah/west-jordan) and [Sandy](/storage-search/utah/sandy).",
           "If you will visit your unit often, pick one on a route you already drive. For long-term storage you rarely open, the lowest monthly rate within a reasonable drive usually wins.",
@@ -82,6 +97,7 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       },
       {
         heading: "What to check before you book",
+        layout: "checklist",
         bullets: [
           "Snow clearing: ask how quickly aisles and drive-up doors are cleared in winter.",
           "Climate control: confirm the unit is cooled in summer as well as heated in winter.",
