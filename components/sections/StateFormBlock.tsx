@@ -15,7 +15,7 @@ export default function StateFormBlock({ id, state, cities, heading = "Find stor
   return (
     <section className="find-storage-cta state-form-block" aria-labelledby={`${id}-heading`}>
       <div className="find-storage-cta-text">
-        <span className="storage-search-label">Free, no obligation</span>
+        {!subtext && <span className="storage-search-label">Free, no obligation</span>}
         <h2 id={`${id}-heading`}>{heading}</h2>
         {subtext && <p className="state-form-subtext">{subtext}</p>}
         <p>{body ?? `Pick your ${state} city, unit size and dates. We will match you with storage facilities that fit.`}</p>
