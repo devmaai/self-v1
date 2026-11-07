@@ -43,7 +43,19 @@ const STORAGE_TYPES = [
   "Other",
 ];
 
-export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSize?: string }) {
+type V2StorageFormProps = {
+  initialUnitSize?: string;
+  /** Fixes the state (e.g. "Utah") and sends it with the request. */
+  state?: string;
+  /** City choices for a dropdown, used with `state`. */
+  cities?: string[];
+  /** Drops price range and storage type for a shorter form. */
+  compact?: boolean;
+  /** Keeps field ids unique when a page shows the form more than once. */
+  idPrefix?: string;
+};
+
+export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf" }: V2StorageFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -69,6 +81,8 @@ export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSiz
       phone: String(data.get("phone") || ""),
       company: String(data.get("company") || ""), // honeypot
       captchaToken: String(data.get("cf-turnstile-response") || ""),
+      state: state || "",
+      compact,
     };
 
     setStatus("submitting");
@@ -135,27 +149,35 @@ export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSiz
       <form className="af-form" onSubmit={handleSubmit} noValidate>
         <div className="af-row">
           <div className="af-field">
-            <label htmlFor="sf-email">Email</label>
-            <input id="sf-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
+            <label htmlFor={`${idPrefix}-email`}>Email</label>
+            <input id={`${idPrefix}-email`} name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
             {fieldErrors.email && <span className="af-error">{fieldErrors.email}</span>}
           </div>
           <div className="af-field">
-            <label htmlFor="sf-city">City</label>
-            <input id="sf-city" name="city" type="text" autoComplete="address-level2" placeholder="Your city" required />
+            <label htmlFor={`${idPrefix}-city`}>{cities ? `City in ${state ?? "your state"}` : "City"}</label>
+            {cities ? (
+              <select id={`${idPrefix}-city`} name="city" defaultValue="" required>
+                <option value="" disabled>Select city</option>
+                {cities.map((c) => <option key={c} value={c}>{c}</option>)}
+                <option value="Other">Other city</option>
+              </select>
+            ) : (
+              <input id={`${idPrefix}-city`} name="city" type="text" autoComplete="address-level2" placeholder="Your city" required />
+            )}
             {fieldErrors.city && <span className="af-error">{fieldErrors.city}</span>}
           </div>
         </div>
 
         <div className="af-field">
-          <label htmlFor="sf-phone">Phone <span className="af-hint">(US)</span></label>
-          <input id="sf-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
+          <label htmlFor={`${idPrefix}-phone`}>Phone <span className="af-hint">(US)</span></label>
+          <input id={`${idPrefix}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
           {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
         </div>
 
         <div className="af-row">
           <div className="af-field">
-            <label htmlFor="sf-unitSize">Unit size</label>
-            <select id="sf-unitSize" name="unitSize" defaultValue={initialUnitSize} required>
+            <label htmlFor={`${idPrefix}-unitSize`}>Unit size</label>
+            <select id={`${idPrefix}-unitSize`} name="unitSize" defaultValue={initialUnitSize} required>
               <option value="" disabled>Select size</option>
               {UNIT_SIZES.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -163,9 +185,10 @@ export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSiz
             </select>
             {fieldErrors.unitSize && <span className="af-error">{fieldErrors.unitSize}</span>}
           </div>
+          {!compact && (
           <div className="af-field">
-            <label htmlFor="sf-priceRange">Price range</label>
-            <select id="sf-priceRange" name="priceRange" required>
+            <label htmlFor={`${idPrefix}-priceRange`}>Price range</label>
+            <select id={`${idPrefix}-priceRange`} name="priceRange" required>
               <option value="" disabled>Select range</option>
               {PRICE_RANGES.map((p) => (
                 <option key={p} value={p}>{p}</option>
@@ -173,24 +196,26 @@ export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSiz
             </select>
             {fieldErrors.priceRange && <span className="af-error">{fieldErrors.priceRange}</span>}
           </div>
+          )}
         </div>
 
         <div className="af-row">
           <div className="af-field">
-            <label htmlFor="sf-startDate">Start date</label>
-            <input id="sf-startDate" name="startDate" type="date" required />
+            <label htmlFor={`${idPrefix}-startDate`}>Start date</label>
+            <input id={`${idPrefix}-startDate`} name="startDate" type="date" required />
             {fieldErrors.startDate && <span className="af-error">{fieldErrors.startDate}</span>}
           </div>
           <div className="af-field">
-            <label htmlFor="sf-endDate">End date</label>
-            <input id="sf-endDate" name="endDate" type="date" required />
+            <label htmlFor={`${idPrefix}-endDate`}>End date</label>
+            <input id={`${idPrefix}-endDate`} name="endDate" type="date" required />
             {fieldErrors.endDate && <span className="af-error">{fieldErrors.endDate}</span>}
           </div>
         </div>
 
+        {!compact && (
         <div className="af-field">
-          <label htmlFor="sf-storageType">Storage type</label>
-          <select id="sf-storageType" name="storageType" required>
+          <label htmlFor={`${idPrefix}-storageType`}>Storage type</label>
+          <select id={`${idPrefix}-storageType`} name="storageType" required>
             <option value="" disabled>Select type</option>
             {STORAGE_TYPES.map((t) => (
               <option key={t} value={t}>{t}</option>
@@ -198,11 +223,12 @@ export default function V2StorageForm({ initialUnitSize = "" }: { initialUnitSiz
           </select>
           {fieldErrors.storageType && <span className="af-error">{fieldErrors.storageType}</span>}
         </div>
+        )}
 
         {/* Honeypot: hidden from humans, tempting to bots. */}
         <div className="af-honeypot" aria-hidden="true">
-          <label htmlFor="sf-company">Company</label>
-          <input id="sf-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+          <label htmlFor={`${idPrefix}-company`}>Company</label>
+          <input id={`${idPrefix}-company`} name="company" type="text" tabIndex={-1} autoComplete="off" />
         </div>
 
         {SITE_KEY && <div className="cf-turnstile af-turnstile" data-sitekey={SITE_KEY} data-theme="dark" />}

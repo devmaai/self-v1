@@ -13,6 +13,8 @@ type StorageQuotePayload = {
   email?: unknown;
   city?: unknown;
   unitSize?: unknown;
+  state?: unknown;
+  compact?: unknown;
   priceRange?: unknown;
   startDate?: unknown;
   endDate?: unknown;
@@ -86,19 +88,22 @@ export async function POST(request: Request) {
   const endDate = typeof body.endDate === "string" ? body.endDate.trim() : "";
   const storageType = typeof body.storageType === "string" ? body.storageType.trim() : "";
   const phoneRaw = typeof body.phone === "string" ? body.phone.trim() : "";
+  // Compact forms on state pages skip price range and storage type.
+  const compact = body.compact === true;
+  const state = typeof body.state === "string" ? body.state.trim() : "";
 
   const errors: Record<string, string> = {};
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
   if (!city) errors.city = "Please enter your city.";
   if (!unitSize) errors.unitSize = "Please select a unit size.";
-  if (!priceRange) errors.priceRange = "Please select a price range.";
+  if (!priceRange && !compact) errors.priceRange = "Please select a price range.";
   if (!isValidDate(startDate)) errors.startDate = "Please enter a valid start date.";
   if (!isValidDate(endDate)) {
     errors.endDate = "Please enter a valid end date.";
   } else if (isValidDate(startDate) && Date.parse(endDate) < Date.parse(startDate)) {
     errors.endDate = "End date must be on or after the start date.";
   }
-  if (!storageType) errors.storageType = "Please select a storage type.";
+  if (!storageType && !compact) errors.storageType = "Please select a storage type.";
   const phone = normalizeUsPhone(phoneRaw);
   if (!phone) errors.phone = "Please enter a valid US phone number.";
 
@@ -119,16 +124,17 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const subject = `New storage quote request — ${city}`;
+  const subject = `New storage quote request: ${city}${state ? `, ${state}` : ""}`;
   const rows: [string, string][] = [
     ["Email", email],
     ["City", city],
+    ["State", state || "-"],
     ["Phone", phone!],
     ["Unit Size", unitSize],
-    ["Price Range", priceRange],
+    ["Price Range", priceRange || "-"],
     ["Start Date", startDate],
     ["End Date", endDate],
-    ["Storage Type", storageType],
+    ["Storage Type", storageType || "-"],
   ];
   const html = `
     <h2 style="font-family:sans-serif;margin:0 0 16px">New storage quote request</h2>
