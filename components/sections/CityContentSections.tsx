@@ -77,12 +77,13 @@ function SizesSection({ section, fill }: { section: CityContentSection; fill: (t
   return (
     <section className="city-content-band city-content-sizes">
       <div className="city-content-inner city-size-split">
-        {section.image && <img className="city-size-image" src={section.image.src} alt={section.image.alt} />}
+        {section.image && <img className="city-size-image city-size-image-desktop" src={section.image.src} alt={section.image.alt} />}
         <div>
           <h2>{section.heading}</h2>
           {section.extra && (
             <>
               <h3>{section.extra.heading}</h3>
+              {section.image && <img className="city-size-image city-size-image-mobile" src={section.image.src} alt="" aria-hidden="true" />}
               <Paragraphs items={section.extra.paragraphs} fill={fill} keyPrefix="sizes-extra" />
             </>
           )}
