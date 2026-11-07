@@ -194,46 +194,6 @@ export default function UtahStoragePage() {
         </div>
       </section>
 
-      <section className="utah-content-section" aria-labelledby="utah-climate-heading">
-        <div className="state-storage-heading"><h2 id="utah-climate-heading">Does it snow in Utah, and what does that mean for your storage unit?</h2><p>Yes. Northern Utah receives heavy mountain snowfall through winter, valley temperatures regularly drop below freezing, and summers along the Wasatch Front run hot and dry. That annual swing, along with the low humidity, is what decides whether you need climate control.</p></div>
-        <div className="utah-climate-grid">
-          <article className="utah-climate-card utah-climate-yes">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20" /><path d="M3.3 7l17.4 10" /><path d="M20.7 7L3.3 17" /><path d="M9 4l3 2.8L15 4" /><path d="M9 20l3-2.8L15 20" /></svg>
-              Choose a climate controlled unit if you are storing
-            </h3>
-            <ul>
-              <li>Wooden and leather furniture that can crack or warp in dry heat</li>
-              <li>Electronics, appliances and anything containing a battery</li>
-              <li>Photographs, artwork, vinyl records and paper documents</li>
-              <li>Musical instruments</li>
-              <li>Mattresses, upholstery and clothing kept beyond one season</li>
-              <li>Wine and other temperature sensitive collections</li>
-            </ul>
-          </article>
-          <article className="utah-climate-card utah-climate-no">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" /><path d="M7 21v-6h10v6" /></svg>
-              Standard drive-up units
-            </h3>
-            <div className="utah-climate-image"><Image src="/images/storage-guide/car.jpg" alt="Car parked in an open drive-up storage unit" width={1290} height={860} /></div>
-            <p>A standard drive up unit works well for tools, patio furniture, plastic bins, sporting equipment and vehicles. Whichever you choose, lift boxes off the floor on pallets or shelving and leave a gap between your belongings and the walls.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="utah-vehicle-heading">
-        <div className="state-storage-heading"><h2 id="utah-vehicle-heading">Parking space for your RV, boat and trailer between Utah trips.</h2></div>
-        <div className="utah-vehicle-block">
-          <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.jpg" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
-          <div className="utah-vehicle-block-text">
-            <p>Utah households run heavy on trailers, boats, campers, and off-road vehicles, and many HOAs restrict driveway parking. Choose uncovered outdoor parking, covered parking, or enclosed drive-up units.</p>
-            <p>Filter for parking availability, gate hours, and vehicle length. Spaces range from 20 to 45 feet, so confirm the maximum length before you reserve, and check whether current registration and insurance are required.</p>
-            <Link className="state-storage-guide-button" href="/rv-storage">Explore RV and boat storage <span aria-hidden="true">→</span></Link>
-          </div>
-        </div>
-      </section>
-
       <StateFormBlock id="utah-form-mid" state="Utah" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="state-storage-guide" aria-labelledby="utah-size-guide-heading">
