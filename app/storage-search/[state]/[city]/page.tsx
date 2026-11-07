@@ -15,6 +15,7 @@ import { CITY_IMAGES } from "@/lib/cityImages";
 import type React from "react";
 import StateZipSearch from "@/components/sections/StateZipSearch";
 import CityQuoteForm from "@/components/sections/CityQuoteForm";
+import CityContentSections from "@/components/sections/CityContentSections";
 import { CITY_PAGE_CONTENT } from "@/lib/cityPageContent";
 
 // Turns [label](/path) markup in hand-written copy into internal links.
@@ -342,24 +343,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
       </section>
       <CityStorageResults city={`${city}, ${state}`} facilities={facilities as CityStorageFacility[]} />
       <CityQuoteForm city={city} state={state} stateName={stateName} cities={formCities} />
-      {handContent && (
-        <section className="city-storage-seo">
-          <div className="city-storage-seo-inner">
-            <div className="city-storage-seo-section city-storage-seo-lead">
-              <h2>{handContent.intro.heading}</h2>
-              {handContent.intro.paragraphs.map((text, index) => <p key={`intro-${index}`}>{renderInline(fillPrice(text), `intro-${index}`)}</p>)}
-            </div>
-            {handContent.sections.map((section) => (
-              <div className="city-storage-seo-section" key={section.heading}>
-                <h2>{section.heading}</h2>
-                {section.paragraphs?.slice(0, section.bullets ? 1 : undefined).map((text, index) => <p key={`${section.heading}-p${index}`}>{renderInline(fillPrice(text), `${section.heading}-p${index}`)}</p>)}
-                {section.bullets && <ul>{section.bullets.map((text, index) => <li key={`${section.heading}-b${index}`}>{renderInline(fillPrice(text), `${section.heading}-b${index}`)}</li>)}</ul>}
-                {section.bullets && section.paragraphs?.slice(1).map((text, index) => <p key={`${section.heading}-after${index}`}>{renderInline(fillPrice(text), `${section.heading}-after${index}`)}</p>)}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {handContent && <CityContentSections content={handContent} city={city} fill={fillPrice} />}
       {!handContent && seoContent && (
         <section className="city-storage-seo">
           <div className="city-storage-seo-inner">
