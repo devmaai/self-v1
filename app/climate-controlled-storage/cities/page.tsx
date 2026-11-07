@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import CityLetterIndex, { letterAnchor } from "@/components/sections/CityLetterIndex";
 import { getClimateStorageSummary } from "@/lib/climateStorage";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 import { US_STATE_NAMES } from "@/lib/usStates";
@@ -52,6 +54,9 @@ export default async function ClimateCitiesPage() {
     { name: "Cities and brands", path: "/climate-controlled-storage/cities" },
   ]);
 
+  const letters = new Set(cities.map((x) => x.city.trim()[0]?.toUpperCase()).filter(Boolean) as string[]);
+  const usedLetters = new Set<string>();
+
   return (
     <main className="storage-size-guide-page climate-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -65,6 +70,7 @@ export default async function ClimateCitiesPage() {
           <span className="storage-size-guide-eyebrow"><span /> Climate Controlled Storage</span>
           <h1>Climate controlled storage <em>by city and brand.</em></h1>
           <p>Browse every city where you can compare climate controlled units, see starting prices, and find the storage brands that offer them.</p>
+          <StateZipSearch id="climate-cities-zip" />
         </div>
       </section>
 
@@ -74,12 +80,13 @@ export default async function ClimateCitiesPage() {
           <h2 id="climate-all-cities-heading">Cities with climate controlled storage</h2>
           <p>Pick your city to compare live prices and availability. Star ratings show the top-rated brands in each city, based on {ratingSource}, updated weekly.</p>
         </div>
+        <CityLetterIndex letters={letters} />
         {states.map((state) => (
           <div className="climate-state-group" key={state}>
             <h3>{US_STATE_NAMES[state] ?? state}</h3>
             <div className="climate-city-grid">
               {cities.filter((c) => c.state === state).map((c) => (
-                <Link className="climate-city-card" href={c.href} key={c.href}>
+                <Link className="climate-city-card" href={c.href} key={c.href} id={letterAnchor(c.city, usedLetters)}>
                   <div className="climate-city-top">
                     <h4>{c.city}, {c.state}</h4>
                     {c.fromPrice !== null && <span className="climate-city-price">From ${c.fromPrice}/mo</span>}

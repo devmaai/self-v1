@@ -1,6 +1,8 @@
 import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import CityLetterIndex, { letterAnchor } from "@/components/sections/CityLetterIndex";
 import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 import { US_STATE_NAMES } from "@/lib/usStates";
@@ -19,6 +21,9 @@ export default async function StorageTypeCitiesPage({ c }: { c: TypeCitiesConfig
     { name: "Cities and brands", path: `/${c.slug}/cities` },
   ]);
 
+  const letters = new Set(cities.map((x) => x.city.trim()[0]?.toUpperCase()).filter(Boolean) as string[]);
+  const usedLetters = new Set<string>();
+
   return (
     <main className="storage-size-guide-page climate-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -32,6 +37,7 @@ export default async function StorageTypeCitiesPage({ c }: { c: TypeCitiesConfig
           <span className="storage-size-guide-eyebrow"><span /> {c.name}</span>
           <h1>{c.name} <em>by city and brand.</em></h1>
           <p>{c.intro}</p>
+          <StateZipSearch id="type-cities-zip" />
         </div>
       </section>
 
@@ -41,12 +47,13 @@ export default async function StorageTypeCitiesPage({ c }: { c: TypeCitiesConfig
           <h2 id={`${c.slug}-all-cities-heading`}>Cities with {c.lower}</h2>
           <p>Pick your city to compare live prices and availability. Star ratings show the top-rated brands in each city, based on {ratingSource}, updated weekly.</p>
         </div>
+        <CityLetterIndex letters={letters} />
         {states.map((state) => (
           <div className="climate-state-group" key={state}>
             <h3>{US_STATE_NAMES[state] ?? state}</h3>
             <div className="climate-city-grid">
               {cities.filter((city) => city.state === state).map((city) => (
-                <Link className="climate-city-card" href={city.href} key={city.href}>
+                <Link className="climate-city-card" href={city.href} key={city.href} id={letterAnchor(city.city, usedLetters)}>
                   <div className="climate-city-top">
                     <h4>{city.city}, {city.state}</h4>
                     {city.fromPrice !== null && <span className="climate-city-price">From ${city.fromPrice}/mo</span>}

@@ -1245,3 +1245,12 @@
   .storage-size-feature:has(> .storage-business-visual:first-child),
   .storage-size-feature:has(> .storage-vehicle-visual:first-child) { grid-template-columns: 1fr; }
 }
+
+/* Cities pages: banner search and A to Z jump bar */
+.storage-size-guide-hero .state-zip-search { width: min(100%, 720px); margin: 26px auto 0; }
+.city-letter-index { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 32px; }
+.city-letter-index a, .city-letter-index span { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 6px; font-weight: 600; font-size: 15px; }
+.city-letter-index a { background: #fff; border: 1px solid #c9dbe8; color: #16334b; }
+.city-letter-index a:hover { background: #16334b; color: #fff; }
+.city-letter-index span { color: #b8c6d1; }
+.climate-city-card[id] { scroll-margin-top: 96px; }
