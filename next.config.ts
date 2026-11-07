@@ -19,9 +19,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // The storage search page is now served at "/" (the home page); the
-      // former marketing homepage moved to /agency.
-      { source: "/storage-search", destination: "/", permanent: true },
+      // Search queries sent to /storage-search?location=... still go to the
+      // home page search. The bare /storage-search URL is the Storage by state hub.
+      { source: "/storage-search", has: [{ type: "query", key: "location" }], destination: "/", permanent: false },
       // Keep the previous sitemap URL working while Search Console switches
       // to the standard metadata route.
       { source: "/sitemap/sitemap.xml", destination: "/sitemap.xml", permanent: true },

@@ -77,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/business-storage",
     "/student-storage",
     "/about",
+    "/storage-search",
     "/storage-search/utah",
     "/storage-search/california",
     "/storage-search/new-york",
