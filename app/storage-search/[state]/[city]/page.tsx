@@ -13,6 +13,32 @@ import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
 import { breadcrumbListSchema } from "@/lib/schema";
 import { CITY_IMAGES } from "@/lib/cityImages";
 import type React from "react";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import CityQuoteForm from "@/components/sections/CityQuoteForm";
+import { CITY_PAGE_CONTENT } from "@/lib/cityPageContent";
+
+// Turns [label](/path) markup in hand-written copy into internal links.
+function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\((\/[^)]*)\)/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text))) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    parts.push(<Link key={`${keyPrefix}-${match.index}`} href={match[2]}>{match[1]}</Link>);
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
+function stripLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1");
+}
+
+function slugToName(slug: string): string {
+  return slug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+}
 
 // Next.js requires a literal number here for its static route-segment-config
 // analysis — it cannot be an imported constant. Keep in sync with
@@ -39,6 +65,7 @@ type FacilityUnit = {
   price: string;
   regularPrice: string;
   quantity: string;
+  features: string[];
 };
 
 type Facility = {
@@ -56,6 +83,19 @@ type Facility = {
   postalCode: string;
   facilityUrl: string;
 };
+
+// Maps the sheet's free-text amenities to the filter keys used on the page.
+function unitFeatures(size: string, amenities: string, vehicle: string): string[] {
+  const list = amenities.toLowerCase();
+  const features: string[] = [];
+  if (list.includes("climate controlled") || list.includes("heated") || list.includes("air cooled")) features.push("climate");
+  if (list.includes("drive up") || list.includes("outdoor access")) features.push("drive-up");
+  if (list.includes("interior")) features.push("indoor");
+  if (list.includes("1st floor") || list.includes("drive up")) features.push("ground-floor");
+  const [width, length] = (size.match(/\d+(\.\d+)?/g) ?? []).map(Number);
+  if (vehicle || list.includes("vehicle") || list.includes("pull-through") || (width >= 10 && length >= 20)) features.push("vehicle");
+  return features;
+}
 
 const LOCAL_RADIUS_MILES = 15;
 const FALLBACK_RESULT_COUNT = 12;
@@ -150,6 +190,7 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
       price: `$${row.price}`,
       regularPrice: row.regular_price ? `$${row.regular_price}` : "",
       quantity: row.quantity_available,
+      features: unitFeatures(row.size, row.amenities ?? "", row.vehicle_accommodation ?? ""),
     });
   }
   for (const facility of grouped.values()) {
@@ -166,22 +207,6 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
   const facilities = hasLocalData ? sorted : sorted.slice(0, FALLBACK_RESULT_COUNT);
 
   return { facilities, hasLocalData };
-}
-
-// Rotating copy for the information block so city pages do not repeat the
-// same heading and lines word for word.
-const INFO_COPY = [
-  { heading: "Storage for moves, seasons, and everyday space.", lead: "Compare unit sizes and current prices from storage facilities serving {city}.", note: "Review the unit size, monthly price, and availability before you reserve." },
-  { heading: "Find the space you need without overpaying.", lead: "See what storage facilities around {city} charge for each unit size right now.", note: "Check the monthly rate and access hours before you book." },
-  { heading: "Extra room for your move, your gear, or your business.", lead: "Line up unit sizes and move-in prices from facilities near {city}.", note: "Confirm availability and any fees before you reserve a unit." },
-  { heading: "Make room at home with a unit nearby.", lead: "Browse current storage prices and sizes across {city} and the surrounding area.", note: "Look at the unit size, monthly price and gate hours before you commit." },
-  { heading: "Short term or long term, find a unit that fits.", lead: "Compare live listings and monthly rates from storage facilities in and around {city}.", note: "Ask about the ongoing rate after any move-in offer ends." },
-];
-
-function infoCopyFor(citySlug: string, city: string) {
-  const index = [...citySlug].reduce((sum, character) => sum + character.charCodeAt(0), 0) % INFO_COPY.length;
-  const copy = INFO_COPY[index];
-  return { heading: copy.heading, lead: copy.lead.replace("{city}", city), note: copy.note };
 }
 
 // Pre-render every known city at build time (and refresh in the background
@@ -220,7 +245,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   if (!isCityPublished(citySlug)) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
-  const infoCopy = infoCopyFor(citySlug, city);
+  const handContent = CITY_PAGE_CONTENT[citySlug];
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
   const stateName = US_STATE_NAMES[state] ?? state;
   const statePageSlug = STATE_PAGE_SLUGS[state];
@@ -236,6 +261,10 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   const closest = facilities[0];
   const fromPrice = Number.isFinite(lowestPrice) ? `$${lowestPrice}` : "our listed rates";
   const fillPrice = (text: string) => fillPricePlaceholder(text, fromPrice);
+  const formCities = Object.entries(CITY_STATES)
+    .filter(([slug, code]) => code === state && isCityPublished(slug))
+    .map(([slug]) => slugToName(slug))
+    .sort((a, b) => a.localeCompare(b));
 
   const selfStorageSchema = {
     "@context": "https://schema.org",
@@ -308,11 +337,30 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
             <p>We don&apos;t have facilities listed in {city} yet. Here are the closest listed options we could find, starting {closest.distanceMiles.toFixed(0)} miles away in {closest.city}, {closest.state}.</p>
           )}
           <div className="city-storage-hero-facts"><span><strong>{facilities.length}</strong> {hasLocalData ? "live listings" : "nearest listings"}</span><span><strong>From ${lowestPrice}</strong> available</span><span><strong>{state}</strong> local market</span></div>
+          <StateZipSearch id="city-hero-zip" />
         </div>
       </section>
       <CityStorageResults city={`${city}, ${state}`} facilities={facilities as CityStorageFacility[]} />
-      <section className="city-storage-info"><div className="city-storage-info-grid"><div><span className="city-storage-label">{city} self storage information</span><h2>{infoCopy.heading}</h2></div><div><p>{infoCopy.lead}</p><p>{infoCopy.note}</p></div></div></section>
-      {seoContent && (
+      <CityQuoteForm city={city} state={state} stateName={stateName} cities={formCities} />
+      {handContent && (
+        <section className="city-storage-seo">
+          <div className="city-storage-seo-inner">
+            <div className="city-storage-seo-section city-storage-seo-lead">
+              <h2>{handContent.intro.heading}</h2>
+              {handContent.intro.paragraphs.map((text, index) => <p key={`intro-${index}`}>{renderInline(fillPrice(text), `intro-${index}`)}</p>)}
+            </div>
+            {handContent.sections.map((section) => (
+              <div className="city-storage-seo-section" key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.paragraphs?.slice(0, section.bullets ? 1 : undefined).map((text, index) => <p key={`${section.heading}-p${index}`}>{renderInline(fillPrice(text), `${section.heading}-p${index}`)}</p>)}
+                {section.bullets && <ul>{section.bullets.map((text, index) => <li key={`${section.heading}-b${index}`}>{renderInline(fillPrice(text), `${section.heading}-b${index}`)}</li>)}</ul>}
+                {section.bullets && section.paragraphs?.slice(1).map((text, index) => <p key={`${section.heading}-after${index}`}>{renderInline(fillPrice(text), `${section.heading}-after${index}`)}</p>)}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      {!handContent && seoContent && (
         <section className="city-storage-seo">
           <div className="city-storage-seo-inner">
             {seoContent.intro.length > 0 && <div className="city-storage-seo-intro">{renderBlocks(seoContent.intro, fillPrice, "intro")}</div>}
@@ -325,7 +373,36 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
           </div>
         </section>
       )}
-      {seoContent && seoContent.faqs.length > 0 && (
+      {handContent && (
+        <section className="city-storage-faq">
+          <div className="city-storage-faq-inner">
+            <h2>{handContent.faqHeading}</h2>
+            <div className="city-storage-faq-list">
+              {handContent.faqs.map((faq) => (
+                <div className="city-storage-faq-item" key={faq.question}>
+                  <h3>{faq.question}</h3>
+                  <p>{renderInline(fillPrice(faq.answer), faq.question)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: handContent.faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: { "@type": "Answer", text: stripLinks(fillPrice(faq.answer)) },
+                })),
+              }),
+            }}
+          />
+        </section>
+      )}
+      {!handContent && seoContent && seoContent.faqs.length > 0 && (
         <section className="city-storage-faq">
           <div className="city-storage-faq-inner">
             <h2>{seoContent.faqHeading}</h2>

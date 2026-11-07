@@ -53,9 +53,11 @@ type V2StorageFormProps = {
   compact?: boolean;
   /** Keeps field ids unique when a page shows the form more than once. */
   idPrefix?: string;
+  /** Preselects a city in the dropdown, e.g. on a city page. */
+  defaultCity?: string;
 };
 
-export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf" }: V2StorageFormProps) {
+export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf", defaultCity = "" }: V2StorageFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -156,7 +158,7 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
           <div className="af-field">
             <label htmlFor={`${idPrefix}-city`}>{cities ? `City in ${state ?? "your state"}` : "City"}</label>
             {cities ? (
-              <select id={`${idPrefix}-city`} name="city" defaultValue="" required>
+              <select id={`${idPrefix}-city`} name="city" defaultValue={defaultCity} required>
                 <option value="" disabled>Select city</option>
                 {cities.map((c) => <option key={c} value={c}>{c}</option>)}
                 <option value="Other">Other city</option>
