@@ -9,6 +9,7 @@ export type CityStorageUnit = {
   price: string;
   regularPrice: string;
   quantity: string;
+  features?: string[];
 };
 
 export type CityStorageFacility = {
@@ -24,6 +25,34 @@ export type CityStorageFacility = {
 };
 
 type SortOption = "recommended" | "price" | "distance";
+
+const FEATURE_FILTERS = [
+  { key: "climate", label: "Climate controlled" },
+  { key: "drive-up", label: "Drive-up access" },
+  { key: "indoor", label: "Indoor" },
+  { key: "ground-floor", label: "Ground floor" },
+  { key: "vehicle", label: "Vehicle, RV and boat" },
+];
+
+const SIZE_FILTERS = [
+  { key: "all", label: "All sizes" },
+  { key: "small", label: "Small (up to 5x10)" },
+  { key: "medium", label: "Medium (10x10 to 10x15)" },
+  { key: "large", label: "Large (10x20 and up)" },
+];
+
+function squareFeet(size: string) {
+  const [width, length] = (size.match(/\d+(\.\d+)?/g) ?? []).map(Number);
+  return width && length ? width * length : 0;
+}
+
+function matchesSize(size: string, filter: string) {
+  if (filter === "all") return true;
+  const area = squareFeet(size);
+  if (filter === "small") return area > 0 && area <= 50;
+  if (filter === "medium") return area > 50 && area <= 150;
+  return area > 150;
+}
 
 const PAGE_SIZE = 10;
 const UNIT_PREVIEW_COUNT = 3;
@@ -84,15 +113,55 @@ function FacilityCard({ facility, city, mapIndex }: { facility: CityStorageFacil
 
 export default function CityStorageResults({ city, facilities }: { city: string; facilities: CityStorageFacility[] }) {
   const [sort, setSort] = useState<SortOption>("recommended");
+  const [features, setFeatures] = useState<string[]>([]);
+  const [sizeFilter, setSizeFilter] = useState("all");
   const [page, setPage] = useState(1);
   const listRef = useRef<HTMLDivElement>(null);
 
+  // Keep only the units that match every chosen filter, then drop facilities
+  // left with no matching units, so prices and counts reflect the filters.
+  const filteredFacilities = useMemo(() => facilities
+    .map((facility) => ({
+      ...facility,
+      units: facility.units.filter((unit) =>
+        matchesSize(unit.size, sizeFilter) && features.every((feature) => unit.features?.includes(feature))),
+    }))
+    .filter((facility) => facility.units.length > 0), [facilities, features, sizeFilter]);
+
   const sortedFacilities = useMemo(() => {
-    const sorted = [...facilities];
+    const sorted = [...filteredFacilities];
     if (sort === "price") sorted.sort((first, second) => lowestPrice(first) - lowestPrice(second));
     if (sort === "distance") sorted.sort((first, second) => first.distanceMiles - second.distanceMiles);
+    if (sort === "recommended") {
+      // Balance distance and price: rank on each, then sort by the combined rank.
+      const byPrice = [...sorted].sort((a, b) => lowestPrice(a) - lowestPrice(b));
+      const byDistance = [...sorted].sort((a, b) => a.distanceMiles - b.distanceMiles);
+      const score = (facility: CityStorageFacility) => byPrice.indexOf(facility) + byDistance.indexOf(facility);
+      sorted.sort((a, b) => score(a) - score(b));
+    }
     return sorted;
-  }, [facilities, sort]);
+  }, [filteredFacilities, sort]);
+
+  const featureCounts = useMemo(() => Object.fromEntries(FEATURE_FILTERS.map(({ key }) => [
+    key,
+    facilities.filter((facility) => facility.units.some((unit) => unit.features?.includes(key))).length,
+  ])), [facilities]);
+
+  function toggleFeature(key: string) {
+    setFeatures((current) => current.includes(key) ? current.filter((item) => item !== key) : [...current, key]);
+    setPage(1);
+  }
+
+  function changeSize(value: string) {
+    setSizeFilter(value);
+    setPage(1);
+  }
+
+  function clearFilters() {
+    setFeatures([]);
+    setSizeFilter("all");
+    setPage(1);
+  }
 
   const pageCount = Math.max(1, Math.ceil(sortedFacilities.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
@@ -100,7 +169,7 @@ export default function CityStorageResults({ city, facilities }: { city: string;
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: 0 });
-  }, [currentPage, sort]);
+  }, [currentPage, sort, features, sizeFilter]);
 
   function changeSort(value: SortOption) {
     setSort(value);
@@ -113,16 +182,51 @@ export default function CityStorageResults({ city, facilities }: { city: string;
         <div>
           <span className="city-storage-label">{city}</span>
           <h2 id="city-results-heading">Storage units near you</h2>
-          <p>Showing {visibleFacilities.length} of {facilities.length} facilities. Prices and availability can change, so confirm details before reserving.</p>
+          <p>Showing {visibleFacilities.length} of {sortedFacilities.length} facilities{sortedFacilities.length !== facilities.length ? ` (filtered from ${facilities.length})` : ""}. Prices and availability can change, so confirm details before reserving.</p>
         </div>
-        <label className="city-storage-sort">Sort by
-          <select value={sort} onChange={(event) => changeSort(event.target.value as SortOption)}>
-            <option value="recommended">Recommended</option>
-            <option value="price">Lowest price</option>
-            <option value="distance">Closest first</option>
-          </select>
-        </label>
       </div>
+
+      <div className="city-storage-toolbar">
+        <div className="city-storage-filters" role="group" aria-label="Filter storage units">
+          <span className="city-storage-filter-label">Filter by</span>
+          {FEATURE_FILTERS.map((filter) => (
+            <button
+              type="button"
+              key={filter.key}
+              className={features.includes(filter.key) ? "city-filter-chip active" : "city-filter-chip"}
+              aria-pressed={features.includes(filter.key)}
+              onClick={() => toggleFeature(filter.key)}
+              disabled={featureCounts[filter.key] === 0}
+            >
+              {filter.label}
+            </button>
+          ))}
+          {(features.length > 0 || sizeFilter !== "all") && (
+            <button type="button" className="city-filter-clear" onClick={clearFilters}>Clear all</button>
+          )}
+        </div>
+        <div className="city-storage-selects">
+          <label className="city-storage-sort">Unit size
+            <select value={sizeFilter} onChange={(event) => changeSize(event.target.value)}>
+              {SIZE_FILTERS.map((filter) => <option key={filter.key} value={filter.key}>{filter.label}</option>)}
+            </select>
+          </label>
+          <label className="city-storage-sort">Sort by
+            <select value={sort} onChange={(event) => changeSort(event.target.value as SortOption)}>
+              <option value="recommended">Recommended</option>
+              <option value="price">Lowest price</option>
+              <option value="distance">Closest first</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      {sortedFacilities.length === 0 && (
+        <div className="city-storage-empty">
+          <p>No units in {city} match these filters right now.</p>
+          <button type="button" className="city-filter-clear" onClick={clearFilters}>Clear filters</button>
+        </div>
+      )}
 
       <div className="city-storage-layout">
         <div>

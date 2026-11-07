@@ -23,6 +23,9 @@ export type SheetRow = {
   distance_mi: string;
   latitude: string;
   longitude: string;
+  unit_type: string;
+  amenities: string;
+  vehicle_accommodation: string;
 };
 
 /**
@@ -102,6 +105,9 @@ async function fetchLiveRows(): Promise<SheetRow[]> {
         distance_mi: facility?.distance_mi ?? "",
         latitude: facility?.latitude ?? "",
         longitude: facility?.longitude ?? "",
+        unit_type: unit.unit_type ?? "",
+        amenities: unit.amenities ?? "",
+        vehicle_accommodation: unit.vehicle_accommodation ?? "",
       };
     })
     .filter((row) => row.facility_id && row.size && row.price && row.latitude && row.longitude);
