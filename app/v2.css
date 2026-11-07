@@ -1237,3 +1237,11 @@
   .state-checklist-split .utah-steps-grid, .state-reasons-split .state-size-grid { grid-template-columns: 1fr; }
   .state-reasons-image { min-height: 240px; }
 }
+
+/* Feature blocks that start with the image keep the wider column for the copy */
+.storage-size-feature:has(> .storage-business-visual:first-child),
+.storage-size-feature:has(> .storage-vehicle-visual:first-child) { grid-template-columns: minmax(320px, .85fr) minmax(0, 1.15fr); }
+@media (max-width: 800px) {
+  .storage-size-feature:has(> .storage-business-visual:first-child),
+  .storage-size-feature:has(> .storage-vehicle-visual:first-child) { grid-template-columns: 1fr; }
+}

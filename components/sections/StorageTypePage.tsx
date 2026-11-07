@@ -172,6 +172,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
             </div>
           </div>
           <ClimateCityScroller cities={cities} images={CITY_IMAGES} />
+          <p className="climate-center-link"><Link className="climate-button" href={`/${c.slug}/cities`}>Explore all {c.name.toLowerCase().replace("rv", "RV")} cities and brands <span aria-hidden="true">→</span></Link></p>
         </section>
       )}
 

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
-import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ScrollRowArrows from "@/components/ui/ScrollRowArrows";
 import StorageCalculatorCTA from "@/components/sections/StorageCalculatorCTA";
 import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
@@ -131,6 +130,24 @@ const faqs = [
   ["How big is a 10x20 storage unit?", "A 10x20 unit measures 10 feet by 20 feet, or 200 square feet, about the footprint of a standard one-car garage. It holds the contents of a three to four bedroom house, or a car with room to spare. Choose it for a full household move or to store a vehicle indoors."],
 ];
 
+const rvReference = [
+  ["Small trailer or camper", "Up to 25 ft space"],
+  ["Class C motorhome", "25 to 35 ft space"],
+  ["Class A motorhome or fifth wheel", "35 to 45 ft space"],
+];
+
+const boatReference = [
+  ["Jet ski or small boat", "10x20 unit"],
+  ["Boat under 20 ft on a trailer", "10x25 or 10x30 unit"],
+  ["Boat over 20 ft", "Covered or outdoor space"],
+];
+
+const climateReference = [
+  ["Documents and photos", "5x5 to 5x10"],
+  ["One bedroom of furniture", "10x10"],
+  ["Full home with antiques", "10x20 or larger"],
+];
+
 export default function StorageSizeGuidePage() {
   const faqSchema = faqPageSchema(
     faqs.map(([question, answer]) => ({ question, answer })),
@@ -200,13 +217,27 @@ export default function StorageSizeGuidePage() {
       </section>
 
       <section className="storage-size-feature storage-size-feature-business" aria-labelledby="business-heading">
-        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Business storage</span><h2 id="business-heading">Storage for your business</h2><p>Documents and files fit in a 5x5 or 5x10, depending on how many boxes and cabinets you need to keep on hand. Retail inventory, seasonal stock, and sample products usually call for a 10x10 to 10x20, which leaves room to shelve items and reach them easily. Equipment and larger fixtures may need 10x20 or more.</p><p>If you restock often, choose a size that lets you create an aisle down the middle. That way you can reach everything without unloading the whole unit each time you visit.</p><div className="storage-reference-list"><strong>Business quick reference</strong>{businessReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/business-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
         <div className="storage-business-visual"><img src="https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1200&q=80" alt="Row of storage units for business inventory and equipment" /></div>
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Business storage</span><h2 id="business-heading">Storage for your business</h2><p>Documents and files fit in a 5x5 or 5x10, depending on how many boxes and cabinets you need to keep on hand. Retail inventory, seasonal stock, and sample products usually call for a 10x10 to 10x20, which leaves room to shelve items and reach them easily. Equipment and larger fixtures may need 10x20 or more.</p><p>If you restock often, choose a size that lets you create an aisle down the middle. That way you can reach everything without unloading the whole unit each time you visit.</p><div className="storage-reference-list"><strong>Business quick reference</strong>{businessReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/business-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
+      </section>
+
+      <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="rv-heading">
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">RV storage</span><h2 id="rv-heading">What size space do you need for an RV?</h2><p>RVs are measured by length, so start with your rig from bumper to hitch. Most facilities list RV spaces from 20 to 45 feet, and a few offer enclosed units for smaller campers and trailers.</p><p>Covered parking protects the roof, seals and tires from sun and snow, while uncovered parking costs less. Confirm the maximum length and the turning room before you book.</p><div className="storage-reference-list"><strong>RV quick reference</strong>{rvReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/rv-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
+        <div className="storage-vehicle-visual"><img src="https://images.unsplash.com/photo-1571528122012-eff3e9a3f49b?auto=format&fit=crop&w=1200&q=80" alt="RV parked at a storage facility" /></div>
+      </section>
+
+      <section className="storage-size-feature storage-size-feature-business" aria-labelledby="boat-heading">
+        <div className="storage-business-visual"><img src="https://images.unsplash.com/photo-1605453278269-73266f96638c?auto=format&fit=crop&w=1200&q=80" alt="Boat on a trailer ready for storage" /></div>
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Boat storage</span><h2 id="boat-heading">What size storage do you need for a boat?</h2><p>Measure the boat on its trailer, from the tongue to the stern. Small boats and jet skis fit a 10x20 or 10x25 enclosed unit, while larger boats need covered or outdoor spaces.</p><p>Indoor storage gives the most protection through the off season. Outdoor and covered spaces cost less and work well with a good breathable cover.</p><div className="storage-reference-list"><strong>Boat quick reference</strong>{boatReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/boat-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
+      </section>
+
+      <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="climate-heading">
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Climate controlled storage</span><h2 id="climate-heading">Do you need a climate controlled unit?</h2><p>Climate controlled units come in the same sizes as standard units. The difference is a steady temperature, and often humidity control, that protects belongings through hot summers, freezing winters and damp seasons.</p><p>Choose one for wood and leather furniture, electronics, documents, photos, instruments and anything staying longer than one season.</p><div className="storage-reference-list"><strong>Climate controlled quick reference</strong>{climateReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/climate-controlled-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
+        <div className="storage-vehicle-visual"><img src="/images/climate-storage/indoor-corridor.png" alt="Indoor climate controlled storage corridor" /></div>
       </section>
       <StorageCalculatorBanner />
       <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><div className="storage-size-faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
 
-      <StorageTypeLinks current="/storage-size-guide" />
       <StorageStateLinks />
 
       <section className="storage-size-guide-cta">
