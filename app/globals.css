@@ -5615,3 +5615,6 @@ footer {
   .city-size-split .city-size-image-desktop { display: none; }
   .city-size-image-mobile { display: block; margin: 6px 0 18px; }
 }
+.city-size-split .city-size-image-mobile { display: none; }
+.city-living-item { border-bottom: 0; }
+@media (max-width: 760px) { .city-size-split .city-size-image-mobile { display: block; } }
