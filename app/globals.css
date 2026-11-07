@@ -5565,3 +5565,38 @@ footer {
 }
 .city-content-band.city-content-checklist { background: #f7fafc; }
 .city-content-split > div > h2 { margin-bottom: 14px; }
+
+/* City content v2: Moving to + photo, solutions row with images, size extras, CTAs, checklist FAQ */
+.city-living-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: start; }
+.city-living-split > div > h2 { margin-bottom: 8px; }
+.city-living-item { padding: 22px 0; border-bottom: 1px solid var(--city-line); }
+.city-living-item:last-child { border-bottom: 0; }
+.city-living-item h3 { margin-bottom: 10px; color: var(--city-ink); font-size: 21px; }
+.city-living-image { position: sticky; top: 110px; width: 100%; height: 560px; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 30px rgba(24, 70, 105, .14); }
+.city-content-options .city-option-grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.city-content-options .city-option-card { padding: 0 0 20px; overflow: hidden; }
+.city-option-image { display: block; width: 100%; height: 140px; object-fit: cover; margin-bottom: 16px; }
+.city-content-options .city-option-card h3, .city-content-options .city-option-card p, .city-content-options .city-option-more { padding: 0 18px; }
+.city-content-options .city-option-card h3 { font-size: 17px; }
+.city-content-options .city-option-card p { font-size: 14px; }
+.city-size-extra { margin-top: 30px; padding: 26px 28px; border-left: 4px solid var(--city-blue); border-radius: 0 8px 8px 0; background: #fff; }
+.city-size-extra h3 { margin-bottom: 10px; color: var(--city-ink); font-size: 21px; }
+.city-section-cta { margin-top: 28px; }
+.city-section-cta.centered { margin-top: 44px; text-align: center; }
+.city-section-cta .state-storage-cta { margin-top: 0; color: #fff !important; }
+.city-faq-wide { grid-column: 1 / -1; }
+.city-faq-checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 24px; margin: 14px 0 0 !important; }
+.city-faq-checklist li { padding-left: 30px !important; }
+.city-faq-checklist li::before { top: 2px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--success); color: #fff !important; font-size: 11px; content: "✓" !important; }
+.city-faq-checklist strong { display: block; color: var(--city-ink); }
+.city-faq-checklist span { display: block; }
+@media (max-width: 1100px) {
+  .city-content-options .city-option-grid { grid-template-columns: repeat(5, 240px); overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+  .city-content-options .city-option-card { scroll-snap-align: start; }
+}
+@media (max-width: 760px) {
+  .city-living-split { grid-template-columns: 1fr; gap: 24px; }
+  .city-living-image { position: static; height: 260px; order: -1; }
+}
+.city-content-band.city-content-nearby { background: #f7fafc; }
+@media (min-width: 1000px) { .city-faq-checklist { grid-template-columns: repeat(5, 1fr); } }

@@ -30,6 +30,19 @@ function links(text: string) {
   return [...text.matchAll(LINK_PATTERN)].map((match) => ({ label: match[1], href: match[2] }));
 }
 
+function stripTags(text: string) {
+  return text.replace(LINK_PATTERN, "$1");
+}
+
+function SectionCta({ cta, centered = false }: { cta?: CityContentSection["cta"]; centered?: boolean }) {
+  if (!cta) return null;
+  return (
+    <div className={centered ? "city-section-cta centered" : "city-section-cta"}>
+      <Link href={cta.href} className="state-storage-cta">{cta.label}<span aria-hidden="true">→</span></Link>
+    </div>
+  );
+}
+
 function sizeBox(size: string) {
   const [width, length] = (size.match(/\d+/g) ?? []).map(Number);
   return { width: width || 5, length: length || 5 };
@@ -52,6 +65,7 @@ function OptionsSection({ section, fill }: { section: CityContentSection; fill: 
             const href = titleLinks[0]?.href;
             return (
               <article className="city-option-card" key={`option-${index}`}>
+                {section.images?.[index] && <img className="city-option-image" src={section.images[index]} alt={stripTags(title)} loading="lazy" />}
                 <h3>{inline(title, `option-title-${index}`)}</h3>
                 <p>{inline(body, `option-body-${index}`)}</p>
                 {href && <Link className="city-option-more" href={href}>Learn more <span aria-hidden="true">→</span></Link>}
@@ -87,6 +101,13 @@ function SizesSection({ section, fill }: { section: CityContentSection; fill: (t
           })}
         </div>
         <Paragraphs items={after} fill={fill} keyPrefix="sizes-after" />
+        {section.extra && (
+          <div className="city-size-extra">
+            <h3>{section.extra.heading}</h3>
+            <Paragraphs items={section.extra.paragraphs} fill={fill} keyPrefix="sizes-extra" />
+          </div>
+        )}
+        <SectionCta cta={section.cta} />
       </div>
     </section>
   );
@@ -108,6 +129,7 @@ function NearbySection({ section, fill }: { section: CityContentSection; fill: (
           </div>
         )}
       </div>
+      <SectionCta cta={section.cta} centered />
     </section>
   );
 }
@@ -141,25 +163,30 @@ export default function CityContentSections({ content, city, fill }: { content: 
 
   return (
     <div className="city-content">
-      <section className="city-content-intro">
-        <div className="city-content-inner city-content-split">
-          <h2>{content.intro.heading}</h2>
-          <div><Paragraphs items={content.intro.paragraphs} fill={fill} keyPrefix="intro" /></div>
-        </div>
-      </section>
+      {content.intro && (
+        <section className="city-content-intro">
+          <div className="city-content-inner city-content-split">
+            <h2>{content.intro.heading}</h2>
+            <div><Paragraphs items={content.intro.paragraphs} fill={fill} keyPrefix="intro" /></div>
+          </div>
+        </section>
+      )}
 
       {cards.length > 0 && (
         <section className="city-content-band city-content-living">
-          <div className="city-content-inner">
-            <span className="city-storage-label">Living in {city}</span>
-            <div className="city-living-grid">
-              {cards.map((section) => (
-                <article className="city-living-card" key={section.heading}>
-                  <h2>{section.heading}</h2>
-                  <Paragraphs items={section.paragraphs} fill={fill} keyPrefix={section.heading} />
-                </article>
-              ))}
+          <div className={content.cardsImage ? "city-content-inner city-living-split" : "city-content-inner"}>
+            <div>
+              <h2>{content.cardsHeading ?? `Living in ${city}`}</h2>
+              <div className="city-living-list">
+                {cards.map((section) => (
+                  <div className="city-living-item" key={section.heading}>
+                    <h3>{section.heading}</h3>
+                    <Paragraphs items={section.paragraphs} fill={fill} keyPrefix={section.heading} />
+                  </div>
+                ))}
+              </div>
             </div>
+            {content.cardsImage && <img className="city-living-image" src={content.cardsImage.src} alt={content.cardsImage.alt} loading="lazy" />}
           </div>
         </section>
       )}
