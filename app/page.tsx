@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -52,6 +53,7 @@ export default async function HomePage({
   searchParams: Promise<{ location?: string; unitSize?: string }>;
 }) {
   const { location, unitSize } = await searchParams;
+  if (unitSize) redirect(`/find-storage?unitSize=${encodeURIComponent(unitSize)}`);
 
   return (
     <div className="v2-home">

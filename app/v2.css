@@ -1051,7 +1051,7 @@
 .v2-home .v2-nav-unified .nav-links { margin-left: clamp(20px, 2.5vw, 40px); gap: clamp(16px, 1.9vw, 30px); }
 .v2-home .v2-nav-unified .nav-actions { margin-left: auto; }
 .v2-home .v2-nav-unified .nav-links > li > a,
-.v2-home .v2-nav-unified .nav-services-trigger { font-size: 15px; font-weight: 500; color: var(--slate-600); min-height: 40px; display: inline-flex; align-items: center; white-space: nowrap; }
+.v2-home .v2-nav-unified .nav-services-trigger { font-size: 16px; font-weight: 500; color: var(--slate-600); min-height: 40px; display: inline-flex; align-items: center; white-space: nowrap; }
 .v2-home .v2-nav-unified .nav-services.is-active .nav-services-trigger { color: var(--slate-900); font-weight: 600; }
 .v2-home .v2-nav-unified .nav-services-menu { min-width: 280px; }
 .v2-home .v2-nav-unified .nav-services-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
@@ -1059,7 +1059,7 @@
 @media (min-width: 1024px) and (max-width: 1240px) {
   .v2-home .v2-nav-unified { padding: 0 20px; }
   .v2-home .v2-nav-unified .nav-links > li > a,
-  .v2-home .v2-nav-unified .nav-services-trigger { font-size: 14px; }
+  .v2-home .v2-nav-unified .nav-services-trigger { font-size: 15px; }
   .v2-home .v2-nav-unified .btn-nav-ghost { display: none; }
 }
 

@@ -11,7 +11,12 @@ export const metadata: Metadata = {
     "Tell us where you need storage, the unit size and your budget, and we will match you with storage facilities near you that fit. Free, no obligation.",
 };
 
-export default function FindStoragePage() {
+export default async function FindStoragePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ unitSize?: string }>;
+}) {
+  const { unitSize } = await searchParams;
   return (
     <div className="v2-home">
       <V2Interactions />
@@ -43,7 +48,7 @@ export default function FindStoragePage() {
             body: <p>Use our <a href="/storage-unit-size-calculator">storage size calculator</a> or read the <a href="/storage-size-guide">storage size guide</a> before you send your request.</p>,
           },
         ]}
-        form={<V2StorageForm />}
+        form={<V2StorageForm initialUnitSize={unitSize} />}
         reassurance={["Free, no obligation", "Options matched to your budget", "You choose the facility"]}
       />
 

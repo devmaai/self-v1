@@ -1,14 +1,13 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import V2StorageForm from "./V2StorageForm";
 
 type V2NavProps = {
   variant?: "home" | "inner";
   initialUnitSize?: string;
 };
 
-type MenuKey = "storage" | "owners" | "form" | null;
+type MenuKey = "storage" | "owners" | null;
 
 const FIND_STORAGE_LINKS = [
   { href: "/find-storage", label: "Find storage unit near you", lead: true },
@@ -38,7 +37,7 @@ const Chevron = () => (
 export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavProps) {
   // "inner" = storage (renter) side, "home" = SEO side (/agency)
   const isStorageSide = variant === "inner";
-  const [open, setOpen] = useState<MenuKey>(initialUnitSize ? "form" : null);
+  const [open, setOpen] = useState<MenuKey>(null);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -93,28 +92,16 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
           {dropdown("storage", "Find Storage", FIND_STORAGE_LINKS, isStorageSide)}
           <li><Link href="/blog">Storage Guides</Link></li>
           {dropdown("owners", "For Storage Owners", OWNER_LINKS, !isStorageSide)}
-          <li><Link href="/about">About Us</Link></li>
         </ul>
         <div className="nav-actions">
           {isStorageSide ? (
             <>
-              <div className="nav-form-dropdown">
-                <button
-                  type="button"
-                  className={`nav-form-toggle ${open === "form" ? "open" : ""}`}
-                  onClick={() => toggle("form")}
-                  aria-expanded={open === "form"}
-                  aria-haspopup="true"
-                >
-                  Find storage
-                  <Chevron />
-                </button>
-                {open === "form" && (
-                  <div className="nav-form-panel">
-                    <V2StorageForm initialUnitSize={initialUnitSize} />
-                  </div>
-                )}
-              </div>
+              <Link
+                href={initialUnitSize ? `/find-storage?unitSize=${encodeURIComponent(initialUnitSize)}` : "/find-storage"}
+                className="nav-form-toggle"
+              >
+                Find storage
+              </Link>
               <Link href="/list-your-facility" className="btn-nav-cta">List your facility</Link>
             </>
           ) : (
@@ -152,11 +139,13 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
               </ul>
             </details>
           </li>
-          <li><Link href="/about" data-mobile-close>About Us</Link></li>
         </ul>
         <div className="mobile-menu-actions">
           {isStorageSide ? (
-            <Link href="/list-your-facility" className="btn-nav-cta" data-mobile-close>List your facility</Link>
+            <>
+              <Link href="/find-storage" className="btn-nav-ghost" data-mobile-close>Find storage</Link>
+              <Link href="/list-your-facility" className="btn-nav-cta" data-mobile-close>List your facility</Link>
+            </>
           ) : (
             <>
               <a href="/agency#proof" className="btn-nav-ghost" data-mobile-close>See client data</a>
@@ -164,11 +153,6 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
             </>
           )}
         </div>
-        {isStorageSide && (
-          <div className="mobile-menu-form">
-            <V2StorageForm initialUnitSize={initialUnitSize} />
-          </div>
-        )}
       </div>
     </>
   );
