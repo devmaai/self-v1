@@ -3,7 +3,8 @@ import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
-import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
+import StorageZipBanner from "@/components/sections/StorageZipBanner";
+import StateZipSearch from "@/components/sections/StateZipSearch";
 import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
 import { CITY_IMAGES } from "@/lib/cityImages";
 import { breadcrumbListSchema, faqPageSchema } from "@/lib/schema";
@@ -142,6 +143,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           <span className="storage-size-guide-eyebrow"><span /> {c.eyebrow}</span>
           <h1>{c.h1}</h1>
           <p>{c.heroText}</p>
+          <StateZipSearch id={`${c.slug}-hero-zip`} />
           <ul className="climate-trust-pills type-trust-pills">{c.pills.map((p) => <li key={p}>{p}</li>)}</ul>
         </div>
       </section>
@@ -194,14 +196,14 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           ))}
           <article className="storage-size-card climate-card climate-card-cta">
             <span className="storage-size-card-label">Not sure?</span>
-            <h3>See every unit size</h3>
-            <p>Compare all sizes with what fits in each one.</p>
-            <Link href="/storage-size-guide">View the size guide <span aria-hidden="true">→</span></Link>
+            <h3>Not sure what you need?</h3>
+            <p>Check our storage size calculator.</p>
+            <Link href="/storage-unit-size-calculator">Use the size calculator <span aria-hidden="true">→</span></Link>
           </article>
         </div>
         {c.showCalculatorBanner && (
           <div className="storage-type-calculator-banner">
-            <StorageCalculatorBanner />
+            <StorageZipBanner id={`${c.slug}-zip-banner`} />
           </div>
         )}
       </section>

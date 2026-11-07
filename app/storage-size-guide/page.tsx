@@ -5,6 +5,7 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ScrollRowArrows from "@/components/ui/ScrollRowArrows";
 import StorageCalculatorCTA from "@/components/sections/StorageCalculatorCTA";
 import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
+import StateZipSearch from "@/components/sections/StateZipSearch";
 
 export const metadata: Metadata = {
   title: "Self Storage Size Guide | Find the Right Unit by What You Store",
@@ -184,6 +185,7 @@ export default function StorageSizeGuidePage() {
               <h3>{scenario.title}</h3>
               <div className="storage-size-card-range"><strong>{scenario.range}</strong><span>{scenario.area}</span></div>
               <p><strong>What fits:</strong> {scenario.items}</p>
+          <StateZipSearch id="size-guide-hero-zip" />
               <p className="storage-size-card-fit">{scenario.fit}</p>
               <Link href="/storage-search">Find units <span aria-hidden="true">→</span></Link>
             </article>

@@ -75,7 +75,7 @@ export default async function HomePage({
         <section className="storage-types" aria-labelledby="storage-types-heading">
           <div className="storage-guide-heading">
             <span className="storage-search-label">Find the right fit</span>
-            <h2 id="storage-types-heading">Types of self storage</h2>
+            <h2 id="storage-types-heading">Storage For Specific Needs</h2>
             <p>Learn more about the types of self storage to identify what type of storage unit you need.</p>
           </div>
           <div className="storage-types-grid">

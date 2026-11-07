@@ -161,7 +161,7 @@ export default function UtahStoragePage() {
               <h3>Storage for students</h3>
               <p>Utah campuses empty on a schedule. Students at the University of Utah, BYU, Utah Valley University, Utah State, Weber State and Southern Utah University often need space between spring semester and autumn move-in.</p>
               <ul><li>A 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>A 10x10 can cover two rooms when split with a roommate.</li><li>Look for student rates near Salt Lake City, Provo, Orem, Logan, Ogden or Cedar City, plus month-to-month terms.</li></ul>
-              <Link className="state-storage-guide-button" href="/find-storage">Find student storage in Utah <span aria-hidden="true">→</span></Link>
+              <Link className="state-storage-guide-button" href="/student-storage">Explore student storage <span aria-hidden="true">→</span></Link>
             </div>
           </article>
           <article>
