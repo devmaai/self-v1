@@ -12,7 +12,6 @@ type MenuKey = "storage" | "owners" | null;
 const FIND_STORAGE_LINKS = [
   { href: "/", label: "Search storage by city or ZIP", lead: false },
   { href: "/storage-size-guide", label: "Storage size guide" },
-  { href: "/storage-unit-size-calculator", label: "Size calculator" },
   { href: "/climate-controlled-storage", label: "Climate controlled storage" },
   { href: "/car-storage", label: "Car storage" },
   { href: "/rv-storage", label: "RV storage" },
@@ -96,7 +95,8 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
         <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
         <ul className="nav-links nav-quick-links">
           {dropdown("storage", "Find Storage", FIND_STORAGE_LINKS, isStorageSide, "/")}
-          <li><Link href="/blog">Storage Guides</Link></li>
+          <li><Link href="/storage-unit-size-calculator">Size Calculator</Link></li>
+          <li><Link href="/blog">Blogs</Link></li>
           {dropdown("owners", "For Storage Owners", OWNER_LINKS, !isStorageSide)}
         </ul>
         <div className="nav-actions">
@@ -134,7 +134,8 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
               </ul>
             </details>
           </li>
-          <li><Link href="/blog" data-mobile-close>Storage Guides</Link></li>
+          <li><Link href="/storage-unit-size-calculator" data-mobile-close>Size Calculator</Link></li>
+          <li><Link href="/blog" data-mobile-close>Blogs</Link></li>
           <li>
             <details className="mobile-services">
               <summary>For Storage Owners</summary>
