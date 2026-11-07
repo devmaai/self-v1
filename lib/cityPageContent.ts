@@ -19,6 +19,8 @@ export type CityContentSection = {
   images?: string[];
   /** Extra sub-section shown under the main content, with an H3. */
   extra?: { heading: string; paragraphs: string[] };
+  /** Single image for the section (sizes layout shows it on the left). */
+  image?: { src: string; alt: string };
   /** Call to action button shown at the end of the section. */
   cta?: { label: string; href: string };
   paragraphs?: string[];
@@ -69,7 +71,6 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
         layout: "options",
         images: [
           "/images/climate-storage/indoor-corridor.png",
-          "https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=700&q=75",
           "/images/storage-guide/vehiclestorage.jpg",
           "/images/state pages/proff and small business.jpg",
           "/images/state pages/storage for students.jpg",
@@ -77,7 +78,6 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
         paragraphs: ["Choose the type of storage that fits what you are storing and how often you need it."],
         bullets: [
           "[Climate controlled storage](/climate-controlled-storage): Salt Lake City has hot summers and cold winters. Climate control protects wood furniture, mattresses, electronics, documents and photos from heat, cold and wide temperature swings.",
-          "Drive-up storage units: the most affordable choice for skis, bikes, camping gear, tools and plastic bins. You park at the door and load directly.",
           "[RV storage](/rv-storage), [boat storage](/boat-storage) and [car storage](/car-storage): outdoor, covered and enclosed spaces priced by length. Measure your vehicle, including the hitch, before you book.",
           "[Business storage](/business-storage): space for inventory, equipment, files and seasonal stock for Salt Lake City businesses that have outgrown their office or shop.",
           "[Student storage](/student-storage): short-term units near campus for the summer break or a semester away.",
@@ -86,18 +86,9 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       {
         heading: "What size storage unit do you need?",
         layout: "sizes",
-        bullets: [
-          "5x5: boxes, ski gear, boots and seasonal clothing.",
-          "5x10: a dorm room, a bedroom of furniture, or a household's bikes and outdoor gear.",
-          "10x10: a one bedroom apartment with a sofa, bed and appliances.",
-          "10x15: a two to three bedroom home if you take apart beds and tables.",
-          "10x20: a larger home or a car.",
-        ],
-        paragraphs: [
-          "Size your unit around your bulkiest items.",
-        ],
+        image: { src: "/images/storage-size-calculator.png", alt: "SelfStorage.help free storage size calculator" },
         extra: {
-          heading: "Storage unit sizes for different needs",
+          heading: "Different units for different needs",
           paragraphs: [
             "Moving between homes usually needs a 10x10 to 10x20, depending on how many bedrooms you are packing up. A home renovation often fits in a 5x10 or 10x10 for furniture you need out of the way. Students rarely need more than a 5x5 or 5x10 for a dorm room. Businesses storing stock or equipment usually start with a 10x10 and add shelving. Cars, boats and RVs need a 10x20 or a parking space sized to their length.",
             "See the [storage unit size guide](/storage-size-guide) for photos of each size and what fits inside.",
@@ -140,17 +131,6 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
       {
         question: "Can I rent a storage unit month to month?",
         answer: "Most Salt Lake City facilities rent month to month with no long-term contract. Confirm the move-out notice period when you sign.",
-      },
-      {
-        question: "What should I check before booking a storage unit in Salt Lake City?",
-        answer: "Ask these questions before you sign:",
-        bullets: [
-          "Snow clearing: ask how quickly aisles and drive-up doors are cleared in winter.",
-          "Climate control: confirm the unit is cooled in summer as well as heated in winter.",
-          "Promotional rates: ask what the monthly price becomes after the first month.",
-          "Insurance: check your renters or homeowners policy before buying extra cover.",
-          "Move-out notice: many facilities ask for 10 to 14 days written notice.",
-        ],
       },
     ],
   },

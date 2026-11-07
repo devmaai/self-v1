@@ -34,18 +34,13 @@ function stripTags(text: string) {
   return text.replace(LINK_PATTERN, "$1");
 }
 
-function SectionCta({ cta, centered = false }: { cta?: CityContentSection["cta"]; centered?: boolean }) {
+function SectionCta({ cta, centered = false, large = false }: { cta?: CityContentSection["cta"]; centered?: boolean; large?: boolean }) {
   if (!cta) return null;
   return (
-    <div className={centered ? "city-section-cta centered" : "city-section-cta"}>
+    <div className={`city-section-cta${centered ? " centered" : ""}${large ? " large" : ""}`}>
       <Link href={cta.href} className="state-storage-cta">{cta.label}<span aria-hidden="true">→</span></Link>
     </div>
   );
-}
-
-function sizeBox(size: string) {
-  const [width, length] = (size.match(/\d+/g) ?? []).map(Number);
-  return { width: width || 5, length: length || 5 };
 }
 
 function Paragraphs({ items, fill, keyPrefix }: { items?: string[]; fill: (text: string) => string; keyPrefix: string }) {
@@ -79,35 +74,20 @@ function OptionsSection({ section, fill }: { section: CityContentSection; fill: 
 }
 
 function SizesSection({ section, fill }: { section: CityContentSection; fill: (text: string) => string }) {
-  const [lead, ...after] = section.paragraphs ?? [];
   return (
     <section className="city-content-band city-content-sizes">
-      <div className="city-content-inner">
-        <h2>{section.heading}</h2>
-        {lead && <p>{inline(fill(lead), "sizes-lead")}</p>}
-        <div className="city-size-table" role="table" aria-label="Storage unit sizes">
-          {section.bullets?.map((bullet, index) => {
-            const { title, body } = splitBullet(bullet);
-            const box = sizeBox(title);
-            return (
-              <div className="city-size-row" role="row" key={`size-${index}`}>
-                <span className="city-size-visual" role="cell" aria-hidden="true">
-                  <span data-size={`${box.width}x${box.length}`} />
-                </span>
-                <strong role="cell">{title}</strong>
-                <span role="cell">{body}</span>
-              </div>
-            );
-          })}
+      <div className="city-content-inner city-size-split">
+        {section.image && <img className="city-size-image" src={section.image.src} alt={section.image.alt} />}
+        <div>
+          <h2>{section.heading}</h2>
+          {section.extra && (
+            <>
+              <h3>{section.extra.heading}</h3>
+              <Paragraphs items={section.extra.paragraphs} fill={fill} keyPrefix="sizes-extra" />
+            </>
+          )}
+          <SectionCta cta={section.cta} />
         </div>
-        <Paragraphs items={after} fill={fill} keyPrefix="sizes-after" />
-        {section.extra && (
-          <div className="city-size-extra">
-            <h3>{section.extra.heading}</h3>
-            <Paragraphs items={section.extra.paragraphs} fill={fill} keyPrefix="sizes-extra" />
-          </div>
-        )}
-        <SectionCta cta={section.cta} />
       </div>
     </section>
   );
@@ -129,7 +109,7 @@ function NearbySection({ section, fill }: { section: CityContentSection; fill: (
           </div>
         )}
       </div>
-      <SectionCta cta={section.cta} centered />
+      <SectionCta cta={section.cta} centered large />
     </section>
   );
 }
