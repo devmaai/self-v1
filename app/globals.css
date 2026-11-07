@@ -5467,3 +5467,7 @@ footer {
   .size-finder *, .size-finder *::before, .size-finder *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .size-finder .reveal { opacity: 1; transform: none; }
 }
+
+.state-hub-cities { padding: 4px 0 24px; }
+@media (max-width: 860px) { .state-hub-cities { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .state-hub-cities { grid-template-columns: 1fr; } }
