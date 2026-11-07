@@ -13,9 +13,9 @@ export default function CityQuoteForm({ city, state, stateName, cities }: Props)
   return (
     <section className="find-storage-cta city-quote-form" aria-labelledby={`${id}-heading`}>
       <div className="find-storage-cta-text">
-        <span className="storage-search-label">Free quote, no obligation</span>
-        <h2 id={`${id}-heading`}>Find storage near you in {city}</h2>
-        <p>Tell us the unit size, budget and type of storage you need. We send you a free quote with the storage units nearest your location in {city}, {state}.</p>
+        <span className="storage-search-label">No obligation quote</span>
+        <h2 id={`${id}-heading`}>Get A Free Storage Quote</h2>
+        <p>We check storage facilities near you and find the options that fit, so you don&apos;t have to contact multiple companies. You choose the option you like, and there are no extra charges.</p>
         <ol className="city-quote-steps">
           <li><strong>Share your needs.</strong> Pick a unit size, price range, storage type and move-in date.</li>
           <li><strong>We match facilities.</strong> We check storage units near you that fit your budget and needs.</li>
