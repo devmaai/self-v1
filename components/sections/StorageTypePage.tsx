@@ -184,7 +184,7 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           <h2 id={`${c.slug}-sizes-heading`}>{c.sizesHeading}</h2>
           <p>{c.sizesIntro}</p>
         </div>
-        <div className="storage-size-guide-grid climate-grid-3">
+        <div className={`storage-size-guide-grid climate-grid-3${(c.sizes.length + 1) % 3 === 1 ? " climate-grid-4" : ""}`}>
           {c.sizes.map((s) => (
             <article className="storage-size-card climate-card" key={s.title}>
               {s.image && <div className="storage-box-visual"><img src={s.image} alt={`${s.title} in ${c.name.toLowerCase()}`} /></div>}

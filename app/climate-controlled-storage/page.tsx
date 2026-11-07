@@ -181,7 +181,7 @@ export default async function ClimateControlledStoragePage() {
           <h2 id="climate-items-heading">The right climate controlled unit size for what you store</h2>
           <p>Find the unit size that fits your belongings. Leave a small walkway so you can reach everything.</p>
         </div>
-        <div className="storage-size-guide-grid climate-grid-3">
+        <div className="storage-size-guide-grid climate-grid-3 climate-grid-4">
           {itemSizes.map((item) => (
             <article className="storage-size-card climate-card" key={item.title}>
               <div className="storage-box-visual"><img src={item.image} alt={`${item.title} in climate controlled storage`} /></div>

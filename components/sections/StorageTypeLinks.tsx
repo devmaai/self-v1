@@ -18,7 +18,7 @@ export default function StorageTypeLinks({ current }: { current?: string }) {
         <span className="storage-size-guide-label">Explore storage types</span>
         <h2 id="storage-type-links-heading">Find the right type of storage</h2>
       </div>
-      <div className="storage-type-links-grid">
+      <div className={`storage-type-links-grid storage-type-links-${items.length}`}>
         {items.map((t) => (
           <Link key={t.href} href={t.href} className="storage-type-link-card">
             <strong>{t.title}</strong>
