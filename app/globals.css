@@ -5638,3 +5638,5 @@ footer {
 @media (max-width: 900px) { .storage-size-chart-layout { grid-template-columns: 1fr; } .storage-size-chart-visual { min-height: 240px; } }
 /* No divider lines between FAQ questions, site wide */
 .state-faq-list, .state-faq-list details, .storage-size-faq-list, .storage-size-faq details, .svc-drawer-faq-item { border: 0 !important; box-shadow: none !important; }
+.city-living-item ul { margin: 12px 0 0; padding-left: 20px; color: #526d81; font-size: 16px; line-height: 1.7; }
+.city-living-item li + li { margin-top: 6px; }

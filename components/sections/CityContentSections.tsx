@@ -163,6 +163,12 @@ export default function CityContentSections({ content, city, fill }: { content: 
                   <div className="city-living-item" key={section.heading}>
                     <h3>{section.heading}</h3>
                     <Paragraphs items={section.paragraphs} fill={fill} keyPrefix={section.heading} />
+                    {section.blocks?.map((block, index) => block.type === "p"
+                      ? <p key={`${section.heading}-k${index}`}>{inline(fill(block.text), `${section.heading}-k${index}`)}</p>
+                      : <ul key={`${section.heading}-k${index}`}>{block.items.map((item, itemIndex) => <li key={itemIndex}>{inline(fill(item), `${section.heading}-k${index}-${itemIndex}`)}</li>)}</ul>)}
+                    {section.bullets && section.bullets.length > 0 && (
+                      <ul>{section.bullets.map((bullet, index) => <li key={`${section.heading}-b${index}`}>{inline(fill(bullet), `${section.heading}-b${index}`)}</li>)}</ul>
+                    )}
                   </div>
                 ))}
               </div>
