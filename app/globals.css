@@ -4977,6 +4977,8 @@ footer {
 .latest-post-body p { flex: 1; margin-bottom: 14px; color: #60788b; font-size: 15px; line-height: 1.6; }
 .latest-post-link { color: var(--storage-blue); font-weight: 700; font-size: 14px; }
 .latest-posts-more { margin-top: 28px; text-align: center; }
+.storage-search-page > .latest-posts { padding-bottom: 0; }
+.storage-search-page > .storage-search-note { margin-top: 20px; }
 @media (max-width: 900px) { .latest-posts-grid { grid-template-columns: 1fr; } }
 
 /* Photo headers with a dark overlay (state, city, size guide, form CTA) */
