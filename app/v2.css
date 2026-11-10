@@ -1286,3 +1286,25 @@
 .state-faq-list { border-top: 0; }
 .state-faq-list details { border-bottom: 0; }
 .state-faq-list summary { padding: 10px 0; }
+
+/* Calculator CTA: numbers in circles, white button text */
+.storage-calculator-cta-steps li span { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--storage-blue); background: #fff; font-size: 34px; }
+.v2-home a.storage-calculator-cta-button, a.storage-calculator-cta-button, .v2-home .storage-size-find-cta a, .storage-size-find-cta a, .v2-home a.storage-price-cta-button { color: #fff; }
+
+/* Calculator hero ZIP search */
+.calculator-hero-copy .state-zip-search { margin-top: 24px; max-width: 620px; }
+
+/* What changes the price: cards, then a full-width CTA band */
+.storage-price-guide-bottom .utah-lifestyle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.storage-price-guide-bottom .utah-lifestyle-grid article { margin: 0; padding: 22px; border: 1px solid #d6e1ea; border-radius: 8px; background: #fff; }
+.storage-price-guide-bottom .utah-lifestyle-grid article strong { display: block; margin-bottom: 8px; font-family: var(--font-display); font-size: 19px; }
+.storage-price-guide-bottom .utah-lifestyle-grid article p { margin: 0; font-size: 15px; line-height: 1.55; }
+.storage-price-guide-bottom .storage-price-cta { grid-column: 1 / -1; display: flex; flex-direction: row; width: 100%; height: auto; justify-self: stretch; align-items: center; justify-content: space-between; gap: 24px; margin: 8px 0 0; padding: 26px 30px; border-radius: 8px; }
+.storage-price-guide-bottom .storage-price-cta h3 { margin: 0 0 6px; }
+.storage-price-guide-bottom .storage-price-cta p { margin: 0; max-width: 620px; }
+.storage-price-guide-bottom .storage-price-cta-actions { flex-shrink: 0; margin: 0; }
+.storage-price-guide-bottom .storage-price-cta-button { white-space: nowrap; }
+@media (max-width: 720px) {
+  .storage-price-guide-bottom .storage-price-cta { flex-direction: column; align-items: stretch; padding: 22px; }
+  .storage-price-guide-bottom .storage-price-cta-button { width: 100%; justify-content: space-between; }
+}

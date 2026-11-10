@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import StateZipSearch from "@/components/sections/StateZipSearch";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   FINDER_CATEGORIES,
@@ -328,8 +329,9 @@ export default function StorageCalculator() {
       <section className="calculator-hero hero-photo hero-photo-calculator">
         <div className="calculator-hero-inner">
           <div className="calculator-hero-copy">
-            <h1>Find the right <em>storage size</em>.</h1>
+            <h1>Free storage <em>size calculator</em>.</h1>
             <p>Tell us what you&apos;re storing, and we&apos;ll suggest a unit that leaves room to pack safely and move around.</p>
+            <StateZipSearch id="calculator-hero-zip" />
           </div>
         </div>
         <span className="calculator-image-caption">Make room for what matters.</span>
@@ -339,7 +341,7 @@ export default function StorageCalculator() {
         <section className="calc" id="calculator" ref={workspaceRef}>
           <div className="container">
             <div className="section-head reveal">
-              <h2>What are <em>you</em> storing?</h2>
+              <h2>Find the right <em>size storage unit</em>.</h2>
               <p>Start with a room preset for speed, then fine-tune with individual items. Your list and volume estimate update live on the right.</p>
             </div>
             <div className="calc-grid">
