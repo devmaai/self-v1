@@ -1,17 +1,16 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
+import LocationAutocomplete from "@/components/ui/LocationAutocomplete";
+import { useStorageSearchSubmit } from "@/lib/useStorageSearchSubmit";
 
 export default function HomeStorageSearch() {
-  const router = useRouter();
+  const { submit, pending } = useStorageSearchSubmit();
   const [location, setLocation] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const value = location.trim();
-    if (!value) return;
-    router.push(`/storage-search?location=${encodeURIComponent(value)}`);
+    void submit(location);
   }
 
   return (
@@ -22,14 +21,13 @@ export default function HomeStorageSearch() {
       </div>
       <form onSubmit={handleSubmit} role="search">
         <label className="sr-only" htmlFor="home-storage-location">Search by ZIP code or city</label>
-        <input
+        <LocationAutocomplete
           id="home-storage-location"
           value={location}
-          onChange={(event) => setLocation(event.target.value)}
+          onChange={setLocation}
           placeholder="Enter ZIP code or city"
-          autoComplete="postal-code"
         />
-        <button type="submit">Find units <span aria-hidden="true">→</span></button>
+        <button type="submit" disabled={pending}>Find units <span aria-hidden="true">→</span></button>
       </form>
     </div>
   );

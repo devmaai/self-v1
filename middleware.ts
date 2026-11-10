@@ -21,7 +21,7 @@ const LEGACY_SERVICE_REDIRECTS: Record<string, string> = {
 // Hand-built pages that live directly under /storage-search/{slug}.
 const STATIC_STORAGE_SEARCH_PAGES: ReadonlySet<string> = new Set([
   "california", "denver", "florida", "kansas", "missouri", "new-jersey",
-  "new-york", "oklahoma", "south-dakota", "texas", "utah",
+  "new-york", "oklahoma", "south-dakota", "texas", "unavailable", "utah",
 ]);
 
 export function middleware(request: NextRequest) {
@@ -38,6 +38,8 @@ export function middleware(request: NextRequest) {
   const nested = pathname.match(/^\/storage-search\/([^/]+)\/([^/]+)\/?$/);
   if (nested) {
     const [, stateSlug, nestedCity] = nested;
+    // ZIP result pages live at /storage-search/zip/{zip}, not under a state.
+    if (stateSlug === "zip") return NextResponse.next();
     const nestedState = CITY_STATES[nestedCity];
     const valid =
       isCityPublished(nestedCity) && nestedState && STATE_PAGE_SLUGS[nestedState] === stateSlug;

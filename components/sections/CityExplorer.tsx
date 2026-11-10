@@ -7,7 +7,8 @@ import Image from "next/image";
 import LocationPin from "@/components/ui/LocationPin";
 import V2StorageForm from "@/components/v2/V2StorageForm";
 import { CITY_IMAGES } from "@/lib/cityImages";
-import { resolveStorageSearchHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
+import { resolveStorageSearchSubmitHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
+import LocationAutocomplete from "@/components/ui/LocationAutocomplete";
 import { CITY_STATES, PUBLISHED_CITY_SLUGS } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 
@@ -79,14 +80,8 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
     const location = query.trim();
     if (!location) return;
 
-    const href = resolveStorageSearchHref(location);
-    if (!href.startsWith("/storage-search?location=")) {
-      router.push(href);
-      return;
-    }
-
     setSearchedLocation(location);
-    router.replace(href);
+    router.replace(resolveStorageSearchSubmitHref(location));
   }
 
   return (
@@ -99,7 +94,7 @@ export default function CityExplorer({ initialLocation }: { initialLocation: str
           <form className="storage-search-form" onSubmit={handleSubmit} role="search">
             <label className="sr-only" htmlFor="storage-location">Enter ZIP code, city, or state</label>
             <LocationPin className="storage-search-pin" />
-            <input id="storage-location" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Enter ZIP code, city, or state" autoComplete="postal-code" />
+            <LocationAutocomplete id="storage-location" value={query} onChange={setQuery} placeholder="Enter ZIP code, city, or state" />
             <button type="submit">Find units <span aria-hidden="true">→</span></button>
           </form>
           {searchedLocation && (

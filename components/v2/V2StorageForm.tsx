@@ -55,9 +55,11 @@ type V2StorageFormProps = {
   idPrefix?: string;
   /** Preselects a city in the dropdown, e.g. on a city page. */
   defaultCity?: string;
+  /** Prefills the free-text location when a visitor came from a location search. */
+  initialLocation?: string;
 };
 
-export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf", defaultCity = "" }: V2StorageFormProps) {
+export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf", defaultCity = "", initialLocation = "" }: V2StorageFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -164,7 +166,7 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
                 <option value="Other">Other city</option>
               </select>
             ) : (
-              <input id={`${idPrefix}-city`} name="city" type="text" autoComplete="address-level2" placeholder="Your city" required />
+              <input id={`${idPrefix}-city`} name="city" type="text" autoComplete="address-level2" placeholder="Your city or ZIP code" defaultValue={initialLocation} required />
             )}
             {fieldErrors.city && <span className="af-error">{fieldErrors.city}</span>}
           </div>

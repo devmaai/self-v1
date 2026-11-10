@@ -1,23 +1,21 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
-import { resolveStorageSearchHref } from "@/lib/storageSearchLookup";
+import LocationAutocomplete from "@/components/ui/LocationAutocomplete";
+import { useStorageSearchSubmit } from "@/lib/useStorageSearchSubmit";
 
 export default function StorageLocationSearch({
   id,
   heading = "Looking for a specific facility?",
   subtext = "Search by ZIP code, city, or state to find storage options in that area.",
 }: { id?: string; heading?: string; subtext?: string } = {}) {
-  const router = useRouter();
+  const { submit, pending } = useStorageSearchSubmit();
   const [location, setLocation] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const value = location.trim();
-    if (!value) return;
-    router.push(resolveStorageSearchHref(value));
+    void submit(location);
   }
 
   return (
@@ -28,14 +26,13 @@ export default function StorageLocationSearch({
         <form className="storage-location-search-form" onSubmit={handleSubmit} role="search">
           <label className="sr-only" htmlFor="storage-location-search">Search by ZIP code, city, or state</label>
           <LocationPin className="storage-location-search-pin" />
-          <input
+          <LocationAutocomplete
             id="storage-location-search"
             value={location}
-            onChange={(event) => setLocation(event.target.value)}
+            onChange={setLocation}
             placeholder="Enter ZIP code, city, or state"
-            autoComplete="postal-code"
           />
-          <button type="submit">Find units <span aria-hidden="true">→</span></button>
+          <button type="submit" disabled={pending}>Find units <span aria-hidden="true">→</span></button>
         </form>
       </div>
     </section>

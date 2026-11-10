@@ -2,11 +2,12 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import LocationPin from "@/components/ui/LocationPin";
+import LocationAutocomplete from "@/components/ui/LocationAutocomplete";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import { breadcrumbListSchema } from "@/lib/schema";
+import { useStorageSearchSubmit } from "@/lib/useStorageSearchSubmit";
 
 const facilities = [
   {
@@ -94,13 +95,12 @@ const facilities = [
 const nearbyCities = ["Glendale", "Lakewood", "Wheat Ridge", "Commerce City", "Englewood", "Arvada", "Federal Heights", "Westminster", "Greenwood Village", "Littleton"];
 
 export default function DenverStoragePage() {
-  const router = useRouter();
+  const { submit, pending } = useStorageSearchSubmit();
   const [location, setLocation] = useState("Denver, CO");
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const value = location.trim();
-    if (value) router.push(`/storage-search?location=${encodeURIComponent(value)}`);
+    void submit(location);
   }
 
   return (
@@ -126,8 +126,8 @@ export default function DenverStoragePage() {
           <form className="city-storage-search" onSubmit={handleSearch} role="search">
             <label className="sr-only" htmlFor="denver-location">Enter ZIP code or city</label>
             <LocationPin className="city-storage-search-pin" />
-            <input id="denver-location" value={location} onChange={(event) => setLocation(event.target.value)} placeholder="Enter ZIP code or city" autoComplete="postal-code" />
-            <button type="submit">Find storage <span aria-hidden="true">→</span></button>
+            <LocationAutocomplete id="denver-location" value={location} onChange={setLocation} placeholder="Enter ZIP code or city" />
+            <button type="submit" disabled={pending}>Find storage <span aria-hidden="true">→</span></button>
           </form>
           <div className="city-storage-hero-facts"><span><strong>206</strong> facilities found</span><span><strong>From $19</strong> small units</span><span><strong>80203</strong> central ZIP</span></div>
         </div>

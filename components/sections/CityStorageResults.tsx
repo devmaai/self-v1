@@ -18,6 +18,7 @@ export type CityStorageFacility = {
   units: CityStorageUnit[];
   href: string;
   city: string;
+  state: string;
   distanceMiles: number;
   isNearby: boolean;
   latitude: number;

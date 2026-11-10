@@ -3,6 +3,12 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
+  // The ZIP directory is read from disk at request time, so it has to be
+  // bundled with the routes that resolve arbitrary ZIP codes.
+  outputFileTracingIncludes: {
+    "/api/location-search": ["./data/us-zip-codes.json"],
+    "/storage-search/zip/[zip]": ["./data/us-zip-codes.json"],
+  },
   images: {
     // Quality values used by <Image quality={...}> across the site.
     // Required to be declared starting in Next.js 16.

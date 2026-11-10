@@ -2,18 +2,17 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { STORAGE_STATES } from "@/components/sections/StorageStateLinks";
+import LocationAutocomplete from "@/components/ui/LocationAutocomplete";
+import { useStorageSearchSubmit } from "@/lib/useStorageSearchSubmit";
 
 export default function Footer() {
-  const router = useRouter();
+  const { submit, pending } = useStorageSearchSubmit();
   const [location, setLocation] = useState("");
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const value = location.trim();
-    if (!value) return;
-    router.push(`/storage-search?location=${encodeURIComponent(value)}`);
+    void submit(location);
   }
 
   return (
@@ -61,14 +60,13 @@ export default function Footer() {
             <h5>Find storage</h5>
             <form className="footer-search" onSubmit={handleSearch} role="search">
               <label htmlFor="footer-location" className="sr-only">Search by city or ZIP code</label>
-              <input
+              <LocationAutocomplete
                 id="footer-location"
                 value={location}
-                onChange={(event) => setLocation(event.target.value)}
+                onChange={setLocation}
                 placeholder="City or ZIP code"
-                autoComplete="postal-code"
               />
-              <button type="submit" aria-label="Search storage locations">Search</button>
+              <button type="submit" aria-label="Search storage locations" disabled={pending}>Search</button>
             </form>
             <div className="footer-state-links">
               {STORAGE_STATES.map((state) => (
