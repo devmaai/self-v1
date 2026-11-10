@@ -2,6 +2,7 @@ import type { CitySeoBlock, CitySeoContent } from "@/lib/citySeoContent";
 import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
 import { CITY_IMAGES } from "@/lib/cityImages";
+import { CITY_MOVING_FACTS } from "@/lib/cityMovingFacts";
 
 // Hand-written, chunked city page copy. A city listed here replaces the
 // long-form CSV content (lib/citySeoContent.ts) on its city page.
@@ -166,8 +167,11 @@ function nearestCities(citySlug: string, stateCode: string, limit: number) {
   return candidates.slice(0, limit).map(({ slug }) => slug);
 }
 
+const DISPLAY_NAMES: Record<string, string> = { "lees-summit": "Lee's Summit", ofallon: "O'Fallon" };
+
 function nameFromSlug(slug: string) {
-  return slug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
+  if (DISPLAY_NAMES[slug]) return DISPLAY_NAMES[slug];
+  return slug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ").replace(/^St /, "St. ");
 }
 
 export function buildCityPageContent(args: {
@@ -178,7 +182,8 @@ export function buildCityPageContent(args: {
   stateSlug: string;
   seo: CitySeoContent | null;
 }): CityPageContent {
-  const { citySlug, city, stateCode, stateName, stateSlug, seo } = args;
+  const { citySlug, stateCode, stateName, stateSlug, seo } = args;
+  const city = nameFromSlug(citySlug);
   const nearby = nearestCities(citySlug, stateCode, 3);
   const nearbyLinks = nearby.map((slug) => `[${nameFromSlug(slug)}](/storage-search/${stateSlug}/${slug})`);
   const nearbySentence = nearbyLinks.length > 1
@@ -186,11 +191,33 @@ export function buildCityPageContent(args: {
     : nearbyLinks[0] ?? "";
   const photo = CITY_IMAGES[citySlug];
 
-  const cardSections: CityContentSection[] = (seo?.sections ?? []).map((section) => ({
-    heading: section.heading,
-    layout: "card" as const,
-    blocks: section.blocks,
-  }));
+  const facts = CITY_MOVING_FACTS[citySlug];
+  const cardSections: CityContentSection[] = facts ? [
+    {
+      heading: `How much does it cost to live in ${city}?`,
+      layout: "card",
+      paragraphs: [
+        facts.cost,
+        "Smaller homes and apartments are one of the main reasons renters look for storage. A small unit costs far less per month than renting a bigger place just to fit your belongings. Storage units on this page start from {{from_price}} a month.",
+      ],
+    },
+    {
+      heading: `Is ${city} student friendly?`,
+      layout: "card",
+      paragraphs: [
+        facts.students,
+        "Student storage is busiest at the end of each semester. A 5x5 or 5x10 unit holds most dorm rooms, and booking a few weeks before move-out week gives you more choice. See our [student storage guide](/student-storage) for tips on summer storage.",
+      ],
+    },
+    {
+      heading: `Is ${city} good for families with kids?`,
+      layout: "card",
+      paragraphs: [
+        facts.families,
+        "Family homes collect baby gear, outgrown toys, holiday decorations and sports equipment. A 10x10 or 10x15 unit keeps these out of the garage until you need them again.",
+      ],
+    },
+  ] : [];
 
   const sections: CityContentSection[] = [
     ...cardSections,
@@ -238,7 +265,7 @@ export function buildCityPageContent(args: {
   ];
 
   return {
-    cardsHeading: `Storage in ${city}: what to know`,
+    cardsHeading: `Moving to ${city}?`,
     cardsImage: photo ? { src: `${photo}?auto=format&fit=crop&w=1000&q=75`, alt: `${city}, ${stateCode}` } : undefined,
     sections,
     faqHeading: seo?.faqHeading || `Common questions about renting storage in ${city}`,
