@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import StorageCalculator from "@/components/StorageCalculator";
 import StoragePriceGuide from "@/components/sections/StoragePriceGuide";
+import StorageStateLinks from "@/components/sections/StorageStateLinks";
 
 export const revalidate = 604800;
 
@@ -15,6 +16,7 @@ export default function StorageUnitSizeCalculatorPage() {
     <>
       <StorageCalculator />
       <StoragePriceGuide />
+      <StorageStateLinks />
     </>
   );
 }
