@@ -8,7 +8,7 @@ export default function StorageCalculatorCTA({ centered = false }: { centered?: 
         <ol className="storage-calculator-cta-steps" aria-label="How the calculator works">
           <li><span aria-hidden="true">1</span>Start with room presets</li>
           <li><span aria-hidden="true">2</span>Add individual items</li>
-          <li><span aria-hidden="true">3</span>Get a clear size recommendation</li>
+          <li><span aria-hidden="true">3</span>Get free size recommendation</li>
         </ol>
         <Link className="storage-calculator-cta-button" href="/storage-unit-size-calculator">
           Calculate your storage size <span aria-hidden="true">→</span>

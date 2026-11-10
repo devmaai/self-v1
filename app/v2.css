@@ -1286,3 +1286,38 @@
 .state-faq-list { border-top: 0; }
 .state-faq-list details { border-bottom: 0; }
 .state-faq-list summary { padding: 10px 0; }
+
+/* Calculator CTA: numbers in circles, white button text */
+.storage-calculator-cta-steps li span { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--storage-blue); background: #fff; font-size: 34px; }
+.v2-home a.storage-calculator-cta-button, a.storage-calculator-cta-button, .v2-home .storage-size-find-cta a, .storage-size-find-cta a, .v2-home a.storage-price-cta-button { color: #fff; }
+
+/* Calculator hero ZIP search */
+.calculator-hero-copy .state-zip-search { margin-top: 24px; max-width: 620px; }
+
+/* What changes the price: cards, then a full-width CTA band */
+.storage-price-guide-bottom .utah-lifestyle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.storage-price-guide-bottom .utah-lifestyle-grid article { margin: 0; padding: 22px; border: 1px solid #d6e1ea; border-radius: 8px; background: #fff; }
+.storage-price-guide-bottom .utah-lifestyle-grid article strong { display: block; margin-bottom: 8px; font-family: var(--font-display); font-size: 19px; }
+.storage-price-guide-bottom .utah-lifestyle-grid article p { margin: 0; font-size: 15px; line-height: 1.55; }
+.storage-price-guide-bottom .storage-price-cta { grid-column: 1 / -1; display: flex; flex-direction: row; width: 100%; height: auto; justify-self: stretch; align-items: center; justify-content: space-between; gap: 24px; margin: 8px 0 0; padding: 26px 30px; border-radius: 8px; }
+.storage-price-guide-bottom .storage-price-cta h3 { margin: 0 0 6px; }
+.storage-price-guide-bottom .storage-price-cta p { margin: 0; max-width: 620px; }
+.storage-price-guide-bottom .storage-price-cta-actions { flex-shrink: 0; margin: 0; }
+.storage-price-guide-bottom .storage-price-cta-button { white-space: nowrap; }
+@media (max-width: 720px) {
+  .storage-price-guide-bottom .storage-price-cta { flex-direction: column; align-items: stretch; padding: 22px; }
+  .storage-price-guide-bottom .storage-price-cta-button { width: 100%; justify-content: space-between; }
+}
+
+/* Price factors: five equal cards */
+.storage-price-guide-bottom .utah-lifestyle-grid { grid-template-columns: repeat(5, 1fr); align-items: stretch; }
+.storage-price-guide-bottom .utah-lifestyle-grid article { display: flex; flex-direction: column; height: 100%; align-self: stretch; transform: none; margin-top: 0 !important; }
+.storage-price-guide-bottom .utah-lifestyle-grid article strong { font-size: 17px; line-height: 1.25; min-height: 2.5em; }
+@media (max-width: 1100px) { .storage-price-guide-bottom .utah-lifestyle-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .storage-price-guide-bottom .utah-lifestyle-grid { grid-template-columns: 1fr; } .storage-price-guide-bottom .utah-lifestyle-grid article strong { min-height: 0; } }
+
+/* Bold "Check prices near you" band */
+.storage-price-guide-bottom .storage-price-cta { background: #16334b; border-color: #16334b; padding: 34px 38px; }
+.storage-price-guide-bottom .storage-price-cta h3 { color: #fff; font-size: 30px; line-height: 1.1; }
+.storage-price-guide-bottom .storage-price-cta p { color: rgba(255,255,255,.85); font-size: 16px; }
+.storage-price-guide-bottom .storage-price-cta-button { padding: 16px 28px; font-size: 17px; font-weight: 700; color: #fff; }

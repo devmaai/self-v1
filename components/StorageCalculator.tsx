@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import StateZipSearch from "@/components/sections/StateZipSearch";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   FINDER_CATEGORIES,
@@ -325,21 +326,21 @@ export default function StorageCalculator() {
 
   return (
     <div className="storage-calculator-page">
-      <section className="calculator-hero hero-photo hero-photo-calculator">
-        <div className="calculator-hero-inner">
-          <div className="calculator-hero-copy">
-            <h1>Find the right <em>storage size</em>.</h1>
-            <p>Tell us what you&apos;re storing, and we&apos;ll suggest a unit that leaves room to pack safely and move around.</p>
-          </div>
+      <section className="storage-size-guide-hero hero-photo hero-photo-calculator">
+        <div className="storage-size-guide-hero-inner">
+          <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link><span>/</span><span aria-current="page">Size calculator</span>
+          </nav>
+          <h1>Free storage size calculator, <em>built around what you store.</em></h1>
+          <StateZipSearch id="calculator-hero-zip" className="storage-size-guide-hero-search" />
         </div>
-        <span className="calculator-image-caption">Make room for what matters.</span>
       </section>
 
       <div className="size-finder">
         <section className="calc" id="calculator" ref={workspaceRef}>
           <div className="container">
             <div className="section-head reveal">
-              <h2>What are <em>you</em> storing?</h2>
+              <h2>Find the right <em>size storage unit</em>.</h2>
               <p>Start with a room preset for speed, then fine-tune with individual items. Your list and volume estimate update live on the right.</p>
             </div>
             <div className="calc-grid">
