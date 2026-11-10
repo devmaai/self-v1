@@ -1,16 +1,5 @@
-import type React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { isCityPublished } from "@/lib/cityStates";
-import Image from "next/image";
-import StorageStateLinks from "@/components/sections/StorageStateLinks";
-import ShowMoreList from "@/components/ui/ShowMoreList";
-import CardSlider from "@/components/ui/CardSlider";
-import StateZipSearch from "@/components/sections/StateZipSearch";
-import StateCityScroller from "@/components/sections/StateCityScroller";
-import StateFormBlock from "@/components/sections/StateFormBlock";
-import V2StorageForm from "@/components/v2/V2StorageForm";
-import { breadcrumbListSchema } from "@/lib/schema";
+import StatePageTemplate, { type StatePageData } from "@/components/sections/StatePageTemplate";
 
 export const metadata: Metadata = {
   title: "Find Storage Units In New York Near Your Location | Prices, Sizes And Availability",
@@ -90,245 +79,206 @@ const FAQS = [
   },
 ];
 
+const DATA: StatePageData = {
+  ...{
+  "slug": "new-york",
+  "name": "New York",
+  "key": "ny",
+  "heroImage": "https://images.unsplash.com/photo-1536622638768-9403a9d35a1a",
+  "heroText": "Compare 878 facilities and 14,766 available units across New York, with current prices, sizes, and amenities near your location.",
+  "citiesHeading": "Find affordable storage units across New York's boroughs and cities",
+  "citiesIntro": "In New York the right unit is usually the one you can reach without a car. Rates shift block by block, and a facility one subway stop further out can cost noticeably less. Start with your city or borough and narrow by radius.",
+  "pricingHeading": "How much will a storage unit cost you in New York each month?",
+  "pricingIntro": "New York holds the widest price gap in the country between a city unit and an upstate one. The same 5x5 that averages around $56 a month on Staten Island averages around $216 in Manhattan. Across New York City a 5x5 averages around $97, against around $76 in Rochester and $67 in Syracuse.",
+  "needsHeading": "Pick New York storage near you that fits your need.",
+  "needs": [
+    {
+      "image": {
+        "src": "/images/state%20pages/storage%20for%20family.jpg",
+        "alt": "Family moving boxes into a storage unit",
+        "width": 980,
+        "height": 653
+      },
+      "heading": "Storage for apartment renters and city households",
+      "body": "You are paying some of the highest rent per square foot in the country, which makes storage the cheaper way to hold what you are not using this season. Winter coats and boots, air conditioning units, bikes, strollers, luggage, holiday decorations, and furniture from a previous apartment.",
+      "bullets": [
+        "A locker or 5x5 handles clothing, sports gear and appliances you swap twice a year.",
+        "A 5x10 or 10x10 holds a studio or one bedroom while you move between leases.",
+        "Look for a facility within walking distance, lift access, trolleys at the door, and a loading bay."
+      ],
+      "links": [
+        {
+          "label": "Find apartment storage in New York",
+          "href": "/find-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/proff%20and%20small%20business.jpg",
+        "alt": "Business owner organizing inventory in a storage unit",
+        "width": 640,
+        "height": 640
+      },
+      "heading": "Storage for professionals and small businesses",
+      "body": "You need square footage without signing a commercial lease at New York rates. Online sellers hold inventory, packaging and returns. Contractors store tools between jobs, studios store props and equipment, practices archive files, and market traders store stock between weekends.",
+      "bullets": [
+        "A 10x10 or 10x15 with lift or ground floor access works for inventory and stock.",
+        "A drive-up unit in the outer boroughs or Westchester is usually cheaper than the city core.",
+        "Ask whether the facility accepts deliveries in your name if you sell online."
+      ],
+      "links": [
+        {
+          "label": "Explore business storage",
+          "href": "/business-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/storage%20for%20students.jpg",
+        "alt": "Student moving belongings into a storage unit",
+        "width": 980,
+        "height": 653
+      },
+      "heading": "Storage for students",
+      "body": "New York campuses empty on a schedule, and few students want to move a full room twice a year. If you are at a university in the city, at a SUNY campus, or at a college upstate, a small unit over the summer usually costs less than replacing your furniture in September.",
+      "bullets": [
+        "A locker or 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.",
+        "A 10x10 can cover two rooms when split with housemates.",
+        "Look for student rates near campus or a subway line, plus month-to-month terms."
+      ],
+      "links": [
+        {
+          "label": "Explore student storage",
+          "href": "/student-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/long%20island.jpg",
+        "alt": "Garage storage unit packed with seasonal gear and furniture",
+        "width": 1536,
+        "height": 1024
+      },
+      "heading": "Storage for Long Island, Westchester and upstate households",
+      "body": "Outside the city the use case changes. You have a garage, a driveway and a basement, and you are storing seasonal equipment rather than everyday overflow: snow blowers, patio furniture, lawn equipment, camping and lake gear, and furniture held between houses.",
+      "bullets": [
+        "A 10x10 or 10x15 with drive-up access lets you load straight from the truck.",
+        "A 10x20 holds a three bedroom home between moves.",
+        "Look for ploughed and gritted drives through winter."
+      ],
+      "links": [
+        {
+          "label": "Find drive-up storage in New York",
+          "href": "/find-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/climate-storage/indoor-corridor.png",
+        "alt": "Indoor climate controlled storage corridor",
+        "width": 1200,
+        "height": 800
+      },
+      "heading": "Climate controlled storage",
+      "body": "New York runs humid summers and long freezing winters, and coastal areas add salt air. The combination is harder on stored belongings than either extreme alone, which is why most city facilities are indoor and temperature controlled as standard.",
+      "bullets": [
+        "Choose climate control for wood and leather furniture, electronics, documents, photographs and instruments.",
+        "Protect anything metal near the coast, where salt air speeds up corrosion.",
+        "Lift boxes off the floor and leave a gap at the walls."
+      ],
+      "links": [
+        {
+          "label": "Explore climate controlled storage",
+          "href": "/climate-controlled-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/storage-guide/vehiclestorage.jpg",
+        "alt": "Boat and RV storage spaces",
+        "width": 1536,
+        "height": 1024
+      },
+      "heading": "Storage for cars, boats and RVs",
+      "body": "Street parking rules, alternate side regulations and winter weather push vehicles into storage in New York. Enclosed units and indoor parking suit cars and motorcycles in the city, while Long Island and upstate offer outdoor and covered spaces for trailers, boats and RVs.",
+      "bullets": [
+        "Spaces range from 20 to 45 feet, so confirm the maximum length.",
+        "Covered parking protects against snow load through winter.",
+        "Ask whether current registration and insurance are required."
+      ],
+      "links": [
+        {
+          "label": "Explore car storage",
+          "href": "/car-storage"
+        },
+        {
+          "label": "Explore boat storage",
+          "href": "/boat-storage"
+        },
+        {
+          "label": "Explore RV storage",
+          "href": "/rv-storage"
+        }
+      ]
+    }
+  ],
+  "sizeHeading": "Fit your New York apartment into the right unit size.",
+  "checklistHeading": "Your checklist for picking a New York storage unit.",
+  "checklist": [
+    "Size by your largest item. A mattress, a sofa or a bike frame decides your unit more than the number of boxes.",
+    "Price the small end properly. Compare the locker option against the 5x5 before you default to the larger unit.",
+    "Set your radius deliberately. One stop further out is usually the biggest saving on the table.",
+    "Check how you will get there. If you have no car, the walk from the subway with a load matters more than the monthly rate.",
+    "Check the loading route. Lift capacity, trolleys and distance from the door decide how long every visit takes.",
+    "Check access hours against your routine. City sites often close earlier than drive-up yards.",
+    "Compare the ongoing rate, not the offer. Ask what month two onward costs.",
+    "Confirm insurance. Check your renters or homeowners policy first.",
+    "Read the newest reviews. Management changes affect service more than the building does."
+  ],
+  "reasonsHeading": "Reasons to move to New York.",
+  "reasonsImage": {
+    "src": "https://images.unsplash.com/photo-1536622638768-9403a9d35a1a",
+    "alt": "New York City skyline"
+  },
+  "reasons": [
+    {
+      "heading": "The energy of the city",
+      "body": "Broadway, world famous museums and restaurants on every block keep people coming to New York City. Apartments here are compact, so every square foot counts."
+    },
+    {
+      "heading": "A career hub",
+      "body": "Finance, media, fashion and tech draw talent to Manhattan and Brooklyn. Job changes and lease turnovers make flexible storage useful."
+    },
+    {
+      "heading": "Weekends beyond the city",
+      "body": "The Hudson Valley, the Finger Lakes, the Adirondacks and the Long Island beaches give you room to breathe. Kayaks, bikes and beach gear need somewhere to go in winter."
+    },
+    {
+      "heading": "Colleges and universities",
+      "body": "NYU, Columbia, Cornell, the SUNY campuses and many more fill up each fall. Summer storage saves you hauling a full room of furniture home."
+    },
+    {
+      "heading": "More space upstate",
+      "body": "Buffalo, Rochester, Syracuse and Albany offer more home for the money, and many people relocate there from downstate."
+    },
+    {
+      "heading": "Four real seasons",
+      "body": "Snowy winters and warm summers mean coats, air conditioners and patio furniture rotate in and out of storage every year."
+    }
+  ],
+  "faqHeading": "Your New York self storage questions, answered.",
+  "closingHeading": "Compare New York storage units near you now."
+},
+  cities: CITY_LINKS,
+  priceRows: PRICE_ROWS,
+  faqs: FAQS,
+};
+
 export default function NewYorkStoragePage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQS.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const breadcrumbSchema = breadcrumbListSchema([
-    { name: "Home", path: "/" },
-    { name: "Storage by state", path: "/storage-state-usa" },
-    { name: "New York", path: "/storage-search/new-york" },
-  ]);
-
-  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
-    .filter((city) => isCityPublished(city.slug))
-    .map((city) => ({ ...city, href: `/storage-search/new-york/${city.slug}` }));
-  const formCities = cityCards.map((city) => city.name);
-
-  return (
-    <main className="state-storage-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1536622638768-9403a9d35a1a?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
-        <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>New York</div>
-          <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in New York near you.</em></h1>
-          <p>Enter your neighbourhood or ZIP code and see every storage unit available within reach of you. New York has 878 storage facilities holding 14,766 available units right now, from Manhattan and the outer boroughs to Long Island, the Hudson Valley and across upstate. Compare monthly rates, unit sizes, access hours and features before you leave the apartment.</p>
-          <StateZipSearch id="ny-hero-zip" />
-        </div>
-      </section>
-
-      <section className="state-storage-cities state-cities-centered" aria-labelledby="ny-cities-heading">
-        <div className="state-storage-heading"><h2 id="ny-cities-heading">Find affordable storage units across New York's boroughs and cities</h2><p>In New York the right unit is usually the one you can reach without a car. Rates shift block by block, and a facility one subway stop further out can cost noticeably less. Start with your city or borough and narrow by radius.</p></div>
-        <StateCityScroller cities={cityCards} />
-      </section>
-
-      <StateFormBlock id="ny-form-top" state="New York" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
-
-      <section className="utah-pricing-section" aria-labelledby="ny-storage-heading">
-        <div className="utah-pricing-heading"><h2 id="ny-storage-heading">What a New York storage unit costs you each month</h2><p className="utah-pricing-intro">New York holds the widest price gap in the country between a city unit and an upstate one. The same 5x5 that averages around $56 a month on Staten Island averages around $216 in Manhattan.</p><p className="utah-pricing-caption">Typical monthly ranges by size across New York:</p></div>
-        <div className="utah-price-table-wrap">
-          <table className="utah-price-table">
-            <thead><tr><th scope="col">Unit size</th><th scope="col">Typical monthly rate</th><th scope="col">What it holds</th></tr></thead>
-            <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
-          </table>
-        </div>
-        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
-        <div className="utah-price-factors">
-          <p>For a sense of the regional gap, a 5x5 averages around $97 a month across New York City, around $79 in Queens, around $76 in Rochester and around $67 in Syracuse. A climate controlled 10x10 in New York City averages around $359. Across Rochester, the average unit of any size sits near $171.</p>
-          <h3>Six things move your price:</h3>
-          <ul>
-            <li>Borough and neighbourhood. Manhattan and inner Brooklyn price well above the outer boroughs and Westchester for identical square footage.</li>
-            <li>Climate control. Most city facilities are indoor and temperature controlled by default, which is built into the rate.</li>
-            <li>Floor and access. Ground floor and drive up units cost more than upper floor units reached by lift.</li>
-            <li>Move in offers. First month free and discounted first three month promotions run across the state.</li>
-            <li>Online rate versus counter rate. Rates advertised online usually sit below the price quoted in person.</li>
-            <li>Term length. Committing to six or twelve months can reduce the monthly figure at independently run facilities.</li>
-          </ul>
-          <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20storage%20prices">Compare prices near you <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ny-mini-heading">
-        <div className="state-storage-heading"><h2 id="ny-mini-heading">What is mini storage, and what is the smallest unit you can rent?</h2><p>Mini storage means the small end of the range, the units built for people who need a few square feet rather than a garage. In New York this is the most rented category in the state, because most renters are storing the overflow from an apartment rather than the contents of a house.</p></div>
-        <div className="utah-price-factors">
-          <ul>
-            <li><strong>Locker units.</strong> The smallest option available, often around 4x4 or smaller, reached from a corridor rather than a door you drive to. Good for files, a few boxes, seasonal clothing and sports equipment. These start as low as $24 a month in parts of the Bronx and run to around $119 in Manhattan buildings.</li>
-            <li><strong>5x5.</strong> Roughly a small walk in wardrobe. Holds boxes, bedding, a bike, a chest of drawers.</li>
-            <li><strong>5x10.</strong> Roughly a large wardrobe or a small bedroom. Holds a studio apartment including a mattress.</li>
-          </ul>
-          <p>If you are storing less than a full room, price the locker option before the 5x5. In city facilities the gap between the two is often significant.</p>
-          <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20small%20storage">Find small storage near you <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ny-needs-heading">
-        <div className="state-storage-heading"><h2 id="ny-needs-heading">New York storage for small apartments, students and growing businesses.</h2></div>
-        <div className="state-needs-rows">
-          <article>
-            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Household boxes moving into a storage unit" width={980} height={653} /></div>
-            <div className="state-needs-text"><h3>Storage for apartment renters and city households</h3><p>You are paying some of the highest rent per square foot in the country, which makes storage the cheaper way to hold what you are not using this season. Winter coats and boots. Air conditioning units in winter and radiator covers in summer. Bikes, strollers, luggage, holiday decorations. Furniture from a previous apartment you intend to use again.</p><ul><li>Seasonal rotation: a locker or 5x5 handles clothing, sports gear and appliances you swap twice a year.</li><li>Between leases: a 5x10 or 10x10 holds a studio or one bedroom while you move.</li><li>Look for a facility within walking or short cab distance, lift access, trolleys available at the door, and a loading bay if you are arriving by van.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find apartment storage near you <span aria-hidden="true">→</span></Link></div>
-          </article>
-          <article>
-            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
-            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without signing a commercial lease at New York rates. Online sellers hold inventory, packaging and returns. Contractors and trades store tools and materials between jobs. Studios and production crews store props and equipment between shoots. Practices and firms archive files. Market and pop up traders store stock between weekends.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with lift or ground floor access and room to load.</li><li>Tools and equipment: a drive up unit in the outer boroughs or Westchester, usually cheaper than the equivalent in the city core.</li><li>Records and electronics: a climate controlled 5x10 protects paper and hardware through humid summers. Look for month to month terms, online payment and invoicing, delivery acceptance, and access hours that cover early starts.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
-          </article>
-          <article>
-            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
-            <div className="state-needs-text"><h3>Storage for students</h3><p>New York campuses empty on a schedule, and few students want to move a full room twice a year. If you are at a university in the city, at a SUNY campus, or at a college upstate, a small unit over the summer usually costs less than replacing your furniture in September.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Away for a semester or an internship: store your furniture rather than sublet around it, and look for student rates near campus or a subway line with month to month terms.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
-          </article>
-          <article>
-            <div className="state-needs-image"><Image src="/images/state%20pages/long%20island.jpg" alt="Garage storage unit packed with seasonal gear, furniture, and a car parked outside" width={1536} height={1024} /></div>
-            <div className="state-needs-text"><h3>Long Island, Westchester and upstate households</h3><p>Outside the city the use case changes. You have a garage, a driveway and a basement, and you are storing seasonal equipment rather than everyday overflow. Boats and jet skis from October through April. Snow blowers, patio furniture, lawn equipment. Camping and lake gear. Furniture held between houses.</p><ul><li>Seasonal equipment: a 10x10 or 10x15 with drive up access you can load straight from the truck.</li><li>Whole house between moves: a 10x20 holds a three bedroom home.</li><li>Look for drive up doors, ploughed and gritted drives through winter, and outdoor parking if you are storing a trailer.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find drive up storage near you <span aria-hidden="true">→</span></Link></div>
-          </article>
-        </div>
-      </section>
-
-      <StateFormBlock id="ny-form-mid" state="New York" cities={formCities} heading="Still looking? Find storage near you" />
-
-      <section className="utah-content-section" aria-labelledby="ny-climate-heading">
-        <div className="state-storage-heading"><h2 id="ny-climate-heading">Should you pay for climate control in New York?</h2><p>New York runs humid summers and long freezing winters, and coastal areas add salt air to that. The combination is harder on stored belongings than either extreme alone, which is why most city facilities are indoor and temperature controlled as standard.</p></div>
-        <div className="utah-climate-grid">
-          <article className="utah-climate-card utah-climate-yes">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20" /><path d="M3.3 7l17.4 10" /><path d="M20.7 7L3.3 17" /><path d="M9 4l3 2.8L15 4" /><path d="M9 20l3-2.8L15 20" /></svg>
-              Choose a climate controlled unit if you are storing
-            </h3>
-            <ul>
-              <li>Wooden and leather furniture, which warps in humidity and cracks in dry winter heat</li>
-              <li>Electronics, appliances and anything containing a battery</li>
-              <li>Photographs, artwork, vinyl records and paper documents</li>
-              <li>Musical instruments</li>
-              <li>Mattresses, upholstery and clothing kept beyond one season</li>
-              <li>Anything metal near the coast, where salt air accelerates corrosion</li>
-            </ul>
-          </article>
-          <article className="utah-climate-card utah-climate-no">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" /><path d="M7 21v-6h10v6" /></svg>
-              Standard drive-up units
-            </h3>
-            <div className="utah-climate-image"><Image src="/images/storage-guide/car.jpg" alt="Car parked in an open drive-up storage unit" width={1290} height={860} /></div>
-            <p>A standard drive up unit works well for tools, patio furniture, plastic bins, garden equipment and vehicles. Whichever you choose, lift boxes off the floor on pallets or shelving and leave a gap between your belongings and the walls.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ny-deliveries-heading">
-        <div className="state-storage-heading"><h2 id="ny-deliveries-heading">Do storage units accept deliveries in New York?</h2><p>Some do. A growing number of New York facilities accept packages on behalf of tenants, and several offer a parcel drop point on site. This matters if you sell online, if you receive stock you cannot store at home, or if your building has no doorman.</p></div>
-        <div className="utah-price-factors">
-          <h3>Ask three questions before you rely on it:</h3>
-          <ul>
-            <li>Does the facility accept deliveries addressed to me, or only to the business?</li>
-            <li>Are deliveries signed for during office hours only, and where are they held?</li>
-            <li>Is there a fee per parcel or a limit on volume?</li>
-          </ul>
-          <p>If parcel handling is central to how you work, filter for facilities with on site management rather than kiosk operated sites, since someone needs to be there to take the delivery.</p>
-          <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20package%20acceptance">Find facilities that accept deliveries <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ny-vehicle-heading">
-        <div className="state-storage-heading"><h2 id="ny-vehicle-heading">Parking and storage for your car, boat or RV in New York.</h2></div>
-        <div className="utah-vehicle-block">
-          <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.jpg" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
-          <div className="utah-vehicle-block-text">
-            <p>Street parking rules, alternate side regulations and winter weather all push vehicles into storage in New York. Your options:</p>
-            <ul>
-              <li>Enclosed units and indoor parking. The common choice in the city for cars and motorcycles, particularly over winter.</li>
-              <li>Uncovered outdoor parking. The lowest cost option on Long Island and upstate for trailers, boats and RVs.</li>
-              <li>Covered parking. Protection from snow load through the winter months.</li>
-            </ul>
-            <p>Filter for parking availability, gate hours and vehicle length. Spaces commonly run from 20 to 45 feet, so confirm the maximum length before you reserve, and check whether current registration and insurance are required.</p>
-            <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20vehicle%20storage">Find vehicle storage near you in New York <span aria-hidden="true">→</span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="state-storage-guide" aria-labelledby="ny-size-guide-heading">
-        <div className="state-storage-heading"><h2 id="ny-size-guide-heading">Fit your New York apartment into the right unit size.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p></div>
-        <CardSlider trackClassName="state-size-grid">
-          <article><div className="state-size-image"><Image src="/images/storage-guide/boxes.jpg" alt="Boxes and small items packed for a small storage unit" width={640} height={420} quality={90} /></div><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
-          <article><div className="state-size-image"><Image src="/images/storage-guide/threebedroom.jpg" alt="Furniture from a few rooms ready for a medium storage unit" width={640} height={420} quality={90} /></div><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
-          <article><div className="state-size-image"><Image src="/images/storage-guide/fourbedroom.jpg" alt="Contents of a full home ready for a large storage unit" width={640} height={420} quality={90} /></div><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
-        </CardSlider>
-        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
-      </section>
-
-      <section className="state-policy-section" aria-label="New York storage rates, access, and rental terms">
-        <div className="state-policy-grid">
-          <article className="state-policy-card" aria-labelledby="ny-deals-heading">
-            <h2 id="ny-deals-heading">Find move-in specials and cheaper storage units in New York.</h2>
-            <p>Space is expensive in New York, so small choices make a big difference to what you pay.</p>
-            <ul><li><strong>Look beyond Manhattan.</strong> Facilities in Queens, the Bronx, Staten Island or Westchester often cost less for the same size.</li><li><strong>Size down where you can.</strong> A 5x5 or a locker holds more than you think when you add shelving and stack boxes high.</li><li><strong>Weigh pickup and delivery.</strong> Full service storage can save you a truck rental. Compare the total cost before you book.</li><li><strong>Check the ongoing rate.</strong> Ask what you will pay from month two onward, as well as during the offer.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </article>
-          <article className="state-policy-card" aria-labelledby="ny-access-heading">
-            <h2 id="ny-access-heading">Round the clock access and building security in New York storage.</h2>
-            <p>In New York, getting your things in and out is often harder than finding the unit.</p>
-            <ul><li><strong>Elevators and loading.</strong> Ask about freight elevators, carts and loading docks, and whether you need to book them.</li><li><strong>Parking.</strong> Check for a loading area or street parking near the entrance before moving day.</li><li><strong>Building hours.</strong> Many city facilities set fixed access hours. Confirm they fit your schedule.</li><li><strong>Deliveries.</strong> Some facilities accept packages for you, which helps if you run an online business.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </article>
-          <article className="state-policy-card" aria-labelledby="ny-terms-heading">
-            <h2 id="ny-terms-heading">Rent New York storage for a month or for a season.</h2>
-            <p>Month to month rentals suit New York's lease cycles, college calendars and frequent moves.</p>
-            <ul><li><strong>Lease turnover.</strong> Storage bridges the gap when your new lease starts a few weeks after the old one ends.</li><li><strong>Summer breaks.</strong> Students can book a small unit from May to August instead of shipping furniture home.</li><li><strong>Notice and increases.</strong> Confirm the move-out notice period and how rate changes are communicated.</li><li><strong>Seasonal swaps.</strong> Rotate air conditioners, patio furniture and winter coats between home and storage each season.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=New%20York%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ny-choose-heading">
-        <div className="state-storage-heading"><h2 id="ny-choose-heading">Questions to ask before you sign for New York storage.</h2></div>
-        <div className="state-checklist-split">
-        <div className="utah-steps-grid">
-          <article><span>1</span><p>Size by your largest item. A mattress, a sofa or a bike frame decides your unit more than the number of boxes.</p></article>
-          <article><span>2</span><p>Price the small end properly. Compare the locker option against the 5x5 before you default to the larger unit.</p></article>
-          <article><span>3</span><p>Set your radius deliberately. One stop further out is usually the biggest saving on the table.</p></article>
-          <article><span>4</span><p>Check how you will actually get there. If you have no car, the walk from the subway with a load matters more than the monthly rate.</p></article>
-          <article><span>5</span><p>Check the loading route. Lift capacity, trolley availability and distance from the door decide how long every visit takes.</p></article>
-          <article><span>6</span><p>Check access hours against your routine. City sites often close earlier than drive up yards.</p></article>
-          <article><span>7</span><p>Compare the ongoing rate, not the offer. Ask what month two onward costs and how increases are handled.</p></article>
-          <article><span>8</span><p>Confirm insurance. Check your renters or homeowners policy first, then the facility requirement.</p></article>
-          <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
-        </div>
-        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="New York" cities={formCities} compact idPrefix="ny-form-checklist" /></div>
-        </div>
-      </section>
-
-      <section className="state-storage-guide state-love state-reasons" aria-labelledby="ny-love-heading">
-        <div className="state-storage-heading"><h2 id="ny-love-heading">Why people love New York.</h2><p>And why so many of them need a little extra space.</p></div>
-        <div className="state-reasons-split">
-          <div className="state-reasons-image"><Image src="https://images.unsplash.com/photo-1536622638768-9403a9d35a1a?auto=format&fit=crop&w=1200&q=70" alt="A view of New York" fill sizes="(max-width: 900px) 100vw, 40vw" unoptimized /></div>
-          <div className="state-size-grid"><article><h3>The energy of the city</h3><p>Broadway, world famous museums and restaurants on every block keep people coming to New York City. Apartments here are compact, so every square foot counts.</p></article><article><h3>A career hub</h3><p>Finance, media, fashion and tech draw talent to Manhattan and Brooklyn. Job changes and lease turnovers make flexible storage useful.</p></article><article><h3>Weekends beyond the city</h3><p>The Hudson Valley, the Finger Lakes, the Adirondacks and the Long Island beaches give you room to breathe. Kayaks, bikes and beach gear need somewhere to go in winter.</p></article><article><h3>Colleges and universities</h3><p>NYU, Columbia, Cornell, the SUNY campuses and many more fill up each fall. Summer storage saves you hauling a full room of furniture home.</p></article><article><h3>More space upstate</h3><p>Buffalo, Rochester, Syracuse and Albany offer more home for the money, and many people relocate there from downstate.</p></article><article><h3>Four real seasons</h3><p>Snowy winters and warm summers mean coats, air conditioners and patio furniture rotate in and out of storage every year.</p></article></div>
-        </div>
-      </section>
-      <section className="storage-search-note state-zip-band" aria-labelledby="ny-zip-band-heading">
-        <div className="storage-location-search-content">
-          <strong id="ny-zip-band-heading">Search storage near you in New York</strong>
-          <span>Enter your ZIP code or city to see storage options close to you.</span>
-          <StateZipSearch id="ny-band-zip" />
-        </div>
-      </section>
-      <section className="state-storage-faq" aria-labelledby="ny-faq-heading">
-        <div className="state-storage-heading"><h2 id="ny-faq-heading">What New Yorkers ask about storage units.</h2></div>
-        <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
-      </section>
-
-      <section className="utah-closing-cta" aria-labelledby="ny-closing-heading">
-        <div><h2 id="ny-closing-heading">Compare New York storage options near you.</h2><p>Search 878 facilities and 14,766 available units across New York, compare current rates side by side, and reserve the unit that fits your space and your schedule.</p><small>Current pricing. Month-to-month terms at most facilities. No obligation to reserve.</small></div>
-        <Link className="state-storage-cta" href="/storage-search?location=New%20York">Search storage units near you <span aria-hidden="true">→</span></Link>
-      </section>
-
-      <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">New York</span></nav>
-    </main>
-  );
+  return <StatePageTemplate data={DATA} />;
 }
