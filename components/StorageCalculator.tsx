@@ -326,15 +326,14 @@ export default function StorageCalculator() {
 
   return (
     <div className="storage-calculator-page">
-      <section className="calculator-hero hero-photo hero-photo-calculator">
-        <div className="calculator-hero-inner">
-          <div className="calculator-hero-copy">
-            <h1>Free storage <em>size calculator</em>.</h1>
-            <p>Tell us what you&apos;re storing, and we&apos;ll suggest a unit that leaves room to pack safely and move around.</p>
-            <StateZipSearch id="calculator-hero-zip" />
-          </div>
+      <section className="storage-size-guide-hero hero-photo hero-photo-calculator">
+        <div className="storage-size-guide-hero-inner">
+          <nav className="storage-search-breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Home</Link><span>/</span><span aria-current="page">Size calculator</span>
+          </nav>
+          <h1>Free storage size calculator, <em>built around what you store.</em></h1>
+          <StateZipSearch id="calculator-hero-zip" className="storage-size-guide-hero-search" />
         </div>
-        <span className="calculator-image-caption">Make room for what matters.</span>
       </section>
 
       <div className="size-finder">

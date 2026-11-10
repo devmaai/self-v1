@@ -100,22 +100,6 @@ export default async function StoragePriceGuide() {
         </div>
       </div>
 
-      <section className="storage-price-guide-cta" aria-labelledby="storage-price-guide-cta-heading">
-        <div className="storage-price-guide-cta-inner">
-          <div className="storage-price-guide-cta-copy">
-            <span className="storage-price-guide-cta-label">Free size guide</span>
-            <h2 id="storage-price-guide-cta-heading">Which size actually fits your move?</h2>
-            <p>
-              See room-by-room examples, unit dimensions, and what fits in every size from a 5 × 5 closet to a
-              10 × 30 garage. The full size guide makes the decision simple before you reserve.
-            </p>
-          </div>
-          <Link href="/storage-size-guide" className="storage-price-guide-cta-button">
-            Open the storage size guide <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
-
       <div className="storage-price-guide-inner storage-price-guide-bottom">
         <div className="state-storage-heading">
           <h2 id="utah-gear-heading">What changes the price?</h2>
