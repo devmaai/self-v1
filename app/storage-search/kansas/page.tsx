@@ -5,6 +5,11 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import { isCityPublished } from "@/lib/cityStates";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -112,6 +117,11 @@ export default function KansasStoragePage() {
     { name: "Kansas", path: "/storage-search/kansas" },
   ]);
 
+  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/kansas/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -121,15 +131,16 @@ export default function KansasStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Kansas</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Kansas near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Kansas has 251 storage facilities holding 2,258 available units right now, from the Wichita metro across to Johnson County and out through Topeka, Lawrence, Manhattan and Salina. Compare monthly rates, unit sizes, access hours and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=Kansas">Search Kansas storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="ks-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="ks-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="ks-cities-heading">
         <div className="state-storage-heading"><h2 id="ks-cities-heading">Storage units near you in Kansas by city</h2><p>Kansas rates vary sharply between metros, and again between neighbourhoods inside them. The average unit in Overland Park runs around $205 a month against around $148 in Wichita, so where you search matters as much as what you rent. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/kansas/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="ks-form-top" state="Kansas" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="ks-storage-heading">
         <div className="utah-pricing-heading"><h2 id="ks-storage-heading">How much are storage units in Kansas per month?</h2><p className="utah-pricing-intro">Kansas carries one of the widest metro gaps in the Midwest. The average unit runs around $148 a month in Wichita and Kansas City, and around $205 in Overland Park. Rural and smaller markets sit well below both. Within a city the spread is just as wide: in Wichita, the McAdams neighbourhood carries the lowest average rent in the city at around $77 a month, well below the citywide figure.</p><p className="utah-pricing-caption">Typical monthly ranges by size across Kansas:</p></div>
@@ -139,6 +150,7 @@ export default function KansasStoragePage() {
             <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors">
           <p>In Wichita, a 5x5 averages around $41 a month and a 20x30 averages around $504. In Overland Park, a 5x5 averages around $41 and a 10x30 averages around $364, with small units starting at around $20, medium from around $71 and large from around $174.</p>
           <h3>Five things move your price:</h3>
@@ -154,14 +166,28 @@ export default function KansasStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="ks-needs-heading">
-        <div className="state-storage-heading"><h2 id="ks-needs-heading">Find storage in Kansas by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for Kansas families</h3><p>Most homes here fill the garage and basement before they run out of things to keep. Storage takes the overflow: lawn equipment and patio furniture through winter, holiday decorations, hunting and fishing gear, sports equipment, tools, and furniture you are holding between houses.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items, tools and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season: many families move documents, photographs and irreplaceable items into a secure unit ahead of severe weather.</li><li>Look for drive-up access, ground floor units, cleared drives through winter, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=Kansas%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family with a service member packing a storage unit during a move" width={1536} height={1024} /></div><h3>Storage for military households</h3><p>Fort Riley, Fort Leavenworth and McConnell Air Force Base bring households through Kansas on orders that rarely line up with lease dates. Storage covers the gap between a move out and a move in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected while you are away.</li><li>Look for military rates, month-to-month terms with no penalty for an early move-out, autopay so billing runs while you are away, and climate control for anything staying more than a season.</li></ul><Link href="/storage-search?location=Kansas%20military%20storage">Find storage near your base →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging and returns. Agricultural and field service operators store equipment between seasons. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive-up access and room to load a van.</li><li>Tools and equipment: a drive-up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples and electronics: a climate-controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link href="/storage-search?location=Kansas%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>Campuses in Lawrence, Manhattan, Wichita, Topeka, Emporia and Pittsburg empty every summer, and moving a full room home twice a year rarely makes sense. A small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything that would not survive a Kansas summer in a metal unit, and month-to-month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=Kansas%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="ks-needs-heading">Find storage in Kansas by what you need it for.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for Kansas families</h3><p>Most homes here fill the garage and basement before they run out of things to keep. Storage takes the overflow: lawn equipment and patio furniture through winter, holiday decorations, hunting and fishing gear, sports equipment, tools, and furniture you are holding between houses.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items, tools and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season: many families move documents, photographs and irreplaceable items into a secure unit ahead of severe weather.</li><li>Look for drive-up access, ground floor units, cleared drives through winter, and gate hours that suit a weekend load.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family with a service member packing a storage unit during a move" width={1536} height={1024} /></div>
+            <div className="state-needs-text"><h3>Storage for military households</h3><p>Fort Riley, Fort Leavenworth and McConnell Air Force Base bring households through Kansas on orders that rarely line up with lease dates. Storage covers the gap between a move out and a move in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected while you are away.</li><li>Look for military rates, month-to-month terms with no penalty for an early move-out, autopay so billing runs while you are away, and climate control for anything staying more than a season.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find storage near your base <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging and returns. Agricultural and field service operators store equipment between seasons. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive-up access and room to load a van.</li><li>Tools and equipment: a drive-up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples and electronics: a climate-controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>Campuses in Lawrence, Manhattan, Wichita, Topeka, Emporia and Pittsburg empty every summer, and moving a full room home twice a year rarely makes sense. A small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything that would not survive a Kansas summer in a metal unit, and month-to-month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="ks-form-mid" state="Kansas" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="ks-climate-heading">
         <div className="state-storage-heading"><h2 id="ks-climate-heading">Do you need climate controlled storage in Kansas?</h2><p>Kansas puts stored belongings through a full annual cycle: humid summers with sustained high heat, hard winter freezes, and sharp swings between them in spring and autumn. Humidity is the part people underestimate, since it causes mould, mildew and rust long before the cold does any damage. Availability and pricing are strong across the state. In Wichita, 31 of the 63 facilities offer climate controlled units, priced from around $43 a month for a 5x5. In Overland Park, climate controlled units range from around $37 for a 5x5 to around $902 for a 20x30.</p></div>
@@ -294,7 +320,8 @@ export default function KansasStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="ks-choose-heading">
-        <div className="state-storage-heading"><h2 id="ks-choose-heading">How to choose a self storage unit in Kansas.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="ks-choose-heading">How to choose a self storage unit in Kansas.</h2></div>
+        <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. A sectional sofa, a chest freezer or a mower decides your unit more than the number of boxes.</p></article>
           <article><span>2</span><p>Decide on climate control. Humidity, not cold, is what damages most stored goods here.</p></article>
@@ -307,9 +334,17 @@ export default function KansasStoragePage() {
           <article><span>9</span><p>Set up autopay and online access. It removes the most common cause of an unexpected fee.</p></article>
           <article><span>10</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=Kansas">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="Kansas" cities={formCities} compact idPrefix="ks-form-checklist" /></div>
+        </div>
       </section>
 
+      <section className="storage-search-note state-zip-band" aria-labelledby="ks-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="ks-zip-band-heading">Search storage near you in Kansas</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="ks-band-zip" />
+        </div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="ks-faq-heading">
         <div className="state-storage-heading"><h2 id="ks-faq-heading">Kansas storage questions, answered.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>

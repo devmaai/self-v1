@@ -5,6 +5,11 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import { isCityPublished } from "@/lib/cityStates";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -99,6 +104,11 @@ export default function TexasStoragePage() {
     { name: "Texas", path: "/storage-search/texas" },
   ]);
 
+  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/texas/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -108,15 +118,16 @@ export default function TexasStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Texas</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Texas near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Texas has 3,707 storage facilities holding 44,477 available units right now, more than any other state, from the Gulf Coast through the Hill Country to the Panhandle and the border. Compare monthly rates, unit sizes, access hours and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=Texas">Search Texas storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="tx-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="tx-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="tx-cities-heading">
         <div className="state-storage-heading"><h2 id="tx-cities-heading">Storage units near you in Texas by city</h2><p>Texas has the deepest storage supply in the country, which means the price you pay depends heavily on how carefully you compare. Rates shift between metros, between suburbs and between neighborhoods inside a single city. Start with your city and narrow by radius.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/texas/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="tx-form-top" state="Texas" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-content-section" aria-labelledby="tx-cheap-heading">
         <div className="state-storage-heading"><h2 id="tx-cheap-heading">Cheap storage units near you in Texas.</h2><p>Texas is the most competitive storage market in the country, and that competition shows up in the rates. Units start from $5 a month on promotional pricing in Houston and Dallas, from $8 in Fort Worth and Arlington, and from $10 in San Antonio, Austin, Plano, Garland, Carrollton, Round Rock and Killeen.</p></div>
@@ -142,18 +153,33 @@ export default function TexasStoragePage() {
             <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors"><h3>Five things move your price:</h3><ul><li>Metro and neighborhood. The neighborhood gap inside Austin and Dallas is larger than the gap between most Texas metros.</li><li>Climate control. Texas heat makes this close to standard in many facilities, and it is built into the rate.</li><li>Drive up access. Convenience costs more and saves you time on every visit.</li><li>Move in offers. First month free and discounted first three month promotions run across the state.</li><li>Online rate versus counter rate. Rates advertised online usually sit below the price quoted in person.</li></ul></div>
       </section>
 
       <section className="utah-content-section" aria-labelledby="tx-needs-heading">
-        <div className="state-storage-heading"><h2 id="tx-needs-heading">Find storage in Texas by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for Texas families</h3><p>Texas homes rarely have basements, which puts the whole overflow into the garage. Storage takes it back: holiday decorations, sports equipment, lawn and pool gear, tools, hunting and fishing kit, and furniture you are holding between houses.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items, tools and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season on the coast: many families move documents, photographs and irreplaceable items inland and above ground level ahead of a storm.</li><li>Look for drive up access, ground floor units, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=Texas%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family with a service member packing a storage unit during a move" width={1536} height={1024} /></div><h3>Storage for military households</h3><p>Fort Cavazos, Fort Bliss, Lackland, Fort Sam Houston, Dyess and Sheppard bring households through Texas on orders that rarely line up with lease dates. Storage covers the gap between a move out and a move in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected while you are away.</li><li>Look for military rates, month-to-month terms with no penalty for an early move out, autopay so billing runs while you are away, and climate control for anything staying through a Texas summer.</li></ul><Link href="/storage-search?location=Texas%20military%20storage">Find storage near your base →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging and returns. Energy and field service crews store equipment between rotations. Event and market traders store stock between weekends. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive up access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples and electronics: a climate controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link href="/storage-search?location=Texas%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>Campuses in Austin, College Station, Houston, Lubbock, Denton, Waco and San Marcos empty every summer, and moving a full room across the state twice a year rarely makes sense. A small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything that would not survive a Texas summer in a metal unit, and month-to-month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=Texas%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="tx-needs-heading">Find storage in Texas by what you need it for.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for Texas families</h3><p>Texas homes rarely have basements, which puts the whole overflow into the garage. Storage takes it back: holiday decorations, sports equipment, lawn and pool gear, tools, hunting and fishing kit, and furniture you are holding between houses.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items, tools and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season on the coast: many families move documents, photographs and irreplaceable items inland and above ground level ahead of a storm.</li><li>Look for drive up access, ground floor units, and gate hours that suit a weekend load.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family with a service member packing a storage unit during a move" width={1536} height={1024} /></div>
+            <div className="state-needs-text"><h3>Storage for military households</h3><p>Fort Cavazos, Fort Bliss, Lackland, Fort Sam Houston, Dyess and Sheppard bring households through Texas on orders that rarely line up with lease dates. Storage covers the gap between a move out and a move in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected while you are away.</li><li>Look for military rates, month-to-month terms with no penalty for an early move out, autopay so billing runs while you are away, and climate control for anything staying through a Texas summer.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find storage near your base <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging and returns. Energy and field service crews store equipment between rotations. Event and market traders store stock between weekends. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive up access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples and electronics: a climate controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>Campuses in Austin, College Station, Houston, Lubbock, Denton, Waco and San Marcos empty every summer, and moving a full room across the state twice a year rarely makes sense. A small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything that would not survive a Texas summer in a metal unit, and month-to-month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="tx-form-mid" state="Texas" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="tx-short-term-heading">
         <div className="state-storage-heading"><h2 id="tx-short-term-heading">Short term storage in Texas.</h2><p>Not every rental is a long one. Short term storage suits a move with a gap between closing dates, a renovation, a staging period before a sale, a summer between leases, or inventory you are holding for one season.</p></div>
@@ -282,7 +308,8 @@ export default function TexasStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="tx-choose-heading">
-        <div className="state-storage-heading"><h2 id="tx-choose-heading">How to choose a self storage unit in Texas.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="tx-choose-heading">How to choose a self storage unit in Texas.</h2></div>
+        <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. A sectional sofa, a chest freezer or a mattress decides your unit more than the number of boxes.</p></article>
           <article><span>2</span><p>Compare by neighborhood. Inside Austin and Dallas this is the single biggest saving available.</p></article>
@@ -294,9 +321,17 @@ export default function TexasStoragePage() {
           <article><span>8</span><p>Ask about storm preparation on the coast. Elevation, drainage and door construction matter in Houston, Galveston and Corpus Christi.</p></article>
           <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=Texas">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="Texas" cities={formCities} compact idPrefix="tx-form-checklist" /></div>
+        </div>
       </section>
 
+      <section className="storage-search-note state-zip-band" aria-labelledby="tx-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="tx-zip-band-heading">Search storage near you in Texas</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="tx-band-zip" />
+        </div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="tx-faq-heading">
         <div className="state-storage-heading"><h2 id="tx-faq-heading">Texas storage questions, answered.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>

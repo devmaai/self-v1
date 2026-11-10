@@ -5,6 +5,11 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import { isCityPublished } from "@/lib/cityStates";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -99,6 +104,11 @@ export default function FloridaStoragePage() {
     { name: "Florida", path: "/storage-search/florida" },
   ]);
 
+  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/florida/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -108,15 +118,16 @@ export default function FloridaStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Florida</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Florida near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Florida has 2,526 storage facilities holding 41,123 available units right now, from the Panhandle down through both coasts to the Keys. Compare monthly rates, unit sizes, access hours and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=Florida">Search Florida storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="fl-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="fl-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="fl-cities-heading">
         <div className="state-storage-heading"><h2 id="fl-cities-heading">Storage units near you in Florida by city</h2><p>Florida rates move with the season and with the coast. A facility a few miles inland often costs noticeably less than one near the water. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/florida/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten or twenty five miles.</p>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="fl-form-top" state="Florida" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="fl-storage-heading">
         <div className="utah-pricing-heading"><h2 id="fl-storage-heading">How much does it cost to rent a storage space in Florida?</h2><p className="utah-pricing-intro">Florida sits below the national average on most unit sizes, though coastal South Florida runs well above the rest of the state. Small units start under $10 a month on promotional rates in Pompano Beach, Boca Raton, Port St. Lucie and Cape Coral.</p><p className="utah-pricing-caption">Typical monthly ranges by size across Florida:</p></div>
@@ -126,6 +137,7 @@ export default function FloridaStoragePage() {
             <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors">
           <p>For a sense of the regional gap, a 5x5 averages around $22 a month in North Port, around $42 in Orlando and around $48 in Cape Coral, while comparable units in coastal Broward and Palm Beach County run two to three times that.</p>
           <p>Vehicle storage prices separately. In Orlando, car storage averages around $166 a month, boat storage around $223 and RV storage around $227.</p>
@@ -172,14 +184,28 @@ export default function FloridaStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="fl-needs-heading">
-        <div className="state-storage-heading"><h2 id="fl-needs-heading">Find storage in Florida by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/seasonal%20residents.jpg" alt="Storage unit packed with beach gear, surfboard, bikes, and holiday decorations for a seasonal resident" width={1536} height={1024} /></div><h3>Storage for seasonal residents and snowbirds</h3><p>You are here for part of the year and away for the rest. Storage lets you keep a vehicle, golf clubs, bikes, beach gear and furniture in Florida rather than hauling them back and forth, and it lets you downsize the rental you take.</p><ul><li>Household goods between seasons: a 10x10 holds the contents of a one bedroom condo.</li><li>Vehicle and gear: enclosed or covered parking plus a 5x10 covers a car and everything that goes with it.</li><li>Look for climate control, autopay, month to month terms and a facility you can reach easily from the airport or the interstate.</li></ul><Link href="/storage-search?location=Florida%20seasonal%20storage">Find seasonal storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for Florida families</h3><p>Florida homes often come without basements or attics, which leaves the garage doing the work. Storage takes the overflow: holiday decorations, sports equipment, outgrown furniture, tools and the boxes you have moved twice without opening.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items and sports gear.</li><li>Remodelling or between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season preparation: many families use a unit to move valuables and documents somewhere secure and inland ahead of a storm.</li><li>Look for drive up access, climate control for anything soft or wooden, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=Florida%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory and packaging. Boat and marine services store parts. Seasonal traders and event businesses store stock and equipment between runs.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with ground floor access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly.</li><li>Records, samples and electronics: a climate controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month to month terms, online payment and invoicing, and access hours that cover early starts.</li></ul><Link href="/storage-search?location=Florida%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>Florida campuses empty every summer, and moving a full room home twice a year rarely makes sense. If you are in Gainesville, Tallahassee, Orlando, Tampa, Boca Raton or Miami, a small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=Florida%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="fl-needs-heading">Find storage in Florida by what you need it for.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/seasonal%20residents.jpg" alt="Storage unit packed with beach gear, surfboard, bikes, and holiday decorations for a seasonal resident" width={1536} height={1024} /></div>
+            <div className="state-needs-text"><h3>Storage for seasonal residents and snowbirds</h3><p>You are here for part of the year and away for the rest. Storage lets you keep a vehicle, golf clubs, bikes, beach gear and furniture in Florida rather than hauling them back and forth, and it lets you downsize the rental you take.</p><ul><li>Household goods between seasons: a 10x10 holds the contents of a one bedroom condo.</li><li>Vehicle and gear: enclosed or covered parking plus a 5x10 covers a car and everything that goes with it.</li><li>Look for climate control, autopay, month to month terms and a facility you can reach easily from the airport or the interstate.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find seasonal storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for Florida families</h3><p>Florida homes often come without basements or attics, which leaves the garage doing the work. Storage takes the overflow: holiday decorations, sports equipment, outgrown furniture, tools and the boxes you have moved twice without opening.</p><ul><li>Clearing the garage: a 5x10 holds seasonal items and sports gear.</li><li>Remodelling or between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Storm season preparation: many families use a unit to move valuables and documents somewhere secure and inland ahead of a storm.</li><li>Look for drive up access, climate control for anything soft or wooden, and gate hours that suit a weekend load.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory and packaging. Boat and marine services store parts. Seasonal traders and event businesses store stock and equipment between runs.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with ground floor access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly.</li><li>Records, samples and electronics: a climate controlled 5x10 protects paper and hardware through the summer.</li><li>Look for month to month terms, online payment and invoicing, and access hours that cover early starts.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>Florida campuses empty every summer, and moving a full room home twice a year rarely makes sense. If you are in Gainesville, Tallahassee, Orlando, Tampa, Boca Raton or Miami, a small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="fl-form-mid" state="Florida" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="fl-climate-heading">
         <div className="state-storage-heading"><h2 id="fl-climate-heading">Do you need climate controlled storage in Florida?</h2><p>In most of Florida, yes, for most of what you own. Sustained heat, year round humidity and coastal salt air combine to produce mould, mildew, rust and warping in a standard unit far faster than in a drier state. This is why climate controlled units are the default across much of the market rather than an upgrade.</p></div>
@@ -305,6 +331,13 @@ export default function FloridaStoragePage() {
         </div>
       </section>
 
+      <section className="storage-search-note state-zip-band" aria-labelledby="fl-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="fl-zip-band-heading">Search storage near you in Florida</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="fl-band-zip" />
+        </div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="fl-faq-heading">
         <div className="state-storage-heading"><h2 id="fl-faq-heading">Florida storage questions, answered.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>

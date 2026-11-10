@@ -6,6 +6,11 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
 import { getStorageRows, priceNumber } from "@/lib/liveStorageData";
+import { isCityPublished } from "@/lib/cityStates";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 // Next.js requires a literal number here for its static route-segment-config
@@ -116,6 +121,11 @@ export default async function NewJerseyStoragePage() {
     { name: "New Jersey", path: "/storage-search/new-jersey" },
   ]);
 
+  const cityCards = CITY_LINKS.map((c) => c.name).map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/new-jersey/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -125,20 +135,16 @@ export default async function NewJerseyStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>New Jersey</div>
           <h1>Cheap <span className="state-storage-nowrap">self storage</span><br /><em>in New Jersey.</em></h1>
           <p>New Jersey is the most densely populated state in the country, and storage here is shaped by that fact more than any other. Housing stock runs to older homes without garages, walk-up apartments without basements, and shore properties that sit empty for half the year. Enter your city or ZIP code and compare live unit sizes, move-in prices and availability across {listingCount} listings statewide, then use the guidance below to work out what you should be paying and what to check before you sign.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=New%20Jersey">Search New Jersey storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="nj-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="nj-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="nj-cities-heading">
         <div className="state-storage-heading"><h2 id="nj-cities-heading">Storage units by city in New Jersey</h2><p>Start with your own town, then check one or two neighbouring markets before booking. In a state this compact, a fifteen minute drive regularly changes the monthly rate for an identical unit.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/new-jersey/${city.name.toLowerCase().replace(/ /g, "-")}`} key={city.name}>Storage Units In {city.name}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">If your town is not listed, search by postcode above. Facilities serving the smaller boroughs almost always appear under a neighbouring municipality.</p>
-        <div className="utah-price-factors">
-          <ul>
-            {CITY_LINKS.map((city) => <li key={city.name}><strong>{city.name}</strong> ({city.county} County): {city.demand}.</li>)}
-          </ul>
-        </div>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="nj-form-top" state="New Jersey" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="nj-storage-heading">
         <div className="utah-pricing-heading">
@@ -152,6 +158,7 @@ export default async function NewJerseyStoragePage() {
             <tbody>{priceRows.map(({ size, holds, range }) => <tr key={size}><th scope="row">{size}</th><td>{range ? `$${range[0]} to $${range[1]}` : "Contact facility"}</td><td>{holds}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors">
           <p>Hudson County and the towns facing Manhattan carry the highest rates in New Jersey. Jersey City, Union City, Hoboken, West New York and North Bergen all draw demand from New York residents storing on this side of the river, and that pressure shows in the monthly figure. Rates ease as you move west and south through Essex, Union and Middlesex counties.</p>
           <p>The shore counties price on a season rather than a location. Monmouth, Ocean, Atlantic and Cape May all see rates and availability tighten from late spring into summer as rentals turn over and seasonal workers arrive, then soften through the winter. Booking in October rather than May often changes the standing rate for the same unit.</p>
@@ -169,14 +176,28 @@ export default async function NewJerseyStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="nj-needs-heading">
-        <div className="state-storage-heading"><h2 id="nj-needs-heading">Find storage in New Jersey by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/seasonal%20residents.jpg" alt="Storage unit packed with beach gear and seasonal furnishings for a Jersey Shore rental" width={1536} height={1024} /></div><h3>Storage for Jersey Shore residents and renters</h3><p>Shore properties in Monmouth, Ocean, Atlantic and Cape May counties sit empty for half the year, and what you leave behind through the off season needs somewhere drier than a garage. Storage holds furniture, beach gear and seasonal rental furnishings between tenants.</p><ul><li>Between rental seasons: a 10x10 holds the furniture from a shore rental.</li><li>Beach gear and bikes: a 5x10 covers boards, chairs, umbrellas and bikes for the whole household.</li><li>Look for climate control against salt air, month to month terms, and a facility that stays open through the off season.</li></ul><Link href="/storage-search?location=New%20Jersey%20shore%20storage">Find shore storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for New Jersey families</h3><p>Older homes without garages and walk-up apartments without basements leave New Jersey families short on space in a way newer housing stock elsewhere does not. Storage takes the overflow: seasonal clothing, holiday decorations, sports equipment, and the furniture you are holding between homes.</p><ul><li>Clearing a walk-up apartment: a 5x10 holds seasonal items and a bike.</li><li>Between homes or mid-renovation: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for ground floor or drive-up access, climate control for anything wooden or upholstered, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=New%20Jersey%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease, and Hudson and Essex County rents make that math attractive. Contractors store tools and materials between jobs, online sellers hold inventory, and firms archive files rather than pay office rates for paper.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with ground floor access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly.</li><li>Records and electronics: a climate controlled 5x10 protects paper and hardware through humid summers.</li><li>Look for month to month terms, online payment and invoicing, and access hours that cover early starts.</li></ul><Link href="/storage-search?location=New%20Jersey%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>New Jersey campuses empty every summer, and hauling a full room home twice a year rarely makes sense. If you are at Rutgers, Princeton, Montclair State, TCNJ or Seton Hall, a small unit over the break usually costs less than replacing your furniture in September.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=New%20Jersey%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="nj-needs-heading">Find storage in New Jersey by what you need it for.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/seasonal%20residents.jpg" alt="Storage unit packed with beach gear and seasonal furnishings for a Jersey Shore rental" width={1536} height={1024} /></div>
+            <div className="state-needs-text"><h3>Storage for Jersey Shore residents and renters</h3><p>Shore properties in Monmouth, Ocean, Atlantic and Cape May counties sit empty for half the year, and what you leave behind through the off season needs somewhere drier than a garage. Storage holds furniture, beach gear and seasonal rental furnishings between tenants.</p><ul><li>Between rental seasons: a 10x10 holds the furniture from a shore rental.</li><li>Beach gear and bikes: a 5x10 covers boards, chairs, umbrellas and bikes for the whole household.</li><li>Look for climate control against salt air, month to month terms, and a facility that stays open through the off season.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find shore storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for New Jersey families</h3><p>Older homes without garages and walk-up apartments without basements leave New Jersey families short on space in a way newer housing stock elsewhere does not. Storage takes the overflow: seasonal clothing, holiday decorations, sports equipment, and the furniture you are holding between homes.</p><ul><li>Clearing a walk-up apartment: a 5x10 holds seasonal items and a bike.</li><li>Between homes or mid-renovation: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for ground floor or drive-up access, climate control for anything wooden or upholstered, and gate hours that suit a weekend load.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease, and Hudson and Essex County rents make that math attractive. Contractors store tools and materials between jobs, online sellers hold inventory, and firms archive files rather than pay office rates for paper.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with ground floor access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly.</li><li>Records and electronics: a climate controlled 5x10 protects paper and hardware through humid summers.</li><li>Look for month to month terms, online payment and invoicing, and access hours that cover early starts.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>New Jersey campuses empty every summer, and hauling a full room home twice a year rarely makes sense. If you are at Rutgers, Princeton, Montclair State, TCNJ or Seton Hall, a small unit over the break usually costs less than replacing your furniture in September.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="nj-form-mid" state="New Jersey" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="nj-climate-heading">
         <div className="state-storage-heading"><h2 id="nj-climate-heading">Climate controlled storage in New Jersey</h2><p>New Jersey gives you humid summers, cold winters and a real freeze and thaw cycle, and the swing between the two is what damages stored belongings. Summer humidity encourages mildew in fabric, cardboard, upholstery, books and clothing. Winter cold cracks vinyl and plastics, ruins batteries and makes upholstery brittle, while repeated expansion and contraction loosens joints in wood furniture and cracks leather.</p></div>
@@ -289,7 +310,8 @@ export default async function NewJerseyStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="nj-choose-heading">
-        <div className="state-storage-heading"><h2 id="nj-choose-heading">How to choose a self storage unit in New Jersey.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="nj-choose-heading">How to choose a self storage unit in New Jersey.</h2></div>
+        <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. Beds, sofas and appliances decide your unit more than your box count.</p></article>
           <article><span>2</span><p>Compare a few towns rather than booking the first unit near you. A fifteen minute drive regularly changes the rate.</p></article>
@@ -300,9 +322,17 @@ export default async function NewJerseyStoragePage() {
           <article><span>7</span><p>Confirm the move-out notice period, commonly ten to fourteen days in New Jersey.</p></article>
           <article><span>8</span><p>Book shore season storage early. Coastal inventory fills first heading into summer.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=New%20Jersey">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="New Jersey" cities={formCities} compact idPrefix="nj-form-checklist" /></div>
+        </div>
       </section>
 
+      <section className="storage-search-note state-zip-band" aria-labelledby="nj-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="nj-zip-band-heading">Search storage near you in New Jersey</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="nj-band-zip" />
+        </div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="nj-faq-heading">
         <div className="state-storage-heading"><h2 id="nj-faq-heading">New Jersey self storage FAQs</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{fillPrice(faq.answer, fromPrice)}</p></details>)}</ShowMoreList>

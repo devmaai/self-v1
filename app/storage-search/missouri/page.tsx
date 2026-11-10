@@ -6,6 +6,10 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -99,6 +103,11 @@ export default function MissouriStoragePage() {
     { name: "Missouri", path: "/storage-search/missouri" },
   ]);
 
+  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/missouri/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -108,15 +117,16 @@ export default function MissouriStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Missouri</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Missouri near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. Missouri has 617 storage facilities holding 6,545 available units right now, from Kansas City across to St. Louis and down through the Ozarks. Compare monthly rates, unit sizes, access hours, and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=Missouri">Search Missouri storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="mo-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="mo-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="mo-cities-heading">
         <div className="state-storage-heading"><h2 id="mo-cities-heading">Browse low cost storage units in Missouri's top cities.</h2><p>Missouri rates vary by suburb as much as by city, and the difference between two facilities ten minutes apart is often significant. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.filter((city) => isCityPublished(city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-"))).map((city) => <Link href={`/storage-search/missouri/${city.toLowerCase().replace(/'/g, "").replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="mo-form-top" state="Missouri" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="mo-storage-heading">
         <div className="utah-pricing-heading"><h2 id="mo-storage-heading">What you will pay for a storage unit in Missouri.</h2><p className="utah-pricing-intro">Missouri sits below the national average across most unit sizes. Small units start at around $8 to $12 a month on promotional rates in St. Louis, St. Peters, and Lake St. Louis, and the average unit statewide runs well under what the same space costs on either coast.</p><p className="utah-pricing-caption">Typical monthly ranges by size across Missouri:</p></div>
@@ -126,6 +136,7 @@ export default function MissouriStoragePage() {
             <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors">
           <p>City averages give you a benchmark. The average unit of any size now runs around $123 a month in Independence, around $127 in Springfield, around $135 in Kansas City, and around $153 in St. Louis.</p>
           <p>Within a city the spread can be just as wide. In St. Louis, Downtown West carries the lowest average rent in the city at around $77 a month, well below the citywide figure.</p>
@@ -142,13 +153,24 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-needs-heading">
-        <div className="state-storage-heading"><h2 id="mo-needs-heading">Missouri storage for every reason you need the space.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for Missouri families</h3><p>Missouri households run four distinct seasons of equipment, and most homes fill the basement and garage long before they run out of things to keep. Storage takes the overflow: patio furniture and mowers through winter, snow blowers and holiday decorations through summer, sports equipment, tools, and the furniture you are holding between houses.</p><ul><li>Clearing the garage or basement: a 5x10 holds seasonal items, tools, and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for drive up access, ground floor units, gritted and cleared drives through winter, and gate hours that suit a weekend load.</li></ul><Link href="/storage-search?location=Missouri%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging, and returns. Landscaping and seasonal services store equipment out of season, while practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive up access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples, and electronics: a climate controlled 5x10 protects paper and hardware through humid summers. Look for month to month terms, online payment and invoicing, and autopay so billing runs without a monthly phone call.</li></ul><Link href="/storage-search?location=Missouri%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>Missouri campuses empty every summer, and moving a full room home twice a year rarely makes sense. If you are in Columbia, Springfield, St. Louis, Kansas City, Rolla, or Warrensburg, a small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=Missouri%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="mo-needs-heading">Missouri storage for every reason you need the space.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for Missouri families</h3><p>Missouri households run four distinct seasons of equipment, and most homes fill the basement and garage long before they run out of things to keep. Storage takes the overflow: patio furniture and mowers through winter, snow blowers and holiday decorations through summer, sports equipment, tools, and the furniture you are holding between houses.</p><ul><li>Clearing the garage or basement: a 5x10 holds seasonal items, tools, and sports gear.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for drive up access, ground floor units, gritted and cleared drives through winter, and gate hours that suit a weekend load.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Online sellers hold inventory, packaging, and returns. Landscaping and seasonal services store equipment out of season, while practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive up access and room to load a van.</li><li>Tools and equipment: a drive up unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records, samples, and electronics: a climate controlled 5x10 protects paper and hardware through humid summers. Look for month to month terms, online payment and invoicing, and autopay so billing runs without a monthly phone call.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>Missouri campuses empty every summer, and moving a full room home twice a year rarely makes sense. If you are in Columbia, Springfield, St. Louis, Kansas City, Rolla, or Warrensburg, a small unit over the break usually costs less than replacing your furniture in August.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, climate control for anything you care about, and month to month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="mo-form-mid" state="Missouri" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="mo-climate-heading">
         <div className="state-storage-heading"><h2 id="mo-climate-heading">Protect your belongings from Missouri humidity with climate control.</h2><p>Missouri puts stored belongings through a full annual cycle. Summers run hot and humid, winters drop well below freezing, and spring and autumn swing sharply between the two. Humidity is the part people underestimate, since it causes mould, mildew, and rust in a standard unit long before the cold does any damage.</p></div>
@@ -244,7 +266,8 @@ export default function MissouriStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="mo-choose-heading">
-        <div className="state-storage-heading"><h2 id="mo-choose-heading">Choosing a Missouri storage unit, step by step.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="mo-choose-heading">Choosing a Missouri storage unit, step by step.</h2></div>
+        <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Size by your largest item. A sectional sofa, a chest freezer, or a mower decides your unit more than the number of boxes.</p></article>
           <article><span>2</span><p>Price the small end properly. Compare the locker against the 5x5 before you default to the larger unit.</p></article>
@@ -257,12 +280,23 @@ export default function MissouriStoragePage() {
           <article><span>9</span><p>Set up autopay and online access. It removes the most common cause of an unexpected fee.</p></article>
           <article><span>10</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=Missouri">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
+        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="Missouri" cities={formCities} compact idPrefix="mo-form-checklist" /></div>
+        </div>
       </section>
 
-      <section className="state-storage-guide state-love" aria-labelledby="mo-love-heading">
+      <section className="state-storage-guide state-love state-reasons" aria-labelledby="mo-love-heading">
         <div className="state-storage-heading"><h2 id="mo-love-heading">Why people love Missouri.</h2><p>And why so many of them need a little extra space.</p></div>
-        <div className="state-size-grid"><article><h3>Two great cities</h3><p>Kansas City is known for barbecue and jazz, and St. Louis for the Gateway Arch and its historic neighborhoods. Both give you big city amenities at a lower cost of living.</p></article><article><h3>Affordable living</h3><p>Housing in Missouri often costs less than the national average, so you get more home for the money, and storage prices tend to follow.</p></article><article><h3>The Ozarks and the lakes</h3><p>Lake of the Ozarks and Table Rock Lake draw boaters and anglers every summer. Covered boat and RV storage protects your gear in the off season.</p></article><article><h3>Right in the middle</h3><p>A central location makes Missouri a natural base for road trips and for small businesses that ship across the country.</p></article><article><h3>Universities and colleges</h3><p>Mizzou in Columbia, Washington University and Saint Louis University fill up each fall, and students need a place for their things over the summer.</p></article><article><h3>Four distinct seasons</h3><p>Humid summers and cold winters mean seasonal gear rotates through the year. Climate controlled storage protects furniture and electronics from the swings.</p></article></div>
+        <div className="state-reasons-split">
+          <div className="state-reasons-image"><Image src="https://images.unsplash.com/photo-1675906798386-a9ed241c7ed2?auto=format&fit=crop&w=1200&q=70" alt="A view of Missouri" fill sizes="(max-width: 900px) 100vw, 40vw" unoptimized /></div>
+          <div className="state-size-grid"><article><h3>Two great cities</h3><p>Kansas City is known for barbecue and jazz, and St. Louis for the Gateway Arch and its historic neighborhoods. Both give you big city amenities at a lower cost of living.</p></article><article><h3>Affordable living</h3><p>Housing in Missouri often costs less than the national average, so you get more home for the money, and storage prices tend to follow.</p></article><article><h3>The Ozarks and the lakes</h3><p>Lake of the Ozarks and Table Rock Lake draw boaters and anglers every summer. Covered boat and RV storage protects your gear in the off season.</p></article><article><h3>Right in the middle</h3><p>A central location makes Missouri a natural base for road trips and for small businesses that ship across the country.</p></article><article><h3>Universities and colleges</h3><p>Mizzou in Columbia, Washington University and Saint Louis University fill up each fall, and students need a place for their things over the summer.</p></article><article><h3>Four distinct seasons</h3><p>Humid summers and cold winters mean seasonal gear rotates through the year. Climate controlled storage protects furniture and electronics from the swings.</p></article></div>
+        </div>
+      </section>
+      <section className="storage-search-note state-zip-band" aria-labelledby="mo-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="mo-zip-band-heading">Search storage near you in Missouri</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="mo-band-zip" />
+        </div>
       </section>
       <section className="state-storage-faq" aria-labelledby="mo-faq-heading">
         <div className="state-storage-heading"><h2 id="mo-faq-heading">Missouri self storage FAQs.</h2></div>

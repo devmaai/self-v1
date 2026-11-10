@@ -5,6 +5,11 @@ import Image from "next/image";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import CardSlider from "@/components/ui/CardSlider";
+import { isCityPublished } from "@/lib/cityStates";
+import StateZipSearch from "@/components/sections/StateZipSearch";
+import StateCityScroller from "@/components/sections/StateCityScroller";
+import StateFormBlock from "@/components/sections/StateFormBlock";
+import V2StorageForm from "@/components/v2/V2StorageForm";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -106,6 +111,11 @@ export default function SouthDakotaStoragePage() {
     { name: "South Dakota", path: "/storage-search/south-dakota" },
   ]);
 
+  const cityCards = CITY_LINKS.map((city) => ({ name: city, slug: city.toLowerCase().replace(/\./g, "").replace(/ /g, "-") }))
+    .filter((city) => isCityPublished(city.slug))
+    .map((city) => ({ ...city, href: `/storage-search/south-dakota/${city.slug}` }));
+  const formCities = cityCards.map((city) => city.name);
+
   return (
     <main className="state-storage-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -115,15 +125,16 @@ export default function SouthDakotaStoragePage() {
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>South Dakota</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in South Dakota near you.</em></h1>
           <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. South Dakota has 157 storage facilities holding 871 available units right now, from Sioux Falls and the eastern corridor across to Rapid City and the Black Hills. Compare monthly rates, unit sizes, access hours, and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=South%20Dakota">Search South Dakota storage <span aria-hidden="true">→</span></Link>
+          <StateZipSearch id="sd-hero-zip" />
         </div>
       </section>
 
-      <section className="state-storage-cities" aria-labelledby="sd-cities-heading">
+      <section className="state-storage-cities state-cities-centered" aria-labelledby="sd-cities-heading">
         <div className="state-storage-heading"><h2 id="sd-cities-heading">Storage units near you in South Dakota by city</h2><p>Supply here is tighter than in most states, so the facility with the unit you want may be a town over rather than a street over. Start with your city and widen your radius if nothing comes back.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.map((city) => <Link href={`/storage-search/south-dakota/${CITY_SLUG_OVERRIDES[city] ?? city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to ten or twenty five miles.</p>
+        <StateCityScroller cities={cityCards} />
       </section>
+
+      <StateFormBlock id="sd-form-top" state="South Dakota" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="sd-storage-heading">
         <div className="utah-pricing-heading"><h2 id="sd-storage-heading">How much is a storage unit in South Dakota?</h2><p className="utah-pricing-intro">South Dakota sits below the national average on most sizes. The average unit booked in Sioux Falls runs around $96 a month, and Rapid City sits in a similar range.</p><p className="utah-pricing-caption">Typical monthly ranges by size across South Dakota:</p></div>
@@ -133,6 +144,7 @@ export default function SouthDakotaStoragePage() {
             <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
           </table>
         </div>
+        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-unit-size-calculator">Calculate your unit size <span aria-hidden="true">→</span></Link></div>
         <div className="utah-price-factors">
           <p>Smaller towns run considerably cheaper than the two metros. A 10x10 lists at around $51 a month in Milbank, $60 in Spearfish, and $75 in Mitchell, against $85 to $125 for comparable space in Sioux Falls.</p>
           <h3>Four things move your price:</h3>
@@ -206,14 +218,28 @@ export default function SouthDakotaStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="sd-needs-heading">
-        <div className="state-storage-heading"><h2 id="sd-needs-heading">Find storage in South Dakota by what you need it for.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for South Dakota families</h3><p>Seasonal rotation drives most household storage here. Patio furniture, mowers, and garden equipment go in for winter. Snow blowers, sleds, and skis go in for summer. Add hunting and fishing gear, holiday decorations, camping kit, and furniture you are holding between houses.</p><ul><li>Seasonal rotation: a 5x10 lets you swap equipment twice a year without filling the garage.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for drive-up access, ground floor units, prompt snow clearing, and 24 hour gate access.</li></ul><Link href="/storage-search?location=South%20Dakota%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family packing a storage unit during a move" width={1536} height={1024} /></div><h3>Storage for military households</h3><p>Ellsworth Air Force Base brings households through Box Elder and Rapid City on orders that rarely line up with lease dates. Storage covers the gap between a move-out and a move-in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected through a winter you are not there for.</li><li>Look for military rates, month-to-month terms with no penalty for an early move-out, autopay so billing runs while you are away, and climate control for anything staying a full year.</li></ul><Link href="/storage-search?location=South%20Dakota%20military%20storage">Find storage near Ellsworth →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Agricultural operators store equipment and parts between seasons. Online sellers hold inventory and packaging. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive-up access and room to load a van.</li><li>Tools and equipment: a drive-up or high bay unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records and electronics: a climate-controlled 5x10 protects paper and hardware through both extremes.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link href="/storage-search?location=South%20Dakota%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>Campuses in Brookings, Vermillion, Sioux Falls, Rapid City, Aberdeen, Madison, and Spearfish empty every summer, and hauling a full room home twice a year rarely makes sense.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, and month-to-month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=South%20Dakota%20student%20storage">Find student storage near you →</Link></article>
-        </CardSlider>
+        <div className="state-storage-heading"><h2 id="sd-needs-heading">Find storage in South Dakota by what you need it for.</h2></div>
+        <div className="state-needs-rows">
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for South Dakota families</h3><p>Seasonal rotation drives most household storage here. Patio furniture, mowers, and garden equipment go in for winter. Snow blowers, sleds, and skis go in for summer. Add hunting and fishing gear, holiday decorations, camping kit, and furniture you are holding between houses.</p><ul><li>Seasonal rotation: a 5x10 lets you swap equipment twice a year without filling the garage.</li><li>Between homes: a 10x15 holds a two bedroom home with appliances, a 10x20 holds a three bedroom home.</li><li>Look for drive-up access, ground floor units, prompt snow clearing, and 24 hour gate access.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find family storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family packing a storage unit during a move" width={1536} height={1024} /></div>
+            <div className="state-needs-text"><h3>Storage for military households</h3><p>Ellsworth Air Force Base brings households through Box Elder and Rapid City on orders that rarely line up with lease dates. Storage covers the gap between a move-out and a move-in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: enclosed or covered parking keeps a car protected through a winter you are not there for.</li><li>Look for military rates, month-to-month terms with no penalty for an early move-out, autopay so billing runs while you are away, and climate control for anything staying a full year.</li></ul><Link className="state-storage-guide-button" href="/find-storage">Find storage near Ellsworth <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div>
+            <div className="state-needs-text"><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease. Contractors and trades store tools and materials between jobs. Agricultural operators store equipment and parts between seasons. Online sellers hold inventory and packaging. Practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with drive-up access and room to load a van.</li><li>Tools and equipment: a drive-up or high bay unit you can back into directly, with 24 hour gate access for early starts.</li><li>Records and electronics: a climate-controlled 5x10 protects paper and hardware through both extremes.</li><li>Look for month-to-month terms, online payment and invoicing, and autopay.</li></ul><Link className="state-storage-guide-button" href="/business-storage">Find business storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+          <article>
+            <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
+            <div className="state-needs-text"><h3>Storage for students</h3><p>Campuses in Brookings, Vermillion, Sioux Falls, Rapid City, Aberdeen, Madison, and Spearfish empty every summer, and hauling a full room home twice a year rarely makes sense.</p><ul><li>Dorm or shared apartment: a locker or 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Look for student rates, a facility close to campus, and month-to-month terms so you stop paying the week you return.</li></ul><Link className="state-storage-guide-button" href="/student-storage">Find student storage near you <span aria-hidden="true">→</span></Link></div>
+          </article>
+        </div>
       </section>
+
+      <StateFormBlock id="sd-form-mid" state="South Dakota" cities={formCities} heading="Still looking? Find storage near you" />
 
       <section className="utah-content-section" aria-labelledby="sd-vehicle-heading">
         <div className="state-storage-heading"><h2 id="sd-vehicle-heading">RV, boat, and vehicle storage in South Dakota.</h2></div>
@@ -296,7 +322,8 @@ export default function SouthDakotaStoragePage() {
       </section>
 
       <section className="utah-content-section" aria-labelledby="sd-choose-heading">
-        <div className="state-storage-heading"><h2 id="sd-choose-heading">How to choose a self storage unit in South Dakota.</h2><p>Work through this before you sign anything.</p></div>
+        <div className="state-storage-heading"><h2 id="sd-choose-heading">How to choose a self storage unit in South Dakota.</h2></div>
+        <div className="state-checklist-split">
         <div className="utah-steps-grid">
           <article><span>1</span><p>Check climate control availability first. Only 25 facilities in the state offer it, so if you need it, that decides your shortlist before anything else does.</p></article>
           <article><span>2</span><p>Size by your largest item. A sectional sofa, a chest freezer, or a mower decides your unit more than the number of boxes.</p></article>
@@ -308,9 +335,17 @@ export default function SouthDakotaStoragePage() {
           <article><span>8</span><p>Confirm insurance. Check your renters or homeowners policy first, then the facility requirement.</p></article>
           <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
         </div>
-        <Link className="state-storage-guide-button" href="/storage-search?location=South%20Dakota">Find a facility and reserve online <span aria-hidden="true">→</span></Link>
+        <div className="state-checklist-form"><h3>Ready? Find storage near you</h3><V2StorageForm state="South Dakota" cities={formCities} compact idPrefix="sd-form-checklist" /></div>
+        </div>
       </section>
 
+      <section className="storage-search-note state-zip-band" aria-labelledby="sd-zip-band-heading">
+        <div className="storage-location-search-content">
+          <strong id="sd-zip-band-heading">Search storage near you in South Dakota</strong>
+          <span>Enter your ZIP code or city to see storage options close to you.</span>
+          <StateZipSearch id="sd-band-zip" />
+        </div>
+      </section>
       <section className="state-storage-faq" aria-labelledby="sd-faq-heading">
         <div className="state-storage-heading"><h2 id="sd-faq-heading">South Dakota storage questions, answered.</h2></div>
         <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
