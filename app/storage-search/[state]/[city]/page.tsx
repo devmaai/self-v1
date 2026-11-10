@@ -16,7 +16,7 @@ import type React from "react";
 import StateZipSearch from "@/components/sections/StateZipSearch";
 import CityQuoteForm from "@/components/sections/CityQuoteForm";
 import CityContentSections from "@/components/sections/CityContentSections";
-import { CITY_PAGE_CONTENT } from "@/lib/cityPageContent";
+import { CITY_PAGE_CONTENT, buildCityPageContent } from "@/lib/cityPageContent";
 
 // Turns [label](/path) markup in hand-written copy into internal links.
 function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
@@ -246,7 +246,6 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   if (!isCityPublished(citySlug)) notFound();
 
   const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
-  const handContent = CITY_PAGE_CONTENT[citySlug];
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
   const stateName = US_STATE_NAMES[state] ?? state;
   const statePageSlug = STATE_PAGE_SLUGS[state];
@@ -255,6 +254,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
     getCitySeoContent(citySlug, state),
   ]);
   if (!facilities.length) notFound();
+  const handContent = CITY_PAGE_CONTENT[citySlug] ?? buildCityPageContent({ citySlug, city, stateCode: state, stateName, stateSlug, seo: seoContent });
 
   const lowestPrice = facilities
     .flatMap((facility) => facility.units.map((unit) => priceNumber(unit.price)))

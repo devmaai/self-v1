@@ -1,3 +1,8 @@
+import type { CitySeoBlock, CitySeoContent } from "@/lib/citySeoContent";
+import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
+import { CITY_COORDINATES } from "@/lib/cityCoordinates";
+import { CITY_IMAGES } from "@/lib/cityImages";
+
 // Hand-written, chunked city page copy. A city listed here replaces the
 // long-form CSV content (lib/citySeoContent.ts) on its city page.
 //
@@ -25,6 +30,8 @@ export type CityContentSection = {
   cta?: { label: string; href: string };
   paragraphs?: string[];
   bullets?: string[];
+  /** Paragraphs and lists in their original order (used instead of paragraphs/bullets). */
+  blocks?: CitySeoBlock[];
 };
 
 export type CityPageContent = {
@@ -135,3 +142,106 @@ export const CITY_PAGE_CONTENT: Record<string, CityPageContent> = {
     ],
   },
 };
+
+// ---------------------------------------------------------------------------
+// Default content for cities without a hand-written entry above. It follows
+// the Salt Lake City layout and reuses each city's CSV copy (citySeoContent)
+// for the photo section and FAQs, so every city page shares one design.
+
+
+function blocksToText(blocks: CitySeoBlock[]) {
+  return blocks.map((block) => (block.type === "p" ? block.text : block.items.join(" "))).join(" ");
+}
+
+function nearestCities(citySlug: string, stateCode: string, limit: number) {
+  const origin = CITY_COORDINATES[citySlug];
+  const candidates = Object.entries(CITY_STATES)
+    .filter(([slug, code]) => code === stateCode && slug !== citySlug && isCityPublished(slug))
+    .map(([slug]) => {
+      const point = CITY_COORDINATES[slug];
+      const distance = origin && point ? Math.hypot(origin[0] - point[0], origin[1] - point[1]) : Number.POSITIVE_INFINITY;
+      return { slug, distance };
+    })
+    .sort((a, b) => a.distance - b.distance);
+  return candidates.slice(0, limit).map(({ slug }) => slug);
+}
+
+function nameFromSlug(slug: string) {
+  return slug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
+}
+
+export function buildCityPageContent(args: {
+  citySlug: string;
+  city: string;
+  stateCode: string;
+  stateName: string;
+  stateSlug: string;
+  seo: CitySeoContent | null;
+}): CityPageContent {
+  const { citySlug, city, stateCode, stateName, stateSlug, seo } = args;
+  const nearby = nearestCities(citySlug, stateCode, 3);
+  const nearbyLinks = nearby.map((slug) => `[${nameFromSlug(slug)}](/storage-search/${stateSlug}/${slug})`);
+  const nearbySentence = nearbyLinks.length > 1
+    ? `${nearbyLinks.slice(0, -1).join(", ")} and ${nearbyLinks[nearbyLinks.length - 1]}`
+    : nearbyLinks[0] ?? "";
+  const photo = CITY_IMAGES[citySlug];
+
+  const cardSections: CityContentSection[] = (seo?.sections ?? []).map((section) => ({
+    heading: section.heading,
+    layout: "card" as const,
+    blocks: section.blocks,
+  }));
+
+  const sections: CityContentSection[] = [
+    ...cardSections,
+    {
+      heading: `Storage solutions in ${city}`,
+      layout: "options",
+      images: [
+        "/images/climate-storage/indoor-corridor.png",
+        "/images/storage-guide/vehiclestorage.jpg",
+        "/images/state pages/proff and small business.jpg",
+        "/images/state pages/storage for students.jpg",
+      ],
+      paragraphs: ["Choose the type of storage that fits what you are storing and how often you need it."],
+      bullets: [
+        `[Climate controlled storage](/climate-controlled-storage): protects wood furniture, mattresses, electronics, documents and photos in ${city} from heat, cold and humidity.`,
+        "[RV storage](/rv-storage), [boat storage](/boat-storage) and [car storage](/car-storage): outdoor, covered and enclosed spaces priced by length. Measure your vehicle, including the hitch, before you book.",
+        `[Business storage](/business-storage): space for inventory, equipment, files and seasonal stock for ${city} businesses that have outgrown their office or shop.`,
+        "[Student storage](/student-storage): short-term units near campus for the summer break or a semester away.",
+      ],
+    },
+    {
+      heading: "What size storage unit do you need?",
+      layout: "sizes",
+      image: { src: "/images/storage-size-calculator.png", alt: "SelfStorage.help free storage size calculator" },
+      extra: {
+        heading: "Different units for different needs",
+        paragraphs: [
+          "Moving between homes usually needs a 10x10 to 10x20, depending on how many bedrooms you are packing up. A home renovation often fits in a 5x10 or 10x10 for furniture you need out of the way. Students rarely need more than a 5x5 or 5x10 for a dorm room. Businesses storing stock or equipment usually start with a 10x10 and add shelving. Cars, boats and RVs need a 10x20 or a parking space sized to their length.",
+          "See the [storage unit size guide](/storage-size-guide) for photos of each size and what fits inside.",
+        ],
+      },
+      cta: { label: "Not sure? Try our free storage size calculator", href: "/storage-unit-size-calculator" },
+    },
+    {
+      heading: `Where to find cheap storage near ${city}`,
+      layout: "nearby",
+      paragraphs: [
+        nearbySentence
+          ? `Storage prices change from one neighborhood to the next. Compare several facilities across ${city}, then check nearby cities like ${nearbySentence}.`
+          : `Storage prices change from one neighborhood to the next, so compare several facilities across ${city} before you book.`,
+        "If you will visit your unit often, pick one on a route you already drive. For long-term storage you rarely open, the lowest monthly rate within a reasonable drive usually wins.",
+      ],
+      cta: { label: `Explore ${stateName}`, href: `/storage-search/${stateSlug}` },
+    },
+  ];
+
+  return {
+    cardsHeading: `Storage in ${city}: what to know`,
+    cardsImage: photo ? { src: `${photo}?auto=format&fit=crop&w=1000&q=75`, alt: `${city}, ${stateCode}` } : undefined,
+    sections,
+    faqHeading: seo?.faqHeading || `Common questions about renting storage in ${city}`,
+    faqs: (seo?.faqs ?? []).map((faq) => ({ question: faq.question, answer: blocksToText(faq.answerBlocks) })),
+  };
+}
