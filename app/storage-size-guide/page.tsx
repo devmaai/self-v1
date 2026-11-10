@@ -149,6 +149,12 @@ const climateReference = [
   ["Full home with antiques", "10x20 or larger"],
 ];
 
+const studentReference = [
+  ["Dorm room essentials", "5x5 unit"],
+  ["Shared dorm or roommates", "5x10 unit"],
+  ["Off campus apartment", "5x10 to 10x10 unit"],
+];
+
 export default function StorageSizeGuidePage() {
   const faqSchema = faqPageSchema(
     faqs.map(([question, answer]) => ({ question, answer })),
@@ -169,13 +175,14 @@ export default function StorageSizeGuidePage() {
             <Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">Size guide</span>
           </nav>
           <h1>The self storage size guide, <em>built around what you store.</em></h1>
+          <StateZipSearch id="size-guide-hero-zip" className="storage-size-guide-hero-search" />
         </div>
       </section>
 
       <section className="storage-size-guide-content" aria-labelledby="size-guide-heading">
         <div className="storage-size-guide-heading">
           <span className="storage-size-guide-label">Start with what you store</span>
-          <h2 id="size-guide-heading">What storage size unit do you need?</h2>
+          <h2 id="size-guide-heading" className="storage-size-guide-one-line">What storage size unit do you need?</h2>
         </div>
         <div className="storage-size-guide-grid storage-size-guide-scroll" id="size-scenarios">
           {storageScenarios.map((scenario) => (
@@ -185,9 +192,7 @@ export default function StorageSizeGuidePage() {
               <h3>{scenario.title}</h3>
               <div className="storage-size-card-range"><strong>{scenario.range}</strong><span>{scenario.area}</span></div>
               <p><strong>What fits:</strong> {scenario.items}</p>
-          <StateZipSearch id="size-guide-hero-zip" />
               <p className="storage-size-card-fit">{scenario.fit}</p>
-              <Link href="/storage-state-usa">Find units <span aria-hidden="true">→</span></Link>
             </article>
           ))}
         </div>
@@ -196,7 +201,7 @@ export default function StorageSizeGuidePage() {
 
       
 
-      <StorageCalculatorCTA />
+      <StorageCalculatorCTA centered />
 
       <section className="storage-size-chart-section" aria-labelledby="size-chart-heading">
         <div className="storage-size-guide-heading">
@@ -204,13 +209,21 @@ export default function StorageSizeGuidePage() {
           <h2 id="size-chart-heading">Storage unit size chart</h2>
           <p>Compare common unit dimensions with familiar spaces and the belongings they typically hold.</p>
         </div>
-        <div className="storage-size-table-wrap">
-          <table className="storage-size-table">
-            <thead><tr><th>Unit size</th><th>Square footage</th><th>Comparable to</th><th>Typically holds</th></tr></thead>
-            <tbody>{sizeChart.map((row) => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th scope="row" key={cell}>{cell}</th> : <td key={cell}>{cell}</td>)}</tr>)}</tbody>
-          </table>
+        <div className="storage-size-chart-layout">
+          <div>
+            <div className="storage-size-table-wrap">
+              <table className="storage-size-table">
+                <thead><tr><th>Unit size</th><th>Square footage</th><th>Comparable to</th><th>Typically holds</th></tr></thead>
+                <tbody>{sizeChart.map((row) => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th scope="row" key={cell}>{cell}</th> : <td key={cell}>{cell}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+            <p className="storage-size-note"><strong>Note:</strong> Most units stand about 8 feet tall, so the square footage understates how much you can hold. Stacking upward with sturdy boxes lets you use the full height.</p>
+          </div>
+          <div className="storage-size-chart-visual"><img src="/images/storage-guide/5_10.jpg" alt="Row of self storage units in different sizes" /></div>
         </div>
-        <p className="storage-size-note"><strong>Note:</strong> Most units stand about 8 feet tall, so the square footage understates how much you can hold. Stacking upward with sturdy boxes lets you use the full height.</p>
+        <div className="storage-size-find-cta">
+          <Link href="/storage-state-usa">Find your storage unit <span aria-hidden="true">→</span></Link>
+        </div>
       </section>
 
       <section className="storage-size-feature storage-size-feature-vehicle" aria-labelledby="vehicle-heading">
@@ -237,7 +250,11 @@ export default function StorageSizeGuidePage() {
         <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Climate controlled storage</span><h2 id="climate-heading">Do you need a climate controlled unit?</h2><p>Climate controlled units come in the same sizes as standard units. The difference is a steady temperature, and often humidity control, that protects belongings through hot summers, freezing winters and damp seasons.</p><p>Choose one for wood and leather furniture, electronics, documents, photos, instruments and anything staying longer than one season.</p><div className="storage-reference-list"><strong>Climate controlled quick reference</strong>{climateReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/climate-controlled-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
         <div className="storage-vehicle-visual"><img src="/images/climate-storage/indoor-corridor.png" alt="Indoor climate controlled storage corridor" /></div>
       </section>
-      <StorageCalculatorBanner />
+      <section className="storage-size-feature storage-size-feature-business" aria-labelledby="student-heading">
+        <div className="storage-business-visual"><img src="/images/storage-guide/boxes.jpg" alt="Boxes packed for student storage" /></div>
+        <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Student storage</span><h2 id="student-heading">What size storage unit do students need?</h2><p>Most students fit everything from a dorm room in a 5x5, which holds boxes, a mini fridge, a desk chair and bedding. If you share a unit with a roommate or are storing an apartment bed and desk, a 5x10 gives you the extra room.</p><p>Book early ahead of move out week, since units near campus fill quickly in May and December. Month to month terms let you keep your things close until classes start again.</p><div className="storage-reference-list"><strong>Student quick reference</strong>{studentReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/student-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
+      </section>
+      <StorageCalculatorBanner text="Not sure what size you need? Try our free size calculator." linkText="Try the free size calculator" />
       <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><div className="storage-size-faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
 
       <StorageStateLinks />

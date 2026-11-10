@@ -5618,3 +5618,23 @@ footer {
 .city-size-split .city-size-image-mobile { display: none; }
 .city-living-item { border-bottom: 0; }
 @media (max-width: 760px) { .city-size-split .city-size-image-mobile { display: block; } }
+
+/* Size guide page updates */
+.storage-size-guide-hero-search { max-width: 640px; margin: 30px auto 0; }
+.storage-size-guide-one-line { white-space: nowrap; }
+@media (max-width: 900px) { .storage-size-guide-one-line { white-space: normal; } }
+.storage-calculator-cta.storage-calculator-cta-centered { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0; }
+.storage-calculator-cta-steps { display: flex; justify-content: center; gap: 56px; margin: 34px 0 32px; padding: 0; list-style: none; }
+.storage-calculator-cta-steps li { display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 200px; color: #285a78; font-size: 15px; font-weight: 700; }
+.storage-calculator-cta-steps li span { color: var(--storage-blue); font-family: var(--font-display); font-size: 56px; font-weight: 600; line-height: 1; }
+.storage-calculator-cta-centered .storage-calculator-cta-button { margin-top: 0; }
+@media (max-width: 640px) { .storage-calculator-cta-steps { flex-direction: column; gap: 22px; } }
+.storage-size-chart-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 36px; align-items: stretch; }
+.storage-size-chart-visual { overflow: hidden; border: 1px solid #bfd4e1; border-radius: 8px; min-height: 320px; }
+.storage-size-chart-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.storage-size-find-cta { display: flex; justify-content: center; margin-top: 40px; }
+.storage-size-find-cta a { display: inline-flex; align-items: center; gap: 10px; padding: 18px 34px; border-radius: 6px; background: var(--rust); color: #fff; font-size: 18px; font-weight: 700; }
+.storage-size-find-cta a:hover { background: var(--rust-deep); }
+@media (max-width: 900px) { .storage-size-chart-layout { grid-template-columns: 1fr; } .storage-size-chart-visual { min-height: 240px; } }
+/* No divider lines between FAQ questions, site wide */
+.state-faq-list, .state-faq-list details, .storage-size-faq-list, .storage-size-faq details, .svc-drawer-faq-item { border: 0 !important; box-shadow: none !important; }
