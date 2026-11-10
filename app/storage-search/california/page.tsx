@@ -1,12 +1,5 @@
-import type React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { isCityPublished } from "@/lib/cityStates";
-import Image from "next/image";
-import StorageStateLinks from "@/components/sections/StorageStateLinks";
-import ShowMoreList from "@/components/ui/ShowMoreList";
-import CardSlider from "@/components/ui/CardSlider";
-import { breadcrumbListSchema } from "@/lib/schema";
+import StatePageTemplate, { type StatePageData } from "@/components/sections/StatePageTemplate";
 
 export const metadata: Metadata = {
   title: "Find Storage Units In California Near Your Location | Prices, Sizes And Availability",
@@ -81,191 +74,206 @@ const FAQS = [
   },
 ];
 
+const DATA: StatePageData = {
+  ...{
+  "slug": "california",
+  "name": "California",
+  "key": "ca",
+  "heroImage": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+  "heroText": "Compare 3,098 facilities and 41,949 available units across California, with current prices, sizes, and amenities near your location.",
+  "citiesHeading": "Find cheap storage units in your favorite Californian cities",
+  "citiesIntro": "Rates in California change by neighbourhood, not just by city. A unit ten minutes inland can cost half what you pay near the coast. Start with your city and narrow by radius from there.",
+  "pricingHeading": "How much will a storage unit cost you in California each month?",
+  "pricingIntro": "California has the widest price spread of any state. Small units start under $20 a month in Oakland, Rancho Cucamonga, Santa Rosa, and Huntington Beach. The same unit can run five times that in San Francisco, coastal Orange County, or Santa Barbara. A standard 5x5 averages around $64 a month in Sacramento and around $108 in San Diego.",
+  "needsHeading": "Pick California storage near you that fits your need.",
+  "needs": [
+    {
+      "image": {
+        "src": "/images/state%20pages/storage%20for%20family.jpg",
+        "alt": "Family moving boxes into a storage unit",
+        "width": 980,
+        "height": 653
+      },
+      "heading": "Storage for California families",
+      "body": "Square footage at home costs more here than almost anywhere in the country, which makes a storage unit the cheaper way to hold what you are not using. Families rent while they remodel, while they wait on a closing date, or to clear a garage back into a garage. Add the gear that comes with the state: surfboards, camping kit for the Sierras, and skis for Tahoe and Mammoth.",
+      "bullets": [
+        "A 5x10 holds seasonal gear, holiday decorations, and sports equipment.",
+        "A 10x15 holds a two bedroom home with appliances, while a 10x20 holds a three bedroom home.",
+        "Look for ground floor or drive-up access, wide aisles, and gate hours that suit a weekend load out."
+      ],
+      "links": [
+        {
+          "label": "Find family storage in California",
+          "href": "/find-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/proff%20and%20small%20business.jpg",
+        "alt": "Business owner organizing inventory in a storage unit",
+        "width": 640,
+        "height": 640
+      },
+      "heading": "Storage for professionals and small businesses",
+      "body": "You need square footage without a commercial lease at California rates. Contractors store tools and materials between jobs. Online sellers hold inventory, packaging, and returns. Studios and production crews store props and equipment between shoots, agents store staging furniture, and practices archive files.",
+      "bullets": [
+        "A 10x10 or 10x15 with ground-floor access works for inventory and stock.",
+        "A drive-up unit lets you back a truck or van into the space.",
+        "A climate-controlled 5x10 protects paper and hardware through valley summers."
+      ],
+      "links": [
+        {
+          "label": "Explore business storage",
+          "href": "/business-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/storage%20for%20students.jpg",
+        "alt": "Student moving belongings into a storage unit",
+        "width": 980,
+        "height": 653
+      },
+      "heading": "Storage for students",
+      "body": "California campuses empty on a schedule. If you are at a UC, a Cal State, or a community college, you have a gap between spring quarter and autumn move-in, and hauling a room across the state twice a year rarely makes sense.",
+      "bullets": [
+        "A 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.",
+        "A 10x10 can cover two rooms when split with housemates.",
+        "Look for student rates near Los Angeles, San Diego, Berkeley, Davis, Irvine, Santa Barbara or San Luis Obispo, plus month-to-month terms."
+      ],
+      "links": [
+        {
+          "label": "Explore student storage",
+          "href": "/student-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/state%20pages/military%20storage.jpg",
+        "alt": "Military family packing a storage unit during a move",
+        "width": 1536,
+        "height": 1024
+      },
+      "heading": "Storage for military households and frequent movers",
+      "body": "California hosts major installations in San Diego, Oceanside, Ventura County, Monterey, and the Inland Empire, and orders rarely line up neatly with lease dates. Storage covers the gap between a move-out and a move-in, or holds household goods through a deployment.",
+      "bullets": [
+        "A 10x20 holds a three bedroom home during a posting.",
+        "A 10x10 covers furniture you will not need at the next duty station.",
+        "Look for military rates, month-to-month terms, and autopay so billing runs while you are away."
+      ],
+      "links": [
+        {
+          "label": "Find storage near your base",
+          "href": "/find-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/climate-storage/indoor-corridor.png",
+        "alt": "Indoor climate controlled storage corridor",
+        "width": 1200,
+        "height": 800
+      },
+      "heading": "Climate controlled storage",
+      "body": "California is several climates at once. Salt air and humidity hit coastal units, summer heat bakes the Central Valley and inland markets, desert heat cracks leather and wood, and Sierra freeze cycles affect liquids and batteries.",
+      "bullets": [
+        "Choose climate control for wood and leather furniture, electronics, documents, photographs and instruments.",
+        "Lift boxes off the floor on pallets or shelving.",
+        "Leave a gap between your belongings and the walls."
+      ],
+      "links": [
+        {
+          "label": "Explore climate controlled storage",
+          "href": "/climate-controlled-storage"
+        }
+      ]
+    },
+    {
+      "image": {
+        "src": "/images/storage-guide/vehiclestorage.jpg",
+        "alt": "Boat and RV storage spaces",
+        "width": 1536,
+        "height": 1024
+      },
+      "heading": "Storage for RVs, boats and cars",
+      "body": "Many California cities restrict oversized vehicle parking on residential streets, and HOA rules often go further. Facilities across the state offer uncovered parking, covered parking, and enclosed drive-up units.",
+      "bullets": [
+        "Spaces range from 20 to 45 feet, so confirm the maximum length.",
+        "Covered parking protects paint, seals, and tyres from sustained summer sun.",
+        "Ask whether current registration and insurance are required."
+      ],
+      "links": [
+        {
+          "label": "Explore RV storage",
+          "href": "/rv-storage"
+        },
+        {
+          "label": "Explore boat storage",
+          "href": "/boat-storage"
+        },
+        {
+          "label": "Explore car storage",
+          "href": "/car-storage"
+        }
+      ]
+    }
+  ],
+  "sizeHeading": "Size your California unit around what you actually own.",
+  "checklistHeading": "Your checklist for picking a California storage unit.",
+  "checklist": [
+    "Size by your largest item. A sectional sofa or chest freezer decides your unit more than the number of boxes.",
+    "Decide on climate control. Base it on your region, what you are storing, and how long it stays.",
+    "Set your radius deliberately. In California the drive inland is usually the single biggest saving available to you.",
+    "Check access hours against your routine. Urban sites often close earlier than you expect.",
+    "Check how you will actually load. Elevator, trolley distance, and loading bay access decide how long each visit takes.",
+    "Compare the ongoing rate, not the offer. Ask what month two onward costs.",
+    "Confirm insurance. Check your renters or homeowners policy first.",
+    "Ask about the lock. Many operators specify a type.",
+    "Read the newest reviews. Management changes affect service more than the building does."
+  ],
+  "reasonsHeading": "Reasons to move to California.",
+  "reasonsImage": {
+    "src": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+    "alt": "California coastline"
+  },
+  "reasons": [
+    {
+      "heading": "The coast and the climate",
+      "body": "More than 800 miles of coastline and mild weather across much of the state draw people from everywhere. Smaller coastal homes often mean less closet space."
+    },
+    {
+      "heading": "Career opportunities",
+      "body": "Tech in the Bay Area, entertainment in Los Angeles and agriculture in the Central Valley keep people moving into and around the state."
+    },
+    {
+      "heading": "Every landscape in one state",
+      "body": "Beaches, deserts, redwood forests and the Sierra Nevada are all within driving distance. Surfboards, ski gear and camping kit add up quickly."
+    },
+    {
+      "heading": "World class universities",
+      "body": "The UC campuses, Stanford and USC bring students in each fall and send them home each summer. Short term storage bridges the gap."
+    },
+    {
+      "heading": "Food and culture from around the world",
+      "body": "Neighborhoods from San Diego to Sacramento each have their own character, so many people move between cities before they find their fit."
+    },
+    {
+      "heading": "Smaller homes, bigger lives",
+      "body": "High housing costs mean many Californians live in apartments and condos. A storage unit gives you room for everything that does not fit at home."
+    }
+  ],
+  "faqHeading": "Your California self storage questions, answered.",
+  "closingHeading": "Compare California storage units near you now."
+},
+  cities: CITY_LINKS,
+  priceRows: PRICE_ROWS,
+  faqs: FAQS,
+};
+
 export default function CaliforniaStoragePage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQS.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
-  const breadcrumbSchema = breadcrumbListSchema([
-    { name: "Home", path: "/" },
-    { name: "Storage by state", path: "/storage-state-usa" },
-    { name: "California", path: "/storage-search/california" },
-  ]);
-
-  return (
-    <main className="state-storage-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <section className="state-storage-hero hero-photo" style={{ "--hero-image": "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1800&q=70')" } as React.CSSProperties}>
-        <div className="state-storage-hero-inner">
-          <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>California</div>
-          <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in California near you.</em></h1>
-          <p>Enter your city or ZIP code and see every storage unit available within driving distance of you. California has 3,098 storage facilities holding 41,949 available units right now, from Redding down to Chula Vista and across every coastal, valley, and desert market in between. Compare monthly rates, unit sizes, access hours, and features before you leave the house.</p>
-          <Link className="state-storage-cta" href="/storage-search?location=California">Search California storage <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="state-storage-cities" aria-labelledby="ca-cities-heading">
-        <div className="state-storage-heading"><h2 id="ca-cities-heading">Find cheap storage units in your favorite Californian cities</h2><p>Rates in California change by neighbourhood, not just by city. A unit ten minutes inland can cost half what you pay near the coast. Start with your city and narrow by radius from there.</p></div>
-        <ShowMoreList listClassName="state-city-grid">{CITY_LINKS.filter((city) => isCityPublished(city.toLowerCase().replace(/\./g, "").replace(/ /g, "-"))).map((city) => <Link href={`/storage-search/california/${city.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}`} key={city}>Storage Units In {city}<span aria-hidden="true">→</span></Link>)}</ShowMoreList>
-        <p className="state-city-caption">Do not see your town? Search by ZIP code and set your radius to five, ten, or twenty five miles.</p>
-      </section>
-
-      <section className="utah-pricing-section" aria-labelledby="ca-storage-heading">
-        <div className="utah-pricing-heading"><h2 id="ca-storage-heading">What does a storage unit cost per month in California?</h2><p className="utah-pricing-intro">California has the widest price spread of any state. Small units start under $20 a month in Oakland, Rancho Cucamonga, Santa Rosa, and Huntington Beach. The same unit can run five times that in San Francisco, coastal Orange County, or Santa Barbara.</p><p className="utah-pricing-caption">Typical monthly ranges by size across California:</p></div>
-        <div className="utah-price-table-wrap">
-          <table className="utah-price-table">
-            <thead><tr><th scope="col">Unit size</th><th scope="col">Typical monthly rate</th><th scope="col">What it holds</th></tr></thead>
-            <tbody>{PRICE_ROWS.map(([size, price, use]) => <tr key={size}><th scope="row">{size}</th><td>{price}</td><td>{use}</td></tr>)}</tbody>
-          </table>
-        </div>
-        <div className="utah-price-factors">
-          <p>For a sense of the regional gap, a standard 5x5 averages around $64 a month in Sacramento and around $108 in San Diego. Across Orange County, the average unit of any size now sits near $306 a month.</p>
-          <h3>Six things move your price:</h3>
-          <ul>
-            <li>Where you are in the metro. Inland and valley markets price well below coastal and urban core markets for identical square footage.</li>
-            <li>Climate control. Temperature and humidity regulated units carry a premium, and in coastal California many facilities offer little else.</li>
-            <li>Drive up versus elevator access. Multi storey urban facilities cost more per square foot and take longer to load.</li>
-            <li>Move in offers. First month free and discounted first three month promotions run across most California markets.</li>
-            <li>Online rate versus counter rate. Rates advertised online usually sit below the price quoted in person, so reserve before you arrive.</li>
-            <li>Term length. Committing to six or twelve months can lower your monthly rate at independently run facilities.</li>
-          </ul>
-          <Link className="state-storage-guide-button" href="/storage-search?location=California%20storage%20prices">Compare prices near you <span aria-hidden="true">→</span></Link>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ca-needs-heading">
-        <div className="state-storage-heading"><h2 id="ca-needs-heading">California storage for movers, students, families and small businesses.</h2><p>Your situation decides your unit better than a size chart does.</p></div>
-        <CardSlider trackClassName="utah-needs-grid utah-needs-grid-4up">
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div><h3>Storage for California families</h3><p>Square footage at home costs more here than almost anywhere in the country, which makes a storage unit the cheaper way to hold what you are not using. Families rent while they remodel, while they wait on a closing date, or simply to clear a garage back into a garage. Add the gear that comes with the state: surfboards and wetsuits, camping kit for the Sierras, skis and boards for Tahoe and Mammoth that sit idle eight months of the year, bikes, coolers, paddleboards, and tailgate equipment.</p><ul><li>Clearing the garage: a 5x10 holds seasonal gear, holiday decorations, and sports equipment.</li><li>Remodelling: a 10x15 holds a two bedroom home with appliances, while a 10x20 holds a three bedroom home.</li><li>Between homes: month to month terms let you hold furniture for as long as the escrow takes.</li><li>Look for ground floor or drive-up access, wide aisles, and gate hours that suit a weekend load out.</li></ul><Link href="/storage-search?location=California%20families">Find family storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/proff%20and%20small%20business.jpg" alt="Business owner organizing inventory in a storage unit" width={640} height={640} /></div><h3>Professionals and small businesses</h3><p>You need square footage without a commercial lease at California rates. Contractors store tools and materials between jobs. Online sellers hold inventory, packaging, and returns. Studios and production crews store props, set pieces, and equipment between shoots. Agents store staging furniture, while practices and firms archive files.</p><ul><li>Inventory and stock: a 10x10 or 10x15 with ground-floor access and room to load a van.</li><li>Tools and equipment: a drive-up unit you can back into directly.</li><li>Records, samples, and electronics: a climate-controlled 5x10 protects paper and hardware through valley summers.</li><li>Look for month-to-month terms so you can scale through peak season, online payment and invoicing, and access hours that cover early starts.</li></ul><Link href="/storage-search?location=California%20business%20storage">Find business storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div><h3>Storage for students</h3><p>California campuses empty on a schedule. If you are at a UC, a Cal State, or a community college, you have a gap between spring quarter and autumn move-in, and hauling a room across the state twice a year rarely makes sense.</p><ul><li>Dorm or shared apartment: a 5x5 takes boxes, bedding, and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>Splitting with housemates: a 10x10 covers two rooms and divides the cost.</li><li>Away for a quarter, an internship, or a study abroad term: store your furniture instead of replacing it.</li><li>Look for student rates, facilities within a short drive of campus in Los Angeles, San Diego, Berkeley, Davis, Irvine, Santa Barbara, San Luis Obispo, or Chico, and month-to-month terms so you stop paying the week you return.</li></ul><Link href="/storage-search?location=California%20student%20storage">Find student storage near you →</Link></article>
-          <article><div className="utah-needs-image"><Image src="/images/state%20pages/military%20storage.jpg" alt="Military family with a service member packing a storage unit during a move" width={1536} height={1024} /></div><h3>Military households and frequent movers</h3><p>California hosts major installations in San Diego, Oceanside, Ventura County, Monterey, and the Inland Empire, and orders rarely line up neatly with lease dates. Storage covers the gap between a move-out and a move-in, or holds household goods through a deployment.</p><ul><li>Full household during a posting: a 10x20 holds a three bedroom home.</li><li>Partial storage: a 10x10 covers furniture you will not need at the next duty station.</li><li>Vehicles: covered or enclosed parking keeps a car protected while you are away.</li><li>Look for military rates, month-to-month terms with no penalty for an early move-out, and autopay so billing runs while you are away.</li></ul><Link href="/storage-search?location=California%20military%20storage">Find storage near your base →</Link></article>
-        </CardSlider>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ca-climate-heading">
-        <div className="state-storage-heading"><h2 id="ca-climate-heading">Is climate controlled storage worth it in California's heat and coastal air?</h2><p>California is several climates at once, so the answer depends on where your unit sits.</p></div>
-        <ul className="utah-climate-regions">
-          <li><strong>Coastal markets.</strong> Salt air and year round humidity are the risk. Metal corrodes, fabric holds damp, and paper and leather suffer. Climate control is worth the premium near the water.</li>
-          <li><strong>Central Valley and inland markets.</strong> Summer heat is the risk. Interior unit temperatures can climb far above the outside reading, which warps vinyl, melts candles and wax, damages electronics, and dries out wood.</li>
-          <li><strong>Desert markets.</strong> Extreme heat combined with very low humidity cracks leather, splits wood, and degrades adhesives.</li>
-          <li><strong>Mountain and Sierra markets.</strong> Freeze and thaw cycles affect liquids, batteries, and anything containing moisture.</li>
-        </ul>
-        <div className="utah-climate-grid">
-          <article className="utah-climate-card utah-climate-yes">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2v20" /><path d="M3.3 7l17.4 10" /><path d="M20.7 7L3.3 17" /><path d="M9 4l3 2.8L15 4" /><path d="M9 20l3-2.8L15 20" /></svg>
-              Choose a climate controlled unit if you are storing
-            </h3>
-            <ul>
-              <li>Wooden and leather furniture</li>
-              <li>Electronics, appliances and anything containing a battery</li>
-              <li>Photographs, artwork, vinyl records and paper documents</li>
-              <li>Musical instruments</li>
-              <li>Mattresses, upholstery and clothing kept beyond one season</li>
-              <li>Wine and other temperature sensitive collections</li>
-            </ul>
-          </article>
-          <article className="utah-climate-card utah-climate-no">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 9.5 12 4l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" /><path d="M7 21v-6h10v6" /></svg>
-              Standard drive-up units
-            </h3>
-            <div className="utah-climate-image"><Image src="/images/storage-guide/car.jpg" alt="Car parked in an open drive-up storage unit" width={1290} height={860} /></div>
-            <p>A standard drive up unit works well for tools, patio furniture, plastic bins, sporting equipment, and vehicles. Whichever you choose, lift boxes off the floor on pallets or shelving and leave a gap between your belongings and the walls.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ca-vehicle-heading">
-        <div className="state-storage-heading"><h2 id="ca-vehicle-heading">Where to keep your RV, boat or car in California.</h2></div>
-        <div className="utah-vehicle-block">
-          <div className="utah-feature-image"><Image src="/images/storage-guide/vehiclestorage.jpg" alt="Boat and RV storage spaces" width={1536} height={1024} /></div>
-          <div className="utah-vehicle-block-text">
-            <p>Many California cities restrict oversized vehicle parking on residential streets, and HOA rules often go further. Storage facilities across the state offer:</p>
-            <ul>
-              <li>Uncovered outdoor parking. The lowest cost option for trailers, boats, and RVs.</li>
-              <li>Covered parking. Shade from sustained summer sun, which matters for paint, seals, and tyres.</li>
-              <li>Enclosed drive-up units. Full protection for classic cars, motorcycles, and smaller boats.</li>
-            </ul>
-            <p>Filter for parking availability, gate hours, and vehicle length when you search. Spaces commonly run from 20 to 45 feet, so confirm the maximum length before you reserve, and check whether current registration and insurance are required.</p>
-            <Link className="state-storage-guide-button" href="/storage-search?location=California%20vehicle%20storage">Find vehicle storage near you in California <span aria-hidden="true">→</span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="state-storage-guide" aria-labelledby="ca-size-guide-heading">
-        <div className="state-storage-heading"><h2 id="ca-size-guide-heading">Size your California unit around what you actually own.</h2><p>Use your largest item, access needs, and storage duration as your starting point.</p></div>
-        <CardSlider trackClassName="state-size-grid">
-          <article><div className="state-size-image"><Image src="/images/storage-guide/boxes.jpg" alt="Boxes and small items packed for a small storage unit" width={640} height={420} quality={90} /></div><strong>5' x 5' to 5' x 10'</strong><h3>Small units</h3><p>Boxes, seasonal clothing, small furniture, or the contents of a dorm room or closet.</p></article>
-          <article><div className="state-size-image"><Image src="/images/storage-guide/threebedroom.jpg" alt="Furniture from a few rooms ready for a medium storage unit" width={640} height={420} quality={90} /></div><strong>10' x 10' to 10' x 15'</strong><h3>Medium units</h3><p>The contents of a one-bedroom apartment, several rooms, or small business inventory.</p></article>
-          <article><div className="state-size-image"><Image src="/images/storage-guide/fourbedroom.jpg" alt="Contents of a full home ready for a large storage unit" width={640} height={420} quality={90} /></div><strong>10' x 20' and larger</strong><h3>Large units</h3><p>Multiple bedrooms, a full home, large equipment, or bulky items that need extra floor space.</p></article>
-        </CardSlider>
-        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-size-guide">View the full storage size guide <span aria-hidden="true">→</span></Link></div>
-      </section>
-
-      <section className="state-policy-section" aria-label="California storage rates, access, and rental terms">
-        <div className="state-policy-grid">
-          <article className="state-policy-card" aria-labelledby="ca-deals-heading">
-            <h2 id="ca-deals-heading">Lower move-in costs and first month free offers in California.</h2>
-            <p>California has some of the highest storage rates in the country, so where you rent matters as much as the offer.</p>
-            <ul><li><strong>Drive inland.</strong> The same unit in the Inland Empire, the Central Valley or Sacramento often costs far less than in Los Angeles, San Francisco or San Diego.</li><li><strong>Reserve online.</strong> Web rates usually sit below the price you get quoted at the counter.</li><li><strong>Compare the twelve month cost.</strong> Promotions often last one to three months before the regular rate applies.</li><li><strong>Ask about fees.</strong> Admin fees, deposits and required insurance change your move-in cost, and some are waived if you ask.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=California%20storage%20deals">See current offers near you <span aria-hidden="true">→</span></Link>
-          </article>
-          <article className="state-policy-card" aria-labelledby="ca-access-heading">
-            <h2 id="ca-access-heading">Gate hours, cameras and on-site security at California facilities.</h2>
-            <p>Urban and suburban facilities in California work very differently, so check how you will get in and load.</p>
-            <ul><li><strong>Elevator or drive-up.</strong> Multi story city facilities mean carts and elevators. Suburban sites usually offer drive-up units.</li><li><strong>Gate hours.</strong> City sites often close earlier than you expect. Check that the hours fit your commute.</li><li><strong>Earthquake safety.</strong> Ask how shelving is secured, and keep heavy items low in your unit.</li><li><strong>Security.</strong> Look for gated entry, cameras, on-site staff and individual unit alarms.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=California%2024%20hour%20access">Filter for 24 hour access <span aria-hidden="true">→</span></Link>
-          </article>
-          <article className="state-policy-card" aria-labelledby="ca-terms-heading">
-            <h2 id="ca-terms-heading">Short term storage that flexes with your California lease.</h2>
-            <p>Month to month storage suits California's fast moving rental market, from lease gaps to remodels.</p>
-            <ul><li><strong>Lease gaps.</strong> Short term storage covers the weeks between one apartment and the next.</li><li><strong>Notice period.</strong> Confirm how much notice you need to give before you move out.</li><li><strong>Rate increases.</strong> Some facilities raise rates after a few months. Ask how often and by how much.</li><li><strong>Moving within the state.</strong> If you relocate, ask whether the operator has a site near your new home.</li></ul>
-            <Link className="state-storage-guide-button" href="/storage-search?location=California%20month%20to%20month%20storage">Find month to month storage <span aria-hidden="true">→</span></Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="utah-content-section" aria-labelledby="ca-choose-heading">
-        <div className="state-storage-heading"><h2 id="ca-choose-heading">What to compare before you rent storage in California.</h2><p>Work through this before you sign anything.</p></div>
-        <div className="utah-steps-grid">
-          <article><span>1</span><p>Size by your largest item. A sectional sofa or chest freezer decides your unit more than the number of boxes.</p></article>
-          <article><span>2</span><p>Decide on climate control. Base it on your region, what you are storing, and how long it stays.</p></article>
-          <article><span>3</span><p>Set your radius deliberately. In California the drive inland is usually the single biggest saving available to you.</p></article>
-          <article><span>4</span><p>Check access hours against your routine. Urban sites often close earlier than you expect.</p></article>
-          <article><span>5</span><p>Check how you will actually load. Elevator, trolley distance, and loading bay access decide how long each visit takes.</p></article>
-          <article><span>6</span><p>Compare the ongoing rate, not the offer. Ask what month two onward costs and how increases are handled.</p></article>
-          <article><span>7</span><p>Confirm insurance. Check your renters or homeowners policy first, then the facility requirement.</p></article>
-          <article><span>8</span><p>Ask about the lock. Many operators specify a type. Avoid buying one twice.</p></article>
-          <article><span>9</span><p>Read the newest reviews. Management changes affect service more than the building does.</p></article>
-        </div>
-        <div className="state-storage-button-row"><Link className="state-storage-guide-button" href="/storage-search?location=California">Find a facility and reserve online <span aria-hidden="true">→</span></Link></div>
-      </section>
-
-      <section className="state-storage-guide state-love" aria-labelledby="ca-love-heading">
-        <div className="state-storage-heading"><h2 id="ca-love-heading">Why people love California.</h2><p>And why so many of them need a little extra space.</p></div>
-        <div className="state-size-grid"><article><h3>The coast and the climate</h3><p>More than 800 miles of coastline and mild weather across much of the state draw people from everywhere. Smaller coastal homes often mean less closet space.</p></article><article><h3>Career opportunities</h3><p>Tech in the Bay Area, entertainment in Los Angeles and agriculture in the Central Valley keep people moving into and around the state.</p></article><article><h3>Every landscape in one state</h3><p>Beaches, deserts, redwood forests and the Sierra Nevada are all within driving distance. Surfboards, ski gear and camping kit add up quickly.</p></article><article><h3>World class universities</h3><p>The UC campuses, Stanford and USC bring students in each fall and send them home each summer. Short term storage bridges the gap.</p></article><article><h3>Food and culture from around the world</h3><p>Neighborhoods from San Diego to Sacramento each have their own character, so many people move between cities before they find their fit.</p></article><article><h3>Smaller homes, bigger lives</h3><p>High housing costs mean many Californians live in apartments and condos. A storage unit gives you room for everything that does not fit at home.</p></article></div>
-      </section>
-      <section className="state-storage-faq" aria-labelledby="ca-faq-heading">
-        <div className="state-storage-heading"><h2 id="ca-faq-heading">Common questions about California storage units.</h2></div>
-        <ShowMoreList listClassName="state-faq-list">{FAQS.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</ShowMoreList>
-      </section>
-
-      <section className="utah-closing-cta" aria-labelledby="ca-closing-heading">
-        <div><h2 id="ca-closing-heading">Start comparing California storage units today.</h2><p>Search 3,098 facilities and 41,949 available units across California, compare current rates side by side, and reserve the unit that fits your space and your schedule.</p><small>Current pricing. Month-to-month terms at most facilities. No obligation to reserve.</small></div>
-        <Link className="state-storage-cta" href="/storage-search?location=California">Search storage units near you <span aria-hidden="true">→</span></Link>
-      </section>
-
-      <StorageStateLinks />
-      <nav className="storage-search-breadcrumb city-storage-bottom-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span><span aria-current="page">California</span></nav>
-    </main>
-  );
+  return <StatePageTemplate data={DATA} />;
 }
