@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
 
 export const runtime = "nodejs";
 
@@ -12,6 +13,7 @@ type AuditPayload = {
   name?: unknown;
   email?: unknown;
   phone?: unknown;
+  phoneRegion?: unknown;
   website?: unknown;
   gbp?: unknown;
   // Honeypot — must stay empty. Bots tend to fill every field.
@@ -20,16 +22,6 @@ type AuditPayload = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// US phone: accept common formats, then require exactly 10 digits
-// (optionally a leading country code "1").
-function normalizeUsPhone(raw: string): string | null {
-  const digits = raw.replace(/\D/g, "");
-  const ten = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
-  // NANP: area code and exchange must each start with 2-9; the rest are free.
-  if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(ten)) return null;
-  return `(${ten.slice(0, 3)}) ${ten.slice(3, 6)}-${ten.slice(6)}`;
-}
 
 function normalizeUrl(raw: string): string | null {
   const trimmed = raw.trim();
@@ -87,6 +79,7 @@ export async function POST(request: Request) {
   const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const phoneRaw = typeof body.phone === "string" ? body.phone.trim() : "";
+  const phoneRegion: PhoneRegion = isPhoneRegion(body.phoneRegion) ? body.phoneRegion : "usa";
   const websiteRaw = typeof body.website === "string" ? body.website.trim() : "";
   const gbp = typeof body.gbp === "string" ? body.gbp.trim() : "";
   const captchaToken = typeof body.captchaToken === "string" ? body.captchaToken : "";
@@ -94,8 +87,8 @@ export async function POST(request: Request) {
   const errors: Record<string, string> = {};
   if (!name) errors.name = "Please enter your name.";
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
-  const phone = normalizeUsPhone(phoneRaw);
-  if (!phone) errors.phone = "Please enter a valid US phone number.";
+  const phone = normalizePhone(phoneRaw, phoneRegion);
+  if (!phone) errors.phone = "Please enter a valid phone number for the selected region.";
   const website = normalizeUrl(websiteRaw);
   if (!website) errors.website = "Please enter a valid website address.";
   if (!gbp) errors.gbp = "Please add your Google Business link or name.";

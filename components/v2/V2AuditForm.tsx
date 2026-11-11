@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Script from "next/script";
+import PhoneField from "@/components/ui/PhoneField";
 
 declare global {
   interface Window {
@@ -34,6 +35,7 @@ export default function V2AuditForm() {
       name: String(data.get("name") || ""),
       email: String(data.get("email") || ""),
       phone: String(data.get("phone") || ""),
+      phoneRegion: String(data.get("phoneRegion") || "usa"),
       website: String(data.get("website") || ""),
       gbp: String(data.get("gbp") || ""),
       company: String(data.get("company") || ""), // honeypot
@@ -108,19 +110,7 @@ export default function V2AuditForm() {
         </div>
 
         <div className="af-row">
-          <div className="af-field">
-            <label htmlFor="af-phone">Phone <span className="af-hint">(US)</span></label>
-            <input
-              id="af-phone"
-              name="phone"
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              placeholder="(555) 123-4567"
-              required
-            />
-            {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
-          </div>
+          <PhoneField id="af-phone" error={fieldErrors.phone} required />
           <div className="af-field">
             <label htmlFor="af-website">Business website</label>
             <input id="af-website" name="website" type="text" inputMode="url" placeholder="yourfacility.com" required />

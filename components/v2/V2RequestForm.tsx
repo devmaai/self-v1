@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PhoneField from "@/components/ui/PhoneField";
 
 type Kind = "backlink" | "listing";
 type Status = "idle" | "submitting" | "success" | "error";
@@ -36,7 +37,7 @@ export default function V2RequestForm({ kind }: { kind: Kind }) {
     const get = (k: string) => String(d.get(k) || "").trim();
 
     const details = [
-      get("phone") && `Phone: ${get("phone")}`,
+      get("phone") && `Phone (${get("phoneRegion")}): ${get("phone")}`,
       get("location") && `Location: ${get("location")}`,
       get("notes") && `${cfg.messageLabel}: ${get("notes")}`,
     ].filter(Boolean).join("\n");
@@ -47,6 +48,8 @@ export default function V2RequestForm({ kind }: { kind: Kind }) {
       topic: cfg.topic,
       business: get("business"),
       website: get("website"),
+      phone: get("phone"),
+      phoneRegion: get("phoneRegion"),
       message: details || `${cfg.topic} request`,
       company_url: get("company_url"),
     };
@@ -123,10 +126,7 @@ export default function V2RequestForm({ kind }: { kind: Kind }) {
             <input id={id("business")} name="business" type="text" autoComplete="organization" placeholder="Your facility" required />
             {errors.business && <span className="af-error">{errors.business}</span>}
           </div>
-          <div className="af-field">
-            <label htmlFor={id("phone")}>Phone <span className="af-hint">(optional)</span></label>
-            <input id={id("phone")} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" />
-          </div>
+          <PhoneField id={id("phone")} error={errors.phone} optional />
         </div>
 
         <div className="af-row">

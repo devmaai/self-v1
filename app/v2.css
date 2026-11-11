@@ -633,6 +633,11 @@
   .v2-home .af-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .v2-home .af-field label { font-size: 12px; font-weight: 500; letter-spacing: 0.02em; color: rgba(255,255,255,0.7); }
   .v2-home .af-hint { color: rgba(255,255,255,0.4); font-weight: 400; }
+  .v2-home .phone-field-control { display: grid; grid-template-columns: minmax(155px, 0.9fr) 1.1fr; gap: 8px; }
+  .v2-home .phone-field-control select,
+  .v2-home .phone-field-control input { min-width: 0; }
+  .v2-home .phone-field-control select { background: #dcebf6; color: #16334b; }
+  .v2-home .phone-field-help { color: rgba(255,255,255,0.4); font-size: 11px; }
   .v2-home .af-field input,
   .v2-home .af-field select { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 11px 14px; color: var(--white); font-family: inherit; font-size: 14px; transition: border-color 0.15s, background 0.15s; }
   .v2-home .af-field input::placeholder { color: rgba(255,255,255,0.32); }
@@ -1321,3 +1326,19 @@
 .storage-price-guide-bottom .storage-price-cta h3 { color: #fff; font-size: 30px; line-height: 1.1; }
 .storage-price-guide-bottom .storage-price-cta p { color: rgba(255,255,255,.85); font-size: 16px; }
 .storage-price-guide-bottom .storage-price-cta-button { padding: 16px 28px; font-size: 17px; font-weight: 700; color: #fff; }
+
+/* ===== Dark form dropdowns: match the navy card instead of the browser's white list ===== */
+.v2-home :is(.af-field, .qf-field) select,
+.v2-home :is(.af-field, .qf-field) input[type="date"] { color-scheme: dark; }
+.v2-home :is(.af-field, .qf-field) select option,
+.v2-home .lead-form .af-field select option,
+.v2-home .find-storage-cta-form .af-field select option { background-color: #10263A; color: #fff; }
+.v2-home :is(.af-field, .qf-field) select option[value=""],
+.v2-home :is(.af-field, .qf-field) select option:disabled { color: rgba(255,255,255,0.5); }
+.v2-home :is(.af-field, .qf-field) select option:checked { background-color: #b5441f; color: #fff; }
+
+/* The nav drawer and mobile menu forms are light, so keep their native light list. */
+.v2-home .nav-form-panel .af-field select,
+.v2-home .nav-form-panel .af-field input[type="date"],
+.v2-home .mobile-menu-form .af-field select,
+.v2-home .mobile-menu-form .af-field input[type="date"] { color-scheme: light; }

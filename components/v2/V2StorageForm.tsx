@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Script from "next/script";
+import PhoneField from "@/components/ui/PhoneField";
 
 declare global {
   interface Window {
@@ -83,6 +84,7 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
       endDate: String(data.get("endDate") || ""),
       storageType: String(data.get("storageType") || ""),
       phone: String(data.get("phone") || ""),
+      phoneRegion: String(data.get("phoneRegion") || "usa"),
       company: String(data.get("company") || ""), // honeypot
       captchaToken: String(data.get("cf-turnstile-response") || ""),
       state: state || "",
@@ -173,20 +175,12 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
         </div>
 
         {!compact && (
-        <div className="af-field">
-          <label htmlFor={`${idPrefix}-phone`}>Phone <span className="af-hint">(US)</span></label>
-          <input id={`${idPrefix}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
-          {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
-        </div>
+        <PhoneField id={`${idPrefix}-phone`} error={fieldErrors.phone} required />
         )}
 
         <div className="af-row">
           {compact && (
-          <div className="af-field">
-            <label htmlFor={`${idPrefix}-phone`}>Phone <span className="af-hint">(US)</span></label>
-            <input id={`${idPrefix}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" required />
-            {fieldErrors.phone && <span className="af-error">{fieldErrors.phone}</span>}
-          </div>
+          <PhoneField id={`${idPrefix}-phone`} error={fieldErrors.phone} required />
           )}
           <div className="af-field">
             <label htmlFor={`${idPrefix}-unitSize`}>Unit size</label>

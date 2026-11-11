@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
 
 export const runtime = "nodejs";
 
@@ -20,6 +21,7 @@ type StorageQuotePayload = {
   endDate?: unknown;
   storageType?: unknown;
   phone?: unknown;
+  phoneRegion?: unknown;
   // Honeypot — must stay empty. Bots tend to fill every field.
   company?: unknown;
   captchaToken?: unknown;
@@ -31,15 +33,6 @@ function esc(s: string): string {
   return s.replace(/[&<>"]/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] as string
   );
-}
-
-// US phone: common formats accepted, then require exactly 10 digits
-// (optionally a leading country code "1") with NANP area/exchange rules.
-function normalizeUsPhone(raw: string): string | null {
-  const digits = raw.replace(/\D/g, "");
-  const ten = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
-  if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(ten)) return null;
-  return `(${ten.slice(0, 3)}) ${ten.slice(3, 6)}-${ten.slice(6)}`;
 }
 
 function isValidDate(raw: string): boolean {
@@ -88,6 +81,7 @@ export async function POST(request: Request) {
   const endDate = typeof body.endDate === "string" ? body.endDate.trim() : "";
   const storageType = typeof body.storageType === "string" ? body.storageType.trim() : "";
   const phoneRaw = typeof body.phone === "string" ? body.phone.trim() : "";
+  const phoneRegion: PhoneRegion = isPhoneRegion(body.phoneRegion) ? body.phoneRegion : "usa";
   // Compact forms on state pages skip price range and storage type.
   const compact = body.compact === true;
   const state = typeof body.state === "string" ? body.state.trim() : "";
@@ -104,8 +98,8 @@ export async function POST(request: Request) {
     errors.endDate = "End date must be on or after the start date.";
   }
   if (!storageType && !compact) errors.storageType = "Please select a storage type.";
-  const phone = normalizeUsPhone(phoneRaw);
-  if (!phone) errors.phone = "Please enter a valid US phone number.";
+  const phone = normalizePhone(phoneRaw, phoneRegion);
+  if (!phone) errors.phone = "Please enter a valid phone number for the selected region.";
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ ok: false, error: "validation", fields: errors }, { status: 422 });

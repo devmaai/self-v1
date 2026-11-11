@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
 
 export const runtime = "nodejs";
 
@@ -30,19 +31,24 @@ export async function POST(request: Request) {
   const business = str(body.business);
   const website = str(body.website);
   const message = str(body.message);
+  const phoneRaw = str(body.phone);
+  const phoneRegion: PhoneRegion = isPhoneRegion(body.phoneRegion) ? body.phoneRegion : "usa";
 
   const errors: Record<string, string> = {};
   if (!name) errors.name = "Please enter your name.";
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
   if (!TOPICS.includes(topic)) errors.topic = "Please choose what you need help with.";
   if (message.length < 5) errors.message = "Please add a short message.";
+  const phone = phoneRaw ? normalizePhone(phoneRaw, phoneRegion) : null;
+  if (phoneRaw && !phone) errors.phone = "Please enter a valid phone number for the selected region.";
   if (Object.keys(errors).length) return NextResponse.json({ ok: false, errors }, { status: 422 });
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return NextResponse.json({ ok: false, error: "email_not_configured" }, { status: 500 });
 
   const rows: Array<[string, string]> = [
-    ["Name", name], ["Email", email], ["Topic", topic], ["Business", business || "-"], ["Website", website || "-"], ["Message", message],
+    ["Name", name], ["Email", email], ["Topic", topic], ["Business", business || "-"], ["Website", website || "-"],
+    ["Phone", phone || "-"], ["Message", message],
   ];
   const html = `<h2>New ${esc(topic)} request</h2><table cellpadding="6">${rows
     .map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${esc(v).replace(/\n/g, "<br>")}</td></tr>`)

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PhoneField from "@/components/ui/PhoneField";
 
 const TOPICS = ["Business enquiry", "Sales", "Partnership", "Press and media", "Other"];
 type Status = "idle" | "submitting" | "success" | "error";
@@ -17,13 +18,16 @@ export default function V2ContactForm() {
     const d = new FormData(form);
     const get = (k: string) => String(d.get(k) || "").trim();
     const phone = get("phone");
+    const phoneRegion = get("phoneRegion");
     const payload = {
       name: get("name"),
       email: get("email"),
       topic: get("topic"),
       business: get("business"),
       website: "",
-      message: phone ? `${get("message")}\n\nPhone: ${phone}` : get("message"),
+      phone,
+      phoneRegion,
+      message: get("message"),
       company_url: get("company_url"),
     };
 
@@ -85,10 +89,7 @@ export default function V2ContactForm() {
             <label htmlFor="cf-business">Company <span className="af-hint">(optional)</span></label>
             <input id="cf-business" name="business" type="text" autoComplete="organization" placeholder="Company name" />
           </div>
-          <div className="af-field">
-            <label htmlFor="cf-phone">Phone <span className="af-hint">(optional)</span></label>
-            <input id="cf-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" />
-          </div>
+          <PhoneField id="cf-phone" error={errors.phone} optional />
         </div>
         <div className="af-field">
           <label htmlFor="cf-topic">Type of enquiry</label>
