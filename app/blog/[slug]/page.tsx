@@ -209,10 +209,8 @@ export default async function BlogPostPage({
               <span className="blog-calc-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="4" y="2.5" width="16" height="19" rx="2.5" /><rect x="7" y="5.5" width="10" height="4" rx="1" /><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" strokeLinecap="round" strokeWidth="2.4" /></svg>
               </span>
-              <span className="blog-sidebar-eyebrow">Free tool · 2 minutes</span>
-              <strong>Not sure what size you need?</strong>
-              <span className="blog-calc-copy">Add your rooms and items, and the calculator recommends the right unit so you never pay for space you will not use.</span>
-              <span className="blog-calc-button">Try the size calculator <span aria-hidden="true">→</span></span>
+              <strong>Not sure of your storage need?</strong>
+              <span className="blog-calc-button">Try our free size calculator <span aria-hidden="true">→</span></span>
             </Link>
 
             <div className="blog-recent-card">

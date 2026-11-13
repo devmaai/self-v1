@@ -5742,3 +5742,17 @@ main section:has(.location-autocomplete) { position: relative; z-index: 5; }
   .blog-recent-card { margin-top: 0; }
   .blog-cta-panel { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
 }
+
+/* ---- Blog article: wider layout, full-width CTA ---- */
+.blog-article-hero-inner { width: min(1320px, 100%); }
+.blog-article-divider { width: min(1320px, calc(100% - 48px)); }
+.blog-article-layout { width: min(1320px, calc(100% - 48px)); grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; padding: 52px 56px 58px; }
+.blog-calc-cta { gap: 12px; }
+.blog-calc-cta strong { font-size: 22px; }
+.blog-article-cta { padding: 56px 0 0; }
+.blog-cta-panel { width: 100%; border-radius: 0; box-shadow: none; padding: 56px max(24px, calc((100% - 1320px) / 2 + 56px)); }
+@media (max-width: 900px) {
+  .blog-article-layout { padding: 32px 24px; }
+  .blog-cta-panel { padding: 40px 24px; }
+}
+.blog-cta-copy { max-width: 720px; }
