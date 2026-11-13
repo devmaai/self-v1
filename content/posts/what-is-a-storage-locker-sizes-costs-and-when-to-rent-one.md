@@ -50,7 +50,7 @@ Quick take:
 
 - A 4x4 locker suits a student, a renter clearing out a hall closet, or a small business storing records.
 
-- At 5x5, you are at the border between a locker and a small unit. Our 5x5 storage unit guide explains exactly what that size holds.
+- At 5x5, you are at the border between a locker and a small unit. Our [5x5 storage unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) guide explains exactly what that size holds.
 
 ## How much does a storage locker cost?
 
@@ -65,15 +65,15 @@ A storage locker typically costs $20 to $60 a month, with most renters paying ar
 
 Several factors push a locker price up or down:
 
-- Location: lockers in dense cities such as New York City or San Francisco can cost double the national range.
+- Location: lockers in dense cities such as [New York City](/storage-search/new-york/new-york-city) or [San Francisco](/storage-search/california/san-francisco) can cost double the national range.
 
 - Tier: upper-tier lockers are often cheaper than lower ones because they are harder to load.
 
 - Climate control: many lockers include it by default since they are indoors, but some facilities add a fee.
 
-- Promotions: move-in specials apply to lockers too, so check for first month free storage deals before you book.
+- Promotions: [move-in specials](/blog/first-month-free-storage-how-the-deals-work) apply to lockers too, so check for first month free storage deals before you book.
 
-Remember to budget for the same extras you would pay on a larger unit, such as a one-time admin fee of roughly $20 to $50, a lock, and insurance or a protection plan. For a full breakdown of fees and prices by size, see how much a storage unit costs.
+Remember to budget for the same extras you would pay on a larger unit, such as a one-time admin fee of roughly $20 to $50, a lock, and insurance or a protection plan. For a full breakdown of fees and prices by size, see [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## Storage locker vs storage unit: what is the difference?
 
@@ -88,7 +88,7 @@ The main difference is size and access. A storage locker is a small compartment 
 | Best for | Boxes, documents, small items | Furniture, appliances, vehicles |
 | Climate control | Often included | Usually an add-on |
 
-If you are storing even one large piece of furniture, a locker is usually too small. A 5x10 storage unit is the next step up and fits the contents of a studio apartment. To compare indoor and outdoor access in more detail, read our guide to drive-up vs indoor storage units.
+If you are storing even one large piece of furniture, a locker is usually too small. A [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) is the next step up and fits the contents of a studio apartment. To compare indoor and outdoor access in more detail, read our guide to drive-up vs indoor storage units.
 
 ## What can you fit in a storage locker?
 
@@ -122,13 +122,13 @@ The same rules apply as with any storage space, so skip hazardous materials, per
 
 ## Who should rent a storage locker?
 
-A storage locker is a smart choice when you need a little extra space for a long time, or a secure spot for a few important things.
+A storage locker is a smart choice when you need a little [extra space](https://www.extraspace.com/) for a long time, or a secure spot for a few important things.
 
 People who often rent lockers:
 
 - Apartment renters in big cities who have no basement, attic, or garage.
 
-- College students storing a dorm's worth of boxes over the summer.
+- [College students](/student-storage) storing a dorm's worth of boxes over the summer.
 
 - Small business owners keeping files, samples, or marketing materials.
 
@@ -136,7 +136,7 @@ People who often rent lockers:
 
 - Anyone between moves who has already sold the furniture and only has boxes left.
 
-If you are in a dense market, a locker can save you real money. In Los Angeles, for example, renting a 4x4 locker instead of a 5x10 unit can cut your monthly bill by more than half.
+If you are in a dense market, a locker can save you real money. In [Los Angeles](/storage-search/california/los-angeles), for example, renting a 4x4 locker instead of a 5x10 unit can cut your monthly bill by more than half.
 
 ## Pros and cons of storage lockers
 
@@ -164,7 +164,7 @@ Storage lockers give you the lowest price in self storage, but the small size me
 
 - Fewer available lockers at each facility, so they can sell out
 
-If round-the-clock access matters to you, check the facility's hours before you sign. Our guide to 24-hour access storage units explains what to look for.
+If round-the-clock access matters to you, check the facility's hours before you sign. Our guide to [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage units explains what to look for.
 
 ## How to choose the right storage locker
 
@@ -180,9 +180,9 @@ The right locker is the smallest one that fits your items once they are packed a
 
 - Look at access hours. Make sure you can reach the building when you need to.
 
-- Compare a few facilities. Locker inventory is limited, so check nearby options on your city page, such as storage in San Diego or Salt Lake City.
+- Compare a few facilities. Locker inventory is limited, so check nearby options on your city page, such as storage in [San Diego](/storage-search/california/san-diego) or [Salt Lake City](/storage-search/utah/salt-lake-city).
 
-If you are still unsure which size fits, our full guide to what size storage unit you need walks through every option from lockers to 10x30 units.
+If you are still unsure which size fits, our full guide to what size storage unit you need walks through every option from lockers to [10x30 units](/blog/10x30-storage-unit-size-price-and-what-fits-inside).
 
 ![Blog image](/images/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one-img-2.png)
 

@@ -78,7 +78,7 @@ Extra charges can add a few hundred dollars to a packing quote, so ask about eac
 
 - Stairs and access: walk-ups, long hallways, and elevator bookings can stretch the job.
 
-Packing services do not usually include loading the truck. If you want help carrying boxes and furniture too, our upcoming guide to moving help for loading and unloading explains hourly labor rates.
+Packing services do not usually include loading the truck. If you want help carrying boxes and furniture too, our upcoming guide to [moving help](/blog/moving-help-how-to-hire-loading-and-unloading-labor) for loading and unloading explains hourly labor rates.
 
 ## When is it worth hiring professional packers?
 
@@ -144,15 +144,15 @@ Many packing companies can pack your home and deliver boxes straight to a storag
 
 - Label each box on two sides with the room and a short list of contents.
 
-- Choose climate controlled storage for wood furniture, electronics, photos, and documents. Our climate controlled storage page explains when it is worth it.
+- Choose [climate controlled storage](/climate-controlled-storage) for wood furniture, electronics, photos, and documents. Our climate controlled storage page explains when it is worth it.
 
-- Pick the right size. Most one or two-bedroom homes fit in a 10x10 storage unit, and our storage size guide helps with larger homes.
+- Pick the right size. Most one or two-bedroom homes fit in a [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside), and our [storage size guide](/storage-size-guide) helps with larger homes.
 
 ### How much do storage units cost during a move?
 
-A storage unit for a month or two during a move usually costs $75 to $300 a month depending on size and location. Our guide to how much a storage unit costs covers prices by size, and short-term storage explains flexible month-to-month options. If you would rather load at home, moving containers can be packed by the same crew and stored until you are ready.
+A storage unit for a month or two during a move usually costs $75 to $300 a month depending on size and location. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) covers prices by size, and [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) explains flexible month-to-month options. If you would rather load at home, [moving containers](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) can be packed by the same crew and stored until you are ready.
 
-Packing and storage prices both follow local labor and real estate costs, so expect higher rates in places like New York City, San Francisco, and Los Angeles, and lower rates in cities like Kansas City, St. Louis, and Salt Lake City. Pick a facility close to your new home, with easy truck access and hours that fit your moving day.
+Packing and storage prices both follow local labor and real estate costs, so expect higher rates in places like [New York City](/storage-search/new-york/new-york-city), [San Francisco](/storage-search/california/san-francisco), and [Los Angeles](/storage-search/california/los-angeles), and lower rates in cities like [Kansas City](/storage-search/missouri/kansas-city), [St. Louis](/storage-search/missouri/st-louis), and [Salt Lake City](/storage-search/utah/salt-lake-city). Pick a facility close to your new home, with easy truck access and hours that fit your moving day.
 
 ![Blog image](/images/blog/packing-services-what-they-cost-and-when-to-hire-help-img-2.png)
 

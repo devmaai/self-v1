@@ -129,3 +129,5 @@ Keep clear zones, store rarely-used items off-site, do a seasonal sort, and foll
 **How do I make room to park my car again?**
 
 Declutter fully, move storage to the walls and ceiling, and relocate rarely-used items off-site to free the floor.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide)

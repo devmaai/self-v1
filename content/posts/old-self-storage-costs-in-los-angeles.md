@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-A storage unit in Los Angeles costs about $55 to $520 a month depending on size and neighborhood, and the most popular 10x10 unit typically runs $130 to $220 before climate control. That puts Los Angeles among the most expensive storage markets in the country, well above the national average for the same size. This guide breaks down current Los Angeles storage prices by size, shows which parts of the metro cost the most and least, covers the fees that end up on your bill, and explains when and how to book for a better rate.
+A storage unit in [Los Angeles](/storage-search/california/los-angeles) costs about $55 to $520 a month depending on size and neighborhood, and the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) typically runs $130 to $220 before climate control. That puts Los Angeles among the most expensive storage markets in the country, well above the national average for the same size. This guide breaks down current Los Angeles storage prices by size, shows which parts of the metro cost the most and least, covers the fees that end up on your bill, and explains when and how to book for a better rate.
 
 ## Los Angeles storage unit prices by size
 
@@ -60,16 +60,16 @@ Where you book matters almost as much as the size you pick. The same 10x10 can c
 | Santa Monica, Venice, West LA, Beverly Hills | Highest | Dense, land-constrained Westside neighborhoods |
 | Hollywood, Silver Lake, Downtown, Koreatown | Above average | Central, high-density neighborhoods with few new facilities |
 | Pasadena, Culver City, Glendale, Burbank | Moderate to high | Strong demand but more facility choice |
-| San Fernando Valley, South LA, Long Beach, Torrance | Moderate | More supply and easier freeway access |
+| San Fernando Valley, South LA, [Long Beach](/storage-search/california/long-beach), Torrance | Moderate | More supply and easier freeway access |
 | Inland Empire and northern Orange County suburbs | Lowest | Lower land costs and larger facilities |
 
 A few practical takeaways:
 
-- If you only visit your unit a few times a year, a facility in the Valley or in Riverside can save you hundreds of dollars a year.
+- If you only visit your unit a few times a year, a facility in the Valley or in [Riverside](/storage-search/california/riverside) can save you hundreds of dollars a year.
 
 - South Bay and Long Beach facilities are a good middle ground if you live near the coast but want lower rates.
 
-- Orange County options in Anaheim and Santa Ana often undercut Westside prices for the same size.
+- Orange County options in [Anaheim](/storage-search/california/anaheim) and [Santa Ana](/storage-search/california/santa-ana) often undercut Westside prices for the same size.
 
 You can compare facilities and current rates across the city on our Los Angeles storage search page.
 
@@ -87,7 +87,7 @@ It is worth paying for if:
 
 - Your items will stay in storage for more than a few months.
 
-You can usually skip it for tools, patio furniture, bikes, and short stays. For a full breakdown, read what climate controlled storage covers.
+You can usually skip it for tools, patio furniture, bikes, and short stays. For a full breakdown, read what [climate controlled storage](/climate-controlled-storage) covers.
 
 ## Extra fees to budget for in Los Angeles
 
@@ -114,11 +114,11 @@ Storage in Los Angeles is usually cheapest from November through February, after
 
 - Fall and winter bring the best promotions, including discounted first months and waived admin fees.
 
-If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run move-in specials, and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
+If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run [move-in specials](/blog/first-month-free-storage-how-the-deals-work), and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
 
 ## How to get a cheaper storage unit in Los Angeles
 
-- Right-size the unit. A well-packed 10x10 beats a half-empty 10x15. Check the 10x10 size guide and the 5x10 size guide before you book.
+- Right-size the unit. A well-packed 10x10 beats a half-empty 10x15. Check the 10x10 [size guide](/storage-size-guide) and the 5x10 size guide before you book.
 
 - Look outside the Westside. Valley, South Bay, and Inland Empire facilities consistently cost less for the same size.
 
@@ -130,21 +130,21 @@ If your dates are flexible, booking a few weeks before the summer rush gets you 
 
 - Skip the protection plan if you are covered. Use your renters or homeowners policy if it already covers stored belongings.
 
-- Consider a locker for small loads. If you only have a few boxes, a storage locker can cost far less than a full unit.
+- Consider a locker for small loads. If you only have a few boxes, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can cost far less than a full unit.
 
 ## Los Angeles storage costs compared with other cities
 
-Los Angeles sits in the top tier of US storage markets, a little below New York City and above San Diego and most inland cities.
+Los Angeles sits in the top tier of US storage markets, a little below [New York City](/storage-search/new-york/new-york-city) and above [San Diego](/storage-search/california/san-diego) and most inland cities.
 
 | City | Typical 10x10 monthly cost |
 | --- | --- |
 | Los Angeles | $130 to $220 |
 | New York City | $180 to $300 |
 | San Diego | $120 to $175 |
-| Salt Lake City | $90 to $210 |
+| [Salt Lake City](/storage-search/utah/salt-lake-city) | $90 to $210 |
 | National average | Around $120 |
 
-If you are moving between markets, compare the breakdowns for San Diego and Salt Lake City. For the national picture, the guide to how much a storage unit costs breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our short-term storage guide covers your options.
+If you are moving between markets, compare the breakdowns for San Diego and Salt Lake City. For the national picture, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) guide covers your options.
 
 ![Blog image](/images/blog/old-self-storage-costs-in-los-angeles-img-2.png)
 

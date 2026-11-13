@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Student storage in the US usually costs $40 to $80 a month for a 5x5 unit, $60 to $120 for a 5x10, and $100 to $180 for a 10x10 you can split with roommates, while per-item pickup services charge roughly $14 to $40 per item per month. For a typical summer break of about three months, most students spend $150 to $400 in total. This guide covers when you need storage, the options that fit a student budget, what size to rent, how to share a unit, when to book, and how to pack a dorm room so everything comes back in good shape.
+[Student storage](/student-storage) in the US usually costs $40 to $80 a month for a [5x5 unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside), $60 to $120 for a 5x10, and $100 to $180 for a 10x10 you can split with roommates, while per-item pickup services charge roughly $14 to $40 per item per month. For a typical summer break of about three months, most students spend $150 to $400 in total. This guide covers when you need storage, the options that fit a student budget, what size to rent, how to share a unit, when to book, and how to pack a dorm room so everything comes back in good shape.
 
 ## How much does student storage cost?
 
@@ -31,7 +31,7 @@ Quick take:
 
 - Monthly billing is usually not prorated. If you move in May 15 and out August 20, you will likely pay for four months.
 
-- Budget for move-in costs too, such as an admin fee of around $25 to $50, a lock, and a protection plan. Our guide to how much a storage unit costs breaks those down.
+- Budget for move-in costs too, such as an admin fee of around $25 to $50, a lock, and a protection plan. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks those down.
 
 ## When do college students need storage?
 
@@ -47,7 +47,7 @@ Most students need storage when they leave campus housing for more than a few we
 
 - Winter break and transfers: shorter stays, transferring schools, or graduating and waiting to start a job can all leave you between homes.
 
-If your break is only a few weeks, our guide to short-term storage covers flexible options that suit shorter gaps.
+If your break is only a few weeks, our guide to [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) covers flexible options that suit shorter gaps.
 
 ## What are your student storage options?
 
@@ -59,7 +59,7 @@ You have four main options, and the right one depends on how much you own, wheth
 
 - Campus storage: some colleges offer summer storage rooms or partner with a storage company. Spaces are limited and often fill fast, so check your housing office early.
 
-- Storage lockers: small lockers of around 5x5 or smaller suit a few boxes and a suitcase. Our guide on what a storage locker is explains sizes and prices.
+- [Storage lockers](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one): small lockers of around 5x5 or smaller suit a few boxes and a suitcase. Our guide on what a storage locker is explains sizes and prices.
 
 | Option | Best for | Pros | Watch out for |
 | --- | --- | --- | --- |
@@ -76,11 +76,11 @@ Most single students need a 5x5 or 5x10, and groups of roommates sharing an apar
 
 - 5x5 (25 sq ft): about 10 to 15 boxes, a mini fridge, a lamp, bedding, and a bike. Fits the contents of a typical dorm room. See our 5x5 storage unit guide.
 
-- 5x10 (50 sq ft): a twin mattress, a desk and chair, a dresser, and 15 to 20 boxes. Good for one student with furniture, or two dorm rooms. See our 5x10 storage unit guide.
+- 5x10 (50 sq ft): a twin mattress, a desk and chair, a dresser, and 15 to 20 boxes. Good for one student with furniture, or two dorm rooms. See our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x10 (100 sq ft): the furniture and boxes from a two or three bedroom student apartment, including a couch and full-size beds. See our 10x10 storage unit guide.
+- 10x10 (100 sq ft): the furniture and boxes from a two or three bedroom student apartment, including a couch and full-size beds. See our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-Before you book, lay everything out in one spot and picture it stacked. Paying for empty space is the most common way students overspend. For more help, try our storage size guide.
+Before you book, lay everything out in one spot and picture it stacked. Paying for empty space is the most common way students overspend. For more help, try our [storage size guide](/storage-size-guide).
 
 ## Should you share a storage unit with roommates?
 
@@ -119,7 +119,7 @@ Book three to four weeks before your move-out date. Units near campus fill quick
 
 - Watch the billing cycle. Moving out a few days before a new month starts can save you a full month's rent.
 
-Storage prices are highest in late spring and summer, so the best deals often come from booking early before rates rise. Our breakdown of first month free storage deals explains how move-in promotions work and what to check before you sign.
+Storage prices are highest in late spring and summer, so the best deals often come from booking early before rates rise. Our breakdown of [first month free](/blog/first-month-free-storage-how-the-deals-work) storage deals explains how move-in promotions work and what to check before you sign.
 
 ## Do storage facilities offer student discounts?
 
@@ -175,19 +175,19 @@ Choose a facility that is easy to reach on move-out and move-in day, has good se
 
 - Distance and transport. Can you get there on a bus line, by bike, or with a short rental truck trip? A facility five minutes from campus can save you a lot of hassle.
 
-- Access hours. Late finals and early flights may need evening or 24-hour access.
+- Access hours. Late finals and early flights may need evening or [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent).
 
 - Ground floor or elevator access so you are not carrying a mattress up several flights of stairs.
 
 - Security: gated entry, cameras, good lighting, and on-site staff during office hours.
 
-- Climate control if you are storing electronics, instruments, books, or anything sensitive to heat and humidity. Learn more about climate controlled storage.
+- Climate control if you are storing electronics, instruments, books, or anything sensitive to heat and humidity. Learn more about [climate controlled storage](/climate-controlled-storage).
 
 - Free truck or move-in help. Some facilities include a free truck on move-in day, which is a big help if you do not drive.
 
 - Lease terms. Look for month-to-month leases, online payments, and simple move-out notice rules.
 
-How prices differ by city: student storage follows local real estate, so the same unit near a campus in Los Angeles, San Francisco, Boston, or Manhattan can cost twice as much as one in a smaller college town. Students in places like Provo, Syracuse, St. Louis, Austin, or Gainesville will usually find more choice and lower rates, especially a few miles from campus. In any city, compare three or four facilities, since prices for the same size can vary widely within a short drive.
+How prices differ by city: student storage follows local real estate, so the same unit near a campus in [Los Angeles](/storage-search/california/los-angeles), [San Francisco](/storage-search/california/san-francisco), Boston, or [Manhattan](/storage-search/new-york/manhattan) can cost twice as much as one in a smaller college town. Students in places like [Provo](/storage-search/utah/provo), [Syracuse](/storage-search/new-york/syracuse), [St. Louis](/storage-search/missouri/st-louis), Austin, or Gainesville will usually find more choice and lower rates, especially a few miles from campus. In any city, compare three or four facilities, since prices for the same size can vary widely within a short drive.
 
 ## Do you need insurance for student storage?
 
@@ -195,7 +195,7 @@ Most facilities require some protection for the items you store, either through 
 
 - Check your family's homeowners policy. Many policies cover a dependent student's belongings stored away from home, up to a set limit.
 
-- Check your renters policy if you rent off campus. Our guide on whether renters insurance covers storage units explains how this usually works.
+- Check your renters policy if you rent off campus. Our guide on whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units explains how this usually works.
 
 - Pickup services often include basic coverage per item, so ask about the limit and whether electronics need original packaging.
 
@@ -215,7 +215,7 @@ For study abroad or an internship, choose a longer lease you can manage online, 
 
 - Confirm the rate after any promotion, since rents can rise during a long stay.
 
-If you are moving to a new city for an internship and later a full-time job, our guide to how moving containers work shows another way to store and move your things in one step.
+If you are moving to a new city for an internship and later a full-time job, our guide to how [moving containers](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) work shows another way to store and move your things in one step.
 
 ![Blog image](/images/blog/student-storage-in-the-us-the-complete-guide-for-college-students-img-2.png)
 

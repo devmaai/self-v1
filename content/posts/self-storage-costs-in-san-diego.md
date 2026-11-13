@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-A storage unit in San Diego costs about $50 to $420 a month depending on size and neighborhood, and the most popular 10x10 unit typically runs $120 to $175 before climate control. That puts San Diego well above the national average of roughly $137 a month across all sizes, because coastal land is scarce and facility costs follow real estate. This guide breaks down current San Diego storage prices by size, explains why the coast costs more than East County, covers the fees that get added to your bill, and shows you when and where to book for the best rate.
+A storage unit in [San Diego](/storage-search/california/san-diego) costs about $50 to $420 a month depending on size and neighborhood, and the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) typically runs $120 to $175 before climate control. That puts San Diego well above the national average of roughly $137 a month across all sizes, because coastal land is scarce and facility costs follow real estate. This guide breaks down current San Diego storage prices by size, explains why the coast costs more than East County, covers the fees that get added to your bill, and shows you when and where to book for the best rate.
 
 ## San Diego storage unit prices by size
 
@@ -86,7 +86,7 @@ It is worth paying for if:
 
 - Your items will sit in storage for more than a few months.
 
-You can usually skip it for tools, patio furniture, surf and camping gear, and short stays. For a full item-by-item breakdown, read what climate controlled storage covers.
+You can usually skip it for tools, patio furniture, surf and camping gear, and short stays. For a full item-by-item breakdown, read what [climate controlled storage](/climate-controlled-storage) covers.
 
 ## Extra fees to budget for in San Diego
 
@@ -113,11 +113,11 @@ Storage in San Diego is usually cheapest from November through February, after t
 
 - Fall and winter bring the best promotions, including discounted first months and reduced admin fees.
 
-If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better locked-in rate. Many facilities run move-in specials, and our guide to first month free storage deals explains how to tell a good offer from one that costs more over time.
+If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better locked-in rate. Many facilities run [move-in specials](/blog/first-month-free-storage-how-the-deals-work), and our guide to first month free storage deals explains how to tell a good offer from one that costs more over time.
 
 ## How to get a cheaper storage unit in San Diego
 
-- Right-size the unit. A snug 10x10 beats a half-empty 10x15. Check the 10x10 size guide and the 5x10 size guide before you book.
+- Right-size the unit. A snug 10x10 beats a half-empty 10x15. Check the 10x10 [size guide](/storage-size-guide) and the 5x10 size guide before you book.
 
 - Look inland. El Cajon, Santee, Spring Valley, and Escondido consistently undercut the beach neighborhoods.
 
@@ -133,17 +133,17 @@ If your dates are flexible, booking a few weeks before the summer rush gets you 
 
 ## San Diego storage costs compared with other cities
 
-San Diego sits in the upper tier of California storage markets, a little below Los Angeles and San Francisco and well above most inland cities.
+San Diego sits in the upper tier of California storage markets, a little below [Los Angeles](/storage-search/california/los-angeles) and [San Francisco](/storage-search/california/san-francisco) and well above most inland cities.
 
 | City | Typical 10x10 monthly cost |
 | --- | --- |
 | San Diego | $120 to $175 |
 | Los Angeles | $130 to $220 |
-| New York City | $180 to $300 |
-| Salt Lake City | $90 to $210 |
+| [New York City](/storage-search/new-york/new-york-city) | $180 to $300 |
+| [Salt Lake City](/storage-search/utah/salt-lake-city) | $90 to $210 |
 | National average | Around $120 |
 
-If you are moving between markets, compare the breakdowns for Los Angeles, New York, and Salt Lake City. For the national picture, the guide to how much a storage unit costs breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our short-term storage guide covers your options.
+If you are moving between markets, compare the breakdowns for Los Angeles, New York, and Salt Lake City. For the national picture, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) guide covers your options.
 
 ![Blog image](/images/blog/self-storage-costs-in-san-diego-img-2.png)
 

@@ -11,11 +11,11 @@ published: true
 
 **Introduction**
 
-The 10x10 is the most popular storage unit size in Los Angeles, rented more often than any other size in the city, with the 5x10 close behind as a runner-up. Together these two sizes account for roughly half of all storage rentals in LA, since they fit the contents of an apartment without forcing you to pay for space you don't need. This guide ranks the sizes Angelenos actually rent, breaks down what each one costs across the city, and helps you match a size to your own move, business, or decluttering project.
+The 10x10 is the most popular storage unit size in [Los Angeles](/storage-search/california/los-angeles), rented more often than any other size in the city, with the 5x10 close behind as a runner-up. Together these two sizes account for roughly half of all storage rentals in LA, since they fit the contents of an apartment without forcing you to pay for space you don't need. This guide ranks the sizes Angelenos actually rent, breaks down what each one costs across the city, and helps you match a size to your own move, business, or decluttering project.
 
 ## What is the most popular storage unit size in Los Angeles?
 
-The 10x10 unit holds the top spot in Los Angeles, mainly because it matches what the city actually needs: a space big enough for a one or two-bedroom apartment's worth of boxes and furniture, but not so big that you're paying LA rent on empty square footage.
+The [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) holds the top spot in Los Angeles, mainly because it matches what the city actually needs: a space big enough for a one or two-bedroom apartment's worth of boxes and furniture, but not so big that you're paying LA rent on empty square footage.
 
 Ranked by how often LA renters choose each size:
 
@@ -54,11 +54,11 @@ A 10x10 unit holds roughly the contents of a one to two-bedroom apartment once e
 
 - Moving between apartments, especially during the gap between lease-end and move-in dates that's common in LA's rental market.
 
-- Downsizing, when a renter moves into a smaller unit and needs to store furniture they're not ready to sell.
+- Downsizing, when a renter moves into a smaller unit and needs to [store furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) they're not ready to sell.
 
 - Renovation or staging, when a house or condo needs to be cleared out temporarily.
 
-If you're only storing the contents of a studio, a 5x10 unit is usually enough and costs noticeably less. If you're storing a full house, step up to a 10x15 or 10x20 instead of overpaying for two 10x10s.
+If you're only storing the contents of a studio, a [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) is usually enough and costs noticeably less. If you're storing a full house, step up to a 10x15 or 10x20 instead of overpaying for two 10x10s.
 
 ## Which size fits your situation in LA
 

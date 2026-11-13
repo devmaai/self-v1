@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Vehicle storage in the US typically costs $50 to $150 a month for an outdoor parking space, $75 to $250 for a covered spot, and $150 to $500 for a fully enclosed unit, depending on the size of the vehicle and where you live. A standard car fits in a 10x20 unit, while most RVs and boats need an outdoor or covered parking space of 25 to 45 feet. This guide walks you through every option, what each one costs, how to prepare a car, an RV, or a boat so it starts right up when you come back, and how to pick a facility you can trust with something this valuable.
+[Vehicle storage](/car-storage) in the US typically costs $50 to $150 a month for an outdoor parking space, $75 to $250 for a covered spot, and $150 to $500 for a fully enclosed unit, depending on the size of the vehicle and where you live. A standard car fits in a [10x20 unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside), while most RVs and boats need an outdoor or covered parking space of 25 to 45 feet. This guide walks you through every option, what each one costs, how to prepare a car, an RV, or a boat so it starts right up when you come back, and how to pick a facility you can trust with something this valuable.
 
 ## How much does vehicle storage cost?
 
@@ -33,7 +33,7 @@ Quick take:
 
 - Marinas usually price boats by the foot. Dry stack storage runs about $15 to $35 per foot per month, and seasonal shrink wrapping adds roughly $14 to $30 per foot.
 
-- Budget for the usual move-in costs too, such as an admin fee and a protection plan. Our guide to how much a storage unit costs covers those fees in detail.
+- Budget for the usual move-in costs too, such as an admin fee and a protection plan. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) covers those fees in detail.
 
 ## What types of vehicle storage can you choose from?
 
@@ -45,7 +45,7 @@ You have four main choices, and each one trades price for protection.
 
 - Enclosed storage: a drive-up unit with a roll-up door, usually 10x20 or larger. Your vehicle is fully out of the weather and out of sight. Our comparison of drive-up vs indoor storage units explains how access works.
 
-- Climate controlled storage: an enclosed space that holds temperature and humidity steady. It makes sense for classic cars, collector motorcycles, and boats with wood or leather interiors. Read more about climate controlled storage.
+- [Climate controlled storage](/climate-controlled-storage): an enclosed space that holds temperature and humidity steady. It makes sense for classic cars, collector motorcycles, and boats with wood or leather interiors. Read more about climate controlled storage.
 
 A simple rule: the more the vehicle is worth and the longer you plan to store it, the more protection pays for itself. A daily driver parked for one summer can sit outside under a good cover, while a restored classic you plan to keep for years belongs indoors.
 
@@ -75,7 +75,7 @@ While it is stored: visit every few weeks if you can. Check tire pressure, look 
 
 ## How do you store an RV?
 
-To store an RV, empty and clean the tanks, protect the plumbing from freezing, seal out pests and moisture, and choose a space that keeps the roof out of direct sun. RVs have more systems than a car, so give yourself a full day for prep. Our RV storage guide goes deeper on each step.
+To store an RV, empty and clean the tanks, protect the plumbing from freezing, seal out pests and moisture, and choose a space that keeps the roof out of direct sun. RVs have more systems than a car, so give yourself a full day for prep. Our [RV storage](/rv-storage) guide goes deeper on each step.
 
 **RV storage checklist:**
 
@@ -99,7 +99,7 @@ Covered storage is the sweet spot for most RV owners. It costs less than enclose
 
 To store a boat, winterize the engine, treat the fuel, drain all water, and cover or shrink wrap the hull before parking it on its trailer or in a rack. Your choices range from an outdoor lot to indoor dry stack storage at a marina. Our guide on how to store a boat covers each option in more detail.
 
-**Boat storage checklist:**
+**[Boat storage](/boat-storage) checklist:**
 
 - Clean the hull and deck. Remove salt, algae, and grime so they do not harden over the season.
 
@@ -123,10 +123,10 @@ Measure your vehicle from bumper to bumper, including any trailer tongue, mirror
 
 | Vehicle | Typical length | Recommended space |
 | --- | --- | --- |
-| Motorcycle or scooter | 6 to 8 ft | 5x10 unit |
+| Motorcycle or scooter | 6 to 8 ft | [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) |
 | Compact or midsize car | 14 to 16 ft | 10x20 unit |
 | Full-size SUV or pickup | 17 to 20 ft | 10x25 unit or 10x20 parking space |
-| Boat on a trailer (up to 20 ft) | 18 to 24 ft | 10x30 unit or 25 ft parking space |
+| Boat on a trailer (up to 20 ft) | 18 to 24 ft | [10x30 unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside) or 25 ft parking space |
 | Travel trailer or Class C RV | 20 to 33 ft | 12x35 parking space |
 | Class A motorhome or fifth wheel | 26 to 45 ft | 12x40 to 12x50 parking space |
 
@@ -140,7 +140,7 @@ Look for strong security, easy access for a large vehicle, and clear rules on wh
 
 - Security: gated keypad entry, good lighting, perimeter fencing, and cameras that cover the parking rows.
 
-- Access hours: if you take your boat out at dawn or return late from a road trip, look for extended or 24-hour access.
+- Access hours: if you take your boat out at dawn or return late from a road trip, look for extended or [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent).
 
 - Room to maneuver: wide drive aisles and pull-through spaces make life much easier with an RV or a long trailer.
 
@@ -164,7 +164,7 @@ Yes, most facilities ask for proof that the vehicle is registered and insured, a
 
 - Document the condition. Take dated photos of the vehicle inside and out before you park it.
 
-Coverage for belongings works differently. Our guide on whether renters insurance covers storage units explains how home and renter policies apply to stored items.
+Coverage for belongings works differently. Our guide on whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units explains how home and renter policies apply to stored items.
 
 ## Short-term vs long-term vehicle storage: what changes?
 
@@ -179,15 +179,15 @@ For storage under about a month, a clean vehicle, a covered or outdoor space, an
 | Insurance | Keep current policy | Ask about storage coverage |
 | Lease | Month-to-month | Ask about prepay or long-term discounts |
 
-Common short-term reasons include a move, a renovation, or a summer away. Our guide to short-term storage covers flexible lease options. Long-term storage usually means seasonal RV and boat storage, a military deployment, or a classic car kept for weekend drives.
+Common short-term reasons include a move, a renovation, or a summer away. Our guide to [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) covers flexible lease options. Long-term storage usually means seasonal RV and boat storage, a military deployment, or a classic car kept for weekend drives.
 
 ## How do vehicle storage prices differ by city, and how should you choose a location?
 
 Vehicle storage prices follow local land costs, so the same space can cost twice as much in one metro as in another. Dense coastal cities have the least room for large parking lots, which pushes prices up.
 
-- Higher-cost markets: cities like Los Angeles, San Francisco, Boston, and New York City often sit at the top of each range, and outdoor RV parking can be hard to find close to the city center.
+- Higher-cost markets: cities like [Los Angeles](/storage-search/california/los-angeles), [San Francisco](/storage-search/california/san-francisco), Boston, and [New York City](/storage-search/new-york/new-york-city) often sit at the top of each range, and outdoor RV parking can be hard to find close to the city center.
 
-- Lower-cost markets: metros like Salt Lake City, Kansas City, St. Louis, Phoenix, and Indianapolis tend to have more land and more competition, so rates are often lower.
+- Lower-cost markets: metros like [Salt Lake City](/storage-search/utah/salt-lake-city), [Kansas City](/storage-search/missouri/kansas-city), [St. Louis](/storage-search/missouri/st-louis), Phoenix, and Indianapolis tend to have more land and more competition, so rates are often lower.
 
 - Suburbs and edge-of-town facilities are usually cheaper than those in the urban core, especially for RV and boat parking.
 

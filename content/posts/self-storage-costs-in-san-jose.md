@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-A storage unit in San Jose costs about $55 to $500 a month depending on size and location, and the most popular 10x10 unit typically runs $130 to $220, with the citywide average sitting around $165 to $175. That makes San Jose one of the pricier storage markets in the country, roughly 40% to 50% above the national average for a 10x10. This guide breaks down current San Jose storage prices by size, shows which parts of the South Bay cost the most and least, covers the fees that land on your bill, and explains when and how to book for a better rate.
+A storage unit in [San Jose](/storage-search/california/san-jose) costs about $55 to $500 a month depending on size and location, and the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) typically runs $130 to $220, with the citywide average sitting around $165 to $175. That makes San Jose one of the pricier storage markets in the country, roughly 40% to 50% above the national average for a 10x10. This guide breaks down current San Jose storage prices by size, shows which parts of the South Bay cost the most and least, covers the fees that land on your bill, and explains when and how to book for a better rate.
 
 ## San Jose storage unit prices by size
 
@@ -49,7 +49,7 @@ San Jose storage prices sit well above the national average for a few local reas
 
 - Limited room for new facilities. Zoning rules and competition for industrial land make it hard to build new storage, so supply grows slowly.
 
-Not sure which size fits your household? Our storage unit size guide walks through what each common size holds.
+Not sure which size fits your household? Our storage unit [size guide](/storage-size-guide) walks through what each common size holds.
 
 ## Cheapest and priciest San Jose areas for storage
 
@@ -69,7 +69,7 @@ A few practical takeaways:
 
 - East San Jose facilities along major roads often run frequent online discounts, so compare the web rate with the walk-in rate.
 
-- If you split your time between the South Bay and the city, compare rates on our San Francisco storage search page and Oakland storage search page, since East Bay rates can come in lower.
+- If you split your time between the South Bay and the city, compare rates on our [San Francisco](/storage-search/california/san-francisco) storage search page and [Oakland](/storage-search/california/oakland) storage search page, since East Bay rates can come in lower.
 
 You can compare facilities and current rates across the city on our San Jose storage search page.
 
@@ -87,7 +87,7 @@ It is worth paying for if:
 
 - You are storing near the bay, where winter fog and damp can lead to musty smells over time.
 
-You can usually skip it for tools, bikes, patio furniture, and short stays in spring or fall. For a full breakdown, read what climate controlled storage covers.
+You can usually skip it for tools, bikes, patio furniture, and short stays in spring or fall. For a full breakdown, read what [climate controlled storage](/climate-controlled-storage) covers.
 
 ## Extra fees to budget for in San Jose
 
@@ -102,7 +102,7 @@ The advertised monthly rate is rarely your full bill. Plan for some combination 
 | Late fee | Set by your rental agreement | California law limits how much can be charged |
 | Rent increases | Often 5% to 10% after 6 to 12 months | Ask how often rates change before you sign |
 
-California's self storage law sets rules for late fees, lien notices, and lien sales, so read the late payment section of your rental agreement before you sign. If you plan to use your own insurance, check the off-premises limit, since many policies cover stored items at only a share of your total personal property coverage. Our guide to whether renters insurance covers storage units explains what to look for.
+California's self storage law sets rules for late fees, lien notices, and lien sales, so read the late payment section of your rental agreement before you sign. If you plan to use your own insurance, check the off-premises limit, since many policies cover stored items at only a share of your total personal property coverage. Our guide to whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units explains what to look for.
 
 ## When is storage cheapest in San Jose?
 
@@ -114,7 +114,7 @@ Storage in San Jose is usually cheapest from November through February, after th
 
 - Fall and winter bring the best promotions, including discounted first months and waived admin fees.
 
-If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run move-in specials, and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
+If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run [move-in specials](/blog/first-month-free-storage-how-the-deals-work), and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
 
 ## How to get a cheaper storage unit in San Jose
 
@@ -130,21 +130,21 @@ If your dates are flexible, booking a few weeks before the summer rush gets you 
 
 - Skip the protection plan if you are covered. Use your renters or homeowners policy if it already covers stored belongings.
 
-- Consider a locker for small loads. If you only have a few boxes, a storage locker can cost far less than a full unit.
+- Consider a locker for small loads. If you only have a few boxes, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can cost far less than a full unit.
 
 ## San Jose storage costs compared with other cities
 
-San Jose sits in the upper tier of US storage markets, close to Los Angeles and a little above San Diego.
+San Jose sits in the upper tier of US storage markets, close to [Los Angeles](/storage-search/california/los-angeles) and a little above [San Diego](/storage-search/california/san-diego).
 
 | City | Typical 10x10 monthly cost |
 | --- | --- |
 | San Jose | $130 to $220 |
 | Los Angeles | $130 to $220 |
 | San Diego | $120 to $175 |
-| New York City | $180 to $300 |
+| [New York City](/storage-search/new-york/new-york-city) | $180 to $300 |
 | National average | Around $120 |
 
-If you are moving between markets, compare the breakdowns for Los Angeles and San Diego. For the national picture, the guide to how much a storage unit costs breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our short-term storage guide covers your options.
+If you are moving between markets, compare the breakdowns for Los Angeles and San Diego. For the national picture, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) guide covers your options.
 
 ![Blog image](/images/blog/self-storage-costs-in-san-jose-img-2.png)
 

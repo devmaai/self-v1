@@ -17,7 +17,7 @@ A 10x30 storage unit gives you 300 square feet of floor space, enough to hold th
 
 A 10x30 storage unit measures 10 feet wide by 30 feet deep, for 300 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 2,400 cubic feet of storage volume, and some facilities with 9 to 10-foot ceilings offer closer to 3,000 cubic feet.
 
-To put that in perspective, 300 square feet is about the footprint of a large two-car garage. It is also roughly double a 10x15 unit and 50% larger than a 10x20, which is the next size down at most facilities.
+To put that in perspective, 300 square feet is about the footprint of a large two-car garage. It is also roughly double a [10x15 unit](/blog/10x15-storage-unit-size-price-and-what-fits-inside) and 50% larger than a 10x20, which is the next size down at most facilities.
 
 |   |   |
 | --- | --- |
@@ -49,7 +49,7 @@ A well-packed 10x30 unit holds the entire contents of a four to five bedroom hou
 
 - One vehicle, such as [a car](/car-storage), truck, or small boat on a trailer, if you skip the appliances and furniture
 
-Most people use a 10x30 for one of two reasons: moving an entire house at once, or storing a mix of household goods and a vehicle in the same space. If you only need to park a car, truck, or motorcycle without anything else, a dedicated vehicle storage spot is often cheaper. See our Car Storage Size Guide for size-specific vehicle options.
+Most people use a 10x30 for one of two reasons: moving an entire house at once, or storing a mix of household goods and a vehicle in the same space. If you only need to park a car, truck, or motorcycle without anything else, a dedicated vehicle storage spot is often cheaper. See our Car [Storage Size Guide](/storage-size-guide) for size-specific vehicle options.
 
 ## How much does a 10x30 storage unit cost?
 
@@ -71,7 +71,7 @@ A few things move the price up or down:
 
 - Location and season. Rates in large coastal metros run well above these figures, while smaller inland markets run below them. Prices also climb in late spring and summer, the busiest moving months.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 10x30 vs. other storage unit sizes
 

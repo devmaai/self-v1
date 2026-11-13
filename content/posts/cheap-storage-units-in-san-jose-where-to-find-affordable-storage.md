@@ -12,11 +12,11 @@ published: true
 
 **Introduction**
 
-Cheap storage units in San Jose usually cost $25 to $70 a month for a small 5x5 and $90 to $140 for a budget 10x10, while the citywide 10x10 average sits around $160 to $175. San Jose is one of the pricier storage markets in the country, so finding an affordable unit takes a little planning. This guide shows what cheap storage really costs by size, which parts of the South Bay tend to be cheapest, the top-rated brands worth checking first, and simple ways to lower your monthly bill.
+Cheap storage units in [San Jose](/storage-search/california/san-jose) usually cost $25 to $70 a month for a small 5x5 and $90 to $140 for a budget 10x10, while the citywide 10x10 average sits around $160 to $175. San Jose is one of the pricier storage markets in the country, so finding an affordable unit takes a little planning. This guide shows what cheap storage really costs by size, which parts of the South Bay tend to be cheapest, the top-rated brands worth checking first, and simple ways to lower your monthly bill.
 
 ## How much do cheap storage units cost in San Jose?
 
-A cheap storage unit in San Jose runs about $25 to $140 a month for most people, depending on size, location, and whether you catch a move-in special. Here are typical monthly ranges based on current street rates across the city.
+A cheap storage unit in San Jose runs about $25 to $140 a month for most people, depending on size, location, and whether you catch a [move-in special](/blog/first-month-free-storage-how-the-deals-work). Here are typical monthly ranges based on current street rates across the city.
 
 | Unit size | Budget price range | Typical average | Roughly what it holds |
 | --- | --- | --- | --- |
@@ -32,11 +32,11 @@ A few quick notes:
 
 - Climate control usually adds $15 to $70 a month, so skip it when your items can safely handle summer heat.
 
-- San Jose rates run roughly 40% to 50% above the national 10x10 average. Our guide to how much a storage unit costs shows the national picture.
+- San Jose rates run roughly 40% to 50% above the national 10x10 average. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) shows the national picture.
 
 ## Where to find the cheapest storage in San Jose
 
-The cheapest storage in San Jose is usually in South San Jose, East San Jose, and the industrial corridors along Monterey Road, Senter Road, and Oakland Road. Central and west-side neighborhoods cost more because land is pricier and there are fewer facilities.
+The cheapest storage in San Jose is usually in South San Jose, East San Jose, and the industrial corridors along Monterey Road, Senter Road, and [Oakland](/storage-search/california/oakland) Road. Central and west-side neighborhoods cost more because land is pricier and there are fewer facilities.
 
 | Area | Price tendency | Why |
 | --- | --- | --- |
@@ -58,13 +58,13 @@ You can compare facilities and current rates across the city on our San Jose sto
 
 These well-known brands all operate facilities in San Jose and regularly offer budget-friendly options.
 
-- Public Storage. The largest storage brand in the US, with many San Jose locations and some of the lowest small-unit move-in rates in the city. You can rent and move in fully online, which makes it easy to grab a web special.
+- [Public Storage](https://www.publicstorage.com/). The largest storage brand in the US, with many San Jose locations and some of the lowest small-unit move-in rates in the city. You can rent and move in fully online, which makes it easy to grab a web special.
 
-- Extra Space Storage. A national brand with several San Jose facilities, including sites along Oakland Road in North San Jose. It is known for a wide range of unit sizes, clean climate-controlled buildings, and frequent online promotions.
+- [Extra Space Storage](https://www.extraspace.com/). A national brand with several San Jose facilities, including sites along Oakland Road in North San Jose. It is known for a wide range of unit sizes, clean climate-controlled buildings, and frequent online promotions.
 
-- A-1 Self Storage. A California-based operator with several San Jose locations, including Monterey Road, Senter Road, and Santa Ana Avenue. It is a solid pick for affordable drive-up and indoor units in South and East San Jose.
+- A-1 Self Storage. A California-based operator with several San Jose locations, including Monterey Road, Senter Road, and [Santa Ana](/storage-search/california/santa-ana) Avenue. It is a solid pick for affordable drive-up and indoor units in South and East San Jose.
 
-- SmartStop Self Storage. SmartStop runs a facility on Alum Rock Avenue in East San Jose. It offers online rentals, a mix of small and large units, and regular move-in deals.
+- [SmartStop Self Storage](https://smartstopselfstorage.com/). SmartStop runs a facility on Alum Rock Avenue in East San Jose. It offers online rentals, a mix of small and large units, and regular move-in deals.
 
 - StorQuest. StorQuest operates a San Jose facility on King Road, which has listed some of the cheapest 10x10 promotional rates in the city. It is known for straightforward online booking and convenient access hours.
 
@@ -96,11 +96,11 @@ The cheapest unit size in San Jose is a 5x5, often $25 to $70 a month, and it ho
 
 - 5x5: Boxes, seasonal decor, a bike, or small furniture. Great for students and decluttering.
 
-- 5x10: A mattress set, dresser, and boxes from a studio. See our 5x10 storage unit guide.
+- 5x10: A mattress set, dresser, and boxes from a studio. See our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our 10x10 storage unit guide.
+- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- Storage lockers: If you only have a few bins, a small locker can cost less than a full unit.
+- [Storage lockers](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one): If you only have a few bins, a small locker can cost less than a full unit.
 
 Not sure which size you need? Our guide on what size storage unit you need walks you through it room by room.
 

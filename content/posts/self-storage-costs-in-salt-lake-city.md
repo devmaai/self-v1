@@ -9,7 +9,7 @@ url: "/blog/self-storage-costs-salt-lake-city/"
 published: true
 ---
 
-A storage unit in Salt Lake City costs about $35 to $420 a month depending on size and location, and most renters land in the $90 to $210 range for the most popular 10x10 unit. Prices swing more here than in most cities because of the gap between the Avenues and downtown on one end and West Valley City, West Jordan, and Magna on the other. This guide breaks down current Salt Lake City storage prices by size, what pushes them up or down, how the valley's dry winters and ski season change the math, and where you are likely to find the best rate.
+A storage unit in [Salt Lake City](/storage-search/utah/salt-lake-city) costs about $35 to $420 a month depending on size and location, and most renters land in the $90 to $210 range for the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). Prices swing more here than in most cities because of the gap between the Avenues and downtown on one end and [West Valley City](/storage-search/utah/west-valley-city), [West Jordan](/storage-search/utah/west-jordan), and Magna on the other. This guide breaks down current Salt Lake City storage prices by size, what pushes them up or down, how the valley's dry winters and ski season change the math, and where you are likely to find the best rate.
 
 ## Salt Lake City storage unit prices by size
 
@@ -65,7 +65,7 @@ Storage prices in Salt Lake City follow real estate values closely, so where you
 | --- | --- | --- |
 | Area | Price tendency | Why |
 | Downtown, the Avenues, Sugar House | Highest | Dense, land-constrained neighborhoods close to the city core |
-| Holladay, Millcreek, Cottonwood Heights | Above average | Desirable east-side suburbs with limited commercial land |
+| Holladay, [Millcreek](/storage-search/utah/millcreek), Cottonwood Heights | Above average | Desirable east-side suburbs with limited commercial land |
 | Murray, South Salt Lake, Draper | Moderate | More facility supply and easier access |
 | West Valley City, West Jordan, Magna, Midvale | Lowest | West-side industrial land keeps overhead lower |
 
@@ -115,13 +115,13 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do Salt Lake City renters need?
 
-Most Salt Lake City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for ski gear, bikes, or an RV, the vehicle storage guide covers what fits in each unit size. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare Salt Lake City against the rest of the country. You can also browse current listings on our Utah storage search page.
+Most Salt Lake City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for ski gear, bikes, or an RV, the [vehicle storage](/car-storage) guide covers what fits in each unit size. For the national picture on pricing, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks it down by size so you can compare Salt Lake City against the rest of the country. You can also browse current listings on our Utah storage search page.
 
 If you are weighing Salt Lake City against another market, the cost breakdowns for Miami, Dallas, and New York are worth a look for comparison.
 
 ## Frequently asked questions
 
-How much is a storage unit in Salt Lake City? A 10x10 unit typically runs $90 to $210 a month without climate control, depending on the neighborhood. Smaller 5x5 units start around $35 in the cheaper suburbs.
+How much is a storage unit in Salt Lake City? A 10x10 unit typically runs $90 to $210 a month without climate control, depending on the neighborhood. Smaller [5x5 units](/blog/5x5-storage-unit-size-price-and-what-fits-inside) start around $35 in the cheaper suburbs.
 
 Is storage more expensive in Salt Lake City than the national average? It depends on where you book. Suburbs like West Jordan and Magna often undercut the national average of about $137 a month, while downtown and east-side units frequently cost more.
 

@@ -12,11 +12,11 @@ published: true
 
 **Introduction**
 
-Cheap storage units in St. Louis, Missouri usually cost $10 to $25 a month for a small 5x5 and $32 to $65 for a budget 10x10, while typical 10x10 rates across the city sit around $100 to $115. With close to 60 self storage facilities inside the city and dozens more across St. Louis County, you have plenty of room to compare. This guide shows what cheap storage really costs by size, which neighborhoods tend to be the most affordable, the top-rated brands worth checking first, and easy ways to lower your monthly bill.
+Cheap storage units in [St. Louis](/storage-search/missouri/st-louis), Missouri usually cost $10 to $25 a month for a small 5x5 and $32 to $65 for a budget 10x10, while typical 10x10 rates across the city sit around $100 to $115. With close to 60 self storage facilities inside the city and dozens more across St. Louis County, you have plenty of room to compare. This guide shows what cheap storage really costs by size, which neighborhoods tend to be the most affordable, the top-rated brands worth checking first, and easy ways to lower your monthly bill.
 
 ## How much do cheap storage units cost in St. Louis?
 
-A cheap storage unit in St. Louis runs about $10 to $200 a month for most renters, depending on size, neighborhood and whether you catch an online move-in special. Here are typical monthly ranges based on current listed rates across the city.
+A cheap storage unit in St. Louis runs about $10 to $200 a month for most renters, depending on size, neighborhood and whether you catch an online [move-in special](/blog/first-month-free-storage-how-the-deals-work). Here are typical monthly ranges based on current listed rates across the city.
 
 | Unit size | Budget price range | Typical rate | Roughly what it holds |
 | --- | --- | --- | --- |
@@ -31,9 +31,9 @@ A few quick notes:
 
 - The lowest prices are usually first-month or limited-time online specials, such as $1 for the first month or a percentage off the first few months, so expect the regular rate to apply after the promotion ends.
 
-- Climate-controlled units in St. Louis usually cost only $3 to $10 more a month on small and mid sizes, which is a small step up given the humid summers and freezing winters.
+- [Climate-controlled units](/climate-controlled-storage) in St. Louis usually cost only $3 to $10 more a month on small and mid sizes, which is a small step up given the humid summers and freezing winters.
 
-- St. Louis rates sit a little below the national average for most sizes. Our guide to how much a storage unit costs shows the national picture.
+- St. Louis rates sit a little below the national average for most sizes. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) shows the national picture.
 
 ## Where to find the cheapest self storage in St. Louis
 
@@ -52,7 +52,7 @@ The cheapest self storage in St. Louis is usually in Downtown West, Dutchtown an
 
 - Facilities in the 63134, 63126 and 63123 ZIP codes have listed some of the lowest small-unit rates in the area.
 
-- If you live west or north of the city, compare rates on our Chesterfield storage search page, Florissant storage search page, St. Charles storage search page and St. Peters storage search page too.
+- If you live west or north of the city, compare rates on our [Chesterfield](/storage-search/missouri/chesterfield) storage search page, [Florissant](/storage-search/missouri/florissant) storage search page, St. Charles storage search page and St. Peters storage search page too.
 
 You can compare facilities and current rates across the city on our St. Louis storage search page.
 
@@ -60,11 +60,11 @@ You can compare facilities and current rates across the city on our St. Louis st
 
 These well-known brands all operate storage units in St. Louis, Missouri and regularly offer budget-friendly options.
 
-- Public Storage. The largest storage brand in the US, with many St. Louis locations, including Gravois Road, Watson Road, Wilson Avenue, North Vandeventer Avenue, South 3rd Street and World Parkway Circle near the airport. You can rent and move in fully online, which makes it easy to grab a web special.
+- [Public Storage](https://www.publicstorage.com/). The largest storage brand in the US, with many St. Louis locations, including Gravois Road, Watson Road, Wilson Avenue, North Vandeventer Avenue, South 3rd Street and World Parkway Circle near the airport. You can rent and move in fully online, which makes it easy to grab a web special.
 
-- Extra Space Storage. A national brand with a large St. Louis footprint, including Chippewa Street, Forest Park Avenue, South Vandeventer Avenue, Manchester Road, Lemay Ferry Road and Watson Road. It is known for a wide range of unit sizes, climate-controlled options and frequent online promotions.
+- [Extra Space Storage](https://www.extraspace.com/). A national brand with a large St. Louis footprint, including Chippewa Street, Forest Park Avenue, South Vandeventer Avenue, Manchester Road, Lemay Ferry Road and Watson Road. It is known for a wide range of unit sizes, climate-controlled options and frequent online promotions.
 
-- U-Haul Moving & Storage. U-Haul runs several St. Louis stores, including Dutchtown, The Hill, Kingshighway and Downtown. It is a handy pick if you want to rent a truck and a storage unit in one stop.
+- [U-Haul](https://www.uhaul.com/) Moving & Storage. U-Haul runs several St. Louis stores, including Dutchtown, The Hill, Kingshighway and Downtown. It is a handy pick if you want to rent a truck and a storage unit in one stop.
 
 - Devon Self Storage. Devon operates St. Louis facilities on Union Boulevard and Lemay Ferry Road, with a good mix of small and large units.
 
@@ -84,25 +84,25 @@ Storage costs more in some parts of St. Louis mainly because of limited land in 
 
 - Neighborhood demand. The Hill, the Central West End and areas near Forest Park have lots of renters and little room for new facilities, so nearby units fill fast.
 
-- Frequent moves. Students at Saint Louis University and Washington University, hospital staff and new arrivals often need storage between leases. Our moving home guide helps you plan the timing, and our student storage guide covers summer breaks.
+- Frequent moves. Students at Saint Louis University and Washington University, hospital staff and new arrivals often need storage between leases. Our moving home guide helps you plan the timing, and our [student storage](/student-storage) guide covers summer breaks.
 
 - Hot summers and cold winters. Humid summers and freezing winters keep climate-controlled units in steady demand, and the largest climate-controlled sizes carry the biggest premium.
 
-- Vehicle and boat storage. Many renters store a boat for lake season or keep a second car, and larger 10x20 to 10x30 spaces cost more. Our vehicle storage guide explains your options.
+- Vehicle and [boat storage](/boat-storage). Many renters store a boat for lake season or keep a second car, and larger 10x20 to 10x30 spaces cost more. Our [vehicle storage](/car-storage) guide explains your options.
 
-- Premium features. Ground-floor drive-up access and 24-hour entry all add to the rate. Our guide to 24-hour access storage units explains when that extra access is worth paying for.
+- Premium features. Ground-floor drive-up access and 24-hour entry all add to the rate. Our guide to [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage units explains when that extra access is worth paying for.
 
 ## Cheapest storage unit sizes and what fits
 
 The cheapest unit size in St. Louis is a 5x5, often $10 to $25 a month, and it holds about a closet's worth of boxes. Picking the smallest size that truly fits is the easiest way to keep storage cheap.
 
-- 5x5: Boxes, seasonal decor, a bike or small furniture. Great for students and decluttering. See our 5x5 storage unit guide.
+- 5x5: Boxes, seasonal decor, a bike or small furniture. Great for students and decluttering. See our [5x5 storage unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 5x10: A mattress set, dresser and boxes from a studio. See our 5x10 storage unit guide.
+- 5x10: A mattress set, dresser and boxes from a studio. See our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our 10x10 storage unit guide.
+- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-Not sure which size you need? Our storage size guide walks you through it room by room.
+Not sure which size you need? Our [storage size guide](/storage-size-guide) walks you through it room by room.
 
 ## How to get cheap storage in St. Louis
 
@@ -116,7 +116,7 @@ The fastest way to get cheap storage in St. Louis is to book online during a pro
 
 - Use climate control only when needed. Tools, bikes, plastic bins and patio furniture are usually fine without it. Our climate controlled storage guide shows what truly needs it.
 
-- Use your own insurance. Your renters or homeowners policy may already cover stored items. See does renters insurance cover storage units.
+- Use your own insurance. Your renters or homeowners policy may already cover stored items. See does [renters insurance](/blog/does-renters-insurance-cover-storage-units) cover storage units.
 
 - Budget for the admin fee. Many facilities charge a one-time fee of about $25 to $30 at move-in, so include it when you compare deals.
 
@@ -140,7 +140,7 @@ Before you rent, check for:
 
 - Clear rental terms, including fees, late charges and how rent increases work
 
-Missouri has its own self storage rules covering late fees and lien sales, so read your rental agreement carefully. You can also browse facilities across the state on our Missouri storage search page, or see how prices compare in cheap storage units in Kansas City and cheap storage units in Springfield, MO.
+Missouri has its own self storage rules covering late fees and lien sales, so read your rental agreement carefully. You can also browse facilities across the state on our Missouri storage search page, or see how prices compare in cheap storage units in [Kansas City](/storage-search/missouri/kansas-city) and cheap storage units in [Springfield](/storage-search/missouri/springfield), MO.
 
 ![Blog image](/images/blog/cheap-storage-units-in-st-louis-where-to-find-affordable-storage-img-2.png)
 

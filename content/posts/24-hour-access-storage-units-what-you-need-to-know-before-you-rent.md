@@ -39,7 +39,7 @@ Yes, in most markets. You are paying for the extra security infrastructure and s
 | 10x15 | $150 to $165 | +$15 to $35 |
 | 10x20 or larger | $195 and up | +$20 to $40 |
 
-A 10x10 unit with round-the-clock access, for example, often lands somewhere in the $125 to $155 range depending on the city. The premium tends to be smaller in dollar terms on tiny lockers and larger on bigger units, since bigger units already carry a higher base rate.
+A [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) with round-the-clock access, for example, often lands somewhere in the $125 to $155 range depending on the city. The premium tends to be smaller in dollar terms on tiny lockers and larger on bigger units, since bigger units already carry a higher base rate.
 
 ## Who actually needs round-the-clock access?
 
@@ -51,11 +51,11 @@ Not everyone does, and plenty of renters pay for it without ever using it outsid
 
 - Movers on a tight deadline, packing a truck late at night before a long drive.
 
-- Seasonal storage users who want flexibility during a short term storage stint without being boxed into set hours.
+- Seasonal storage users who want flexibility during a [short term storage](/blog/short-term-storage-options-costs-and-how-it-works) stint without being boxed into set hours.
 
 - Anyone in a different time zone managing storage remotely for a move or a relative's belongings.
 
-- Movers using a portable container, loading at odd hours before a moving container pickup.
+- Movers using a portable container, loading at odd hours before a [moving container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) pickup.
 
 If your visits are occasional and predictable, like a monthly trip to swap out seasonal gear, a standard access window is usually fine and saves you money every month.
 

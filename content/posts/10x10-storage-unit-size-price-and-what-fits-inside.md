@@ -17,7 +17,7 @@ A 10x10 storage unit gives you 100 square feet of floor space, enough to hold th
 
 A 10x10 storage unit measures 10 feet wide by 10 feet deep, for 100 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 800 cubic feet of storage volume, and facilities with 9 to 10-foot ceilings offer closer to 900 to 1,000 cubic feet.
 
-To put that in perspective, 100 square feet is about the size of a small bedroom, or roughly half a one-car garage. It is double the floor space of a 5x10 unit and two-thirds the size of a 10x15, which is the next size up at most facilities.
+To put that in perspective, 100 square feet is about the size of a small bedroom, or roughly half a one-car garage. It is double the floor space of a [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) and two-thirds the size of a 10x15, which is the next size up at most facilities.
 
 |   |   |
 | --- | --- |
@@ -47,11 +47,11 @@ A well-packed 10x10 unit holds the entire contents of a one to two bedroom home 
 
 - A motorcycle instead of furniture, if you are storing a vehicle rather than a household
 
-Most people use a 10x10 for one of three reasons: moving a one or two bedroom apartment, storing the overflow from a downsize, or keeping [business inventory](/business-storage) and equipment in one place. If you are trying to fit a full house or a vehicle alongside your furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x10 for one of three reasons: moving a one or two bedroom apartment, storing the overflow from a downsize, or keeping [business inventory](/business-storage) and equipment in one place. If you are trying to fit a full house or a vehicle alongside your furniture, you have likely outgrown this size. Our storage unit [size guide](/storage-size-guide) walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x10 storage unit cost?
 
-A 10x10 storage unit typically costs $115 to $130 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $145 to $205 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $160 to $250 or more.
+A 10x10 storage unit typically costs $115 to $130 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $145 to $205 a month with climate control added. In expensive metro markets like [Los Angeles](/storage-search/california/los-angeles) or New York, the same unit can run $160 to $250 or more.
 
 |   |   |   |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ A few things move the price up or down:
 
 - Access type. A 10x10 is available as either drive-up or indoor at most facilities, and drive-up access usually costs a little more since you can pull a vehicle right up to the door.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 10x10 vs. other storage unit sizes
 
@@ -107,7 +107,7 @@ A 10x10 fits a specific set of situations better than any other size, which is w
 
 - Downsizers who are keeping a meaningful amount of furniture but moving into a smaller home.
 
-- College students and young professionals consolidating a full apartment's worth of belongings over a summer.
+- [College students](/student-storage) and young professionals consolidating a full apartment's worth of belongings over a summer.
 
 - Small business owners who need room for inventory, tools, or seasonal stock without paying for commercial space.
 
@@ -119,7 +119,7 @@ If your situation is smaller, like a dorm room or a studio, a 5x10 will usually 
 
 Getting full value out of 100 square feet comes down to how you load it, not just what you bring.
 
-- Use the full height. Stack boxes to the ceiling and store furniture like mattresses and tabletops vertically along the walls.
+- Use the full height. Stack boxes to the ceiling and [store furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) like mattresses and tabletops vertically along the walls.
 
 - Disassemble what you can. Bed frames, tables, and shelving units take up far less room broken down than left whole.
 
@@ -143,7 +143,7 @@ Is a 10x10 storage unit the most common size? Yes. The 10x10 is the most rented 
 
 Can I fit a car in a 10x10 storage unit? A small or compact car can fit, but it is tight and leaves no room for anything else. A midsize car or larger usually needs a 10x15 or 10x20 instead.
 
-Is a 10x10 or a 10x15 storage unit better for a one-bedroom apartment? A 10x10 is usually enough for a one-bedroom unless you have a lot of large furniture or a second room's worth of overflow, in which case a 10x15 gives you breathing room.
+Is a 10x10 or a [10x15 storage unit](/blog/10x15-storage-unit-size-price-and-what-fits-inside) better for a one-bedroom apartment? A 10x10 is usually enough for a one-bedroom unless you have a lot of large furniture or a second room's worth of overflow, in which case a 10x15 gives you breathing room.
 
 Does a 10x10 storage unit have drive-up access? Many do, though some facilities only offer this size as an indoor unit reached by hallway or elevator. Confirm access type before booking if you plan to load directly from a vehicle.
 

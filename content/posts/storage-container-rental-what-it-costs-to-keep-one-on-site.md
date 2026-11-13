@@ -44,7 +44,7 @@ Pick the size by what you need to store once it is stacked, plus how much room y
 | 40 ft | About 40 x 8 ft | About 2,350 cubic feet | Business stock, construction sites, large homes |
 | 40 ft high cube | About 40 x 8 ft, 9.5 ft tall | About 2,700 cubic feet | Tall items, shelving, bulky equipment |
 
-For comparison, a 20-foot container offers about the same floor space as a 10x20 storage unit. If you are unsure how much room your things take up, the storage size guide uses the same math.
+For comparison, a 20-foot container offers about the same floor space as a [10x20 storage unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside). If you are unsure how much room your things take up, the [storage size guide](/storage-size-guide) uses the same math.
 
 ## How does storage container rental work?
 
@@ -60,7 +60,7 @@ The supplier delivers an empty container to your property, you load it on your o
 
 - Pickup or purchase. When you are done, the supplier hauls the empty container away. Some companies offer a rent-to-own option if you decide to keep it.
 
-The biggest difference from a moving container is that a storage container usually stays on your property the whole time. It is built for on-site storage, not for being trucked to a new address with your belongings inside.
+The biggest difference from a [moving container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) is that a storage container usually stays on your property the whole time. It is built for on-site storage, not for being trucked to a new address with your belongings inside.
 
 ## Where can you put a storage container? Space, permits, and HOA rules
 
@@ -99,7 +99,7 @@ Choose a storage container when you want your belongings close by on your own pr
 | Space needed at home | A lot | None |
 | Best for | Job sites, business overflow, farms | Long-term or climate-sensitive storage |
 
-If you need storage for a few weeks while you sort out a move or a project, compare both options in our guide to short-term storage.
+If you need storage for a few weeks while you sort out a move or a project, compare both options in our guide to [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works).
 
 ## When does an on-site storage container make sense?
 
@@ -151,7 +151,7 @@ Rent a storage container if you need it for less than a year, and consider buyin
 
 - Get delivery quotes either way. Distance to the supplier's yard drives the delivery fee, so a nearby yard can save you hundreds whether you rent or buy.
 
-- Compare against a storage unit. For long stays, a local facility with a first month free deal can beat container pricing.
+- Compare against a storage unit. For long stays, a local facility with a [first month free](/blog/first-month-free-storage-how-the-deals-work) deal can beat container pricing.
 
 ![Blog image](/images/blog/storage-container-rental-what-it-costs-to-keep-one-on-site-img-2.png)
 

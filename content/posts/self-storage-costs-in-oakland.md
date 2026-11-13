@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-A storage unit in Oakland, California costs about $60 to $480 a month depending on size, and the popular 10x10 unit typically runs $130 to $220, with recent citywide averages landing between about $150 and $195. That makes Oakland one of the pricier storage markets in the country, a little below San Francisco but well above inland cities like Stockton and Sacramento. This guide breaks down current Oakland storage prices by size, shows which neighborhoods cost the most and least, explains when climate control and vehicle storage are worth it, lists the fees that land on your bill, and shares practical ways to pay less.
+A storage unit in [Oakland](/storage-search/california/oakland), California costs about $60 to $480 a month depending on size, and the popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) typically runs $130 to $220, with recent citywide averages landing between about $150 and $195. That makes Oakland one of the pricier storage markets in the country, a little below [San Francisco](/storage-search/california/san-francisco) but well above inland cities like [Stockton](/storage-search/california/stockton) and [Sacramento](/storage-search/california/sacramento). This guide breaks down current Oakland storage prices by size, shows which neighborhoods cost the most and least, explains when climate control and [vehicle storage](/car-storage) are worth it, lists the fees that land on your bill, and shares practical ways to pay less.
 
 ## Oakland storage unit prices by size
 
@@ -49,7 +49,7 @@ Oakland storage prices sit near the top of the state for a few local reasons.
 
 - Small business demand. Contractors, makers, and online sellers in West Oakland and the flatlands use storage as overflow space for tools and inventory.
 
-Not sure which size fits your household? Our storage unit size guide walks through what each common size holds.
+Not sure which size fits your household? Our storage unit [size guide](/storage-size-guide) walks through what each common size holds.
 
 ## Cheapest and priciest Oakland neighborhoods for storage
 
@@ -88,7 +88,7 @@ It is worth paying for if:
 
 - You are storing through late summer and early fall, when Oakland's warmest days arrive and a closed metal unit heats up quickly.
 
-You can usually skip it for tools, bikes, camping gear, patio furniture, and short stays. Oakland's mild weather means many indoor units stay reasonably stable even without full climate control. For a full breakdown, read what climate controlled storage covers.
+You can usually skip it for tools, bikes, camping gear, patio furniture, and short stays. Oakland's mild weather means many indoor units stay reasonably stable even without full climate control. For a full breakdown, read what [climate controlled storage](/climate-controlled-storage) covers.
 
 ## Car, RV, and boat storage costs in Oakland
 
@@ -98,7 +98,7 @@ Vehicle storage is harder to find in Oakland than in the suburbs, and it costs m
 | --- | --- | --- |
 | Uncovered parking space | $100 to $220 | Cars, trailers, and small boats |
 | Covered parking space | $170 to $320 | RVs and boats that need sun and rain protection |
-| Enclosed 10x20 unit | $230 to $360 | Classic cars and long-term car storage |
+| Enclosed [10x20 unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside) | $230 to $360 | Classic cars and long-term car storage |
 | Enclosed 10x30 or larger | $320 to $520 | Trucks, larger boats, and a car plus household goods |
 
 Most RV and boat parking sits in East Oakland, San Leandro, and Hayward, where facilities have room for large lots. If you keep a boat at a marina in Alameda or Jack London Square, book a covered space early, since they fill before summer. See our vehicle storage guide and car storage size guide for what each option fits.
@@ -116,7 +116,7 @@ The advertised monthly rate is rarely your full bill. Plan for some combination 
 | Late fee | Set by your rental agreement | California law limits how much can be charged |
 | Rent increases | Often 5% to 10% after 6 to 12 months | Ask how often rates change before you sign |
 
-California's self storage law sets rules for late fees, lien notices, and lien sales, so read the late payment section of your rental agreement before you sign. If you plan to use your own insurance, check the off-premises limit, since many policies cover stored items at only a share of your total personal property coverage. Our guide to whether renters insurance covers storage units explains what to look for.
+California's self storage law sets rules for late fees, lien notices, and lien sales, so read the late payment section of your rental agreement before you sign. If you plan to use your own insurance, check the off-premises limit, since many policies cover stored items at only a share of your total personal property coverage. Our guide to whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units explains what to look for.
 
 ## When is storage cheapest in Oakland?
 
@@ -128,7 +128,7 @@ Storage in Oakland is usually cheapest from November through February, after the
 
 - Fall and winter bring the best promotions, including discounted first months and waived admin fees.
 
-If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run move-in specials, and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
+If your dates are flexible, booking a few weeks before the summer rush gets you more choice of sizes and a better starting rate. Many facilities run [move-in specials](/blog/first-month-free-storage-how-the-deals-work), and our guide to first month free storage deals explains how to spot an offer that actually saves you money.
 
 ## How to get a cheaper storage unit in Oakland
 
@@ -144,22 +144,22 @@ If your dates are flexible, booking a few weeks before the summer rush gets you 
 
 - Skip the protection plan if you are covered. Use your renters or homeowners policy if it already covers stored belongings.
 
-- Consider a locker for small loads. If you only have a few boxes, a storage locker can cost far less than a full unit.
+- Consider a locker for small loads. If you only have a few boxes, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can cost far less than a full unit.
 
 ## Oakland storage costs compared with other California cities
 
-Oakland sits in the upper tier of California storage markets, close to San Jose and Los Angeles and well above the Central Valley.
+Oakland sits in the upper tier of California storage markets, close to [San Jose](/storage-search/california/san-jose) and [Los Angeles](/storage-search/california/los-angeles) and well above the Central Valley.
 
 | City | Typical 10x10 monthly cost |
 | --- | --- |
 | Oakland | $130 to $220 |
 | San Jose | $130 to $220 |
 | Los Angeles | $130 to $220 |
-| San Diego | $120 to $175 |
+| [San Diego](/storage-search/california/san-diego) | $120 to $175 |
 | Stockton | $90 to $145 |
 | National average | Around $120 |
 
-If you are moving between markets, compare the breakdowns for San Jose, Los Angeles, and Stockton, or browse facilities on our Sacramento storage search page. For the national picture, the guide to how much a storage unit costs breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our short-term storage guide covers your options.
+If you are moving between markets, compare the breakdowns for San Jose, Los Angeles, and Stockton, or browse facilities on our Sacramento storage search page. For the national picture, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks prices down by size, and the California storage search page lists facilities across the state. Only need space for a few weeks? Our [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) guide covers your options.
 
 ![Blog image](/images/blog/self-storage-costs-in-oakland-img-2.png)
 

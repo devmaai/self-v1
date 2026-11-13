@@ -17,7 +17,7 @@ A 5x10 storage unit gives you 50 square feet of floor space, enough to hold the 
 
 A 5x10 storage unit measures 5 feet wide by 10 feet deep, for 50 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 400 cubic feet of storage volume, and facilities with 9 to 10-foot ceilings offer closer to 450 to 500 cubic feet.
 
-To put that in perspective, 50 square feet is about the footprint of a large walk-in closet or a small storage shed, and it is roughly double the size of a 5x5 unit while still being half the size of a 10x10.
+To put that in perspective, 50 square feet is about the footprint of a large walk-in closet or a small storage shed, and it is roughly double the size of a [5x5 unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) while still being half the size of a 10x10.
 
 |   |   |
 | --- | --- |
@@ -47,11 +47,11 @@ A well-packed 5x10 unit holds the contents of a studio or one-bedroom apartment 
 
 - A motorcycle or a few bicycles, if you go light on furniture
 
-Most people use a 5x10 for one of two reasons: moving a studio or one-bedroom apartment, or storing a meaningful amount of furniture that has outgrown a 5x5. If you are already picturing a second bedroom's worth of items on top of this, size up. Our storage unit size guide walks through every size from a 5x5 up to a 10x30.
+Most people use a 5x10 for one of two reasons: moving a studio or one-bedroom apartment, or storing a meaningful amount of furniture that has outgrown a 5x5. If you are already picturing a second bedroom's worth of items on top of this, size up. Our storage unit [size guide](/storage-size-guide) walks through every size from a 5x5 up to a 10x30.
 
 ## How much does a 5x10 storage unit cost?
 
-A 5x10 storage unit typically costs $60 to $80 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $80 to $125 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $100 or more.
+A 5x10 storage unit typically costs $60 to $80 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $80 to $125 a month with climate control added. In expensive metro markets like [Los Angeles](/storage-search/california/los-angeles) or New York, the same unit can run $100 or more.
 
 |   |   |   |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ A few things move the price up or down:
 
 - Access type. A 5x10 can be either indoor or drive-up depending on the facility, and drive-up access usually costs a little more.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 5x10 vs. other storage unit sizes
 
@@ -83,7 +83,7 @@ The 5x10 sits in the lower-middle of the standard size lineup. Here is how it co
 | 10x10 | 100 sq ft | One to two bedroom home | 15 to 20-foot truck |
 | 10x15 | 150 sq ft | Two to three bedroom home | 15 to 20-foot truck, mostly full |
 
-If you find yourself leaving furniture half-assembled on the floor because there is nowhere else to put it, you have outgrown a 5x10. On the other end, our 5x5 storage unit guide covers the smallest common size, and our 10x30 storage unit guide covers the largest.
+If you find yourself leaving furniture half-assembled on the floor because there is nowhere else to put it, you have outgrown a 5x10. On the other end, our 5x5 storage unit guide covers the smallest common size, and our [10x30 storage unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside) guide covers the largest.
 
 ## Is a 5x10 big enough for a studio or one-bedroom apartment?
 
@@ -103,9 +103,9 @@ If you are on the fence between a 5x10 and a 10x10, renting the bigger size usua
 
 A 5x10 makes sense for a specific set of situations rather than every household's storage needs:
 
-- Studio and one-bedroom renters moving between leases or storing furniture during a short-term relocation.
+- Studio and one-bedroom renters moving between leases or [storing furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) during a short-term relocation.
 
-- College students and young professionals consolidating a first apartment's worth of belongings.
+- [College students](/student-storage) and young professionals consolidating a first apartment's worth of belongings.
 
 - Downsizers who have already pared down from a house but still have a bedroom's worth of items left.
 
@@ -145,7 +145,7 @@ Is a 5x10 storage unit big enough for a one-bedroom apartment? Usually. It cover
 
 What size moving truck do I need for a 5x10 storage unit? A 10-foot truck or a medium cargo van is typically enough to move everything a 5x10 unit holds in a single trip.
 
-What is the difference between a 5x10 and a 10x10 storage unit? A 5x10 offers 50 square feet, enough for a studio or one-bedroom. A 10x10 doubles that to 100 square feet, enough for a one to two bedroom home.
+What is the difference between a 5x10 and a [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside)? A 5x10 offers 50 square feet, enough for a studio or one-bedroom. A 10x10 doubles that to 100 square feet, enough for a one to two bedroom home.
 
 Does a 5x10 storage unit fit a couch and a bed? Yes, in most cases. A 5x10 comfortably fits a couch and a bed along with a dresser and boxes, as long as you stand larger pieces on their side where possible.
 

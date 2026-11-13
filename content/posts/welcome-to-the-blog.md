@@ -6,7 +6,7 @@ published: false
 category: seo
 ---
 
-This is the first post on the SelfStorage.help blog. Every week we publish something practical for self-storage operators: a Google algorithm change worth knowing about, a local SEO tactic you can run yourself, or an operator case study with the numbers attached.
+This is the first post on the SelfStorage.help blog. Every week we publish something practical for self-storage operators: a Google algorithm change worth knowing about, a [local SEO](/services/local-seo-gbp-optimization) tactic you can run yourself, or an operator case study with the numbers attached.
 
 ## What you can expect in this
 
@@ -17,3 +17,5 @@ Posts here are written for owners and managers, not marketers. If a topic involv
 One post a week, on average. Each post is self-contained, so you can read the ones that match what your facility needs right now and skip the rest.
 
 Have a question you want covered? Reach out through the contact page and we will work it into the schedule.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Find storage near you](/find-storage) · [Climate controlled storage](/climate-controlled-storage)

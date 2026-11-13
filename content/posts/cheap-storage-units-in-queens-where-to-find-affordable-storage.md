@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Cheap storage units in Queens usually cost $10 to $60 a month for a small 5x5 and $105 to $170 for a budget 10x10 with an online move-in special, while typical 10x10 rates across the borough run about $285 to $340 a month. With more than 50 facilities spread from Long Island City to Queens Village, you have plenty of choice if you know where to look. This guide shows what cheap storage really costs by size, which Queens neighborhoods tend to be the most affordable, the top-rated brands to check first, and simple ways to lower your monthly bill.
+Cheap storage units in [Queens](/storage-search/new-york/queens) usually cost $10 to $60 a month for a small 5x5 and $105 to $170 for a budget 10x10 with an online [move-in special](/blog/first-month-free-storage-how-the-deals-work), while typical 10x10 rates across the borough run about $285 to $340 a month. With more than 50 facilities spread from Long Island City to Queens Village, you have plenty of choice if you know where to look. This guide shows what cheap storage really costs by size, which Queens neighborhoods tend to be the most affordable, the top-rated brands to check first, and simple ways to lower your monthly bill.
 
 ## How much do cheap storage units cost in Queens?
 
@@ -32,7 +32,7 @@ A few quick notes:
 
 - Climate control is common in Queens because most facilities are multi-story indoor buildings, and it usually adds only $15 to $35 a month.
 
-- Self storage in Queens costs more than the national average because land in New York City is expensive. Our guide to how much a storage unit costs shows the national picture.
+- Self storage in Queens costs more than the national average because land in [New York City](/storage-search/new-york/new-york-city) is expensive. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) shows the national picture.
 
 ## Where to find the cheapest self storage in Queens
 
@@ -41,14 +41,14 @@ The cheapest self storage in Queens is usually in southeast and south Queens aro
 | Area | Price tendency | Why |
 | --- | --- | --- |
 | Bayside, Whitestone, College Point, Flushing | Higher | Fewer facilities and strong local demand |
-| Long Island City, Astoria, Sunnyside | Moderate to higher | Close to Manhattan, but many facilities compete with online specials |
+| Long Island City, Astoria, Sunnyside | Moderate to higher | Close to [Manhattan](/storage-search/new-york/manhattan), but many facilities compete with online specials |
 | Woodside, Maspeth, Ridgewood, Glendale | Moderate | Industrial pockets with a good mix of indoor facilities |
 | Elmhurst, Queens Boulevard, Grand Avenue | Lower | Some of the lowest listed promotional rates on small units |
 | Jamaica, Hollis, Queens Village, Ozone Park, South Ozone Park | Lowest | Larger sites, lower land costs, and frequent move-in deals |
 
 - Facilities in the 11373 ZIP code (Elmhurst) and around Jamaica Avenue have listed some of the lowest starting prices in the borough.
 
-- If you live in Brooklyn or Manhattan, Queens is often a more affordable option a short drive away. Compare rates in Brooklyn and Manhattan before you book.
+- If you live in [Brooklyn](/storage-search/new-york/brooklyn) or Manhattan, Queens is often a more affordable option a short drive away. Compare rates in Brooklyn and Manhattan before you book.
 
 You can compare facilities and current rates across the borough on our Queens storage search page.
 
@@ -56,13 +56,13 @@ You can compare facilities and current rates across the borough on our Queens st
 
 These well-known brands all operate storage units in Queens and regularly offer budget-friendly options.
 
-- CubeSmart Self Storage. CubeSmart has one of the largest networks in Queens, with facilities in Elmhurst, Jamaica, Glendale, Richmond Hill, Ozone Park, Bayside, Flushing, Woodhaven, and College Point. It offers simple online booking and frequent move-in specials.
+- [CubeSmart](https://www.cubesmart.com/) Self Storage. CubeSmart has one of the largest networks in Queens, with facilities in Elmhurst, Jamaica, Glendale, Richmond Hill, Ozone Park, Bayside, Flushing, Woodhaven, and College Point. It offers simple online booking and frequent move-in specials.
 
-- Extra Space Storage. Extra Space has Queens locations on Northern Boulevard and 29th Street in Long Island City, Wyckoff Avenue in Ridgewood, and Merrick Boulevard in Jamaica, so you can often find one close to home.
+- [Extra Space Storage](https://www.extraspace.com/). Extra Space has Queens locations on Northern Boulevard and 29th Street in Long Island City, Wyckoff Avenue in Ridgewood, and Merrick Boulevard in Jamaica, so you can often find one close to home.
 
-- Public Storage. The largest storage brand in the US, with Queens facilities on Jamaica Avenue in Queens Village plus Van Dam Street and Northern Boulevard in Long Island City. You can rent and move in fully online.
+- [Public Storage](https://www.publicstorage.com/). The largest storage brand in the US, with Queens facilities on Jamaica Avenue in Queens Village plus Van Dam Street and Northern Boulevard in Long Island City. You can rent and move in fully online.
 
-- Storage Post Self Storage. A New York area operator with Queens sites in Ozone Park, Ridgewood, and Floral Park. Its indoor, climate-controlled buildings are a good fit for furniture and electronics.
+- [Storage Post](https://www.storagepost.com/) Self Storage. A New York area operator with Queens sites in Ozone Park, Ridgewood, and Floral Park. Its indoor, climate-controlled buildings are a good fit for furniture and electronics.
 
 - Stop & Stor. A New York City brand with Queens facilities on Woodhaven Boulevard, Grand Avenue, and 97th Avenue. It is known for clean buildings and helpful on-site teams.
 
@@ -71,7 +71,7 @@ These well-known brands all operate storage units in Queens and regularly offer 
 | CubeSmart Self Storage | Wide Queens network, online specials | You want a low promotional rate near home |
 | Extra Space Storage | Several Long Island City and Jamaica sites | You live in western or southeast Queens |
 | Public Storage | Online move-in, small unit deals | You want a cheap 5x5 or locker |
-| Storage Post Self Storage | Indoor climate-controlled buildings | You are storing furniture or electronics |
+| Storage Post Self Storage | Indoor climate-controlled buildings | You are [storing furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) or electronics |
 | Stop & Stor | Local NYC brand, on-site teams | You live in central or southeast Queens |
 
 ## What makes storage units more expensive in Queens?
@@ -84,25 +84,25 @@ Storage units cost more in parts of Queens mainly because of high land prices, s
 
 - Frequent moves. Lease changes and relocations keep demand high, especially in summer. Our moving home guide helps you plan the timing.
 
-- Students. Queens College, St. John's University, York College, and LaGuardia Community College create a rush for small units each May and August. Our student storage guide explains how to book early and save.
+- Students. Queens College, St. John's University, York College, and LaGuardia Community College create a rush for small units each May and August. Our [student storage](/student-storage) guide explains how to book early and save.
 
-- Limited parking. Street parking is tight in much of the borough, so drive-up and vehicle storage spaces fill quickly. Our vehicle storage guide and car storage page explain your options.
+- Limited parking. Street parking is tight in much of the borough, so drive-up and [vehicle storage](/car-storage) spaces fill quickly. Our vehicle storage guide and car storage page explain your options.
 
 ## Cheapest storage unit sizes and what fits
 
 The cheapest unit size in Queens is a 5x5, often $10 to $60 a month on a promotion, and it holds about a closet's worth of boxes. Picking the smallest size that truly fits is the easiest way to keep storage cheap.
 
-- Lockers: If you only have a few bins, a storage locker can start near $15 to $25 a month in Queens.
+- Lockers: If you only have a few bins, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can start near $15 to $25 a month in Queens.
 
-- 5x5: Boxes, seasonal decor, a bike, or small furniture. See our 5x5 storage unit guide.
+- 5x5: Boxes, seasonal decor, a bike, or small furniture. See our [5x5 storage unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 5x10: A mattress set, dresser, and boxes from a studio. See our 5x10 storage unit guide.
+- 5x10: A mattress set, dresser, and boxes from a studio. See our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our 10x10 storage unit guide.
+- 10x10: The contents of a one-bedroom or a small two-bedroom apartment. See our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x15 and larger: A full family apartment or a house move. See our 10x15 storage unit guide.
+- 10x15 and larger: A full family apartment or a house move. See our [10x15 storage unit](/blog/10x15-storage-unit-size-price-and-what-fits-inside) guide.
 
-Not sure which size you need? Our storage size guide walks you through it room by room.
+Not sure which size you need? Our [storage size guide](/storage-size-guide) walks you through it room by room.
 
 ## How to get cheap storage in Queens
 
@@ -116,9 +116,9 @@ The fastest way to get cheap storage in Queens is to book online during a promot
 
 - Choose an upper floor. Upper-floor units reached by elevator usually cost less than ground-floor or drive-up units.
 
-- Pay only for what you need. Climate control is often standard in Queens indoor buildings. Our climate controlled storage guide shows which items need it.
+- Pay only for what you need. Climate control is often standard in Queens indoor buildings. Our [climate controlled storage](/climate-controlled-storage) guide shows which items need it.
 
-- Use your own insurance. Your renters or homeowners policy may already cover stored items. See does renters insurance cover storage units.
+- Use your own insurance. Your renters or homeowners policy may already cover stored items. See does [renters insurance](/blog/does-renters-insurance-cover-storage-units) cover storage units.
 
 - Ask about future rate increases. Many facilities raise rent after 6 to 12 months, so confirm the plan before you sign.
 
@@ -140,7 +140,7 @@ Before you rent, check for:
 
 - Clear rental terms, including admin fees, late charges, and how rent increases work
 
-New York has its own self storage lien rules, so read your rental agreement carefully and keep your payments up to date. You can also browse facilities across the state on our New York storage search page, see citywide prices in cheap storage units in New York City, or compare nearby rates in cheap storage units in the Bronx.
+New York has its own self storage lien rules, so read your rental agreement carefully and keep your payments up to date. You can also browse facilities across the state on our New York storage search page, see citywide prices in cheap storage units in New York City, or compare nearby rates in cheap storage units in [the Bronx](/storage-search/new-york/bronx).
 
 ![Blog image](/images/blog/cheap-storage-units-in-queens-where-to-find-affordable-storage-img-2.png)
 

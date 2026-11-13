@@ -16,7 +16,7 @@ Deciding to invest in a self storage unit business requires careful analysis bey
 
 ## Understanding the Self Storage Market Landscape
 
-The self storage industry operates within specific demographic and economic trends that directly impact occupancy rates and rental income. Key drivers include population mobility, housing transitions, downsizing behaviors, and small business storage needs. You should examine local market data such as vacancy rates, average rental rates per square foot, and new supply pipelines in your target area. Markets with limited new construction and steady demand generators like military bases, universities, or growing suburban corridors often present stronger fundamentals. Analyzing these factors helps you gauge whether a location can support sustainable occupancy and rental growth over your investment horizon.
+The self storage industry operates within specific demographic and economic trends that directly impact occupancy rates and rental income. Key drivers include population mobility, housing transitions, downsizing behaviors, and small [business storage](/business-storage) needs. You should examine local market data such as vacancy rates, average rental rates per square foot, and new supply pipelines in your target area. Markets with limited new construction and steady demand generators like military bases, universities, or growing suburban corridors often present stronger fundamentals. Analyzing these factors helps you gauge whether a location can support sustainable occupancy and rental growth over your investment horizon.
 
 ## Operational Requirements and Management Models
 
@@ -38,7 +38,7 @@ Every self storage investment carries inherent risks that you must identify and 
 
 Selecting a site for a self storage facility requires careful evaluation of visibility access and zoning compliance. Look for properties with high traffic counts on major roads but prevent locations with restrictive turn movements or low clearance bridges that hinder truck access. Ensure the site allows for adequate maneuvering space for moving trucks and trailers especially if targeting residential or commercial tenants. Assess soil conditions and drainage to prevent flooding risks which can damage units and increase maintenance costs. Verify that local zoning permits self storage use and check for any pending infrastructure projects that could affect accessibility. Proximity to residential neighborhoods apartment complexes or business districts often correlates with stronger demand but balance this against land cost and competition density.
 
-Consider future expansion potential by selecting a parcel with room to add phases or additional building types such as climate controlled units or vehicle storage. Conduct a thorough site visit at different times of day to observe traffic patterns lighting and security conditions before finalizing a purchase or lease.
+Consider future expansion potential by selecting a parcel with room to add phases or additional building types such as [climate controlled units](/climate-controlled-storage) or [vehicle storage](/car-storage). Conduct a thorough site visit at different times of day to observe traffic patterns lighting and security conditions before finalizing a purchase or lease.
 
 ## Frequently Asked Questions
 
@@ -67,3 +67,5 @@ Ready to evaluate a specific self storage opportunity or market? Our team provid
 - [Home](https://www.selfstorage.help)
 
 ![Well-maintained self storage facility with modern unit doors, paved driveway, and clear facility signage under clear daylight sky](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiopMq_Fm8fqxgWEM4_gCDJx2o9Rt3mJa3TBIy6kQECaZwE9dM1OBEDEn9&s=10)
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide)

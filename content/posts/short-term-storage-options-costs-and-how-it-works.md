@@ -34,7 +34,7 @@ Most facilities do not offer weekly rentals, so even a two-week stay is billed a
 
 ## How much does short-term storage cost?
 
-Short-term storage costs the same monthly rate as any other self storage rental, so a 10x10 unit runs about $115 to $130 a month nationally. What changes on a short stay is how much the one-time fees and any first-month promotion affect your total.
+Short-term storage costs the same monthly rate as any other self storage rental, so a [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) runs about $115 to $130 a month nationally. What changes on a short stay is how much the one-time fees and any first-month promotion affect your total.
 
 | Unit size | Typical monthly rent | 1-month total with fees | 3-month total with fees |
 | --- | --- | --- | --- |
@@ -44,7 +44,7 @@ Short-term storage costs the same monthly rate as any other self storage rental,
 | 10x15 | $150 to $165 | $175 to $215 | $475 to $545 |
 | 10x20 | $195 to $220 | $220 to $270 | $610 to $710 |
 
-Totals assume a one-time admin fee of about $25 to $50 and do not include insurance, a lock, or local taxes. For a deeper breakdown of rates and fees, see our guide to how much a storage unit costs.
+Totals assume a one-time admin fee of about $25 to $50 and do not include insurance, a lock, or local taxes. For a deeper breakdown of rates and fees, see our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 A few cost points matter more on a short rental:
 
@@ -60,7 +60,7 @@ Most self storage facilities have a one-month minimum, because rent is billed mo
 
 Watch for these exceptions:
 
-- Promotional minimums: a first month free deal may require you to stay two or three months. Read how these offers work in our guide to first month free storage.
+- Promotional minimums: a [first month free](/blog/first-month-free-storage-how-the-deals-work) deal may require you to stay two or three months. Read how these offers work in our guide to first month free storage.
 
 - Prepay discounts: paying for six or twelve months up front saves money, but refunds for unused months vary by facility.
 
@@ -75,7 +75,7 @@ Self storage units are the most common choice, but they are not your only option
 | Option | Best for | Typical cost | Watch out for |
 | --- | --- | --- | --- |
 | Self storage unit | Most moves, renovations, and seasonal items | $35 to $220+ a month | Admin fee and one-month minimum |
-| Portable storage container | Storing at your home or moving the container to a new city | About $150 to $300 a month plus delivery fees | Delivery and pickup charges, driveway space and permits |
+| [Portable storage container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) | Storing at your home or moving the container to a new city | About $150 to $300 a month plus delivery fees | Delivery and pickup charges, driveway space and permits |
 | Full-service or valet storage | People who want pickup, storage, and return handled for them | Varies by volume, often priced per bin or item | Retrieval fees and limited access |
 | Mover's storage-in-transit | Gaps between a move-out and move-in date | Quoted by the mover, usually per day or per month | Your belongings stay on the mover's schedule |
 | Friend or family garage | Very small loads for a few weeks | Free or low cost | No security, insurance, or climate control |
@@ -106,15 +106,15 @@ If your plans stretch past six months to a year, look at long-term rates and pre
 
 The right unit is the smallest one that fits your stacked belongings, at a facility with the access hours and features your timeline needs.
 
-- Size it tightly. Paying for empty space hurts more on a short stay. A 5x10 unit fits most studio or one-bedroom moves, while a 10x10 unit holds one to two bedrooms.
+- Size it tightly. Paying for empty space hurts more on a short stay. A [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) fits most studio or one-bedroom moves, while a 10x10 unit holds one to two bedrooms.
 
-- Check access hours. If you will be in and out often during a move, 24-hour access storage or extended gate hours can save you time.
+- Check access hours. If you will be in and out often during a move, [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage or extended gate hours can save you time.
 
 - Choose drive-up if you are moving heavy items. Loading straight from a truck is faster when you only plan to stay a month or two.
 
 - Decide on climate control by season. Skip it for a short stay in mild weather, but add it for electronics, wood furniture, or documents in extreme heat or humidity.
 
-- Compare a few nearby facilities. Rates on the same size can vary widely across a single city. You can compare local options on our pages for cities like Los Angeles, Salt Lake City, New York City, and St. Louis.
+- Compare a few nearby facilities. Rates on the same size can vary widely across a single city. You can compare local options on our pages for cities like [Los Angeles](/storage-search/california/los-angeles), [Salt Lake City](/storage-search/utah/salt-lake-city), [New York City](/storage-search/new-york/new-york-city), and [St. Louis](/storage-search/missouri/st-louis).
 
 ## How to save money on short-term storage
 

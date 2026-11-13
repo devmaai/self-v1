@@ -140,7 +140,7 @@ Can I open boxes before I bid? Usually not. You can look from the doorway or thr
 
 Are storage unit auctions worth it? They can be profitable for people willing to put in the time to sort, clean, and resell, but most units hold everyday household goods rather than rare finds, so treat it as a resale business rather than a treasure hunt.
 
-How do I find storage auctions near me? Check facility websites and social pages for posted dates, call local facilities directly, or sign up on an online storage auction platform that lists sales in your area.
+How do I [find storage](/find-storage) auctions near me? Check facility websites and social pages for posted dates, call local facilities directly, or sign up on an online storage auction platform that lists sales in your area.
 
 What happens if I win but can't pay? You typically forfeit your deposit and lose the right to bid at that facility or platform again, so only bid what you can pay immediately.
 
@@ -149,3 +149,5 @@ Do I need a resale license to sell what I find? It depends on your state and how
 How fast do I have to clean out a unit I win? Most facilities require a completely empty, broom-clean unit within 24 to 48 hours, so line up help and a vehicle before you bid.
 
 Is it better to start with on-site or online auctions? On-site auctions are generally easier for beginners since you can watch a few sales before bidding, while online auctions save travel time but often add a buyer's premium to your final cost.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Climate controlled storage](/climate-controlled-storage) · [How much is a storage unit?](/blog/how-much-is-a-storage-unit)

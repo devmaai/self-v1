@@ -11,7 +11,7 @@ published: true
 
 **Introduction**
 
-The 10x10 is still the single most rented storage unit size in San Diego, but the 5x10 runs a much closer second here than it does in cheaper, less crowded metros. That pattern follows how San Diego actually lives: a huge population of renters and apartment dwellers packed into a coastline with very little room left to build, plus a massive military community that moves on a fixed government schedule every year. This guide ranks the sizes San Diego renters pick most, breaks down what each one costs across the metro, and helps you match a size to your own move, deployment, or apartment cleanout.
+The 10x10 is still the single most rented storage unit size in [San Diego](/storage-search/california/san-diego), but the 5x10 runs a much closer second here than it does in cheaper, less crowded metros. That pattern follows how San Diego actually lives: a huge population of renters and apartment dwellers packed into a coastline with very little room left to build, plus a massive military community that moves on a fixed government schedule every year. This guide ranks the sizes San Diego renters pick most, breaks down what each one costs across the metro, and helps you match a size to your own move, deployment, or apartment cleanout.
 
 ## What is the most popular storage unit size in San Diego?
 
@@ -50,7 +50,7 @@ These are typical ranges across the metro. Listed street rates tend to run towar
 
 ## Why smaller units do so well in San Diego
 
-A 5x10 unit holds roughly the contents of a studio or one-bedroom apartment once boxes and a few pieces of furniture are stacked. That size, along with the 5x5, performs better in San Diego than in most major cities for a few reasons:
+A [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) holds roughly the contents of a studio or one-bedroom apartment once boxes and a few pieces of furniture are stacked. That size, along with the 5x5, performs better in San Diego than in most major cities for a few reasons:
 
 - Far more renters than homeowners. San Diego has one of the largest shares of apartment and condo dwellers of any major metro, so the typical move involves less furniture than a single-family home.
 
@@ -111,13 +111,13 @@ If budget is tight, compare rates a few miles inland before committing, since th
 
 - Compare drive-up versus climate-controlled indoor units, since drive-up units in San Diego often run noticeably cheaper for the same square footage.
 
-- Right-size before you rent, not after. Read the full storage cost guide for national pricing context, or see how San Diego compares to other large markets like Los Angeles, Houston, and Miami if you are weighing multiple markets.
+- Right-size before you rent, not after. Read the full storage cost guide for national pricing context, or see how San Diego compares to other large markets like [Los Angeles](/storage-search/california/los-angeles), Houston, and Miami if you are weighing multiple markets.
 
 ## Frequently asked questions
 
 What is the most popular storage unit size in San Diego? The 10x10 is the most rented size in San Diego, with the 5x10 a close second thanks to the metro's large share of apartment and condo renters.
 
-How much does a 10x10 storage unit cost in San Diego? A 10x10 in San Diego typically runs $120 to $175 a month without climate control, or roughly $155 to $245 with it, depending on the neighborhood.
+How much does a [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) cost in San Diego? A 10x10 in San Diego typically runs $120 to $175 a month without climate control, or roughly $155 to $245 with it, depending on the neighborhood.
 
 What is the cheapest storage unit size in San Diego? The 5x5 is the cheapest, usually $50 to $80 a month. It holds a closet's worth of boxes and small items.
 

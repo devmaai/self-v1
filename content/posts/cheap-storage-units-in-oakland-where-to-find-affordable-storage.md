@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Cheap storage units in Oakland usually cost $40 to $90 a month for a small 5x5 and $110 to $160 a month for a 10x10, with online specials sometimes pushing prices even lower. Oakland is one of the pricier storage markets in California, but you can still find affordable space if you know where and when to look. This guide covers typical cheap price ranges by size, the parts of Oakland with the lowest rates, top-rated brands that fit a tight budget, and simple ways to pay less every month.
+Cheap storage units in [Oakland](/storage-search/california/oakland) usually cost $40 to $90 a month for a small 5x5 and $110 to $160 a month for a 10x10, with online specials sometimes pushing prices even lower. Oakland is one of the pricier storage markets in California, but you can still find affordable space if you know where and when to look. This guide covers typical cheap price ranges by size, the parts of Oakland with the lowest rates, top-rated brands that fit a tight budget, and simple ways to pay less every month.
 
 ## How much do cheap storage units cost in Oakland?
 
@@ -36,7 +36,7 @@ A few things to keep in mind:
 
 - Climate control usually adds $15 to $60 a month, depending on size.
 
-For a national comparison, see our guide on how much a storage unit costs.
+For a national comparison, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## Where can you find the cheapest storage in Oakland?
 
@@ -50,7 +50,7 @@ The cheapest storage in Oakland is usually in East Oakland, Fruitvale, and the C
 | Lake Merritt, Grand Lake, Eastlake | Moderate to high | Apartment-heavy areas with steady renter demand |
 | Downtown, Uptown, Jack London Square | Highest | Newer multi-story buildings and limited land |
 
-Nearby suburbs can help too. San Leandro and Hayward often have affordable drive-up units, and Alameda sometimes posts low starting rates on small sizes. If you live in San Francisco, crossing the Bay is often worth it, since Oakland usually comes out cheaper than our San Francisco storage listings for the same size.
+Nearby suburbs can help too. San Leandro and Hayward often have affordable drive-up units, and Alameda sometimes posts low starting rates on small sizes. If you live in [San Francisco](/storage-search/california/san-francisco), crossing the Bay is often worth it, since Oakland usually comes out cheaper than our San Francisco storage listings for the same size.
 
 You can compare current rates across neighborhoods on our Oakland storage search page.
 
@@ -60,11 +60,11 @@ Several well-known brands run facilities in Oakland and regularly offer online r
 
 | Brand | Known for | Good fit if |
 | --- | --- | --- |
-| Public Storage | Many locations and seasonal sales | You want lots of choice across the city |
-| Extra Space Storage | Online-only web rates and move-in specials | You plan to reserve online |
-| StorageMart | Indoor units with elevator access and online rental | You live near West Oakland or Uptown |
-| SmartStop Self Storage | Drive-up units and first month promotions | You want easy loading near the Coliseum |
-| StorQuest Self Storage | Wide range of unit types, including vehicle storage | You live near Fruitvale or High Street |
+| [Public Storage](https://www.publicstorage.com/) | Many locations and seasonal sales | You want lots of choice across the city |
+| [Extra Space Storage](https://www.extraspace.com/) | Online-only web rates and [move-in specials](/blog/first-month-free-storage-how-the-deals-work) | You plan to reserve online |
+| [StorageMart](https://www.storage-mart.com/) | Indoor units with elevator access and online rental | You live near West Oakland or Uptown |
+| [SmartStop Self Storage](https://smartstopselfstorage.com/) | Drive-up units and first month promotions | You want easy loading near the Coliseum |
+| StorQuest Self Storage | Wide range of unit types, including [vehicle storage](/car-storage) | You live near Fruitvale or High Street |
 
 Public Storage has several Oakland facilities, including locations on International Boulevard, Hegenberger Road, San Leandro Street, and MacArthur Boulevard. It is known for frequent sales that discount the first few months, which makes it easy to find a cheap starting rate on small units.
 
@@ -102,9 +102,9 @@ Picking the right size is one of the easiest ways to save:
 
 - 5x5: Good for a few boxes, sports gear, or holiday decorations.
 
-- 5x10: Fits a studio or the contents of a dorm room. See our 5x10 storage unit guide for what fits.
+- 5x10: Fits a studio or the contents of a dorm room. See our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide for what fits.
 
-- 10x10: The most rented size, good for one to two bedrooms of furniture. Our 10x10 storage unit guide shows how to pack one.
+- 10x10: The most rented size, good for one to two bedrooms of furniture. Our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide shows how to pack one.
 
 A well-packed smaller unit almost always beats a half-empty larger one. If you are unsure, use our guide on what size storage unit you need before you book.
 

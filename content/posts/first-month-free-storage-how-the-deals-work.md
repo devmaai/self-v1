@@ -43,7 +43,7 @@ Even with free rent, expect to pay something at move-in. These are the usual lin
 | Sales tax on rent | Varies by state and city | Monthly once rent starts |
 | Second month's rent | Full standard rate | Usually 30 days after move-in |
 
-A quick example: on a 10x10 unit at $120 a month, a free first month saves you $120. If you still pay a $30 admin fee, a $15 lock, and $14 for a protection plan, your move-in total is about $59 instead of roughly $179. That is a real saving, as long as the rent you pay afterward is fair. You can often skip the facility protection plan if your own policy already covers stored items, so check whether renters insurance covers storage units before you sign.
+A quick example: on a [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) at $120 a month, a free first month saves you $120. If you still pay a $30 admin fee, a $15 lock, and $14 for a protection plan, your move-in total is about $59 instead of roughly $179. That is a real saving, as long as the rent you pay afterward is fair. You can often skip the facility protection plan if your own policy already covers stored items, so check whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units before you sign.
 
 ## Common rules and fine print on storage promotions
 
@@ -100,7 +100,7 @@ First month free is the best known offer, but facilities rotate through several 
 
 - Student and military discounts: many facilities offer 5% to 10% off with valid ID.
 
-Run the numbers on each offer over the full time you plan to store, not just the first month. Our guide to the cheapest storage unit prices shows more ways to lower the monthly rate.
+Run the numbers on each offer over the full time you plan to store, not just the first month. Our guide to the cheapest [storage unit prices](/blog/how-much-is-a-storage-unit) shows more ways to lower the monthly rate.
 
 ## Is a first month free deal worth it?
 
@@ -124,9 +124,9 @@ A first month free deal is worth it when the regular rate is competitive and you
 
 ## How to find first month free storage deals
 
-The easiest way to find storage first month free offers is to compare a few facilities at once and book online. A few habits help you land the best price:
+The easiest way to [find storage](/find-storage) first month free offers is to compare a few facilities at once and book online. A few habits help you land the best price:
 
-- Search by city: compare rates and current promotions on your local page, such as storage units in Los Angeles, New York City, or Salt Lake City.
+- Search by city: compare rates and current promotions on your local page, such as storage units in [Los Angeles](/storage-search/california/los-angeles), [New York City](/storage-search/new-york/new-york-city), or [Salt Lake City](/storage-search/utah/salt-lake-city).
 
 - Rent in the off-season: promotions are most common from fall through winter, when fewer people are moving.
 

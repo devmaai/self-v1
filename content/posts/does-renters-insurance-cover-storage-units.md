@@ -105,3 +105,5 @@ No. Standard policies exclude flooding, so you would need separate flood coverag
 ### Will storing my belongings raise my premium?
 
 Storing items does not raise your rate on its own. Adding a rider for high-value pieces can add a small amount to your premium.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Find storage near you](/find-storage) · [Climate controlled storage](/climate-controlled-storage)

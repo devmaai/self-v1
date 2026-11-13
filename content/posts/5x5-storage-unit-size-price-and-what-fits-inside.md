@@ -17,7 +17,7 @@ A 5x5 storage unit gives you 25 square feet of floor space, about the size of a 
 
 A 5x5 storage unit measures 5 feet wide by 5 feet deep, for 25 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 200 cubic feet of storage volume, and some facilities with taller ceilings offer closer to 225 to 250 cubic feet.
 
-To put that in perspective, 25 square feet is about the footprint of a large walk-in closet or a small garden shed. It is roughly half the size of a 5x10 unit and a quarter the size of a 10x10, the most rented size in the country.
+To put that in perspective, 25 square feet is about the footprint of a large walk-in closet or a small garden shed. It is roughly half the size of a [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) and a quarter the size of a 10x10, the most rented size in the country.
 
 | Dimension | Measurement |
 | --- | --- |
@@ -46,11 +46,11 @@ A well-packed 5x5 unit holds a surprising amount if you stack to the ceiling and
 
 - A motorcycle, scooter, or a stack of bicycles, if you skip the furniture
 
-Most people use a 5x5 for one of three reasons: clearing out a dorm room or small apartment, storing seasonal items year-round, or parking a motorcycle or scooter. If you are storing a full bedroom's worth of furniture, you will likely need a size up. Our storage unit size guide walks through every size from a 5x5 up to a 10x30.
+Most people use a 5x5 for one of three reasons: clearing out a dorm room or small apartment, storing seasonal items year-round, or parking a motorcycle or scooter. If you are storing a full bedroom's worth of furniture, you will likely need a size up. Our storage unit [size guide](/storage-size-guide) walks through every size from a 5x5 up to a 10x30.
 
 ## How much does a 5x5 storage unit cost?
 
-A 5x5 storage unit typically costs $35 to $55 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $50 to $85 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run $70 to $90 or more.
+A 5x5 storage unit typically costs $35 to $55 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $50 to $85 a month with climate control added. In expensive metro markets like [Los Angeles](/storage-search/california/los-angeles) or New York, the same unit can run $70 to $90 or more.
 
 | Unit size | Typical monthly cost | With climate control |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ A few things move the price up or down:
 
 - Access type. A 5x5 is almost always an indoor unit reached by hallway, since the size rarely justifies drive-up access on its own.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 5x5 vs. other small storage unit sizes
 
@@ -80,7 +80,7 @@ The 5x5 sits at the bottom of the standard size lineup. Here is how it compares 
 | 5x10 | 50 sq ft | A studio or one-bedroom apartment, stacked | 10-foot truck |
 | 10x10 | 100 sq ft | One to two bedroom home | 15 to 20-foot truck |
 
-If you find yourself leaving boxes in the hallway or stacking furniture precariously, you have outgrown a 5x5. At the other end of the spectrum, our 10x30 storage unit guide covers the largest standard size, built for whole-home moves and multiple vehicles.
+If you find yourself leaving boxes in the hallway or stacking furniture precariously, you have outgrown a 5x5. At the other end of the spectrum, our [10x30 storage unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside) guide covers the largest standard size, built for whole-home moves and multiple vehicles.
 
 ## Is a 5x5 big enough for a vehicle or dorm move?
 
@@ -94,13 +94,13 @@ A 5x5 can work for a single small vehicle or a light apartment move, but it is t
 
 - ATV or jet ski: too large for most 5x5 units; plan on at least a 5x10 or 10x10 instead.
 
-For a full breakdown of sizing by vehicle type, see our Small Vehicle Storage Guide, which covers motorcycles, ATVs, and jet skis in detail.
+For a full breakdown of sizing by vehicle type, see our Small [Vehicle Storage](/car-storage) Guide, which covers motorcycles, ATVs, and jet skis in detail.
 
 ## Who actually needs a 5x5 storage unit?
 
 A 5x5 makes sense for a specific set of situations rather than everyday household storage:
 
-- College students storing dorm or apartment items over the summer.
+- [College students](/student-storage) storing dorm or apartment items over the summer.
 
 - Renters doing a seasonal swap, moving holiday decorations, winter coats, or patio furniture out of a closet.
 

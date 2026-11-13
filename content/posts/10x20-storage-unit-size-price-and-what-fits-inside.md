@@ -17,7 +17,7 @@ A 10x20 storage unit gives you 200 square feet of floor space, enough to hold th
 
 A 10x20 storage unit measures 10 feet wide by 20 feet deep, for 200 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 1,600 cubic feet of storage volume, and facilities with 9 to 10-foot ceilings offer closer to 1,800 to 2,000 cubic feet.
 
-To put that in perspective, 200 square feet is about the footprint of a two-car garage, or double the floor space of a 10x10 unit. It gives you 50 more square feet than a 10x15 and 100 less than a 10x30, which is the next size up at most facilities.
+To put that in perspective, 200 square feet is about the footprint of a two-car garage, or double the floor space of a [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). It gives you 50 more square feet than a 10x15 and 100 less than a 10x30, which is the next size up at most facilities.
 
 |   |   |
 | --- | --- |
@@ -47,11 +47,11 @@ A well-packed 10x20 unit holds the entire contents of a three to four bedroom ho
 
 - A car, motorcycle, or small vehicle, if you leave out some of the furniture above
 
-Most people use a 10x20 for one of three reasons: moving a three or four bedroom home, storing a full household alongside a vehicle, or keeping [business inventory](/business-storage) and equipment that has outgrown a 10x10 or 10x15. If you only need to fit a car or motorcycle without much else, see our Car Storage Size Guide for size-specific options. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x20 for one of three reasons: moving a three or four bedroom home, storing a full household alongside a vehicle, or keeping [business inventory](/business-storage) and equipment that has outgrown a 10x10 or 10x15. If you only need to fit a car or motorcycle without much else, see our Car [Storage Size Guide](/storage-size-guide) for size-specific options. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x20 storage unit cost?
 
-A 10x20 storage unit typically costs $195 to $220 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $240 to $340 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
+A 10x20 storage unit typically costs $195 to $220 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $240 to $340 a month with climate control added. In expensive metro markets like [Los Angeles](/storage-search/california/los-angeles) or New York, the same unit can run well above those figures.
 
 |   |   |   |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ A few things move the price up or down:
 
 - Access type. A 10x20 is almost always a drive-up unit, since indoor hallways and elevators rarely accommodate a unit this large, and drive-up access makes loading furniture or a vehicle much easier.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 10x20 vs. other storage unit sizes
 
@@ -83,7 +83,7 @@ The 10x20 is a popular step-up size for renters who have outgrown a 10x15 but do
 | 10x25 | 250 sq ft | Four bedroom home with extra overflow or a vehicle | 26-foot truck, partly full |
 | 10x30 | 300 sq ft | Four to five bedroom home, multiple vehicles, or business stock | 26-foot truck, fully loaded |
 
-If your move or inventory does not quite fill a 10x20, a 10x15 unit can save you real money each month. If you are storing a full house plus more than one vehicle, size up to a 10x30 instead.
+If your move or inventory does not quite fill a 10x20, a [10x15 unit](/blog/10x15-storage-unit-size-price-and-what-fits-inside) can save you real money each month. If you are storing a full house plus more than one vehicle, size up to a 10x30 instead.
 
 ## Is a 10x20 storage unit big enough for a car?
 
@@ -91,7 +91,7 @@ Yes. A 10x20 is the smallest standard size that comfortably fits most sedans and
 
 - Car or small SUV: fits comfortably, usually with enough room along the sides for boxes or smaller furniture.
 
-- Midsize or full-size truck or SUV: fits, though it leaves little extra space, so a 10x25 or 10x30 is more comfortable.
+- Midsize or full-size truck or SUV: fits, though it leaves little [extra space](https://www.extraspace.com/), so a 10x25 or 10x30 is more comfortable.
 
 - Boat or [RV](/rv-storage): generally needs an outdoor parking spot or a dedicated vehicle storage lot instead, since length matters more than square footage.
 
@@ -121,7 +121,7 @@ Getting full value out of 200 square feet comes down to how you load it, not jus
 
 - Build a center aisle. A unit this size benefits from a walkway down the middle so you can reach items in the back without unloading everything in front of them.
 
-- Use the full height. Stack boxes to the ceiling and store furniture like mattresses and tabletops vertically along the walls.
+- Use the full height. Stack boxes to the ceiling and [store furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) like mattresses and tabletops vertically along the walls.
 
 - Disassemble what you can. Bed frames, tables, and shelving units take up far less room broken down than left whole.
 
@@ -149,4 +149,4 @@ Does a 10x20 storage unit have drive-up access? Almost always. Most facilities o
 
 Is climate control worth it for a 10x20 storage unit? It is worth the extra cost if you are storing wood furniture, electronics, documents, or anything else sensitive to heat and humidity, especially for more than a few months.
 
-What is the difference between a 10x20 and a 10x30 storage unit? A 10x20 offers 200 square feet, enough for a three to four bedroom home or a home plus one vehicle. A 10x30 adds 100 more square feet, enough for a larger home, multiple vehicles, or business inventory.
+What is the difference between a 10x20 and a [10x30 storage unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside)? A 10x20 offers 200 square feet, enough for a three to four bedroom home or a home plus one vehicle. A 10x30 adds 100 more square feet, enough for a larger home, multiple vehicles, or business inventory.

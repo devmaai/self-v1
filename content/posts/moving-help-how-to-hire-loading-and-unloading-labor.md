@@ -20,7 +20,7 @@ Labor only moving help is a crew you hire just for the physical work: carrying, 
 
 Labor only movers typically handle:
 
-- Loading a rental truck, a moving container or a trailer
+- Loading a rental truck, a [moving container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) or a trailer
 
 - Unloading at your new home and placing furniture in the right rooms
 
@@ -81,7 +81,7 @@ Labor only help is a strong fit when:
 
 - You have mostly boxes and a few large pieces of furniture.
 
-If you also want help wrapping and boxing your things, see our guide to packing services and what they cost.
+If you also want help wrapping and boxing your things, see our guide to [packing services](/blog/packing-services-what-they-cost-and-when-to-hire-help) and what they cost.
 
 ## How to hire loading and unloading help
 
@@ -161,7 +161,7 @@ Moving help works very well for storage units because the crew can load, stack a
 
 ### How loaders save you money on self storage units
 
-Professional loaders stack boxes floor to ceiling, stand mattresses and sofas on end and fill gaps with smaller items. A careful crew can fit a full one-bedroom apartment into a 10x10, while a loosely packed load might need a larger unit. Our 10x10 storage unit guide and the storage size guide help you pick the right size before moving day.
+Professional loaders stack boxes floor to ceiling, stand mattresses and sofas on end and fill gaps with smaller items. A careful crew can fit a full one-bedroom apartment into a 10x10, while a loosely packed load might need a larger unit. Our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide and the [storage size guide](/storage-size-guide) help you pick the right size before moving day.
 
 ### Tips for loading a storage unit
 
@@ -177,7 +177,7 @@ Professional loaders stack boxes floor to ceiling, stand mattresses and sofas on
 
 ### Short stays and container moves
 
-If you only need somewhere to hold your things for a few weeks between homes, see our guide to short-term storage. If you would rather keep a container at your property while you load, our guide to storage container rental explains on-site costs. To budget for the unit itself, check how much a storage unit costs.
+If you only need somewhere to hold your things for a few weeks between homes, see our guide to [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works). If you would rather keep a container at your property while you load, our guide to storage container rental explains on-site costs. To budget for the unit itself, check [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ![Blog image](/images/blog/moving-help-how-to-hire-loading-and-unloading-labor-img-2.png)
 

@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-To store furniture in a storage unit without damage, clean and fully dry every piece, take apart what you can, wrap it in breathable covers instead of sealed plastic, and keep it off the floor on pallets with a gap from the walls. For wood, leather, upholstery and anything stored longer than a season, a climate controlled unit, which typically adds $20 to $75 a month, is the safest choice. This guide walks you through prep, wrapping, packing the unit, picking the right size, and the most common mistakes that cause warping, mold and scratches.
+To store furniture in a storage unit without damage, clean and fully dry every piece, take apart what you can, wrap it in breathable covers instead of sealed plastic, and keep it off the floor on pallets with a gap from the walls. For wood, leather, upholstery and anything stored longer than a season, a [climate controlled unit](/climate-controlled-storage), which typically adds $20 to $75 a month, is the safest choice. This guide walks you through prep, wrapping, packing the unit, picking the right size, and the most common mistakes that cause warping, mold and scratches.
 
 ## What do you need to store furniture in a storage unit?
 
@@ -128,7 +128,7 @@ Most people need a 5x10 for a studio, a 10x10 for one to two bedrooms of furnitu
 | 10x15 | Two to three bedrooms, including appliances | $150 to $165 |
 | 10x20 | A three to four bedroom home | $195 to $220 |
 
-Prices vary by city and rise with climate control. See our 10x10 storage unit guide for a detailed fit list, or use the storage size guide to estimate your space. For a full look at prices and fees, read how much a storage unit costs.
+Prices vary by city and rise with climate control. See our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide for a detailed fit list, or use the [storage size guide](/storage-size-guide) to estimate your space. For a full look at prices and fees, read [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## How to store furniture long term in self storage
 
@@ -142,9 +142,9 @@ To store furniture long term, choose climate control, use breathable covers and 
 
 - Add moisture absorbers in humid regions, and replace them as they fill.
 
-- Review your coverage. Check whether your policy covers stored items in our guide to whether renters insurance covers storage units.
+- Review your coverage. Check whether your policy covers stored items in our guide to whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units.
 
-If you are storing furniture during a move, our moving home guide covers timing and budgeting, and our packing services guide explains when hiring help makes sense.
+If you are storing furniture during a move, our moving home guide covers timing and budgeting, and our [packing services](/blog/packing-services-what-they-cost-and-when-to-hire-help) guide explains when hiring help makes sense.
 
 ![Blog image](/images/blog/how-to-store-furniture-in-a-storage-unit-without-damage-img-2.png)
 

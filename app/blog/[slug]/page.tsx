@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
@@ -60,6 +60,19 @@ function getReadingTime(body: string): string {
     .filter(Boolean).length;
   return `${Math.max(1, Math.ceil(words / 200))} min read`;
 }
+
+const markdownComponents: Components = {
+  a: ({ href = "", children }) => {
+    const isExternal = /^https?:\/\//i.test(href) && !href.includes("selfstorage.help");
+    return isExternal ? (
+      <a href={href} target="_blank" rel="nofollow noopener noreferrer">
+        {children}
+      </a>
+    ) : (
+      <Link href={href}>{children}</Link>
+    );
+  },
+};
 
 function getInitials(name: string): string {
   return name
@@ -156,7 +169,7 @@ export default async function BlogPostPage({
             <div className="blog-prose blog-article-prose">
               {faqSplit ? (
                 <>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{faqSplit.before}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{faqSplit.before}</ReactMarkdown>
                   <h2>{faqSplit.heading}</h2>
                   <ul className="blog-faq-list">
                     {faqs.map((faq) => (
@@ -167,11 +180,11 @@ export default async function BlogPostPage({
                     ))}
                   </ul>
                   {faqSplit.after.trim() && (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{faqSplit.after}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{faqSplit.after}</ReactMarkdown>
                   )}
                 </>
               ) : (
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.body}</ReactMarkdown>
               )}
             </div>
 
@@ -185,43 +198,55 @@ export default async function BlogPostPage({
 
             <div className="blog-back-row">
               <Link href="/blog">← Back to all posts</Link>
-              <Link href="/storage-size-guide">
-                View the storage size guide <span aria-hidden="true">→</span>
+              <Link href="/storage-unit-size-calculator">
+                Try the size calculator <span aria-hidden="true">→</span>
               </Link>
             </div>
           </article>
 
           <aside className="blog-article-sidebar" aria-label="More from the blog">
+            <Link className="blog-calc-cta" href="/storage-unit-size-calculator">
+              <span className="blog-calc-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="4" y="2.5" width="16" height="19" rx="2.5" /><rect x="7" y="5.5" width="10" height="4" rx="1" /><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" strokeLinecap="round" strokeWidth="2.4" /></svg>
+              </span>
+              <span className="blog-sidebar-eyebrow">Free tool · 2 minutes</span>
+              <strong>Not sure what size you need?</strong>
+              <span className="blog-calc-copy">Add your rooms and items, and the calculator recommends the right unit so you never pay for space you will not use.</span>
+              <span className="blog-calc-button">Try the size calculator <span aria-hidden="true">→</span></span>
+            </Link>
+
             <div className="blog-recent-card">
-              <h2>Recent Blogs</h2>
+              <h2>Keep reading</h2>
               <div className="blog-recent-list">
                 {recent.map((recentPost) => (
-                  <Link href={`/blog/${recentPost.slug}`} key={recentPost.slug}>
-                    <span>{recentPost.title}</span>
-                    <span aria-hidden="true">→</span>
+                  <Link href={`/blog/${recentPost.slug}`} key={recentPost.slug} className="blog-recent-item">
+                    <img src={recentPost.coverImage || "/images/storage-guide/boxes.jpg"} alt="" loading="lazy" />
+                    <span className="blog-recent-text">
+                      <span className="blog-recent-date">{formatDate(recentPost.date)}</span>
+                      <span className="blog-recent-title">{recentPost.title}</span>
+                    </span>
                   </Link>
                 ))}
               </div>
-            </div>
-            <div className="blog-sidebar-cta">
-              <span className="blog-sidebar-eyebrow">Planning a move?</span>
-              <h2>Find the right unit size.</h2>
-              <p>Use our practical guide to match your belongings to the right storage space.</p>
-              <Link href="/storage-size-guide">View the size guide <span aria-hidden="true">→</span></Link>
+              <Link className="blog-recent-all" href="/blog">View all articles <span aria-hidden="true">→</span></Link>
             </div>
           </aside>
         </section>
 
         <section className="blog-article-cta" aria-labelledby="article-cta-heading">
-          <h2 id="article-cta-heading">Ready to grow your storage business?</h2>
-
-          <div className="blog-article-cta-row">
-            <p>Want to list your local business in our directory?</p>
-            <Link className="blog-article-cta-primary blog-article-cta-large" href="/contact">
-              Talk to our team <span aria-hidden="true">→</span>
-            </Link>
+          <div className="blog-cta-panel">
+            <div className="blog-cta-copy">
+              <span className="blog-cta-eyebrow">For storage facility owners</span>
+              <h2 id="article-cta-heading">Ready to grow your storage business?</h2>
+              <p>List your facility in our directory and reach renters who are comparing storage in your city right now.</p>
+            </div>
+            <div className="blog-cta-actions">
+              <Link className="blog-cta-btn blog-cta-btn-primary" href="/list-your-facility">
+                List your facility <span aria-hidden="true">→</span>
+              </Link>
+              <Link className="blog-cta-btn blog-cta-btn-ghost" href="/contact">Talk to our team</Link>
+            </div>
           </div>
-
         </section>
       </main>
       <V2Footer />

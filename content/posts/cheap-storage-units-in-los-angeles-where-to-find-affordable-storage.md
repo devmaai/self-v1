@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Cheap storage units in Los Angeles usually cost about $40 to $80 a month for a 5x5 and $100 to $200 a month for a 10x10, compared with a citywide average closer to $250 for a 10x10. Prices swing a lot by neighborhood, unit floor, and promotion, so the same size can cost twice as much a few miles away. This guide shows affordable price ranges by size, the parts of LA where storage is cheapest, the brands with the most budget-friendly options, and the simple moves that lower your monthly bill.
+Cheap storage units in [Los Angeles](/storage-search/california/los-angeles) usually cost about $40 to $80 a month for a 5x5 and $100 to $200 a month for a 10x10, compared with a citywide average closer to $250 for a 10x10. Prices swing a lot by neighborhood, unit floor, and promotion, so the same size can cost twice as much a few miles away. This guide shows affordable price ranges by size, the parts of LA where storage is cheapest, the brands with the most budget-friendly options, and the simple moves that lower your monthly bill.
 
 ## How much do cheap storage units cost in Los Angeles?
 
@@ -36,7 +36,7 @@ A few things to keep in mind:
 
 - Climate control usually adds $20 to $75 a month, so skip it when your items can handle heat.
 
-For a national comparison by size, see our guide to how much a storage unit costs.
+For a national comparison by size, see our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## Where can you find the cheapest storage in Los Angeles?
 
@@ -48,25 +48,25 @@ The cheapest storage in Los Angeles is usually in East LA, South LA, and the San
 | Hollywood, Koreatown, Silver Lake | Above average | Central, high-density areas with few new facilities |
 | Downtown, Boyle Heights, East LA, South LA | Moderate to low | More industrial land and many facilities competing |
 | San Fernando Valley (Van Nuys, North Hollywood, Sylmar) | Moderate to low | Larger sites and easier freeway access |
-| Long Beach, Orange County, Inland Empire | Often lowest | Lower land costs and bigger facilities |
+| [Long Beach](/storage-search/california/long-beach), Orange County, Inland Empire | Often lowest | Lower land costs and bigger facilities |
 
 If you only visit your unit a few times a year, driving a little farther can save you a lot:
 
 - Long Beach is a good middle ground if you live in the South Bay or near the coast.
 
-- Anaheim and Santa Ana often undercut Westside prices for the same size.
+- [Anaheim](/storage-search/california/anaheim) and [Santa Ana](/storage-search/california/santa-ana) often undercut Westside prices for the same size.
 
-- Riverside is one of the most affordable options for long-term storage you rarely need to access.
+- [Riverside](/storage-search/california/riverside) is one of the most affordable options for long-term storage you rarely need to access.
 
 You can compare current rates across the city on our Los Angeles storage search page.
 
 ## What are the top-rated affordable storage brands in Los Angeles?
 
-Public Storage, Extra Space Storage, CubeSmart, StorQuest, and SecureSpace all operate facilities in Los Angeles and regularly offer affordable starting rates and online deals.
+[Public Storage](https://www.publicstorage.com/), [Extra Space Storage](https://www.extraspace.com/), [CubeSmart](https://www.cubesmart.com/), StorQuest, and SecureSpace all operate facilities in Los Angeles and regularly offer affordable starting rates and online deals.
 
 | Brand | Known for | Good fit if |
 | --- | --- | --- |
-| Public Storage | Huge LA network, low starting prices, frequent move-in specials | You want lots of nearby choices |
+| Public Storage | Huge LA network, low starting prices, frequent [move-in specials](/blog/first-month-free-storage-how-the-deals-work) | You want lots of nearby choices |
 | Extra Space Storage | Web-only rates and online reservations | You plan to book online for a lower price |
 | CubeSmart | Online rentals and a range of unit types | You want a simple online move-in |
 | StorQuest | Many central LA locations and climate-controlled sizes | You live in central or west LA |
@@ -78,7 +78,7 @@ Extra Space Storage. Extra Space runs many facilities in Los Angeles, from Downt
 
 CubeSmart. CubeSmart has Los Angeles locations, including West LA, and makes it easy to reserve and rent online. It offers a mix of unit sizes, including drive-up options at some sites.
 
-StorQuest. StorQuest operates several facilities in central and west Los Angeles, including locations on North Figueroa, South Hill Street, and Sawtelle Boulevard. It offers [climate-controlled units](/climate-controlled-storage) in sizes from small lockers up to 10x20, plus vehicle and business storage.
+StorQuest. StorQuest operates several facilities in central and west Los Angeles, including locations on North Figueroa, South Hill Street, and Sawtelle Boulevard. It offers [climate-controlled units](/climate-controlled-storage) in sizes from small lockers up to 10x20, plus vehicle and [business storage](/business-storage).
 
 SecureSpace. SecureSpace has Los Angeles facilities in Downtown, on Avalon Boulevard, and on Firestone Boulevard. It is known for modern, secure buildings, online-only pricing, and same-day move-in when you rent online.
 
@@ -104,9 +104,9 @@ For most apartment renters, a 5x10 is the best value in Los Angeles, since it ho
 
 - 5x5 ($40 to $80): Holiday decor, a few boxes, small furniture. See if a locker would do the job instead.
 
-- 5x10 ($60 to $130): A studio or small one-bedroom. Read our 5x10 storage unit guide.
+- 5x10 ($60 to $130): A studio or small one-bedroom. Read our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide.
 
-- 10x10 ($100 to $200): One to two bedrooms of furniture. Our 10x10 storage unit guide shows what fits.
+- 10x10 ($100 to $200): One to two bedrooms of furniture. Our [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide shows what fits.
 
 - 10x15 and up: Larger homes or long moves. Pack tightly so you do not pay for empty space.
 

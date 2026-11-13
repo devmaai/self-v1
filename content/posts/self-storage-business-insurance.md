@@ -63,3 +63,5 @@ Ensure your self storage facility has the right protection in place. Speak with 
 - [Home](https://www.selfstorage.help)
 
 ![Modern self storage facility with security features including gated access, perimeter fencing, and surveillance cameras](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCY6dv-yv1JZUtTHdw1SJFxKYWo8kKMhKZPrcDndsVuqEqOrD68AXTVReX&s=10)
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Find storage near you](/find-storage) · [Climate controlled storage](/climate-controlled-storage) · [How much is a storage unit?](/blog/how-much-is-a-storage-unit)

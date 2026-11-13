@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-A small storage unit is one of the most affordable ways to handle document storage: a 5x5 unit costs about $35 to $70 a month and holds roughly 50 to 80 standard file boxes, while a climate controlled 5x10 can hold well over 100 boxes for around $80 to $125. Paper is sensitive to heat, damp, and pests, so the way you pack and shelve your records matters as much as the unit you pick. This guide covers which unit size fits your files, what document storage costs, how long to keep common records, and a simple system for packing, labeling, and finding paperwork when you need it.
+A small storage unit is one of the most affordable ways to handle document storage: a [5x5 unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) costs about $35 to $70 a month and holds roughly 50 to 80 standard file boxes, while a climate controlled 5x10 can hold well over 100 boxes for around $80 to $125. Paper is sensitive to heat, damp, and pests, so the way you pack and shelve your records matters as much as the unit you pick. This guide covers which unit size fits your files, what document storage costs, how long to keep common records, and a simple system for packing, labeling, and finding paperwork when you need it.
 
 ## Is a self storage unit a good place to store documents?
 
@@ -32,7 +32,7 @@ A professional records center can make more sense if you have thousands of boxes
 
 ## What size storage unit do you need for documents?
 
-Most people storing paperwork need a 5x5 or 5x10 unit. A standard file box (about 15 x 12 x 10 inches) takes up roughly one cubic foot, and with sturdy shelving you can stack boxes safely to about five or six feet high.
+Most people storing paperwork need a 5x5 or [5x10 unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside). A standard file box (about 15 x 12 x 10 inches) takes up roughly one cubic foot, and with sturdy shelving you can stack boxes safely to about five or six feet high.
 
 | Unit size | Approximate file boxes | Good for |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ Most people storing paperwork need a 5x5 or 5x10 unit. A standard file box (abou
 | 10x10 | 250 to 350 | Several years of records for a growing business |
 | 10x15 | 400 to 550 | Large archives, with room for an aisle and a desk |
 
-Leave a walkway so you can reach the back rows. For more detail on the smallest options, see our 5x5 storage unit guide and 5x10 storage unit guide, or use the storage size guide.
+Leave a walkway so you can reach the back rows. For more detail on the smallest options, see our 5x5 storage unit guide and 5x10 storage unit guide, or use the [storage size guide](/storage-size-guide).
 
 ## How much does document storage cost in self storage units?
 
@@ -52,11 +52,11 @@ Document storage in a self storage unit typically costs $35 to $250 a month, dep
 | --- | --- | --- |
 | Small locker | $25 to $60 a month | A handful of boxes |
 | 5x5 self storage unit | $35 to $70 a month | Household or sole trader archives |
-| 5x10 climate controlled unit | $80 to $125 a month | Small business records |
+| 5x10 [climate controlled unit](/climate-controlled-storage) | $80 to $125 a month | Small business records |
 | 10x10 climate controlled unit | $150 to $250 a month | Larger business archives |
 | Records center (per box) | About $0.25 to $0.60 per box a month, plus retrieval fees | Very large or regulated archives |
 
-Records centers can look cheap per box, but pickup, retrieval, and delivery fees add up if you need files often. With your own unit, you pay one rent and visit as often as you like. Our breakdown of how much a storage unit costs explains the fees to budget for, such as admin fees and protection plans.
+Records centers can look cheap per box, but pickup, retrieval, and delivery fees add up if you need files often. With your own unit, you pay one rent and visit as often as you like. Our breakdown of [how much a storage unit costs](/blog/how-much-is-a-storage-unit) explains the fees to budget for, such as admin fees and protection plans.
 
 ## Do you need climate controlled storage for documents?
 
@@ -64,7 +64,7 @@ For anything you plan to keep longer than a season, climate controlled storage i
 
 Climate control is especially worth it if:
 
-- You live somewhere with hot summers, such as Fresno or Sacramento, humid summers, such as New York City, or freezing winters, such as Buffalo or Syracuse.
+- You live somewhere with hot summers, such as [Fresno](/storage-search/california/fresno) or [Sacramento](/storage-search/california/sacramento), humid summers, such as [New York City](/storage-search/new-york/new-york-city), or freezing winters, such as [Buffalo](/storage-search/new-york/buffalo) or [Syracuse](/storage-search/new-york/syracuse).
 
 - You are storing original legal papers, deeds, photos, or artwork.
 
@@ -118,7 +118,7 @@ A clear system turns a wall of boxes into an archive you can search in minutes.
 
 - Add a destroy-by date to each box so you know when it can be shredded.
 
-Review the unit once a year, shred anything past its retention date, and update your index. If you plan to stop by after work or at weekends, look for a facility with extended hours. Our guide to 24-hour access storage units explains what to check.
+Review the unit once a year, shred anything past its retention date, and update your index. If you plan to stop by after work or at weekends, look for a facility with extended hours. Our guide to [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage units explains what to check.
 
 ## How long should you keep important documents?
 
@@ -145,9 +145,9 @@ Paperwork often holds personal and financial details, so security matters as muc
 
 - Scan sensitive records and keep a digital backup in a secure cloud service or encrypted drive.
 
-- Check your coverage. Many facilities offer a protection plan, and your home or renters policy may already cover stored items. Our article on whether renters insurance covers storage units explains what to ask.
+- Check your coverage. Many facilities offer a protection plan, and your home or renters policy may already cover stored items. Our article on whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units explains what to ask.
 
-When choosing a facility, convenience counts. A unit close to your home or office makes quick retrievals easy, and prices can differ a lot between neighborhoods, so compare a few nearby options before you sign. Business owners can also explore the business storage page for options built around files and inventory.
+When choosing a facility, convenience counts. A unit close to your home or office makes quick retrievals easy, and prices can differ a lot between neighborhoods, so compare a few nearby options before you sign. Business owners can also explore the [business storage](/business-storage) page for options built around files and inventory.
 
 ![Blog image](/images/blog/document-storage-units-how-to-store-paperwork-and-records-safely-img-2.png)
 

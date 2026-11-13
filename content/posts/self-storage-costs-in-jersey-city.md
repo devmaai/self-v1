@@ -9,7 +9,7 @@ url: "/blog/self-storage-costs-jersey-city/"
 published: true
 ---
 
-A storage unit in Jersey City costs about $60 to $480 a month depending on size, and most renters land in the $140 to $230 range for the most popular 10x10 unit. That is above the national average of roughly $137 a month, a direct result of sitting across the Hudson from Manhattan on some of the most expensive real estate in New Jersey. This guide breaks down current Jersey City storage prices by size, what pushes them up or down, how neighborhood and flood risk change the math, and where in the city you are likely to find the best rate.
+A storage unit in Jersey City costs about $60 to $480 a month depending on size, and most renters land in the $140 to $230 range for the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). That is above the national average of roughly $137 a month, a direct result of sitting across the Hudson from [Manhattan](/storage-search/new-york/manhattan) on some of the most expensive real estate in New Jersey. This guide breaks down current Jersey City storage prices by size, what pushes them up or down, how neighborhood and flood risk change the math, and where in the city you are likely to find the best rate.
 
 ## Jersey City storage unit prices by size
 
@@ -37,7 +37,7 @@ A few local factors push Jersey City rates above the national average for the sa
 
 - Limited land. Jersey City is dense and largely built out, so there is less room for new facilities to open and compete on price the way they can in sprawling metros.
 
-- PATH and NJ Transit commuters. A high share of residents work in New York and move frequently between apartments as leases turn over, which keeps turnover-driven demand for short-term storage elevated.
+- PATH and NJ Transit commuters. A high share of residents work in New York and move frequently between apartments as leases turn over, which keeps turnover-driven demand for [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) elevated.
 
 - Floor and access type. Ground-floor, drive-up units cost more than upper-floor units reached by elevator, the same as in most cities.
 
@@ -75,7 +75,7 @@ Driving just a mile or two inland from the Hudson waterfront toward Greenville o
 
 Jersey City's location on the Hudson waterfront shapes how residents think about storage in ways that inland cities do not have to.
 
-- Flood zone matters. Parts of downtown and the waterfront sit in FEMA flood zones, a risk that became very real during Hurricane Sandy in 2012. Ask any facility near the water whether it has flooded before and how it is protected now.
+- Flood zone matters. Parts of downtown and the waterfront sit in FEMA flood zones, a risk that became very real during Hurricane [Sandy](/storage-search/utah/sandy) in 2012. Ask any facility near the water whether it has flooded before and how it is protected now.
 
 - Nor'easters bring heavy snow and coastal flooding. Winter storms between December and March can disrupt access to ground-floor units and occasionally cause localized flooding near the river.
 
@@ -115,13 +115,13 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do Jersey City renters need?
 
-Most Jersey City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment, which is common here given how many renters live in compact units. If you are not sure where to start, the guide to how much a storage unit costs nationwide breaks down pricing by size so you can compare Jersey City's rates against the national picture before you commit. You can also browse current listings on our New Jersey storage search page.
+Most Jersey City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment, which is common here given how many renters live in compact units. If you are not sure where to start, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) nationwide breaks down pricing by size so you can compare Jersey City's rates against the national picture before you commit. You can also browse current listings on our New Jersey storage search page.
 
 If you are weighing Jersey City against another major market, the cost breakdowns for New York, Miami, and Oklahoma City are worth a look for comparison.
 
 ## Frequently asked questions
 
-How much is a storage unit in Jersey City? A 10x10 unit typically runs $140 to $230 a month without climate control. Smaller 5x5 units start around $60 in the more affordable parts of the city.
+How much is a storage unit in Jersey City? A 10x10 unit typically runs $140 to $230 a month without climate control. Smaller [5x5 units](/blog/5x5-storage-unit-size-price-and-what-fits-inside) start around $60 in the more affordable parts of the city.
 
 Is storage more expensive in Jersey City than the national average? Yes. Jersey City's proximity to Manhattan and limited land push prices above the US average of about $137 a month for a standard unit.
 

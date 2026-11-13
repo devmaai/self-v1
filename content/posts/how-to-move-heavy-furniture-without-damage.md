@@ -120,15 +120,15 @@ Load the heaviest pieces first, against the front wall of the truck or the back 
 
 - Strap each layer to the truck's tie points before you drive.
 
-If you are using a moving container, follow the same order and use the container's tie-down rails.
+If you are using a [moving container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026), follow the same order and use the container's tie-down rails.
 
 ### How to load self storage units safely
 
-Self storage units are easiest to load when you plan an aisle down the middle and keep the items you will need soon near the door. Ask the facility about drive-up access, carts and freight elevators before moving day, and put pallets or plastic sheeting under wood furniture if the floor may get damp. Our storage size guide and 10x10 storage unit guide help you choose the right space.
+Self storage units are easiest to load when you plan an aisle down the middle and keep the items you will need soon near the door. Ask the facility about drive-up access, carts and freight elevators before moving day, and put pallets or plastic sheeting under wood furniture if the floor may get damp. Our [storage size guide](/storage-size-guide) and [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide help you choose the right space.
 
 ### Protecting heavy furniture in self storage
 
-Keep wood and leather furniture covered with breathable cotton sheets rather than plastic, which can trap moisture. For long stays or humid climates, a climate controlled unit protects finishes, glue joints and upholstery. Our guide to climate controlled storage explains when it is worth the extra cost.
+Keep wood and leather furniture covered with breathable cotton sheets rather than plastic, which can trap moisture. For long stays or humid climates, a [climate controlled unit](/climate-controlled-storage) protects finishes, glue joints and upholstery. Our guide to climate controlled storage explains when it is worth the extra cost.
 
 ## When to hire help to move heavy furniture
 
@@ -143,7 +143,7 @@ Hire help when an item is too heavy for two people, needs to go up narrow or tur
 | Pool table with reassembly | About $200 to $600 |
 | Stairs surcharge | About $40 to $100 per flight |
 
-A labor only crew is often the most cost-effective option because you keep control of the truck while they handle the lifting. Our guide to hiring moving help for loading and unloading explains rates and what to ask, and the packing services guide covers professional wrapping. For a full budget and timeline, see our moving home guide.
+A labor only crew is often the most cost-effective option because you keep control of the truck while they handle the lifting. Our guide to hiring [moving help](/blog/moving-help-how-to-hire-loading-and-unloading-labor) for loading and unloading explains rates and what to ask, and the [packing services](/blog/packing-services-what-they-cost-and-when-to-hire-help) guide covers professional wrapping. For a full budget and timeline, see our moving home guide.
 
 ![Blog image](/images/blog/how-to-move-heavy-furniture-without-damage-img-2.png)
 

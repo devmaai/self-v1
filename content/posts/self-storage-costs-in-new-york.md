@@ -9,7 +9,7 @@ url: "/blog/self-storage-costs-new-york/"
 published: true
 ---
 
-A storage unit in New York City costs about $40 to $650 a month depending on size and borough, and most renters land in the $150 to $320 range for the most popular 10x10 unit. Manhattan runs well above that, often $225 to $500 or more for the same size, while the Bronx, Queens, and Staten Island regularly undercut it. This guide breaks down current New York City storage prices by size, what pushes them up or down, how the city's borough divide and moving-day rushes change the math, and where you are likely to find the best rate.
+A storage unit in [New York City](/storage-search/new-york/new-york-city) costs about $40 to $650 a month depending on size and borough, and most renters land in the $150 to $320 range for the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). [Manhattan](/storage-search/new-york/manhattan) runs well above that, often $225 to $500 or more for the same size, while [the Bronx](/storage-search/new-york/bronx), [Queens](/storage-search/new-york/queens), and [Staten Island](/storage-search/new-york/staten-island) regularly undercut it. This guide breaks down current New York City storage prices by size, what pushes them up or down, how the city's borough divide and moving-day rushes change the math, and where you are likely to find the best rate.
 
 ## New York City storage unit prices by size
 
@@ -30,9 +30,9 @@ Manhattan sits above the top of every one of these ranges for a comparable unit,
 
 Several local factors explain why the same size unit can cost so differently block by block.
 
-- Borough and neighborhood. Manhattan's land costs push every size up, Brooklyn's in-demand neighborhoods like Williamsburg and Park Slope run above average, and the Bronx, Staten Island, and outer Queens tend to be the most affordable.
+- Borough and neighborhood. Manhattan's land costs push every size up, [Brooklyn](/storage-search/new-york/brooklyn)'s in-demand neighborhoods like Williamsburg and Park Slope run above average, and the Bronx, Staten Island, and outer Queens tend to be the most affordable.
 
-- Apartment size. New York apartments are small by national standards, so demand for compact 5x5 and 5x10 units is higher here than in most cities, which keeps those sizes from being quite as cheap as you would expect.
+- Apartment size. New York apartments are small by national standards, so demand for compact 5x5 and [5x10 units](/blog/5x10-storage-unit-size-price-and-what-fits-inside) is higher here than in most cities, which keeps those sizes from being quite as cheap as you would expect.
 
 - Moving day crunches. Leases across the city commonly turn over around June 1 and September 1, and both dates bring a short, sharp spike in storage demand.
 
@@ -75,7 +75,7 @@ New York's storage market runs on the city's own calendar of lease turnovers and
 
 - June 1 and September 1 are the city's unofficial moving days. Many leases turn over on or near these dates, and both bring a short-term jump in storage demand and prices.
 
-- Late August and early September add a second wave, as college students move in and out of dorms and shared apartments across the city.
+- Late August and early September add a second wave, as [college students](/student-storage) move in and out of dorms and shared apartments across the city.
 
 - Winter, roughly December through February, is the calmest stretch, with fewer movers competing for space and better odds of a move-in deal.
 
@@ -112,13 +112,13 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do New York City renters need?
 
-Because apartments run small here, New York renters book smaller units than the national average. A 5x10 unit covers most studios and small one-bedrooms, while a 10x10 handles a full one or two-bedroom move. If you are storing [a car](/car-storage) you cannot park on the street, the vehicle storage guide covers what size unit fits each type. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare New York against the rest of the country. You can also browse current listings on our New York storage search page.
+Because apartments run small here, New York renters book smaller units than the national average. A 5x10 unit covers most studios and small one-bedrooms, while a 10x10 handles a full one or two-bedroom move. If you are storing [a car](/car-storage) you cannot park on the street, the vehicle storage guide covers what size unit fits each type. For the national picture on pricing, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks it down by size so you can compare New York against the rest of the country. You can also browse current listings on our New York storage search page.
 
-If you are weighing New York against another major market, the cost breakdowns for Miami, Salt Lake City, Los Angeles, and Dallas are worth a look for comparison.
+If you are weighing New York against another major market, the cost breakdowns for Miami, [Salt Lake City](/storage-search/utah/salt-lake-city), [Los Angeles](/storage-search/california/los-angeles), and Dallas are worth a look for comparison.
 
 ## Frequently asked questions
 
-How much is a storage unit in New York City? A 10x10 unit typically runs $150 to $320 a month citywide, and $225 to $500 or more in Manhattan. Smaller 5x5 units start around $40 in the cheaper boroughs.
+How much is a storage unit in New York City? A 10x10 unit typically runs $150 to $320 a month citywide, and $225 to $500 or more in Manhattan. Smaller [5x5 units](/blog/5x5-storage-unit-size-price-and-what-fits-inside) start around $40 in the cheaper boroughs.
 
 Is storage more expensive in New York than the national average? Yes, for most sizes and boroughs. New York's dense real estate pushes prices well above the US average of about $137 a month, though the Bronx and Staten Island can come close to the national range.
 

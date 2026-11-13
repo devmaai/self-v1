@@ -18,7 +18,7 @@ Moving home in the US usually costs $800 to $2,500 for a local move with profess
 
 Most local moves with a moving company cost $800 to $2,500, and most long-distance moves cost $2,500 to $7,500, with large homes crossing the country running $10,000 or more. Local moves are usually billed by the hour, while long-distance moves are priced by weight or volume and distance.
 
-| Type of move | DIY truck | Moving container | Full-service movers |
+| Type of move | DIY truck | [Moving container](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) | Full-service movers |
 | --- | --- | --- | --- |
 | Local (under 100 miles) | $200 to $600 | $300 to $1,500 | $800 to $2,500 |
 | Long distance (500 to 1,000 miles) | $1,200 to $3,000 | $2,000 to $5,500 | $2,500 to $7,500 |
@@ -56,7 +56,7 @@ A DIY move with a rental truck is almost always the cheapest option, a moving co
 
 - Moving containers: a company drops a portable container at your home, you load it on your schedule, and they drive it to your new place or hold it in storage. Our guide to how moving containers work covers costs, sizes, and how to compare companies.
 
-- Hybrid move: you rent the truck or container and hire moving help for loading and unloading, which often costs a few hundred dollars for a two or three hour job.
+- Hybrid move: you rent the truck or container and hire [moving help](/blog/moving-help-how-to-hire-loading-and-unloading-labor) for loading and unloading, which often costs a few hundred dollars for a two or three hour job.
 
 - Full-service movers: the crew packs, loads, drives, and unloads. This is the easiest option for families, busy schedules, and long-distance moves with lots of furniture.
 
@@ -73,7 +73,7 @@ Extra fees and one-off expenses commonly add $1,000 to $3,000 to a family move, 
 
 - Packing supplies: $100 to $300 for boxes, tape, bubble wrap, and markers if you pack yourself.
 
-- Professional packing: about $300 to $1,500 depending on home size. See our upcoming guide to what packing services cost.
+- Professional packing: about $300 to $1,500 depending on home size. See our upcoming guide to what [packing services](/blog/packing-services-what-they-cost-and-when-to-hire-help) cost.
 
 - Access fees: stairs, elevators, and long walks from the truck to your door can add $50 to $150 each.
 
@@ -110,7 +110,7 @@ A few more timing tips:
 
 - Book early in peak season. For a summer move, reserve movers or a truck four to eight weeks ahead.
 
-- Think about your climate. Summer heat in places like Phoenix or Houston and winter snow in places like Minneapolis or Buffalo can make moving day harder, so plan an early start or a flexible backup date.
+- Think about your climate. Summer heat in places like Phoenix or Houston and winter snow in places like Minneapolis or [Buffalo](/storage-search/new-york/buffalo) can make moving day harder, so plan an early start or a flexible backup date.
 
 ## How do you make a moving budget?
 
@@ -124,7 +124,7 @@ Here is a simple way to build yours:
 
 - Add travel costs. Fuel, meals, hotels, and pet travel for long-distance moves.
 
-- Add storage if you need it. A unit for a month or two during the move usually costs $75 to $300 a month depending on size and city. Our guide to how much a storage unit costs breaks down prices by size.
+- Add storage if you need it. A unit for a month or two during the move usually costs $75 to $300 a month depending on size and city. Our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks down prices by size.
 
 - **Add a 15% to 20% buffer.**
 
@@ -250,28 +250,28 @@ A storage unit gives you a safe place for your belongings when your move-out and
 
 | Home size | Typical storage size | Learn more |
 | --- | --- | --- |
-| Studio or 1 bedroom | 5x10 to 10x10 | 10x10 storage unit guide |
-| 2 to 3 bedrooms | 10x15 to 10x20 | 10x15 storage unit guide |
-| 3 to 4 bedrooms | 10x20 | 10x20 storage unit guide |
-| 4+ bedrooms or a home plus a car | 10x30 | 10x30 storage unit guide |
+| Studio or 1 bedroom | 5x10 to 10x10 | [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) guide |
+| 2 to 3 bedrooms | 10x15 to 10x20 | [10x15 storage unit](/blog/10x15-storage-unit-size-price-and-what-fits-inside) guide |
+| 3 to 4 bedrooms | 10x20 | [10x20 storage unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside) guide |
+| 4+ bedrooms or a home plus a car | 10x30 | [10x30 storage unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside) guide |
 
-Not sure? Our storage size guide helps you match your belongings to the right unit.
+Not sure? Our [storage size guide](/storage-size-guide) helps you match your belongings to the right unit.
 
 **Tips for storage during a move:**
 
 - Choose a drive-up unit if you are unloading a truck, so you can back up right to the door.
 
-- Look for month-to-month leases so you are not locked in. Our guide to short-term storage explains flexible options.
+- Look for month-to-month leases so you are not locked in. Our guide to [short-term storage](/blog/short-term-storage-options-costs-and-how-it-works) explains flexible options.
 
-- Pick climate controlled storage for wood furniture, electronics, and documents, especially in hot or humid areas or for stays longer than a couple of months.
+- Pick [climate controlled storage](/climate-controlled-storage) for wood furniture, electronics, and documents, especially in hot or humid areas or for stays longer than a couple of months.
 
-- Ask about move-in deals. Our breakdown of first month free storage shows what to check before you sign.
+- Ask about move-in deals. Our breakdown of [first month free](/blog/first-month-free-storage-how-the-deals-work) storage shows what to check before you sign.
 
-- Check your coverage. See whether renters insurance covers storage units before buying a facility plan.
+- Check your coverage. See whether [renters insurance](/blog/does-renters-insurance-cover-storage-units) covers storage units before buying a facility plan.
 
 ## How do moving and storage prices differ by city?
 
-Moving and storage prices follow local real estate and labor costs, so the same move or unit can cost far more in a big coastal city than in a smaller inland one. Hourly mover rates and storage rents in places like New York City, San Francisco, Los Angeles, Boston, and Seattle often sit well above the national average. Parking permits, elevator bookings, and stairs can add more in dense cities. Movers and storage in cities like Kansas City, St. Louis, Salt Lake City, Sacramento, Columbus, and Indianapolis are usually more affordable.
+Moving and storage prices follow local real estate and labor costs, so the same move or unit can cost far more in a big coastal city than in a smaller inland one. Hourly mover rates and storage rents in places like [New York City](/storage-search/new-york/new-york-city), [San Francisco](/storage-search/california/san-francisco), [Los Angeles](/storage-search/california/los-angeles), Boston, and Seattle often sit well above the national average. Parking permits, elevator bookings, and stairs can add more in dense cities. Movers and storage in cities like [Kansas City](/storage-search/missouri/kansas-city), [St. Louis](/storage-search/missouri/st-louis), [Salt Lake City](/storage-search/utah/salt-lake-city), [Sacramento](/storage-search/california/sacramento), Columbus, and Indianapolis are usually more affordable.
 
 **How to choose a storage facility during a move:**
 
@@ -279,7 +279,7 @@ Moving and storage prices follow local real estate and labor costs, so the same 
 
 - Easy truck access. Wide driveways, drive-up units, and a loading area save hours on moving day.
 
-- Access hours that fit your schedule. Early starts and late finishes are common on moving day, so 24-hour access storage can help.
+- Access hours that fit your schedule. Early starts and late finishes are common on moving day, so [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage can help.
 
 - Security: gated entry, cameras, good lighting, and on-site staff.
 

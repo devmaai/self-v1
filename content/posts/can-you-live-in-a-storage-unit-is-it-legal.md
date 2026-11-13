@@ -103,3 +103,5 @@ None. It is illegal across the US.
 **Can you run a business from a storage unit?**
 
 You can store [business inventory](/business-storage) and equipment, but you cannot use a unit as a staffed office or a place to live. Check your facility's rules for what is allowed.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Find storage near you](/find-storage)

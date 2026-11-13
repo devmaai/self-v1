@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-Cheap storage units in San Diego typically start around $20 to $60 a month for a small 5x5 locker, while an affordable 10x10 usually runs about $70 to $130 a month if you shop promotions and look inland. Average rents are higher than that, so the lowest prices come from knowing where and when to book. This guide shows you typical cheap price ranges by size, the San Diego areas with the most affordable storage, top-rated brands with local facilities, and practical ways to lower your bill without risking your belongings.
+Cheap storage units in [San Diego](/storage-search/california/san-diego) typically start around $20 to $60 a month for a small 5x5 locker, while an affordable 10x10 usually runs about $70 to $130 a month if you shop promotions and look inland. Average rents are higher than that, so the lowest prices come from knowing where and when to book. This guide shows you typical cheap price ranges by size, the San Diego areas with the most affordable storage, top-rated brands with local facilities, and practical ways to lower your bill without risking your belongings.
 
 ## How much do cheap storage units cost in San Diego?
 
@@ -28,7 +28,7 @@ Here is what affordable storage typically costs by size in San Diego, compared w
 | 10x15 | $120 to $200 | $230 to $300 | Two to three bedrooms |
 | 10x20 | $195 to $280 | $330 to $390 | A three to four bedroom home or a car |
 
-Keep in mind that most listed rates exclude a one-time admin fee of around $25 to $30, plus a protection plan if your own insurance does not cover stored items. For the national picture, see our guide to how much a storage unit costs.
+Keep in mind that most listed rates exclude a one-time admin fee of around $25 to $30, plus a protection plan if your own insurance does not cover stored items. For the national picture, see our guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## Where can you find the cheapest storage in San Diego?
 
@@ -55,11 +55,11 @@ You can compare current facilities and rates across the city on our San Diego st
 
 Several well-known storage brands run multiple facilities in San Diego and regularly offer budget-friendly move-in deals. These four are good places to start your search.
 
-- Public Storage. The largest storage brand in the US has roughly two dozen facilities in San Diego, from Pacific Highway to Sorrento Valley. It is known for move-in promotions such as discounted first months and a wide range of small, low-cost units you can rent online.
+- [Public Storage](https://www.publicstorage.com/). The largest storage brand in the US has roughly two dozen facilities in San Diego, from Pacific Highway to Sorrento Valley. It is known for move-in promotions such as discounted first months and a wide range of small, low-cost units you can rent online.
 
-- Extra Space Storage. Extra Space operates several San Diego facilities, including locations near Cedar Street and Miramar Road. It is known for clean, well-lit properties, easy online reservations, and frequent web specials on popular sizes.
+- [Extra Space Storage](https://www.extraspace.com/). Extra Space operates several San Diego facilities, including locations near Cedar Street and Miramar Road. It is known for clean, well-lit properties, easy online reservations, and frequent web specials on popular sizes.
 
-- CubeSmart. CubeSmart has San Diego locations including Eastgate Mall and Princess View Drive, plus nearby Spring Valley. It is known for straightforward online rentals and competitive rates on 10x10 units.
+- [CubeSmart](https://www.cubesmart.com/). CubeSmart has San Diego locations including Eastgate Mall and Princess View Drive, plus nearby Spring Valley. It is known for straightforward online rentals and competitive rates on [10x10 units](/blog/10x10-storage-unit-size-price-and-what-fits-inside).
 
 - A-1 Self Storage. A Southern California brand with many San Diego facilities, including Bay Park, Mission Valley, Mira Mesa, Pacific Beach, and Downtown. It is known for convenient central locations and a broad mix of unit sizes.
 
@@ -90,7 +90,7 @@ The cheapest storage unit in San Diego is a 5x5, but the best value depends on r
 
 - 5x5 (about 25 sq ft): Boxes, small furniture, sports and surf gear. Great for dorm items or decluttering.
 
-- 5x10 (about 50 sq ft): A studio apartment's furniture plus boxes. See the 5x10 size guide for a full list.
+- 5x10 (about 50 sq ft): A studio apartment's furniture plus boxes. See the 5x10 [size guide](/storage-size-guide) for a full list.
 
 - 10x10 (about 100 sq ft): One to two bedrooms of furniture. Our 10x10 size guide shows what fits.
 
@@ -102,7 +102,7 @@ Not sure which to pick? Use our storage unit size guide, or see the most popular
 
 The fastest ways to save are booking online, using a move-in promotion, and choosing a less popular unit type. Combine a few of these for the lowest price.
 
-- Use promotions. Many San Diego facilities advertise deals like a discounted first month or a percentage off the first few months. Our guide to first month free storage explains how to compare offers.
+- Use promotions. Many San Diego facilities advertise deals like a discounted first month or a percentage off the first few months. Our guide to [first month free](/blog/first-month-free-storage-how-the-deals-work) storage explains how to compare offers.
 
 - Book online. Web-only rates are often lower than walk-in prices.
 
@@ -138,7 +138,7 @@ California has specific rules on late payments and lien sales, so read that sect
 
 ## Frequently asked questions
 
-How much is the cheapest storage unit in San Diego? The cheapest units are 5x5 lockers, which can start around $20 to $60 a month with promotions. Most affordable 5x5 units fall under $80.
+How much is the cheapest storage unit in San Diego? The cheapest units are 5x5 lockers, which can start around $20 to $60 a month with promotions. Most affordable [5x5 units](/blog/5x5-storage-unit-size-price-and-what-fits-inside) fall under $80.
 
 How much is a cheap 10x10 storage unit in San Diego? A cheap 10x10 typically costs about $70 to $130 a month with a promotion or at an inland facility. Average rates are closer to $150 to $200.
 

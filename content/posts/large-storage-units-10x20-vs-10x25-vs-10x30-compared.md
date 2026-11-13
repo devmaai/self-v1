@@ -32,7 +32,7 @@ A few things to keep in mind:
 
 - Some facilities offer 10x40 or 12x30 units, but these are rare and often sold as vehicle or commercial space.
 
-If you want a full picture of a single size, see our guides to the 10x20 storage unit and the 10x30 storage unit. This post focuses on choosing between them.
+If you want a full picture of a single size, see our guides to the [10x20 storage unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside) and the [10x30 storage unit](/blog/10x30-storage-unit-size-price-and-what-fits-inside). This post focuses on choosing between them.
 
 ## How much do large storage units cost?
 
@@ -50,9 +50,9 @@ What the numbers tell you:
 
 - The price per square foot drops slightly as units get bigger, so a larger unit can be better value when you will truly fill it.
 
-- Prices in dense coastal cities such as Los Angeles, New York City and San Francisco can run 30% to 60% above these ranges, while smaller inland markets often come in lower.
+- Prices in dense coastal cities such as [Los Angeles](/storage-search/california/los-angeles), [New York City](/storage-search/new-york/new-york-city) and [San Francisco](/storage-search/california/san-francisco) can run 30% to 60% above these ranges, while smaller inland markets often come in lower.
 
-For a wider view of rates and fees across every size, read how much is a storage unit.
+For a wider view of rates and fees across every size, read [how much is a storage unit](/blog/how-much-is-a-storage-unit).
 
 ## 10x20 vs 10x25 vs 10x30: which size fits your load?
 
@@ -97,7 +97,7 @@ You need at least a 10x20 for most cars, a 10x25 or 10x30 for trucks, larger SUV
 | Class B camper van | 19 to 22 ft | 10x25 or 10x30, if door height allows |
 | Class A or C RV | 25 ft and up | Covered or outdoor parking space |
 
-Before you rent, check the door height and width, since most roll-up doors are 7 to 8 feet tall. For full preparation steps, read our guide to vehicle storage in the US.
+Before you rent, check the door height and width, since most roll-up doors are 7 to 8 feet tall. For full preparation steps, read our guide to [vehicle storage](/car-storage) in the US.
 
 ## How to choose the right large self storage unit
 
@@ -113,9 +113,9 @@ Follow these steps:
 
 - Pick the access type. Drive-up units let you back a truck to the door, which saves hours when you move heavy furniture.
 
-- Decide on climate control. Wood, leather, electronics and paper do better in a climate controlled unit, especially in hot or humid areas. Our climate controlled storage guide explains when it is worth the extra cost.
+- Decide on climate control. Wood, leather, electronics and paper do better in a [climate controlled unit](/climate-controlled-storage), especially in hot or humid areas. Our climate controlled storage guide explains when it is worth the extra cost.
 
-- Check access hours. If you will visit early or late, look for 24-hour access storage units.
+- Check access hours. If you will visit early or late, look for [24-hour access](/blog/24-hour-access-storage-units-what-you-need-to-know-before-you-rent) storage units.
 
 If you are planning a full household move, our moving home guide covers timing, budgets and when to use storage between homes.
 
@@ -125,7 +125,7 @@ You can usually cut the cost of large storage units by 10% to 30% by sizing down
 
 - Rent in fall or winter: demand drops between October and February, and so do rates.
 
-- Book online: web rates and move-in deals are often lower than walk-in prices. Learn how first month free storage offers work before you sign.
+- Book online: web rates and move-in deals are often lower than walk-in prices. Learn how [first month free](/blog/first-month-free-storage-how-the-deals-work) storage offers work before you sign.
 
 - Skip climate control for sturdy items: tools, metal shelving and vehicles rarely need it.
 
@@ -133,7 +133,7 @@ You can usually cut the cost of large storage units by 10% to 30% by sizing down
 
 - Ask about the rate after the promo: introductory prices often rise after a few months.
 
-- Consider a portable container for short moves: for a quick move, moving containers can cost less than a large unit plus a truck.
+- Consider a portable container for short moves: for a quick move, [moving containers](/blog/how-do-moving-containers-work-costs-companies-and-tips-2026) can cost less than a large unit plus a truck.
 
 Business renters can find more tips in our guide to storage units for business.
 

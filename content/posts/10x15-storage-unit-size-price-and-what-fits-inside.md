@@ -17,7 +17,7 @@ A 10x15 storage unit gives you 150 square feet of floor space, enough to hold th
 
 A 10x15 storage unit measures 10 feet wide by 15 feet deep, for 150 square feet of floor space. With a typical 8-foot ceiling, that works out to roughly 1,200 cubic feet of storage volume, and facilities with 9 to 10-foot ceilings offer closer to 1,350 to 1,500 cubic feet.
 
-To put that in perspective, 150 square feet is about the footprint of a one-car garage, or one and a half times the space of a 10x10 unit. It gives you 50 more square feet than a 10x10 and 50 less than a 10x20, which is the next size up at most facilities.
+To put that in perspective, 150 square feet is about the footprint of a one-car garage, or one and a half times the space of a [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). It gives you 50 more square feet than a 10x10 and 50 less than a 10x20, which is the next size up at most facilities.
 
 | Dimension | Measurement |
 | --- | --- |
@@ -46,11 +46,11 @@ A well-packed 10x15 unit holds the entire contents of a two to three bedroom hom
 
 - Bikes, seasonal gear, and bins stacked along the walls
 
-Most people use a 10x15 for one of three reasons: moving a two or three bedroom home, storing the overflow from a renovation or downsize, or keeping [business inventory](/business-storage) and equipment that has outgrown a smaller unit. If you are trying to fit a whole house or a vehicle alongside a full load of furniture, you have likely outgrown this size. Our storage unit size guide walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
+Most people use a 10x15 for one of three reasons: moving a two or three bedroom home, storing the overflow from a renovation or downsize, or keeping [business inventory](/business-storage) and equipment that has outgrown a smaller unit. If you are trying to fit a whole house or a vehicle alongside a full load of furniture, you have likely outgrown this size. Our storage unit [size guide](/storage-size-guide) walks through every size from a 5x5 up to a 10x30 so you can confirm you have the right one.
 
 ## How much does a 10x15 storage unit cost?
 
-A 10x15 storage unit typically costs $150 to $165 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $185 to $260 a month with climate control added. In expensive metro markets like Los Angeles or New York, the same unit can run well above those figures.
+A 10x15 storage unit typically costs $150 to $165 a month for a standard, non-[climate-controlled unit](/climate-controlled-storage), and $185 to $260 a month with climate control added. In expensive metro markets like [Los Angeles](/storage-search/california/los-angeles) or New York, the same unit can run well above those figures.
 
 | Unit size | Typical monthly cost | With climate control |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ A few things move the price up or down:
 
 - Access type. A 10x15 is available as either drive-up or indoor at most facilities, and drive-up access usually costs a little more since you can pull a vehicle right up to the door.
 
-For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on how much a storage unit costs. To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
+For the full breakdown of fees, deposits, and seasonal pricing across every size, see our guide on [how much a storage unit costs](/blog/how-much-is-a-storage-unit). To compare rates near you, search facilities in California or Texas, two of the largest storage markets in the country.
 
 ## 10x15 vs. other storage unit sizes
 
@@ -80,7 +80,7 @@ The 10x15 is a popular step-up size for renters who have outgrown a 10x10 but do
 | 10x20 | 200 sq ft | Three to four bedroom home, or a home plus one vehicle | 20 to 26-foot truck |
 | 10x30 | 300 sq ft | Four to five bedroom home, multiple vehicles, or business stock | 26-foot truck, fully loaded, or more |
 
-If you are consistently leaving boxes stacked in front of the door or cannot close it without rearranging everything, size up to a 10x20 or 10x30. If your move is smaller than two bedrooms, our 10x10 storage unit guide covers the size one step down, and our 5x10 storage unit guide covers the smallest practical move-in size.
+If you are consistently leaving boxes stacked in front of the door or cannot close it without rearranging everything, size up to a 10x20 or 10x30. If your move is smaller than two bedrooms, our 10x10 storage unit guide covers the size one step down, and our [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside) guide covers the smallest practical move-in size.
 
 ## Is a 10x15 storage unit big enough for a car?
 
@@ -116,7 +116,7 @@ If your situation is smaller, like a one-bedroom apartment, a 10x10 will usually
 
 Getting full value out of 150 square feet comes down to how you load it, not just what you bring.
 
-- Use the full height. Stack boxes to the ceiling and store furniture like mattresses and tabletops vertically along the walls.
+- Use the full height. Stack boxes to the ceiling and [store furniture](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) like mattresses and tabletops vertically along the walls.
 
 - Disassemble what you can. Bed frames, tables, and shelving units take up far less room broken down than left whole.
 
@@ -140,7 +140,7 @@ Is a 10x15 bigger than a 10x10? Yes. A 10x15 offers 150 square feet, which is 50
 
 Can I fit a car in a 10x15 storage unit? A midsize car or small SUV fits comfortably, often with room left over for boxes. A full-size truck or boat usually needs a 10x20 instead.
 
-Is a 10x15 or a 10x20 storage unit better for a 3-bedroom home? A 10x15 works for most 3-bedroom homes with average furniture, but a 10x20 gives you breathing room if you have a lot of large furniture or plan to store a vehicle too.
+Is a 10x15 or a [10x20 storage unit](/blog/10x20-storage-unit-size-price-and-what-fits-inside) better for a 3-bedroom home? A 10x15 works for most 3-bedroom homes with average furniture, but a 10x20 gives you breathing room if you have a lot of large furniture or plan to store a vehicle too.
 
 Does a 10x15 storage unit have drive-up access? Many do, though some facilities only offer this size as an indoor unit reached by hallway or elevator. Confirm access type before booking if you plan to load directly from a vehicle.
 

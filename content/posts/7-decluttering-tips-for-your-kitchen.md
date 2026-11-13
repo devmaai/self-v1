@@ -91,3 +91,5 @@ Be extra strict with duplicates and gadgets, use vertical space and drawer divid
 **What is the one-year rule?**
 
 If you have not used an item in the past year, and it is not a genuine seasonal piece, it is a strong candidate to donate or toss.
+
+**Related guides:** [Storage unit size calculator](/storage-unit-size-calculator) · [Storage size guide](/storage-size-guide) · [Find storage near you](/find-storage) · [Climate controlled storage](/climate-controlled-storage)

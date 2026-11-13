@@ -9,7 +9,7 @@ url: "/blog/self-storage-costs-oklahoma-city/"
 published: true
 ---
 
-A storage unit in Oklahoma City costs about $25 to $230 a month depending on size, and most renters land in the $50 to $90 range for the most popular 10x10 unit. That puts Oklahoma City well below the national average of roughly $137 a month, making it one of the more affordable major metros to store your belongings in. This guide breaks down current Oklahoma City storage prices by size, what pushes them up or down, how storm season and the city's wide sprawl change the math, and where you are likely to find the best rate.
+A storage unit in Oklahoma City costs about $25 to $230 a month depending on size, and most renters land in the $50 to $90 range for the most popular [10x10 unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). That puts Oklahoma City well below the national average of roughly $137 a month, making it one of the more affordable major metros to store your belongings in. This guide breaks down current Oklahoma City storage prices by size, what pushes them up or down, how storm season and the city's wide sprawl change the math, and where you are likely to find the best rate.
 
 ## Oklahoma City storage unit prices by size
 
@@ -115,13 +115,13 @@ The monthly rate is rarely the full bill. Expect some combination of these.
 
 ## What size storage unit do Oklahoma City renters need?
 
-Most Oklahoma City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for an RV, [boat](/boat-storage), or trailer ahead of storm season, the vehicle storage guide covers what fits in each unit size. For the national picture on pricing, the guide to how much a storage unit costs breaks it down by size so you can compare Oklahoma City against the rest of the country. You can also browse current listings on our Oklahoma storage search page.
+Most Oklahoma City renters start with a 10x10 unit for a one to two-bedroom move, while a 5x10 covers a studio or small apartment. If you need help picking a size for an RV, [boat](/boat-storage), or trailer ahead of storm season, the vehicle storage guide covers what fits in each unit size. For the national picture on pricing, the guide to [how much a storage unit costs](/blog/how-much-is-a-storage-unit) breaks it down by size so you can compare Oklahoma City against the rest of the country. You can also browse current listings on our Oklahoma storage search page.
 
-If you are weighing Oklahoma City against another market, the cost breakdowns for Miami, Salt Lake City, and New York are worth a look for comparison.
+If you are weighing Oklahoma City against another market, the cost breakdowns for Miami, [Salt Lake City](/storage-search/utah/salt-lake-city), and New York are worth a look for comparison.
 
 ## Frequently asked questions
 
-How much is a storage unit in Oklahoma City? A 10x10 unit typically runs $50 to $90 a month without climate control. Smaller 5x5 units start around $25 in the cheaper parts of the metro.
+How much is a storage unit in Oklahoma City? A 10x10 unit typically runs $50 to $90 a month without climate control. Smaller [5x5 units](/blog/5x5-storage-unit-size-price-and-what-fits-inside) start around $25 in the cheaper parts of the metro.
 
 Is storage cheaper in Oklahoma City than the national average? Yes. Oklahoma City runs well below the national average of about $137 a month, thanks to abundant land and strong facility competition.
 
