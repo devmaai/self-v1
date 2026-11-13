@@ -12,6 +12,37 @@ const BLOG_FILTERS = [
   { value: "seo", label: "SEO blog" },
 ] as const;
 
+const CITY_STATE: [RegExp, string, string][] = [
+  [/\banaheim\b/i, "Anaheim", "California"],
+  [/\bfresno\b/i, "Fresno", "California"],
+  [/\blos angeles\b/i, "Los Angeles", "California"],
+  [/\boakland\b/i, "Oakland", "California"],
+  [/\bsacramento\b/i, "Sacramento", "California"],
+  [/\bsan diego\b/i, "San Diego", "California"],
+  [/\bsan jose\b/i, "San Jose", "California"],
+  [/\bstockton\b/i, "Stockton", "California"],
+  [/\bmiami\b/i, "Miami", "Florida"],
+  [/\bkansas city\b/i, "Kansas City", "Missouri"],
+  [/\bst\.? louis\b/i, "St. Louis", "Missouri"],
+  [/\bspringfield\b/i, "Springfield", "Missouri"],
+  [/\bjersey city\b/i, "Jersey City", "New Jersey"],
+  [/\bqueens\b/i, "Queens", "New York"],
+  [/\bbronx\b/i, "The Bronx", "New York"],
+  [/\bnew york\b/i, "New York City", "New York"],
+  [/\boklahoma city\b/i, "Oklahoma City", "Oklahoma"],
+  [/\bhouston\b/i, "Houston", "Texas"],
+  [/\bsalt lake city\b/i, "Salt Lake City", "Utah"],
+];
+
+function postLocation(title: string): { city: string; state: string } | null {
+  const hit = CITY_STATE.find(([rx]) => rx.test(title));
+  return hit ? { city: hit[1], state: hit[2] } : null;
+}
+
+function cleanExcerpt(text: string): string {
+  return text.replace(/^\s*\**introduction\**[:\s]*/i, "").trim();
+}
+
 type BlogFilter = (typeof BLOG_FILTERS)[number]["value"];
 
 function formatDate(iso: string): string {
@@ -40,19 +71,42 @@ export default function BlogArchive({
   const [filter, setFilter] = useState<BlogFilter>(initialFilter);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
+  const [stateFilter, setStateFilter] = useState("");
+  const [cityFilter, setCityFilter] = useState("");
+
+  const locations = useMemo(() => {
+    const map = new Map<string, Set<string>>();
+    posts.forEach((post) => {
+      const loc = postLocation(post.title);
+      if (!loc) return;
+      if (!map.has(loc.state)) map.set(loc.state, new Set());
+      map.get(loc.state)!.add(loc.city);
+    });
+    return map;
+  }, [posts]);
+  const states = [...locations.keys()].sort();
+  const cities = stateFilter
+    ? [...(locations.get(stateFilter) ?? [])].sort()
+    : [...new Set([...locations.values()].flatMap((set) => [...set]))].sort();
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const filteredPosts = useMemo(() => {
     const term = query.trim().toLowerCase();
     return posts.filter((post) => {
       if (filter !== "all" && post.category !== (filter as PostCategory)) return false;
+      if (stateFilter || cityFilter) {
+        const loc = postLocation(post.title);
+        if (!loc) return false;
+        if (stateFilter && loc.state !== stateFilter) return false;
+        if (cityFilter && loc.city !== cityFilter) return false;
+      }
       if (!term) return true;
       return [post.title, post.excerpt, ...(post.keywords ?? [])]
         .join(" ")
         .toLowerCase()
         .includes(term);
     });
-  }, [posts, filter, query]);
+  }, [posts, filter, query, stateFilter, cityFilter]);
 
   const pageCount = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
@@ -100,6 +154,36 @@ export default function BlogArchive({
             );
           })}
         </nav>
+        <div className="blog-location-filters">
+          <label className="blog-select">
+            <span className="sr-only">Filter by state</span>
+            <select
+              value={stateFilter}
+              onChange={(event) => { setStateFilter(event.target.value); setCityFilter(""); setPage(1); }}
+            >
+              <option value="">All states</option>
+              {states.map((state) => <option key={state} value={state}>{state}</option>)}
+            </select>
+          </label>
+          <label className="blog-select">
+            <span className="sr-only">Filter by city</span>
+            <select
+              value={cityFilter}
+              onChange={(event) => {
+                const city = event.target.value;
+                setCityFilter(city);
+                if (city) {
+                  const owner = [...locations.entries()].find(([, set]) => set.has(city));
+                  if (owner) setStateFilter(owner[0]);
+                }
+                setPage(1);
+              }}
+            >
+              <option value="">All cities</option>
+              {cities.map((city) => <option key={city} value={city}>{city}</option>)}
+            </select>
+          </label>
+        </div>
         <label className="blog-search">
           <span className="sr-only">Search blog posts</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -120,23 +204,33 @@ export default function BlogArchive({
           <p className="blog-results-count" role="status">
             Showing {startIndex + 1}–{startIndex + visiblePosts.length} of {filteredPosts.length} {filteredPosts.length === 1 ? "post" : "posts"}
           </p>
-          <div className="blog-grid">
-            {visiblePosts.map((post, index) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className={`blog-card${index === 0 && currentPage === 1 ? " is-featured" : ""}`}
-              >
-                <span className="blog-card-date">
-                  {index === 0 && currentPage === 1 ? `Featured · ${formatDate(post.date)}` : formatDate(post.date)}
-                </span>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-                <span className="blog-card-link">
-                  Read post <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
+          <div className="blog-grid blog-grid-v2">
+            {visiblePosts.map((post, index) => {
+              const loc = postLocation(post.title);
+              const featured = index === 0 && currentPage === 1;
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className={`blog-card blog-card-v2${featured ? " is-featured" : ""}`}
+                >
+                  <span className="blog-card-media">
+                    <img src={post.coverImage || "/images/storage-guide/boxes.jpg"} alt="" loading="lazy" />
+                    {loc && <span className="blog-card-location">{loc.city}, {loc.state}</span>}
+                  </span>
+                  <span className="blog-card-body">
+                    <span className="blog-card-date">
+                      {featured ? `Featured · ${formatDate(post.date)}` : formatDate(post.date)}
+                    </span>
+                    <h3>{post.title}</h3>
+                    <p>{cleanExcerpt(post.excerpt)}</p>
+                    <span className="blog-card-link">
+                      Read post <span aria-hidden="true">→</span>
+                    </span>
+                  </span>
+                </Link>
+              );
+            })}
           </div>
           {pageCount > 1 && (
             <nav className="blog-pagination" aria-label="Blog post pages">

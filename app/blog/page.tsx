@@ -118,14 +118,8 @@ export default async function BlogIndexPage({
           </div>
         </section>
 
-        <section className="state-storage-cities" id="latest" aria-labelledby="blog-latest-heading">
-          <div className="state-storage-heading">
-            <h2 id="blog-latest-heading">Latest posts</h2>
-            <p>
-              Self-contained guides you can act on — read the ones that match
-              what your facility needs right now and skip the rest.
-            </p>
-          </div>
+        <section className="state-storage-cities" id="latest" aria-label="Blog posts">
+
           <BlogArchive posts={posts} initialFilter={activeFilter} />
         </section>
 
