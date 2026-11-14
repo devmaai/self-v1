@@ -12,7 +12,7 @@ published: true
 
 **Introduction**
 
-To store clothes in a storage unit safely, wash and fully dry every item, pack it in clean plastic bins or wardrobe boxes with acid-free tissue, keep the containers off the floor, and choose a climate controlled unit if you are storing for more than a few months. A small 5x5 unit, which typically costs about $40 to $80 a month, holds the clothing from a full closet or two. Below you will find a step-by-step packing method, the best containers for each type of fabric, how long clothes can stay in storage, what size unit you need and how to keep moths, mildew and odors away.
+To store clothes in a storage unit safely, wash and fully dry every item, pack it in clean plastic bins or wardrobe boxes with acid-free tissue, keep the containers off the floor, and choose a [climate controlled unit](/climate-controlled-storage) if you are storing for more than a few months. A small [5x5 unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside), which typically costs about $40 to $80 a month, holds the clothing from a full closet or two. Below you will find a step-by-step packing method, the best containers for each type of fabric, how long clothes can stay in storage, what size unit you need and how to keep moths, mildew and odors away.
 
 ## How do you store clothes in a storage unit?
 
@@ -63,7 +63,7 @@ Each fabric needs slightly different care, so pack by material instead of by own
 
 - Shoes: Clean them, stuff with acid-free paper to hold their shape and keep them in their own boxes.
 
-If you are storing other fabric items, such as quilts or upholstered pieces, our guide on how to store furniture in a storage unit without damage covers wrapping and placement in more detail.
+If you are storing other fabric items, such as quilts or upholstered pieces, our guide on [how to store furniture in a storage unit without damage](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) covers wrapping and placement in more detail.
 
 ## Do you need a climate controlled unit for clothes?
 
@@ -77,7 +77,7 @@ Expect to pay roughly 20% to 30% more than a standard unit of the same size. A s
 
 - Clothing packed in sealed plastic bins with moisture absorbers
 
-Read our complete guide to climate controlled storage to see how it works and when the extra cost pays off, or compare climate controlled storage options near you.
+Read our [complete guide to climate controlled storage](/blog/climate-controlled-storage-in-the-us-everything-you-need-to-know) to see how it works and when the extra cost pays off, or [compare climate controlled storage options](/climate-controlled-storage) near you.
 
 ## How long can clothes stay in a storage unit?
 
@@ -102,7 +102,7 @@ Most people need a 5x5 or 5x10 storage unit for clothing, depending on how much 
 | 5x10 | Clothing plus shoes, bedding and small furniture | $60 to $120 |
 | 10x10 | Clothing as part of a full one or two bedroom move | $100 to $180 |
 
-Prices vary by city, size and features such as climate control. See our guides to the 5x5 storage unit and the 5x10 storage unit, or try the storage unit size calculator. If you only need room for a handful of bins, a storage locker can be the most affordable option.
+Prices vary by city, size and features such as climate control. See our guides to the [5x5 storage unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) and the [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside), or try the [storage unit size calculator](/storage-unit-size-calculator). If you only need room for a handful of bins, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can be the most affordable option.
 
 ## How to protect stored clothes from moths, mildew and odors
 
@@ -142,7 +142,7 @@ You organize clothes in a self storage unit by placing the items you will need f
 
 - Hanging section: Wardrobe boxes or a sturdy garment rack along one wall.
 
-Keep a simple inventory on your phone with a photo of each bin's contents and its label. The same approach works well for paperwork, as explained in our guide to document storage units.
+Keep a simple inventory on your phone with a photo of each bin's contents and its label. The same approach works well for paperwork, as explained in our guide to [document storage units](/blog/document-storage-units-how-to-store-paperwork-and-records-safely).
 
 ## How to choose a storage facility for your clothes
 
@@ -156,7 +156,7 @@ The right facility for clothing is clean, dry, secure and close enough that you 
 
 - Access hours that match when you will swap seasonal clothes
 
-Prices for the same size can vary a lot from one neighborhood to the next, so compare a few facilities close to home. You can search storage units in California, Utah, New York and Missouri to compare local options. For a full breakdown of pricing, read how much a storage unit costs.
+Prices for the same size can vary a lot from one neighborhood to the next, so compare a few [facilities](/find-storage) close to home. You can search storage units in [California](/storage-search/california), [Utah](/storage-search/utah), [New York](/storage-search/new-york) and [Missouri](/storage-search/missouri) to compare local options. For a full breakdown of pricing, read [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ![Blog image](/images/blog/how-to-store-clothes-in-a-storage-unit-a-long-term-guide-img-2.png)
 
