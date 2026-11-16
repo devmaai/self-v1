@@ -38,7 +38,7 @@ You pack a storage unit by preparing your items at home, loading the unit from t
 
 - Take a photo and lock up. A quick photo of each wall makes items easy to find later.
 
-If storage is one part of a bigger move, our guide to moving home in the US helps you plan your costs and timing.
+If storage is one part of a bigger move, our guide to [moving home in the US](/blog/moving-home-in-the-us-costs-timing-and-how-to-plan-your-move) helps you plan your costs and timing.
 
 ## What supplies do you need to pack a storage unit?
 
@@ -55,7 +55,7 @@ You need sturdy boxes in two or three standard sizes, strong packing tape, paddi
 | Pallets or plastic sheeting | Keeping items off the concrete floor | Often free to about $15 |
 | Freestanding shelving | Using vertical space and keeping boxes accessible | About $40 to $100 a unit |
 
-For reference, U-Haul lists its medium moving box, about 3 cubic feet, at $2.39 each or less when bought in a bundle. If you would rather hand the wrapping and boxing to someone else, our guide to packing services and what they cost explains your options.
+For reference, [U-Haul](https://www.uhaul.com/MovingSupplies/Boxes/Standard-sized-moving-boxes/Medium-Moving-Box?id=2793) lists its medium moving box, about 3 cubic feet, at $2.39 each or less when bought in a bundle. If you would rather hand the wrapping and boxing to someone else, our guide to [packing services and what they cost](/blog/packing-services-what-they-cost-and-when-to-hire-help) explains your options.
 
 ## How should you pack boxes for self storage?
 
@@ -73,7 +73,7 @@ Pack boxes for self storage so they are full, balanced and easy to identify. A h
 
 - Choose plastic bins for delicate items. Clothing, photos and textiles stay safer in sealed bins.
 
-Paperwork needs a little extra care. Our guide to document storage units covers the best boxes and filing methods for records.
+Paperwork needs a little extra care. Our guide to [document storage units](/blog/document-storage-units-how-to-store-paperwork-and-records-safely) covers the best boxes and filing methods for records.
 
 ## How do you load furniture into a storage unit?
 
@@ -89,7 +89,7 @@ You load furniture into a storage unit by cleaning it, taking apart anything tha
 
 - Keep mattresses upright and covered. Store them flat against a wall in a mattress bag.
 
-Lifting heavy pieces safely matters as much as packing them well. Read how to move heavy furniture without damage, and see our full guide on how to store furniture in a storage unit for long-term care.
+Lifting heavy pieces safely matters as much as packing them well. Read [how to move heavy furniture without damage](/blog/how-to-move-heavy-furniture-without-damage), and see our full guide on [how to store furniture in a storage unit](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) for long-term care.
 
 ## Storage unit organization ideas that save space
 
@@ -123,7 +123,7 @@ Most people need one size smaller than they expect when they pack a unit tightly
 | 10x15 | A two to three bedroom home | $140 to $230 |
 | 10x20 | A three to four bedroom home | $180 to $300 |
 
-Check our storage size guide to compare dimensions, or read about the popular 10x10 storage unit. For a full breakdown of rates and fees, see how much a storage unit costs.
+Check our [storage size guide](/storage-size-guide) to compare dimensions, or read about the popular [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside). For a full breakdown of rates and fees, see [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ## How do you protect items in self storage units?
 
@@ -131,13 +131,13 @@ You protect items in self storage units by keeping them clean, dry and off the f
 
 - Raise everything off the floor. Pallets or shelves protect against condensation and minor leaks.
 
-- Control moisture. The EPA recommends keeping indoor relative humidity below 60 percent, ideally between 30 and 50 percent, to limit mold. Add moisture absorbers or silica gel packs to bins and drawers.
+- Control moisture. The [EPA recommends keeping indoor relative humidity below 60 percent](https://www.epa.gov/mold/mold-course-chapter-2), ideally between 30 and 50 percent, to limit mold. Add moisture absorbers or silica gel packs to bins and drawers.
 
 - Leave airflow gaps. Keep a few inches between your items and the walls.
 
 - Consider climate control. Wood furniture, electronics, photos and instruments last longer in a temperature-controlled unit.
 
-Learn more in our complete guide to climate controlled storage.
+Learn more in our [complete guide to climate controlled storage](/blog/climate-controlled-storage-in-the-us-everything-you-need-to-know).
 
 ## What should you not put in storage units?
 
@@ -163,7 +163,7 @@ The right facility for easy packing offers drive-up access or wide hallways, car
 
 - Access hours and security features such as gated entry and cameras
 
-Rates for the same size can change a lot from one neighborhood to the next, so compare a few facilities near you. You can search storage units in California, Utah, New York and Missouri.
+Rates for the same size can change a lot from one neighborhood to the next, so compare a few facilities near you. You can [search storage units in California](/storage-search/california), [Utah](/storage-search/utah), [New York](/storage-search/new-york) and [Missouri](/storage-search/missouri).
 
 ![Blog image](/images/blog/how-to-pack-and-organize-a-storage-unit-a-step-by-step-guide-img-2.png)
 
