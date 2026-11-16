@@ -82,6 +82,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/california",
     "/storage-search/new-york",
     "/storage-search/missouri",
+    "/services/local-seo-gbp-optimization",
+    "/services/technical-seo",
+    "/services/content-keyword-strategy",
+    "/services/multi-location-seo",
+    "/services/backlinks",
+    "/services/aeo-geo",
+    "/services/seo-reporting",
+    "/who-we-serve/independent-facility-owners",
+    "/who-we-serve/multi-location-operators",
+    "/who-we-serve/new-facility-openings",
+    "/who-we-serve/vehicle-rv-boat-storage",
+    "/who-we-serve/storage-warehouse",
+    "/who-we-serve/containers",
+    "/who-we-serve/furniture-depositories",
     ...Object.entries(CITY_STATES)
       // Drafted cities stay out of the sitemap until they are published.
       .filter(([citySlug]) => isCityPublished(citySlug))
