@@ -1342,3 +1342,26 @@
 .v2-home .nav-form-panel .af-field input[type="date"],
 .v2-home .mobile-menu-form .af-field select,
 .v2-home .mobile-menu-form .af-field input[type="date"] { color-scheme: light; }
+
+/* ── Geo-grid rank tracker ─────────────────────────────────────────── */
+.geogrid-inner { max-width: 960px; margin: 0 auto; }
+.geogrid { margin-top: 32px; display: grid; gap: 28px; }
+.geogrid-results { display: grid; gap: 18px; }
+.geogrid-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.geogrid-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px; }
+.geogrid-stat b { display: block; font-size: 28px; font-weight: 700; color: #fff; }
+.geogrid-stat span { font-size: 13px; color: rgba(255,255,255,0.7); }
+.geogrid-map { height: 460px; border-radius: 12px; overflow: hidden; background: var(--slate-900); }
+.geogrid-map-loading { display: grid; place-items: center; color: rgba(255,255,255,0.7); }
+.geogrid-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; margin: 0; color: #fff; font-size: 14px; }
+.geogrid-legend li { display: flex; align-items: center; gap: 8px; }
+.geogrid-pin { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 2px solid #fff; color: #fff; font-weight: 700; font-size: 13px; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+.geogrid-legend .geogrid-pin { width: 16px; height: 16px; }
+.geogrid-pin-green { background: #16a34a; }
+.geogrid-pin-yellow { background: #eab308; color: #1a1614; }
+.geogrid-pin-red { background: #dc2626; }
+.geogrid-pin-grey { background: #9ca3af; color: #1a1614; }
+@media (max-width: 720px) {
+  .geogrid-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .geogrid-map { height: 360px; }
+}
