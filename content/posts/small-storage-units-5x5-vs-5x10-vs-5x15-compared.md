@@ -32,7 +32,7 @@ A few things to keep in mind:
 
 - The smallest storage unit at many facilities is a locker of 4x4 or smaller, often stacked in a row.
 
-For a full picture of a single size, see our guides to the 5x5 storage unit and the 5x10 storage unit. This post focuses on choosing between the small sizes.
+For a full picture of a single size, see our guides to the [5x5 storage unit](/blog/5x5-storage-unit-size-price-and-what-fits-inside) and the [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside). This post focuses on choosing between the small sizes.
 
 ## How much do small storage units cost?
 
@@ -52,7 +52,7 @@ What the numbers tell you:
 
 - Prices in dense cities such as New York City, Los Angeles and San Francisco can run 30% to 60% above these ranges, while smaller inland markets often come in lower.
 
-Large national operators such as Public Storage and Extra Space Storage list small units online with live rates, so you can compare sizes in your area in a few minutes. For a wider view of rates and fees across every size, read how much is a storage unit.
+Large national operators such as [Public Storage](https://www.publicstorage.com/) and [Extra Space Storage](https://www.extraspace.com/) list small units online with live rates, so you can compare sizes in your area in a few minutes. For a wider view of rates and fees across every size, read [how much is a storage unit](/blog/how-much-is-a-storage-unit).
 
 ## 5x5 vs 5x10 vs 5x15: which size fits your load?
 
@@ -67,7 +67,7 @@ Choose a 5x5 for boxes and seasonal items, a 5x10 for a studio or a dorm room, a
 | Business files, samples or stock | 5x10 or 5x15 | Space for a row of shelving and an aisle |
 | Bikes, sports gear and camping kit | 5x10 | Long items fit along the back wall |
 
-A simple rule: if your list fits in a 5x5 only when every inch is packed, step up to a 5x10. You will save time and avoid damage when you need to reach something at the back. Our storage size guide shows each size with sample layouts.
+A simple rule: if your list fits in a 5x5 only when every inch is packed, step up to a 5x10. You will save time and avoid damage when you need to reach something at the back. Our [storage size guide](/storage-size-guide) shows each size with sample layouts.
 
 ## What fits in a 5x15 storage unit?
 
@@ -91,15 +91,15 @@ Because fewer facilities build 5x15 units, they can be harder to find in busy su
 
 Small self storage units suit anyone who needs to clear a little space without paying for a full room. The right size depends on who you are and how often you visit.
 
-- College students: a 5x5 holds boxes over summer break, and a 5x10 fits a full dorm room. Our student storage guide covers timing and sharing a unit with a roommate.
+- College students: a 5x5 holds boxes over summer break, and a 5x10 fits a full dorm room. Our [student storage guide](/blog/student-storage-in-the-us-the-complete-guide-for-college-students) covers timing and sharing a unit with a roommate.
 
-- Apartment renters: a 5x10 frees up closet space for seasonal clothes, bikes and extra furniture. If you plan to store clothing for months, read how to store clothes in a storage unit.
+- Apartment renters: a 5x10 frees up closet space for seasonal clothes, bikes and extra furniture. If you plan to store clothing for months, read [how to store clothes in a storage unit](/blog/how-to-store-clothes-in-a-storage-unit-a-long-term-guide).
 
-- Small business owners: a 5x10 or 5x15 holds inventory, samples and paperwork close to home. For records, see our guide to document storage units.
+- Small business owners: a 5x10 or 5x15 holds inventory, samples and paperwork close to home. For records, see our guide to [document storage units](/blog/document-storage-units-how-to-store-paperwork-and-records-safely).
 
-- Short stays between moves: a small unit is often all you need while you wait to close on a home. Learn more in our short-term storage guide.
+- Short stays between moves: a small unit is often all you need while you wait to close on a home. Learn more in our [short-term storage guide](/blog/short-term-storage-options-costs-and-how-it-works).
 
-If you only need space for a few boxes, a storage locker can cost even less than a 5x5.
+If you only need space for a few boxes, a [storage locker](/blog/what-is-a-storage-locker-sizes-costs-and-when-to-rent-one) can cost even less than a 5x5.
 
 ## How to choose the right small storage unit
 
@@ -115,11 +115,11 @@ Follow these steps:
 
 - Pick the floor and access type. Ground-floor and drive-up units cost more but save effort if you visit often.
 
-- Decide on climate control. Wood, leather, electronics and paper do better in a climate controlled unit. Our climate controlled storage guide explains when it is worth the extra cost.
+- Decide on climate control. Wood, leather, electronics and paper do better in a climate controlled unit. Our [climate controlled storage guide](/blog/climate-controlled-storage-in-the-us-everything-you-need-to-know) explains when it is worth the extra cost.
 
-- Try the calculator. The storage unit size calculator estimates the right size from your list of items.
+- Try the calculator. The [storage unit size calculator](/storage-unit-size-calculator) estimates the right size from your list of items.
 
-If a small unit will not hold everything, compare the next sizes up in our guide to large storage units.
+If a small unit will not hold everything, compare the next sizes up in our guide to [large storage units](/blog/large-storage-units-10x20-vs-10x25-vs-10x30-compared).
 
 ## How to save money on small storage units
 
@@ -127,13 +127,13 @@ You can often cut the cost of small storage units by 10% to 30% by sizing down w
 
 - Rent in fall or winter: demand drops between October and February, and so do rates.
 
-- Book online: web rates and move-in deals are often lower than walk-in prices. Learn how first month free storage offers work before you sign.
+- Book online: web rates and move-in deals are often lower than walk-in prices. Learn how [first month free storage](/blog/first-month-free-storage-how-the-deals-work) offers work before you sign.
 
 - Choose an upper floor: indoor units reached by elevator usually cost less than ground-floor or drive-up units.
 
 - Skip climate control for sturdy items: plastic bins, tools and sports gear rarely need it in mild areas.
 
-- Compare a few facilities nearby: rates for the same size can vary widely across one city. You can find storage near you and compare options in one place.
+- Compare a few facilities nearby: rates for the same size can vary widely across one city. You can [find storage near you](/find-storage) and compare options in one place.
 
 - Ask about the rate after the promo: introductory prices often rise after a few months.
 
