@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Script from "next/script";
-import { rankBand, type GridStats, type ScoredPoint } from "@/lib/geoGrid";
+import { describeOffset, rankBand, type GridStats, type ScoredPoint } from "@/lib/geoGrid";
 
 const GeoGridMap = dynamic(() => import("./GeoGridMap"), {
   ssr: false,
@@ -20,7 +20,7 @@ declare global {
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const KEYWORD_IDEAS = ["self storage", "storage units near me", "climate controlled storage", "RV storage"];
-const RADIUS_OPTIONS = [1, 3, 5, 10, 15];
+const RADIUS_MILES = 5; // fixed for the MVP
 const LOADING_STEPS = [
   "Finding your address",
   "Building the 5 × 5 grid",
@@ -28,7 +28,7 @@ const LOADING_STEPS = [
   "Calculating your coverage",
 ];
 
-type FieldErrors = Partial<Record<"business" | "address" | "keyword" | "radius", string>>;
+type FieldErrors = Partial<Record<"business" | "address" | "keyword", string>>;
 
 type Result = {
   center: { lat: number; lng: number };
@@ -90,7 +90,6 @@ function formatDate(iso: string) {
 
 export default function GeoGridTool() {
   const [keyword, setKeyword] = useState("");
-  const [radius, setRadius] = useState(5);
   const [busy, setBusy] = useState(false);
   const [step, setStep] = useState(0);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -135,7 +134,7 @@ export default function GeoGridTool() {
           business,
           address,
           keyword: kw,
-          radius,
+          radius: RADIUS_MILES,
           company: String(data.get("company") || ""),
           captchaToken: String(data.get("cf-turnstile-response") || ""),
         }),
@@ -143,7 +142,7 @@ export default function GeoGridTool() {
       const json = await res.json();
 
       if (res.ok && json.ok) {
-        setResult({ ...json, business, keyword: kw, address, radius, scannedAt: new Date().toISOString() });
+        setResult({ ...json, business, keyword: kw, address, radius: RADIUS_MILES, scannedAt: new Date().toISOString() });
         setView("map");
       } else if (json.error === "validation" && json.fields) {
         setFieldErrors(json.fields as FieldErrors);
@@ -205,26 +204,6 @@ export default function GeoGridTool() {
             {fieldErrors.keyword && <span className="gg-error">{fieldErrors.keyword}</span>}
           </div>
 
-          <div className="gg-field">
-            <span className="gg-label" id="gg-radius-label">Search radius</span>
-            <div className="gg-segment" role="radiogroup" aria-labelledby="gg-radius-label">
-              {RADIUS_OPTIONS.map((r) => (
-                <button
-                  type="button"
-                  role="radio"
-                  aria-checked={radius === r}
-                  key={r}
-                  className={`gg-seg${radius === r ? " is-on" : ""}`}
-                  onClick={() => setRadius(r)}
-                >
-                  {r} mi
-                </button>
-              ))}
-            </div>
-            <span className="gg-help">Distance from your location to the edge of the grid.</span>
-            {fieldErrors.radius && <span className="gg-error">{fieldErrors.radius}</span>}
-          </div>
-
           <div className="gg-honeypot" aria-hidden="true">
             <label htmlFor="gg-company">Company</label>
             <input id="gg-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
@@ -237,7 +216,7 @@ export default function GeoGridTool() {
           <button type="submit" className="gg-submit" disabled={busy}>
             {busy ? "Scanning…" : "Generate Geo-Grid"}
           </button>
-          <p className="gg-fine">Fixed 5 × 5 grid · 25 Google Maps checks per scan</p>
+          <p className="gg-fine">5 × 5 grid · 5 mile radius · 25 Google Maps checks</p>
         </form>
       </aside>
 
@@ -320,7 +299,7 @@ export default function GeoGridTool() {
             </div>
 
             {view === "map" ? (
-              <GeoGridMap center={result.center} points={result.points} business={result.business} />
+              <GeoGridMap center={result.center} radius={result.radius} points={result.points} business={result.business} />
             ) : (
               <div className="gg-gridview">
                 <span className="gg-compass">North ↑</span>
@@ -330,7 +309,7 @@ export default function GeoGridTool() {
                       key={`${p.row}-${p.col}`}
                       role="cell"
                       className={`gg-cell gg-cell-${rankBand(p.rank)}`}
-                      title={`${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}`}
+                      title={describeOffset(p.row, p.col, result.radius)}
                       aria-label={`Row ${p.row + 1}, column ${p.col + 1}: ${p.rank ? `rank ${p.rank}` : "not found"}`}
                     >
                       {p.rank ?? "–"}
@@ -341,13 +320,13 @@ export default function GeoGridTool() {
             )}
 
             <ul className="gg-legend">
-              <li><i className="gg-dot gg-dot-green" />Rank 1–3</li>
-              <li><i className="gg-dot gg-dot-yellow" />Rank 4–10</li>
-              <li><i className="gg-dot gg-dot-red" />Rank 11+</li>
-              <li><i className="gg-dot gg-dot-grey" />Not found</li>
+              <li><i className="gg-dot gg-dot-green" /><b>1–3</b><span>Map pack, where most renters click</span></li>
+              <li><i className="gg-dot gg-dot-yellow" /><b>4–10</b><span>Visible, behind competitors</span></li>
+              <li><i className="gg-dot gg-dot-red" /><b>11+</b><span>Buried, rarely seen</span></li>
+              <li><i className="gg-dot gg-dot-grey" /><b>Not found</b><span>Not in the top 20</span></li>
             </ul>
             <p className="gg-fine">
-              {view === "map" ? "Click a point to see its ranking and coordinates." : "Hover a cell to see its coordinates."}
+              {view === "map" ? "Click a point to see your ranking and who ranks at the top there." : "Hover a cell to see where it is."}
               {missing > 0 ? ` You didn't appear at ${missing} point${missing === 1 ? "" : "s"}.` : ""}
             </p>
 

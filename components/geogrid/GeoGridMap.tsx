@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { rankBand, type ScoredPoint } from "@/lib/geoGrid";
+import { describeOffset, namesMatch, rankBand, type ScoredPoint } from "@/lib/geoGrid";
 
 type Props = {
   center: { lat: number; lng: number };
+  radius: number;
   points: ScoredPoint[];
   business: string;
 };
 
-export default function GeoGridMap({ center, points, business }: Props) {
+export default function GeoGridMap({ center, radius, points, business }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,14 +50,21 @@ export default function GeoGridMap({ center, points, business }: Props) {
           keyboard: true,
         }).addTo(map!);
 
+        const top = (p.top ?? [])
+          .map((name, i) => {
+            const you = namesMatch(name, business);
+            return `<li${you ? ' class="gg-popup-you"' : ""}><i>${i + 1}</i>${esc(name)}</li>`;
+          })
+          .join("");
         marker.bindPopup(
           `<div class="gg-popup">` +
             `<span class="gg-popup-rank gg-popup-${band}">${p.rank ? `#${p.rank}` : "Not found"}</span>` +
             `<strong>${esc(business)}</strong>` +
-            `<span>${p.rank ? "Google Maps position at this point" : "Not in the top 20 at this point"}</span>` +
-            `<small>${isCenter ? "Your location · " : ""}${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</small>` +
+            `<span>${p.rank ? "Your Google Maps position here" : "Not in the top 20 here"}</span>` +
+            `<small>${describeOffset(p.row, p.col, radius)}</small>` +
+            (top ? `<div class="gg-popup-top"><em>Top results here</em><ol>${top}</ol></div>` : "") +
           `</div>`,
-          { closeButton: false, offset: [0, -12] },
+          { closeButton: false, offset: [0, -12], minWidth: 210 },
         );
       });
 
@@ -68,7 +76,7 @@ export default function GeoGridMap({ center, points, business }: Props) {
       cancelled = true;
       map?.remove();
     };
-  }, [center, points, business]);
+  }, [center, radius, points, business]);
 
   return <div ref={containerRef} className="gg-map" role="region" aria-label={`Ranking map for ${business}`} />;
 }

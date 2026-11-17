@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
@@ -46,10 +47,28 @@ const FAQ = [
   },
 ];
 
-const STEPS = [
-  { n: "1", title: "Enter your details", text: "Add your facility name, address and the keyword renters search, like “self storage”." },
-  { n: "2", title: "We scan 25 points", text: "We check Google Maps from a 5 × 5 grid of points spread evenly around your facility." },
-  { n: "3", title: "See your coverage", text: "Get a colour-coded map, your top 3 and top 10 coverage, and your average rank." },
+const WHY = [
+  {
+    title: "Distance changes the results",
+    text: "Google ranks map listings by how close the renter is. The facility that wins at your front gate can vanish two miles away.",
+    img: "/images/geogrid/phone-map-navigation.jpg",
+    alt: "Hand holding a phone showing a map route on a country road",
+    pos: "50% 62%",
+  },
+  {
+    title: "Find your blind spots",
+    text: "Grey and red points show neighbourhoods where renters search for storage and never see you.",
+    img: "/images/geogrid/green-storage-units.jpg",
+    alt: "Row of drive-up self-storage units with green roll-up doors",
+    pos: "50% 50%",
+  },
+  {
+    title: "Know where to focus",
+    text: "See which side of your trade area is weakest, so you can target reviews, citations and content where they move the map.",
+    img: "/images/geogrid/yellow-indoor-units.jpg",
+    alt: "Numbered indoor self-storage units with yellow doors",
+    pos: "50% 45%",
+  },
 ];
 
 export default function GeoGridTrackerPage() {
@@ -60,18 +79,31 @@ export default function GeoGridTrackerPage() {
       <V2Nav variant="home" />
 
       <section className="gg-hero">
-        <div className="gg-wrap">
-          <span className="gg-badge">Free tool · No signup</span>
-          <h1>Google Maps geo-grid rank tracker for self-storage</h1>
-          <p>
-            Renters see different map results depending on where they search. Scan 25 points around your facility and
-            see exactly where you rank, and where you don&apos;t.
-          </p>
-          <ul className="gg-hero-points">
-            <li>Real Google Maps results</li>
-            <li>5 × 5 grid, 25 data points</li>
-            <li>Results in about 30 seconds</li>
-          </ul>
+        <Image
+          src="/images/geogrid/hero-orange-storage-units.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={90}
+          className="gg-hero-photo"
+        />
+        <div className="gg-hero-shade" aria-hidden="true" />
+        <div className="gg-wrap gg-hero-grid">
+          <div className="gg-hero-copy">
+            <span className="gg-badge">Free tool · No signup</span>
+            <h1>
+              See where renters <em>can&apos;t find you</em> on Google Maps
+            </h1>
+            <p>
+              Your ranking changes with every block. Scan 25 points around your storage facility and see exactly where
+              you win the map pack, and where competitors take your move-ins.
+            </p>
+            <div className="gg-hero-actions">
+              <a href="#tool" className="gg-hero-btn">Run my free scan</a>
+              <span className="gg-hero-note">Results in about 30 seconds</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -83,13 +115,18 @@ export default function GeoGridTrackerPage() {
 
       <section className="gg-section">
         <div className="gg-wrap">
-          <h2 className="gg-h2">How it works</h2>
-          <div className="gg-how">
-            {STEPS.map((s) => (
-              <div className="gg-how-card" key={s.n}>
-                <span className="gg-how-n">{s.n}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
+          <span className="gg-eyebrow">Why a geo-grid</span>
+          <h2 className="gg-h2">One ranking number hides most of the picture</h2>
+          <div className="gg-why">
+            {WHY.map((w) => (
+              <div className="gg-why-card" key={w.title}>
+                <div className="gg-why-photo">
+                  <Image src={w.img} alt={w.alt} fill sizes="(max-width: 960px) 100vw, 380px" quality={90} style={{ objectPosition: w.pos }} />
+                </div>
+                <div className="gg-why-body">
+                  <h3>{w.title}</h3>
+                  <p>{w.text}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -98,6 +135,7 @@ export default function GeoGridTrackerPage() {
 
       <section className="gg-section gg-section-alt">
         <div className="gg-wrap gg-faq-wrap">
+          <span className="gg-eyebrow">FAQ</span>
           <h2 className="gg-h2">Frequently asked questions</h2>
           <div className="gg-faq">
             {FAQ.map((f) => (
@@ -114,7 +152,10 @@ export default function GeoGridTrackerPage() {
         <div className="gg-wrap">
           <h2>Seeing grey and red on your map?</h2>
           <p>We help storage operators win the Google Maps pack and fill more units. Start with a free audit of your facility.</p>
-          <Link href="/audit" className="gg-cta-btn">Get my free audit</Link>
+          <div className="gg-cta-actions">
+            <Link href="/audit" className="gg-cta-btn">Get my free audit</Link>
+            <a href="#tool" className="gg-cta-link">Run another scan</a>
+          </div>
         </div>
       </section>
 

@@ -83,11 +83,45 @@ function demoRanks(grid: GridPoint[], seedText: string): (number | null)[] {
   let h = 2166136261;
   for (const c of seedText) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
   const rand = () => ((h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296);
+
+  // Per-business traits, so each name gets its own recognisable pattern.
+  const strength = rand(); // 0 weak profile .. 1 strong profile
+  const base = 1 + (1 - strength) * 3.5; // rank at the facility itself
+  const slope = 1.2 + (1 - strength) * 2.6; // how fast rank worsens per grid step
+  const angle = rand() * Math.PI * 2; // direction where competitors are densest
+  const tilt = 1 + rand() * 2.5; // how much worse that side is
+  const phaseX = rand() * 6.28;
+  const phaseY = rand() * 6.28;
+
   return grid.map((p) => {
-    const dist = Math.hypot(p.row - 2, p.col - 2); // 0 at centre, ~2.8 at corners
-    const r = rand();
-    if (r < 0.12 + dist * 0.08) return null; // not found, more likely far out
-    return Math.max(1, Math.round(1 + dist * 4 + rand() * 6));
+    const dx = p.col - 2;
+    const dy = 2 - p.row; // north is positive
+    const dist = Math.hypot(dx, dy);
+    const side = (dx * Math.cos(angle) + dy * Math.sin(angle)) / 2; // -1 .. 1
+    const wave = Math.sin(dx * 0.9 + phaseX) * 1.0 + Math.cos(dy * 0.9 + phaseY) * 1.0; // smooth, neighbours stay similar
+    const noise = (rand() - 0.5) * 2; // small per-point jitter
+    const rank = Math.round(base + slope * dist + tilt * side * dist + wave + noise);
+    if (rank > 20) return null; // outside the top 20 means not found
+    return Math.max(1, rank);
+  });
+}
+
+const DEMO_COMPETITORS = [
+  "SecureSpace Storage", "Lakeview Self Storage", "Main Street Storage", "Cornerstone Storage Center",
+  "Oak Ridge Mini Storage", "Pioneer Storage", "Summit Storage Solutions", "Harbor Point Storage",
+  "Eagle Self Storage", "Greenway Storage Units", "Crossroads Storage", "Heritage Storage Co.",
+];
+
+function demoTop(ranks: (number | null)[], business: string, seedText: string): string[][] {
+  let h = 2166136261;
+  for (const c of seedText + "|top") h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
+  const rand = () => ((h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296);
+  return ranks.map((rank) => {
+    const pool = [...DEMO_COMPETITORS];
+    const list: string[] = [];
+    while (list.length < 3) list.push(pool.splice(Math.floor(rand() * pool.length), 1)[0]);
+    if (rank !== null && rank <= 3) list.splice(rank - 1, 0, business);
+    return list.slice(0, 3);
   });
 }
 
@@ -99,7 +133,7 @@ async function rankAtPoint(
   business: string,
   zoom: number,
   auth: string,
-): Promise<number | null> {
+): Promise<{ rank: number | null; top: string[] }> {
   const res = await fetch("https://api.dataforseo.com/v3/serp/google/maps/live/advanced", {
     method: "POST",
     headers: { Authorization: `Basic ${auth}`, "Content-Type": "application/json" },
@@ -126,8 +160,12 @@ async function rankAtPoint(
     throw new Error(code === 40100 ? "dataforseo_auth" : code === 40200 ? "dataforseo_funds" : `dataforseo_${code}`);
   }
   const items = task.result?.[0]?.items ?? [];
-  const hit = items.find((i) => i.type === "maps_search" && i.title && namesMatch(i.title, business));
-  return hit?.rank_group ?? null;
+  const listings = items.filter((i) => i.type === "maps_search" && i.title);
+  const hit = listings.find((i) => namesMatch(i.title as string, business));
+  return {
+    rank: hit?.rank_group ?? null,
+    top: listings.slice(0, 3).map((i) => i.title as string),
+  };
 }
 
 export async function POST(request: Request) {
@@ -147,7 +185,7 @@ export async function POST(request: Request) {
   const business = str(body.business);
   const address = str(body.address);
   const keyword = str(body.keyword);
-  const radius = Number(body.radius ?? 5);
+  const radius = 5; // fixed 5-mile radius for the MVP (client value is ignored)
 
   const fields: Record<string, string> = {};
   if (business.length < 2 || business.length > 100) fields.business = "Enter your business name.";
@@ -187,7 +225,8 @@ export async function POST(request: Request) {
 
   if (DEMO) {
     const ranks = demoRanks(grid, `${business}|${keyword}`);
-    const demoPoints: ScoredPoint[] = grid.map((p, i) => ({ ...p, rank: ranks[i] }));
+    const tops = demoTop(ranks, business, `${business}|${keyword}`);
+    const demoPoints: ScoredPoint[] = grid.map((p, i) => ({ ...p, rank: ranks[i], top: tops[i] }));
     return NextResponse.json({
       ok: true, demo: true, center, radius, failedPoints: 0,
       points: demoPoints, stats: computeStats(demoPoints),
@@ -209,7 +248,7 @@ export async function POST(request: Request) {
   // A failed point is reported as null (not found); the client is told how many failed.
   const points: ScoredPoint[] = grid.map((p, i) => {
     const s = settled[i];
-    return { ...p, rank: s.status === "fulfilled" ? s.value : null };
+    return s.status === "fulfilled" ? { ...p, rank: s.value.rank, top: s.value.top } : { ...p, rank: null, top: [] };
   });
 
   return NextResponse.json({

@@ -12,6 +12,7 @@ export type GridPoint = {
 
 export type ScoredPoint = GridPoint & {
   rank: number | null; // null = business not found
+  top?: string[]; // names of the top results at this point (up to 3)
 };
 
 export type GridStats = {
@@ -95,4 +96,19 @@ export function rankBand(rank: number | null): RankBand {
   if (rank <= 3) return "green";
   if (rank <= 10) return "yellow";
   return "red";
+}
+
+const COMPASS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+
+/** Human-readable position of a grid point, e.g. "3.5 mi NE of your location". */
+export function describeOffset(row: number, col: number, radiusMiles: number): string {
+  const half = (GRID_SIZE - 1) / 2;
+  const step = radiusMiles / half;
+  const dx = (col - half) * step;
+  const dy = (half - row) * step; // north is positive
+  if (dx === 0 && dy === 0) return "Your location";
+  const miles = Math.hypot(dx, dy);
+  const bearing = ((Math.atan2(dx, dy) * 180) / Math.PI + 360) % 360;
+  const dir = COMPASS[Math.round(bearing / 45) % 8];
+  return `${miles.toFixed(1)} mi ${dir} of your location`;
 }

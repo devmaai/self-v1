@@ -1353,9 +1353,6 @@
 .v2-home .gg-badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: rgba(14,165,233,0.12); border: 1px solid rgba(14,165,233,0.3); padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
 .v2-home .gg-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.5px; margin: 0 0 18px; max-width: 760px; }
 .v2-home .gg-hero p { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 620px; margin: 0 0 24px; }
-.v2-home .gg-hero-points { display: flex; flex-wrap: wrap; gap: 10px 26px; }
-.v2-home .gg-hero-points li { font-size: 14px; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 8px; }
-.v2-home .gg-hero-points li::before { content: '✓'; color: var(--green); font-weight: 700; }
 
 /* Tool layout */
 .v2-home .gg-tool-section { background: var(--off-white); padding: 0 0 72px; }
@@ -1480,11 +1477,6 @@
 .v2-home .gg-section { padding: 72px 0; background: #fff; }
 .v2-home .gg-section-alt { background: var(--off-white); }
 .v2-home .gg-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3.4vw, 38px); color: var(--slate-900); margin: 0 0 32px; letter-spacing: -0.3px; }
-.v2-home .gg-how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.v2-home .gg-how-card { border: 1px solid var(--slate-100); border-radius: var(--radius-lg); padding: 26px; background: var(--off-white); }
-.v2-home .gg-how-n { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent-pale); color: var(--accent-dark); font-weight: 700; margin-bottom: 14px; }
-.v2-home .gg-how-card h3 { font-size: 18px; font-weight: 600; color: var(--slate-900); margin: 0 0 6px; }
-.v2-home .gg-how-card p { margin: 0; font-size: 15px; color: var(--slate-600); }
 .v2-home .gg-faq-wrap { max-width: 820px; }
 .v2-home .gg-faq details { border-bottom: 1px solid var(--slate-200); }
 .v2-home .gg-faq summary { cursor: pointer; list-style: none; padding: 18px 32px 18px 0; font-size: 17px; font-weight: 600; color: var(--slate-900); position: relative; }
@@ -1503,7 +1495,6 @@
   .v2-home .gg-layout { grid-template-columns: minmax(0, 1fr); margin-top: -40px; }
   .v2-home .gg-form-card { position: static; }
   .v2-home .gg-panel { min-height: 0; }
-  .v2-home .gg-how { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .v2-home .gg-wrap { padding: 0 16px; }
@@ -1513,3 +1504,85 @@
   .v2-home .gg-map { height: 360px; }
   .v2-home .gg-section, .v2-home .gg-cta { padding: 52px 0; }
 }
+
+/* ── Geo-grid landing polish ───────────────────────────────────────── */
+.v2-home .gg-tool-section { scroll-margin-top: 80px; }
+
+/* Hero: two columns with sample report card */
+.v2-home .gg-hero { padding: 80px 0 120px; }
+.v2-home .gg-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 70% 80% at 70% 40%, #000, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 70% 80% at 70% 40%, #000, transparent 75%); pointer-events: none; }
+.v2-home .gg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
+.v2-home .gg-hero h1 em { font-style: italic; color: #7DD3FC; }
+.v2-home .gg-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 20px; margin-bottom: 26px; }
+.v2-home .gg-hero-btn { background: var(--accent); color: #fff; font-weight: 600; font-size: 16px; padding: 15px 28px; border-radius: 10px; box-shadow: 0 8px 24px rgba(14,165,233,0.35); transition: background 0.15s, transform 0.15s; }
+.v2-home .gg-hero-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.v2-home .gg-hero-note { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+
+/* Section headings */
+.v2-home .gg-eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 10px; }
+.v2-home .gg-h2 { margin-bottom: 36px; max-width: 640px; }
+
+/* Why cards */
+.v2-home .gg-why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.v2-home .gg-why-card { background: #fff; border: 1px solid var(--slate-100); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
+.v2-home .gg-why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.v2-home .gg-why-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: var(--accent-pale); margin-bottom: 18px; }
+.v2-home .gg-why-icon svg { width: 24px; height: 24px; fill: none; stroke: var(--accent-dark); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.v2-home .gg-why-card h3 { font-size: 19px; font-weight: 600; color: var(--slate-900); margin: 0 0 8px; }
+.v2-home .gg-why-card p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--slate-600); }
+
+
+/* Colour guide */
+
+/* Closing CTA */
+.v2-home .gg-cta { position: relative; overflow: hidden; padding: 88px 0; }
+.v2-home .gg-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(14,165,233,0.22), transparent 70%); pointer-events: none; }
+.v2-home .gg-cta .gg-wrap { position: relative; }
+.v2-home .gg-cta-actions { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 24px; }
+.v2-home .gg-cta-link { font-size: 15px; font-weight: 600; color: #7DD3FC; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+.v2-home .gg-cta-link:hover { border-color: #7DD3FC; }
+
+@media (max-width: 960px) {
+  .v2-home .gg-hero { padding: 56px 0 100px; }
+  .v2-home .gg-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .v2-home .gg-why { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .v2-home .gg-hero-btn { width: 100%; text-align: center; }
+  .v2-home .gg-cta { padding: 60px 0; }
+}
+
+/* Global h1-h4 set a dark ink colour; force light text on dark geo-grid sections. */
+.v2-home .gg-hero h1, .v2-home .gg-cta h2, .v2-home .gg-next h4 { color: #fff; }
+
+/* Geo-grid photos */
+.v2-home .gg-hero::before, .v2-home .gg-hero::after { display: none; }
+.v2-home .gg-hero-photo { object-fit: cover; object-position: 50% 55%; z-index: 0; }
+.v2-home .gg-hero-shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.84) 45%, rgba(15,23,42,0.5) 100%), radial-gradient(ellipse 60% 70% at 85% 20%, rgba(14,165,233,0.25), transparent 70%); pointer-events: none; }
+.v2-home .gg-hero .gg-wrap { z-index: 2; }
+.v2-home .gg-why-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.v2-home .gg-why-photo { position: relative; aspect-ratio: 16 / 10; background: var(--slate-100); overflow: hidden; }
+.v2-home .gg-why-photo img { object-fit: cover; transition: transform 0.5s; }
+.v2-home .gg-why-card:hover .gg-why-photo img { transform: scale(1.04); }
+.v2-home .gg-why-body { padding: 22px 26px 28px; }
+@media (max-width: 960px) {
+  .v2-home .gg-hero-shade { background: linear-gradient(180deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.8) 100%); }
+}
+
+/* Legend with meanings (sits under the map) */
+.v2-home .gg-legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.v2-home .gg-legend li { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 1px; align-items: center; background: var(--off-white); border: 1px solid var(--slate-100); border-radius: 10px; padding: 10px 12px; }
+.v2-home .gg-legend .gg-dot { grid-row: span 2; width: 16px; height: 16px; }
+.v2-home .gg-legend b { font-size: 13px; font-weight: 700; color: var(--slate-900); }
+.v2-home .gg-legend span { font-size: 12px; line-height: 1.35; color: var(--slate-600); }
+@media (max-width: 960px) { .v2-home .gg-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Map popup: top results list */
+.v2-home .gg-popup-top { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--slate-100); }
+.v2-home .gg-popup-top em { display: block; font-style: normal; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate-500); margin-bottom: 4px; }
+.v2-home .gg-popup-top ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.v2-home .gg-popup-top li { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--slate-700); line-height: 1.3; }
+.v2-home .gg-popup-top li i { flex-shrink: 0; display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: var(--slate-100); color: var(--slate-600); font-style: normal; font-size: 10px; font-weight: 700; }
+.v2-home .gg-popup-top li.gg-popup-you { font-weight: 700; color: var(--slate-900); }
+.v2-home .gg-popup-top li.gg-popup-you i { background: var(--accent); color: #fff; }
