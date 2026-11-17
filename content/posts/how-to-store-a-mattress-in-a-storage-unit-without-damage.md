@@ -28,7 +28,7 @@ Store it flat, on a clean raised surface, inside a sealed mattress bag, in a spa
 
 - Air it out every few months on long stays.
 
-If you are storing a whole bedroom set, our guide on how to store furniture in a storage unit without damage covers bed frames, headboards and dressers.
+If you are storing a whole bedroom set, our guide on [how to store furniture in a storage unit without damage](/blog/how-to-store-furniture-in-a-storage-unit-without-damage) covers bed frames, headboards and dressers.
 
 ## How do you prepare a mattress for storage?
 
@@ -46,13 +46,13 @@ Preparation takes about an hour plus drying time, and it protects your mattress 
 
 - Wrap it. Slide it into a mattress bag and seal the open end with packing tape on the bag only, never on the fabric.
 
-A basic plastic mattress bag is inexpensive. For example, the U-Haul queen mattress bag is a 2 mil polyethylene bag that fits a queen mattress or box spring up to 10 inches thick, with twin, full and king sizes also available. Buy one bag per piece, so a mattress and box spring need two.
+A basic plastic mattress bag is inexpensive. For example, the [U-Haul queen mattress bag](<https://www.uhaul.com/MovingSupplies/Covers-Bags/Mattress-Bag-(Queen)/?id=2782>) is a 2 mil polyethylene bag that fits a queen mattress or box spring up to 10 inches thick, with twin, full and king sizes also available. Buy one bag per piece, so a mattress and box spring need two.
 
 ## Should you store a mattress flat or on its side?
 
 Flat is best for anything longer than a few weeks. Lying flat spreads the weight evenly across the coils and foam layers, so the comfort layers keep their shape.
 
-The Sleep Foundation's mattress storage advice recommends storing a mattress flat and keeping side storage to no more than about a month, because foam and latex models can sag when left on edge. Check your warranty too, since some manufacturers specify how a mattress should be stored.
+The [Sleep Foundation's mattress storage advice](https://www.sleepfoundation.org/mattress-care/how-to-store-a-mattress) recommends storing a mattress flat and keeping side storage to no more than about a month, because foam and latex models can sag when left on edge. Check your warranty too, since some manufacturers specify how a mattress should be stored.
 
 | Position | Best for | Watch out for |
 | --- | --- | --- |
@@ -78,7 +78,7 @@ Each mattress type has its own weak spot, so adjust your plan to what you own.
 
 ## What size storage unit do you need for a mattress?
 
-A 5x10 unit fits a twin, full or queen lying flat, while a king or California king needs a 10x10 to lie flat. Use our storage size guide if you are adding other furniture.
+A 5x10 unit fits a twin, full or queen lying flat, while a king or California king needs a 10x10 to lie flat. Use our [storage size guide](/storage-size-guide) if you are adding other furniture.
 
 | Mattress size | Typical dimensions | To store flat | On its edge, short term |
 | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ A 5x10 unit fits a twin, full or queen lying flat, while a king or California ki
 | King | 76 x 80 in | 10x10 | 5x10 |
 | California king | 72 x 84 in | 10x10 | 5x10 |
 
-A queen is exactly as wide as a 5x10 unit, so it fits flat but leaves no room to walk past it. If you are also storing a bed frame, nightstands and boxes, a 10x10 storage unit is the comfortable choice for a full bedroom. For a single mattress plus a few boxes, see what else fits in a 5x10 storage unit.
+A queen is exactly as wide as a 5x10 unit, so it fits flat but leaves no room to walk past it. If you are also storing a bed frame, nightstands and boxes, a [10x10 storage unit](/blog/10x10-storage-unit-size-price-and-what-fits-inside) is the comfortable choice for a full bedroom. For a single mattress plus a few boxes, see what else fits in a [5x10 storage unit](/blog/5x10-storage-unit-size-price-and-what-fits-inside).
 
 ### Tips for placing a mattress in self storage units
 
@@ -97,13 +97,13 @@ A queen is exactly as wide as a 5x10 unit, so it fits flat but leaves no room to
 
 - Keep it near the back or along a wall so you do not need to climb over it.
 
-- Plan your layout before moving day with our guide on how to pack and organize a storage unit.
+- Plan your layout before moving day with our guide on [how to pack and organize a storage unit](/blog/how-to-pack-and-organize-a-storage-unit-a-step-by-step-guide).
 
 ## Do you need climate controlled self storage for a mattress?
 
 For storage longer than a season, or anywhere with hot summers or humid weather, yes. A climate controlled unit typically stays between about 55 and 80 degrees and holds humidity steady, which protects foam, fabric and glue layers from breaking down.
 
-Mold is the biggest threat. The EPA's mold guidance recommends keeping indoor relative humidity below 60 percent, ideally between 30 and 50 percent. A standard drive-up unit can climb well past that in humid months, and moisture trapped inside a mattress bag has nowhere to go.
+Mold is the biggest threat. The [EPA's mold guidance](https://www.epa.gov/mold/mold-course-chapter-2) recommends keeping indoor relative humidity below 60 percent, ideally between 30 and 50 percent. A standard drive-up unit can climb well past that in humid months, and moisture trapped inside a mattress bag has nowhere to go.
 
 Climate control usually adds about 17% to 30% to the monthly rent. It is worth it when:
 
@@ -113,7 +113,7 @@ Climate control usually adds about 17% to 30% to the monthly rent. It is worth i
 
 - Your area has humid summers, freezing winters or big temperature swings.
 
-You can usually skip it for a short stay of a few weeks in a mild, dry area. Our complete guide to climate controlled storage explains how these units work, and you can compare climate controlled storage units when you are ready to book.
+You can usually skip it for a short stay of a few weeks in a mild, dry area. Our [complete guide to climate controlled storage](/blog/climate-controlled-storage-in-the-us-everything-you-need-to-know) explains how these units work, and you can compare [climate controlled storage units](/climate-controlled-storage) when you are ready to book.
 
 ## How much does it cost to store a mattress?
 
@@ -132,11 +132,11 @@ One-time costs to add:
 
 - A disc lock and a protection plan, unless your renter or home policy covers stored items.
 
-For a full breakdown of fees, see how much a storage unit costs.
+For a full breakdown of fees, see [how much a storage unit costs](/blog/how-much-is-a-storage-unit).
 
 ### How storage prices differ by city, and how to choose a facility
 
-Storage prices follow local real estate, so the same unit can cost much more in a dense coastal city than in a smaller inland one. Renters searching for storage units in Los Angeles or storage units in New York City usually pay well above the national averages, while storage units in Kansas City tend to sit closer to the lower end.
+Storage prices follow local real estate, so the same unit can cost much more in a dense coastal city than in a smaller inland one. Renters searching for [storage units in Los Angeles](/storage-search/california/los-angeles) or [storage units in New York City](/storage-search/new-york/new-york-city) usually pay well above the national averages, while [storage units in Kansas City](/storage-search/missouri/kansas-city) tend to sit closer to the lower end.
 
 When you choose a facility for a mattress, look for:
 
@@ -146,7 +146,7 @@ When you choose a facility for a mattress, look for:
 
 - Clean, climate controlled units: ask how the facility handles pest control.
 
-Large national brands such as Public Storage and Extra Space Storage offer climate controlled units in many cities, so compare a few nearby options and their current online rates.
+Large national brands such as [Public Storage](https://www.publicstorage.com/) and [Extra Space Storage](https://www.extraspace.com/) offer climate controlled units in many cities, so compare a few nearby options and their current online rates.
 
 ## Common mistakes that damage a stored mattress
 
@@ -158,9 +158,9 @@ Large national brands such as Public Storage and Extra Space Storage offer clima
 
 - Storing it on its side for months. Foam and latex layers can sag and shift.
 
-- Moving it alone. A queen or king mattress is awkward and heavy. Our tips on how to move heavy furniture without damage help you load it safely.
+- Moving it alone. A queen or king mattress is awkward and heavy. Our tips on [how to move heavy furniture without damage](/blog/how-to-move-heavy-furniture-without-damage) help you load it safely.
 
-College students storing bedding over summer can find more tips in our student storage guide.
+College students storing bedding over summer can find more tips in our [student storage guide](/blog/student-storage-in-the-us-the-complete-guide-for-college-students).
 
 ![Blog image](/images/blog/how-to-store-a-mattress-in-a-storage-unit-without-damage-img-2.png)
 
