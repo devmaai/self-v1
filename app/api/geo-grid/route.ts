@@ -76,6 +76,21 @@ async function geocode(address: string): Promise<{ lat: number; lng: number } | 
   return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
 }
 
+// Demo mode (local development only): fake but plausible rankings, no paid API calls.
+const DEMO = process.env.GEOGRID_DEMO === "true" && process.env.NODE_ENV !== "production";
+
+function demoRanks(grid: GridPoint[], seedText: string): (number | null)[] {
+  let h = 2166136261;
+  for (const c of seedText) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
+  const rand = () => ((h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296);
+  return grid.map((p) => {
+    const dist = Math.hypot(p.row - 2, p.col - 2); // 0 at centre, ~2.8 at corners
+    const r = rand();
+    if (r < 0.12 + dist * 0.08) return null; // not found, more likely far out
+    return Math.max(1, Math.round(1 + dist * 4 + rand() * 6));
+  });
+}
+
 type MapsItem = { type?: string; title?: string; rank_group?: number };
 
 async function rankAtPoint(
@@ -99,6 +114,7 @@ async function rankAtPoint(
     ]),
     cache: "no-store",
   });
+  if (res.status === 401) throw new Error("dataforseo_auth");
   if (!res.ok) throw new Error(`dataforseo_http_${res.status}`);
   const json = (await res.json()) as {
     status_code?: number;
@@ -106,7 +122,8 @@ async function rankAtPoint(
   };
   const task = json.tasks?.[0];
   if (json.status_code !== 20000 || !task || task.status_code !== 20000) {
-    throw new Error(`dataforseo_${task?.status_code ?? json.status_code}`);
+    const code = task?.status_code ?? json.status_code;
+    throw new Error(code === 40100 ? "dataforseo_auth" : code === 40200 ? "dataforseo_funds" : `dataforseo_${code}`);
   }
   const items = task.result?.[0]?.items ?? [];
   const hit = items.find((i) => i.type === "maps_search" && i.title && namesMatch(i.title, business));
@@ -143,7 +160,7 @@ export async function POST(request: Request) {
 
   const login = process.env.DATAFORSEO_LOGIN;
   const password = process.env.DATAFORSEO_PASSWORD;
-  if (!login || !password) {
+  if (!DEMO && (!login || !password)) {
     return NextResponse.json({ ok: false, error: "not_configured" }, { status: 503 });
   }
 
@@ -167,12 +184,26 @@ export async function POST(request: Request) {
 
   const grid = generateGrid(center.lat, center.lng, radius);
   const zoom = zoomForRadius(radius);
+
+  if (DEMO) {
+    const ranks = demoRanks(grid, `${business}|${keyword}`);
+    const demoPoints: ScoredPoint[] = grid.map((p, i) => ({ ...p, rank: ranks[i] }));
+    return NextResponse.json({
+      ok: true, demo: true, center, radius, failedPoints: 0,
+      points: demoPoints, stats: computeStats(demoPoints),
+    });
+  }
+
   const auth = Buffer.from(`${login}:${password}`).toString("base64");
 
   const settled = await Promise.allSettled(grid.map((p) => rankAtPoint(p, keyword, business, zoom, auth)));
   const failed = settled.filter((s) => s.status === "rejected").length;
   if (failed === grid.length) {
-    return NextResponse.json({ ok: false, error: "ranking_failed" }, { status: 502 });
+    const reason = (settled.find((s) => s.status === "rejected") as PromiseRejectedResult).reason;
+    const msg = reason instanceof Error ? reason.message : String(reason);
+    console.error("[geo-grid] all ranking calls failed:", msg);
+    const error = msg === "dataforseo_auth" ? "service_auth" : msg === "dataforseo_funds" ? "service_funds" : "ranking_failed";
+    return NextResponse.json({ ok: false, error }, { status: 502 });
   }
 
   // A failed point is reported as null (not found); the client is told how many failed.
