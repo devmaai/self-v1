@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { CONTACT_EMAIL } from "@/lib/contactEmail";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.AUDIT_TO_EMAIL || "business@maai.agency";
+const TO_EMAIL = CONTACT_EMAIL;
 const FROM_EMAIL = process.env.AUDIT_FROM_EMAIL || "SelfStorage Audit <onboarding@resend.dev>";
 
 // Accepts a bare domain or full URL, normalizes it, and checks the site

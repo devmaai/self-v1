@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
+import { CONTACT_EMAIL } from "@/lib/contactEmail";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.QUOTE_TO_EMAIL || "business@maai.agency";
-const FROM_EMAIL = process.env.QUOTE_FROM_EMAIL || "SelfStorage Contact <onboarding@resend.dev>";
+const TO_EMAIL = CONTACT_EMAIL;
+const FROM_EMAIL =
+  process.env.QUOTE_FROM_EMAIL ||
+  process.env.AUDIT_FROM_EMAIL ||
+  "SelfStorage Contact <onboarding@resend.dev>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TOPICS = ["List my storage business", "Grow my storage business", "General question", "Request a backlink", "Business enquiry", "Sales", "Partnership", "Press and media", "Other"];
 

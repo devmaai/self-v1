@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
+import { CONTACT_EMAIL } from "@/lib/contactEmail";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.STORAGE_QUOTE_TO_EMAIL || process.env.QUOTE_TO_EMAIL || "business@maai.agency";
+const TO_EMAIL = CONTACT_EMAIL;
 const FROM_EMAIL =
   process.env.STORAGE_QUOTE_FROM_EMAIL ||
   process.env.AUDIT_FROM_EMAIL ||

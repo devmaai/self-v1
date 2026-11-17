@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { isPhoneRegion, normalizePhone, PhoneRegion } from "@/lib/phone";
+import { CONTACT_EMAIL } from "@/lib/contactEmail";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.AUDIT_TO_EMAIL || "business@maai.agency";
+const TO_EMAIL = CONTACT_EMAIL;
 // Resend's onboarding sender works immediately without domain verification.
 // Swap to a verified domain sender (e.g. "audit@selfstorage.help") once set up.
 const FROM_EMAIL = process.env.AUDIT_FROM_EMAIL || "SelfStorage Audit <onboarding@resend.dev>";
