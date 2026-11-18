@@ -1,7 +1,7 @@
 import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { isCityPublished } from "@/lib/cityStates";
+import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import ShowMoreList from "@/components/ui/ShowMoreList";
 import StateZipSearch from "@/components/sections/StateZipSearch";
@@ -63,8 +63,15 @@ export default function StatePageTemplate({ data }: { data: StatePageData }) {
     { name: "Storage by state", path: "/storage-state-usa" },
     { name, path: `/storage-search/${slug}` },
   ]);
+  // City names shared across states (Kansas City, KS) use a "-{state}" slug.
+  const stateCode = key.toUpperCase();
   const cityCards = data.cities
-    .map((city) => ({ name: city, slug: citySlug(city) }))
+    .map((city) => {
+      const base = citySlug(city);
+      const suffixed = `${base}-${key}`;
+      return { name: city, slug: CITY_STATES[base] !== stateCode && CITY_STATES[suffixed] === stateCode ? suffixed : base };
+    })
+    .filter((city) => CITY_STATES[city.slug] === stateCode)
     .filter((city) => isCityPublished(city.slug))
     .map((city) => ({ ...city, href: `/storage-search/${slug}/${city.slug}` }));
   const formCities = cityCards.map((city) => city.name);

@@ -11,6 +11,9 @@ export const STATE_PAGE_SLUGS: Record<string, string> = {
   NY: "new-york",
   MO: "missouri",
   NJ: "new-jersey",
+  FL: "florida",
+  TX: "texas",
+  KS: "kansas",
 };
 
 // Lets a visitor type either a state's full name or its abbreviation and

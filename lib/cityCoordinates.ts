@@ -32,4 +32,5 @@ export const CITY_COORDINATES: Record<string, [number, number]> = {
 
   // New Jersey
   "atlantic-city": [39.3643, -74.4229], "gloucester-city": [39.8909, -75.1160], "jersey-city": [40.7178, -74.0431], "neptune-city": [40.2043, -74.0410], "ocean-city": [39.2776, -74.5746], "union-city": [40.7795, -74.0246],
+  pensacola: [30.4213, -87.2169], texarkana: [33.4251, -94.0477],
 };

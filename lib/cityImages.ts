@@ -56,4 +56,12 @@ export const CITY_IMAGES: Record<string, string> = {
   "culver-city": "https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f",
   "national-city": "https://images.unsplash.com/photo-1514939775307-d44e7f10cabd",
   "jersey-city": "https://images.unsplash.com/photo-1613753298916-8f057bfb9173",
+  "pensacola": "https://images.unsplash.com/photo-1605146829749-9f9fa1424523",
+  "texarkana": "https://images.unsplash.com/photo-1633107554373-4e891decfece",
+  "wichita": "https://images.unsplash.com/photo-1700408388474-09b19b6c72ba",
+  "overland-park": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
+  "olathe": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
+  "lenexa": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
+  "kansas-city-ks": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
+  "shawnee": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
 };

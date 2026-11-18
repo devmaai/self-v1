@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
+import { CITY_STATES, cityNameFromSlug, isCityPublished } from "@/lib/cityStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { breadcrumbListSchema } from "@/lib/schema";
@@ -24,7 +24,7 @@ const CITY_NAME_FIXES: Record<string, string> = {
 };
 
 function cityName(slug: string): string {
-  return CITY_NAME_FIXES[slug] ?? slug.split("-").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  return CITY_NAME_FIXES[slug] ?? cityNameFromSlug(slug);
 }
 
 // Every live state, with its published cities sorted A to Z.

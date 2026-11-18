@@ -5,7 +5,7 @@ import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import CityStorageResults, { type CityStorageFacility } from "@/components/sections/CityStorageResults";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
-import { CITY_STATES, CITY_NAME_OVERRIDES, isCityPublished } from "@/lib/cityStates";
+import { CITY_STATES, CITY_NAME_OVERRIDES, cityNameFromSlug, isCityPublished } from "@/lib/cityStates";
 import { US_STATE_NAMES } from "@/lib/usStates";
 import { STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import { getCitySeoContent, fillPricePlaceholder, type CitySeoBlock } from "@/lib/citySeoContent";
@@ -38,7 +38,7 @@ function stripLinks(text: string): string {
 }
 
 function slugToName(slug: string): string {
-  return slug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+  return cityNameFromSlug(slug);
 }
 
 // Next.js requires a literal number here for its static route-segment-config
@@ -225,7 +225,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string; city: string }> }): Promise<Metadata> {
   const { state: stateSlug, city: citySlug } = await params;
-  const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+  const city = cityNameFromSlug(citySlug);
   const state = CITY_STATES[citySlug];
   if (!state || STATE_PAGE_SLUGS[state] !== stateSlug) {
     return { title: `${city} Self Storage | Find Storage Units Near You`, description: `Compare live self storage unit sizes and prices in ${city}.` };
@@ -245,7 +245,7 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
   // Drafted cities are not live until added to PUBLISHED_CITY_SLUGS.
   if (!isCityPublished(citySlug)) notFound();
 
-  const city = citySlug.split("-").map((part) => part[0].toUpperCase() + part.slice(1)).join(" ");
+  const city = cityNameFromSlug(citySlug);
   const queryCity = CITY_NAME_OVERRIDES[citySlug] ?? city;
   const stateName = US_STATE_NAMES[state] ?? state;
   const statePageSlug = STATE_PAGE_SLUGS[state];

@@ -1,5 +1,5 @@
 import type { CitySeoBlock, CitySeoContent } from "@/lib/citySeoContent";
-import { CITY_STATES, isCityPublished } from "@/lib/cityStates";
+import { CITY_STATES, isCityPublished, cityNameFromSlug } from "@/lib/cityStates";
 import { CITY_COORDINATES } from "@/lib/cityCoordinates";
 import { CITY_IMAGES } from "@/lib/cityImages";
 import { CITY_MOVING_FACTS } from "@/lib/cityMovingFacts";
@@ -171,7 +171,7 @@ const DISPLAY_NAMES: Record<string, string> = { "lees-summit": "Lee's Summit", o
 
 function nameFromSlug(slug: string) {
   if (DISPLAY_NAMES[slug]) return DISPLAY_NAMES[slug];
-  return slug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ").replace(/^St /, "St. ");
+  return cityNameFromSlug(slug).replace(/^St /, "St. ");
 }
 
 export function buildCityPageContent(args: {

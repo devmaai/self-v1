@@ -280,4 +280,47 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     students: "Yes. New Jersey City University and Saint Peter's University are in Jersey City, and Stevens Institute of Technology is next door in Hoboken.",
     families: "Families like Jersey City for Liberty State Park, its waterfront walkway and PATH access into Manhattan.",
   },
+  // Florida
+  pensacola: {
+    cost: "Pensacola rents usually sit below what you pay in South Florida, with higher prices closer to the beaches.",
+    students: "Yes. The University of West Florida and Pensacola State College are both in the Pensacola area.",
+    families: "Families like Pensacola for its Gulf beaches, the National Naval Aviation Museum and its historic downtown.",
+  },
+  // Texas
+  texarkana: {
+    cost: "Texarkana is one of the more affordable places to rent in Texas, with plenty of single-family homes.",
+    students: "Yes. Texas A&M University-Texarkana and Texarkana College are both in the city.",
+    families: "Families like Texarkana for its parks, nearby lakes and small-city pace on the Texas and Arkansas line.",
+  },
+  // Kansas
+  wichita: {
+    cost: "Wichita has one of the lower costs of living among large Midwest cities, with rents below the national average.",
+    students: "Yes. Wichita State University and Friends University are in Wichita.",
+    families: "Families like Wichita for the Sedgwick County Zoo, Botanica and the riverfront trails along the Arkansas River.",
+  },
+  "overland-park": {
+    cost: "Overland Park is one of the pricier places to rent in the Kansas City area, with newer homes and apartments.",
+    students: "Yes. Johnson County Community College is in Overland Park, and the University of Kansas Edwards Campus is nearby.",
+    families: "Families like Overland Park for its schools, its parks and the Overland Park Arboretum.",
+  },
+  olathe: {
+    cost: "Olathe has many newer subdivisions, and rents usually sit a little below Overland Park.",
+    students: "Yes. MidAmerica Nazarene University is in Olathe, and Johnson County Community College is a short drive north.",
+    families: "Families like Olathe for its schools, Lake Olathe and its many neighborhood parks.",
+  },
+  lenexa: {
+    cost: "Lenexa sits in the middle of Johnson County, with rents close to the county average.",
+    students: "Yes. Johnson County Community College and the University of Kansas Edwards Campus are both a short drive away.",
+    families: "Families like Lenexa for Lenexa City Center, Shawnee Mission Park and its trail network.",
+  },
+  "kansas-city-ks": {
+    cost: "Kansas City, Kansas is one of the more affordable places to rent in the metro, especially compared with Johnson County.",
+    students: "Yes. Kansas City Kansas Community College and the University of Kansas Medical Center are in the city.",
+    families: "Families like Kansas City, Kansas for the Legends shopping area, Wyandotte County Lake Park and its quick access to Missouri.",
+  },
+  shawnee: {
+    cost: "Shawnee rents usually sit a little below Overland Park and Lenexa, with plenty of single-family homes.",
+    students: "Yes. Johnson County Community College is a short drive south, and the University of Kansas is within an hour.",
+    families: "Families like Shawnee for Shawnee Mission Park, its downtown and its quieter neighborhoods.",
+  },
 };
