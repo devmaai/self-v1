@@ -60,6 +60,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "jersey-city": "https://images.unsplash.com/photo-1613753298916-8f057bfb9173",
   "pensacola": "https://images.unsplash.com/photo-1605146829749-9f9fa1424523",
   "panama-city": "https://images.unsplash.com/photo-1759848616815-94c378323dcc",
+  "lake-city": "https://images.unsplash.com/photo-1439853949127-fa647821eba0",
   "texarkana": "https://images.unsplash.com/photo-1633107554373-4e891decfece",
   "universal-city-tx": "https://images.unsplash.com/photo-1605649666555-e321522c3023",
   "wichita": "https://images.unsplash.com/photo-1700408388474-09b19b6c72ba",

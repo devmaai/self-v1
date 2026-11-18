@@ -4,7 +4,7 @@ import { CITY_NAME_OVERRIDES, CITY_STATES, PUBLISHED_CITY_SLUGS } from "./citySt
 import { parseCsv, STORAGE_DATA_REVALIDATE } from "./liveStorageData";
 import { STATE_PAGE_SLUGS } from "./storageSearchLookup";
 
-const SPREADSHEET_ID = "1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk";
+const SPREADSHEET_ID = "1flngEV3TomsrzcRGcoe497O-DzL1kLL746y6gbHuUfQ";
 const sheetUrl = (sheet: string) => `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${sheet}`;
 
 type ClimateUnit = { facilityId: string; facilityName: string; city: string; state: string; price: number; rating: number; reviews: number; ratingSource: "google" | "renter" | null };

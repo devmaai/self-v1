@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1ZU1TRtVeYWstC7QUJUY6s8F5GNxzDLLyROW3STwKwjk/export?format=csv&gid=870162583";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1flngEV3TomsrzcRGcoe497O-DzL1kLL746y6gbHuUfQ/export?format=csv&gid=463193471";
 
 type UnitRow = {
   facility_id: string;
