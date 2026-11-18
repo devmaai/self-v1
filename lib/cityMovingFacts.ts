@@ -132,6 +132,26 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     students: "Yes. UC Irvine and Concordia University Irvine are in the city.",
     families: "Families like Irvine for its parks, trails, schools and the Great Park.",
   },
+  "redwood-city": {
+    cost: "Redwood City sits between San Francisco and San Jose, and rents reflect its Peninsula location and short commute to Silicon Valley employers.",
+    students: "Yes. Cañada College is in Redwood City, and Stanford University is a short drive south in Palo Alto.",
+    families: "Families like Redwood City for its downtown, its parks and its easy access to the bay and the Peninsula hills.",
+  },
+  "daly-city": {
+    cost: "Daly City borders San Francisco, and many households choose it for rents that usually sit below the city's.",
+    students: "Yes. San Francisco State University is just across the city line, and Skyline College is next door in San Bruno.",
+    families: "Families like Daly City for its parks, its coastal trails and its BART access into San Francisco.",
+  },
+  "culver-city": {
+    cost: "Culver City is a compact Westside city, and rents run above the Los Angeles County average.",
+    students: "Yes. West Los Angeles College is in Culver City, and UCLA and Loyola Marymount University are a short drive away.",
+    families: "Families like Culver City for its walkable downtown, its parks and the Baldwin Hills Scenic Overlook.",
+  },
+  "national-city": {
+    cost: "National City is one of the more affordable places to rent in the San Diego area, a few miles south of downtown.",
+    students: "Yes. Southwestern College has a campus in National City, and San Diego State University is a short drive north.",
+    families: "Families like National City for its parks, Pepper Park on the bay and its easy access to downtown San Diego.",
+  },
   // New York
   "new-york-city": {
     cost: "New York City has some of the highest rents in the country, and most apartments have very little storage space.",
@@ -253,5 +273,11 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     cost: "Jefferson City is an affordable state capital with many older homes near downtown.",
     students: "Yes. Lincoln University is in Jefferson City, and the University of Missouri is a short drive away in Columbia.",
     families: "Families like Jefferson City for the Katy Trail, its riverfront and the Missouri State Capitol.",
+  },
+  // New Jersey
+  "jersey-city": {
+    cost: "Jersey City rents run among the highest in New Jersey, especially in the waterfront high-rises facing Manhattan.",
+    students: "Yes. New Jersey City University and Saint Peter's University are in Jersey City, and Stevens Institute of Technology is next door in Hoboken.",
+    families: "Families like Jersey City for Liberty State Park, its waterfront walkway and PATH access into Manhattan.",
   },
 };

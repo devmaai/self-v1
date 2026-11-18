@@ -82,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/storage-search/california",
     "/storage-search/new-york",
     "/storage-search/missouri",
+    "/storage-search/new-jersey",
     "/services/local-seo-gbp-optimization",
     "/services/technical-seo",
     "/services/content-keyword-strategy",

@@ -29,13 +29,15 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // California
   "los-angeles", "san-diego", "san-jose", "san-francisco", "fresno", "sacramento",
   "long-beach", "oakland", "bakersfield", "anaheim", "santa-ana", "riverside",
-  "stockton", "irvine",
+  "stockton", "irvine", "redwood-city", "daly-city", "culver-city", "national-city",
   // New York
   "new-york-city", "brooklyn", "queens", "manhattan", "bronx", "staten-island",
   "buffalo", "rochester", "yonkers", "syracuse", "albany", "white-plains",
   // Missouri
   "kansas-city", "st-louis", "springfield", "independence", "lees-summit", "ofallon",
   "st-charles", "st-peters", "blue-springs", "florissant", "chesterfield", "jefferson-city",
+  // New Jersey
+  "jersey-city",
 ]);
 
 export function isCityPublished(citySlug: string): boolean {

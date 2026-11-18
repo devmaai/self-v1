@@ -5,6 +5,7 @@ export const STORAGE_STATES = [
   { name: "California", href: "/storage-search/california" },
   { name: "New York", href: "/storage-search/new-york" },
   { name: "Missouri", href: "/storage-search/missouri" },
+  { name: "New Jersey", href: "/storage-search/new-jersey" },
 ];
 
 export default function StorageStateLinks({ label = "Explore more locations", heading = "Storage by state" }: { label?: string; heading?: string } = {}) {

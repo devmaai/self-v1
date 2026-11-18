@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const CITY_LINKS = [
-  "Los Angeles", "San Diego", "San Jose", "San Francisco", "Sacramento", "Fresno", "Long Beach", "Oakland", "Bakersfield", "Anaheim", "Stockton", "Riverside", "Santa Ana", "Irvine", "Chula Vista", "Santa Clarita", "Fremont", "San Bernardino", "Modesto", "Fontana",
+  "Los Angeles", "San Diego", "San Jose", "San Francisco", "Sacramento", "Fresno", "Long Beach", "Oakland", "Bakersfield", "Anaheim", "Stockton", "Riverside", "Santa Ana", "Irvine", "Chula Vista", "Santa Clarita", "Fremont", "San Bernardino", "Modesto", "Fontana", "Redwood City", "Daly City", "Culver City", "National City",
 ];
 
 const PRICE_ROWS = [

@@ -51,4 +51,9 @@ export const CITY_IMAGES: Record<string, string> = {
   "florissant": "https://images.unsplash.com/photo-1559237723-84865e04c9c1",
   "chesterfield": "https://images.unsplash.com/photo-1675906798386-a9ed241c7ed2",
   "jefferson-city": "https://images.unsplash.com/photo-1667947121559-93a12b9737f4",
+  "redwood-city": "https://images.unsplash.com/photo-1554107136-57b138ea99df",
+  "daly-city": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+  "culver-city": "https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f",
+  "national-city": "https://images.unsplash.com/photo-1514939775307-d44e7f10cabd",
+  "jersey-city": "https://images.unsplash.com/photo-1613753298916-8f057bfb9173",
 };
