@@ -40,6 +40,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "albany": "https://images.unsplash.com/photo-1661446189055-b952388e1158",
   "white-plains": "https://images.unsplash.com/photo-1573261658953-8b29e144d1af",
   "newburgh": "https://images.unsplash.com/photo-1753572891461-cc1cdc1cc287",
+  "university-city-mo": "https://images.unsplash.com/photo-1675906798393-89cbae461520",
   "kansas-city": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
   "st-louis": "https://images.unsplash.com/photo-1675906798386-a9ed241c7ed2",
   "springfield": "https://images.unsplash.com/photo-1752700779471-cc1dc6094f04",

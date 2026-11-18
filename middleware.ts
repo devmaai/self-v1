@@ -21,6 +21,8 @@ const LEGACY_SERVICE_REDIRECTS: Record<string, string> = {
 // Duplicate city names gained a `-{state}` suffix in the URL.
 const LEGACY_CITY_REDIRECTS: Record<string, string> = {
   "/storage-search/texas/universal-city": "/storage-search/texas/universal-city-tx",
+  "/storage-search/university-city": "/storage-search/missouri/university-city-mo",
+  "/storage-search/missouri/university-city": "/storage-search/missouri/university-city-mo",
 };
 
 // Hand-built pages that live directly under /storage-search/{slug}.
