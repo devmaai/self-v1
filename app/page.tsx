@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import V2Interactions from "@/components/v2/V2Interactions";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 import { breadcrumbListSchema } from "@/lib/schema";
+import { resolveStorageSearchHref } from "@/lib/storageSearchLookup";
 
 export const metadata: Metadata = {
   title: "Storage Search | Find A Storage Unit Near You",
@@ -55,6 +56,14 @@ export default async function HomePage({
 }) {
   const { location, unitSize } = await searchParams;
   if (unitSize) redirect(`/find-storage?unitSize=${encodeURIComponent(unitSize)}`);
+
+  // Query URLs such as /?location=Newburgh should land on the real city,
+  // state, or ZIP page when we can resolve them. Unknown queries stay on the
+  // homepage explorer instead of bouncing between query URLs.
+  if (location) {
+    const destination = resolveStorageSearchHref(location);
+    if (destination.startsWith("/storage-search/")) permanentRedirect(destination);
+  }
 
   return (
     <div className="v2-home">

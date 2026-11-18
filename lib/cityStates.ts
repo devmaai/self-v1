@@ -32,7 +32,7 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   "stockton", "irvine", "redwood-city", "daly-city", "culver-city", "national-city",
   // New York
   "new-york-city", "brooklyn", "queens", "manhattan", "bronx", "staten-island",
-  "buffalo", "rochester", "yonkers", "syracuse", "albany", "white-plains",
+  "buffalo", "rochester", "yonkers", "syracuse", "albany", "white-plains", "newburgh",
   // Missouri
   "kansas-city", "st-louis", "springfield", "independence", "lees-summit", "ofallon",
   "st-charles", "st-peters", "blue-springs", "florissant", "chesterfield", "jefferson-city",
