@@ -102,8 +102,8 @@ const LOCAL_RADIUS_MILES = 15;
 // Scrapes can include nearby facilities that selfstorage.com bundles into a
 // city search. Widen only those cities so the scraped listings appear
 // alongside the local ones: Lake City -> High Springs / Alachua,
-// Junction City -> Manhattan.
-const CITY_RADIUS_MILES: Record<string, number> = { "lake-city": 40, "junction-city": 20 };
+// Junction City -> Manhattan, Midwest City -> far north Edmond.
+const CITY_RADIUS_MILES: Record<string, number> = { "lake-city": 40, "junction-city": 20, "midwest-city": 16 };
 const FALLBACK_RESULT_COUNT = 12;
 
 function milesBetween(center: { latitude: number; longitude: number }, latitude: number, longitude: number) {

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Find cheap storage units in Texas near your location. Compare 3,707 facilities and 44,477 available units across Houston, San Antonio, Dallas, Austin and Fort Worth, with current monthly prices.",
 };
 
-const CITY_LINKS = ["Houston", "San Antonio", "Dallas", "Austin", "Fort Worth", "El Paso", "Arlington", "Plano", "Lubbock", "Corpus Christi", "Garland", "Cypress", "Waco", "Round Rock", "Carrollton", "Amarillo", "McKinney", "Irving", "McAllen", "Killeen", "Denton", "Mesquite", "Pasadena", "Midland", "Pearland", "Grand Prairie", "Lewisville", "Brownsville", "Laredo", "Frisco", "Texarkana"];
+const CITY_LINKS = ["League City", "Houston", "San Antonio", "Dallas", "Austin", "Fort Worth", "El Paso", "Arlington", "Plano", "Lubbock", "Corpus Christi", "Garland", "Cypress", "Waco", "Round Rock", "Carrollton", "Amarillo", "McKinney", "Irving", "McAllen", "Killeen", "Denton", "Mesquite", "Pasadena", "Midland", "Pearland", "Grand Prairie", "Lewisville", "Brownsville", "Laredo", "Frisco", "Texarkana"];
 
 const PRICE_ROWS = [
   ["5' x 5'", "$14 to $61", "Boxes, bedding, a bike"],

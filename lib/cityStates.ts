@@ -42,7 +42,9 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // Florida
   "pensacola", "panama-city", "lake-city",
   // Texas
-  "texarkana", "universal-city-tx",
+  "league-city", "texarkana", "universal-city-tx",
+  // Oklahoma
+  "midwest-city",
   // Kansas
   "junction-city", "wichita", "overland-park", "olathe", "lenexa", "kansas-city-ks", "shawnee",
 ]);

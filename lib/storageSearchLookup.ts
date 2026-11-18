@@ -14,6 +14,7 @@ export const STATE_PAGE_SLUGS: Record<string, string> = {
   FL: "florida",
   TX: "texas",
   KS: "kansas",
+  OK: "oklahoma",
 };
 
 // Lets a visitor type either a state's full name or its abbreviation and
