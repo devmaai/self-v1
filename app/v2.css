@@ -1282,6 +1282,45 @@
 
 .state-form-block .state-form-subtext { margin: -6px 0 14px; color: #9cc9ef; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
 
+/* State page quote forms sit on a dark band and are outside .v2-home, so they
+   need their own field styles. The phone field spans a full row so users can
+   actually read the number they typed. */
+.state-storage-page .af-form { display: flex; flex-direction: column; gap: 16px; }
+.state-storage-page .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.state-storage-page .af-row:has(.phone-field) { grid-template-columns: 1fr; }
+.state-storage-page .af-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.state-storage-page .af-field label { color: rgba(255, 255, 255, .82); font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+.state-storage-page .af-hint { color: rgba(255, 255, 255, .5); font-weight: 400; }
+.state-storage-page .af-field input,
+.state-storage-page .af-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+}
+.state-storage-page .af-field input::placeholder { color: rgba(255, 255, 255, .45); }
+.state-storage-page .af-field input:focus,
+.state-storage-page .af-field select:focus { outline: none; border-color: #9cc9ef; background: rgba(255, 255, 255, .13); }
+.state-storage-page .af-field select option { color: #16334b; background: #fff; }
+.state-storage-page .phone-field-control { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 10px; }
+.state-storage-page .phone-field-help { color: rgba(255, 255, 255, .55); font-size: 11px; }
+.state-storage-page .af-error,
+.state-storage-page .af-form-error { color: #ffb4a2; font-size: 12px; }
+.state-storage-page .af-submit { width: 100%; margin-top: 4px; padding: 14px 24px; border: 0; border-radius: 8px; background: var(--rust); color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+.state-storage-page .af-submit:hover:not(:disabled) { background: #9c3a19; }
+.state-storage-page .af-note { color: rgba(255, 255, 255, .55); font-size: 11px; line-height: 1.45; }
+.state-storage-page .af-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 700px) {
+  .state-storage-page .af-row { grid-template-columns: 1fr; }
+  .state-storage-page .phone-field-control { grid-template-columns: 118px minmax(0, 1fr); }
+}
+
 /* Utah layout fixes */
 .state-checklist-split { align-items: stretch; }
 .state-checklist-split .utah-steps-grid { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; height: 100%; }
