@@ -10,7 +10,7 @@ const ALL_CITY_STATES: Record<string, string> = {
   albany: "NY", bronx: "NY", brooklyn: "NY", buffalo: "NY", "city-island": "NY", "clifton-park": "NY", "co-op-city": "NY", commack: "NY", coram: "NY", hempstead: "NY", henrietta: "NY", hicksville: "NY", "huntington-station": "NY", "lefrak-city": "NY", "long-island-city": "NY", manhattan: "NY", "mount-vernon": "NY", "new-rochelle": "NY", "new-york-city": "NY", "newburgh": "NY", "niagara-falls": "NY", penfield: "NY", queens: "NY", rochester: "NY", schenectady: "NY", "spring-valley": "NY", "starrett-city": "NY", "staten-island": "NY", syracuse: "NY", troy: "NY", "valley-stream": "NY", "west-babylon": "NY", "west-seneca": "NY", "white-plains": "NY", yonkers: "NY",
   bartlesville: "OK", bethany: "OK", bixby: "OK", "broken-arrow": "OK", chickasha: "OK", choctaw: "OK", claremore: "OK", coweta: "OK", "del-city": "OK", edmond: "OK", "el-reno": "OK", glenpool: "OK", guthrie: "OK", jenks: "OK", lawton: "OK", "midwest-city": "OK", moore: "OK", mustang: "OK", newcastle: "OK", norman: "OK", "oklahoma-city": "OK", owasso: "OK", "ponca-city": "OK", "sand-springs": "OK", sapulpa: "OK", "shawnee-ok": "OK", stillwater: "OK", tulsa: "OK", "warr-acres": "OK", yukon: "OK",
   aberdeen: "SD", "belle-fourche": "SD", "box-elder": "SD", "brandon-sd": "SD", brookings: "SD", canton: "SD", custer: "SD", deadwood: "SD", "dell-rapids": "SD", harrisburg: "SD", "hot-springs": "SD", huron: "SD", lead: "SD", madison: "SD", milbank: "SD", mitchell: "SD", "north-sioux-city": "SD", pierre: "SD", "rapid-city": "SD", redfield: "SD", "sioux-falls": "SD", sisseton: "SD", spearfish: "SD", sturgis: "SD", tea: "SD", vermillion: "SD", volga: "SD", watertown: "SD", winner: "SD", yankton: "SD",
-  amarillo: "TX", texarkana: "TX", arlington: "TX", austin: "TX", "bay-city": "TX", brownsville: "TX", carrollton: "TX", "corpus-christi": "TX", cypress: "TX", dallas: "TX", denton: "TX", "el-paso": "TX", "fort-worth": "TX", frisco: "TX", garland: "TX", "grand-prairie": "TX", "haltom-city": "TX", "horizon-city": "TX", houston: "TX", irving: "TX", killeen: "TX", laredo: "TX", "lakeside-city": "TX", "league-city": "TX", lewisville: "TX", lubbock: "TX", mcallen: "TX", mckinney: "TX", mesquite: "TX", midland: "TX", "missouri-city": "TX", pasadena: "TX", pearland: "TX", plano: "TX", "round-rock": "TX", "royse-city": "TX", "san-antonio": "TX", "texas-city": "TX", "universal-city": "TX", waco: "TX",
+  amarillo: "TX", texarkana: "TX", arlington: "TX", austin: "TX", "bay-city": "TX", brownsville: "TX", carrollton: "TX", "corpus-christi": "TX", cypress: "TX", dallas: "TX", denton: "TX", "el-paso": "TX", "fort-worth": "TX", frisco: "TX", garland: "TX", "grand-prairie": "TX", "haltom-city": "TX", "horizon-city": "TX", houston: "TX", irving: "TX", killeen: "TX", laredo: "TX", "lakeside-city": "TX", "league-city": "TX", lewisville: "TX", lubbock: "TX", mcallen: "TX", mckinney: "TX", mesquite: "TX", midland: "TX", "missouri-city": "TX", pasadena: "TX", pearland: "TX", plano: "TX", "round-rock": "TX", "royse-city": "TX", "san-antonio": "TX", "texas-city": "TX", "universal-city-tx": "TX", waco: "TX",
   "atlantic-city": "NJ", "gloucester-city": "NJ", "jersey-city": "NJ", "neptune-city": "NJ", "ocean-city": "NJ", "union-city": "NJ",
 };
 
@@ -41,7 +41,7 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // Florida
   "pensacola", "panama-city",
   // Texas
-  "texarkana",
+  "texarkana", "universal-city-tx",
   // Kansas
   "wichita", "overland-park", "olathe", "lenexa", "kansas-city-ks", "shawnee",
 ]);

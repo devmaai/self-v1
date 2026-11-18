@@ -18,6 +18,11 @@ const LEGACY_SERVICE_REDIRECTS: Record<string, string> = {
   "/services/Aeo%26Geo": "/services/aeo-geo",
 };
 
+// Duplicate city names gained a `-{state}` suffix in the URL.
+const LEGACY_CITY_REDIRECTS: Record<string, string> = {
+  "/storage-search/texas/universal-city": "/storage-search/texas/universal-city-tx",
+};
+
 // Hand-built pages that live directly under /storage-search/{slug}.
 const STATIC_STORAGE_SEARCH_PAGES: ReadonlySet<string> = new Set([
   "california", "denver", "florida", "kansas", "missouri", "new-jersey",
@@ -31,6 +36,13 @@ export function middleware(request: NextRequest) {
   if (canonical) {
     const url = request.nextUrl.clone();
     url.pathname = canonical;
+    return NextResponse.redirect(url, 308);
+  }
+
+  const legacyCity = LEGACY_CITY_REDIRECTS[pathname];
+  if (legacyCity) {
+    const url = request.nextUrl.clone();
+    url.pathname = legacyCity;
     return NextResponse.redirect(url, 308);
   }
 

@@ -60,6 +60,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "pensacola": "https://images.unsplash.com/photo-1605146829749-9f9fa1424523",
   "panama-city": "https://images.unsplash.com/photo-1759848616815-94c378323dcc",
   "texarkana": "https://images.unsplash.com/photo-1633107554373-4e891decfece",
+  "universal-city-tx": "https://images.unsplash.com/photo-1605649666555-e321522c3023",
   "wichita": "https://images.unsplash.com/photo-1700408388474-09b19b6c72ba",
   "overland-park": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
   "olathe": "https://images.unsplash.com/photo-1664733865764-768873659f2c",

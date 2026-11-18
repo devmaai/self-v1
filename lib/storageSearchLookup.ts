@@ -59,6 +59,19 @@ export function cityPageHref(city: string, state: string): string | null {
   return null;
 }
 
+/**
+ * Finds the catalog slug for a plain city name, including duplicate-name
+ * variants that carry a `-{state}` suffix (for example Universal City, TX).
+ */
+function catalogCitySlug(base: string): string | undefined {
+  if (CITY_STATES[base]) return base;
+  for (const code of Object.keys(US_STATE_NAMES)) {
+    const suffixed = `${base}-${code.toLowerCase()}`;
+    if (CITY_STATES[suffixed]) return suffixed;
+  }
+  return undefined;
+}
+
 export { extractZipFromQuery };
 
 const STATE_NAME_TO_CODE = Object.entries(US_STATE_NAMES).reduce(
@@ -104,10 +117,12 @@ export function resolveStorageSearchHref(rawQuery: string): string {
   const cityHref = cityStateHref(query);
   if (cityHref) return cityHref;
 
-  const citySlug = slugifyCity(query);
-  const cityState = CITY_STATES[citySlug];
-  const cityStateSlug = cityState && isCityPublished(citySlug) ? STATE_PAGE_SLUGS[cityState] : undefined;
-  if (cityStateSlug) return `/storage-search/${cityStateSlug}/${citySlug}`;
+  const citySlug = catalogCitySlug(slugifyCity(query));
+  const cityState = citySlug ? CITY_STATES[citySlug] : undefined;
+  const cityStateSlug = citySlug && cityState && isCityPublished(citySlug)
+    ? STATE_PAGE_SLUGS[cityState]
+    : undefined;
+  if (citySlug && cityStateSlug) return `/storage-search/${cityStateSlug}/${citySlug}`;
 
   return `/storage-search?location=${encodeURIComponent(query)}`;
 }
