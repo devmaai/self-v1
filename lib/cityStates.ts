@@ -39,7 +39,7 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // New Jersey
   "jersey-city",
   // Florida
-  "pensacola",
+  "pensacola", "panama-city",
   // Texas
   "texarkana",
   // Kansas
