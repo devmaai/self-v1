@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Find storage units in Kansas near your location. Compare 251 facilities and 2,258 available units across Wichita, Overland Park, Olathe, Topeka, Lawrence and Manhattan, with current monthly prices.",
 };
 
-const CITY_LINKS = ["Wichita", "Overland Park", "Olathe", "Topeka", "Lawrence", "Manhattan", "Kansas City", "Lenexa", "Shawnee", "Salina", "Leavenworth", "Hutchinson", "Merriam", "Gardner", "Mission", "Derby", "Spring Hill", "Newton", "Andover", "Lansing", "El Dorado", "Park City", "Haysville", "De Soto", "Eudora", "Bonner Springs", "Valley Center", "Maize", "Winfield"];
+const CITY_LINKS = ["Junction City", "Wichita", "Overland Park", "Olathe", "Topeka", "Lawrence", "Manhattan", "Kansas City", "Lenexa", "Shawnee", "Salina", "Leavenworth", "Hutchinson", "Merriam", "Gardner", "Mission", "Derby", "Spring Hill", "Newton", "Andover", "Lansing", "El Dorado", "Park City", "Haysville", "De Soto", "Eudora", "Bonner Springs", "Valley Center", "Maize", "Winfield"];
 
 const PRICE_ROWS = [
   ["5' x 5'", "$15 to $60", "Boxes, bedding, a bike"],
