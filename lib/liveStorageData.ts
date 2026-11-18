@@ -3,6 +3,13 @@ import path from "node:path";
 
 export const STORAGE_DATA_REVALIDATE = 604800;
 
+// The live CSVs are large (~10-15 MB each). Give a slow first fetch enough
+// time to finish instead of dropping to the stale local fallback. If the
+// fallback is still needed, keep it only briefly so the next request retries
+// the live sheet rather than caching old data for a week.
+const LIVE_FETCH_TIMEOUT_MS = 30_000;
+const FALLBACK_CACHE_SECONDS = 60;
+
 const SPREADSHEET_ID = "1flngEV3TomsrzcRGcoe497O-DzL1kLL746y6gbHuUfQ";
 const FACILITIES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=Facilities`;
 const UNITS_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=Units`;
@@ -76,8 +83,8 @@ let storageRowsRequest: Promise<SheetRow[]> | null = null;
 
 async function fetchLiveRows(): Promise<SheetRow[]> {
   const [facilitiesResponse, unitsResponse] = await Promise.all([
-    fetch(FACILITIES_CSV_URL, { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(10000) }),
-    fetch(UNITS_CSV_URL, { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(10000) }),
+    fetch(FACILITIES_CSV_URL, { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(LIVE_FETCH_TIMEOUT_MS) }),
+    fetch(UNITS_CSV_URL, { next: { revalidate: STORAGE_DATA_REVALIDATE }, signal: AbortSignal.timeout(LIVE_FETCH_TIMEOUT_MS) }),
   ]);
   if (!facilitiesResponse.ok) throw new Error(`Facilities sheet request failed: ${facilitiesResponse.status}`);
   if (!unitsResponse.ok) throw new Error(`Units sheet request failed: ${unitsResponse.status}`);
@@ -118,20 +125,26 @@ async function fetchFallbackRows(): Promise<SheetRow[]> {
   return parseCsv(localCsv).filter((row) => row.facility_id && row.size && row.price && row.latitude && row.longitude) as unknown as SheetRow[];
 }
 
+async function loadStorageRows(): Promise<{ rows: SheetRow[]; cacheSeconds: number }> {
+  try {
+    return { rows: await fetchLiveRows(), cacheSeconds: STORAGE_DATA_REVALIDATE };
+  } catch (error) {
+    console.warn("[storage-data] Live sheet fetch failed; using local fallback:", error);
+    try {
+      return { rows: await fetchFallbackRows(), cacheSeconds: FALLBACK_CACHE_SECONDS };
+    } catch {
+      return { rows: [], cacheSeconds: FALLBACK_CACHE_SECONDS };
+    }
+  }
+}
+
 export async function getStorageRows(): Promise<SheetRow[]> {
   if (storageRowsCache && storageRowsCache.expiresAt > Date.now()) return storageRowsCache.rows;
   if (storageRowsRequest) return storageRowsRequest;
 
-  storageRowsRequest = fetchLiveRows()
-    .catch(async () => {
-      try {
-        return await fetchFallbackRows();
-      } catch {
-        return [];
-      }
-    })
-    .then((rows) => {
-      storageRowsCache = { expiresAt: Date.now() + STORAGE_DATA_REVALIDATE * 1000, rows };
+  storageRowsRequest = loadStorageRows()
+    .then(({ rows, cacheSeconds }) => {
+      storageRowsCache = { expiresAt: Date.now() + cacheSeconds * 1000, rows };
       return rows;
     })
     .finally(() => {

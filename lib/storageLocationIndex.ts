@@ -303,11 +303,19 @@ export async function searchLocationSuggestions(rawQuery: string, limit = 8): Pr
   const cityMatches = index.cities
     .map((city) => ({ city, score: cityMatchScore(city, query) }))
     .filter((entry) => entry.score >= 0)
-    .sort((first, second) => (
-      first.score - second.score ||
-      second.city.facilityCount - first.city.facilityCount ||
-      first.city.city.localeCompare(second.city.city)
-    ));
+    .sort((first, second) => {
+      if (first.score !== second.score) return first.score - second.score;
+
+      // Prefer suggestions that resolve to a real published city page over
+      // bare ZIP fallbacks. Otherwise a single-facility city like Lake City
+      // gets buried behind a dozen unrelated "Lake*" cities with more units.
+      const firstHasCityPage = !first.city.href.startsWith("/storage-search/zip/");
+      const secondHasCityPage = !second.city.href.startsWith("/storage-search/zip/");
+      if (firstHasCityPage !== secondHasCityPage) return firstHasCityPage ? -1 : 1;
+
+      return second.city.facilityCount - first.city.facilityCount ||
+        first.city.city.localeCompare(second.city.city);
+    });
 
   const seenCityKeys = new Set<string>();
   for (const { city } of cityMatches) {

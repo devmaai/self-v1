@@ -44,7 +44,7 @@ export const PUBLISHED_CITY_SLUGS: ReadonlySet<string> = new Set([
   // Texas
   "texarkana", "universal-city-tx",
   // Kansas
-  "wichita", "overland-park", "olathe", "lenexa", "kansas-city-ks", "shawnee",
+  "junction-city", "wichita", "overland-park", "olathe", "lenexa", "kansas-city-ks", "shawnee",
 ]);
 
 export function isCityPublished(citySlug: string): boolean {

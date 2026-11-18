@@ -99,6 +99,11 @@ function unitFeatures(size: string, amenities: string, vehicle: string): string[
 }
 
 const LOCAL_RADIUS_MILES = 15;
+// Scrapes can include nearby facilities that selfstorage.com bundles into a
+// city search. Widen only those cities so the scraped listings appear
+// alongside the local ones: Lake City -> High Springs / Alachua,
+// Junction City -> Manhattan.
+const CITY_RADIUS_MILES: Record<string, number> = { "lake-city": 40, "junction-city": 20 };
 const FALLBACK_RESULT_COUNT = 12;
 
 function milesBetween(center: { latitude: number; longitude: number }, latitude: number, longitude: number) {
@@ -145,11 +150,12 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
 
   let candidateRows = rows;
   if (hasLocalData) {
+    const radiusMiles = CITY_RADIUS_MILES[citySlug] ?? LOCAL_RADIUS_MILES;
     // Cheap bounding-box pre-check before the trig-heavy haversine call, since the
     // vast majority of rows in the shared, nationwide sheet are nowhere near this city.
     const milesPerDegreeLat = 69;
-    const latDeltaLimit = LOCAL_RADIUS_MILES / milesPerDegreeLat;
-    const lonDeltaLimit = LOCAL_RADIUS_MILES / (milesPerDegreeLat * Math.cos((center.latitude * Math.PI) / 180) || 1);
+    const latDeltaLimit = radiusMiles / milesPerDegreeLat;
+    const lonDeltaLimit = radiusMiles / (milesPerDegreeLat * Math.cos((center.latitude * Math.PI) / 180) || 1);
 
     candidateRows = rows.filter((row) => {
       const latitude = Number(row.latitude);
@@ -157,7 +163,7 @@ async function getFacilities(citySlug: string, city: string, state: string): Pro
       if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return false;
       if (Math.abs(latitude - center.latitude) > latDeltaLimit) return false;
       if (Math.abs(longitude - center.longitude) > lonDeltaLimit) return false;
-      return milesBetween(center, latitude, longitude) <= LOCAL_RADIUS_MILES;
+      return milesBetween(center, latitude, longitude) <= radiusMiles;
     });
   }
 
