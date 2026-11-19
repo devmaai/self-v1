@@ -28,7 +28,7 @@ const LEGACY_CITY_REDIRECTS: Record<string, string> = {
 // Hand-built pages that live directly under /storage-search/{slug}.
 const STATIC_STORAGE_SEARCH_PAGES: ReadonlySet<string> = new Set([
   "california", "denver", "florida", "kansas", "missouri", "new-jersey",
-  "new-york", "oklahoma", "south-dakota", "texas", "unavailable", "utah",
+  "new-york", "oklahoma", "south-dakota", "texas", "unavailable", "utah", "washington",
 ]);
 
 export function middleware(request: NextRequest) {

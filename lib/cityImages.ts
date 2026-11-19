@@ -66,7 +66,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "plant-city": "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
   "oklahoma-city": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
   "league-city": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-  "midwest-city": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
+  "midwest-city": "https://images.unsplash.com/photo-1623346798675-1033071318bd",
   "junction-city": "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
   "wichita": "https://images.unsplash.com/photo-1700408388474-09b19b6c72ba",
   "overland-park": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
@@ -74,4 +74,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "lenexa": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
   "kansas-city-ks": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
   "shawnee": "https://images.unsplash.com/photo-1664733865764-768873659f2c",
+  "seattle": "https://images.unsplash.com/photo-1534430480872-3498386e7856",
+  "tacoma": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+  "vancouver": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
 };
