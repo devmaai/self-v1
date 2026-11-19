@@ -228,7 +228,7 @@ export default function LocationAutocomplete({
                 <span className="location-suggestion-label">{suggestion.label}</span>
                 <span className="location-suggestion-secondary">{suggestion.secondary}</span>
               </span>
-              <span className="location-suggestion-tag">{suggestion.type === "zip" ? "ZIP" : "City"}</span>
+              <span className="location-suggestion-tag">{suggestion.type === "zip" ? "ZIP" : suggestion.type === "state" ? "State" : "City"}</span>
             </button>
           ))}
 

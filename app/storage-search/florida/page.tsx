@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Find storage units in Florida near your location. Compare 2,526 facilities and 41,123 available units across Miami, Jacksonville, Tampa, Orlando and Fort Lauderdale, with current monthly prices.",
 };
 
-const CITY_LINKS = ["Lake City", "Miami", "Jacksonville", "Tampa", "Orlando", "Fort Lauderdale", "St. Petersburg", "Cape Coral", "Pompano Beach", "Lakeland", "West Palm Beach", "Port St. Lucie", "Tallahassee", "Palm Bay", "Clearwater", "Lake Worth", "Brandon", "Hialeah", "Davie", "Boca Raton", "Pembroke Pines", "Spring Hill", "Hollywood", "Miami Gardens", "Riverview", "Miramar", "Palm Coast", "Coral Springs", "Plantation", "Saint Cloud", "Gainesville", "Pensacola"];
+const CITY_LINKS = ["Plant City", "Lake City", "Miami", "Jacksonville", "Tampa", "Orlando", "Fort Lauderdale", "St. Petersburg", "Cape Coral", "Pompano Beach", "Lakeland", "West Palm Beach", "Port St. Lucie", "Tallahassee", "Palm Bay", "Clearwater", "Lake Worth", "Brandon", "Hialeah", "Davie", "Boca Raton", "Pembroke Pines", "Spring Hill", "Hollywood", "Miami Gardens", "Riverview", "Miramar", "Palm Coast", "Coral Springs", "Plantation", "Saint Cloud", "Gainesville", "Pensacola"];
 
 const PRICE_ROWS = [
   ["5' x 5'", "$22 to $95", "Boxes, bedding, seasonal gear"],

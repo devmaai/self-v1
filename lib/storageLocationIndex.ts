@@ -2,7 +2,7 @@ import { US_STATE_NAMES } from "@/lib/usStates";
 import { getStorageRows } from "@/lib/liveStorageData";
 import { normalizeZip, extractZipFromQuery } from "@/lib/zipCodes";
 import { findNearestZipRecord, lookupZipRecord, searchCityRecords, searchZipRecords, type CityRecord, type ZipRecord } from "@/lib/zipDirectory";
-import { cityPageHref } from "@/lib/storageSearchLookup";
+import { cityPageHref, STATE_PAGE_SLUGS } from "@/lib/storageSearchLookup";
 import type { LocationSuggestion } from "@/lib/locationSuggestion";
 
 type IndexedZip = {
@@ -269,6 +269,35 @@ function cityMatchScore(city: IndexedCity, query: string): number {
   return -1;
 }
 
+/** State landing pages whose name starts with what the visitor typed (e.g. "okl"). */
+function stateSuggestions(index: LocationIndex, query: string): LocationSuggestion[] {
+  return Object.entries(STATE_PAGE_SLUGS)
+    .filter(([code]) => {
+      const name = (US_STATE_NAMES[code] ?? "").toLowerCase();
+      return name.startsWith(query) || code.toLowerCase() === query;
+    })
+    .map(([code, slug]): LocationSuggestion => {
+      const cities = index.cities.filter((city) => city.state === code);
+      const facilityCount = cities.reduce((sum, city) => sum + city.facilityCount, 0);
+      const anchor = [...cities].sort((first, second) => second.facilityCount - first.facilityCount)[0];
+      const stateName = US_STATE_NAMES[code] ?? code;
+      return {
+        type: "state",
+        label: stateName,
+        secondary: `${facilityCount} storage ${facilityCount === 1 ? "facility" : "facilities"} across ${stateName}`,
+        city: "",
+        state: code,
+        stateName,
+        zip: anchor?.zip ?? "",
+        facilityCount,
+        href: `/storage-search/${slug}`,
+        latitude: anchor?.latitude ?? 0,
+        longitude: anchor?.longitude ?? 0,
+      };
+    })
+    .sort((first, second) => first.stateName.localeCompare(second.stateName));
+}
+
 /** Typeahead suggestions for the shared search boxes. */
 export async function searchLocationSuggestions(rawQuery: string, limit = 8): Promise<LocationSuggestion[]> {
   const query = rawQuery.trim().toLowerCase();
@@ -283,6 +312,10 @@ export async function searchLocationSuggestions(rawQuery: string, limit = 8): Pr
     seen.add(suggestion.href);
     suggestions.push(suggestion);
   };
+
+  if (!query.includes(",") && !/^\d/.test(query)) {
+    stateSuggestions(index, query).forEach(add);
+  }
 
   const zipPrefix = query.match(/^(\d{2,5})/)?.[1];
   if (zipPrefix) {
