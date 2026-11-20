@@ -77,4 +77,6 @@ export const CITY_IMAGES: Record<string, string> = {
   "seattle": "https://images.unsplash.com/photo-1534430480872-3498386e7856",
   "tacoma": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
   "vancouver": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+  "spokane": "https://images.unsplash.com/photo-1628810360936-de5a3afeac43",
+  "bellevue": "https://images.unsplash.com/photo-1598334670724-31066acb1348",
 };

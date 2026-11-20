@@ -35,5 +35,5 @@ export const CITY_COORDINATES: Record<string, [number, number]> = {
   pensacola: [30.4213, -87.2169], texarkana: [33.4251, -94.0477],
 
   // Washington
-  seattle: [47.6062, -122.3321], tacoma: [47.2529, -122.4443], vancouver: [45.6387, -122.6610],
+  seattle: [47.6062, -122.3321], tacoma: [47.2529, -122.4443], vancouver: [45.6387, -122.6610], spokane: [47.6588, -117.4260], bellevue: [47.6101, -122.2015],
 };

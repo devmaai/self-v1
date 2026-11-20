@@ -13,12 +13,12 @@ import CardSlider from "@/components/ui/CardSlider";
 import { breadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Storage Units In Washington Near You | Seattle, Tacoma And Vancouver Prices",
-  description: "Find self storage units in Washington near your location. Compare climate controlled storage, RV and boat storage, current monthly prices, sizes, and availability across Seattle, Tacoma, and Vancouver, WA.",
+  title: "Storage Units In Washington Near You | Seattle, Tacoma, Spokane And Bellevue Prices",
+  description: "Find self storage units in Washington near your location. Compare climate controlled storage, RV and boat storage, current monthly prices, sizes, and availability across Seattle, Tacoma, Spokane, Bellevue and Vancouver, WA.",
 };
 
 const CITY_LINKS = [
-  "Seattle", "Tacoma", "Vancouver",
+  "Seattle", "Bellevue", "Tacoma", "Spokane", "Vancouver",
 ];
 
 const PRICE_ROWS = [
@@ -39,16 +39,16 @@ const FAQS = [
     answer: "A 5x5 in Washington typically runs $16 to $89, while a 5x10 typically runs $23 to $132 depending on city, access, and features.",
   },
   {
-    question: "How much does a storage unit cost in Seattle, Tacoma and Vancouver, WA?",
-    answer: "In current listings a 10x10 averages around $106 a month in Seattle, $111 in Tacoma and $88 in Vancouver, WA, while a 5x5 averages around $42, $47 and $38. Rates vary by facility, so enter your ZIP code, set a search radius and compare units by size, monthly rate, access hours and features.",
+    question: "How much does a storage unit cost in Seattle, Bellevue, Tacoma, Spokane and Vancouver, WA?",
+    answer: "In current listings a 10x10 averages around $106 a month in Seattle, $114 in Bellevue, $111 in Tacoma, $84 in Spokane and $88 in Vancouver, WA, while a 5x5 averages around $42, $46, $47, $48 and $38 respectively. Rates vary by facility, so enter your ZIP code, set a search radius and compare units by size, monthly rate, access hours and features.",
   },
   {
     question: "What size storage unit do I need?",
     answer: "A 5x5 holds boxes and seasonal gear, a 5x10 holds a single room, a 10x10 holds a one bedroom apartment, and a 10x20 holds a three bedroom home or vehicle.",
   },
   {
-    question: "Do I need climate controlled storage in Seattle and western Washington?",
-    answer: "Western Washington stays rainy from fall through spring, and damp air is what damages wood furniture, electronics, documents, photographs, and instruments. Choose climate controlled storage for anything staying more than a season. Tools, bins, patio furniture, and vehicles are usually fine in a standard drive-up unit.",
+    question: "Do I need climate controlled storage in Washington?",
+    answer: "Western Washington stays rainy from fall through spring, and damp air is what damages wood furniture, electronics, documents, photographs, and instruments. Spokane is drier but sees wider temperature swings between summer heat and winter cold, which also affects sensitive items. Choose climate controlled storage for anything staying more than a season. Tools, bins, patio furniture, and vehicles are usually fine in a standard drive-up unit.",
   },
   {
     question: "Which Washington facilities offer 24 hour access?",
@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     question: "Can I use RV storage, boat storage or car storage in Washington?",
-    answer: "Yes. Facilities around Seattle, Tacoma and Vancouver offer uncovered parking, covered parking, and enclosed units for RVs, boats and cars. Confirm the maximum vehicle length and whether registration and insurance are required.",
+    answer: "Yes. Facilities around Seattle, Bellevue, Tacoma, Spokane and Vancouver offer uncovered parking, covered parking, and enclosed units for RVs, boats and cars. Confirm the maximum vehicle length and whether registration and insurance are required.",
   },
   {
     question: "Are there first month free storage deals in Washington?",
@@ -110,20 +110,20 @@ export default function WashingtonStoragePage() {
         <div className="state-storage-hero-inner">
           <div className="city-storage-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/storage-state-usa">Storage by state</Link><span>/</span>Washington</div>
           <h1>Find <span className="state-storage-nowrap">storage units</span><br /><em>in Washington near you.</em></h1>
-          <p>Compare 67 self storage facilities and 1,431 available units across Washington, including Seattle, Tacoma and Vancouver, with current prices, sizes, and amenities near your location.</p>
+          <p>Compare self storage facilities across Washington, including Seattle, Bellevue, Tacoma, Spokane and Vancouver, with current prices, sizes, and amenities near your location.</p>
           <StateZipSearch id="wa-hero-zip" />
         </div>
       </section>
 
       <section className="state-storage-cities state-cities-centered" aria-labelledby="wa-cities-heading">
-        <div className="state-storage-heading"><h2 id="wa-cities-heading">Find cheap storage units in your favorite Washington cities</h2><p>Availability changes quickly across Seattle, Tacoma and the I-5 corridor up to Vancouver, WA, so the closest self storage facility is often the one holding the rate you want. Start with your city and narrow by radius.</p></div>
+        <div className="state-storage-heading"><h2 id="wa-cities-heading">Find cheap storage units in your favorite Washington cities</h2><p>Availability changes quickly across Seattle, Bellevue, Tacoma, the I-5 corridor up to Vancouver, and Spokane in the Inland Northwest, so the closest self storage facility is often the one holding the rate you want. Start with your city and narrow by radius.</p></div>
         <StateCityScroller cities={cityCards} />
       </section>
 
       <StateFormBlock id="wa-form-top" state="Washington" cities={formCities} heading="Get A Free Storage Quote" subtext="No obligation quote" body="We check storage facilities near you and find the options that fit, so you don't have to contact multiple companies. You choose the option you like, and there are no extra charges." />
 
       <section className="utah-pricing-section" aria-labelledby="wa-storage-heading">
-        <div className="utah-pricing-heading"><h2 id="wa-storage-heading">How much will a storage unit cost you in Washington each month?</h2><p className="utah-pricing-intro">Small units in Washington start from about $16 a month. A standard 10x10 unit commonly lists between $44 and $194 a month, depending on the city and the features. In current listings a 10x10 averages around $106 in Seattle and $111 in Tacoma, with Vancouver, WA lower at around $88, so compare a few facilities in your area before you reserve.</p><p className="utah-pricing-caption">Typical monthly ranges by size in Washington:</p></div>
+        <div className="utah-pricing-heading"><h2 id="wa-storage-heading">How much will a storage unit cost you in Washington each month?</h2><p className="utah-pricing-intro">Small units in Washington start from about $16 a month. A standard 10x10 unit commonly lists between $44 and $194 a month, depending on the city and the features. In current listings a 10x10 averages around $106 in Seattle, $114 in Bellevue and $111 in Tacoma, with Spokane at around $84 and Vancouver, WA at around $88, so compare a few facilities in your area before you reserve.</p><p className="utah-pricing-caption">Typical monthly ranges by size in Washington:</p></div>
         <div className="utah-price-table-wrap">
           <table className="utah-price-table">
             <thead><tr><th scope="col">Unit size</th><th scope="col">Typical monthly rate</th><th scope="col">What it holds</th></tr></thead>
@@ -140,7 +140,7 @@ export default function WashingtonStoragePage() {
             <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20family.jpg" alt="Family moving boxes into a storage unit" width={980} height={653} /></div>
             <div className="state-needs-text">
               <h3>Storage for Washington families</h3>
-              <p>Homes here fill with the things that do not fit inside. Bikes, camping gear, kayaks, ski and snow gear and holiday decorations take over the garage, while a move or a renovation sends the rest of the house into storage. Families across Seattle, Tacoma and Vancouver often rent while they build, sell or move.</p>
+              <p>Homes here fill with the things that do not fit inside. Bikes, camping gear, kayaks, ski and snow gear and holiday decorations take over the garage, while a move or a renovation sends the rest of the house into storage. Families across Seattle, Bellevue, Tacoma, Spokane and Vancouver often rent while they build, sell or move.</p>
               <ul><li>A 5x10 lets you swap winter and summer equipment without stacking to the ceiling.</li><li>A 10x15 holds a two bedroom home with appliances, while a 10x20 holds a three bedroom home.</li><li>Look for drive-up access and gate hours that suit early starts and late commutes.</li></ul>
               <Link className="state-storage-guide-button" href="/find-storage">Find family storage in Washington <span aria-hidden="true">→</span></Link>
             </div>
@@ -158,8 +158,8 @@ export default function WashingtonStoragePage() {
             <div className="state-needs-image"><Image src="/images/state%20pages/storage%20for%20students.jpg" alt="Student moving belongings into a storage unit" width={980} height={653} /></div>
             <div className="state-needs-text">
               <h3>Storage for students</h3>
-              <p>Campuses across the Seattle area and in Tacoma and Vancouver empty every summer. Students at the University of Washington, Seattle University, the University of Puget Sound and Washington State University Vancouver often need space between spring quarter and autumn move-in.</p>
-              <ul><li>A 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>A 10x10 can cover two rooms when split with a roommate.</li><li>Look for student rates near Seattle, Tacoma or Vancouver, plus month-to-month terms.</li></ul>
+              <p>Campuses across the Seattle area and in Tacoma, Spokane and Vancouver empty every summer. Students at the University of Washington, Bellevue College, Seattle University, the University of Puget Sound, Gonzaga University, Washington State University Spokane and Washington State University Vancouver often need space between spring quarter and autumn move-in.</p>
+              <ul><li>A 5x5 takes boxes, bedding and a bike. A 5x10 takes a full room including a mattress and desk.</li><li>A 10x10 can cover two rooms when split with a roommate.</li><li>Look for student rates near Seattle, Bellevue, Tacoma, Spokane or Vancouver, plus month-to-month terms.</li></ul>
               <Link className="state-storage-guide-button" href="/student-storage">Explore student storage <span aria-hidden="true">→</span></Link>
             </div>
           </article>
@@ -167,7 +167,7 @@ export default function WashingtonStoragePage() {
             <div className="state-needs-image"><Image src="/images/storage-guide/car.jpg" alt="Car parked in a drive-up storage unit" width={1290} height={860} /></div>
             <div className="state-needs-text">
               <h3>Storage for vehicles</h3>
-              <p>Many Seattle, Tacoma and Vancouver neighborhoods and HOAs restrict driveway and street parking, and trips to the Cascades and the coast mean rooftop tents, recovery gear and bikes that need a home between weekends. Car storage also suits collector and second cars that need a dry, secure space through the wet months.</p>
+              <p>Many Seattle, Bellevue, Tacoma, Spokane and Vancouver neighborhoods and HOAs restrict driveway and street parking, and trips to the Cascades and the coast mean rooftop tents, recovery gear and bikes that need a home between weekends. Car storage also suits collector and second cars that need a dry, secure space through the wet months.</p>
               <ul><li>Choose uncovered parking, covered parking or an enclosed drive-up unit.</li><li>Check the maximum vehicle length and gate hours before you reserve.</li><li>Ask whether current registration and insurance are required.</li></ul>
               <Link className="state-storage-guide-button" href="/car-storage">Explore car and vehicle storage <span aria-hidden="true">→</span></Link>
             </div>
@@ -176,7 +176,7 @@ export default function WashingtonStoragePage() {
             <div className="state-needs-image"><Image src="/images/climate-storage/indoor-corridor.png" alt="Indoor climate controlled storage corridor" width={1200} height={800} /></div>
             <div className="state-needs-text">
               <h3>Climate controlled storage</h3>
-              <p>Western Washington stays damp for much of the year, so climate controlled storage in Seattle, Tacoma and Vancouver is worth pricing before you book. Wood and leather furniture, electronics, photographs, instruments and documents last longer in a unit that holds a steady temperature and humidity.</p>
+              <p>Western Washington stays damp for much of the year, and Spokane swings between hot summers and cold winters, so climate controlled storage in Seattle, Bellevue, Tacoma, Spokane and Vancouver is worth pricing before you book. Wood and leather furniture, electronics, photographs, instruments and documents last longer in a unit that holds a steady temperature and humidity.</p>
               <ul><li>Choose climate control for anything staying more than a season.</li><li>Lift boxes off the floor on pallets or shelving.</li><li>Leave a gap between your belongings and the walls.</li></ul>
               <Link className="state-storage-guide-button" href="/climate-controlled-storage">Explore climate controlled storage <span aria-hidden="true">→</span></Link>
             </div>
@@ -224,10 +224,10 @@ export default function WashingtonStoragePage() {
       </section>
 
       <section className="state-storage-guide state-love state-reasons" aria-labelledby="wa-love-heading">
-        <div className="state-storage-heading"><h2 id="wa-love-heading">Reasons to move to Washington.</h2><p>And why so many people moving to Seattle, Tacoma and Vancouver rent a storage unit along the way.</p></div>
+        <div className="state-storage-heading"><h2 id="wa-love-heading">Reasons to move to Washington.</h2><p>And why so many people moving to Seattle, Bellevue, Tacoma, Spokane and Vancouver rent a storage unit along the way.</p></div>
         <div className="state-reasons-split">
           <div className="state-reasons-image"><Image src="https://images.unsplash.com/photo-1600314427922-2a7243b8e715?auto=format&fit=crop&w=1200&q=75" alt="Mount Rainier above a wildflower meadow in Washington" fill sizes="(max-width: 900px) 100vw, 40vw" unoptimized /></div>
-          <div className="state-size-grid"><article><h3>Puget Sound, the Cascades and the Olympics</h3><p>Seattle, Tacoma and Vancouver sit within reach of the Cascades, the Olympic Peninsula and Puget Sound, so weekends mean skiing, hiking, kayaking and boating. All that gear is why so many Washington households rent storage units for bikes, kayaks, skis and camping equipment.</p></article><article><h3>Three national parks</h3><p>Mount Rainier, Olympic and North Cascades national parks draw campers and road trippers all year. If you own an RV, camper or trailer, RV storage in Washington keeps it ready between trips when HOA rules rule out driveway parking.</p></article><article><h3>A major tech, aerospace and shipping economy</h3><p>Amazon, Microsoft, Boeing and the Port of Tacoma keep bringing jobs and new residents to the Seattle and Tacoma area. Many movers need short term storage between a lease ending and a new home being ready.</p></article><article><h3>Military families near Joint Base Lewis-McChord</h3><p>Joint Base Lewis-McChord near Tacoma and Naval Base Kitsap move households through Washington on orders. Military storage near Tacoma covers the gap between postings, deployments and a new lease.</p></article><article><h3>No state income tax and a gateway to Portland</h3><p>Washington has no state income tax on wages, and Vancouver, WA sits across the Columbia River from Portland, so many households relocate here from Oregon. A move across the river often leaves a gap between homes, and a nearby storage unit fills it.</p></article><article><h3>Wet winters call for dry storage</h3><p>Western Washington stays rainy from fall through spring, and damp air damages furniture, electronics, documents and photographs. That is why climate controlled storage in Seattle and Tacoma is worth comparing against a standard unit.</p></article></div>
+          <div className="state-size-grid"><article><h3>Puget Sound, the Cascades and the Olympics</h3><p>Seattle, Bellevue, Tacoma and Vancouver sit within reach of the Cascades, the Olympic Peninsula and Puget Sound, while Spokane opens up the Inland Northwest and the Spokane River, so weekends mean skiing, hiking, kayaking and boating. All that gear is why so many Washington households rent storage units for bikes, kayaks, skis and camping equipment.</p></article><article><h3>Three national parks</h3><p>Mount Rainier, Olympic and North Cascades national parks draw campers and road trippers all year. If you own an RV, camper or trailer, RV storage in Washington keeps it ready between trips when HOA rules rule out driveway parking.</p></article><article><h3>A major tech, aerospace and shipping economy</h3><p>Amazon, Microsoft, Boeing and the Port of Tacoma keep bringing jobs and new residents to the Seattle and Tacoma area. Many movers need short term storage between a lease ending and a new home being ready.</p></article><article><h3>Military families near Joint Base Lewis-McChord</h3><p>Joint Base Lewis-McChord near Tacoma and Naval Base Kitsap move households through Washington on orders. Military storage near Tacoma covers the gap between postings, deployments and a new lease.</p></article><article><h3>No state income tax and a gateway to Portland</h3><p>Washington has no state income tax on wages, and Vancouver, WA sits across the Columbia River from Portland, so many households relocate here from Oregon. A move across the river often leaves a gap between homes, and a nearby storage unit fills it.</p></article><article><h3>Wet winters call for dry storage</h3><p>Western Washington stays rainy from fall through spring, and damp air damages furniture, electronics, documents and photographs. That is why climate controlled storage in Seattle, Bellevue and Tacoma is worth comparing against a standard unit.</p></article></div>
         </div>
       </section>
 

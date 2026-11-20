@@ -368,8 +368,8 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
           <div className="city-storage-faq-inner">
             <h2>{handContent.faqHeading}</h2>
             <div className="city-storage-faq-list">
-              {handContent.faqs.map((faq) => (
-                <div className={faq.bullets ? "city-storage-faq-item city-faq-wide" : "city-storage-faq-item"} key={faq.question}>
+              {handContent.faqs.map((faq, index) => (
+                <div className={faq.bullets ? "city-storage-faq-item city-faq-wide" : "city-storage-faq-item"} key={`${faq.question}-${index}`}>
                   <h3>{faq.question}</h3>
                   <p>{renderInline(fillPrice(faq.answer), faq.question)}</p>
                   {faq.bullets && (
@@ -407,8 +407,8 @@ export default async function LiveCityStoragePage({ params }: { params: Promise<
           <div className="city-storage-faq-inner">
             <h2>{seoContent.faqHeading}</h2>
             <div className="city-storage-faq-list">
-              {seoContent.faqs.map((faq) => (
-                <div className="city-storage-faq-item" key={faq.question}>
+              {seoContent.faqs.map((faq, index) => (
+                <div className="city-storage-faq-item" key={`${faq.question}-${index}`}>
                   <h3>{faq.question}</h3>
                   {renderBlocks(faq.answerBlocks, fillPrice, faq.question)}
                 </div>

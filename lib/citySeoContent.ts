@@ -32,7 +32,9 @@ function parseCsv(csv: string): Record<string, string>[] {
     const character = csv[index];
     const nextCharacter = csv[index + 1];
 
-    if (character === '"' && nextCharacter === '"') {
+    // A doubled quote is an escaped quote only inside a quoted field; a bare
+    // `""` field is an empty value (toggling quoted off), not a literal quote.
+    if (character === '"' && quoted && nextCharacter === '"') {
       value += '"';
       index += 1;
     } else if (character === '"') {
