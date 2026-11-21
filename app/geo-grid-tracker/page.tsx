@@ -113,7 +113,7 @@ export default function GeoGridTrackerPage() {
         </div>
       </section>
 
-      <section className="gg-section">
+      {/* <section className="gg-section">
         <div className="gg-wrap">
           <span className="gg-eyebrow">Why a geo-grid</span>
           <h2 className="gg-h2">One ranking number hides most of the picture</h2>
@@ -129,6 +129,16 @@ export default function GeoGridTrackerPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section> */}
+      <section className="gg-cta">
+        <div className="gg-wrap">
+          <h2>Seeing grey and red on your map?</h2>
+          <p>We help storage operators win the Google Maps pack and fill more units. Start with a free audit of your facility.</p>
+          <div className="gg-cta-actions">
+            <Link href="/audit" className="gg-cta-btn">Get my free audit</Link>
+            <a href="#tool" className="gg-cta-link">Run another scan</a>
           </div>
         </div>
       </section>
@@ -148,16 +158,7 @@ export default function GeoGridTrackerPage() {
         </div>
       </section>
 
-      <section className="gg-cta">
-        <div className="gg-wrap">
-          <h2>Seeing grey and red on your map?</h2>
-          <p>We help storage operators win the Google Maps pack and fill more units. Start with a free audit of your facility.</p>
-          <div className="gg-cta-actions">
-            <Link href="/audit" className="gg-cta-btn">Get my free audit</Link>
-            <a href="#tool" className="gg-cta-link">Run another scan</a>
-          </div>
-        </div>
-      </section>
+      
 
       <V2Footer />
     </div>
