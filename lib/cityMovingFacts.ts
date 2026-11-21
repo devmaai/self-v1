@@ -2,7 +2,14 @@
 // pages. Each city gets one line on living costs, one on colleges and one on
 // family life; the rest of the copy is shared (see buildCityPageContent).
 
-export type CityMovingFacts = { cost: string; students: string; families: string };
+// A single line gets the shared follow-up paragraph added by
+// buildCityPageContent. A string array is used when a city has its own full
+// copy, in the same shape as the hand-written Salt Lake City page.
+export type CityMovingFacts = {
+  cost: string | string[];
+  students: string | string[];
+  families: string | string[];
+};
 
 export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
   // Utah
@@ -213,6 +220,11 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     students: "Yes. Pace University has a campus in White Plains, and Westchester Community College is in nearby Valhalla.",
     families: "Families like White Plains for its parks, shopping and quick train ride to Manhattan.",
   },
+  newburgh: {
+    cost: "Newburgh sits on the Hudson River in Orange County, with more house for the money than many downstate New York communities.",
+    students: "Yes. Mount Saint Mary College is in Newburgh, and SUNY Orange is a short drive away in Middletown.",
+    families: "Families like Newburgh for its Hudson River waterfront, Washington's Headquarters and easy trips to Storm King Art Center and the Catskills.",
+  },
   // Missouri
   "kansas-city": {
     cost: "Kansas City costs less than most large US cities, so you get more space for your money.",
@@ -274,6 +286,11 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     students: "Yes. Lincoln University is in Jefferson City, and the University of Missouri is a short drive away in Columbia.",
     families: "Families like Jefferson City for the Katy Trail, its riverfront and the Missouri State Capitol.",
   },
+  "university-city-mo": {
+    cost: "University City is an inner-ring St. Louis suburb with older homes and apartments that usually cost less than many parts of St. Louis County.",
+    students: "Yes. Washington University in St. Louis is in University City, and the University of Missouri–St. Louis is a short drive away.",
+    families: "Families like University City for its walkable neighborhoods, the Delmar Loop and quick access to Forest Park and the Saint Louis Zoo.",
+  },
   // New Jersey
   "jersey-city": {
     cost: "Jersey City rents run among the highest in New Jersey, especially in the waterfront high-rises facing Manhattan.",
@@ -286,13 +303,161 @@ export const CITY_MOVING_FACTS: Record<string, CityMovingFacts> = {
     students: "Yes. The University of West Florida and Pensacola State College are both in the Pensacola area.",
     families: "Families like Pensacola for its Gulf beaches, the National Naval Aviation Museum and its historic downtown.",
   },
+  "panama-city": {
+    cost: "Panama City offers Gulf Coast living at prices that are often lower than Florida's larger metros, with newer homes and apartments across the county.",
+    students: "Yes. Gulf Coast State College is in Panama City, and Florida State University Panama City is close by.",
+    families: "Families like Panama City for its Gulf beaches, Shell Island and attractions such as Sci-Port Discovery Center, with Panama City Beach a short drive away.",
+  },
+  "lake-city": {
+    cost: [
+      "Lake City, Florida, is a relaxed North Florida community near Gainesville that attracts families, professionals and people looking for a quieter place to settle.",
+      "An affordable self storage unit keeps furniture and boxes out of your home. Compare sizes with our [storage unit size guide](/storage-size-guide) or [size calculator](/storage-unit-size-calculator).",
+    ],
+    students: [
+      "Yes. Lake City is home to Florida Gateway College, making it a convenient place for students in North Florida.",
+      "A 5x5 unit holds boxes and clothes, while a 5x10 fits furniture and dorm essentials. Our [student storage guide](/student-storage) explains how to prepare for summer storage.",
+    ],
+    families: [
+      "Families can enjoy local parks plus Ichetucknee Springs and O'Leno State Parks nearby.",
+      "Bikes, toys, baby gear and seasonal decorations fill up a garage quickly. A 10x10 or 10x15 unit keeps them accessible, and our [climate-controlled storage guide](/climate-controlled-storage) explains humidity protection.",
+    ],
+  },
+  "plant-city": {
+    cost: [
+      "Plant City sits between Tampa and Lakeland with a small-town feel, residential communities and easy access to the Tampa Bay area.",
+      "A self storage unit keeps furniture, boxes and seasonal decorations without needing a larger property. Our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator) help you choose.",
+    ],
+    students: [
+      "Hillsborough Community College has a Plant City campus, with more colleges and universities a short drive away in Tampa and Lakeland.",
+      "A 5x5 unit suits boxes and clothes, while a 5x10 fits furniture. Our [student storage guide](/student-storage) covers packing and summer storage.",
+    ],
+    families: [
+      "Families enjoy Dinosaur World, Edward Medard Conservation Park and the Florida Strawberry Festival.",
+      "Toys, bikes, strollers and seasonal decorations fill up a home quickly. A 10x10 or 10x15 unit helps, and our [climate-controlled storage guide](/climate-controlled-storage) explains how to protect items from Florida humidity.",
+    ],
+  },
   // Texas
   texarkana: {
     cost: "Texarkana is one of the more affordable places to rent in Texas, with plenty of single-family homes.",
     students: "Yes. Texas A&M University-Texarkana and Texarkana College are both in the city.",
     families: "Families like Texarkana for its parks, nearby lakes and small-city pace on the Texas and Arkansas line.",
   },
+  "league-city": {
+    cost: [
+      "League City, Texas, is a growing Houston-area community between Houston and Galveston, with established neighborhoods and access to major employment centers.",
+      "An affordable self storage unit creates room for furniture and seasonal items without a bigger home. Our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator) help you choose.",
+    ],
+    students: [
+      "Yes. College of the Mainland, San Jacinto College and the University of Houston-Clear Lake are all within easy reach.",
+      "A 5x5 unit holds dorm essentials, while a 5x10 fits furniture. Book a few weeks before move-out, and see our [student storage guide](/student-storage) for tips.",
+    ],
+    families: [
+      "Families enjoy League Park, the Kemah Boardwalk and nearby Space Center Houston.",
+      "Toys, bikes, strollers and seasonal decorations add up quickly, so a 10x10 or 10x15 unit helps. If you own a boat, our [boat storage guide](/boat-storage) covers your options.",
+    ],
+  },
+  "universal-city-tx": {
+    cost: "Universal City is a small Bexar County suburb northeast of San Antonio, where rents and home prices usually sit below the city center.",
+    students: "Yes. Northeast Lakeview College is in Universal City, and other Alamo Colleges campuses and the University of Texas at San Antonio are a short drive away.",
+    families: "Families like Universal City for its quiet neighborhoods, local parks and quick access to San Antonio attractions such as the River Walk and the San Antonio Zoo.",
+  },
+  // Oklahoma
+  "oklahoma-city": {
+    cost: [
+      "Oklahoma City is the state capital, with a mix of neighborhoods, jobs and everyday amenities that draw families, students and professionals.",
+      "Renting a self storage unit keeps furniture and seasonal items organized without paying for a larger home. Compare sizes with our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator).",
+    ],
+    students: [
+      "Yes. Oklahoma City University, Oklahoma City Community College and the University of Oklahoma Health Sciences Center are all here.",
+      "A 5x5 unit holds boxes and clothes, while a 5x10 fits furniture. Our [student storage guide](/student-storage) helps you plan moves between semesters.",
+    ],
+    families: [
+      "Families enjoy the Oklahoma City Zoo, Science Museum Oklahoma, Scissortail Park and Myriad Botanical Gardens.",
+      "Toys, bikes, sports equipment and baby gear add up fast. A 10x10 or 10x15 unit keeps them organized, and our [climate-controlled storage guide](/climate-controlled-storage) covers longer-term storage.",
+    ],
+  },
+  "midwest-city": {
+    cost: [
+      "Midwest City, Oklahoma, sits just outside Oklahoma City with easy access to shopping and jobs, and Tinker Air Force Base makes it popular with military families.",
+      "An affordable self storage unit gives you room for furniture and boxes. Check our [storage unit size guide](/storage-size-guide) or [size calculator](/storage-unit-size-calculator) before choosing a facility.",
+    ],
+    students: [
+      "Yes. Rose State College is in Midwest City, making it convenient for students in the Oklahoma City area.",
+      "A 5x5 unit works for boxes and clothes, while a 5x10 fits furniture and dorm essentials. Our [student storage guide](/student-storage) covers packing and summer storage.",
+    ],
+    families: [
+      "Families like Reno Swim and Slide, local parks and nearby Lake Stanley Draper, with Oklahoma City attractions close by.",
+      "Toys, bikes, sports gear and baby gear can take over a garage. A 10x10 or 10x15 unit keeps them organized, and [climate-controlled storage](/climate-controlled-storage) suits longer-term items.",
+    ],
+  },
+  // Washington
+  seattle: {
+    cost: [
+      "Seattle is one of Washington's major urban centers, with dense neighborhoods and high housing costs, especially for renters.",
+      "A self storage unit creates extra space without paying for a bigger apartment. Use our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator) to estimate what you need.",
+    ],
+    students: [
+      "Yes. The University of Washington, Seattle University and Seattle Central College give the city a large student population.",
+      "A 5x5 unit holds boxes and clothes, while a 5x10 fits furniture. Our [student storage guide](/student-storage) helps with summer storage.",
+    ],
+    families: [
+      "Families enjoy Woodland Park Zoo, Discovery Park and the Seattle Aquarium.",
+      "Toys, bikes, strollers and seasonal decorations add up quickly. A 10x10 or 10x15 unit helps, and our [climate-controlled storage guide](/climate-controlled-storage) covers damp-weather storage.",
+    ],
+  },
+  tacoma: {
+    cost: [
+      "Tacoma is a Puget Sound city with residential neighborhoods, waterfront communities and easy access to Seattle.",
+      "A self storage unit handles furniture and boxes without requiring a larger home. Our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator) help you pick a size.",
+    ],
+    students: [
+      "Yes. The University of Washington Tacoma, University of Puget Sound and Tacoma Community College make the city convenient for students.",
+      "A 5x5 unit holds boxes and clothes, while a 5x10 fits furniture. Our [student storage guide](/student-storage) has advice for summer break.",
+    ],
+    families: [
+      "Families enjoy Point Defiance Park and Zoo & Aquarium, the Children's Museum of Tacoma and the Ruston Way waterfront.",
+      "Bikes, sports gear, strollers and seasonal decorations add up quickly. A 10x10 or 10x15 unit helps, and our [climate-controlled storage guide](/climate-controlled-storage) explains how to protect sensitive items.",
+    ],
+  },
+  vancouver: {
+    cost: [
+      "Vancouver, Washington, sits across the Columbia River from Portland, with residential neighborhoods and easy access to the Portland metro area.",
+      "An affordable self storage unit keeps furniture and boxes organized without a larger home. Compare sizes with our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator).",
+    ],
+    students: [
+      "Yes. Clark College and Washington State University Vancouver are here, offering a range of academic programs.",
+      "A 5x5 unit suits boxes and clothes, while a 5x10 fits furniture. Our [student storage guide](/student-storage) explains how to prepare for summer storage.",
+    ],
+    families: [
+      "Families enjoy Esther Short Park, the Vancouver Waterfront, Frenchman's Bar Regional Park and the Water Resources Education Center.",
+      "Bikes, baby gear, toys and camping equipment take over garages quickly. A 10x10 or 10x15 unit helps, and our [climate-controlled storage guide](/climate-controlled-storage) covers longer-term items.",
+    ],
+  },
+  spokane: {
+    cost: "Spokane costs less than Seattle and much of western Washington, with more room in older homes and apartments across the city.",
+    students: "Yes. Gonzaga University and Whitworth University are in Spokane, and Eastern Washington University is a short drive away in Cheney.",
+    families: "Families like Spokane for Riverfront Park, Manito Park and easy access to Mount Spokane and the Spokane River.",
+  },
+  bellevue: {
+    cost: "Bellevue is one of the pricier cities in the Seattle area, with newer apartments and homes close to major technology employers.",
+    students: "Yes. Bellevue College is in the city, and the University of Washington Bothell and Seattle campuses are a short drive away.",
+    families: "Families like Bellevue for its parks, the Bellevue Botanical Garden, Downtown Park and access to Lake Washington.",
+  },
   // Kansas
+  "junction-city": {
+    cost: [
+      "Junction City, Kansas, offers a relatively affordable lifestyle, and its proximity to Fort Riley makes it convenient for military personnel and families relocating to the area.",
+      "A self storage unit keeps furniture and moving boxes out of a small home. Our [storage unit size guide](/storage-size-guide) and [size calculator](/storage-unit-size-calculator) help you pick the right unit before you move.",
+    ],
+    students: [
+      "Yes. Junction City is within commuting distance of Kansas State University in Manhattan and is home to students and military families who relocate regularly.",
+      "A 5x5 unit holds boxes and clothes, while a 5x10 fits furniture and dorm essentials. Our [student storage guide](/student-storage) covers summer storage.",
+    ],
+    families: [
+      "Families enjoy Heritage Park and easy access to Milford Lake for fishing and weekend outings.",
+      "Baby gear, outgrown toys, bikes and holiday decorations add up fast. A 10x10 or 10x15 unit keeps them organized, and [climate-controlled storage](/climate-controlled-storage) helps with longer-term items.",
+    ],
+  },
   wichita: {
     cost: "Wichita has one of the lower costs of living among large Midwest cities, with rents below the national average.",
     students: "Yes. Wichita State University and Friends University are in Wichita.",

@@ -321,12 +321,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .card-slider-dots { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; }
   .card-slider-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #c7d6e0; transition: background .2s, transform .2s; }
   .card-slider-dots button.is-active { background: var(--storage-blue); transform: scale(1.25); }
-  .show-more-toggle { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 12px 20px; border: 1px solid #d6e1ea; border-radius: 5px; background: #fff; color: var(--storage-blue); font-size: 14px; font-weight: 700; }
   .state-city-grid:not(.is-expanded) > a:nth-child(n+9) { display: none; }
   .state-faq-list:not(.is-expanded) > details:nth-child(n+6) { display: none; }
 }
 @media (min-width: 801px) {
-  .show-more-toggle, .card-slider-dots { display: none; }
+  .card-slider-dots { display: none; }
 }
 @media (max-width: 540px) {
   .storage-search-hero { min-height: 0; padding: 38px 18px 43px; }
@@ -5646,6 +5645,12 @@ footer {
 @media (max-width: 900px) { .storage-size-chart-layout { grid-template-columns: 1fr; } .storage-size-chart-visual { min-height: 240px; } }
 /* No divider lines between FAQ questions, site wide */
 .state-faq-list, .state-faq-list details, .storage-size-faq-list, .storage-size-faq details, .svc-drawer-faq-item { border: 0 !important; box-shadow: none !important; }
+/* Shared FAQ "See more" control — first five answers are visible until expanded */
+.show-more-wrap { width: 100%; }
+.show-more-wrap:not(.is-expanded) .show-more-list > :nth-child(n+6) { display: none; }
+.show-more-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; padding: 12px 20px; border: 1px solid #d6e1ea; border-radius: 5px; background: #fff; color: var(--storage-blue); font-size: 14px; font-weight: 700; cursor: pointer; }
+.show-more-toggle:hover { background: var(--storage-blue-pale); }
+.show-more-toggle span { font-size: 16px; line-height: 1; }
 .city-living-item ul { margin: 12px 0 0; padding-left: 20px; color: #526d81; font-size: 16px; line-height: 1.7; }
 .city-living-item li + li { margin-top: 6px; }
 

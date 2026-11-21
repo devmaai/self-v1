@@ -174,6 +174,12 @@ function nameFromSlug(slug: string) {
   return cityNameFromSlug(slug).replace(/^St /, "St. ");
 }
 
+// Cities with their own long copy supply all paragraphs; others get their
+// single fact plus the shared storage follow-up used across city pages.
+function factParagraphs(value: string | string[], shared: string): string[] {
+  return Array.isArray(value) ? value : [value, shared];
+}
+
 export function buildCityPageContent(args: {
   citySlug: string;
   city: string;
@@ -196,26 +202,17 @@ export function buildCityPageContent(args: {
     {
       heading: `How much does it cost to live in ${city}?`,
       layout: "card",
-      paragraphs: [
-        facts.cost,
-        "Smaller homes and apartments are one of the main reasons renters look for storage. A small unit costs far less per month than renting a bigger place just to fit your belongings. Storage units on this page start from {{from_price}} a month.",
-      ],
+      paragraphs: factParagraphs(facts.cost, "Smaller homes and apartments are one of the main reasons renters look for storage. A small unit costs far less per month than renting a bigger place just to fit your belongings. Storage units on this page start from {{from_price}} a month."),
     },
     {
       heading: `Is ${city} student friendly?`,
       layout: "card",
-      paragraphs: [
-        facts.students,
-        "Student storage is busiest at the end of each semester. A 5x5 or 5x10 unit holds most dorm rooms, and booking a few weeks before move-out week gives you more choice. See our [student storage guide](/student-storage) for tips on summer storage.",
-      ],
+      paragraphs: factParagraphs(facts.students, "Student storage is busiest at the end of each semester. A 5x5 or 5x10 unit holds most dorm rooms, and booking a few weeks before move-out week gives you more choice. See our [student storage guide](/student-storage) for tips on summer storage."),
     },
     {
       heading: `Is ${city} good for families with kids?`,
       layout: "card",
-      paragraphs: [
-        facts.families,
-        "Family homes collect baby gear, outgrown toys, holiday decorations and sports equipment. A 10x10 or 10x15 unit keeps these out of the garage until you need them again.",
-      ],
+      paragraphs: factParagraphs(facts.families, "Family homes collect baby gear, outgrown toys, holiday decorations and sports equipment. A 10x10 or 10x15 unit keeps these out of the garage until you need them again."),
     },
   ] : [];
 
