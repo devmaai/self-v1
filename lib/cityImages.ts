@@ -64,7 +64,7 @@ export const CITY_IMAGES: Record<string, string> = {
   "texarkana": "https://images.unsplash.com/photo-1633107554373-4e891decfece",
   "universal-city-tx": "https://images.unsplash.com/photo-1605649666555-e321522c3023",
   "plant-city": "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
-  "oklahoma-city": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
+  "oklahoma-city": "https://images.unsplash.com/photo-1785187300453-240b2404b2bb",
   "league-city": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
   "midwest-city": "https://images.unsplash.com/photo-1623346798675-1033071318bd",
   "junction-city": "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
