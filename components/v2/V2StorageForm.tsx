@@ -58,9 +58,11 @@ type V2StorageFormProps = {
   defaultCity?: string;
   /** Prefills the free-text location when a visitor came from a location search. */
   initialLocation?: string;
+  /** Called after a successful submission. */
+  onSuccess?: () => void;
 };
 
-export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf", defaultCity = "", initialLocation = "" }: V2StorageFormProps) {
+export default function V2StorageForm({ initialUnitSize = "", state, cities, compact = false, idPrefix = "sf", defaultCity = "", initialLocation = "", onSuccess }: V2StorageFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -111,6 +113,7 @@ export default function V2StorageForm({ initialUnitSize = "", state, cities, com
         setStatus("success");
         form.reset();
         resetCaptcha();
+        onSuccess?.();
         return;
       }
 
