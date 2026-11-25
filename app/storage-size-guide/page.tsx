@@ -6,6 +6,7 @@ import ScrollRowArrows from "@/components/ui/ScrollRowArrows";
 import StorageCalculatorCTA from "@/components/sections/StorageCalculatorCTA";
 import StorageCalculatorBanner from "@/components/sections/StorageCalculatorBanner";
 import StateZipSearch from "@/components/sections/StateZipSearch";
+import FaqList from "@/components/sections/FaqList";
 
 export const metadata: Metadata = {
   title: "Self Storage Size Guide | Find the Right Unit by What You Store",
@@ -255,7 +256,7 @@ export default function StorageSizeGuidePage() {
         <div className="storage-size-feature-copy"><span className="storage-size-guide-label">Student storage</span><h2 id="student-heading">What size storage unit do students need?</h2><p>Most students fit everything from a dorm room in a 5x5, which holds boxes, a mini fridge, a desk chair and bedding. If you share a unit with a roommate or are storing an apartment bed and desk, a 5x10 gives you the extra room.</p><p>Book early ahead of move out week, since units near campus fill quickly in May and December. Month to month terms let you keep your things close until classes start again.</p><div className="storage-reference-list"><strong>Student quick reference</strong>{studentReference.map((row) => <div key={row[0]}><span>{row[0]}</span><b>{row[1]}</b></div>)}</div><Link href="/student-storage" className="storage-feature-learn">Learn more <span aria-hidden="true">→</span></Link></div>
       </section>
       <StorageCalculatorBanner text="Not sure what size you need? Try our free size calculator." linkText="Try the free size calculator" />
-      <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><div className="storage-size-faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+      <section className="storage-size-faq" aria-labelledby="faq-heading"><div className="storage-size-guide-heading"><span className="storage-size-guide-label">Common questions</span><h2 id="faq-heading">Frequently asked storage size questions</h2></div><FaqList faqs={faqs} /></section>
 
       <StorageStateLinks />
 

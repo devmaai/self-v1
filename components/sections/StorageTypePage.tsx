@@ -3,6 +3,9 @@ import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
+import FaqList from "@/components/sections/FaqList";
+import RelatedPosts from "@/components/sections/RelatedPosts";
+import { RELATED_POSTS } from "@/lib/relatedPosts";
 import StorageZipBanner from "@/components/sections/StorageZipBanner";
 import StateZipSearch from "@/components/sections/StateZipSearch";
 import { getStorageSummary, isDriveUp } from "@/lib/climateStorage";
@@ -304,10 +307,10 @@ export default async function StorageTypePage({ c }: { c: StorageTypeConfig }) {
           <span className="storage-size-guide-label">Common questions</span>
           <h2 id={`${c.slug}-faq-heading`}>{c.faqHeading}</h2>
         </div>
-        <div className="storage-size-faq-list">
-          {c.faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}
-        </div>
+        <FaqList faqs={c.faqs} />
       </section>
+
+      <RelatedPosts id={c.slug} slugs={RELATED_POSTS[c.slug] ?? []} intro={`Practical reads on ${c.name.toLowerCase()} costs, options and what to check before you rent.`} />
 
       <StorageTypeLinks current={`/${c.slug}`} />
       <StorageLocationSearch id={searchId} heading={c.searchHeading} subtext={c.searchText} />

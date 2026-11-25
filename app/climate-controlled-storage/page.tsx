@@ -3,6 +3,9 @@ import Link from "next/link";
 import StorageLocationSearch from "@/components/sections/StorageLocationSearch";
 import StorageStateLinks from "@/components/sections/StorageStateLinks";
 import StorageTypeLinks from "@/components/sections/StorageTypeLinks";
+import FaqList from "@/components/sections/FaqList";
+import RelatedPosts from "@/components/sections/RelatedPosts";
+import { RELATED_POSTS } from "@/lib/relatedPosts";
 import ClimateCityScroller from "@/components/sections/ClimateCityScroller";
 import StorageZipBanner from "@/components/sections/StorageZipBanner";
 import StateZipSearch from "@/components/sections/StateZipSearch";
@@ -269,10 +272,10 @@ export default async function ClimateControlledStoragePage() {
           <span className="storage-size-guide-label">Common questions</span>
           <h2 id="climate-faq-heading">Climate controlled storage FAQs</h2>
         </div>
-        <div className="storage-size-faq-list">
-          {faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}
-        </div>
+        <FaqList faqs={faqs} />
       </section>
+
+      <RelatedPosts id="climate-controlled-storage" slugs={RELATED_POSTS["climate-controlled-storage"]} intro="Practical reads on climate controlled storage costs, options and what to check before you rent." />
 
       <StorageTypeLinks current="/climate-controlled-storage" />
       <StorageLocationSearch

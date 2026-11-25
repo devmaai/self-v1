@@ -5249,6 +5249,15 @@ footer {
 .storage-type-link-card em { margin-top: auto; color: var(--rust); font-style: normal; font-size: 14px; font-weight: 700; }
 @media (max-width: 600px) { .storage-type-links { width: calc(100% - 36px); padding: 34px 0 28px; } }
 
+.storage-size-faq-more { margin-top: 28px; text-align: center; }
+.storage-size-faq-more .climate-button { border: 0; cursor: pointer; font-family: inherit; }
+.storage-size-faq details[hidden] { display: none; }
+
+/* Follow the page's alternating section pattern: FAQ (#f7fafc) > related guides (#eaf3f8) > storage types (#f7fafc) > search banner (dark) */
+.storage-size-guide-page > .related-posts { width: auto; margin: 0; padding: 53px max(24px, calc((100% - 1160px) / 2)); border-top: 0; background: #eaf3f8; }
+.storage-size-guide-page > .storage-type-links { width: auto; margin: 0; padding: 53px max(24px, calc((100% - 1160px) / 2)); background: #f7fafc; }
+@media (max-width: 600px) { .storage-size-guide-page > .related-posts, .storage-size-guide-page > .storage-type-links { padding: 40px 18px; } }
+
 /* Storage size finder � ported calculator tool */
 .size-finder {
   --sf-tool-bg: #f0f7fd;

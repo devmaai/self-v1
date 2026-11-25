@@ -84,6 +84,14 @@ export function getAllPosts(): PostMeta[] {
     .map(({ body: _body, ...meta }) => meta);
 }
 
+/** Published posts for the given slugs, in the order requested. Missing or unpublished slugs are skipped. */
+export function getPostsBySlugs(slugs: string[]): PostMeta[] {
+  return slugs
+    .map((slug) => getPost(slug))
+    .filter((p): p is Post => p !== null)
+    .map(({ body: _body, ...meta }) => meta);
+}
+
 /** Slugs for generateStaticParams and the sitemap. Only published posts. */
 export function getAllPostSlugs(): string[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
