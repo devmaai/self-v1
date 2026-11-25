@@ -31,6 +31,14 @@ export default function ListYourFacilityPage() {
             ],
           },
           {
+            heading: "What your listing includes",
+            items: [
+              "A profile on the matching city page with your unit sizes, prices and contact details",
+              "A backlink to your facility website",
+              "A featured spotlight so renters see your facility first",
+            ],
+          },
+          {
             heading: "What happens next",
             steps: [
               "Send your facility details using the form.",

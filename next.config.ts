@@ -33,6 +33,8 @@ const nextConfig: NextConfig = {
       // Keep the previous sitemap URL working while Search Console switches
       // to the standard metadata route.
       { source: "/sitemap/sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // Backlink requests are now part of the facility listing page.
+      { source: "/request-backlink", destination: "/list-your-facility", permanent: true },
       // Retired blog posts: duplicate and off-topic content.
       { source: "/blog/can-you-live-in-a-storage-unit-is-it-legal", destination: "/blog/can-you-live-in-a-storage-unit", permanent: true },
       { source: "/blog/removal-costs-calculator-uk-pickfords-global-network", destination: "/blog", permanent: true },

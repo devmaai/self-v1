@@ -22,7 +22,6 @@ const FIND_STORAGE_LINKS = [
 
 const OWNER_LINKS = [
   { href: "/agency", label: "Local SEO & AEO overview", lead: true },
-  { href: "/request-backlink", label: "Get a backlink" },
   { href: "/list-your-facility", label: "List your facility" },
   { href: "/audit", label: "Request a free GEO & AEO audit" },
 ];
