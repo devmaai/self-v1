@@ -1036,7 +1036,7 @@
 .v2-home .pricing-cta-row { display: flex; justify-content: center; margin-top: 40px; }
 .v2-home .backlink-cta { background: var(--slate-900); padding: 56px 48px; text-align: center; }
 .v2-home .backlink-cta .inner { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: center; }
-.v2-home .backlink-h2 { margin: 0; font-family: var(--font-display); font-size: clamp(24px, 3vw, 34px); font-weight: 600; color: #fff; }
+.v2-home .backlink-h2 { margin: 0; font-family: var(--serif); font-size: clamp(24px, 3vw, 34px); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: #fff; }
 .v2-home .btn-backlink { background: var(--rust); color: #fff; font-weight: 700; font-size: 16px; padding: 16px 28px; border-radius: 8px; white-space: nowrap; }
 .v2-home .btn-backlink:hover { background: var(--rust-deep); }
 @media (max-width: 640px) { .v2-home .backlink-cta { padding: 44px 20px; } }
@@ -1399,3 +1399,146 @@
 .v2-home .nav-form-panel .af-field input[type="date"],
 .v2-home .mobile-menu-form .af-field select,
 .v2-home .mobile-menu-form .af-field input[type="date"] { color-scheme: light; }
+
+/* Service icons use currentColor so each page can theme them (home keeps the sky accent) */
+.v2-home .svc-icon, .v2-home .svc-drawer-head-icon { color: var(--accent); }
+
+/* ==========================================================================
+   Agency page: component refinements only.
+   No palette, background or font changes; the existing theme is untouched.
+   ========================================================================== */
+.v2-home.agency-brand a:focus-visible,
+.v2-home.agency-brand button:focus-visible,
+.v2-home.agency-brand .faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Readability: body copy was light-weight and small */
+.v2-home.agency-brand .section-lead { font-size: 17px; font-weight: 400; line-height: 1.65; }
+.v2-home.agency-brand .problem-card-desc,
+.v2-home.agency-brand .svc-desc,
+.v2-home.agency-brand .svc-drawer-lead,
+.v2-home.agency-brand .svc-drawer-step-desc,
+.v2-home.agency-brand .svc-drawer-faq-a { font-weight: 400; }
+.v2-home.agency-brand .problem-card-desc { font-size: 15px; }
+.v2-home.agency-brand .problem-card-title { font-size: 17px; }
+.v2-home.agency-brand .pc-feat { font-size: 14.5px; }
+.v2-home.agency-brand .pc-for { font-size: 13px; }
+
+/* Calmer interactions: no lift, scale or glow on buttons and cards */
+.v2-home.agency-brand .svc-card:hover { transform: none; box-shadow: none; }
+.v2-home.agency-brand .agg-card:hover { transform: none; box-shadow: none; }
+
+/* Services ticker: scrolling banner directly under the header */
+.v2-home.agency-brand .marquee { padding: 14px 0; border-top: 0; }
+.v2-home.agency-brand .marquee-track { animation: v2scroll 40s linear infinite; }
+.v2-home.agency-brand .marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .v2-home.agency-brand .marquee-track { animation: none !important; } }
+
+/* Problem items: ruled rows with clear hierarchy */
+.v2-home.agency-brand .problem-right { gap: 12px; }
+.v2-home.agency-brand .problem-card { background: var(--off-white); border: 0; padding: 24px 26px; }
+.v2-home.agency-brand .problem-card:hover { box-shadow: none; }
+
+/* Cost panel */
+.v2-home.agency-brand .cost-sub,
+.v2-home.agency-brand .cost-val small { color: rgba(255,255,255,0.72); }
+.v2-home.agency-brand .cost-track { height: 8px; }
+
+/* Proof cards: quieter surfaces, readable labels */
+.v2-home.agency-brand .proof-data-card,
+.v2-home.agency-brand .vi-card { border: 0; box-shadow: 0 2px 14px rgba(15,23,42,0.07); }
+.v2-home.agency-brand .pkpi-label,
+.v2-home.agency-brand .pos-label,
+.v2-home.agency-brand .jc-label,
+.v2-home.agency-brand .vi-title,
+.v2-home.agency-brand .pkpi-delta.flat,
+.v2-home.agency-brand .jc-month,
+.v2-home.agency-brand .pdc-source { color: var(--slate-500); }
+.v2-home.agency-brand .vi-axis { fill: var(--slate-500); font-size: 10px; }
+.v2-home.agency-brand .pac-feat { font-size: 14px; color: rgba(255,255,255,0.78); }
+.v2-home.agency-brand .pac-text { font-size: 17px; }
+
+/* Pricing: equal-height cards with buttons pinned to the bottom */
+.v2-home.agency-brand .pricing-grid { align-items: stretch; }
+.v2-home.agency-brand .pricing-card { display: flex; flex-direction: column; box-shadow: none; }
+.v2-home.agency-brand .pc-features { flex: 1; gap: 12px; }
+
+/* FAQ: ruled accordion with larger type */
+.v2-home.agency-brand .faq-list { gap: 10px; }
+.v2-home.agency-brand .faq-item { background: var(--white); border-radius: 10px; padding: 0 22px; }
+.v2-home.agency-brand .faq-q { font-size: 17px; padding: 20px 0; }
+.v2-home.agency-brand .faq-a { font-size: 15.5px; font-weight: 400; line-height: 1.7; max-width: 680px; }
+.v2-home.agency-brand .faq-item.open .faq-a { max-height: 360px; padding-bottom: 22px; }
+.v2-home.agency-brand .fac-text { color: rgba(255,255,255,0.78); }
+
+/* Closing CTA */
+.v2-home.agency-brand .fr-item { font-size: 14px; color: rgba(255,255,255,0.82); }
+
+@media (max-width: 640px) {
+  .v2-home.agency-brand .faq-q { font-size: 16px; }
+  .v2-home.agency-brand .problem-layout-agency .problem-card-desc { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-home.agency-brand *, .v2-home.agency-brand *::before, .v2-home.agency-brand *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* No divider lines or outlines on the agency page; separation comes from spacing and surface tone */
+.v2-home.agency-brand .pdc-header,
+.v2-home.agency-brand .pdc-kpi-row,
+.v2-home.agency-brand .pkpi,
+.v2-home.agency-brand .journey-chart,
+.v2-home.agency-brand .pdc-source,
+.v2-home.agency-brand .pricing-card,
+.v2-home.agency-brand .pricing-card.featured,
+.v2-home.agency-brand .pc-head,
+.v2-home.agency-brand .svc-card,
+.v2-home.agency-brand .svc-tag,
+.v2-home.agency-brand .svc-drawer-head,
+.v2-home.agency-brand .svc-drawer-foot,
+.v2-home.agency-brand .svc-drawer-step,
+.v2-home.agency-brand .svc-drawer-faq-item,
+.v2-home.agency-brand .svc-drawer-close,
+.v2-home.agency-brand .cost-organic,
+.v2-home.agency-brand .btn-final-ghost { border: 0; }
+.v2-home.agency-brand .pricing-card { background: var(--off-white); }
+.v2-home.agency-brand .pricing-card.featured { background: var(--white); box-shadow: 0 8px 28px rgba(15,23,42,0.12); }
+.v2-home.agency-brand .pc-btn { border: 0; background: var(--slate-100); }
+.v2-home.agency-brand .pc-btn:hover { background: var(--slate-200); }
+.v2-home.agency-brand .pc-btn.primary { background: var(--accent); }
+.v2-home.agency-brand .svc-card { box-shadow: 0 1px 10px rgba(15,23,42,0.06); }
+.v2-home.agency-brand .svc-card:hover { box-shadow: 0 4px 18px rgba(15,23,42,0.1); }
+.v2-home.agency-brand .faq-toggle { border: 0; background: var(--slate-100); }
+.v2-home.agency-brand .faq-item.open .faq-toggle { background: var(--accent); }
+.v2-home.agency-brand .pill, .v2-home.agency-brand .pill::before { border: 0; }
+.v2-home.agency-brand .v2-nav,
+.v2-home.agency-brand .footer-bottom,
+.v2-home.agency-brand .v2-footer * { border-top: 0; border-bottom: 0; }
+.v2-home.agency-brand .v2-nav { box-shadow: 0 1px 12px rgba(15,23,42,0.06); }
+
+/* Services: large photo cards */
+.v2-home .services-grid.services-grid-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.v2-home .svc-card.svc-card-photo {
+  position: relative; overflow: hidden; min-height: 280px; padding: 0; border: 0; border-radius: 12px;
+  background-color: var(--slate-800); background-size: cover; background-position: center;
+  display: flex; align-items: flex-end; justify-content: flex-start; text-align: left; box-shadow: none;
+}
+.v2-home .svc-card-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,18,32,0.92) 0%, rgba(12,18,32,0.55) 45%, rgba(12,18,32,0.18) 100%); transition: background .25s ease; }
+.v2-home .svc-card-photo:hover .svc-card-shade { background: linear-gradient(to top, rgba(12,18,32,0.96) 0%, rgba(12,18,32,0.68) 55%, rgba(12,18,32,0.3) 100%); }
+.v2-home .svc-card-content { position: relative; display: flex; flex-direction: column; gap: 10px; width: 100%; padding: 26px; }
+.v2-home .svc-card-photo .svc-title { margin: 0; font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.2; color: #fff; }
+.v2-home .svc-card-photo .svc-link { color: #fff; font-size: 14px; font-weight: 600; opacity: .9; }
+.v2-home .svc-card-photo:hover { transform: none; box-shadow: none; }
+.v2-home .svc-card-photo:hover .svc-link { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.v2-home.agency-brand .svc-card.svc-card-photo { border: 0; box-shadow: none; }
+@media (max-width: 1000px) { .v2-home .services-grid.services-grid-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .v2-home .services-grid.services-grid-compact { grid-template-columns: 1fr; } .v2-home .svc-card.svc-card-photo { min-height: 220px; } .v2-home .svc-card-photo .svc-title { font-size: 21px; } }
+.v2-home .svc-card.svc-card-photo { min-height: 340px; background-color: #0c1424; background-size: 100% auto; background-position: center top; background-repeat: no-repeat; }
+.v2-home .svc-card-shade { background: linear-gradient(to top, #0c1424 0%, rgba(12,20,36,0.85) 28%, rgba(12,20,36,0) 62%); }
+.v2-home .svc-card-photo:hover .svc-card-shade { background: linear-gradient(to top, #0c1424 0%, rgba(12,20,36,0.92) 32%, rgba(12,20,36,0.1) 66%); }
+@media (max-width: 640px) { .v2-home .svc-card.svc-card-photo { min-height: 300px; } }
+
+/* Services photo cards: full-bleed photo with a bottom shade for the title */
+.v2-home .svc-card.svc-card-photo { background-size: cover; background-position: center; min-height: 300px; }
+.v2-home .svc-card-shade { background: linear-gradient(to top, rgba(12,18,32,0.92) 0%, rgba(12,18,32,0.55) 45%, rgba(12,18,32,0.12) 100%); }
+.v2-home .svc-card-photo:hover .svc-card-shade { background: linear-gradient(to top, rgba(12,18,32,0.96) 0%, rgba(12,18,32,0.68) 55%, rgba(12,18,32,0.25) 100%); }
+@media (max-width: 640px) { .v2-home .svc-card.svc-card-photo { min-height: 240px; } }
+.v2-home .svc-card.svc-card-photo { flex-direction: column; justify-content: flex-end; align-items: stretch; }
