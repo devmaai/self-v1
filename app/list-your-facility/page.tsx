@@ -31,7 +31,7 @@ export default function ListYourFacilityPage() {
             ],
           },
           {
-            heading: "What your listing includes",
+            heading: "What your listing includes for $21 a month",
             items: [
               "A profile on the matching city page with your unit sizes, prices and contact details",
               "A backlink to your facility website",
@@ -52,7 +52,7 @@ export default function ListYourFacilityPage() {
           },
         ]}
         form={<V2RequestForm kind="listing" />}
-        reassurance={["Free to request", "Reply within 2 business days", "Update your details anytime"]}
+        reassurance={["$21 per month", "Reply within 2 business days", "Update your details anytime"]}
       />
 
       <V2Footer />
