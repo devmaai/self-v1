@@ -83,11 +83,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "@type": "Organization",
                   "@id": "https://www.selfstorage.help/#organization",
                   name: "SelfStorage.help",
+                  alternateName: ["Self Storage Help", "selfstorage.help"],
                   url: "https://www.selfstorage.help",
+                  description:
+                    "SelfStorage.help is a US self storage comparison site where renters compare storage units, sizes and prices by city, and storage operators list their facilities.",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.selfstorage.help/favicon.ico",
+                    url: "https://www.selfstorage.help/images/logo.png",
                   },
+                  areaServed: { "@type": "Country", name: "United States" },
+                  founder: {
+                    "@type": "Person",
+                    name: "Kriti Kumari",
+                    sameAs: ["https://www.linkedin.com/in/kritikumarii/"],
+                  },
+                  parentOrganization: { "@type": "Organization", name: "MAAI LLC", url: "https://maai.agency" },
                   sameAs: [],
                 },
                 {
