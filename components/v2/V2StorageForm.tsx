@@ -27,7 +27,6 @@ const UNIT_SIZES = [
 ];
 
 const PRICE_RANGES = [
-  "Under $50/mo",
   "$50 – $100/mo",
   "$100 – $150/mo",
   "$150 – $200/mo",
