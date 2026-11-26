@@ -1,23 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import V2StorageForm from "@/components/v2/V2StorageForm";
 
 const SHOW_DELAY_MS = 10_000;
 const DISMISS_KEY = "storage-form-popup-dismissed";
+const EXCLUDED_PATHS = ["/agency", "/list-your-facility", "/audit"];
 
 export default function V2StorageFormPopup() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const isExcluded = EXCLUDED_PATHS.includes(pathname.replace(/\/+$/, "") || "/");
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || isExcluded) return;
     if (typeof window === "undefined") return;
     if (window.sessionStorage.getItem(DISMISS_KEY) === "1") return;
 
@@ -26,7 +30,11 @@ export default function V2StorageFormPopup() {
     }, SHOW_DELAY_MS);
 
     return () => window.clearTimeout(timer);
-  }, [mounted]);
+  }, [mounted, isExcluded]);
+
+  useEffect(() => {
+    if (isExcluded) setOpen(false);
+  }, [isExcluded]);
 
   useEffect(() => {
     if (!open) return;
@@ -53,7 +61,7 @@ export default function V2StorageFormPopup() {
     }
   };
 
-  if (!mounted || !open) return null;
+  if (!mounted || !open || isExcluded) return null;
 
   return createPortal(
     <div className="v2-home">
