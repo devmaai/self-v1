@@ -136,7 +136,7 @@ export default function V2AuditForm() {
           <input id="af-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
         </div>
 
-        {SITE_KEY && <div className="cf-turnstile af-turnstile" data-sitekey={SITE_KEY} data-theme="dark" />}
+        {SITE_KEY && <div className="cf-turnstile af-turnstile" data-sitekey={SITE_KEY} data-theme="light" />}
 
         {formError && <p className="af-form-error">{formError}</p>}
 

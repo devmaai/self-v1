@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 export default function AuditPage() {
   return (
-    <div className="v2-home">
+    <div className="v2-home agency-brand">
       <V2Interactions />
       <V2Nav variant="home" />
 
       <V2LeadPage
-        title={<>Request a free GEO &amp; AEO audit of your storage business.</>}
+        title={<>Request a <em>free</em> GEO &amp; AEO audit of your storage business.</>}
         lead="Find out how your facility shows up when renters search on Google Maps, in local results and in AI answers such as ChatGPT, Perplexity and Google AI Overviews."
         sections={[
           {
@@ -45,6 +45,11 @@ export default function AuditPage() {
             body: <p>Independent storage owners and multi-location operators in the US who want more move-ins from search. You keep the report whether you work with us or not.</p>,
           },
         ]}
+        variant="light"
+        markers="arrow"
+        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80"
+        formTitle="Request your free audit"
+        formSub="Tell us about your facility. We reply within two business days."
         form={<V2AuditForm />}
         reassurance={["Free, no obligation", "Written report in 5 business days", "No sales call required"]}
       />

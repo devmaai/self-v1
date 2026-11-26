@@ -126,17 +126,15 @@ export default function V2ServicesDrawer() {
         <aside className="svc-drawer" role="dialog" aria-modal="true" aria-label={active ? active.title : undefined}>
           {active && (
             <>
-              <div className="svc-drawer-head">
-                <div className="svc-drawer-head-main">
-                  <div className="svc-drawer-head-icon">{active.icon}</div>
-                  <div>
-                    <div className="svc-drawer-pill">{active.content.approach.pill}</div>
-                    <h3 className="svc-drawer-title">{active.title}</h3>
-                  </div>
-                </div>
+              <div className="svc-drawer-head" style={{ backgroundImage: `url("${active.image}")` }}>
+                <span className="svc-drawer-head-shade" aria-hidden="true" />
                 <button type="button" className="svc-drawer-close" onClick={close} aria-label="Close">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
                 </button>
+                <div className="svc-drawer-head-main">
+                  <div className="svc-drawer-pill">{active.content.approach.pill}</div>
+                  <h3 className="svc-drawer-title">{active.title}</h3>
+                </div>
               </div>
 
               <div className="svc-drawer-body">
@@ -144,14 +142,17 @@ export default function V2ServicesDrawer() {
 
                 <div className="svc-drawer-section-label">What we actually do</div>
                 <div className="svc-drawer-steps">
-                  {active.content.approach.steps.map((step) => (
+                  {active.content.approach.steps.map((step, n) => (
                     <div key={step.phase} className="svc-drawer-step">
-                      <div className="svc-drawer-step-phase">{step.phase}</div>
-                      <div className="svc-drawer-step-title">{step.title}</div>
-                      <div className="svc-drawer-step-desc">{step.desc}</div>
-                      {step.tags && step.tags.length > 0 && (
-                        <div className="svc-tags">{step.tags.map((t) => <span key={t} className="svc-tag">{t}</span>)}</div>
-                      )}
+                      <span className="svc-drawer-step-num" aria-hidden="true">{n + 1}</span>
+                      <div className="svc-drawer-step-main">
+                        <div className="svc-drawer-step-phase">{step.phase}</div>
+                        <div className="svc-drawer-step-title">{step.title}</div>
+                        <div className="svc-drawer-step-desc">{step.desc}</div>
+                        {step.tags && step.tags.length > 0 && (
+                          <div className="svc-tags">{step.tags.map((t) => <span key={t} className="svc-tag">{t}</span>)}</div>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>

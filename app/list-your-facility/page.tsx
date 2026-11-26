@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ListYourFacilityPage() {
   return (
-    <div className="v2-home">
+    <div className="v2-home agency-brand">
       <V2Interactions />
       <V2Nav variant="home" />
 
@@ -51,6 +51,11 @@ export default function ListYourFacilityPage() {
             body: <p>If you also want to rank higher on Google Maps and in AI answers, <a href="/audit">request a free GEO &amp; AEO audit</a> of your storage business.</p>,
           },
         ]}
+        variant="light"
+        markers="arrow"
+        image="https://images.unsplash.com/photo-1649313444539-a8900c5cdc54?auto=format&fit=crop&w=1800&q=80"
+        formTitle="Add your facility"
+        formSub="Send your details and we set up your listing."
         form={<V2RequestForm kind="listing" />}
         reassurance={["$21 per month", "Reply within 2 business days", "Update your details anytime"]}
       />
