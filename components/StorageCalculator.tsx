@@ -16,6 +16,7 @@ import {
   type FinderUnit,
 } from "@/lib/storageSizeFinder";
 import V2StorageForm from "@/components/v2/V2StorageForm";
+import SizeLocationSearch from "@/components/sections/SizeLocationSearch";
 
 const ICON_PATHS: Record<FinderIconName, ReactNode> = {
   sofa: <><path d="M4 12V8a3 3 0 013-3h10a3 3 0 013 3v4M2 14a2 2 0 012-2h1a2 2 0 012 2v1h10v-1a2 2 0 012-2h1a2 2 0 012 2v5H2v-5zM6 20v2m12-2v2" /></>,
@@ -578,6 +579,7 @@ export default function StorageCalculator() {
                     <button type="button" className="btn btn-coral" onClick={() => setFormOpen(true)}>Get storage options</button>
                     {/* <button type="button" className="btn btn-ghost" onClick={() => setModalOpen(false)}>Keep editing</button> */}
                   </div>
+                  <SizeLocationSearch sqFt={recommendation.sq} label={recommendation.label} />
                 </>
               )}
             </div>

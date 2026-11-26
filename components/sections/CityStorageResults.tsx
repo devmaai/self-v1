@@ -42,6 +42,23 @@ const SIZE_FILTERS = [
   { key: "large", label: "Large (10x20 and up)" },
 ];
 
+const PRICE_FILTERS = [
+  { key: "all", label: "Any price", min: 0, max: Infinity },
+  { key: "under-50", label: "Under $50/mo", min: 0, max: 50 },
+  { key: "50-100", label: "$50 to $100/mo", min: 50, max: 100 },
+  { key: "100-150", label: "$100 to $150/mo", min: 100, max: 150 },
+  { key: "150-250", label: "$150 to $250/mo", min: 150, max: 250 },
+  { key: "250-plus", label: "$250/mo and up", min: 250, max: Infinity },
+];
+
+function matchesPrice(price: string, filter: string) {
+  if (filter === "all") return true;
+  const range = PRICE_FILTERS.find((item) => item.key === filter);
+  if (!range) return true;
+  const value = priceValue(price);
+  return Number.isFinite(value) && value >= range.min && (range.max === Infinity ? true : value < range.max);
+}
+
 function squareFeet(size: string) {
   const [width, length] = (size.match(/\d+(\.\d+)?/g) ?? []).map(Number);
   return width && length ? width * length : 0;
@@ -116,6 +133,13 @@ export default function CityStorageResults({ city, facilities }: { city: string;
   const [sort, setSort] = useState<SortOption>("recommended");
   const [features, setFeatures] = useState<string[]>([]);
   const [sizeFilter, setSizeFilter] = useState("all");
+  const [priceFilter, setPriceFilter] = useState("all");
+
+  // Arrive pre-filtered when coming from the size calculator (?size=small|medium|large).
+  useEffect(() => {
+    const size = new URLSearchParams(window.location.search).get("size");
+    if (size && SIZE_FILTERS.some((f) => f.key === size)) setSizeFilter(size);
+  }, []);
   const [page, setPage] = useState(1);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -125,9 +149,9 @@ export default function CityStorageResults({ city, facilities }: { city: string;
     .map((facility) => ({
       ...facility,
       units: facility.units.filter((unit) =>
-        matchesSize(unit.size, sizeFilter) && features.every((feature) => unit.features?.includes(feature))),
+        matchesSize(unit.size, sizeFilter) && matchesPrice(unit.price, priceFilter) && features.every((feature) => unit.features?.includes(feature))),
     }))
-    .filter((facility) => facility.units.length > 0), [facilities, features, sizeFilter]);
+    .filter((facility) => facility.units.length > 0), [facilities, features, sizeFilter, priceFilter]);
 
   const sortedFacilities = useMemo(() => {
     const sorted = [...filteredFacilities];
@@ -158,9 +182,15 @@ export default function CityStorageResults({ city, facilities }: { city: string;
     setPage(1);
   }
 
+  function changePrice(value: string) {
+    setPriceFilter(value);
+    setPage(1);
+  }
+
   function clearFilters() {
     setFeatures([]);
     setSizeFilter("all");
+    setPriceFilter("all");
     setPage(1);
   }
 
@@ -170,7 +200,7 @@ export default function CityStorageResults({ city, facilities }: { city: string;
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: 0 });
-  }, [currentPage, sort, features, sizeFilter]);
+  }, [currentPage, sort, features, sizeFilter, priceFilter]);
 
   function changeSort(value: SortOption) {
     setSort(value);
@@ -185,6 +215,15 @@ export default function CityStorageResults({ city, facilities }: { city: string;
           <h2 id="city-results-heading">Storage units near you</h2>
           <p>Showing {visibleFacilities.length} of {sortedFacilities.length} facilities{sortedFacilities.length !== facilities.length ? ` (filtered from ${facilities.length})` : ""}. Prices and availability can change, so confirm details before reserving.</p>
         </div>
+        <a className="city-size-calc-cta" href="/storage-unit-size-calculator">
+          <span className="city-size-calc-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01" /></svg>
+          </span>
+          <span className="city-size-calc-text">
+            <strong>Not sure of your size?</strong>
+            <span>Use the free size calculator <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
       </div>
 
       <div className="city-storage-toolbar">
@@ -202,7 +241,7 @@ export default function CityStorageResults({ city, facilities }: { city: string;
               {filter.label}
             </button>
           ))}
-          {(features.length > 0 || sizeFilter !== "all") && (
+          {(features.length > 0 || sizeFilter !== "all" || priceFilter !== "all") && (
             <button type="button" className="city-filter-clear" onClick={clearFilters}>Clear all</button>
           )}
         </div>
@@ -210,6 +249,11 @@ export default function CityStorageResults({ city, facilities }: { city: string;
           <label className="city-storage-sort">Unit size
             <select value={sizeFilter} onChange={(event) => changeSize(event.target.value)}>
               {SIZE_FILTERS.map((filter) => <option key={filter.key} value={filter.key}>{filter.label}</option>)}
+            </select>
+          </label>
+          <label className="city-storage-sort">Price range
+            <select value={priceFilter} onChange={(event) => changePrice(event.target.value)}>
+              {PRICE_FILTERS.map((filter) => <option key={filter.key} value={filter.key}>{filter.label}</option>)}
             </select>
           </label>
           <label className="city-storage-sort">Sort by

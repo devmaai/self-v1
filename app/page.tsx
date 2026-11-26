@@ -83,6 +83,8 @@ export default async function HomePage({
       <main className="storage-search-page">
         <CityExplorer initialLocation={location ?? ""} />
 
+        <StorageCalculatorBanner text="Not sure what size you need? Our free storage size calculator tells you in a minute." linkText="Try the size calculator" />
+
         <section className="storage-types" aria-labelledby="storage-types-heading">
           <div className="storage-guide-heading">
             <span className="storage-search-label">Find the right fit</span>

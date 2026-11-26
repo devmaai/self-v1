@@ -95,7 +95,13 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
         <Link href="/" className="nav-brand">SelfStorage<span>.help</span></Link>
         <ul className="nav-links nav-quick-links">
           {dropdown("storage", "Find Storage", FIND_STORAGE_LINKS, isStorageSide, "/")}
-          <li><Link href="/storage-unit-size-calculator">Size Calculator</Link></li>
+          <li className="nav-calc">
+            <Link href="/storage-unit-size-calculator">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01" /></svg>
+              Size Calculator
+              <span className="nav-calc-tag">Free</span>
+            </Link>
+          </li>
           <li><Link href="/blog">Blogs</Link></li>
           {dropdown("owners", "For Storage Owners", OWNER_LINKS, !isStorageSide)}
         </ul>
@@ -134,7 +140,7 @@ export default function V2Nav({ variant = "home", initialUnitSize = "" }: V2NavP
               </ul>
             </details>
           </li>
-          <li><Link href="/storage-unit-size-calculator" data-mobile-close>Size Calculator</Link></li>
+          <li className="mobile-calc"><Link href="/storage-unit-size-calculator" data-mobile-close>Size Calculator <span className="nav-calc-tag">Free</span></Link></li>
           <li><Link href="/blog" data-mobile-close>Blogs</Link></li>
           <li>
             <details className="mobile-services">

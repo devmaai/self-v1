@@ -74,6 +74,38 @@ const markdownComponents: Components = {
   },
 };
 
+/** Splits markdown before the nth "## " heading so a card can sit between the two halves. */
+function splitBeforeHeading(md: string, n: number): [string, string] | null {
+  const lines = md.split(/\r?\n/);
+  let seen = 0;
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].trim().startsWith("```")) inFence = !inFence;
+    if (!inFence && /^##\s/.test(lines[i])) {
+      seen++;
+      if (seen === n) return [lines.slice(0, i).join("\n"), lines.slice(i).join("\n")];
+    }
+  }
+  return null;
+}
+
+function CalcInlineCard({ title }: { title: string }) {
+  const sized = title.match(/(\d+)\s*x\s*(\d+)/i);
+  const heading = sized ? `Is a ${sized[1]}x${sized[2]} the right size for you?` : "Not sure how much space you need?";
+  return (
+    <aside className="blog-calc-inline" aria-label="Storage size calculator">
+      <span className="blog-calc-inline-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="3" width="14" height="18" rx="2" /><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01" /></svg>
+      </span>
+      <div className="blog-calc-inline-copy">
+        <strong>{heading}</strong>
+        <span>Add your rooms and items and get a size recommendation in about a minute. Free, no sign-up.</span>
+      </div>
+      <Link className="blog-calc-inline-btn" href="/storage-unit-size-calculator">Try the size calculator <span aria-hidden="true">→</span></Link>
+    </aside>
+  );
+}
+
 function getInitials(name: string): string {
   return name
     .split(/\s+/)
@@ -130,6 +162,28 @@ export default async function BlogPostPage({
       }
     : null;
 
+  // Renter-facing posts get a calculator card before the third section heading
+  // (or at the end when the post has fewer sections).
+  const showCalc = post.category !== "seo";
+  const renderWithCalc = (md: string) => {
+    const chunks = showCalc ? splitBeforeHeading(md, 3) : null;
+    if (!chunks) {
+      return (
+        <>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{md}</ReactMarkdown>
+          {showCalc && !faqSplit && <CalcInlineCard title={post.title} />}
+        </>
+      );
+    }
+    return (
+      <>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{chunks[0]}</ReactMarkdown>
+        <CalcInlineCard title={post.title} />
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{chunks[1]}</ReactMarkdown>
+      </>
+    );
+  };
+
   return (
     <div className="v2-home">
       <V2Interactions />
@@ -169,7 +223,7 @@ export default async function BlogPostPage({
             <div className="blog-prose blog-article-prose">
               {faqSplit ? (
                 <>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{faqSplit.before}</ReactMarkdown>
+                  {renderWithCalc(faqSplit.before)}
                   <h2>{faqSplit.heading}</h2>
                   <ul className="blog-faq-list">
                     {faqs.map((faq) => (
@@ -184,7 +238,7 @@ export default async function BlogPostPage({
                   )}
                 </>
               ) : (
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{post.body}</ReactMarkdown>
+                renderWithCalc(post.body)
               )}
             </div>
 

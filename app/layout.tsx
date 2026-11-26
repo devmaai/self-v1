@@ -7,6 +7,7 @@ import "./v2.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import V2StorageFormPopup from "@/components/v2/V2StorageFormPopup";
+import CalculatorFab from "@/components/ui/CalculatorFab";
 
 const GTM_ID = "GTM-5FKV5V5C";
 
@@ -123,6 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main>{children}</main>
         <Footer />
         <V2StorageFormPopup />
+        <CalculatorFab />
       </body>
     </html>
   );
