@@ -3,7 +3,7 @@ import V2ServicesDrawer from "@/components/v2/V2ServicesDrawer";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 
-// Real Visibility Index data — daily readings (08.05 → 02.06)
+// Real Visibility Index data, daily readings (08.05 → 02.06)
 const VISIBILITY_INDEX = [
   { d: "08.05", v: 12 },
   { d: "09.05", v: 68 },
@@ -48,12 +48,12 @@ export default function HomePage() {
   const viLast = VISIBILITY_INDEX[VISIBILITY_INDEX.length - 1].v;
 
   const faqItems: Array<{ q: string; a: string; open?: boolean }> = [
-    { q: "How long before I see results from SEO?", a: "Most clients see ranking movement within the first 30 days as we fix technical issues and complete the GBP optimisation. Meaningful traffic and lead increases typically appear between months two and four. Move-in volume tied directly to organic search becomes measurable by month five or six. The exact timeline depends on your starting position and how competitive your local market is.", open: true },
+    { q: "How long before I see results from SEO?", a: "Most clients see ranking movement within the first 30 days as we fix technical issues and complete the GBP optimization. Meaningful traffic and lead increases typically appear between months two and four. Move-in volume tied directly to organic search becomes measurable by month five or six. The exact timeline depends on your starting position and how competitive your local market is.", open: true },
     { q: "Do I need to change my existing website?", a: "In most cases, no. We work on top of your existing site, implementing technical fixes and adding content pages. If your current platform has fundamental limitations that prevent SEO progress, we will identify this clearly in the audit and explain the options. We will not recommend a rebuild unless the data supports it." },
-    { q: "What does the free audit actually include?", a: "The audit covers: technical site health, GBP completeness and gap analysis, current keyword rankings and map pack position, competitor landscape in your trade area, content gaps, and backlink profile. You receive a written report with prioritised recommendations. You keep the report whether you engage with us or not." },
-    { q: "How does reporting connect to my actual bookings?", a: "We connect your GA4 account to track reservation form completions and phone call events as conversions from week one. Monthly reports show which search terms and pages drove those conversion events. You see which ranking improvements translate into actual enquiries and move-ins, not just traffic numbers." },
-    { q: "Is there a minimum contract length?", a: "The first 90 days are a fixed onboarding period. After that, the programme runs month-to-month. You can pause or exit with 30 days notice at any point after the initial period." },
-    { q: "Do you work with multi-location operators?", a: "Yes. The Growth Portfolio and Regional Scale programmes are specifically designed for operators running two to five or six-plus facilities. Each location gets its own targeted programme to avoid internal cannibalisation, where one of your own facilities competes against another in the same search results." },
+    { q: "What does the free audit actually include?", a: "The audit covers: technical site health, GBP completeness and gap analysis, current keyword rankings and map pack position, competitor landscape in your trade area, content gaps, and backlink profile. You receive a written report with prioritized recommendations. You keep the report whether you engage with us or not." },
+    { q: "How does reporting connect to my actual bookings?", a: "We connect your GA4 account to track reservation form completions and phone call events as conversions from week one. Monthly reports show which search terms and pages drove those conversion events. You see which ranking improvements translate into actual inquiries and move-ins, not just traffic numbers." },
+    { q: "Is there a minimum contract length?", a: "The first 90 days are a fixed onboarding period. After that, the program runs month-to-month. You can pause or exit with 30 days notice at any point after the initial period." },
+    { q: "Do you work with multi-location operators?", a: "Yes. The Growth Portfolio and Regional Scale programs are specifically designed for operators running two to five or six-plus facilities. Each location gets its own targeted program to avoid internal cannibalization, where one of your own facilities competes against another in the same search results." },
   ];
   const faqSchema = {
     "@context": "https://schema.org",
@@ -92,7 +92,7 @@ export default function HomePage() {
                 <div className="dash-topbar">
                   <div className="dash-title">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="6.5" fill="#4285F4" /><path d="M6.5 3.5A3 3 0 1 0 9.5 6.5H6.5V4.8h3.7v.7a4.4 4.4 0 1 1-3.7-4.5V3.5z" fill="#fff" /></svg>
-                    Search Console — Live data
+                    Search Console: Live data
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     <div className="dash-live"><span className="dash-live-dot"></span> Connected</div>
@@ -117,7 +117,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="dash-chart">
-                  <div className="dash-chart-label">Visibility Index — daily, last 24 days</div>
+                  <div className="dash-chart-label">Visibility Index: daily, last 24 days</div>
                   <div className="sparkline">
                     {VISIBILITY_INDEX.map(({ v }, i) => (
                       <div
@@ -156,7 +156,7 @@ export default function HomePage() {
         <div className="marquee" aria-hidden="true">
           <div className="marquee-track">
             {[...Array(2)].flatMap((_, dup) =>
-              ["Local SEO","Google Maps Ranking","GBP Optimisation","Technical SEO","Location Pages","Citation Building","Content Writing","AEO & GEO","Backlink Building","Core Web Vitals","Review Strategy","SEO Reporting"].map((t, i) => (
+              ["Local SEO","Google Maps Ranking","GBP Optimization","Technical SEO","Location Pages","Citation Building","Content Writing","AEO & GEO","Backlink Building","Core Web Vitals","Review Strategy","SEO Reporting"].map((t, i) => (
                 <span key={`${dup}-${i}`} className="marquee-item">{t}</span>
               ))
             )}
@@ -172,13 +172,13 @@ export default function HomePage() {
               <div className="problem-right">
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 01</div>
-                  <div className="problem-card-title">Your Google Business Profile is not optimised for storage searches</div>
+                  <div className="problem-card-title">Your Google Business Profile is not optimized for storage searches</div>
                   <div className="problem-card-desc">Missing service categories, incomplete coverage areas, and outdated photos give Google fewer signals to rank your listing above competitors. The map pack goes to whoever has the most complete and active profile.</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 02</div>
                   <div className="problem-card-title">Your website does not target the terms renters actually search</div>
-                  <div className="problem-card-desc">Pages without unit-size terms, zip code content, or neighbourhood-specific copy miss the searches that convert. Renters searching for &ldquo;10x10 storage unit 78201&rdquo; will not find a generic homepage.</div>
+                  <div className="problem-card-desc">Pages without unit-size terms, zip code content, or neighborhood-specific copy miss the searches that convert. Renters searching for &ldquo;10x10 storage unit 78201&rdquo; will not find a generic homepage.</div>
                 </div>
                 <div className="problem-card reveal">
                   <div className="problem-card-num">Problem 03</div>
@@ -213,7 +213,7 @@ export default function HomePage() {
                   <div className="cost-organic">
                     <div className="cost-organic-dot"></div>
                     <div>
-                      <div className="cost-organic-label">Organic search, after your SEO programme</div>
+                      <div className="cost-organic-label">Organic search, after your SEO program</div>
                       <div className="cost-organic-val">$0 per lead</div>
                     </div>
                   </div>
@@ -251,7 +251,7 @@ export default function HomePage() {
                 <div className="pdc-header">
                   <div className="pdc-title">
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="6.5" fill="#4285F4" /><path d="M6.5 3.5A3 3 0 1 0 9.5 6.5H6.5V4.8h3.7v.7a4.4 4.4 0 1 1-3.7-4.5V3.5z" fill="#fff" /></svg>
-                    Search Console — Pickfords
+                    Search Console: Pickfords
                   </div>
                   <div className="pdc-source">Last 12 months</div>
                 </div>
@@ -273,7 +273,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="pos-tracker">
-                  <div className="pos-label">Top self-storage queries — by impressions</div>
+                  <div className="pos-label">Top self-storage queries: by impressions</div>
                   {[
                     { kw: "self storage near me", w: "100%", num: "69,247", delay: 0 },
                     { kw: "self storage", w: "44%", num: "30,633", delay: 0.1 },
@@ -294,7 +294,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="journey-chart">
-                  <div className="jc-label">Organic clicks — month by month</div>
+                  <div className="jc-label">Organic clicks: month by month</div>
                   <div className="jc-bars">
                     {[
                       { h: 12, cls: "" },
@@ -333,7 +333,7 @@ export default function HomePage() {
                 <div className="vi-card reveal">
                   <div className="vi-head">
                     <div className="vi-head-main">
-                      <div className="vi-title">Visibility Index — onboarding ramp</div>
+                      <div className="vi-title">Visibility Index: onboarding ramp</div>
                       <div className="vi-value">
                         <span className="vi-from">{viFirst}</span>
                         <span className="vi-arrow">→</span>
@@ -385,7 +385,7 @@ export default function HomePage() {
         <section className="page-section" id="pricing">
           <div className="inner">
             <div className="pill">Pricing</div>
-            <h2 className="section-h2">Three programmes. Month-to-month<br />after the first ninety days.</h2>
+            <h2 className="section-h2">Three programs. Month-to-month<br />after the first ninety days.</h2>
             <div className="pricing-grid">
               <div className="pricing-card reveal">
                 <div className="pc-head">
@@ -395,9 +395,9 @@ export default function HomePage() {
                 </div>
                 <ul className="pc-features">
                   <li className="pc-feat">Complete technical SEO audit</li>
-                  <li className="pc-feat">Google Business Profile optimisation</li>
+                  <li className="pc-feat">Google Business Profile optimization</li>
                   <li className="pc-feat">One primary location landing page</li>
-                  <li className="pc-feat">Monthly content — two pieces</li>
+                  <li className="pc-feat">Monthly content: two pieces</li>
                   <li className="pc-feat">Review automation setup</li>
                   <li className="pc-feat">Monthly GA4 and GSC reporting call</li>
                 </ul>
@@ -414,7 +414,7 @@ export default function HomePage() {
                   <li className="pc-feat">Everything in Single Facility</li>
                   <li className="pc-feat">Location landing page per facility</li>
                   <li className="pc-feat">Unit-size and type sub-pages</li>
-                  <li className="pc-feat">Monthly content — four pieces</li>
+                  <li className="pc-feat">Monthly content: four pieces</li>
                   <li className="pc-feat">Local citation building</li>
                   <li className="pc-feat">Dedicated SEO lead on your account</li>
                   <li className="pc-feat">Quarterly strategy review</li>

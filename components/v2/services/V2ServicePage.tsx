@@ -341,7 +341,7 @@ export default function V2ServicePage({ hero, marquee, problem, approach, proof,
 
               <div className="testimonial-card reveal">
                 <div className="test-quote">&ldquo;{proof.testimonial.quote}&rdquo;</div>
-                <div className="test-attr"><span className="test-facility">{proof.testimonial.attribution}</span> — {proof.testimonial.location}</div>
+                <div className="test-attr"><span className="test-facility">{proof.testimonial.attribution}</span>, {proof.testimonial.location}</div>
               </div>
 
               <div className="proof-audit-cta reveal">

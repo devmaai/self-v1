@@ -174,7 +174,7 @@ export default function V2QuoteForm() {
                 type="number"
                 min="0"
                 inputMode="numeric"
-                placeholder="Min — e.g. 50,000"
+                placeholder="Min, e.g. 50,000"
                 required
               />
               {fieldErrors.budgetStart && <span className="qf-error">{fieldErrors.budgetStart}</span>}
@@ -189,7 +189,7 @@ export default function V2QuoteForm() {
                 type="number"
                 min="0"
                 inputMode="numeric"
-                placeholder="Max — e.g. 150,000"
+                placeholder="Max, e.g. 150,000"
                 required
               />
               {fieldErrors.budgetEnd && <span className="qf-error">{fieldErrors.budgetEnd}</span>}

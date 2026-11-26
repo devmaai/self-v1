@@ -8,7 +8,7 @@ import V2ContactForm from "@/components/v2/V2ContactForm";
 export const metadata: Metadata = {
   title: "Contact | SelfStorage.help",
   description:
-    "Contact SelfStorage.help for business enquiries, sales, partnerships or any other question. We reply within one to two business days.",
+    "Contact SelfStorage.help for business inquiries, sales, partnerships or any other question. We reply within one to two business days.",
 };
 
 export default function ContactPage() {
@@ -19,12 +19,12 @@ export default function ContactPage() {
 
       <V2LeadPage
         title={<>Contact SelfStorage.help.</>}
-        lead="Send us a business enquiry, a sales question, a partnership idea or anything else. Your message goes straight to our team, and you will hear back within one to two business days."
+        lead="Send us a business inquiry, a sales question, a partnership idea or anything else. Your message goes straight to our team, and you will hear back within one to two business days."
         sections={[
           {
             heading: "We can help with",
             items: [
-              "Business and sales enquiries",
+              "Business and sales inquiries",
               "Partnerships and collaborations",
               "Press and media requests",
               "Questions about the site or your data",

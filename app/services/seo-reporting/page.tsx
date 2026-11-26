@@ -283,7 +283,7 @@ export default function SeoReportingPage() {
           </>
         }
         avatarInitials="JO"
-        name="— James Okafor · Owner, Three-Facility Operator, Houston"
+        name="James Okafor · Owner, Three-Facility Operator, Houston"
         detail="100% Tool access 24/7"
       />
 

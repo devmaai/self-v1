@@ -10,11 +10,11 @@ export const localSeoContent: V2ServicePageProps = {
       "in your ",
       React.createElement("em", null, "3–5 mile trade area."),
     ),
-    lead: "We are a specialist Local SEO partner for independent self-storage operators. We move your facility into the map pack for the storage searches renters actually run inside your service radius — without pay-per-lead fees or generic agency tactics.",
+    lead: "We are a specializt Local SEO partner for independent self-storage operators. We move your facility into the map pack for the storage searches renters actually run inside your service radius, without pay-per-lead fees or generic agency tactics.",
     primaryCta: { label: "Get a free local visibility audit", href: "/contact" },
     ghostCta: { label: "See ranking data →", href: "#proof" },
     dashboard: {
-      title: "Map pack tracker — Live",
+      title: "Map pack tracker: Live",
       tracking: "Tracking",
       period: "Trade area",
       metrics: [
@@ -22,7 +22,7 @@ export const localSeoContent: V2ServicePageProps = {
         { label: "Direction requests", value: "287", delta: "↑ 94% vs prior 90d" },
         { label: "Avg. pack position", value: "2.3", delta: "Was 8.4 at start" },
       ],
-      chartLabel: "Map pack impressions — trailing 14 weeks",
+      chartLabel: "Map pack impressions: trailing 14 weeks",
       sparkline: [18, 24, 28, 32, 41, 48, 54, 61, 68, 74, 80, 86, 91, 96],
       rankings: [
         { pos: "#1", kw: "storage units near me", change: "↑ +9", clicks: "724", top: true },
@@ -53,7 +53,7 @@ export const localSeoContent: V2ServicePageProps = {
         { label: "Pay-per-lead aggregator clicks lost", value: "$2,400 / mo", tone: "r", valueClass: "red" },
         { label: "Paid search spend covering the gap", value: "$1,800 / mo", tone: "a", valueClass: "red" },
         { label: "Direction requests sent to competitors", value: "~210 / mo", tone: "a", valueClass: "red" },
-        { label: "Organic map pack clicks (after programme)", value: "$0 / lead", tone: "g", valueClass: "green" },
+        { label: "Organic map pack clicks (after program)", value: "$0 / lead", tone: "g", valueClass: "green" },
       ],
       totalLabel: "Cost per map pack lead at month 6",
       totalValue: "$0.00",
@@ -75,7 +75,7 @@ export const localSeoContent: V2ServicePageProps = {
     lead: "No generic Local SEO playbook. Every step is built for the way renters search for self-storage and the way Google ranks storage facilities specifically.",
     steps: [
       { phase: "Step 01", title: "Google Business Profile mastery", desc: "Weekly profile management. Correct primary category, properly configured attributes, fresh photos of every unit type, posts and offers kept current, and the structured signals that tell Google your facility is the most relevant result in its radius.", tags: ["GBP", "Categories", "Photos", "Posts"] },
-      { phase: "Step 02", title: "Near-me keyword optimisation", desc: 'Local landing pages built for the phrases renters actually use — "climate-controlled storage in {City}", "vehicle and RV storage near {Neighborhood}", "cheapest 10x10 units near me", "drive-up storage units in {ZIP}".', tags: ["Location pages", "Unit-size pages", "ZIP targeting"] },
+      { phase: "Step 02", title: "Near-me keyword optimization", desc: 'Local landing pages built for the phrases renters actually use: "climate-controlled storage in {City}", "vehicle and RV storage near {Neighborhood}", "cheapest 10x10 units near me", "drive-up storage units in {ZIP}".', tags: ["Location pages", "Unit-size pages", "ZIP targeting"] },
       { phase: "Step 03", title: "Hyper-local citation building", desc: "Your facility added to 50+ local directories and self-storage-specific databases with consistent NAP data. This is the topical authority that lifts map rankings above generic competitors.", tags: ["NAP", "Citations", "Directories"] },
       { phase: "Step 04", title: "Review velocity and response", desc: "An automated review request flow tied to your booking software, plus templated or fully managed responses. Steady review volume and a high response rate are direct map pack ranking signals.", tags: ["Review automation", "Response", "Velocity"] },
     ],
@@ -90,14 +90,14 @@ export const localSeoContent: V2ServicePageProps = {
     pill: "Verified results",
     headline: "Map pack data from active client accounts.",
     dataCard: {
-      title: "Single facility, FL — Months 1–9",
+      title: "Single facility, FL: Months 1–9",
       source: "GBP Insights",
       kpis: [
         { label: "Map clicks", value: "12.6K", delta: "↑ 214% vs baseline" },
         { label: "Avg. pack pos.", value: "2.3", delta: "Was 8.4 at start" },
         { label: "Direction reqs.", value: "2.4K", delta: "↑ 167% vs baseline" },
       ],
-      positionLabel: "Google Maps position — primary keywords",
+      positionLabel: "Google Maps position: primary keywords",
       positions: [
         { kw: "storage units near me", w: "97%", num: "#1", top: true },
         { kw: "self storage [city]", w: "92%", num: "#2", top: true },
@@ -105,7 +105,7 @@ export const localSeoContent: V2ServicePageProps = {
         { kw: "10x10 storage unit [zip]", w: "74%", num: "#4" },
         { kw: "RV storage near [zip]", w: "60%", num: "#6" },
       ],
-      journeyLabel: "Map pack impressions — month by month",
+      journeyLabel: "Map pack impressions: month by month",
       bars: [
         { h: 14, cls: "" }, { h: 20, cls: "" }, { h: 26, cls: "" },
         { h: 38, cls: "mid" }, { h: 46, cls: "mid" },
@@ -121,7 +121,7 @@ export const localSeoContent: V2ServicePageProps = {
       { num: "$0", label: "Cost per map pack lead, month 6+", note: "Across all active clients" },
     ],
     testimonial: {
-      quote: "Helped Pickfords in the UK rank their independent facilities across 33 states. The map pack work moved the needle within the first quarter — direction requests started landing before we had even finished the citation cleanup.",
+      quote: "Helped Pickfords in the UK rank their independent facilities across 33 states. The map pack work moved the needle within the first quarter, direction requests started landing before we had even finished the citation cleanup.",
       attribution: "Independent storage facility owner",
       location: "Florida",
     },
@@ -148,9 +148,9 @@ export const localSeoContent: V2ServicePageProps = {
     asideCtaHref: "/contact",
     items: [
       { q: "How long until I rank in the top three of Google Maps?", a: "Most self-storage clients see meaningful map ranking improvement within 45 to 90 days. The exact timeline depends on your starting position, review count, and how competitive your trade area is. We share a baseline ranking report in week one so you can measure movement against it.", open: true },
-      { q: "Do you handle review responses for us?", a: "Yes — either we provide response templates your on-site team uses, or we actively manage every response on your behalf. Either way the review profile stays active, which Google treats as a positive ranking signal." },
-      { q: "Does this work for multi-location operators?", a: "Yes. Multi-location programmes get a localised strategy per facility so your own listings complement each other instead of competing for the same keywords. Pricing scales by facility count." },
-      { q: "Do I need a new website for Local SEO to work?", a: "No. Most of the first-90-day wins come from Google Business Profile optimisation, citation cleanup, and local landing pages added to your existing site. A rebuild is only suggested if the audit shows your current platform is blocking ranking — and we say so directly." },
+      { q: "Do you handle review responses for us?", a: "Yes, either we provide response templates your on-site team uses, or we actively manage every response on your behalf. Either way the review profile stays active, which Google treats as a positive ranking signal." },
+      { q: "Does this work for multi-location operators?", a: "Yes. Multi-location programs get a localized strategy per facility so your own listings complement each other instead of competing for the same keywords. Pricing scales by facility count." },
+      { q: "Do I need a new website for Local SEO to work?", a: "No. Most of the first-90-day wins come from Google Business Profile optimization, citation cleanup, and local landing pages added to your existing site. A rebuild is only suggested if the audit shows your current platform is blocking ranking, and we say so directly." },
       { q: "How do you measure results?", a: "We connect your GA4 and Google Search Console accounts in week one. Monthly reporting ties map pack position movement to reservation form completions and tracked phone calls, so you see which ranking changes actually produced move-ins." },
     ],
   },

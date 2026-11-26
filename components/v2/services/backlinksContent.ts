@@ -9,11 +9,11 @@ export const backlinksContent: V2ServicePageProps = {
       React.createElement("br"),
       "your ", React.createElement("em", null, "future renters already trust."),
     ),
-    lead: "Quality backlinks act like trusted votes of confidence that tell Google and AI engines your facility is a legitimate, authoritative local business. We earn hyper-local backlinks from real community sources — moving companies, real estate groups, neighbourhood forums — not link farms.",
+    lead: "Quality backlinks act like trusted votes of confidence that tell Google and AI engines your facility is a legitimate, authoritative local business. We earn hyper-local backlinks from real community sources (moving companies, real estate groups, neighborhood forums), not link farms.",
     primaryCta: { label: "Get your free backlink & authority audit", href: "/contact" },
     ghostCta: { label: "See authority growth →", href: "#proof" },
     dashboard: {
-      title: "Authority tracker — Live",
+      title: "Authority tracker: Live",
       tracking: "Outreaching",
       period: "Last 90 days",
       metrics: [
@@ -21,7 +21,7 @@ export const backlinksContent: V2ServicePageProps = {
         { label: "Domain rating", value: "34", delta: "Was 12 at start" },
         { label: "Impressions", value: "+184%", delta: "vs prior 90 days" },
       ],
-      chartLabel: "Referring domains — trailing 14 weeks",
+      chartLabel: "Referring domains: trailing 14 weeks",
       sparkline: [4, 6, 8, 10, 12, 14, 17, 19, 22, 24, 27, 30, 33, 36],
       rankingsHeader: { pos: "DR", kw: "Source", change: "Type", clicks: "Placed" },
       rankings: [
@@ -40,10 +40,10 @@ export const backlinksContent: V2ServicePageProps = {
       React.createElement("br"),
       "stay below national chains.",
     ),
-    lead: "Even with a great Google Business Profile and an optimised website, many independent operators stay stuck on page two because they lack the authority signals that come from real backlinks.",
+    lead: "Even with a great Google Business Profile and an optimized website, many independent operators stay stuck on page two because they lack the authority signals that come from real backlinks.",
     cards: [
       { num: "Problem 01", title: "Invisible to Google's authority signals", desc: "Your site has very few external links pointing to it, so Google does not see you as an authoritative local business worth ranking above your competition. Authority is the missing ingredient.", tag: "Domain rating · Authority" },
-      { num: "Problem 02", title: "Outranked by national chains", desc: "Larger storage brands have hundreds of strong backlinks pointing at them. Without your own, breaking into the top three of the map pack is extremely difficult — especially in mid- and large-metro markets.", tag: "Competitor authority gap" },
+      { num: "Problem 02", title: "Outranked by national chains", desc: "Larger storage brands have hundreds of strong backlinks pointing at them. Without your own, breaking into the top three of the map pack is extremely difficult, especially in mid- and large-metro markets.", tag: "Competitor authority gap" },
       { num: "Problem 03", title: "Risky or wasted links from prior agencies", desc: "Many owners end up with spammy or irrelevant backlinks from past agencies or shortcuts. The wrong links can actually hurt your rankings instead of helping them, and the cleanup matters as much as the new outreach.", tag: "Toxic links · Disavow · Cleanup" },
     ],
     visual: {
@@ -74,10 +74,10 @@ export const backlinksContent: V2ServicePageProps = {
     ),
     lead: "We do not do generic link building. Every backlink we pursue is relevant to the self-storage industry and tied to your specific local market. These are the four community channels we work in parallel for every client.",
     steps: [
-      { phase: "Week 01", title: "Audit, score, and disavow", desc: "We map every existing link pointing at your site, score them for quality and relevance, and flag toxic ones for cleanup. Cleanup runs in parallel with new outreach — sometimes the disavow alone delivers ranking lift.", tags: ["Backlink audit", "Disavow", "Cleanup"] },
-      { phase: "Step 02", title: "Local partnership outreach", desc: "Moving companies, real estate agents, apartment complexes, and chambers of commerce — partners who naturally refer storage customers. Most are happy to link to a trusted local operator once we make the introduction.", tags: ["Movers", "Realtors", "Apartments", "Chambers"] },
-      { phase: "Step 03", title: "Community-source placements", desc: "City moms groups, neighbourhood subreddits, BiggerPockets and real estate investor forums, local Facebook groups. Recommendations earned in context — the most powerful kind of backlink for both Google and AI engines.", tags: ["Subreddits", "FB groups", "BiggerPockets"] },
-      { phase: "Step 04", title: "Digital PR and brand mentions", desc: "We create link-worthy content — moving guides, comparisons, neighbourhood storage checklists — that naturally attract editorial links and brand mentions from local news and lifestyle publications.", tags: ["Editorial links", "Brand mentions", "Local PR"] },
+      { phase: "Week 01", title: "Audit, score, and disavow", desc: "We map every existing link pointing at your site, score them for quality and relevance, and flag toxic ones for cleanup. Cleanup runs in parallel with new outreach, sometimes the disavow alone delivers ranking lift.", tags: ["Backlink audit", "Disavow", "Cleanup"] },
+      { phase: "Step 02", title: "Local partnership outreach", desc: "Moving companies, real estate agents, apartment complexes, and chambers of commerce, partners who naturally refer storage customers. Most are happy to link to a trusted local operator once we make the introduction.", tags: ["Movers", "Realtors", "Apartments", "Chambers"] },
+      { phase: "Step 03", title: "Community-source placements", desc: "City moms groups, neighborhood subreddits, BiggerPockets and real estate investor forums, local Facebook groups. Recommendations earned in context: the most powerful kind of backlink for both Google and AI engines.", tags: ["Subreddits", "FB groups", "BiggerPockets"] },
+      { phase: "Step 04", title: "Digital PR and brand mentions", desc: "We create link-worthy content (moving guides, comparisons, neighborhood storage checklists) that naturally attract editorial links and brand mentions from local news and lifestyle publications.", tags: ["Editorial links", "Brand mentions", "Local PR"] },
     ],
     ctaText: React.createElement(React.Fragment, null,
       React.createElement("strong", null, "Want to see your current authority profile?"),
@@ -90,7 +90,7 @@ export const backlinksContent: V2ServicePageProps = {
     pill: "Verified results",
     headline: "Authority growth from real client engagements.",
     dataCard: {
-      title: "Single facility, AZ — 90-day backlink programme",
+      title: "Single facility, AZ: 90-day backlink program",
       source: "GSC · Ahrefs",
       kpis: [
         { label: "New referring domains", value: "23", delta: "All editorially earned" },
@@ -105,7 +105,7 @@ export const backlinksContent: V2ServicePageProps = {
         { kw: "Industry / trade publications", w: "55%", num: "3" },
         { kw: "Toxic links disavowed", w: "100%", num: "12" },
       ],
-      journeyLabel: "Cumulative referring domains — month by month",
+      journeyLabel: "Cumulative referring domains: month by month",
       bars: [
         { h: 10, cls: "" }, { h: 18, cls: "" }, { h: 26, cls: "" },
         { h: 36, cls: "mid" }, { h: 46, cls: "mid" },
@@ -122,7 +122,7 @@ export const backlinksContent: V2ServicePageProps = {
     ],
     testimonial: {
       quote: "Other agencies sent me lists of links from sites I had never heard of. SelfStorage.help built relationships with actual local movers and apartment communities in my city. Within three months I started seeing my facility recommended in local Facebook groups without me asking.",
-      attribution: "Diana Morales — Single-Facility Operator",
+      attribution: "Diana Morales, Single-Facility Operator",
       location: "Arizona",
     },
     auditCta: {

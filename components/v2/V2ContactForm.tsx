@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PhoneField from "@/components/ui/PhoneField";
 
-const TOPICS = ["Business enquiry", "Sales", "Partnership", "Press and media", "Other"];
+const TOPICS = ["Business inquiry", "Sales", "Partnership", "Press and media", "Other"];
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function V2ContactForm() {
@@ -92,8 +92,8 @@ export default function V2ContactForm() {
           <PhoneField id="cf-phone" error={errors.phone} optional />
         </div>
         <div className="af-field">
-          <label htmlFor="cf-topic">Type of enquiry</label>
-          <select id="cf-topic" name="topic" defaultValue="Business enquiry">
+          <label htmlFor="cf-topic">Type of inquiry</label>
+          <select id="cf-topic" name="topic" defaultValue="Business inquiry">
             {TOPICS.map((t) => <option key={t}>{t}</option>)}
           </select>
           {errors.topic && <span className="af-error">{errors.topic}</span>}

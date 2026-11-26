@@ -11,7 +11,7 @@ const FROM_EMAIL =
   process.env.AUDIT_FROM_EMAIL ||
   "SelfStorage Contact <onboarding@resend.dev>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TOPICS = ["List my storage business", "Grow my storage business", "General question", "Request a backlink", "Business enquiry", "Sales", "Partnership", "Press and media", "Other"];
+const TOPICS = ["List my storage business", "Grow my storage business", "General question", "Request a backlink", "Business inquiry", "Sales", "Partnership", "Press and media", "Other"];
 
 function esc(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] as string);

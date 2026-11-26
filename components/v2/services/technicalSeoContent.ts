@@ -9,11 +9,11 @@ export const technicalSeoContent: V2ServicePageProps = {
       React.createElement("br"),
       "that ", React.createElement("em", null, "quietly suppress your rankings."),
     ),
-    lead: "Most storage operators have clean copy and a decent Google Business Profile but still cannot break the top three on Google. The reason almost always lives under the surface — broken schema, slow mobile loads, indexation issues, and dozens of other technical problems search engines hold against you.",
+    lead: "Most storage operators have clean copy and a decent Google Business Profile but still cannot break the top three on Google. The reason almost always lives under the surface: broken schema, slow mobile loads, indexation issues, and dozens of other technical problems search engines hold against you.",
     primaryCta: { label: "Get your free technical SEO audit", href: "/contact" },
     ghostCta: { label: "See real recoveries →", href: "#proof" },
     dashboard: {
-      title: "Core Web Vitals — Live audit",
+      title: "Core Web Vitals: Live audit",
       tracking: "Crawling",
       period: "60-point scan",
       metrics: [
@@ -21,7 +21,7 @@ export const technicalSeoContent: V2ServicePageProps = {
         { label: "Site health", value: "94%", delta: "↑ from 47% baseline" },
         { label: "Schema coverage", value: "12/12", delta: "All storage types valid" },
       ],
-      chartLabel: "PageSpeed score — trailing 14 audits",
+      chartLabel: "PageSpeed score: trailing 14 audits",
       sparkline: [22, 24, 28, 31, 38, 45, 52, 58, 64, 70, 78, 85, 91, 96],
       rankingsHeader: { pos: "Sev.", kw: "Issue", change: "Status", clicks: "Pages" },
       rankings: [
@@ -32,7 +32,7 @@ export const technicalSeoContent: V2ServicePageProps = {
       ],
     },
   },
-  marquee: ["Site speed", "Core Web Vitals", "Schema for storage", "Mobile-first audit", "Crawl & indexation fixes", "GBP technical health", "Security & HTTPS", "Local entity wiring", "JavaScript rendering", "Internal linking", "Image SEO", "CTR optimisation"],
+  marquee: ["Site speed", "Core Web Vitals", "Schema for storage", "Mobile-first audit", "Crawl & indexation fixes", "GBP technical health", "Security & HTTPS", "Local entity wiring", "JavaScript rendering", "Internal linking", "Image SEO", "CTR optimization"],
   problem: {
     pill: "Why rankings stall",
     headline: React.createElement(React.Fragment, null,
@@ -53,7 +53,7 @@ export const technicalSeoContent: V2ServicePageProps = {
         { label: "Mobile LCP failing Core Web Vitals", value: "4.6s avg", tone: "r", valueClass: "red" },
         { label: "Pages blocked from indexation in error", value: "14 pages", tone: "a", valueClass: "red" },
         { label: "Missing storage-specific schema types", value: "9 of 12", tone: "a", valueClass: "red" },
-        { label: "After programme: schema, speed, crawl all green", value: "100%", tone: "g", valueClass: "green" },
+        { label: "After program: schema, speed, crawl all green", value: "100%", tone: "g", valueClass: "green" },
       ],
       totalLabel: "Site health score at month 2",
       totalValue: "94 / 100",
@@ -68,15 +68,15 @@ export const technicalSeoContent: V2ServicePageProps = {
   approach: {
     pill: "Our technical SEO process",
     headline: React.createElement(React.Fragment, null,
-      "Audit, fix, validate, monitor —",
+      "Audit, fix, validate, monitor:",
       React.createElement("br"),
       "in that order, every time.",
     ),
-    lead: "A real technical SEO engagement is not a one-time audit. It is a structured programme that uncovers issues, fixes them at the root, validates the fixes worked, and monitors for regressions.",
+    lead: "A real technical SEO engagement is not a one-time audit. It is a structured program that uncovers issues, fixes them at the root, validates the fixes worked, and monitors for regressions.",
     steps: [
-      { phase: "Week 01", title: "Full technical audit", desc: "We crawl your site the way Google does, run a complete GBP technical health check, test Core Web Vitals across multiple devices and networks, and document every issue in a prioritised action list with severity ratings.", tags: ["Crawl", "GBP audit", "CWV"] },
+      { phase: "Week 01", title: "Full technical audit", desc: "We crawl your site the way Google does, run a complete GBP technical health check, test Core Web Vitals across multiple devices and networks, and document every issue in a prioritized action list with severity ratings.", tags: ["Crawl", "GBP audit", "CWV"] },
       { phase: "Week 02", title: "Foundation fixes deployed", desc: "The high-impact fixes ship first. Schema deployment, robots and sitemap corrections, redirect cleanup, render-blocking script removal, and the highest-leverage GBP corrections. Most facilities see initial ranking movement from this phase alone.", tags: ["Schema", "Sitemaps", "Redirects"] },
-      { phase: "Week 03–04", title: "Speed, architecture, mobile", desc: "Image optimisation, font loading strategy, CDN configuration, render-path tuning, internal linking rebuild, pagination handling, and mobile usability fixes on real devices. PageSpeed scores move into the green.", tags: ["LCP", "INP", "Mobile UX"] },
+      { phase: "Week 03–04", title: "Speed, architecture, mobile", desc: "Image optimization, font loading strategy, CDN configuration, render-path tuning, internal linking rebuild, pagination handling, and mobile usability fixes on real devices. PageSpeed scores move into the green.", tags: ["LCP", "INP", "Mobile UX"] },
       { phase: "Month 02+", title: "Validate and monitor", desc: "We confirm Google has recrawled and indexed everything correctly, validate every schema type is being read, and set up ongoing monitoring for Core Web Vitals, crawl errors, and indexation drift. Issues get caught before they affect rankings.", tags: ["Monitoring", "Regression", "Quarterly audit"] },
     ],
     ctaText: React.createElement(React.Fragment, null,
@@ -90,7 +90,7 @@ export const technicalSeoContent: V2ServicePageProps = {
     pill: "Verified results",
     headline: "Recovery data from real client engagements.",
     dataCard: {
-      title: "Single facility, NC — Post-rebuild recovery",
+      title: "Single facility, NC: Post-rebuild recovery",
       source: "GSC · PageSpeed",
       kpis: [
         { label: "Organic traffic", value: "+67%", delta: "Recovered in 90 days" },
@@ -105,7 +105,7 @@ export const technicalSeoContent: V2ServicePageProps = {
         { kw: "GBP technical health", w: "88%", num: "✓" },
         { kw: "Security & HTTPS", w: "100%", num: "✓" },
       ],
-      journeyLabel: "Organic sessions — month by month",
+      journeyLabel: "Organic sessions: month by month",
       bars: [
         { h: 20, cls: "" }, { h: 24, cls: "" }, { h: 30, cls: "" },
         { h: 40, cls: "mid" }, { h: 50, cls: "mid" },
@@ -122,7 +122,7 @@ export const technicalSeoContent: V2ServicePageProps = {
     ],
     testimonial: {
       quote: "Our Webflow rebuild looked great but our rankings collapsed. Three other agencies told us the site was fine and we just needed more content. SelfStorage.help found 47 technical issues in the first week and most of our rankings came back within 60 days of the fixes shipping.",
-      attribution: "Marcus Chen — Single-Facility Operator",
+      attribution: "Marcus Chen, Single-Facility Operator",
       location: "North Carolina",
     },
     auditCta: {
@@ -147,11 +147,11 @@ export const technicalSeoContent: V2ServicePageProps = {
     asideCtaLabel: "Request a free conversation →",
     asideCtaHref: "/contact",
     items: [
-      { q: "How is this different from a one-time technical audit?", a: "A one-time audit gives you a list. Our service delivers the fixes, validates they worked, and monitors for regressions. Technical issues do not stay fixed on their own — platform updates, new plugins, content changes, and algorithm shifts all introduce new issues.", open: true },
+      { q: "How is this different from a one-time technical audit?", a: "A one-time audit gives you a list. Our service delivers the fixes, validates they worked, and monitors for regressions. Technical issues do not stay fixed on their own: platform updates, new plugins, content changes, and algorithm shifts all introduce new issues.", open: true },
       { q: "Do you work with my specific platform?", a: "Yes. We have deep experience with WordPress, Webflow, Squarespace, Shopify, Wix, and custom-built sites. Each platform has its own technical quirks and ranking pitfalls. We adjust the approach based on what you actually run on." },
       { q: "What if my site needs a rebuild rather than fixes?", a: "We will tell you directly during the audit. Some technical issues are platform-level limitations rather than fixable bugs. If a rebuild is the better path, we explain why and can recommend the right platform. We do not push rebuilds when fixes will do." },
-      { q: "Can you fix issues from a previous agency or developer?", a: "Yes. A significant portion of our audits uncover damage from prior work — broken redirects, bad schema, plugin conflicts, abandoned tracking codes. Cleanup is part of the engagement, not a separate add-on." },
-      { q: "Will this help with AI search like ChatGPT and Perplexity?", a: "Yes, and significantly. AEO and GEO visibility depends almost entirely on technical signals — schema depth, entity wiring, citation consistency, and structured data quality. Our work directly improves how AI engines understand and surface your facility." },
+      { q: "Can you fix issues from a previous agency or developer?", a: "Yes. A significant portion of our audits uncover damage from prior work: broken redirects, bad schema, plugin conflicts, abandoned tracking codes. Cleanup is part of the engagement, not a separate add-on." },
+      { q: "Will this help with AI search like ChatGPT and Perplexity?", a: "Yes, and significantly. AEO and GEO visibility depends almost entirely on technical signals: schema depth, entity wiring, citation consistency, and structured data quality. Our work directly improves how AI engines understand and surface your facility." },
       { q: "How quickly will I see results?", a: "Most operators see initial movement within 30 days from the foundation fixes alone. Significant ranking and traffic recovery typically settles in by month two or three. Sites coming back from a major issue can take longer depending on the depth of the damage." },
     ],
   },
