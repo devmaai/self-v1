@@ -30,7 +30,6 @@ export default function V2Footer({ blogColumn = false }: { blogColumn?: boolean 
           <div className="fc-head">For storage owners</div>
           <ul className="fc-links">
             <li><Link href="/agency">Local SEO &amp; AEO overview</Link></li>
-            <li><Link href="/request-backlink">Get a backlink</Link></li>
             <li><Link href="/list-your-facility">List your facility</Link></li>
             <li><Link href="/audit">Request a free GEO &amp; AEO audit</Link></li>
             <li><Link href="/agency#pricing">Pricing</Link></li>

@@ -28,7 +28,7 @@ export default function ContactPage() {
           body: (
             <>
               <p>Need a storage unit? <a href="/find-storage">Find storage near you</a>.</p>
-              <p>Own a storage facility? <a href="/list-your-facility">List your facility</a>, <a href="/request-backlink">get a backlink</a> or <a href="/audit">request a free GEO &amp; AEO audit</a>.</p>
+              <p>Own a storage facility? <a href="/list-your-facility">List your facility</a> or <a href="/audit">request a free GEO &amp; AEO audit</a>.</p>
             </>
           ),
         },

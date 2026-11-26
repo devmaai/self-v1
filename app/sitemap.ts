@@ -59,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/agency",
     "/audit",
     "/find-storage",
-    "/request-backlink",
     "/list-your-facility",
     "/contact",
     "/blog",
